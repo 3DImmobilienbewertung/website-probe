@@ -1,0 +1,6 @@
+# robots.txt – 3D Immobilienbewertung
+# WICHTIG: "ihre-domain.de" nach Domain-Kauf durch die echte Domain ersetzen
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ihre-domain.de/sitemap.xml
