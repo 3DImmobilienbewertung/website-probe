@@ -472,9 +472,24 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 /* ============================================================ VIDEO SECTION */
 .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:10px}
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);background:var(--bg-3)}
-.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:var(--radius)}
 .video-label{margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
 @media(max-width:780px){.video-grid{grid-template-columns:1fr}}
+
+/* Info cards (replaces YouTube embeds) */
+.info-card{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9;display:flex;align-items:stretch}
+.ic-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0E2A47 0%,#16365C 55%,#1e4a7a 100%)}
+.ic-bg2{background:linear-gradient(135deg,#0a1e35 0%,#16365C 45%,#2a5a8c 100%)}
+.ic-bg::after,.ic-bg2::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.ic-body{position:relative;z-index:1;padding:28px 30px;display:flex;flex-direction:column;justify-content:center;gap:14px;width:100%}
+.ic-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9A24B;font-weight:500}
+.ic-title{font-family:var(--display);font-size:1.15rem;font-weight:700;color:#fff;line-height:1.3;letter-spacing:-.01em;margin:0}
+.ic-facts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.ic-facts li{font-size:13.5px;color:#bcd6ff;padding-left:18px;position:relative;line-height:1.4}
+.ic-facts li::before{content:'✓';position:absolute;left:0;color:#C9A24B;font-weight:700;font-size:12px}
+.ic-cta{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-size:13px;font-weight:700;color:#C9A24B;text-decoration:none;font-family:var(--body);transition:gap .2s}
+.ic-cta:hover{gap:10px;text-decoration:none}
+@media(max-width:900px){.ic-body{padding:20px 22px}.ic-title{font-size:1rem}.ic-facts li{font-size:12.5px}}
+@media(max-width:480px){.info-card{aspect-ratio:auto;min-height:220px}.ic-body{padding:18px 20px}}
 
 /* ============================================================ MOBILE STICKY BAR */
 .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:59;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 16px 14px;gap:10px;box-shadow:0 -4px 20px rgba(16,36,61,.10)}
@@ -731,14 +746,15 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <a href="#wertcheck" class="btn btn-primary" style="margin-top:34px">Jetzt kostenloses Erstgespräch vereinbaren <span class="ar">→</span></a>
     </div>
     <div class="r s2" style="position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9">
-      <iframe
-        src="https://www.youtube.com/embed/KHdyXbE_kik?autoplay=0&rel=0&modestbranding=1&color=white"
-        title="Drohnenaufnahme Immobilie – Professionelle Luftaufnahmen"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0">
-      </iframe>
+      <video autoplay muted loop playsinline preload="metadata"
+             style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border:0"
+             aria-label="Immobilienbewertung – professionelle Besichtigung vor Ort">
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:22px 24px;background:linear-gradient(to top,rgba(10,26,50,.80),transparent);pointer-events:none">
+        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bcd6ff;margin-bottom:4px">3D Immobilienbewertung · Region Hannover</p>
+        <p style="font-family:var(--display);font-size:1.1rem;font-weight:600;color:#fff;margin:0">Präzise Bewertung direkt vor Ort.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -926,17 +942,39 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       </div>
     </div>
 
-    <!-- YouTube Erklärvideos -->
+    <!-- Info-Karten: Wissensthemen -->
     <div class="video-grid">
       <div class="r s1">
-        <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/zQgPnnVetjs" title="Verkehrswertgutachten für Immobilien – Das sollte man wissen" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="info-card">
+          <div class="ic-bg"></div>
+          <div class="ic-body">
+            <span class="ic-tag">Wissen kompakt</span>
+            <h3 class="ic-title">Verkehrswertgutachten – Was sollte man wissen?</h3>
+            <ul class="ic-facts">
+              <li>Gesetzlich nach §194 BauGB definiert</li>
+              <li>Anerkannt bei Finanzamt, Gericht &amp; Behörden</li>
+              <li>Ermittelt nach ImmoWertV-Verfahren</li>
+              <li>Stichtagsbezogener, neutraler Marktwert</li>
+            </ul>
+            <a href="#wertcheck" class="ic-cta">Jetzt kostenlos anfragen <span>→</span></a>
+          </div>
         </div>
         <p class="video-label">Verkehrswertgutachten · Was sollte man wissen?</p>
       </div>
       <div class="r s2">
-        <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/bzVFqfYvRAg" title="Immobilienbewertung einfach erklärt" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="info-card">
+          <div class="ic-bg ic-bg2"></div>
+          <div class="ic-body">
+            <span class="ic-tag">Wissen kompakt</span>
+            <h3 class="ic-title">Immobilienbewertung – Einfach erklärt</h3>
+            <ul class="ic-facts">
+              <li>Vergleichswert-, Ertragswert- &amp; Sachwertverfahren</li>
+              <li>Lage, Baujahr, Zustand &amp; Ausstattung</li>
+              <li>Transparente Herleitung, kein Fachchinesisch</li>
+              <li>Persönliche Erläuterung durch Experten</li>
+            </ul>
+            <a href="#wertcheck" class="ic-cta">Erstgespräch vereinbaren <span>→</span></a>
+          </div>
         </div>
         <p class="video-label">Immobilienbewertung · Einfach erklärt</p>
       </div>
