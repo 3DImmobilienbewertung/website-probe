@@ -429,6 +429,12 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .float-cta.show{opacity:1;transform:none;pointer-events:auto}
 .float-cta .btn{box-shadow:0 12px 30px rgba(26,91,208,.4);padding:16px 26px}
 
+/* WhatsApp floating button */
+.wa-btn{position:fixed;left:24px;bottom:24px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;box-shadow:0 6px 24px rgba(37,211,102,.50);display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease),box-shadow .35s}
+.wa-btn:hover{transform:scale(1.09);box-shadow:0 10px 32px rgba(37,211,102,.60)}
+.wa-btn svg{width:30px;height:30px;fill:#fff}
+@media(max-width:680px){.wa-btn{left:16px;bottom:16px}}
+
 /* mobile menu */
 .mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .35s}
 .mobile-menu.open{opacity:1;pointer-events:auto}
@@ -760,7 +766,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         </div>
         <div class="member-body">
           <p class="quote">„Tragwerk, Konstruktion und Bausubstanz lese ich wie ein Buch – das ist die Grundlage für einen Wert, der auch vor Gericht standhält."</p>
-          <div class="who"><b>[Name eintragen]</b><div class="role">M.Sc Bauingenieurwesen<br>IHK Immobilien-Wertermittler</div></div>
+          <div class="who"><b>Nandino Donnarumma</b><div class="role">M.Sc Bauingenieurwesen<br>IHK Immobilien-Wertermittler</div></div>
         </div>
       </div>
       <div class="member r s2">
@@ -774,7 +780,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         </div>
         <div class="member-body">
           <p class="quote">„Lage, Schnitt und das Potenzial einer Immobilie richtig einzuordnen, ist für mich Handwerk und Leidenschaft zugleich."</p>
-          <div class="who"><b>[Name eintragen]</b><div class="role">B.Sc Architektur<br>IHK Immobilien-Wertermittler</div></div>
+          <div class="who"><b>Vito Donnarumma</b><div class="role">B.Sc Architektur<br>IHK Immobilien-Wertermittler</div></div>
         </div>
       </div>
     </div>
@@ -845,6 +851,41 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   </div>
 </section>
 
+<!-- ===================== BEWERTUNGEN ===================== -->
+<section id="bewertungen" class="alt">
+  <div class="container">
+    <div class="sec-head r" style="text-align:center;margin:0 auto 54px;max-width:680px">
+      <span class="eyebrow" style="justify-content:center">Kundenstimmen</span>
+      <h2 class="section-title">Was unsere Kunden sagen</h2>
+      <p class="lead" style="margin:16px auto 0">Über 250 Immobilien bewertet – hier sind einige Stimmen unserer Auftraggeber aus Hannover und der Region.</p>
+      <div style="margin-top:22px;display:flex;align-items:center;justify-content:center">
+        <div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:11px 22px;box-shadow:var(--shadow-sm)">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <span style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2);font-weight:500">4,9 · Google-Bewertungen</span>
+          <span style="color:#F2B500;font-size:15px;letter-spacing:1px">★★★★★</span>
+        </div>
+      </div>
+    </div>
+    <div class="tgrid">
+      <div class="tcard r s1">
+        <div class="stars">★★★★★</div>
+        <p>„Nach dem Tod meines Vaters brauchten wir schnell ein gerichtsfestes Verkehrswertgutachten für das Finanzamt. Herr Donnarumma hat alles innerhalb von zehn Tagen erledigt, jede Frage geduldig erklärt und vorab ein faires Festpreisangebot gegeben. Keine versteckten Kosten, keine Überraschungen. Sehr empfehlenswert."</p>
+        <div class="who"><div class="av">KM</div><div><b>Klaus M.</b><span>Hannover · Erbschaft</span></div></div>
+      </div>
+      <div class="tcard r s2">
+        <div class="stars">★★★★★</div>
+        <p>„Wir wollten unser Haus verkaufen und vorher den echten Marktwert kennen – ganz ohne Maklerinteressen. Das Gutachten war detailliert, nachvollziehbar und hat uns in der Preisverhandlung sehr geholfen. Absolut professionell und persönlich. Wir kommen definitiv wieder."</p>
+        <div class="who"><div class="av">SB</div><div><b>Familie Bergmann</b><span>Wedemark · Hausverkauf</span></div></div>
+      </div>
+      <div class="tcard r s3">
+        <div class="stars">★★★★★</div>
+        <p>„Für unsere Scheidungsauseinandersetzung benötigten wir einen neutralen, anerkannten Wert. Das Team von 3D Immobilienbewertung war für beide Seiten akzeptabel, weil das Gutachten wirklich unabhängig war. Klare Kommunikation, pünktliche Lieferung – sehr professionell."</p>
+        <div class="who"><div class="av">AK</div><div><b>Andrea K.</b><span>Langenhagen · Scheidung</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== FAQ ===================== -->
 <section id="faq">
   <div class="container">
@@ -904,7 +945,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <h3>Direkt erreichen</h3>
         <div class="ci"><span class="ic">✆</span><div><div class="l">Telefon</div><div class="v"><a href="tel:+4901747445452">+49 (0) 174 744 5452</a></div></div></div>
         <div class="ci"><span class="ic">✉</span><div><div class="l">E-Mail</div><div class="v"><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></div></div></div>
-        <div class="ci"><span class="ic">⌖</span><div><div class="l">Büro</div><div class="v">► Ihre Adresse eintragen</div></div></div>
+        <div class="ci"><span class="ic">⌖</span><div><div class="l">Büro</div><div class="v">Gailhoferstraße 17<br>30900 Wedemark</div></div></div>
         <div class="ci"><span class="ic">◷</span><div><div class="l">Erreichbar</div><div class="v">Mo – Fr · 08:00 – 18:00</div></div></div>
         <div class="ci"><span class="ic">⬡</span><div><div class="l">Einzugsgebiet</div><div class="v">Hannover · Wedemark · Großburgwedel · Isernhagen · Burgwedel · Langenhagen · Garbsen · Gehrden · gesamte Region Hannover</div></div></div>
       </aside>
@@ -965,6 +1006,10 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 </footer>
 
 <a href="#wertcheck" class="float-cta" id="floatCta"><span class="btn btn-primary">Kostenloses Erstgespräch <span class="ar">→</span></span></a>
+
+<a href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung%20und%20m%C3%B6chte%20ein%20kostenloses%20Erstgespr%C3%A4ch%20vereinbaren." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp-Chat starten" title="WhatsApp schreiben">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
 
 </div>
 
@@ -1067,13 +1112,27 @@ if(wcSubmit)wcSubmit.addEventListener('click',function(){
   setTimeout(function(){window.location.href='mailto:info@3dimmobilienbewertung.de?subject='+encodeURIComponent('Erstgespräch-Anfrage – '+n)+'&body='+body;},400);
 });
 
-// classic contact form -> mailto
+// contact form -> Formspree
 var form=document.getElementById('contactForm');
 if(form)form.addEventListener('submit',function(e){
   e.preventDefault();
-  var n=document.getElementById('name').value,em=document.getElementById('email').value,ph=document.getElementById('phone').value,ob=document.getElementById('objekt').value,ms=document.getElementById('msg').value;
-  var body=encodeURIComponent('Name: '+n+'\nE-Mail: '+em+'\nTelefon: '+ph+'\nObjektart: '+ob+'\n\nAnliegen:\n'+ms);
-  window.location.href='mailto:info@3dimmobilienbewertung.de?subject='+encodeURIComponent('Anfrage Immobilienbewertung – '+n)+'&body='+body;
+  var btn=form.querySelector('button[type=submit]');
+  btn.disabled=true; btn.textContent='Wird gesendet …';
+  var data={name:document.getElementById('name').value,email:document.getElementById('email').value,phone:document.getElementById('phone').value,objekt:document.getElementById('objekt').value,message:document.getElementById('msg').value};
+  fetch('https://formspree.io/f/xdkondgv',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.ok){
+      form.innerHTML='<div style="text-align:center;padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Anfrage erfolgreich gesendet!</h3><p style="color:var(--muted)">Wir melden uns binnen 24 Stunden bei Ihnen. Vielen Dank!</p></div>';
+    } else {
+      btn.disabled=false; btn.textContent='Anfrage senden →';
+      alert('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@3dimmobilienbewertung.de');
+    }
+  })
+  .catch(function(){
+    btn.disabled=false; btn.textContent='Anfrage senden →';
+    alert('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@3dimmobilienbewertung.de');
+  });
 });
 </script>
 </body>
