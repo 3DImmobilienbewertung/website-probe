@@ -1175,33 +1175,47 @@ document.querySelectorAll('[data-back]').forEach(function(b){
 });
 var wcSubmit=document.getElementById('wcSubmit');
 if(wcSubmit)wcSubmit.addEventListener('click',function(){
-  var n=document.getElementById('wcName').value, m=document.getElementById('wcMail').value, t=document.getElementById('wcTel').value;
+  var n=document.getElementById('wcName').value.trim();
+  var m=document.getElementById('wcMail').value.trim();
+  var t=document.getElementById('wcTel').value.trim();
   if(!n||!m){alert('Bitte geben Sie Name und E-Mail an.');return;}
-  var body=encodeURIComponent('Anfrage kostenloses Erstgespräch\n\nObjektart: '+wc.objekt+'\nAnlass: '+wc.anlass+'\nName: '+n+'\nE-Mail: '+m+'\nTelefon: '+t);
-  showStep('done');
-  setTimeout(function(){window.location.href='mailto:info@3dimmobilienbewertung.de?subject='+encodeURIComponent('Erstgespräch-Anfrage – '+n)+'&body='+body;},400);
+  wcSubmit.disabled=true;
+  wcSubmit.textContent='Wird gesendet …';
+  fetch('/api/contact',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name:n,email:m,phone:t,objekt:wc.objekt,anlass:wc.anlass,message:'Erstgespräch-Anfrage über Wert-Check'})
+  })
+  .then(function(){showStep('done');})
+  .catch(function(){showStep('done');});
 });
 
-// contact form -> Formspree
+// contact form -> /api/contact (Vercel serverless)
 var form=document.getElementById('contactForm');
 if(form)form.addEventListener('submit',function(e){
   e.preventDefault();
   var btn=form.querySelector('button[type=submit]');
   btn.disabled=true; btn.textContent='Wird gesendet …';
-  var data={name:document.getElementById('name').value,email:document.getElementById('email').value,phone:document.getElementById('phone').value,objekt:document.getElementById('objekt').value,message:document.getElementById('msg').value};
-  fetch('https://formspree.io/f/xdkondgv',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+  var data={
+    name:document.getElementById('name').value.trim(),
+    email:document.getElementById('email').value.trim(),
+    phone:document.getElementById('phone').value.trim(),
+    objekt:document.getElementById('objekt').value,
+    message:document.getElementById('msg').value.trim()
+  };
+  fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
   .then(function(r){return r.json();})
   .then(function(d){
     if(d.ok){
-      form.innerHTML='<div style="text-align:center;padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Anfrage erfolgreich gesendet!</h3><p style="color:var(--muted)">Wir melden uns binnen 24 Stunden bei Ihnen. Vielen Dank!</p></div>';
+      form.innerHTML='<div style="text-align:center;padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Anfrage erfolgreich gesendet!</h3><p style="color:var(--muted)">Wir melden uns binnen 24 Stunden. Vielen Dank!</p></div>';
     } else {
       btn.disabled=false; btn.textContent='Anfrage senden →';
-      alert('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@3dimmobilienbewertung.de');
+      alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: +49 174 744 5452');
     }
   })
   .catch(function(){
     btn.disabled=false; btn.textContent='Anfrage senden →';
-    alert('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@3dimmobilienbewertung.de');
+    alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: +49 174 744 5452');
   });
 });
 </script>
