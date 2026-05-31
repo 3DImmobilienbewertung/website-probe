@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  var GA_ID = 'G-XXXXXXXXXX'; // ← HIER Ihre GA4 Mess-ID eintragen (z.B. G-ABC123DEF4)
+  var GA_ID = 'G-XS9EQ5RSRC'; // Google Analytics 4 – 3D Immobilienbewertung
   var CONSENT_KEY = '3dim_consent';
   var CONSENT_DURATION = 365; // Tage
 

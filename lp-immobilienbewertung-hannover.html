@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Immobilienbewertung Hannover | Immobilie bewerten lassen & Preis ermitteln</title>
 <meta name="description" content="Immobilienbewertung Hannover vom IHK-zertifizierten Sachverständigen. Lassen Sie Ihre Immobilie bewerten & den echten Preis ermitteln – Verkehrswertgutachten nach §194 BauGB. Kostenloses Erstgespräch, individuell, marktgerecht, neutral." />
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XS9EQ5RSRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XS9EQ5RSRC');
+</script>
+<!-- Ende Google Analytics -->
 <meta name="keywords" content="Immobilienbewertung Hannover, Bewertung Immobilie Hannover, Preis Immobilie, Immobilie bewerten lassen Hannover, Immobilienpreis ermitteln, Verkehrswertgutachten Hannover, Immobiliengutachter Hannover" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.3dimmobilienbewertung.de/lp-immobilienbewertung-hannover.html" />
@@ -347,5 +356,6 @@ document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
 document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener('click',function(){var f=b.parentElement,a=f.querySelector('.ans'),o=f.classList.contains('open');document.querySelectorAll('.faq').forEach(function(x){x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null});if(!o){f.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}})});
 document.getElementById('leadForm').addEventListener('submit',function(e){e.preventDefault();var n=lfName.value,m=lfMail.value,t=lfTel.value,o=lfObj.value,ort=lfOrt.value;if(!n||!m){alert('Bitte Name und E-Mail angeben.');return}var body=encodeURIComponent('Anfrage Immobilienbewertung (Landingpage)\n\nName: '+n+'\nE-Mail: '+m+'\nTelefon: '+t+'\nObjektart: '+o+'\nOrt: '+ort);window.location.href='mailto:info@3dimmobilienbewertung.de?subject='+encodeURIComponent('Immobilienbewertung – '+n)+'&body='+body});
 </script>
+<script src="assets/consent.js"></script>
 </body>
 </html>
