@@ -48,7 +48,7 @@ module.exports = async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Anfrage Website <onboarding@resend.dev>',
+        from: 'Anfrage Website <info@3dimmobilienbewertung.de>',
         to: ['info@3dimmobilienbewertung.de'],
         reply_to: email,
         subject: `Neue Anfrage: ${name} – ${objekt || 'Immobilienbewertung'}`,
