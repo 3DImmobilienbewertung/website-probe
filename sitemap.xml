@@ -124,6 +124,32 @@
     <lastmod>2025-05-01</lastmod>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/verkehrswert-immobilie.html</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/immobilie-erben-steuern.html</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/fehler-immobilienverkauf.html</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-05-01</lastmod>
+  </url>
+
   <!-- Rechtliches -->
   <url>
     <loc>https://www.3dimmobilienbewertung.de/impressum.html</loc>

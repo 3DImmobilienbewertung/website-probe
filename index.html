@@ -53,12 +53,15 @@
     "addressCountry": "DE"
   },
   "areaServed": ["Hannover", "Gehrden", "Wedemark", "Großburgwedel", "Burgwedel", "Isernhagen", "Langenhagen", "Barsinghausen", "Ronnenberg", "Seelze", "Wennigsen", "Garbsen", "Region Hannover", "Niedersachsen"],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "08:00",
-    "closes": "18:00"
-  },
+  "legalName": "Donnarumma & Donnarumma GbR",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
   "makesOffer": [
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Verkehrswertgutachten nach §194 BauGB"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Immobiliengutachten"}},
@@ -524,6 +527,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <li><a href="#ablauf">Ablauf</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
@@ -1256,5 +1260,6 @@ if(form)form.addEventListener('submit',function(e){
   });
 });
 </script>
+<script src="assets/consent.js"></script>
 </body>
 </html>
