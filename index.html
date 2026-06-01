@@ -687,8 +687,8 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <div class="wc-step" data-step="done">
         <div class="wc-done">
           <div class="chk">✓</div>
-          <h3>Fast geschafft!</h3>
-          <p>Ihr E-Mail-Programm öffnet sich mit Ihrer vorausgefüllten Anfrage für ein kostenloses Erstgespräch. Senden Sie sie einfach ab – wir melden uns binnen 24 Stunden.</p>
+          <h3>Geschafft – vielen Dank!</h3>
+          <p>Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden und völlig unverbindlich. Wir freuen uns darauf, Sie kennenzulernen!</p>
         </div>
       </div>
     </div>
@@ -1249,13 +1249,19 @@ if(wcSubmit)wcSubmit.addEventListener('click',function(){
   if(!n||!m){alert('Bitte geben Sie Name und E-Mail an.');return;}
   wcSubmit.disabled=true;
   wcSubmit.textContent='Wird gesendet …';
+  function wcFail(){
+    wcSubmit.disabled=false;
+    wcSubmit.innerHTML='Kostenloses Erstgespräch anfragen <span class="ar">→</span>';
+    alert('Beim Senden ist leider etwas schiefgelaufen. Bitte rufen Sie uns kurz direkt an: 0174 744 5452 – wir sind gern persönlich für Sie da.');
+  }
   fetch('/api/contact',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({name:n,email:m,phone:t,objekt:wc.objekt,anlass:wc.anlass,message:'Erstgespräch-Anfrage über Wert-Check'})
   })
-  .then(function(){showStep('done');})
-  .catch(function(){showStep('done');});
+  .then(function(r){return r.json();})
+  .then(function(d){ if(d&&d.ok){showStep('done');} else {wcFail();} })
+  .catch(wcFail);
 });
 
 // contact form -> /api/contact (Vercel serverless)
