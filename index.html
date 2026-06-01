@@ -373,10 +373,15 @@ section{position:relative;padding:110px 0}
 .member .quote{color:var(--ink-2);font-size:16px;line-height:1.6;font-style:italic;margin-bottom:18px}
 .member .who b{display:block;font-family:var(--display);font-size:1.2rem;color:var(--ink)}
 .member .who .role{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--blue);margin-top:5px;text-transform:uppercase;line-height:1.5}
-.team-note{text-align:center;max-width:620px;margin:46px auto 0}
-.team-note p{font-family:var(--display);font-size:1.35rem;line-height:1.5;color:var(--ink);font-style:italic;margin-bottom:14px}
-.team-note .team-sign{display:inline-block;font-family:var(--display);font-size:1.5rem;color:var(--gold);transform:rotate(-3deg)}
-@media(max-width:640px){.team-note p{font-size:1.15rem}.team-note .team-sign{font-size:1.3rem}}
+.team-edge{max-width:760px;margin:46px auto 0;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:32px 36px;box-shadow:var(--shadow-sm);text-align:left}
+.team-edge .eyebrow{color:var(--gold)}.team-edge .eyebrow::before{background:var(--gold);opacity:.8}
+.team-edge h3{font-family:var(--display);font-size:1.4rem;color:var(--ink);margin:12px 0 12px}
+.team-edge p{color:var(--ink-2);font-size:16px;line-height:1.65}
+@media(max-width:640px){.team-edge{padding:26px 22px}.team-edge h3{font-size:1.2rem}}
+.team-note{text-align:center;max-width:640px;margin:40px auto 0;padding-top:34px;border-top:1px solid var(--border)}
+.team-note p{font-family:var(--display);font-size:1.35rem;line-height:1.5;color:var(--ink);font-style:italic;margin-bottom:16px}
+.team-note .team-sign{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:600}
+@media(max-width:640px){.team-note p{font-size:1.15rem}}
 
 /* ============================================================ TESTIMONIALS */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -848,7 +853,12 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         </div>
       </div>
     </div>
-    <div class="team-note r s3">
+    <div class="team-edge r s3">
+      <span class="eyebrow">Unser entscheidender Vorteil</span>
+      <h3>Wir bewerten nicht nur – wir verstehen Gebäude.</h3>
+      <p>Anders als viele herkömmliche Bewerter kommen wir aus <strong>Bauingenieurwesen, Architektur und Planung</strong>. Wir sehen nicht nur Quadratmeter und Tabellenwerte – wir erkennen <strong>Bausubstanz, Statik, Bauschäden und das bauliche Potenzial</strong> Ihrer Immobilie. Dieses Fachwissen fließt direkt in eine präzisere, belastbarere Bewertung ein, die andere so nicht leisten können.</p>
+    </div>
+    <div class="team-note r s4">
       <p>„Wir behandeln jede Immobilie so, als wäre es unsere eigene. Versprochen."</p>
       <span class="team-sign">Nandino &amp; Vito Donnarumma</span>
     </div>
