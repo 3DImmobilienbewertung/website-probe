@@ -128,7 +128,13 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/</loc>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/immobilienpreise-hannover-2026.html</loc>
+    <priority>0.88</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/verkehrswert-immobilie.html</loc>
