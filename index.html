@@ -115,7 +115,7 @@
    ============================================================ */
 :root{
   --bg:#FFFFFF;
-  --bg-2:#F2F6FB;
+  --bg-2:#FAF6EF;
   --bg-3:#E8F0F8;
   --surface:#FFFFFF;
   --ink:#10243D;
@@ -373,6 +373,10 @@ section{position:relative;padding:110px 0}
 .member .quote{color:var(--ink-2);font-size:16px;line-height:1.6;font-style:italic;margin-bottom:18px}
 .member .who b{display:block;font-family:var(--display);font-size:1.2rem;color:var(--ink)}
 .member .who .role{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--blue);margin-top:5px;text-transform:uppercase;line-height:1.5}
+.team-note{text-align:center;max-width:620px;margin:46px auto 0}
+.team-note p{font-family:var(--display);font-size:1.35rem;line-height:1.5;color:var(--ink);font-style:italic;margin-bottom:14px}
+.team-note .team-sign{display:inline-block;font-family:var(--display);font-size:1.5rem;color:var(--gold);transform:rotate(-3deg)}
+@media(max-width:640px){.team-note p{font-size:1.15rem}.team-note .team-sign{font-size:1.3rem}}
 
 /* ============================================================ TESTIMONIALS */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -843,6 +847,10 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
           <div class="who"><b>Vito Donnarumma</b><div class="role">B.Sc Architektur<br>Immobilien-Wertermittler</div></div>
         </div>
       </div>
+    </div>
+    <div class="team-note r s3">
+      <p>„Wir behandeln jede Immobilie so, als wäre es unsere eigene. Versprochen."</p>
+      <span class="team-sign">Nandino &amp; Vito Donnarumma</span>
     </div>
   </div>
 </section>
