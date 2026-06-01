@@ -687,7 +687,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <div class="wc-step" data-step="done">
         <div class="wc-done">
           <div class="chk">✓</div>
-          <h3>Geschafft – vielen Dank!</h3>
+          <h3>Vielen Dank für Ihr Vertrauen!</h3>
           <p>Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden und völlig unverbindlich. Wir freuen uns darauf, Sie kennenzulernen!</p>
         </div>
       </div>
@@ -1281,7 +1281,7 @@ if(form)form.addEventListener('submit',function(e){
   .then(function(r){return r.json();})
   .then(function(d){
     if(d.ok){
-      form.innerHTML='<div style="text-align:center;padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Anfrage erfolgreich gesendet!</h3><p style="color:var(--muted)">Wir melden uns binnen 24 Stunden. Vielen Dank!</p></div>';
+      form.innerHTML='<div style="text-align:center;padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Vielen Dank für Ihr Vertrauen!</h3><p style="color:var(--muted)">Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden.</p></div>';
     } else {
       btn.disabled=false; btn.textContent='Anfrage senden →';
       alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: +49 174 744 5452');
