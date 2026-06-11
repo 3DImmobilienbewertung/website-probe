@@ -73,18 +73,22 @@
         });
       };
     }
-    // 2) Telefon-Klicks: Anruf-Intent auf jeder Seite
+    // 2) Click-Kontakt-Intents auf jeder Seite: Telefon, E-Mail, WhatsApp
     document.addEventListener('click', function (e) {
       var t = e.target;
-      var a = (t && t.closest) ? t.closest('a[href^="tel:"]') : null;
-      if (a) {
-        try {
-          gtag('event', 'phone_call', {
-            phone_number: a.getAttribute('href').replace('tel:', ''),
-            link_location: location.pathname
-          });
-        } catch (e2) {}
-      }
+      var a = (t && t.closest) ? t.closest('a[href]') : null;
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      try {
+        if (href.indexOf('tel:') === 0) {
+          gtag('event', 'phone_call', { phone_number: href.replace('tel:', ''), link_location: location.pathname });
+        } else if (href.indexOf('mailto:info@3dimmobilienbewertung.de') === 0) {
+          // nur Geschäfts-Mail – Behörden-Mail in der Datenschutzerklärung bleibt außen vor
+          gtag('event', 'email_click', { link_location: location.pathname });
+        } else if (href.indexOf('wa.me/') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
+          gtag('event', 'whatsapp_click', { link_location: location.pathname });
+        }
+      } catch (e2) {}
     }, true);
   })();
 
