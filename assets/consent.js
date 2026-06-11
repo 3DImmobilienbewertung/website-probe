@@ -53,6 +53,41 @@
   }
   loadGA();
 
+  // ─── Lead-Event-Tracking (Schlüsselereignisse) ────────────
+  // Misst echte Lead-Aktionen statt nur Seitenaufrufe. Consent Mode v2
+  // regelt die DSGVO-konforme (cookieless bei Ablehnung) Erhebung automatisch.
+  //   • generate_lead  → jeder erfolgreiche Formular-/Funnel-Versand (HTTP 200 von /api/contact)
+  //   • phone_call     → Klick auf eine Telefonnummer (Anruf-Intent), auf allen Seiten
+  (function () {
+    // 1) Formular-Leads: erfolgreicher POST an /api/contact (deckt Funnel + alle Formulare ab)
+    if (window.fetch) {
+      var _origFetch = window.fetch;
+      window.fetch = function (input) {
+        var url = (typeof input === 'string') ? input : (input && input.url) || '';
+        var isLead = url.indexOf('/api/contact') !== -1;
+        return _origFetch.apply(this, arguments).then(function (res) {
+          if (isLead && res && res.ok) {
+            try { gtag('event', 'generate_lead', { lead_source: location.pathname }); } catch (e) {}
+          }
+          return res;
+        });
+      };
+    }
+    // 2) Telefon-Klicks: Anruf-Intent auf jeder Seite
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      var a = (t && t.closest) ? t.closest('a[href^="tel:"]') : null;
+      if (a) {
+        try {
+          gtag('event', 'phone_call', {
+            phone_number: a.getAttribute('href').replace('tel:', ''),
+            link_location: location.pathname
+          });
+        } catch (e2) {}
+      }
+    }, true);
+  })();
+
   // ─── Update consent after user choice ─────────────────────
   function updateConsent(analyticsAllowed) {
     gtag('consent', 'update', {
