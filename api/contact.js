@@ -6,7 +6,7 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { name, email, phone, objekt, anlass, message } = req.body || {};
+  const { name, email, phone, objekt, anlass, ort, zeitrahmen, message } = req.body || {};
 
   if (!name || !email) {
     return res.status(400).json({ error: 'Name und E-Mail sind Pflichtfelder.' });
@@ -30,6 +30,8 @@ module.exports = async function handler(req, res) {
           <tr><td style="padding:10px 0;color:#5c7088;font-size:14px;border-bottom:1px solid #f0f4f8">Telefon</td><td style="padding:10px 0;border-bottom:1px solid #f0f4f8">${phone || '—'}</td></tr>
           <tr><td style="padding:10px 0;color:#5c7088;font-size:14px;border-bottom:1px solid #f0f4f8">Objektart</td><td style="padding:10px 0;border-bottom:1px solid #f0f4f8">${objekt || '—'}</td></tr>
           <tr><td style="padding:10px 0;color:#5c7088;font-size:14px;border-bottom:1px solid #f0f4f8">Anlass</td><td style="padding:10px 0;border-bottom:1px solid #f0f4f8">${anlass || '—'}</td></tr>
+          <tr><td style="padding:10px 0;color:#5c7088;font-size:14px;border-bottom:1px solid #f0f4f8">Ort / PLZ</td><td style="padding:10px 0;border-bottom:1px solid #f0f4f8">${ort || '—'}</td></tr>
+          <tr><td style="padding:10px 0;color:#5c7088;font-size:14px;border-bottom:1px solid #f0f4f8">Zeitrahmen</td><td style="padding:10px 0;border-bottom:1px solid #f0f4f8">${zeitrahmen || '—'}</td></tr>
           <tr><td style="padding:10px 0;color:#5c7088;font-size:14px;vertical-align:top">Nachricht</td><td style="padding:10px 0">${(message || '—').replace(/\n/g, '<br>')}</td></tr>
         </table>
         <div style="margin-top:28px;padding:18px 20px;background:#f2f6fb;border-radius:8px">

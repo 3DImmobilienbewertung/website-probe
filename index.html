@@ -670,9 +670,9 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <section id="wertcheck" class="wertcheck">
   <div class="container wc-grid">
     <div class="r">
-      <span class="eyebrow">Kostenloses Erstgespräch</span>
-      <h2>In 30 Sekunden Ihr kostenloses Erstgespräch anfragen.</h2>
-      <p>Beantworten Sie zwei kurze Fragen – wir melden uns für ein unverbindliches, kostenloses Erstgespräch und besprechen das passende Vorgehen für Ihre Immobilie.</p>
+      <span class="eyebrow">Gutachten-Vorab-Check</span>
+      <h2>In unter einer Minute Ihr kostenloses Erstgespräch anfragen.</h2>
+      <p>Beantworten Sie vier kurze Fragen – wir melden uns für ein unverbindliches, kostenloses Erstgespräch und besprechen das passende Vorgehen für Ihre Immobilie.</p>
       <ul class="wc-points">
         <li>Erstgespräch vom unabhängigen Sachverständigen</li>
         <li>Kostenlos &amp; ohne Verpflichtung</li>
@@ -682,7 +682,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="wc-card r s2">
       <div class="wc-progress">
         <div class="bar"><i id="wcBar"></i></div>
-        <span class="lbl" id="wcLbl">Schritt 1 / 3</span>
+        <span class="lbl" id="wcLbl">Schritt 1 / 5</span>
       </div>
 
       <!-- Step 1 -->
@@ -714,8 +714,30 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <button class="wc-back" data-back>← Zurück</button>
       </div>
 
-      <!-- Step 3 -->
+      <!-- Step 3: Ort -->
       <div class="wc-step" data-step="3">
+        <div class="wc-q">Wo befindet sich die Immobilie?</div>
+        <div class="wc-sub">Ort oder Postleitzahl genügt – so ordnen wir Ihre Immobilie dem richtigen lokalen Markt zu.</div>
+        <div class="wc-field"><label for="wcOrt">Ort / PLZ</label><input type="text" id="wcOrt" placeholder="z. B. Hannover, Wedemark, 30900"></div>
+        <button class="btn btn-primary" id="wcOrtNext" style="width:100%">Weiter <span class="ar">→</span></button>
+        <button class="wc-back" data-back>← Zurück</button>
+      </div>
+
+      <!-- Step 4: Zeitrahmen -->
+      <div class="wc-step" data-step="4">
+        <div class="wc-q">Bis wann benötigen Sie das Gutachten?</div>
+        <div class="wc-sub">So planen wir den Ablauf passend für Sie.</div>
+        <div class="wc-opts">
+          <button class="wc-opt" data-field="zeitrahmen" data-val="So schnell wie möglich"><span class="ic">⚡</span> So schnell wie möglich</button>
+          <button class="wc-opt" data-field="zeitrahmen" data-val="Innerhalb eines Monats"><span class="ic">📅</span> Innerhalb 1 Monats</button>
+          <button class="wc-opt" data-field="zeitrahmen" data-val="In ein bis drei Monaten"><span class="ic">🗓️</span> In 1–3 Monaten</button>
+          <button class="wc-opt" data-field="zeitrahmen" data-val="Erst einmal Orientierung"><span class="ic">💡</span> Erst Orientierung</button>
+        </div>
+        <button class="wc-back" data-back>← Zurück</button>
+      </div>
+
+      <!-- Step 5: Kontakt -->
+      <div class="wc-step" data-step="5">
         <div class="wc-q">Wie dürfen wir Sie für das Erstgespräch erreichen?</div>
         <div class="wc-sub">Wir melden uns binnen 24 Stunden – garantiert unverbindlich.</div>
         <div class="wc-field"><label for="wcName">Name</label><input type="text" id="wcName" placeholder="Vor- und Nachname"></div>
@@ -852,8 +874,8 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <h2 class="section-title">Lernen Sie uns kennen – Ihre Experten für Immobilienbewertung in Hannover.</h2>
       <p class="lead" style="margin:16px auto 0">Wir sind Nandino und Vito – zwei Brüder, Bauingenieur und Architekt, und der Kopf hinter 3D Immobilienbewertung. Für uns ist jede Immobilie mehr als eine Zahl: Sie ist Ihr Zuhause, Ihr Erbe oder ein wichtiger Lebensabschnitt. Genau so behandeln wir sie – mit Fachwissen, das Hand und Fuß hat, und der Zeit, die Sie verdienen.</p>
       <div class="team-quals" style="justify-content:center">
-        <span class="q"><span class="ic">🏗️</span> M.Sc Bauingenieurwesen</span>
-        <span class="q"><span class="ic">📐</span> B.Sc Architektur</span>
+        <span class="q"><span class="ic">🏗️</span> M.Sc.Bauingenieurwesen</span>
+        <span class="q"><span class="ic">📐</span> B.Sc.Architektur</span>
         <span class="q"><span class="ic">🎓</span> Immobilien-Wertermittler</span>
       </div>
     </div>
@@ -861,7 +883,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <div class="member r s1">
         <div class="member-photo">
           <!-- FOTO M.SC BAUINGENIEUR: Datei 'assets/team-1.jpg' hochladen, dann <img> aktivieren -->
-          <img loading="lazy" src="assets/team-1.jpg" alt="M.Sc Bauingenieur & Immobilien-Wertermittler bei 3D Immobilienbewertung" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <img loading="lazy" src="assets/team-1.jpg" alt="M.Sc.Bauingenieur & Immobilien-Wertermittler bei 3D Immobilienbewertung" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="ph-fallback" style="display:none">
             <div class="av">★</div>
             <span>Foto folgt:<br>assets/team-1.jpg</span>
@@ -869,13 +891,13 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         </div>
         <div class="member-body">
           <p class="quote">„Hinter jeder Bewertung steht ein Mensch mit einer wichtigen Entscheidung. Diese Verantwortung nehmen wir ernst – mit Sorgfalt, Ehrlichkeit und echtem Interesse an Ihrer Immobilie."</p>
-          <div class="who"><b>Nandino Donnarumma</b><div class="role">M.Sc Bauingenieurwesen<br>Immobilien-Wertermittler</div></div>
+          <div class="who"><b>Nandino Donnarumma</b><div class="role">M.Sc.Bauingenieurwesen<br>Immobilien-Wertermittler</div></div>
         </div>
       </div>
       <div class="member r s2">
         <div class="member-photo">
           <!-- FOTO B.SC ARCHITEKTUR: Datei 'assets/team-2.jpg' hochladen, dann <img> aktivieren -->
-          <img loading="lazy" src="assets/team-2.jpg" alt="B.Sc Architektur & Immobilien-Wertermittler bei 3D Immobilienbewertung" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <img loading="lazy" src="assets/team-2.jpg" alt="B.Sc.Architektur & Immobilien-Wertermittler bei 3D Immobilienbewertung" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="ph-fallback" style="display:none">
             <div class="av">★</div>
             <span>Foto folgt:<br>assets/team-2.jpg</span>
@@ -883,7 +905,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         </div>
         <div class="member-body">
           <p class="quote">„Wir bewerten Ihre Immobilie mit Leidenschaft und nehmen uns die Zeit, die es braucht. Am wichtigsten ist uns, dass Sie sich verstanden und gut aufgehoben fühlen."</p>
-          <div class="who"><b>Vito Donnarumma</b><div class="role">B.Sc Architektur<br>Immobilien-Wertermittler</div></div>
+          <div class="who"><b>Vito Donnarumma</b><div class="role">B.Sc.Architektur<br>Immobilien-Wertermittler</div></div>
         </div>
       </div>
     </div>
@@ -1337,12 +1359,12 @@ var statsEl=document.querySelector('.stats'); if(statsEl)cio.observe(statsEl);
 document.getElementById('year').textContent=new Date().getFullYear();
 
 // ---------- ERSTGESPRÄCH funnel ----------
-var wc={objekt:'',anlass:''};
+var wc={objekt:'',anlass:'',ort:'',zeitrahmen:''};
 var steps=document.querySelectorAll('.wc-step'), bar=document.getElementById('wcBar'), lbl=document.getElementById('wcLbl');
 function showStep(n){
   steps.forEach(function(s){s.classList.toggle('active',s.dataset.step==String(n));});
   if(n==='done'){bar.style.width='100%';lbl.textContent='Geschafft ✓';return;}
-  bar.style.width=(n/3*100)+'%'; lbl.textContent='Schritt '+n+' / 3';
+  bar.style.width=(n/5*100)+'%'; lbl.textContent='Schritt '+n+' / 5';
 }
 document.querySelectorAll('.wc-opt').forEach(function(o){
   o.addEventListener('click',function(){
@@ -1354,6 +1376,8 @@ document.querySelectorAll('.wc-opt').forEach(function(o){
 document.querySelectorAll('[data-back]').forEach(function(b){
   b.addEventListener('click',function(){var cur=+b.closest('.wc-step').dataset.step;showStep(Math.max(1,cur-1));});
 });
+var wcOrtNext=document.getElementById('wcOrtNext');
+if(wcOrtNext)wcOrtNext.addEventListener('click',function(){wc.ort=document.getElementById('wcOrt').value.trim();showStep(4);});
 var wcSubmit=document.getElementById('wcSubmit');
 if(wcSubmit)wcSubmit.addEventListener('click',function(){
   var n=document.getElementById('wcName').value.trim();
@@ -1370,7 +1394,7 @@ if(wcSubmit)wcSubmit.addEventListener('click',function(){
   fetch('/api/contact',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name:n,email:m,phone:t,objekt:wc.objekt,anlass:wc.anlass,message:'Erstgespräch-Anfrage über Wert-Check'})
+    body:JSON.stringify({name:n,email:m,phone:t,objekt:wc.objekt,anlass:wc.anlass,ort:wc.ort,zeitrahmen:wc.zeitrahmen,message:'Erstgespräch-Anfrage über Gutachten-Vorab-Check'})
   })
   .then(function(r){return r.json();})
   .then(function(d){ if(d&&d.ok){showStep('done');} else {wcFail();} })
