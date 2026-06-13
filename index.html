@@ -234,8 +234,8 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spac
 header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s,box-shadow .4s;border-bottom:1px solid transparent}
 header.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:blur(16px);border-bottom-color:var(--border);box-shadow:var(--shadow-sm)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
-.logo{display:flex;align-items:center;gap:10px;white-space:nowrap}
-.logo-img{height:38px;width:auto;display:block}
+.logo{display:flex;align-items:center;gap:10px;white-space:nowrap;flex-shrink:0}
+.logo-img{height:38px;width:auto;display:block;flex-shrink:0}
 @media(max-width:680px){.logo-img{height:32px}}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
 .nav-links a{font-size:14.5px;color:var(--ink-2);transition:color .25s;position:relative}
@@ -246,6 +246,7 @@ header.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:blur(16px);
 .nav-cta .btn{padding:11px 20px;font-size:14px}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+@media(max-width:900px){.nav-links{display:none}.burger{display:flex}}
 
 /* ============================================================ HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:74px;overflow:hidden}
@@ -531,7 +532,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 }
 @media(max-width:780px){ .cards-3{grid-template-columns:1fr} }
 @media(max-width:680px){
-  .nav-links{display:none}.nav-cta .btn{display:none}.burger{display:flex}
+  .nav-cta .btn{display:none}
   .tags{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}
   .wc-opts{grid-template-columns:1fr}.wc-card{padding:26px}
   section{padding:72px 0}.foot-top{grid-template-columns:1fr;gap:28px}
