@@ -2,8 +2,8 @@
 User-agent: *
 Allow: /
 
-# Keine Indexierung für Rechtsseiten nötig
-Disallow: /datenschutz.html
-Disallow: /impressum.html
+# Hinweis: Impressum & Datenschutz werden NICHT per robots.txt gesperrt,
+# sondern per <meta name="robots" content="noindex"> aus dem Index gehalten.
+# Crawlen muss erlaubt bleiben, damit Google das noindex-Tag überhaupt liest.
 
 Sitemap: https://www.3dimmobilienbewertung.de/sitemap.xml
