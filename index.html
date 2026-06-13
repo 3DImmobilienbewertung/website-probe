@@ -36,7 +36,8 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://www.3dimmobilienbewertung.de/#organisation",
   "name": "3D Immobilienbewertung",
   "image": "https://www.3dimmobilienbewertung.de/assets/og-image.jpg",
   "logo": "https://www.3dimmobilienbewertung.de/assets/logo_icon.png",
@@ -46,7 +47,7 @@
   "priceRange": "€€",
   "slogan": "Individuell. Marktgerecht. Neutral.",
   "description": "Immobilienbewertung Hannover vom zertifizierten Sachverständigen. Verkehrswertgutachten nach §194 BauGB / ImmoWertV für Haus, Wohnung und Grundstück – für Privatpersonen, Unternehmen und Erbengemeinschaften.",
-  "knowsAbout": ["Immobilienbewertung", "Verkehrswertgutachten", "Hauswert", "Immobilienpreis", "Sachwertverfahren", "Ertragswertverfahren"],
+  "knowsAbout": ["Immobilienbewertung", "Verkehrswertgutachten", "Hauswert", "Immobilienpreis", "Sachwertverfahren", "Ertragswertverfahren", "Vergleichswertverfahren", "Bauingenieurwesen", "Architektur", "Bauschäden", "Verkehrswertermittlung", "ImmoWertV", "§194 BauGB"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Gailhoferstraße 17",
@@ -55,7 +56,29 @@
     "addressRegion": "Niedersachsen",
     "addressCountry": "DE"
   },
-  "areaServed": ["Hannover", "Gehrden", "Wedemark", "Großburgwedel", "Burgwedel", "Isernhagen", "Langenhagen", "Barsinghausen", "Ronnenberg", "Seelze", "Wennigsen", "Garbsen", "Region Hannover", "Niedersachsen"],
+  "areaServed": [
+    {"@type":"City","name":"Hannover"},
+    {"@type":"City","name":"Wedemark"},
+    {"@type":"City","name":"Isernhagen"},
+    {"@type":"City","name":"Burgwedel"},
+    {"@type":"City","name":"Langenhagen"},
+    {"@type":"City","name":"Garbsen"},
+    {"@type":"City","name":"Neustadt am Rübenberge"},
+    {"@type":"City","name":"Lehrte"},
+    {"@type":"City","name":"Burgdorf"},
+    {"@type":"City","name":"Uetze"},
+    {"@type":"City","name":"Wunstorf"},
+    {"@type":"City","name":"Seelze"},
+    {"@type":"City","name":"Gehrden"},
+    {"@type":"City","name":"Hemmingen"},
+    {"@type":"City","name":"Pattensen"},
+    {"@type":"City","name":"Ronnenberg"},
+    {"@type":"City","name":"Barsinghausen"},
+    {"@type":"City","name":"Wennigsen"},
+    {"@type":"City","name":"Sehnde"},
+    {"@type":"AdministrativeArea","name":"Region Hannover"},
+    {"@type":"AdministrativeArea","name":"Niedersachsen"}
+  ],
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "52.56617762616524",
@@ -71,6 +94,24 @@
     "worstRating": "1"
   },
   "legalName": "Donnarumma & Donnarumma GbR",
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Nandino Donnarumma",
+      "honorificPrefix": "M.Sc.",
+      "jobTitle": "Sachverständiger für Immobilienbewertung",
+      "knowsAbout": ["Bauingenieurwesen", "Verkehrswertermittlung", "Bauschäden", "ImmoWertV", "Tragwerksplanung"],
+      "worksFor": {"@id": "https://www.3dimmobilienbewertung.de/#organisation"}
+    },
+    {
+      "@type": "Person",
+      "name": "Vito Donnarumma",
+      "honorificPrefix": "B.Sc.",
+      "jobTitle": "Sachverständiger für Immobilienbewertung",
+      "knowsAbout": ["Architektur", "Immobilienbewertung", "Bausubstanz", "Verkehrswertermittlung", "Gebäudeplanung"],
+      "worksFor": {"@id": "https://www.3dimmobilienbewertung.de/#organisation"}
+    }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
