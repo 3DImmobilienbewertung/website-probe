@@ -41,6 +41,14 @@
     <lastmod>2026-06-13</lastmod>
   </url>
 
+  <!-- Restnutzungsdauer- / AfA-Rechner (Tool + Dienstleistung) -->
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/restnutzungsdauer-rechner.html</loc>
+    <priority>0.88</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+
   <!-- Ursprüngliche Hannover-Landingpages -->
   <url>
     <loc>https://www.3dimmobilienbewertung.de/lp-immobilienbewertung-hannover.html</loc>

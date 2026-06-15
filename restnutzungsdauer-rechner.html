@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restnutzungsdauer-Rechner &amp; AfA-Optimierung nach ImmoWertV 2021 | 3D Immobilienbewertung</title>
+<meta name="description" content="Kostenloser Restnutzungsdauer-Rechner nach ImmoWertV 2021: Restnutzungsdauer ermitteln und in Sekunden berechnen, ob sich ein Gutachten zur AfA-Optimierung lohnt – Mehr-Abschreibung, Steuerersparnis &amp; Amortisation. Vom zertifizierten Sachverständigen für die Region Hannover.">
+<link rel="canonical" href="https://www.3dimmobilienbewertung.de/restnutzungsdauer-rechner.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#14223c">
+<link rel="icon" type="image/png" href="/assets/logo_icon.png">
+<link rel="apple-touch-icon" href="/assets/logo_icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Restnutzungsdauer-Rechner &amp; AfA-Optimierung – 3D Immobilienbewertung">
+<meta property="og:description" content="Restnutzungsdauer nach ImmoWertV 2021 ermitteln und berechnen, ob sich ein AfA-Gutachten lohnt: Mehr-Abschreibung, Steuerersparnis &amp; Amortisation auf einen Blick.">
+<meta property="og:url" content="https://www.3dimmobilienbewertung.de/restnutzungsdauer-rechner.html">
+<meta property="og:image" content="https://www.3dimmobilienbewertung.de/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Restnutzungsdauer-Gutachten zur AfA-Optimierung",
+  "name": "Restnutzungsdauer-Gutachten zur AfA-Optimierung",
+  "description": "Sachverständigen-Gutachten zur Verkürzung der steuerlichen Restnutzungsdauer (§ 7 Abs. 4 S. 2 EStG) nach dem Modell der Anlage 2 ImmoWertV 2021 – als Nachweis gegenüber dem Finanzamt für eine höhere jährliche Gebäude-AfA.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "3D Immobilienbewertung – Donnarumma & Donnarumma GbR",
+    "telephone": "+49 174 7445452",
+    "email": "info@3dimmobilienbewertung.de",
+    "areaServed": "Hannover und Region",
+    "url": "https://www.3dimmobilienbewertung.de/"
+  },
+  "areaServed": { "@type": "State", "name": "Niedersachsen" },
+  "offers": {
+    "@type": "Offer",
+    "price": "1490",
+    "priceCurrency": "EUR",
+    "description": "Restnutzungsdauer-Gutachten zur AfA-Optimierung – Festpreis"
+  }
+}
+</script>
+<style>
+  :root{
+    --ink:#14223c; --ink-deep:#0d1729;
+    --paper:#f5f6f8; --card:#ffffff;
+    --line:#e3e6ec; --line-soft:#eef0f4;
+    --muted:#5b6577; --muted-2:#828b9b;
+    --gold:#b8893a; --gold-soft:#f4ead6; --gold-line:#e6d3a8;
+    --green:#1f8a4c; --green-bg:#e8f5ec; --green-line:#bfe3cb;
+    --amber:#b06d0c; --amber-bg:#fbf1df; --amber-line:#eed9ad;
+    --red:#c0392b; --red-bg:#fbece9; --red-line:#f0c8c1;
+    --shadow:0 1px 2px rgba(16,28,51,.05), 0 8px 24px rgba(16,28,51,.06);
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+
+  /* Header */
+  header.masthead{background:linear-gradient(180deg,var(--ink) 0%, var(--ink-deep) 100%);color:#eef1f6;border-bottom:3px solid var(--gold)}
+  .masthead-inner{max-width:1180px;margin:0 auto;padding:26px 20px 24px}
+  .brand-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .brand-mark{width:34px;height:34px;border:1.5px solid var(--gold-line);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--serif);font-weight:700;font-size:17px;flex:0 0 auto;background:rgba(184,137,58,.08)}
+  .brand-input{background:transparent;border:none;color:#f3f5f9;font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.2px;padding:4px 6px;border-radius:6px;min-width:200px;flex:1 1 auto}
+  .brand-input:hover{background:rgba(255,255,255,.05)}
+  .brand-input:focus{outline:none;background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(230,211,168,.4)}
+  .brand-edit-hint{font-size:11px;color:#9aa6bb;flex:0 0 auto}
+  h1.title{font-family:var(--serif);font-weight:700;font-size:29px;line-height:1.15;margin:0 0 6px;letter-spacing:.2px;color:#fff}
+  h1.title .lohnt{color:var(--gold)}
+  .subtitle{color:#aab4c7;font-size:15px;max-width:780px;margin:0}
+
+  /* Controls */
+  .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:flex-end;margin:22px 0 6px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{appearance:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:8px;transition:all .15s ease}
+  .btn:hover{border-color:var(--gold-line);background:#fffdf8}
+  .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .btn.primary:hover{background:#1c2f51}
+
+  /* Section banner */
+  .section-banner{display:flex;align-items:center;gap:14px;margin:30px 0 16px}
+  .section-banner .num{width:34px;height:34px;flex:0 0 auto;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--serif);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center}
+  .section-banner h2{font-family:var(--serif);font-size:22px;font-weight:700;margin:0;color:var(--ink)}
+  .section-banner p{margin:1px 0 0;font-size:13px;color:var(--muted-2)}
+  .section-banner .rule{flex:1;height:1px;background:var(--line)}
+
+  /* Layout */
+  .grid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:22px;align-items:start}
+  @media (max-width:920px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+  .card+.card{margin-top:22px}
+  .card-head{padding:16px 20px;border-bottom:1px solid var(--line-soft);display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .card-head h3{font-family:var(--serif);font-size:18px;font-weight:700;margin:0;color:var(--ink)}
+  .card-head .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .card-body{padding:18px 20px}
+
+  /* Form */
+  .fieldset{margin:0 0 18px;border:none;padding:0}
+  .fieldset:last-child{margin-bottom:0}
+  .legend{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+  .legend::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+  @media (max-width:480px){ .frow{grid-template-columns:1fr} }
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1 / -1}
+  .field label{font-size:13px;font-weight:600;color:var(--ink)}
+  .field .hint{font-size:11px;color:var(--muted-2);font-weight:500}
+  .input-affix{position:relative;display:flex;align-items:center}
+  .input-affix .suffix{position:absolute;right:11px;font-size:13px;color:var(--muted-2);pointer-events:none;font-weight:600}
+  input[type="number"], select{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#fcfcfd;transition:border-color .15s,box-shadow .15s;font-variant-numeric:tabular-nums}
+  input[type="number"]{padding-right:34px;-moz-appearance:textfield}
+  input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  input[type="number"]:focus, select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,137,58,.14);background:#fff}
+  input[readonly]{background:#f3f4f7;color:var(--muted);cursor:default}
+  select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235b6577' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+  .derived{font-size:12px;color:var(--muted);background:#f6f7f9;border:1px dashed var(--line);border-radius:8px;padding:8px 10px;display:flex;justify-content:space-between;gap:8px}
+  .derived b{color:var(--ink);font-weight:700}
+  .quick{display:flex;gap:6px;margin-top:2px;flex-wrap:wrap}
+  .chip{appearance:none;cursor:pointer;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:600;color:var(--muted);padding:4px 9px;border-radius:999px;transition:all .12s}
+  .chip:hover{border-color:var(--gold-line);color:var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--gold-soft);border-color:var(--gold-line);color:#7a5a1e}
+
+  /* Method toggle */
+  .seg{display:inline-flex;background:#e9ecf1;border:1px solid var(--line);border-radius:9px;padding:3px;width:100%}
+  .seg button{flex:1;appearance:none;border:none;background:transparent;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--muted);padding:8px 10px;border-radius:6px}
+  .seg button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(16,28,51,.08)}
+
+  /* Modernization elements */
+  .mod-el{display:grid;grid-template-columns:1fr 150px 42px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line-soft)}
+  .mod-el:last-of-type{border-bottom:none}
+  .mod-el .ml{font-size:13px;font-weight:500;color:var(--ink)}
+  .mod-el .ml small{display:block;color:var(--muted-2);font-size:11px;font-weight:400}
+  .mod-el .mp{text-align:right;font-weight:700;font-size:14px;color:var(--gold)}
+  @media (max-width:480px){ .mod-el{grid-template-columns:1fr 110px 36px} }
+  .mod-total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:2px solid var(--ink);font-size:14px}
+  .mod-total .pts{font-size:20px;font-weight:800}
+  .mod-total .grade{font-size:12px;color:var(--muted);font-weight:600}
+  .slider-wrap{margin-top:6px}
+  input[type="range"]{width:100%;accent-color:var(--gold)}
+  .slider-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--muted-2);margin-top:2px}
+  .toggle-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);margin-top:6px}
+  .toggle-row input{width:16px;height:16px;accent-color:var(--gold)}
+
+  .expert-only{display:none}
+  body.mode-expert .expert-only{display:flex}
+
+  /* RND result readout */
+  .rnd-readout{background:linear-gradient(180deg,#fbf7ef,#fff);border:1px solid var(--gold-line);border-radius:12px;padding:18px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .rnd-big{flex:0 0 auto}
+  .rnd-big .n{font-size:46px;font-weight:800;line-height:1;color:var(--ink);letter-spacing:-1px}
+  .rnd-big .u{font-size:15px;color:var(--muted);font-weight:600}
+  .rnd-big .cap{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .rnd-meta{flex:1 1 200px;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:13px}
+  .rnd-meta .lab{color:var(--muted)}
+  .rnd-meta .val{font-weight:700;color:var(--ink);text-align:right}
+  @media (max-width:480px){ .rnd-meta{grid-template-columns:1fr} .rnd-meta .val{text-align:left} }
+
+  .timeline-card .chart-holder{height:150px}
+  .chart-holder{position:relative;width:100%;height:250px;padding:0 8px}
+  canvas{display:block;width:100%;height:100%}
+  .chart-title{font-size:13px;font-weight:700;color:var(--ink);margin:14px 16px 2px}
+  .chart-sub{font-size:11.5px;color:var(--muted-2);margin:0 16px 8px}
+  .legend-row{display:flex;flex-wrap:wrap;gap:14px;padding:6px 16px 14px;font-size:12px;color:var(--muted)}
+  .legend-row .li{display:inline-flex;align-items:center;gap:7px}
+  .swatch{width:13px;height:13px;border-radius:3px;flex:0 0 auto}
+  .swatch.line{height:0;border-top:2px dashed currentColor;width:16px;border-radius:0}
+  .chart-empty{display:flex;align-items:center;justify-content:center;height:100%;color:var(--muted-2);font-size:13px;text-align:center;padding:0 24px}
+  .chart-card{margin-top:0}
+
+  /* Inner mode tabs (economic) */
+  .tabs{display:inline-flex;background:#e9ecf1;border:1px solid var(--line);border-radius:10px;padding:4px}
+  .tab{appearance:none;border:none;background:transparent;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted);padding:8px 16px;border-radius:7px;transition:all .15s;white-space:nowrap}
+  .tab[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(16,28,51,.08)}
+  .tab .sub{display:block;font-weight:500;font-size:11px;color:var(--muted-2)}
+  .tab[aria-selected="true"] .sub{color:var(--gold)}
+
+  /* Plausibility */
+  .checks{display:flex;flex-direction:column;gap:8px}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:13px;padding:9px 12px;border-radius:9px;border:1px solid transparent;line-height:1.4}
+  .check .ic{flex:0 0 auto;font-weight:700;width:18px;text-align:center}
+  .check.ok{background:var(--green-bg);border-color:var(--green-line);color:#155f36} .check.ok .ic{color:var(--green)}
+  .check.warn{background:var(--amber-bg);border-color:var(--amber-line);color:#7a4c08} .check.warn .ic{color:var(--amber)}
+  .check.err{background:var(--red-bg);border-color:var(--red-line);color:#8e2a20} .check.err .ic{color:var(--red)}
+
+  /* Verdict */
+  .verdict{border-radius:14px;border:1px solid var(--line);overflow:hidden}
+  .verdict-top{display:flex;align-items:center;gap:16px;padding:18px 20px}
+  .lamp{flex:0 0 auto;width:54px;height:54px;border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 4px rgba(255,255,255,.55)}
+  .lamp::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+  .verdict-txt{flex:1 1 auto;min-width:0}
+  .verdict-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 2px}
+  .verdict-headline{font-family:var(--serif);font-size:20px;font-weight:700;margin:0;line-height:1.2}
+  .verdict-amort{flex:0 0 auto;text-align:right}
+  .verdict-amort .num{font-size:30px;font-weight:800;line-height:1;letter-spacing:-.5px}
+  .verdict-amort .cap{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  @media (max-width:560px){ .verdict-top{flex-wrap:wrap} .verdict-amort{text-align:left;width:100%;border-top:1px solid var(--line-soft);padding-top:12px;margin-top:4px} }
+  .verdict.green{background:var(--green-bg)} .verdict.green .lamp{background:var(--green)} .verdict.green .verdict-label{color:var(--green)}
+  .verdict.amber{background:var(--amber-bg)} .verdict.amber .lamp{background:#e2960f} .verdict.amber .verdict-label{color:var(--amber)}
+  .verdict.red{background:var(--red-bg)} .verdict.red .lamp{background:var(--red)} .verdict.red .verdict-label{color:var(--red)}
+  .verdict.neutral{background:#eef0f4} .verdict.neutral .lamp{background:#9aa3b2} .verdict.neutral .verdict-label{color:var(--muted)}
+  .lamp .glyph{color:#fff;font-size:26px;font-weight:700;line-height:1;position:relative;z-index:1}
+
+  table.kpi{width:100%;border-collapse:collapse;font-size:14px}
+  table.kpi td{padding:11px 4px;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+  table.kpi tr:last-child td{border-bottom:none}
+  table.kpi td.k{color:var(--muted);font-weight:500}
+  table.kpi td.k small{display:block;color:var(--muted-2);font-size:11px;font-weight:500}
+  table.kpi td.v{text-align:right;font-weight:700;color:var(--ink);white-space:nowrap}
+  table.kpi tr.accent td.v{color:var(--gold);font-size:15px}
+  table.kpi tr.total td{border-top:2px solid var(--ink);padding-top:13px}
+  table.kpi tr.total td.k{color:var(--ink);font-weight:700}
+  table.kpi tr.total td.v{font-size:16px}
+  .pos{color:var(--green)!important}.neg{color:var(--red)!important}
+
+  ol.steps{list-style:none;counter-reset:s;margin:0;padding:4px 0}
+  ol.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:14px;padding:13px 4px;border-bottom:1px solid var(--line-soft);align-items:start}
+  ol.steps li:last-child{border-bottom:none}
+  ol.steps li::before{content:counter(s);width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .step-name{font-size:13px;font-weight:700;color:var(--ink);margin:0 0 3px}
+  .step-calc{font-size:13px;color:var(--muted);line-height:1.6}
+  .step-calc .res{color:var(--ink);font-weight:700}
+  .step-calc .op{color:var(--gold-line);padding:0 2px}
+
+  details.notes{margin-top:22px;background:#fbfbfc;border:1px solid var(--line);border-radius:14px}
+  details.notes summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:var(--serif);font-weight:700;font-size:16px;color:var(--ink);display:flex;align-items:center;gap:10px}
+  details.notes summary::-webkit-details-marker{display:none}
+  details.notes summary::before{content:"i";width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-style:italic;display:flex;align-items:center;justify-content:center;font-family:var(--serif);flex:0 0 auto}
+  details.notes[open] summary{border-bottom:1px solid var(--line-soft)}
+  .notes-body{padding:6px 20px 20px;font-size:13.5px;color:#3a4456;line-height:1.6}
+  .notes-body h4{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);margin:16px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+  .notes-body p{margin:0 0 10px}.notes-body ul{margin:0 0 10px;padding-left:18px}.notes-body li{margin-bottom:5px}
+  .callout{background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:10px;padding:12px 14px;margin:10px 0;color:#6e511c}
+  .richtwert{font-size:11.5px;color:var(--muted-2);line-height:1.5;margin:10px 0 0}
+  .legal{margin-top:22px;background:#f7f8fa;border:1px solid var(--line);border-left:3px solid var(--muted-2);border-radius:10px;padding:14px 18px;font-size:12px;color:var(--muted);line-height:1.6}
+  .legal>strong{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+  .legal p{margin:8px 0 0}
+  .legal p strong{color:var(--ink)}
+  .potential{display:flex;gap:14px;align-items:flex-start;margin-top:14px;padding:14px 16px;border-radius:11px;border:1px solid var(--line);background:#fbfbfc;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pot-dot{flex:0 0 auto;width:16px;height:16px;border-radius:50%;margin-top:3px;background:#9aa3b2;box-shadow:0 0 0 4px rgba(154,163,178,.16)}
+  .pot-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-bottom:2px}
+  .pot-headline{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);margin:0 0 3px}
+  .pot-text{font-size:13px;color:#3a4456;line-height:1.5}
+  .potential.green{background:var(--green-bg);border-color:var(--green-line)} .potential.green .pot-dot{background:var(--green);box-shadow:0 0 0 4px rgba(31,138,76,.16)} .potential.green .pot-label{color:#155f36}
+  .potential.amber{background:var(--amber-bg);border-color:var(--amber-line)} .potential.amber .pot-dot{background:#e2960f;box-shadow:0 0 0 4px rgba(226,150,15,.16)} .potential.amber .pot-label{color:#7a4c08}
+  .potential.red{background:var(--red-bg);border-color:var(--red-line)} .potential.red .pot-dot{background:var(--red);box-shadow:0 0 0 4px rgba(192,57,43,.14)} .potential.red .pot-label{color:#8e2a20}
+  .disclaimer-bar{background:#eef1f6;border:1px solid var(--line);border-radius:10px;padding:11px 16px;margin:18px 0 4px;font-size:12px;color:#43506a;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  footer.foot{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted-2);line-height:1.6}
+  .print-meta{display:none}
+
+  @media print{
+    body{background:#fff}
+    .controls,.actions,.tabs,.seg,.brand-edit-hint,.quick,.chip,.toggle-row,details.notes summary::before{display:none!important}
+    .wrap{padding:0}
+    .grid{grid-template-columns:1fr 1fr;gap:14px}
+    .card{box-shadow:none;break-inside:avoid}
+    .chart-holder{height:200px}.timeline-card .chart-holder{height:130px}
+    details.notes{display:none}
+    .print-meta{display:block;font-size:11px;color:#555;margin:8px 0 14px}
+    header.masthead,.verdict,.check,.rnd-readout,table.kpi tr.accent td.v{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body.mode-schnell .expert-only{display:none!important}
+    input,select{border:none;background:transparent}
+  }
+
+  /* ===== Site-Band: Navigation, Conversion-CTA & Footer (3D Immobilienbewertung) ===== */
+  .sb-brandname{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.2px;color:#f3f5f9;text-decoration:none}
+  .sb-brandname:hover{color:#fff}
+  .sb-nav{margin-left:auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .sb-nav a{color:#cdd6e6;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s}
+  .sb-nav a:hover{color:#fff}
+  .sb-nav .sb-phone{color:var(--gold)}
+  .sb-nav .sb-cta{background:var(--gold);color:#1a1300;padding:9px 16px;border-radius:8px}
+  .sb-nav .sb-cta:hover{background:#c9982f;color:#1a1300}
+  @media(max-width:640px){.sb-nav{gap:12px;width:100%;margin-top:10px}.sb-nav .sb-hideS{display:none}}
+
+  .sb-convert{background:linear-gradient(180deg,var(--ink-deep),var(--ink));margin-top:40px}
+  .sb-convert-inner{max-width:1180px;margin:0 auto;padding:50px 20px}
+  .sb-conv-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+  .sb-convert h2{font-family:var(--serif);font-size:27px;line-height:1.2;font-weight:700;color:#fff;margin:0 0 12px;max-width:760px}
+  .sb-convert p{color:#aab4c7;font-size:15px;line-height:1.6;max-width:720px;margin:0 0 8px}
+  .sb-conv-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+  .sb-btn-gold{background:var(--gold);color:#1a1300;font-weight:700;font-size:15px;padding:13px 22px;border-radius:9px;text-decoration:none;transition:background .15s}
+  .sb-btn-gold:hover{background:#c9982f}
+  .sb-btn-outline{border:1px solid rgba(230,211,168,.45);color:#eef1f6;font-weight:600;font-size:15px;padding:13px 22px;border-radius:9px;text-decoration:none;transition:border-color .15s,color .15s}
+  .sb-btn-outline:hover{border-color:var(--gold);color:#fff}
+  .sb-price{font-size:13.5px;color:#cdd6e6;margin:6px 0 0}
+  .sb-price b{color:var(--gold);font-weight:700}
+
+  .sb-footer{background:var(--ink-deep);border-top:1px solid rgba(255,255,255,.08)}
+  .sb-foot-inner{max-width:1180px;margin:0 auto;padding:22px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#8b97ad}
+  .sb-foot-inner nav{display:flex;gap:18px;flex-wrap:wrap}
+  .sb-foot-inner a{color:#aab4c7;text-decoration:none;transition:color .15s}
+  .sb-foot-inner a:hover{color:#fff}
+  @media(max-width:560px){.sb-foot-inner{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body class="mode-schnell">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-row">
+      <a href="/" class="brand-mark" style="text-decoration:none">3D</a>
+      <a href="/" class="sb-brandname">3D Immobilienbewertung</a>
+      <input type="hidden" id="kanzlei" value="3D Immobilienbewertung">
+      <nav class="sb-nav" aria-label="Seitennavigation">
+        <a href="/" class="sb-hideS">Startseite</a>
+        <a href="/#leistungen" class="sb-hideS">Leistungen</a>
+        <a href="tel:+491747445452" class="sb-phone">📞 0174&nbsp;744&nbsp;5452</a>
+        <a href="/#wertcheck" class="sb-cta">Gutachten anfragen</a>
+      </nav>
+    </div>
+    <h1 class="title">Restnutzungsdauer ermitteln &amp; prüfen, ob ein Gutachten <span class="lohnt">sich lohnt</span></h1>
+    <p class="subtitle">Schritt 1: Restnutzungsdauer aus Gebäudealter und Modernisierungsgrad nach dem Modell der ImmoWertV 2021 (Anlage 2) ableiten. Schritt 2: in Sekunden berechnen, wie hoch die zusätzliche Abschreibung und Steuerersparnis ausfällt – und nach wie vielen Monaten sich das Gutachten amortisiert.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="controls">
+    <div class="actions">
+      <button class="btn" onclick="loadExample()">Beispiel laden</button>
+      <button class="btn" onclick="resetAll()">Zurücksetzen</button>
+      <button class="btn primary" onclick="window.print()">Drucken / als PDF</button>
+    </div>
+  </div>
+
+  <div class="print-meta" id="printMeta"></div>
+
+  <div class="disclaimer-bar">Die dargestellten Ergebnisse stellen lediglich eine überschlägige Wirtschaftlichkeits- und Potenzialanalyse dar und ersetzen weder ein Sachverständigengutachten noch eine steuerliche Beratung. Die tatsächliche steuerliche Anerkennung hängt von den objektspezifischen Gegebenheiten und der Entscheidung der Finanzverwaltung ab.</div>
+
+  <!-- ================= SECTION 1: RND ================= -->
+  <div class="section-banner">
+    <div class="num">1</div>
+    <div><h2>Restnutzungsdauer ermitteln</h2><p>Gebäudealter &amp; Modernisierung — Modell nach Anlage 2 ImmoWertV 2021</p></div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="grid">
+    <!-- RND inputs -->
+    <section class="card" aria-label="Eingaben Restnutzungsdauer">
+      <div class="card-head"><h3>Gebäude &amp; Alter</h3><span class="eyebrow">Grunddaten</span></div>
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <div class="frow">
+            <div class="field">
+              <label for="baujahr">Baujahr</label>
+              <div class="input-affix"><input type="number" id="baujahr" min="1850" max="2100" step="1" placeholder="z. B. 1975"><span class="suffix">J.</span></div>
+            </div>
+            <div class="field">
+              <label for="stichtag">Bewertungsstichtag</label>
+              <div class="input-affix"><input type="number" id="stichtag" min="1900" max="2100" step="1"><span class="suffix">J.</span></div>
+            </div>
+            <div class="field full">
+              <label for="gebTyp">Gebäudeart → Gesamtnutzungsdauer (GND)</label>
+              <select id="gebTyp"></select>
+            </div>
+            <div class="field expert-only">
+              <label for="gndCustom">GND (eigene Eingabe)</label>
+              <div class="input-affix"><input type="number" id="gndCustom" min="10" max="100" step="1" placeholder="z. B. 80"><span class="suffix">J.</span></div>
+            </div>
+            <div class="field">
+              <div class="toggle-row" style="margin-top:24px"><input type="checkbox" id="kernCheck"><label for="kernCheck" style="margin:0">Kernsanierung nachgewiesen</label></div>
+            </div>
+            <div class="field expert-only" id="sanField" style="display:none">
+              <label for="sanjahr">Jahr der Kernsanierung <span class="hint">(fiktives Baujahr)</span></label>
+              <div class="input-affix"><input type="number" id="sanjahr" min="1900" max="2100" step="1"><span class="suffix">J.</span></div>
+            </div>
+            <div class="field full">
+              <label for="zustand">Allgemeiner Gebäudezustand <span class="hint">(gutachterliche Einschätzung – fließt nur in die Potenzialeinschätzung ein, nicht in die RND-Formel)</span></label>
+              <select id="zustand">
+                <option value="0">gepflegt / zeitgemäßer Zustand</option>
+                <option value="1" selected>normaler, altersüblicher Zustand</option>
+                <option value="2">leichter Instandhaltungsrückstau</option>
+                <option value="3">deutlicher Sanierungsstau / Bauschäden</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+
+    <!-- RND results -->
+    <div>
+      <section class="card" aria-label="Modernisierung">
+        <div class="card-head"><h3>Modernisierungsgrad</h3><span class="eyebrow">max. 20 Punkte</span></div>
+        <div class="card-body">
+          <div class="seg" role="tablist" aria-label="Methode">
+            <button role="tab" id="m-detail" aria-selected="true" onclick="setModMethod('detail')">Punkte je Element</button>
+            <button role="tab" id="m-quick" aria-selected="false" onclick="setModMethod('quick')">Modernisierungsgrad schätzen</button>
+          </div>
+
+          <div id="modDetail" style="margin-top:14px">
+            <p class="hint" style="margin:0 0 6px">Punkte sinken, je länger die Maßnahme zurückliegt (Tabelle a, Anlage 2).</p>
+            <div id="modElements"></div>
+            <div class="mod-total"><span>Modernisierungspunkte</span><span><span class="pts" id="modPts">0</span><span style="font-size:13px;color:var(--muted)"> / 20</span></span></div>
+            <div style="text-align:right;margin-top:2px"><span class="grade" id="modGrade">nicht modernisiert</span></div>
+          </div>
+
+          <div id="modQuick" style="margin-top:14px;display:none">
+            <div class="field">
+              <label for="gradeSel">Modernisierungsgrad (Tabelle 2)</label>
+              <select id="gradeSel">
+                <option value="1">nicht modernisiert (0–1 P.)</option>
+                <option value="3">kleinere Modernisierungen / Instandhaltung (2–4 P.)</option>
+                <option value="6">mittlere Modernisierung (4–8 P.)</option>
+                <option value="11">überwiegend modernisiert (9–13 P.)</option>
+                <option value="17">umfassend modernisiert (14–20 P.)</option>
+              </select>
+            </div>
+            <div class="slider-wrap">
+              <label class="hint">Feineinstellung: <b id="quickPtsLbl">0</b> Punkte</label>
+              <input type="range" id="quickSlider" min="0" max="20" step="1" value="0">
+              <div class="slider-scale"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-label="Ergebnis Restnutzungsdauer">
+        <div class="card-head"><h3>Ergebnis: Restnutzungsdauer</h3><span class="eyebrow">ImmoWertV 2021</span></div>
+        <div class="card-body">
+          <div class="rnd-readout">
+            <div class="rnd-big">
+              <div class="cap">modifizierte RND</div>
+              <span class="n" id="rndN">–</span> <span class="u">Jahre</span>
+            </div>
+            <div class="rnd-meta">
+              <span class="lab">Gebäudealter</span><span class="val" id="rndAlter">–</span>
+              <span class="lab">Relatives Alter (Alter/GND)</span><span class="val" id="rndRel">–</span>
+              <span class="lab">RND ohne Modernisierung</span><span class="val" id="rndPlain">–</span>
+              <span class="lab">Verlängerung</span><span class="val" id="rndPlus">–</span>
+              <span class="lab">Fiktives Gebäudealter (Wertindikation)</span><span class="val" id="rndFiktiv">–</span>
+              <span class="lab">Streckungsgrenze (<span id="capPctLbl">70</span> % GND)</span><span class="val" id="rndCap">–</span>
+              <span class="lab">Resultierender AfA-Satz</span><span class="val" id="rndAfa">–</span>
+            </div>
+          </div>
+          <div class="potential" id="potentialPanel">
+            <div class="pot-dot"></div>
+            <div class="pot-body">
+              <div class="pot-label">Potenzial für eine verkürzte Restnutzungsdauer</div>
+              <div class="pot-headline" id="potHeadline">–</div>
+              <div class="pot-text" id="potText">Bitte Baujahr eingeben, um das Potenzial einzuschätzen.</div>
+            </div>
+          </div>
+          <p class="richtwert">Überschlägiger Orientierungswert nach dem Modell der Anlage 2 ImmoWertV 2021 – keine Gewähr.</p>
+          <div class="checks" id="rndChecks" style="margin-top:14px"></div>
+          <div class="toggle-row" style="margin-top:14px"><input type="checkbox" id="linkRnd" checked><label for="linkRnd" style="margin:0">Diese RND automatisch in Schritt 2 übernehmen</label></div>
+        </div>
+      </section>
+
+      <section class="card timeline-card chart-card" aria-label="Zeitstrahl">
+        <div class="chart-title">Nutzungsdauer im Zeitstrahl</div>
+        <p class="chart-sub">Verbrauchtes Alter und verbleibende Restnutzungsdauer – ohne und mit Modernisierung.</p>
+        <div class="chart-holder"><canvas id="chartTimeline"></canvas><div class="chart-empty" id="emptyTL" style="display:none">Bitte Baujahr eingeben.</div></div>
+        <div class="legend-row">
+          <span class="li"><span class="swatch" style="background:#aeb6c4"></span>verbrauchtes Alter</span>
+          <span class="li"><span class="swatch" style="background:#3a4f78"></span>RND ohne Modernisierung</span>
+          <span class="li"><span class="swatch" style="background:var(--gold)"></span>Verlängerung durch Modernisierung</span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 2: WIRTSCHAFTLICHKEIT ================= -->
+  <div class="section-banner">
+    <div class="num">2</div>
+    <div><h2>Lohnt sich ein Gutachten?</h2><p>Überschlägige Wirtschaftlichkeits-Vorprüfung – Mehr-AfA, Steuerersparnis &amp; Amortisation</p></div>
+    <div class="rule"></div>
+  </div>
+
+  <div style="margin:0 0 16px"><div class="tabs" role="tablist" aria-label="Rechenmodus">
+    <button class="tab" id="tab-schnell" role="tab" aria-selected="true" onclick="setMode('schnell')">Schnellrechner <span class="sub">5 Eingaben</span></button>
+    <button class="tab" id="tab-expert" role="tab" aria-selected="false" onclick="setMode('expert')">Expertenmodus <span class="sub">alle Parameter</span></button>
+  </div></div>
+
+  <div class="grid">
+    <!-- Economic inputs -->
+    <section class="card" aria-label="Eingaben Wirtschaftlichkeit">
+      <div class="card-head"><h3>Eingaben</h3><span class="eyebrow">Objekt &amp; Steuer</span></div>
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <div class="legend">Objekt</div>
+          <div class="frow">
+            <div class="field"><label for="verkehrswert">Verkehrswert</label><div class="input-affix"><input type="number" id="verkehrswert" min="0" step="1000" placeholder="z. B. 600000"><span class="suffix">€</span></div></div>
+            <div class="field"><label for="bodenwert">Bodenwert</label><div class="input-affix"><input type="number" id="bodenwert" min="0" step="1000" placeholder="z. B. 200000"><span class="suffix">€</span></div></div>
+            <div class="field expert-only full"><label for="gebaeudewert">Gebäudewert <span class="hint">(auto = Verkehrswert − Bodenwert; bei Bestand: Restbuchwert eintragen)</span></label><div class="input-affix"><input type="number" id="gebaeudewert" min="0" step="1000"><span class="suffix">€</span></div></div>
+            <div class="field expert-only full"><div class="derived"><span>Gebäudeanteil (errechnet)</span><b id="d_anteil">–</b></div></div>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <div class="legend">Steuerliche Daten</div>
+          <div class="frow">
+            <div class="field"><label for="steuersatz">Persönlicher Steuersatz</label><div class="input-affix"><input type="number" id="steuersatz" min="0" max="60" step="0.5" placeholder="z. B. 42"><span class="suffix">%</span></div></div>
+            <div class="field expert-only"><label for="afaAlt">Aktuelle AfA</label><div class="input-affix"><input type="number" id="afaAlt" min="0.1" max="10" step="0.1" value="2.0"><span class="suffix">%</span></div>
+              <div class="quick" id="afaQuick"><button class="chip" type="button" data-afa="2.0" onclick="setAfaAlt(2.0)">2,0 %</button><button class="chip" type="button" data-afa="2.5" onclick="setAfaAlt(2.5)">2,5 %</button><button class="chip" type="button" data-afa="3.0" onclick="setAfaAlt(3.0)">3,0 %</button></div>
+            </div>
+            <div class="field expert-only"><label for="afaNeu">AfA lt. Gutachten <span class="hint">(= 100 / RND)</span></label><div class="input-affix"><input type="number" id="afaNeu" min="0.1" max="50" step="0.01" placeholder="auto"><span class="suffix">%</span></div></div>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <div class="legend">Restnutzungsdauer</div>
+          <div class="frow">
+            <div class="field"><label for="rndGutachten">RND lt. Gutachten <span class="hint" id="rndLinkHint">🔗 aus Schritt 1</span></label><div class="input-affix"><input type="number" id="rndGutachten" min="1" max="80" step="1" placeholder="aus Schritt 1"><span class="suffix">J.</span></div></div>
+            <div class="field expert-only"><div class="derived"><span>RND lt. Finanzamt (aus AfA)</span><b id="d_rndfa">–</b></div></div>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <div class="legend">Kosten</div>
+          <div class="frow">
+            <div class="field"><label for="kostenGutachten">Kosten des Gutachtens</label><div class="input-affix"><input type="number" id="kostenGutachten" min="0" step="50" placeholder="z. B. 1490"><span class="suffix">€</span></div></div>
+            <div class="field expert-only"><label for="kostenBerater">Steuerberater (optional)</label><div class="input-affix"><input type="number" id="kostenBerater" min="0" step="50" placeholder="0"><span class="suffix">€</span></div></div>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+
+    <!-- Economic results -->
+    <div>
+      <section class="card" style="margin-bottom:22px" aria-label="Bewertung">
+        <div class="verdict neutral" id="verdict">
+          <div class="verdict-top">
+            <div class="lamp"><span class="glyph" id="lampGlyph">•</span></div>
+            <div class="verdict-txt"><p class="verdict-label" id="verdictLabel">Eingaben erforderlich</p><p class="verdict-headline" id="verdictHeadline">Bitte Werte eingeben oder Beispiel laden</p></div>
+            <div class="verdict-amort"><div class="num" id="amortNum">–</div><div class="cap">Amortisation</div></div>
+          </div>
+        </div>
+        <p class="richtwert" style="padding:12px 20px 0">Unverbindliche Beispielrechnung – keine Steuer- oder Rechtsberatung. Ob das Finanzamt eine kürzere Nutzungsdauer anerkennt, hängt vom Einzelfall ab.</p>
+      </section>
+
+      <section class="card" style="margin-bottom:22px" aria-label="Plausibilität">
+        <div class="card-head"><h3>Plausibilitätsprüfung</h3><span class="eyebrow">Automatisch</span></div>
+        <div class="card-body"><div class="checks" id="checks"></div></div>
+      </section>
+
+      <section class="card" aria-label="Ergebnisse">
+        <div class="card-head"><h3>Ergebnis im Überblick</h3><span class="eyebrow">Kennzahlen</span></div>
+        <div class="card-body">
+          <table class="kpi"><tbody>
+            <tr><td class="k">Gebäudewert <small>Abschreibungsbasis</small></td><td class="v" id="r_geb">–</td></tr>
+            <tr><td class="k">AfA bisher <small id="r_afaAltPct">–</small></td><td class="v" id="r_afaAlt">–</td></tr>
+            <tr><td class="k">AfA mit Gutachten <small id="r_afaNeuPct">–</small></td><td class="v" id="r_afaNeu">–</td></tr>
+            <tr class="accent"><td class="k">Mehrabschreibung p. a.</td><td class="v" id="r_mehr">–</td></tr>
+            <tr class="accent"><td class="k">Steuerersparnis p. a.</td><td class="v" id="r_espJ">–</td></tr>
+            <tr><td class="k">Steuerersparnis p. m.</td><td class="v" id="r_espM">–</td></tr>
+            <tr><td class="k">Vorteil nach 1 Jahr</td><td class="v" id="r_v1">–</td></tr>
+            <tr><td class="k">Vorteil nach 5 Jahren</td><td class="v" id="r_v5">–</td></tr>
+            <tr><td class="k">Vorteil nach 10 Jahren</td><td class="v" id="r_v10">–</td></tr>
+            <tr><td class="k">Mehr-AfA gesamt bis Ende RND <small id="r_rndnote">brutto im Gutachtenzeitraum</small></td><td class="v" id="r_gesamt">–</td></tr>
+            <tr class="total"><td class="k">Netto-Vorteil im Zeitraum <small>nach Abzug aller Kosten</small></td><td class="v" id="r_netto">–</td></tr>
+          </tbody></table>
+        </div>
+      </section>
+
+      <section class="card chart-card" style="margin-top:22px" aria-label="Vergleichsansicht">
+        <div class="card-head"><h3>Vergleichsansicht</h3><span class="eyebrow">Grafik</span></div>
+        <div>
+          <div class="chart-title">Jährliche Abschreibung &amp; Steuerersparnis</div>
+          <p class="chart-sub">AfA ohne vs. mit Gutachten – und die daraus resultierende jährliche Steuerersparnis.</p>
+          <div class="chart-holder"><canvas id="chartBars"></canvas><div class="chart-empty" id="emptyBars" style="display:none">Bitte Eingaben vervollständigen.</div></div>
+          <div class="legend-row">
+            <span class="li"><span class="swatch" style="background:#3a4f78"></span>AfA bisher</span>
+            <span class="li"><span class="swatch" style="background:var(--gold)"></span>AfA mit Gutachten</span>
+            <span class="li"><span class="swatch" style="background:var(--green)"></span>Steuerersparnis p. a.</span>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--line-soft)">
+          <div class="chart-title">Amortisation &amp; kumulierte Mehr-Steuerersparnis</div>
+          <p class="chart-sub">Wann ist das Gutachten bezahlt (Break-Even)? Die Kurve zeigt den kumulierten Liquiditätsvorteil über die Zeit.</p>
+          <div class="chart-holder"><canvas id="chartCum"></canvas><div class="chart-empty" id="emptyCum" style="display:none">Kein wirtschaftlicher Vorteil bei den aktuellen Eingaben.</div></div>
+          <div class="legend-row" id="cumLegend">
+            <span class="li" style="color:var(--gold)"><span class="swatch" style="background:var(--gold)"></span>kumulierte Mehr-Steuerersparnis</span>
+            <span class="li" style="color:var(--red)"><span class="swatch line"></span>Gutachten-/Gesamtkosten</span>
+            <span class="li" style="color:var(--ink)"><span class="swatch" style="background:var(--ink)"></span>Break-Even (Amortisation)</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:22px" aria-label="Rechenweg">
+        <div class="card-head"><h3>Rechenweg — transparent</h3><span class="eyebrow">Schritt für Schritt</span></div>
+        <div class="card-body"><ol class="steps" id="steps"></ol></div>
+      </section>
+
+      <div class="legal" role="note">
+        <strong>Rechtlicher Hinweis</strong>
+        <p>Dieser Rechner liefert ausschließlich <strong>überschlägige, unverbindliche Richt- und Orientierungswerte</strong> auf Basis Ihrer Eingaben und des Modells der Anlage 2 ImmoWertV 2021 – vergleichbar mit anderen frei zugänglichen Online-Rechnern. Die Ergebnisse stellen <strong>kein Gutachten</strong> dar und ersetzen weder eine individuelle Immobilienbewertung noch eine Steuer- oder Rechtsberatung.</p>
+        <p>Für Richtigkeit, Vollständigkeit und Aktualität der Berechnungen wird <strong>keine Gewähr</strong> übernommen. Eine Haftung für Entscheidungen oder Dispositionen, die auf diesen Werten beruhen, ist – soweit gesetzlich zulässig – ausgeschlossen. Ob das Finanzamt eine kürzere tatsächliche Nutzungsdauer nach § 7 Abs. 4 S. 2 EStG anerkennt, hängt vom Einzelfall und einem den Anforderungen der Finanzverwaltung genügenden Nachweis ab. Maßgeblich ist stets die Würdigung durch eine fachkundige Person.</p>
+      </div>
+
+      <details class="notes">
+        <summary>Wichtige Hinweise zur Methodik &amp; steuerlichen Wirkung</summary>
+        <div class="notes-body">
+          <div class="callout"><strong>RND-Modell ≠ automatische Steueranerkennung.</strong> Das Modell der Anlage 2 ImmoWertV ist ein <em>Wertermittlungsmodell</em>. Für die steuerliche Anerkennung der kürzeren Nutzungsdauer (§ 7 Abs. 4 S. 2 EStG) muss das Gutachten die Anforderungen der Finanzverwaltung/Rechtsprechung erfüllen. Das Modell ersetzt nicht die sachverständige Würdigung des Einzelfalls.</div>
+          <h4>Schritt 1 — Restnutzungsdauer</h4>
+          <p>GND wählbar: 80 Jahre (ImmoWertV 2021 Anlage 1, hier voreingestellt) oder 70 Jahre (Sachwertrichtlinie / Gutachterausschuss-Praxis, u. a. in Niedersachsen für Wohngebäude gebräuchlich). Modernisierungspunkte (max. 20) je Element oder per Modernisierungsgrad. Formel: RND = a · Alter²/GND − b · Alter + c · GND, gestreckt auf max. 70 % der GND (Kernsanierung bis 90 %) und begrenzt auf GND − Alter (untere Grenze) bzw. die GND (obere Grenze). Die Faktoren a, b und c entstammen Tabelle 3 der Anlage 2; das Verfahren entspricht der anerkannten Sachverständigenpraxis (ArGEVGA / Kleiber, ImmoWertV § 6). Aus der modifizierten RND ergibt sich das <em>fiktive Gebäudealter</em> (GND − RND), das der weiteren Wertindikation zugrunde gelegt wird. Bei Kernsanierung zählt das Sanierungsjahr als fiktives Baujahr; verbliebene Altsubstanz ist durch einen Abschlag zu berücksichtigen.</p>
+          <h4>Schritt 2 — Wirtschaftlichkeit</h4>
+          <p>Eine kürzere RND erhöht nicht das gesamte Abschreibungsvolumen, sondern verteilt es auf weniger Jahre. Der Vorteil ist v. a. ein Liquiditäts- und Zinsvorteil (Steuerstundung). In der Kurve „kumulierte Mehr-Steuerersparnis" steigt der Vorteil zunächst und baut sich nach Ablauf der gutachterlichen RND wieder ab. Abschreibungsbasis ist der Gebäudewert; bei bereits abgeschriebenen Objekten der Restbuchwert.</p>
+          <h4>Potenzialeinschätzung</h4>
+          <p>Die Ampel „Potenzial für eine verkürzte Restnutzungsdauer" ist eine grobe Plausibilisierung aus Gebäudealter, Modernisierungsgrad und Zustand – keine steuerlich anerkannte Feststellung. Sie vergleicht die modellhafte RND mit der Standardnutzungsdauer und zeigt an, wie aussichtsreich ein objektspezifisches Gutachten erscheint. Der „allgemeine Gebäudezustand" fließt ausschließlich hier ein, nicht in die RND-Formel. Die Bewertung ist bewusst konservativ angelegt.</p>
+          <h4>Haftung</h4>
+          <p>Orientierungswerte ohne Gewähr; keine Steuer- oder Rechtsberatung. Soli/Kirchensteuer ggf. im Steuersatz berücksichtigen.</p>
+        </div>
+      </details>
+
+      <footer class="foot" id="foot"></footer>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Conversion-CTA + Footer (3D Immobilienbewertung) ===== -->
+<section class="sb-convert">
+  <div class="sb-convert-inner">
+    <p class="sb-conv-eyebrow">Restnutzungsdauer-Gutachten zur AfA-Optimierung</p>
+    <h2>Zeigt der Rechner Potenzial? Wir erstellen den belastbaren Nachweis fürs Finanzamt.</h2>
+    <p>Für die steuerliche Anerkennung einer kürzeren Nutzungsdauer nach § 7 Abs. 4 S. 2 EStG verlangt das Finanzamt ein nachvollziehbares Gutachten. Als zertifizierter Sachverständiger erstellen wir Ihr Restnutzungsdauer-Gutachten objektspezifisch nach dem Modell der ImmoWertV 2021 – damit Ihre höhere AfA auch anerkannt wird.</p>
+    <div class="sb-conv-actions">
+      <a href="tel:+491747445452" class="sb-btn-gold">📞 0174&nbsp;744&nbsp;5452</a>
+      <a href="mailto:info@3dimmobilienbewertung.de" class="sb-btn-outline">E-Mail schreiben</a>
+      <a href="/#wertcheck" class="sb-btn-outline">Kostenloses Erstgespräch</a>
+    </div>
+    <p class="sb-price">Restnutzungsdauer-Gutachten zur AfA-Optimierung — <b>1.490 € Festpreis</b></p>
+  </div>
+</section>
+<footer class="sb-footer">
+  <div class="sb-foot-inner">
+    <div>© <span id="sbYear"></span> 3D Immobilienbewertung · Hannover &amp; Region</div>
+    <nav>
+      <a href="/">Startseite</a>
+      <a href="/#leistungen">Leistungen</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('sbYear').textContent=new Date().getFullYear();</script>
+
+<script>
+"use strict";
+/* ===== Formatters ===== */
+const fEUR0=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+const fEUR2=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2});
+const fN1=new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
+const fN2=new Intl.NumberFormat('de-DE',{minimumFractionDigits:0,maximumFractionDigits:2});
+const eur0=v=>isFinite(v)?fEUR0.format(v):'–';
+const eur2=v=>isFinite(v)?fEUR2.format(v):'–';
+const pct=v=>isFinite(v)?fN2.format(v).replace(/,00$/,'')+' %':'–';
+const n1=v=>fN1.format(v).replace(/,0$/,'');
+function axisEUR(v){const a=Math.abs(v);if(a>=1e6)return fN1.format(v/1e6).replace(/,0$/,'')+' Mio €';if(a>=1000)return Math.round(v/1000).toLocaleString('de-DE')+' T€';return Math.round(v).toLocaleString('de-DE')+' €';}
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat($(id).value);return isFinite(v)?v:0;};
+const isFoc=id=>document.activeElement===$(id);
+
+/* ===== ImmoWertV data ===== */
+const GND_OPTIONS=[
+  ['Wohngebäude – ImmoWertV 2021 Anlage 1',80],
+  ['Wohngebäude (EFH/ZFH/RH/MFH) – Sachwertrichtlinie / Gutachterausschuss-Praxis',70],
+  ['Geschäftshäuser',60],['Bürogebäude, Banken',60],
+  ['Kindergärten, Schulen',50],['Wohnheime, Alten-/Pflegeheime',50],['Kauf-/Warenhäuser',50],
+  ['Hotels/Gaststätten · Kliniken · Hallen/Bäder',40],['Verbrauchermärkte, Autohäuser',30],
+  ['Eigene Eingabe (GND im Expertenmodus)',0]
+];
+// Table 3: a, b, c, threshold relative age (%)
+const T3=[
+ [1.2500,2.6250,1.5250,60],[1.2500,2.6250,1.5250,60],[1.0767,2.2757,1.3878,55],[0.9033,1.9263,1.2505,55],
+ [0.7300,1.5770,1.1133,40],[0.6725,1.4578,1.0850,35],[0.6150,1.3385,1.0567,30],[0.5575,1.2193,1.0283,25],
+ [0.5000,1.1000,1.0000,20],[0.4660,1.0270,0.9906,19],[0.4320,0.9540,0.9811,18],[0.3980,0.8810,0.9717,17],
+ [0.3640,0.8080,0.9622,16],[0.3300,0.7350,0.9528,15],[0.3040,0.6760,0.9506,14],[0.2780,0.6170,0.9485,13],
+ [0.2520,0.5580,0.9463,12],[0.2260,0.4990,0.9442,11],[0.2000,0.4400,0.9420,10],[0.2000,0.4400,0.9420,10],[0.2000,0.4400,0.9420,10]
+];
+// Modernization elements with decay [<=5y, <=10y, <=15y, <=20y]
+const ELEMENTS=[
+ ['dach','Dacherneuerung inkl. Wärmedämmung',[4,3,2,1]],
+ ['fenster','Fenster und Außentüren',[2,2,1,0]],
+ ['leitungen','Leitungssysteme (Strom, Gas, Wasser, Abwasser)',[2,2,2,1]],
+ ['heizung','Heizungsanlage',[2,2,1,0]],
+ ['daemmung','Wärmedämmung der Außenwände',[4,3,2,1]],
+ ['baeder','Bäder',[2,1,0,0]],
+ ['innen','Innenausbau (Decken, Böden, Treppen)',[2,2,2,1]]
+];
+function gradeOf(p){if(p<=1)return 'nicht modernisiert';if(p<=4)return 'kleinere Modernisierungen (Instandhaltung)';if(p<=8)return 'mittlere Modernisierung';if(p<=13)return 'überwiegend modernisiert';return 'umfassend modernisiert';}
+
+/* ===== Potenzial (Sachverständigen-Logik) ===== */
+function computePotential(d, afaAlt, zustand){
+  if(!isFinite(d.rnd)) return null;
+  const std=afaAlt>0?100/afaAlt:50;          // Standardnutzungsdauer aus AfA (Default 50 J. bei 2 %)
+  const rel=std>0?d.rnd/std:1;               // < 1 = kürzer als die Standardnutzungsdauer
+  let score = rel>=0.9?0 : rel>0.65?1 : 2;   // 0 gering · 1 mittel · 2 sehr hoch
+  if(zustand>=3) score=Math.min(2,score+1);  // deutlicher Sanierungsstau erhöht das Potenzial
+  if(d.pts>=14) score=Math.max(0,score-1);   // umfassend modernisiert: RND ohnehin lang
+  if(d.relAge<25) score=0;                    // sehr junges Gebäude: kein nennenswertes Potenzial
+  const L=[
+    {cls:'red',  head:'Geringes Potenzial', text:'Auf Grundlage der eingegebenen Daten erscheint eine erhebliche Verkürzung der Restnutzungsdauer eher unwahrscheinlich.'},
+    {cls:'amber',head:'Mittleres Potenzial', text:'Eine nähere Prüfung durch eine sachverständige Person erscheint sinnvoll.'},
+    {cls:'green',head:'Sehr hohes Potenzial', text:'Das Objekt weist Merkmale auf, die häufig eine von der Standardnutzungsdauer abweichende Restnutzungsdauer begründen können.'}
+  ];
+  const r=Object.assign({},L[score]);
+  if(zustand>=2) r.text += ' Der angegebene Instandhaltungsrückstau wurde dabei berücksichtigt.';
+  return r;
+}
+function updatePotential(d){
+  d=d||computeRND();
+  const afaAlt=num('afaAlt')||2.0;
+  const zEl=$('zustand'); const zustand=zEl?(parseInt(zEl.value,10)||0):0;
+  const p=computePotential(d,afaAlt,zustand);
+  const panel=$('potentialPanel'); if(!panel) return;
+  if(!p){panel.className='potential';$('potHeadline').textContent='–';$('potText').textContent='Bitte Baujahr eingeben, um das Potenzial einzuschätzen.';return;}
+  panel.className='potential '+p.cls;
+  $('potHeadline').textContent=p.head;
+  $('potText').textContent=p.text;
+}
+
+let modMethod='detail', gebOverridden=false;
+
+/* ===== Build dynamic UI ===== */
+(function init(){
+  // GND options
+  $('gebTyp').innerHTML=GND_OPTIONS.map((o,i)=>'<option value="'+o[1]+'"'+(i===0?' selected':'')+'>'+o[0]+(o[1]?' — '+o[1]+' J.':'')+'</option>').join('');
+  // modernization elements
+  $('modElements').innerHTML=ELEMENTS.map(([key,name,pts])=>{
+    const opts=['<option value="0">nicht / vor &gt;20 J.</option>',
+      '<option value="'+pts[0]+'">≤ 5 Jahre — '+pts[0]+' P.</option>',
+      '<option value="'+pts[1]+'">≤ 10 Jahre — '+pts[1]+' P.</option>',
+      '<option value="'+pts[2]+'">≤ 15 Jahre — '+pts[2]+' P.</option>',
+      '<option value="'+pts[3]+'">≤ 20 Jahre — '+pts[3]+' P.</option>'].join('');
+    return '<div class="mod-el"><div class="ml">'+name+'</div><select id="el_'+key+'" data-max="'+pts[0]+'">'+opts+'</select><div class="mp" id="mp_'+key+'">0</div></div>';
+  }).join('') +
+  '<div class="mod-el"><div class="ml">Wesentliche Verbesserung der Grundrissgestaltung<small>zeitunabhängig</small></div><select id="el_grundriss" data-max="2"><option value="0">keine — 0 P.</option><option value="1">leicht — 1 P.</option><option value="2">wesentlich — 2 P.</option></select><div class="mp" id="mp_grundriss">0</div></div>';
+
+  $('stichtag').value=new Date().getFullYear();
+
+  // listeners
+  ['baujahr','stichtag','gndCustom','sanjahr'].forEach(id=>$(id).addEventListener('input',renderRND));
+  $('gebTyp').addEventListener('change',()=>{const v=parseFloat($('gebTyp').value);if(v>0)$('gndCustom').value='';renderRND();});
+  $('kernCheck').addEventListener('change',()=>{$('sanField').style.display=$('kernCheck').checked?'flex':'none';renderRND();});
+  $('zustand').addEventListener('change',()=>updatePotential());
+  ELEMENTS.forEach(([k])=>$('el_'+k).addEventListener('change',renderRND));
+  $('el_grundriss').addEventListener('change',renderRND);
+  $('quickSlider').addEventListener('input',()=>{$('quickPtsLbl').textContent=$('quickSlider').value;renderRND();});
+  $('gradeSel').addEventListener('change',()=>{$('quickSlider').value=$('gradeSel').value;$('quickPtsLbl').textContent=$('gradeSel').value;renderRND();});
+  $('linkRnd').addEventListener('change',()=>{if($('linkRnd').checked)pushRND();});
+
+  // economic listeners
+  $('rndGutachten').addEventListener('input',()=>{const r=num('rndGutachten');if(r>0&&!isFoc('afaNeu'))$('afaNeu').value=(100/r).toFixed(2);$('linkRnd').checked=false;updateLinkHint();});
+  $('afaNeu').addEventListener('input',()=>{const a=num('afaNeu');if(a>0&&!isFoc('rndGutachten'))$('rndGutachten').value=Math.round(100/a);$('linkRnd').checked=false;updateLinkHint();});
+  ['verkehrswert','bodenwert'].forEach(id=>$(id).addEventListener('input',()=>{gebOverridden=false;}));
+  $('gebaeudewert').addEventListener('input',()=>{gebOverridden=true;});
+  $('afaAlt').addEventListener('input',syncAfaChips);
+  document.querySelectorAll('#modDetail input,#modDetail select').forEach(()=>{});
+  document.querySelectorAll('input,select').forEach(inp=>inp.addEventListener('input',()=>{ if(inp.closest('.card') && (inp.id.startsWith('verkehrs')||['bodenwert','gebaeudewert','steuersatz','afaAlt','afaNeu','rndGutachten','kostenGutachten','kostenBerater'].includes(inp.id))) renderEcon(); }));
+  $('kanzlei').addEventListener('input',updateMeta);
+  window.addEventListener('resize',()=>{try{renderRND();renderEcon();}catch(e){console.warn(e);}});
+
+  loadExample();
+})();
+
+function updateLinkHint(){$('rndLinkHint').innerHTML=$('linkRnd').checked?'🔗 aus Schritt 1':'✏️ manuell';}
+
+/* ===== RND computation ===== */
+function getGND(){const sel=parseFloat($('gebTyp').value);return sel>0?sel:(num('gndCustom')||80);}
+function modPoints(){
+  if(modMethod==='quick') return Math.max(0,Math.min(20,Math.round(num('quickSlider'))));
+  let s=0;ELEMENTS.forEach(([k])=>{s+=num('el_'+k);});s+=num('el_grundriss');
+  return Math.max(0,Math.min(20,Math.round(s)));
+}
+function computeRND(){
+  const gnd=getGND();
+  const stichtag=num('stichtag')||new Date().getFullYear();
+  const kern=$('kernCheck').checked;
+  const baseYear=kern&&num('sanjahr')>0?num('sanjahr'):num('baujahr');
+  let alter=baseYear>0?stichtag-baseYear:0;
+  alter=Math.max(0,Math.min(alter,gnd));
+  const pts=modPoints();
+  const relAge=gnd>0?alter/gnd*100:0;
+  const [a,b,c]=T3[pts];
+  const capPct=kern?90:70;
+  const cap=capPct/100*gnd;
+  const linear=Math.max(gnd-alter,0);
+  let rnd, capBinds=false;
+  if(baseYear<=0){rnd=NaN;}
+  else{
+    const fRaw=a*alter*alter/gnd - b*alter + c*gnd; // Modell-Formel (Anlage 2 Tab. 3 / ArGEVGA)
+    rnd=fRaw;
+    if(rnd>cap) rnd=cap;            // Streckung auf max. 70 % (90 % bei Kernsanierung) der GND
+    if(rnd<linear) rnd=linear;      // Modernisierung verkürzt nie unter GND − Alter
+    if(rnd>gnd) rnd=gnd;            // nie über die Gesamtnutzungsdauer
+    capBinds=(fRaw>cap)&&(cap>=linear);
+  }
+  if(isFinite(rnd)) rnd=Math.max(Math.round(rnd),1);
+  const rndPlain=linear;
+  const afaNeu=isFinite(rnd)&&rnd>0?100/rnd:0;
+  return {gnd,stichtag,kern,baseYear,alter,pts,relAge,rnd,rndPlain,cap,capPct,capBinds,afaNeu,baujahr:num('baujahr')};
+}
+function rndChecks(d){
+  const out=[];const add=(c,m)=>out.push({c,m});
+  if(d.baseYear<=0){add('err','Bitte Baujahr'+(d.kern?' bzw. Sanierungsjahr':'')+' eingeben.');return out;}
+  if(d.kern&&num('sanjahr')<=0)add('warn','Kernsanierung markiert – bitte Sanierungsjahr eintragen (fiktives Baujahr).');
+  if(d.alter<=0)add('warn','Gebäudealter ist 0 – Baujahr/Stichtag prüfen.');
+  if(d.capBinds)add('warn','Streckung durch Modernisierung auf das Maximum von '+d.capPct+' % der GND begrenzt.');
+  if(d.kern)add('ok','Kernsanierung: Sanierungsjahr als fiktives Baujahr; Altsubstanz ggf. per Abschlag berücksichtigen.');
+  if(out.filter(o=>o.c!=='ok').length===0)add('ok','RND-Ableitung plausibel ('+gradeOf(d.pts)+').');
+  return out;
+}
+function renderRND(){
+  // method visibility
+  $('modDetail').style.display=modMethod==='detail'?'block':'none';
+  $('modQuick').style.display=modMethod==='quick'?'block':'none';
+  // element points display
+  if(modMethod==='detail'){ELEMENTS.forEach(([k])=>{$('mp_'+k).textContent=Math.round(num('el_'+k));});$('mp_grundriss').textContent=Math.round(num('el_grundriss'));}
+  const pts=modPoints();
+  $('modPts').textContent=pts;$('modGrade').textContent=gradeOf(pts);
+  $('quickPtsLbl').textContent=$('quickSlider').value;
+
+  const d=computeRND();
+  $('capPctLbl').textContent=d.capPct;
+  if(!isFinite(d.rnd)){
+    $('rndN').textContent='–';['rndAlter','rndRel','rndPlain','rndPlus','rndFiktiv','rndCap','rndAfa'].forEach(id=>$(id).textContent='–');
+  }else{
+    $('rndN').textContent=Math.round(d.rnd);
+    $('rndAlter').textContent=Math.round(d.alter)+' Jahre';
+    $('rndRel').textContent=n1(d.relAge)+' %';
+    $('rndPlain').textContent=Math.round(d.rndPlain)+' Jahre';
+    const plus=d.rnd-d.rndPlain;
+    $('rndPlus').textContent=(plus>=0?'+':'')+n1(plus)+' Jahre';
+    $('rndPlus').className='val '+(plus>0.5?'pos':plus<-0.5?'neg':'');
+    $('rndFiktiv').textContent=Math.max(0,Math.round(d.gnd-d.rnd))+' Jahre';
+    $('rndCap').textContent=Math.round(d.cap)+' Jahre';
+    $('rndAfa').textContent=pct(d.afaNeu);
+  }
+  const ic={ok:'✓',warn:'!',err:'✕'};
+  $('rndChecks').innerHTML=rndChecks(d).map(c=>'<div class="check '+c.c+'"><span class="ic">'+ic[c.c]+'</span><span>'+c.m+'</span></div>').join('');
+  try{drawTimeline(d);}catch(e){console.warn('timeline',e);}
+  updatePotential(d);
+  if($('linkRnd').checked) pushRND(d);
+  updateMeta();
+}
+function pushRND(d){
+  d=d||computeRND();
+  if(isFinite(d.rnd)){
+    $('rndGutachten').value=Math.round(d.rnd);
+    $('afaNeu').value=(100/Math.round(d.rnd)).toFixed(2);
+  }
+  updateLinkHint();
+  renderEcon();
+}
+function setModMethod(m){modMethod=m;$('m-detail').setAttribute('aria-selected',m==='detail');$('m-quick').setAttribute('aria-selected',m==='quick');renderRND();}
+
+/* ===== Timeline chart ===== */
+function drawTimeline(d){
+  const ok=isFinite(d.rnd)&&d.baseYear>0;
+  $('emptyTL').style.display=ok?'none':'flex';$('chartTimeline').style.display=ok?'block':'none';
+  if(!ok)return;
+  const {ctx,w,h}=prep($('chartTimeline'));
+  const padL=14,padR=14,padT=20,padB=22;
+  const plotW=w-padL-padR;
+  const maxT=Math.max(d.gnd,d.alter+d.rnd);
+  const X=v=>padL+v/maxT*plotW;
+  const barH=26,gap=18;
+  const font=getComputedStyle(document.body).fontFamily;
+  // GND marker
+  const xg=X(d.gnd);
+  ctx.strokeStyle='#9aa3b2';ctx.setLineDash([4,3]);ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(xg,padT-6);ctx.lineTo(xg,padT+2*barH+gap+6);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#5b6577';ctx.font='600 11px '+font;ctx.textAlign='center';ctx.textBaseline='bottom';
+  ctx.fillText('GND '+d.gnd+' J.',xg,padT-7);
+  // helper to draw bar
+  function bar(y,label,segs){
+    ctx.fillStyle='#5b6577';ctx.font='600 11px '+font;ctx.textAlign='left';ctx.textBaseline='middle';
+    let x=padL;
+    segs.forEach(s=>{ if(s.v<=0)return; const ww=s.v/maxT*plotW; ctx.fillStyle=s.col; rr(ctx,x,y,ww,barH,4); ctx.fill();
+      if(ww>34){ctx.fillStyle=s.tc||'#fff';ctx.font='700 11px '+font;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(Math.round(s.v),x+ww/2,y+barH/2);} x+=ww; });
+    ctx.fillStyle='#14223c';ctx.font='600 11px '+font;ctx.textAlign='left';ctx.textBaseline='bottom';
+    ctx.fillText(label,padL,y-4);
+  }
+  bar(padT+14,'ohne Modernisierung',[{v:d.alter,col:'#aeb6c4'},{v:d.rndPlain,col:'#3a4f78'}]);
+  const plus=Math.max(0,d.rnd-d.rndPlain);
+  bar(padT+14+barH+gap,'mit Modernisierung',[{v:d.alter,col:'#aeb6c4'},{v:Math.min(d.rnd,d.rndPlain),col:'#3a4f78'},{v:plus,col:'#b8893a'}]);
+}
+
+/* ===== Canvas utils ===== */
+function prep(c){const dpr=window.devicePixelRatio||1;const w=c.clientWidth,h=c.clientHeight;c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);const ctx=c.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);return {ctx,w,h};}
+function niceMax(v){if(v<=0)return 1;const e=Math.pow(10,Math.floor(Math.log10(v)));const f=v/e;const nf=f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10;return nf*e;}
+function rr(ctx,x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function rrTop(ctx,x,y,w,h,r){r=Math.min(r,w/2,h);ctx.beginPath();ctx.moveTo(x,y+h);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);ctx.lineTo(x+w,y+h);ctx.closePath();}
+
+/* ===== Economic computation ===== */
+function computeEcon(){
+  const verkehrswert=num('verkehrswert'),bodenwert=num('bodenwert');
+  const expert=document.body.classList.contains('mode-expert');
+  let gebaeudewert;
+  if(expert&&gebOverridden&&num('gebaeudewert')>0){gebaeudewert=num('gebaeudewert');}
+  else{gebaeudewert=Math.max(0,verkehrswert-bodenwert);if(!isFoc('gebaeudewert'))$('gebaeudewert').value=gebaeudewert?Math.round(gebaeudewert):'';}
+  const steuersatz=num('steuersatz'),afaAlt=num('afaAlt')||2.0;
+  const rndGutachten=num('rndGutachten'),afaNeu=rndGutachten>0?100/rndGutachten:0,rndFinanzamt=afaAlt>0?100/afaAlt:0;
+  const kostenGut=num('kostenGutachten'),kostenBer=expert?num('kostenBerater'):0,kosten=kostenGut+kostenBer;
+  const anteil=verkehrswert>0?gebaeudewert/verkehrswert*100:0;
+  const afaBetragAlt=gebaeudewert*afaAlt/100,afaBetragNeu=gebaeudewert*afaNeu/100,mehrAfa=afaBetragNeu-afaBetragAlt;
+  const espJahr=mehrAfa*steuersatz/100,espMonat=espJahr/12,amortMonate=espJahr>0?kosten/espMonat:Infinity;
+  const cap=n=>Math.min(n,rndGutachten||n);
+  const v1=espJahr*cap(1),v5=espJahr*cap(5),v10=espJahr*cap(10),gesamtBrutto=espJahr*(rndGutachten||0),netto=gesamtBrutto-kosten;
+  return {verkehrswert,bodenwert,gebaeudewert,anteil,steuersatz,afaAlt,afaNeu,rndGutachten,rndFinanzamt,kostenGut,kostenBer,kosten,afaBetragAlt,afaBetragNeu,mehrAfa,espJahr,espMonat,amortMonate,v1,v5,v10,gesamtBrutto,netto,expert};
+}
+function econChecks(d){
+  const out=[];const add=(c,m)=>out.push({c,m});
+  if(d.verkehrswert<=0)add('err','Bitte einen Verkehrswert eingeben.');
+  if(d.verkehrswert>0&&d.bodenwert>=d.verkehrswert&&!(d.expert&&gebOverridden))add('err','Bodenwert ≥ Verkehrswert – Gebäudewert wäre 0 oder negativ.');
+  if(d.gebaeudewert>0&&d.verkehrswert>0){if(d.anteil<40)add('warn','Gebäudeanteil unter 40 % ist ungewöhnlich niedrig – Bodenwert prüfen.');else if(d.anteil>92)add('warn','Gebäudeanteil über 92 % ist ungewöhnlich hoch.');}
+  if(d.steuersatz<=0)add('err','Bitte den persönlichen Steuersatz eingeben.');else if(d.steuersatz>50)add('warn','Steuersatz über 50 % ist unüblich (Spitzensatz inkl. Soli ≈ 47,5 %).');
+  if(d.expert&&(d.afaAlt<1.5||d.afaAlt>4))add('warn','Aktuelle AfA außerhalb der üblichen 2–3 %.');
+  if(d.rndGutachten<=0)add('err','Keine Restnutzungsdauer – in Schritt 1 ermitteln oder manuell eintragen.');
+  else if(d.rndFinanzamt>0&&d.rndGutachten>=d.rndFinanzamt)add('err','RND lt. Gutachten ist nicht kürzer als lt. Finanzamt ('+n1(d.rndFinanzamt)+' J.) – kein steuerlicher Vorteil.');
+  if(d.kostenGut<=0)add('warn','Bitte Gutachtenkosten eingeben, um die Amortisation zu berechnen.');
+  if(out.length===0)add('ok','Alle Eingaben plausibel. Die Berechnung ist belastbar.');
+  else if(!out.some(o=>o.c==='err')&&d.espJahr>0)out.unshift({c:'ok',m:'Grundlegende Eingaben plausibel – bitte Hinweise beachten.'});
+  return out;
+}
+function verdictOf(d){
+  if(d.verkehrswert<=0||d.rndGutachten<=0||d.steuersatz<=0)return{cls:'neutral',g:'•',l:'Eingaben erforderlich',h:'Bitte Werte eingeben oder Beispiel laden',a:'–'};
+  if(d.espJahr<=0)return{cls:'red',g:'✕',l:'Kein Vorteil',h:'Keine höhere Abschreibung – Gutachten bringt aktuell keinen Vorteil',a:'–'};
+  const m=d.amortMonate,as=isFinite(m)?n1(m)+' Mon.':'—';
+  if(!isFinite(m)||d.kosten<=0)return{cls:'green',g:'✓',l:'Lohnt sich',h:'Höhere Abschreibung ohne erfasste Kosten – klar vorteilhaft',a:'sofort'};
+  if(m<24)return{cls:'green',g:'✓',l:'Grün — lohnt sich sehr',h:'Das Gutachten ist nach unter 2 Jahren bezahlt',a:as};
+  if(m<=60)return{cls:'amber',g:'!',l:'Gelb — Prüfung sinnvoll',h:'Amortisation in 2–5 Jahren – im Einzelfall abwägen',a:as};
+  return{cls:'red',g:'✕',l:'Rot — eher uninteressant',h:'Amortisation über 5 Jahre – wirtschaftlich kritisch',a:as};
+}
+function renderEcon(){
+  const d=computeEcon();
+  $('d_anteil').textContent=d.verkehrswert>0?pct(d.anteil)+'  ('+eur0(d.gebaeudewert)+')':'–';
+  $('d_rndfa').textContent=d.rndFinanzamt>0?n1(d.rndFinanzamt)+' Jahre':'–';
+  const v=verdictOf(d),vE=$('verdict');vE.className='verdict '+v.cls;
+  $('lampGlyph').textContent=v.g;$('verdictLabel').textContent=v.l;$('verdictHeadline').textContent=v.h;$('amortNum').textContent=v.a;
+  const ic={ok:'✓',warn:'!',err:'✕'};
+  $('checks').innerHTML=econChecks(d).map(c=>'<div class="check '+c.c+'"><span class="ic">'+ic[c.c]+'</span><span>'+c.m+'</span></div>').join('');
+  $('r_geb').textContent=d.gebaeudewert>0?eur0(d.gebaeudewert):'–';
+  $('r_afaAltPct').textContent=d.afaAlt?fN2.format(d.afaAlt).replace(/,00$/,'')+' % p. a.':'–';
+  $('r_afaNeuPct').textContent=d.afaNeu?fN2.format(d.afaNeu)+' % · '+(d.rndGutachten||'–')+' J.':'–';
+  $('r_afaAlt').textContent=d.afaBetragAlt>0?eur0(d.afaBetragAlt):'–';
+  $('r_afaNeu').textContent=d.afaBetragNeu>0?eur0(d.afaBetragNeu):'–';
+  $('r_mehr').textContent=isFinite(d.mehrAfa)&&d.gebaeudewert>0?eur0(d.mehrAfa):'–';
+  $('r_espJ').textContent=d.gebaeudewert>0&&d.rndGutachten>0?eur0(d.espJahr):'–';
+  $('r_espM').textContent=d.espMonat>0?eur2(d.espMonat):'–';
+  $('r_v1').textContent=d.espJahr>0?eur0(d.v1):'–';$('r_v5').textContent=d.espJahr>0?eur0(d.v5):'–';$('r_v10').textContent=d.espJahr>0?eur0(d.v10):'–';
+  $('r_rndnote').textContent=d.rndGutachten>0?'brutto über '+d.rndGutachten+' Jahre':'brutto im Gutachtenzeitraum';
+  $('r_gesamt').textContent=d.gesamtBrutto>0?eur0(d.gesamtBrutto):'–';
+  const nE=$('r_netto');if(d.espJahr>0){nE.textContent=eur0(d.netto);nE.className='v '+(d.netto>=0?'pos':'neg');}else{nE.textContent='–';nE.className='v';}
+  renderSteps(d);try{drawBars(d);}catch(e){console.warn('bars',e);}try{drawCum(d);}catch(e){console.warn('cum',e);}updateMeta();updatePotential();
+}
+function renderSteps(d){
+  if(d.verkehrswert<=0||d.rndGutachten<=0){$('steps').innerHTML='<li style="grid-template-columns:1fr"><span class="step-calc">Sobald Restnutzungsdauer (Schritt 1), Verkehrswert und Steuersatz vorliegen, erscheint hier der vollständige Rechenweg.</span></li>';return;}
+  const op=s=>'<span class="op">'+s+'</span>',r=v=>'<span class="res">'+v+'</span>',S=[];
+  if(d.expert&&gebOverridden)S.push(['Gebäudewert (Abschreibungsbasis)','manuell '+op('=')+r(eur0(d.gebaeudewert))+' · Anteil '+pct(d.anteil)]);
+  else S.push(['Gebäudewert','Verkehrswert '+op('−')+' Bodenwert '+op('=')+' '+eur0(d.verkehrswert)+op('−')+eur0(d.bodenwert)+op('=')+r(eur0(d.gebaeudewert))+' · Anteil '+pct(d.anteil)]);
+  S.push(['Bisherige AfA ('+pct(d.afaAlt)+')','Gebäudewert '+op('×')+' '+pct(d.afaAlt)+op('=')+r(eur0(d.afaBetragAlt))+' / Jahr · RND lt. FA = 100 ÷ '+pct(d.afaAlt)+op('=')+n1(d.rndFinanzamt)+' J.']);
+  S.push(['AfA lt. Gutachten','RND '+d.rndGutachten+' J. ⇒ 100 ÷ '+d.rndGutachten+op('=')+pct(d.afaNeu)+' · '+eur0(d.gebaeudewert)+op('×')+pct(d.afaNeu)+op('=')+r(eur0(d.afaBetragNeu))+' / Jahr']);
+  S.push(['Mehrabschreibung p. a.','AfA neu '+op('−')+' AfA bisher '+op('=')+' '+eur0(d.afaBetragNeu)+op('−')+eur0(d.afaBetragAlt)+op('=')+r(eur0(d.mehrAfa))]);
+  S.push(['Steuerersparnis p. a.','Mehrabschreibung '+op('×')+' Steuersatz '+op('=')+' '+eur0(d.mehrAfa)+op('×')+pct(d.steuersatz)+op('=')+r(eur0(d.espJahr))]);
+  S.push(['Steuerersparnis p. m.',eur0(d.espJahr)+op('÷')+'12'+op('=')+r(eur2(d.espMonat))]);
+  if(d.kosten>0){S.push(['Gesamtkosten','Gutachten'+(d.kostenBer>0?' '+op('+')+' Steuerberater':'')+op('=')+' '+eur0(d.kostenGut)+(d.kostenBer>0?op('+')+eur0(d.kostenBer):'')+op('=')+r(eur0(d.kosten))]);
+    const m=d.amortMonate;S.push(['Amortisation','Gesamtkosten '+op('÷')+' Steuerersparnis p. m. '+op('=')+' '+eur0(d.kosten)+op('÷')+eur2(d.espMonat)+op('=')+r(isFinite(m)?n1(m)+' Monate':'—')+(isFinite(m)?' (≈ '+fN1.format(m/12)+' Jahre)':'')]);}
+  S.push(['Mehr-Steuerersparnis kumuliert','nach 1 J. '+r(eur0(d.v1))+' · nach 5 J. '+r(eur0(d.v5))+' · nach 10 J. '+r(eur0(d.v10))+' · bis Ende RND ('+d.rndGutachten+' J.) '+r(eur0(d.gesamtBrutto))+' (brutto)']);
+  $('steps').innerHTML=S.map(s=>'<li><div><p class="step-name">'+s[0]+'</p><div class="step-calc">'+s[1]+'</div></div></li>').join('');
+}
+
+/* ===== Economic charts ===== */
+function drawBars(d){
+  const ok=d.gebaeudewert>0&&d.rndGutachten>0&&d.steuersatz>0;
+  $('emptyBars').style.display=ok?'none':'flex';$('chartBars').style.display=ok?'block':'none';if(!ok)return;
+  const {ctx,w,h}=prep($('chartBars'));const font=getComputedStyle(document.body).fontFamily;
+  const data=[['AfA bisher',d.afaBetragAlt,'#3a4f78'],['AfA Gutachten',d.afaBetragNeu,'#b8893a'],['Steuerersparnis',Math.max(0,d.espJahr),'#1f8a4c']];
+  const padL=58,padR=14,padT=16,padB=40,plotW=w-padL-padR,plotH=h-padT-padB;
+  const maxV=niceMax(Math.max(...data.map(x=>x[1]))*1.12)||1;
+  ctx.font='11px '+font;ctx.textBaseline='middle';
+  for(let i=0;i<=4;i++){const val=maxV*i/4,y=padT+plotH-val/maxV*plotH;ctx.strokeStyle=i===0?'#c9cfda':'#eef0f4';ctx.beginPath();ctx.moveTo(padL,y+.5);ctx.lineTo(w-padR,y+.5);ctx.stroke();ctx.fillStyle='#828b9b';ctx.textAlign='right';ctx.fillText(axisEUR(val),padL-8,y);}
+  const n=3,gap=plotW*0.14,bw=(plotW-gap*(n+1))/n;
+  data.forEach((x,i)=>{const bx=padL+gap+(bw+gap)*i,bh=x[1]/maxV*plotH,by=padT+plotH-bh;ctx.fillStyle=x[2];rrTop(ctx,bx,by,bw,bh,6);ctx.fill();
+    ctx.fillStyle='#14223c';ctx.textAlign='center';ctx.font='600 12px '+font;ctx.fillText(eur0(x[1]),bx+bw/2,by-10);
+    ctx.fillStyle='#5b6577';ctx.font='12px '+font;ctx.textBaseline='top';ctx.fillText(x[0],bx+bw/2,padT+plotH+10);ctx.textBaseline='middle';});
+}
+function drawCum(d){
+  const ok=d.espJahr>0&&d.rndGutachten>0;
+  $('emptyCum').style.display=ok?'none':'flex';$('chartCum').style.display=ok?'block':'none';$('cumLegend').style.display=ok?'flex':'none';if(!ok)return;
+  const {ctx,w,h}=prep($('chartCum'));const font=getComputedStyle(document.body).fontFamily;
+  const padL=58,padR=16,padT=18,padB=34,plotW=w-padL-padR,plotH=h-padT-padB,st=d.steuersatz/100;
+  const horizon=Math.max(Math.ceil(d.rndFinanzamt),Math.ceil(d.rndGutachten),5);
+  const peak=d.espJahr*d.rndGutachten,yMax=niceMax(Math.max(peak,d.kosten)*1.15)||1;
+  const X=t=>padL+t/horizon*plotW,Y=v=>padT+plotH-v/yMax*plotH;
+  const cumAdd=t=>d.afaBetragNeu*Math.min(t,d.rndGutachten)*st-d.afaBetragAlt*Math.min(t,d.rndFinanzamt)*st;
+  ctx.font='11px '+font;ctx.textBaseline='middle';
+  for(let i=0;i<=4;i++){const val=yMax*i/4,y=Y(val);ctx.strokeStyle=i===0?'#c9cfda':'#eef0f4';ctx.beginPath();ctx.moveTo(padL,y+.5);ctx.lineTo(w-padR,y+.5);ctx.stroke();ctx.fillStyle='#828b9b';ctx.textAlign='right';ctx.fillText(axisEUR(val),padL-8,y);}
+  const xStep=horizon<=12?2:horizon<=30?5:10;ctx.textBaseline='top';ctx.textAlign='center';ctx.fillStyle='#828b9b';
+  for(let t=0;t<=horizon;t+=xStep)ctx.fillText(t+' J.',X(t),padT+plotH+8);
+  const N=180;ctx.beginPath();ctx.moveTo(X(0),Y(0));for(let i=0;i<=N;i++){const t=horizon*i/N;ctx.lineTo(X(t),Y(Math.max(0,cumAdd(t))));}ctx.lineTo(X(horizon),Y(0));ctx.closePath();
+  const g=ctx.createLinearGradient(0,padT,0,padT+plotH);g.addColorStop(0,'rgba(184,137,58,.22)');g.addColorStop(1,'rgba(184,137,58,.03)');ctx.fillStyle=g;ctx.fill();
+  ctx.beginPath();for(let i=0;i<=N;i++){const t=horizon*i/N,x=X(t),y=Y(Math.max(0,cumAdd(t)));i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.strokeStyle='#b8893a';ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.stroke();
+  if(d.kosten>0&&d.kosten<=yMax){const yc=Y(d.kosten);ctx.setLineDash([5,4]);ctx.strokeStyle='#c0392b';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(padL,yc);ctx.lineTo(w-padR,yc);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#c0392b';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.font='600 11px '+font;ctx.fillText('Kosten '+eur0(d.kosten),padL+4,yc-3);}
+  const tBE=d.espJahr>0?d.kosten/d.espJahr:Infinity;
+  if(isFinite(tBE)&&tBE<=d.rndGutachten&&d.kosten>0){const x=X(tBE),y=Y(d.kosten);ctx.setLineDash([3,3]);ctx.strokeStyle='#14223c';ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(x,padT+plotH);ctx.lineTo(x,y);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#14223c';ctx.beginPath();ctx.arc(x,y,4.5,0,7);ctx.fill();ctx.font='700 11px '+font;ctx.textAlign=tBE/horizon>0.7?'right':'left';ctx.textBaseline='top';ctx.fillText('Break-Even '+n1(d.amortMonate)+' Mon.',x+(tBE/horizon>0.7?-6:6),padT+plotH-16);}
+  const xp=X(d.rndGutachten),yp=Y(peak);ctx.fillStyle='#b8893a';ctx.beginPath();ctx.arc(xp,yp,4,0,7);ctx.fill();ctx.fillStyle='#7a5a1e';ctx.font='600 11px '+font;ctx.textAlign=d.rndGutachten/horizon>0.6?'right':'left';ctx.textBaseline='bottom';ctx.fillText('max. '+eur0(peak),xp+(d.rndGutachten/horizon>0.6?-6:6),yp-6);
+}
+
+/* ===== Economic mode & chips ===== */
+function setMode(m){document.body.classList.toggle('mode-expert',m==='expert');document.body.classList.toggle('mode-schnell',m!=='expert');$('tab-schnell').setAttribute('aria-selected',m!=='expert');$('tab-expert').setAttribute('aria-selected',m==='expert');renderEcon();}
+function setAfaAlt(v){$('afaAlt').value=v.toFixed(1);syncAfaChips();renderEcon();}
+function syncAfaChips(){const v=num('afaAlt');document.querySelectorAll('#afaQuick .chip').forEach(c=>c.setAttribute('aria-pressed',Math.abs(parseFloat(c.dataset.afa)-v)<0.001));}
+
+/* ===== Meta / footer ===== */
+function updateMeta(){const t=new Date().toLocaleDateString('de-DE',{day:'2-digit',month:'long',year:'numeric'});
+  $('printMeta').textContent=$('kanzlei').value+' · Restnutzungsdauer & Wirtschaftlichkeit · erstellt am '+t+' · nur unverbindliche Richtwerte, keine Gewähr';
+  $('foot').innerHTML='Berechnung erstellt am '+t+' · '+($('kanzlei').value||'')+' · RND-Modell nach Anlage 2 ImmoWertV 2021 · <strong>Nur grobe, unverbindliche Richtwerte ohne Gewähr</strong> – kein Gutachten, keine Steuer- oder Rechtsberatung (§ 7 Abs. 4 S. 2 EStG).';}
+
+/* ===== Example / Reset ===== */
+function loadExample(){
+  // Section 1
+  $('baujahr').value=1975;$('stichtag').value=new Date().getFullYear();
+  $('gebTyp').value='80';$('gndCustom').value='';$('kernCheck').checked=false;$('sanField').style.display='none';$('sanjahr').value='';$('zustand').value='1';
+  setModMethod('detail');
+  $('el_dach').value=2;$('el_fenster').value=2;$('el_heizung').value=2;
+  ['leitungen','daemmung','baeder','innen'].forEach(k=>$('el_'+k).value=0);$('el_grundriss').value=0;
+  $('quickSlider').value=6;$('gradeSel').value='6';
+  $('linkRnd').checked=true;updateLinkHint();
+  // Section 2
+  gebOverridden=false;
+  $('verkehrswert').value=600000;$('bodenwert').value=200000;$('gebaeudewert').value='';
+  $('steuersatz').value=42;$('afaAlt').value='2.0';$('kostenGutachten').value=1490;$('kostenBerater').value='';
+  syncAfaChips();renderRND();renderEcon();
+}
+function resetAll(){
+  ['baujahr','gndCustom','sanjahr'].forEach(id=>$(id).value='');$('stichtag').value=new Date().getFullYear();
+  $('gebTyp').value='80';$('kernCheck').checked=false;$('sanField').style.display='none';$('zustand').value='1';
+  ELEMENTS.forEach(([k])=>$('el_'+k).value=0);$('el_grundriss').value=0;$('quickSlider').value=0;$('gradeSel').value='1';
+  setModMethod('detail');$('linkRnd').checked=true;
+  gebOverridden=false;
+  ['verkehrswert','bodenwert','gebaeudewert','steuersatz','rndGutachten','afaNeu','kostenGutachten','kostenBerater'].forEach(id=>$(id).value='');
+  $('afaAlt').value='2.0';syncAfaChips();renderRND();renderEcon();
+}
+</script>
+</body>
+</html>
