@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <title>Restnutzungsdauer-Rechner &amp; AfA-Optimierung nach ImmoWertV 2021 | 3D Immobilienbewertung</title>
 <meta name="description" content="Kostenloser Restnutzungsdauer-Rechner nach ImmoWertV 2021: Restnutzungsdauer ermitteln und in Sekunden berechnen, ob sich ein Gutachten zur AfA-Optimierung lohnt – Mehr-Abschreibung, Steuerersparnis &amp; Amortisation. Vom zertifizierten Sachverständigen für die Region Hannover.">
 <link rel="canonical" href="https://www.3dimmobilienbewertung.de/restnutzungsdauer-rechner.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#14223c">
+<meta name="theme-color" content="#10243D">
 <link rel="icon" type="image/png" href="/assets/logo_icon.png">
 <link rel="apple-touch-icon" href="/assets/logo_icon.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -44,43 +47,68 @@
 </script>
 <style>
   :root{
-    --ink:#14223c; --ink-deep:#0d1729;
-    --paper:#f5f6f8; --card:#ffffff;
-    --line:#e3e6ec; --line-soft:#eef0f4;
-    --muted:#5b6577; --muted-2:#828b9b;
-    --gold:#b8893a; --gold-soft:#f4ead6; --gold-line:#e6d3a8;
+    /* === Marken-Palette – identisch zur Startseite (3D Immobilienbewertung) === */
+    --bg:#FFFFFF; --bg-2:#FAF6EF; --bg-3:#E8F0F8;
+    --ink:#10243D; --ink-deep:#0E2440; --ink-2:#2A445F;
+    --paper:#FAF6EF; --card:#FFFFFF;
+    --muted:#5C708A; --muted-2:#94A6BD;
+    --blue:#16365C; --blue-deep:#0E2440; --blue-bright:#2E6BB8; --blue-soft:#E7EEF6;
+    --gold:#C9A24B; --gold-soft:#F7EFD9; --gold-line:#E7D49E;
+    --line:rgba(16,36,61,.10); --line-soft:rgba(16,36,61,.06);
+    /* Funktionsfarben (Ampel-Bewertung) bleiben semantisch erhalten */
     --green:#1f8a4c; --green-bg:#e8f5ec; --green-line:#bfe3cb;
     --amber:#b06d0c; --amber-bg:#fbf1df; --amber-line:#eed9ad;
     --red:#c0392b; --red-bg:#fbece9; --red-line:#f0c8c1;
-    --shadow:0 1px 2px rgba(16,28,51,.05), 0 8px 24px rgba(16,28,51,.06);
-    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --shadow-sm:0 4px 16px rgba(16,36,61,.07);
+    --shadow:0 4px 16px rgba(16,36,61,.07), 0 22px 50px rgba(16,36,61,.10);
+    --shadow-blue:0 18px 44px rgba(22,54,92,.28);
+    --radius:18px; --maxw:1180px; --ease:cubic-bezier(.22,1,.36,1);
+    /* Schriften – identisch zur Startseite */
+    --display:'Bricolage Grotesque', sans-serif;
+    --body:'Hanken Grotesk', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+    --serif:'Bricolage Grotesque', sans-serif;  /* Alias: alle bestehenden Headline-Regeln nutzen jetzt die Display-Schrift */
+    --sans:'Hanken Grotesk', sans-serif;         /* Alias: Fließtext, Inputs, Buttons */
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px 64px}
+  a{color:inherit}
 
-  /* Header */
-  header.masthead{background:linear-gradient(180deg,var(--ink) 0%, var(--ink-deep) 100%);color:#eef1f6;border-bottom:3px solid var(--gold)}
-  .masthead-inner{max-width:1180px;margin:0 auto;padding:26px 20px 24px}
-  .brand-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .brand-mark{width:34px;height:34px;border:1.5px solid var(--gold-line);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--serif);font-weight:700;font-size:17px;flex:0 0 auto;background:rgba(184,137,58,.08)}
-  .brand-input{background:transparent;border:none;color:#f3f5f9;font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.2px;padding:4px 6px;border-radius:6px;min-width:200px;flex:1 1 auto}
-  .brand-input:hover{background:rgba(255,255,255,.05)}
-  .brand-input:focus{outline:none;background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(230,211,168,.4)}
-  .brand-edit-hint{font-size:11px;color:#9aa6bb;flex:0 0 auto}
-  h1.title{font-family:var(--serif);font-weight:700;font-size:29px;line-height:1.15;margin:0 0 6px;letter-spacing:.2px;color:#fff}
-  h1.title .lohnt{color:var(--gold)}
-  .subtitle{color:#aab4c7;font-size:15px;max-width:780px;margin:0}
+  /* === Site-Navigation (identisch zur Startseite) === */
+  header.site-nav{background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .site-nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:26px}
+  .site-nav .logo{display:flex;align-items:center;flex-shrink:0;text-decoration:none}
+  .site-nav .logo-img{height:38px;width:auto;display:block;flex-shrink:0}
+  .site-nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0 0 0 6px;padding:0}
+  .site-nav-links a{font-size:14.5px;color:var(--ink-2);text-decoration:none;transition:color .25s}
+  .site-nav-links a:hover{color:var(--blue)}
+  .site-nav-cta{margin-left:auto;display:flex;align-items:center;gap:18px}
+  .site-nav-phone{font-family:var(--mono);font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none;white-space:nowrap;transition:color .2s}
+  .site-nav-phone:hover{color:var(--blue)}
+  @media(max-width:780px){ .site-nav-links{display:none} }
+  @media(max-width:520px){ .site-nav-cta .btn{display:none} }
+
+  /* === Hero / Intro (Startseiten-Look: Creme-Band, Display-Schrift) === */
+  .rnd-hero{background:var(--bg-2);border-bottom:1px solid var(--line)}
+  .rnd-hero-inner{max-width:var(--maxw);margin:0 auto;padding:46px 20px 40px}
+  .rnd-hero .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:10px;margin:0 0 16px}
+  .rnd-hero .eyebrow::before{content:"";width:26px;height:1px;background:var(--blue);opacity:.55}
+  h1.title{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.05;letter-spacing:-.025em;margin:0 0 14px;color:var(--ink);max-width:880px}
+  h1.title .lohnt{color:var(--blue);position:relative;white-space:nowrap}
+  h1.title .lohnt::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.13em;background:var(--gold);opacity:.55;border-radius:3px}
+  .subtitle{color:var(--muted);font-size:clamp(1rem,1.5vw,1.16rem);max-width:760px;margin:0;line-height:1.6}
 
   /* Controls */
   .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:flex-end;margin:22px 0 6px}
   .actions{display:flex;gap:8px;flex-wrap:wrap}
-  .btn{appearance:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:8px;transition:all .15s ease}
-  .btn:hover{border-color:var(--gold-line);background:#fffdf8}
-  .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .btn.primary:hover{background:#1c2f51}
+  .btn{appearance:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--body);font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:11px 20px;border-radius:100px;transition:transform .35s var(--ease),background .3s,border-color .3s,color .3s,box-shadow .3s}
+  .btn:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+  .btn.primary{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:var(--shadow-blue)}
+  .btn.primary:hover{background:var(--blue-deep);color:#fff}
+  .btn .ar{transition:transform .35s var(--ease)}
+  .btn:hover .ar{transform:translateX(3px)}
 
   /* Section banner */
   .section-banner{display:flex;align-items:center;gap:14px;margin:30px 0 16px}
@@ -96,7 +124,7 @@
   .card+.card{margin-top:22px}
   .card-head{padding:16px 20px;border-bottom:1px solid var(--line-soft);display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .card-head h3{font-family:var(--serif);font-size:18px;font-weight:700;margin:0;color:var(--ink)}
-  .card-head .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .card-head .eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
   .card-body{padding:18px 20px}
 
   /* Form */
@@ -112,12 +140,12 @@
   .field .hint{font-size:11px;color:var(--muted-2);font-weight:500}
   .input-affix{position:relative;display:flex;align-items:center}
   .input-affix .suffix{position:absolute;right:11px;font-size:13px;color:var(--muted-2);pointer-events:none;font-weight:600}
-  input[type="number"], select{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#fcfcfd;transition:border-color .15s,box-shadow .15s;font-variant-numeric:tabular-nums}
+  input[type="number"], select{width:100%;font-family:var(--body);font-size:15px;color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;background:var(--bg-2);transition:border-color .25s,box-shadow .25s,background .25s;font-variant-numeric:tabular-nums}
   input[type="number"]{padding-right:34px;-moz-appearance:textfield}
   input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
-  input[type="number"]:focus, select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,137,58,.14);background:#fff}
-  input[readonly]{background:#f3f4f7;color:var(--muted);cursor:default}
-  select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235b6577' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+  input[type="number"]:focus, select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(22,54,92,.14);background:#fff}
+  input[readonly]{background:#eef1f6;color:var(--muted);cursor:default}
+  select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235C708A' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:32px}
   .derived{font-size:12px;color:var(--muted);background:#f6f7f9;border:1px dashed var(--line);border-radius:8px;padding:8px 10px;display:flex;justify-content:space-between;gap:8px}
   .derived b{color:var(--ink);font-weight:700}
   .quick{display:flex;gap:6px;margin-top:2px;flex-wrap:wrap}
@@ -126,7 +154,7 @@
   .chip[aria-pressed="true"]{background:var(--gold-soft);border-color:var(--gold-line);color:#7a5a1e}
 
   /* Method toggle */
-  .seg{display:inline-flex;background:#e9ecf1;border:1px solid var(--line);border-radius:9px;padding:3px;width:100%}
+  .seg{display:inline-flex;background:var(--blue-soft);border:1px solid var(--line);border-radius:9px;padding:3px;width:100%}
   .seg button{flex:1;appearance:none;border:none;background:transparent;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--muted);padding:8px 10px;border-radius:6px}
   .seg button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(16,28,51,.08)}
 
@@ -173,7 +201,7 @@
   .chart-card{margin-top:0}
 
   /* Inner mode tabs (economic) */
-  .tabs{display:inline-flex;background:#e9ecf1;border:1px solid var(--line);border-radius:10px;padding:4px}
+  .tabs{display:inline-flex;background:var(--blue-soft);border:1px solid var(--line);border-radius:10px;padding:4px}
   .tab{appearance:none;border:none;background:transparent;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted);padding:8px 16px;border-radius:7px;transition:all .15s;white-space:nowrap}
   .tab[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(16,28,51,.08)}
   .tab .sub{display:block;font-weight:500;font-size:11px;color:var(--muted-2)}
@@ -255,69 +283,70 @@
 
   @media print{
     body{background:#fff}
-    .controls,.actions,.tabs,.seg,.brand-edit-hint,.quick,.chip,.toggle-row,details.notes summary::before{display:none!important}
+    header.site-nav,.sb-convert,.sb-footer,.controls,.actions,.tabs,.seg,.quick,.chip,.toggle-row,details.notes summary::before{display:none!important}
+    .rnd-hero{background:#fff;border:none}.rnd-hero-inner{padding:0 0 10px}
     .wrap{padding:0}
     .grid{grid-template-columns:1fr 1fr;gap:14px}
     .card{box-shadow:none;break-inside:avoid}
     .chart-holder{height:200px}.timeline-card .chart-holder{height:130px}
     details.notes{display:none}
     .print-meta{display:block;font-size:11px;color:#555;margin:8px 0 14px}
-    header.masthead,.verdict,.check,.rnd-readout,table.kpi tr.accent td.v{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .verdict,.check,.rnd-readout,table.kpi tr.accent td.v{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     body.mode-schnell .expert-only{display:none!important}
     input,select{border:none;background:transparent}
   }
 
-  /* ===== Site-Band: Navigation, Conversion-CTA & Footer (3D Immobilienbewertung) ===== */
-  .sb-brandname{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.2px;color:#f3f5f9;text-decoration:none}
-  .sb-brandname:hover{color:#fff}
-  .sb-nav{margin-left:auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-  .sb-nav a{color:#cdd6e6;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s}
-  .sb-nav a:hover{color:#fff}
-  .sb-nav .sb-phone{color:var(--gold)}
-  .sb-nav .sb-cta{background:var(--gold);color:#1a1300;padding:9px 16px;border-radius:8px}
-  .sb-nav .sb-cta:hover{background:#c9982f;color:#1a1300}
-  @media(max-width:640px){.sb-nav{gap:12px;width:100%;margin-top:10px}.sb-nav .sb-hideS{display:none}}
+  /* ===== Conversion-CTA & Footer (Look der Startseite: .cta-band + heller Footer) ===== */
+  .sb-convert{background:var(--bg);padding:60px 20px 70px}
+  .sb-convert-inner{max-width:980px;margin:0 auto;background:var(--ink);border-radius:26px;padding:60px 56px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .sb-convert-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% -20%,rgba(46,107,184,.35),transparent 60%);pointer-events:none}
+  .sb-conv-eyebrow{position:relative;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+  .sb-convert h2{position:relative;font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0 auto 16px;max-width:680px}
+  .sb-convert p{position:relative;color:#b9c8dc;font-size:15.5px;line-height:1.65;max-width:600px;margin:0 auto 8px}
+  .sb-conv-actions{position:relative;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:28px 0 18px}
+  .sb-btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#1a1300;font-family:var(--body);font-weight:700;font-size:15px;padding:15px 26px;border-radius:100px;text-decoration:none;transition:transform .35s var(--ease),background .3s}
+  .sb-btn-gold:hover{background:#d8b25f;transform:translateY(-2px)}
+  .sb-btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.4);color:#fff;font-family:var(--body);font-weight:600;font-size:15px;padding:15px 26px;border-radius:100px;text-decoration:none;transition:border-color .3s,background .3s,transform .35s var(--ease)}
+  .sb-btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+  .sb-price{position:relative;font-family:var(--mono);font-size:13px;color:#b9c8dc;margin:8px 0 0}
+  .sb-price b{color:var(--gold);font-weight:500}
 
-  .sb-convert{background:linear-gradient(180deg,var(--ink-deep),var(--ink));margin-top:40px}
-  .sb-convert-inner{max-width:1180px;margin:0 auto;padding:50px 20px}
-  .sb-conv-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
-  .sb-convert h2{font-family:var(--serif);font-size:27px;line-height:1.2;font-weight:700;color:#fff;margin:0 0 12px;max-width:760px}
-  .sb-convert p{color:#aab4c7;font-size:15px;line-height:1.6;max-width:720px;margin:0 0 8px}
-  .sb-conv-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
-  .sb-btn-gold{background:var(--gold);color:#1a1300;font-weight:700;font-size:15px;padding:13px 22px;border-radius:9px;text-decoration:none;transition:background .15s}
-  .sb-btn-gold:hover{background:#c9982f}
-  .sb-btn-outline{border:1px solid rgba(230,211,168,.45);color:#eef1f6;font-weight:600;font-size:15px;padding:13px 22px;border-radius:9px;text-decoration:none;transition:border-color .15s,color .15s}
-  .sb-btn-outline:hover{border-color:var(--gold);color:#fff}
-  .sb-price{font-size:13.5px;color:#cdd6e6;margin:6px 0 0}
-  .sb-price b{color:var(--gold);font-weight:700}
-
-  .sb-footer{background:var(--ink-deep);border-top:1px solid rgba(255,255,255,.08)}
-  .sb-foot-inner{max-width:1180px;margin:0 auto;padding:22px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#8b97ad}
-  .sb-foot-inner nav{display:flex;gap:18px;flex-wrap:wrap}
-  .sb-foot-inner a{color:#aab4c7;text-decoration:none;transition:color .15s}
-  .sb-foot-inner a:hover{color:#fff}
+  .sb-footer{background:var(--bg-2);border-top:1px solid var(--line)}
+  .sb-foot-inner{max-width:var(--maxw);margin:0 auto;padding:30px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .sb-foot-inner nav{display:flex;gap:22px;flex-wrap:wrap}
+  .sb-foot-inner a{color:var(--ink-2);text-decoration:none;transition:color .2s}
+  .sb-foot-inner a:hover{color:var(--blue)}
   @media(max-width:560px){.sb-foot-inner{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body class="mode-schnell">
 
-<header class="masthead">
-  <div class="masthead-inner">
-    <div class="brand-row">
-      <a href="/" class="brand-mark" style="text-decoration:none">3D</a>
-      <a href="/" class="sb-brandname">3D Immobilienbewertung</a>
-      <input type="hidden" id="kanzlei" value="3D Immobilienbewertung">
-      <nav class="sb-nav" aria-label="Seitennavigation">
-        <a href="/" class="sb-hideS">Startseite</a>
-        <a href="/#leistungen" class="sb-hideS">Leistungen</a>
-        <a href="tel:+491747445452" class="sb-phone">📞 0174&nbsp;744&nbsp;5452</a>
-        <a href="/#wertcheck" class="sb-cta">Gutachten anfragen</a>
-      </nav>
+<header class="site-nav">
+  <div class="site-nav-inner">
+    <a href="/" class="logo" aria-label="3D Immobilienbewertung Startseite">
+      <img src="/assets/logo.png" alt="3D Immobilienbewertung" class="logo-img">
+    </a>
+    <ul class="site-nav-links">
+      <li><a href="/#leistungen">Leistungen</a></li>
+      <li><a href="/#vorteile">Vorteile</a></li>
+      <li><a href="/#ablauf">Ablauf</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <div class="site-nav-cta">
+      <a href="tel:+491747445452" class="site-nav-phone">0174&nbsp;744&nbsp;5452</a>
+      <a href="/#wertcheck" class="btn primary">Kostenloses Erstgespräch <span class="ar">→</span></a>
     </div>
+  </div>
+</header>
+<input type="hidden" id="kanzlei" value="3D Immobilienbewertung">
+
+<section class="rnd-hero">
+  <div class="rnd-hero-inner">
+    <p class="eyebrow">Restnutzungsdauer &amp; AfA-Optimierung</p>
     <h1 class="title">Restnutzungsdauer ermitteln &amp; prüfen, ob ein Gutachten <span class="lohnt">sich lohnt</span></h1>
     <p class="subtitle">Schritt 1: Restnutzungsdauer aus Gebäudealter und Modernisierungsgrad nach dem Modell der ImmoWertV 2021 (Anlage 2) ableiten. Schritt 2: in Sekunden berechnen, wie hoch die zusätzliche Abschreibung und Steuerersparnis ausfällt – und nach wie vielen Monaten sich das Gutachten amortisiert.</p>
   </div>
-</header>
+</section>
 
 <div class="wrap">
 
@@ -614,15 +643,14 @@
 <!-- ===== Conversion-CTA + Footer (3D Immobilienbewertung) ===== -->
 <section class="sb-convert">
   <div class="sb-convert-inner">
-    <p class="sb-conv-eyebrow">Restnutzungsdauer-Gutachten zur AfA-Optimierung</p>
-    <h2>Zeigt der Rechner Potenzial? Wir erstellen den belastbaren Nachweis fürs Finanzamt.</h2>
-    <p>Für die steuerliche Anerkennung einer kürzeren Nutzungsdauer nach § 7 Abs. 4 S. 2 EStG verlangt das Finanzamt ein nachvollziehbares Gutachten. Als zertifizierter Sachverständiger erstellen wir Ihr Restnutzungsdauer-Gutachten objektspezifisch nach dem Modell der ImmoWertV 2021 – damit Ihre höhere AfA auch anerkannt wird.</p>
+    <p class="sb-conv-eyebrow">Restnutzungsdauer-Gutachten · § 7 Abs. 4 S. 2 EStG</p>
+    <h2>Der Rechner zeigt das Potenzial. Wir liefern den Nachweis, den das Finanzamt anerkennt.</h2>
+    <p>Eine verkürzte Restnutzungsdauer senkt Ihre Steuerlast nur, wenn sie gutachterlich belegt ist. Als zertifizierter Sachverständiger erstellen wir Ihr Gutachten objektspezifisch nach dem Modell der ImmoWertV 2021 – nachvollziehbar, prüfsicher und auf die Anerkennung nach § 7 Abs. 4 S. 2 EStG ausgelegt.</p>
     <div class="sb-conv-actions">
-      <a href="tel:+491747445452" class="sb-btn-gold">📞 0174&nbsp;744&nbsp;5452</a>
-      <a href="mailto:info@3dimmobilienbewertung.de" class="sb-btn-outline">E-Mail schreiben</a>
-      <a href="/#wertcheck" class="sb-btn-outline">Kostenloses Erstgespräch</a>
+      <a href="tel:+491747445452" class="sb-btn-gold">Anrufen · 0174&nbsp;744&nbsp;5452</a>
+      <a href="/#wertcheck" class="sb-btn-outline">Kostenloses Erstgespräch <span aria-hidden="true">→</span></a>
     </div>
-    <p class="sb-price">Restnutzungsdauer-Gutachten zur AfA-Optimierung — <b>1.490 € Festpreis</b></p>
+    <p class="sb-price">Komplettpreis <b>1.490 €</b> · Festpreis ohne versteckte Kosten</p>
   </div>
 </section>
 <footer class="sb-footer">
