@@ -1,4 +1,4 @@
-team-1.jpg = Nandino Donnarumma (M.Sc Bauingenieurwesen / IHK Immobilien-Wertermittler) — dunkles, zurückgekämmtes Haar
-team-2.jpg = Vito Donnarumma (B.Sc Architektur / IHK Immobilien-Wertermittler) — lockiges Haar
+team-1.jpg = Nandino Donnarumma (M.Sc Bauingenieurwesen / zertifizierter Immobilien-Wertermittler) — dunkles, zurückgekämmtes Haar
+team-2.jpg = Vito Donnarumma (B.Sc Architektur / zertifizierter Immobilien-Wertermittler) — lockiges Haar
 
 Bitte beide Fotos manuell als team-1.jpg und team-2.jpg in diesen Ordner legen.
