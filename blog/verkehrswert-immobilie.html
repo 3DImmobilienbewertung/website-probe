@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Verkehrswert einer Immobilie – was steckt dahinter? | 3D Immobilienbewertung Hannover</title>
+<title>Verkehrswert einer Immobilie – was steckt dahinter?</title>
 <meta name="description" content="Was ist der Verkehrswert einer Immobilie, wie wird er ermittelt und warum ist er bindend? Sachverständiger erklärt es mit Beispielen aus Hannover." />
 <meta name="keywords" content="Verkehrswert Immobilie, Verkehrswert ermitteln, was ist Verkehrswert, Verkehrswertgutachten Hannover, §194 BauGB Erklärung, Immobilienwert berechnen" />
 <meta name="robots" content="index, follow" />
@@ -13,6 +13,9 @@
 <meta property="og:description" content="Was ist der Verkehrswert und wie wird er ermittelt? Alles was Eigentümer in Hannover wissen müssen – erklärt vom Sachverständigen." />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="https://www.3dimmobilienbewertung.de/assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -80,6 +83,16 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .verfahren h4{font-family:var(--display);font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--ink)}
 .verfahren p{font-size:14.5px;color:var(--muted);margin-bottom:0;line-height:1.6}
 .verfahren .badge{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:8px}
+/* FAQ accordion */
+.faq-list{margin:28px 0 8px;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item summary{font-family:var(--display);font-weight:700;font-size:1.08rem;color:var(--ink);padding:18px 38px 18px 0;cursor:pointer;list-style:none;position:relative;line-height:1.4}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:2px;top:14px;font-family:var(--body);font-weight:400;font-size:1.7rem;line-height:1;color:var(--blue);transition:transform .25s}
+.faq-item[open] summary::after{content:"\2212"}
+.faq-item summary:hover{color:var(--blue)}
+.faq-body{padding:0 38px 20px 0}
+.faq-body p{color:var(--ink-2);margin-bottom:0;font-size:15.5px;line-height:1.72}
 /* Sidebar */
 .sidebar{position:sticky;top:90px}
 .sidebar-cta{background:linear-gradient(135deg,var(--blue-deep),var(--blue));border-radius:var(--radius);padding:28px 24px;color:#fff;margin-bottom:24px}
@@ -112,7 +125,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <div class="wrap">
 <header class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung Logo" class="logo-img" /></a>
+    <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung Logo" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-right">
       <a href="tel:+491747445452" class="nav-phone">📞 0174 744 5452</a>
       <a href="/#wertcheck" class="btn btn-primary">Kostenlos anfragen</a>
@@ -236,6 +249,22 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
       <p>Der Verkehrswert ist mehr als eine Zahl – er ist die rechtssichere Grundlage für alle wichtigen Immobilienentscheidungen. Ein von einem qualifizierten Sachverständigen erstelltes Gutachten nach §194 BauGB schützt Sie rechtlich, hilft beim Steuern sparen und gibt Ihnen Sicherheit bei Kauf, Verkauf oder Erbschaft.</p>
       <p>Haben Sie Fragen zu Ihrer konkreten Situation? Sprechen Sie uns an – das Erstgespräch ist kostenlos und unverbindlich.</p>
 
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Was ist der Verkehrswert einer Immobilie?</summary>
+          <div class="faq-body"><p>Der Verkehrswert (auch: Marktwert) ist gemäß §194 BauGB der Preis, der zum Bewertungsstichtag im gewöhnlichen Geschäftsverkehr erzielt werden könnte. Er ist rechtlich bindend und wird von Gerichten, Finanzämtern und Behörden anerkannt.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Welche Verfahren gibt es zur Ermittlung des Verkehrswerts?</summary>
+          <div class="faq-body"><p>Es gibt drei Verfahren nach ImmoWertV: das Vergleichswertverfahren (Eigentumswohnungen, Grundstücke), das Sachwertverfahren (selbstgenutzte Häuser) und das Ertragswertverfahren (Mietimmobilien). Der Sachverständige wählt das passende Verfahren je nach Immobilientyp.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Wann brauche ich ein Verkehrswertgutachten?</summary>
+          <div class="faq-body"><p>Ein Verkehrswertgutachten wird benötigt bei: Erbschaft/Schenkung (Nachweis gegenüber Finanzamt), Scheidung (Zugewinnausgleich), Kauf/Verkauf (Preisfindung), Zwangsversteigerung sowie bei gerichtlichen Auseinandersetzungen über den Immobilienwert.</p></div>
+        </details>
+      </div>
     </div>
   </article>
 
@@ -260,6 +289,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
         <li><a href="#gutachten">Wann brauche ich ein Gutachten?</a></li>
         <li><a href="#kosten">Kosten in Hannover</a></li>
         <li><a href="#fazit">Fazit</a></li>
+        <li><a href="#faq">Häufige Fragen</a></li>
       </ol>
     </div>
   </aside>
@@ -291,7 +321,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <footer>
   <div class="container">
     <div class="foot-inner">
-      <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung" style="height:28px;opacity:.65" /></a>
+      <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung" style="height:28px;opacity:.65" width="594" height="160" decoding="async" loading="lazy" /></a>
       <div class="foot-links">
         <a href="/">Startseite</a>
         <a href="/blog/">Blog</a>

@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Immobilienpreise Hannover 2026 – Entwicklung, Prognose & Stadtteile | 3D Immobilienbewertung</title>
+<title>Immobilienpreise Hannover 2026 – Prognose &amp; Stadtteile</title>
 <meta name="description" content="Immobilienpreise in Hannover 2026: aktuelle Quadratmeterpreise nach Stadtteilen, Markttrends &amp; was Eigentümer jetzt wissen müssen – vom Sachverständigen." />
 <meta name="keywords" content="Immobilienpreise Hannover, Immobilienpreise Hannover 2026, Quadratmeterpreis Hannover, Hauspreise Hannover, Immobilienmarkt Hannover, Wohnungspreise Hannover" />
 <meta name="robots" content="index, follow" />
@@ -13,6 +13,9 @@
 <meta property="og:description" content="Aktuelle Quadratmeterpreise nach Stadtteilen, Markttrends und Prognose für Hannover 2026 – vom Sachverständigen erklärt." />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="https://www.3dimmobilienbewertung.de/assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -82,6 +85,16 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .price-table tr:nth-child(even) td{background:var(--bg-2)}
 .price-table td strong{color:var(--ink)}
 .tag-rise{color:#1f8a4c;font-weight:700}.tag-flat{color:var(--muted);font-weight:700}.tag-fall{color:#c0392b;font-weight:700}
+/* FAQ accordion */
+.faq-list{margin:28px 0 8px;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item summary{font-family:var(--display);font-weight:700;font-size:1.08rem;color:var(--ink);padding:18px 38px 18px 0;cursor:pointer;list-style:none;position:relative;line-height:1.4}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:2px;top:14px;font-family:var(--body);font-weight:400;font-size:1.7rem;line-height:1;color:var(--blue);transition:transform .25s}
+.faq-item[open] summary::after{content:"\2212"}
+.faq-item summary:hover{color:var(--blue)}
+.faq-body{padding:0 38px 20px 0}
+.faq-body p{color:var(--ink-2);margin-bottom:0;font-size:15.5px;line-height:1.72}
 /* Sidebar */
 .sidebar{position:sticky;top:90px}
 .sidebar-cta{background:linear-gradient(135deg,var(--blue-deep),var(--blue));border-radius:var(--radius);padding:28px 24px;color:#fff;margin-bottom:24px}
@@ -114,7 +127,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <div class="wrap">
 <header class="nav">
   <div class="nav-inner">
-    <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung Logo" class="logo-img" /></a>
+    <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung Logo" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-right">
       <a href="tel:+491747445452" class="nav-phone">📞 0174 744 5452</a>
       <a href="/#wertcheck" class="btn btn-primary">Kostenlos anfragen</a>
@@ -210,6 +223,22 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
       <p>Der Immobilienmarkt in Hannover hat sich 2026 gefangen. Wer eine gut gelegene, gepflegte Immobilie besitzt, kann mit stabilen bis leicht steigenden Preisen rechnen. Bei unsanierten Objekten lohnt sich ein genauer Blick auf die Energiebilanz. In jedem Fall gilt: Eine fundierte, individuelle Bewertung ist die Grundlage jeder guten Entscheidung – ob bei Verkauf, Kauf, Erbschaft oder Scheidung.</p>
       <p>Möchten Sie wissen, was Ihre Immobilie in Hannover aktuell wert ist? Das Erstgespräch ist kostenlos und unverbindlich.</p>
 
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Wie hoch sind die Immobilienpreise in Hannover 2026?</summary>
+          <div class="faq-body"><p>Eigentumswohnungen in Hannover liegen 2026 im Mittel bei rund 3.300–4.200 €/m², Einfamilienhäuser bei etwa 3.000–4.500 €/m² – je nach Stadtteil, Baujahr und Zustand. In gefragten Lagen wie der List, Zooviertel oder Kirchrode werden deutlich höhere Preise erzielt, in Randlagen entsprechend weniger.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Steigen oder fallen die Immobilienpreise in Hannover?</summary>
+          <div class="faq-body"><p>Nach dem Preisrückgang 2022–2023 infolge gestiegener Zinsen hat sich der Markt in Hannover 2025/2026 stabilisiert. Gut sanierte Objekte in guten Lagen ziehen wieder leicht an, während unsanierte Immobilien mit schlechter Energiebilanz Preisabschläge hinnehmen müssen.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Wie finde ich den echten Wert meiner Immobilie in Hannover heraus?</summary>
+          <div class="faq-body"><p>Online-Rechner liefern nur grobe Spannen. Den rechtssicheren Verkehrswert ermittelt ein qualifizierter Sachverständiger nach §194 BauGB und ImmoWertV anhand von Lage, Zustand, Ausstattung und aktuellen Vergleichsdaten. Ein Erstgespräch ist bei 3D Immobilienbewertung kostenlos.</p></div>
+        </details>
+      </div>
     </div>
   </article>
 
@@ -233,6 +262,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
         <li><a href="#kaeufer">Für Käufer &amp; Erben</a></li>
         <li><a href="#wert-ermitteln">Wert ermitteln</a></li>
         <li><a href="#fazit">Fazit</a></li>
+        <li><a href="#faq">Häufige Fragen</a></li>
       </ol>
     </div>
   </aside>
@@ -264,7 +294,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <footer>
   <div class="container">
     <div class="foot-inner">
-      <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung" style="height:28px;opacity:.65" /></a>
+      <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung" style="height:28px;opacity:.65" width="594" height="160" decoding="async" loading="lazy" /></a>
       <div class="foot-links">
         <a href="/">Startseite</a>
         <a href="/blog/">Blog</a>
