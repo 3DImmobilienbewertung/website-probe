@@ -49,11 +49,11 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
 ::selection{background:var(--blue);color:#fff}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw-wide);margin:0 auto;padding:0 28px}
-.logo-img{height:34px}.nav-right{display:flex;align-items:center;gap:18px}
+.logo-img{height:34px;width:auto}.nav-right{display:flex;align-items:center;gap:18px}
 .nav-phone{font-weight:700;color:var(--blue);font-size:14.5px}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:700;font-size:14px;padding:11px 22px;border-radius:100px;cursor:pointer;border:1.5px solid transparent;transition:transform .3s,background .25s}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(22,54,92,.28)}.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
-@media(max-width:600px){.nav-phone{display:none}.logo-img{height:28px}}
+@media(max-width:600px){header.nav .btn{white-space:nowrap;font-size:13px;padding:10px 16px}header.nav .nav-inner>a{flex:0 0 auto}.nav-phone{display:none}.logo-img{height:28px;width:auto}}
 /* Article layout */
 .article-wrap{display:grid;grid-template-columns:1fr 320px;gap:52px;align-items:start;max-width:var(--maxw-wide);margin:0 auto;padding:52px 28px 80px}
 .article-head{margin-bottom:36px}
@@ -292,7 +292,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <footer>
   <div class="container">
     <div class="foot-inner">
-      <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung" style="height:28px;opacity:.65" width="594" height="160" decoding="async" loading="lazy" /></a>
+      <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung" style="height:28px;opacity:.65;width:auto" width="594" height="160" decoding="async" loading="lazy" /></a>
       <div class="foot-links">
         <a href="/">Startseite</a>
         <a href="/blog/">Blog</a>
