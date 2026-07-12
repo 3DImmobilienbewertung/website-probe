@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://www.3dimmobilienbewertung.de/immobilienbewertung-kauf-verkauf.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -250,7 +250,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 /* ── MOBILE BAR ── */
 .mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 16px 14px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(16,36,61,.09)}
 .mobile-bar a{flex:1;text-align:center;font-size:14.5px;padding:13px 10px}
-@media(max-width:600px){.mobile-bar{display:flex}body{padding-bottom:74px}}
+@media(max-width:600px){.mobile-bar{display:flex}body{padding-bottom:74px}.hero-grid>*{min-width:0}.hero-grid h1{overflow-wrap:break-word;hyphens:auto}}
 
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:36px}.form-card{position:static}}
 @media(max-width:880px){.pain-grid{grid-template-columns:1fr}.testi-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr)}.how-grid{grid-template-columns:repeat(2,1fr)}.how-grid::before{display:none}}
@@ -270,6 +270,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     </div>
   </div>
 </header>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">★★★★★</span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 
 <!-- BREADCRUMB -->
 <div class="container">

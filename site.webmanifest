@@ -2,7 +2,7 @@
   "name": "3D Immobilienbewertung",
   "short_name": "3D Immobilien",
   "icons": [
-    { "src": "/assets/logo_icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    { "src": "/assets/logo_icon.png", "sizes": "256x256", "type": "image/png", "purpose": "any" }
   ],
   "theme_color": "#16365C",
   "background_color": "#FFFFFF",
