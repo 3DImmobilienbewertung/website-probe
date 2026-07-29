@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/rnd",
+      "destination": "/restnutzungsdauergutachten-hannover.html?utm_source=print&utm_medium=qr&utm_campaign=restnutzungsdauer",
+      "permanent": false
+    },
+    {
+      "source": "/zeitung",
+      "destination": "/restnutzungsdauergutachten-hannover.html?utm_source=zeitung&utm_medium=print&utm_campaign=restnutzungsdauer",
+      "permanent": false
+    },
+    {
+      "source": "/insta",
+      "destination": "/restnutzungsdauergutachten-hannover.html?utm_source=instagram&utm_medium=social&utm_campaign=restnutzungsdauer",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/:path*", "destination": "/:path*" }
