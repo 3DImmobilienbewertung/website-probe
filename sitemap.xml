@@ -41,6 +41,14 @@
     <lastmod>2026-07-12</lastmod>
   </url>
 
+  <!-- Ueber uns / Unternehmensgeschichte -->
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/ueber-uns.html</loc>
+    <priority>0.80</priority>
+    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-29</lastmod>
+  </url>
+
   <!-- Restnutzungsdauergutachten (Money-Page) -->
   <url>
     <loc>https://www.3dimmobilienbewertung.de/restnutzungsdauergutachten-hannover.html</loc>
