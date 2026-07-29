@@ -178,7 +178,13 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/</loc>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauergutachten-hannover.html</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-29</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/was-kostet-immobilienbewertung-hannover.html</loc>
