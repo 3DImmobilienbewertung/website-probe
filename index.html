@@ -623,6 +623,12 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .explainer-cover .meta{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.66)}
 @media(max-width:600px){.explainer-cover .play{width:60px;height:60px}.explainer-cover{gap:12px}}
 @media(prefers-reduced-motion:reduce){.brandloop img{animation:none;opacity:1;transform:none}.explainer-cover .play{transition:none}}
+
+/* ---- Mobile Aktionsleiste: Anrufen / Anfragen immer erreichbar ---- */
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 16px calc(14px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-top:1px solid var(--border);box-shadow:0 -6px 24px rgba(16,36,61,.10)}
+.mobile-bar a{flex:1;text-align:center;justify-content:center;font-size:14.5px;padding:13px 10px}
+.mobile-bar .call{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}
+@media(max-width:680px){.mobile-bar{display:flex}body{padding-bottom:78px}}
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -1556,6 +1562,10 @@ if(form)form.addEventListener('submit',function(e){
   });
 });
 </script>
+<div class="mobile-bar">
+  <a href="tel:+491747445452" class="btn call">📞 Anrufen</a>
+  <a href="#wertcheck" class="btn btn-primary">Kostenlos anfragen</a>
+</div>
 <script src="assets/consent.js"></script>
 <script>
 /* Erklaerfilm-Fassade: der Player (React-Runtime) wird erst geladen, wenn
