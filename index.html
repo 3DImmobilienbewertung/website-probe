@@ -597,6 +597,32 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .blog-all{margin-top:40px;text-align:center}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.blog-grid{grid-template-columns:1fr;gap:18px}.blog-all{margin-top:28px}}
+
+/* ---- Logo-Signet (Blueprint-Animation, rein CSS – kein JS/Video) ---- */
+.brandloop{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:radial-gradient(120% 120% at 50% 0%,#fff 0%,#eaf0f6 70%,#dbe4ee 100%)}
+.brandloop img{position:absolute;left:32.81%;top:38.06%;width:34.37%;height:auto;display:block;filter:drop-shadow(0 8px 16px rgba(0,48,80,.18));animation:bl-logo 6s infinite}
+@keyframes bl-logo{
+  0%,6.7%{opacity:0;transform:translateY(20px) scale(.97);animation-timing-function:cubic-bezier(.215,.61,.355,1)}
+  26.7%{opacity:1;transform:translateY(0) scale(1)}
+  88.3%{opacity:1;animation-timing-function:cubic-bezier(.55,.055,.675,.19)}
+  98.3%,100%{opacity:0}
+}
+.brandloop-cap{position:absolute;left:0;right:0;bottom:0;padding:20px 24px;pointer-events:none;background:linear-gradient(to top,rgba(219,228,238,.95),rgba(219,228,238,0))}
+.brandloop-cap .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.brandloop-cap .v{font-family:var(--display);font-size:1.1rem;font-weight:600;color:var(--blue);margin:0}
+
+/* ---- Erklaerfilm: Klick-Fassade, iframe laedt erst auf Wunsch ---- */
+.explainer{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue) 100%)}
+.explainer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.explainer-cover{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:28px;border:0;cursor:pointer;color:#fff;background:transparent;font-family:var(--body);text-align:center}
+.explainer-cover::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 45%,rgba(46,107,184,.35),transparent 70%)}
+.explainer-cover>*{position:relative}
+.explainer-cover .play{width:78px;height:78px;border-radius:50%;background:var(--gold);color:var(--blue-deep);display:grid;place-items:center;box-shadow:0 16px 40px rgba(201,162,75,.45);transition:transform .3s var(--ease)}
+.explainer-cover:hover .play,.explainer-cover:focus-visible .play{transform:scale(1.08)}
+.explainer-cover .ttl{font-family:var(--display);font-weight:700;font-size:clamp(1.05rem,2.4vw,1.6rem);letter-spacing:-.02em;max-width:22ch;line-height:1.25}
+.explainer-cover .meta{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+@media(max-width:600px){.explainer-cover .play{width:60px;height:60px}.explainer-cover{gap:12px}}
+@media(prefers-reduced-motion:reduce){.brandloop img{animation:none;opacity:1;transform:none}.explainer-cover .play{transition:none}}
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -875,15 +901,11 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       </ul>
       <a href="#wertcheck" class="btn btn-primary" style="margin-top:34px">Jetzt kostenloses Erstgespräch vereinbaren <span class="ar">→</span></a>
     </div>
-    <div class="r s2" style="position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9">
-      <video muted loop playsinline preload="none" poster="assets/hero-poster.jpg" data-defer-video
-             style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border:0"
-             aria-label="Immobilienbewertung – professionelle Besichtigung vor Ort">
-        <source data-src="assets/hero-video.mp4" type="video/mp4">
-      </video>
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:22px 24px;background:linear-gradient(to top,rgba(10,26,50,.80),transparent);pointer-events:none">
-        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bcd6ff;margin-bottom:4px">3D Immobilienbewertung · Region Hannover</p>
-        <p style="font-family:var(--display);font-size:1.1rem;font-weight:600;color:#fff;margin:0">Präzise Bewertung direkt vor Ort.</p>
+    <div class="r s2 brandloop">
+      <img src="assets/logo.png" alt="3D Immobilienbewertung" width="594" height="160" decoding="async" loading="lazy" />
+      <div class="brandloop-cap">
+        <p class="k">3D Immobilienbewertung · Region Hannover</p>
+        <p class="v">Präzise Bewertung direkt vor Ort.</p>
       </div>
     </div>
   </div>
@@ -1112,18 +1134,19 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <h2 class="section-title">Alles Wichtige rund um die Immobilienbewertung</h2>
       <p class="lead">In diesen kurzen Videos erfahren Sie, wann ein Verkehrswertgutachten sinnvoll ist – und worauf es ankommt.</p>
     </div>
-    <!-- Eigenes Video -->
+    <!-- Erklaerfilm: laedt erst nach Klick (spart auf Mobil das komplette Player-Bundle) -->
     <div class="r" style="margin-bottom:32px">
-      <div style="position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#000;aspect-ratio:16/9">
-        <video muted loop playsinline preload="none" poster="assets/hero-poster.jpg" data-defer-video
-               style="width:100%;height:100%;object-fit:cover;display:block"
-               aria-label="3D Immobilienbewertung – Einblick in unsere Arbeit">
-          <source data-src="assets/hero-video.mp4" type="video/mp4">
-        </video>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 32px;background:linear-gradient(to top,rgba(10,26,50,.85),transparent)">
-          <p style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bcd6ff;margin-bottom:6px">3D Immobilienbewertung · Hannover</p>
-          <p style="font-family:var(--display);font-size:1.3rem;font-weight:600;color:#fff;margin:0">Professionelle Immobilienbewertung – vor Ort, persönlich, präzise.</p>
-        </div>
+      <div class="explainer" id="erklaerfilm"
+           data-src="/erklaervideo/"
+           data-title="Erklärfilm: Wie funktioniert eine Immobilienbewertung?">
+        <button type="button" class="explainer-cover" aria-label="Erklärfilm abspielen: Wie funktioniert eine Immobilienbewertung? Dauer ca. 1:15 Minuten">
+          <span class="meta">Erklärfilm · ca. 1:15 Min.</span>
+          <span class="play" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+          </span>
+          <span class="ttl">Wie funktioniert eine Immobilienbewertung?</span>
+          <span class="meta">In 7 Schritten vom Objekt zum Wertgutachten</span>
+        </button>
       </div>
     </div>
 
@@ -1534,27 +1557,23 @@ if(form)form.addEventListener('submit',function(e){
 </script>
 <script src="assets/consent.js"></script>
 <script>
+/* Erklaerfilm-Fassade: der Player (React-Runtime) wird erst geladen, wenn
+   der Nutzer wirklich abspielt – bis dahin kostet die Sektion 0 Byte. */
 (function(){
-  var sd = navigator.connection && navigator.connection.saveData;
-  if (!matchMedia('(min-width:680px)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches || sd) {
-    document.querySelectorAll('#videos video[data-defer-video]').forEach(function(v){
-      var s2 = v.querySelector('source[data-src]');
-      if (s2 && !s2.src) { s2.src = s2.getAttribute('data-src'); }
-      v.controls = true; v.load();
-    });
-    return;
-  }
-  function start(v){
-    var s = v.querySelector('source[data-src]');
-    if (s && !s.src) { s.src = s.getAttribute('data-src'); v.load(); }
-    var p = v.play(); if (p && p.catch) p.catch(function(){});
-  }
-  var vids = document.querySelectorAll('video[data-defer-video]');
-  if (!('IntersectionObserver' in window)) { vids.forEach(start); return; }
-  var vio = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) { start(e.target); vio.unobserve(e.target); } });
-  }, {rootMargin: '200px'});
-  vids.forEach(function(v){ vio.observe(v); });
+  document.querySelectorAll('.explainer[data-src]').forEach(function(box){
+    var cover = box.querySelector('.explainer-cover');
+    if (!cover) return;
+    cover.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = box.getAttribute('data-src');
+      f.title = box.getAttribute('data-title') || 'Erklärfilm';
+      f.loading = 'lazy';
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('referrerpolicy', 'same-origin');
+      box.replaceChild(f, cover);
+      if (window.gtag) window.gtag('event', 'video_start', { video_title: f.title });
+    }, { once: true });
+  });
 })();
 </script>
 </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Reine Einbett-/Player-Seite (wird per iframe von der Startseite geladen):
+     kein eigenständiger Inhalt -> nicht indexieren, Links aber folgen. -->
+<meta name="robots" content="noindex, follow">
+<title>Erklärfilm: Wie funktioniert eine Immobilienbewertung? – 3D Immobilienbewertung</title>
+<link rel="icon" type="image/png" href="/assets/logo_icon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/logo.png" />
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; overflow: hidden; }
+    a, a:hover { color: #003050; }
+  </style>
+  <script>
+    /* Die Engine merkt sich den Abspielstand in localStorage. Im Embed soll
+       jeder Aufruf bei 0:00 starten – daher vor dem Mount zuruecksetzen. */
+    try {
+      for (var i = localStorage.length - 1; i >= 0; i--) {
+        var k = localStorage.key(i);
+        if (k && /:t$/.test(k)) localStorage.removeItem(k);
+      }
+    } catch (e) {}
+  </script>
+  <script>window.OM_SCENES = '[{"name":"Intro","dur":8},{"name":"WasIst","dur":9},{"name":"Daten","dur":10},{"name":"Analyse","dur":10},{"name":"Verfahren","dur":13},{"name":"Zusammen","dur":8},{"name":"Gutachten","dur":8},{"name":"CTA","dur":9}]';</script>
+  <script>window.OM_PLAYBACK = '{"mode":"loop"}';</script>
+</helmet>
+<x-import component-from-global-scope="Erklaervideo" from="./animations-v2.jsx ./tweaks-stub.jsx ./explainer-scenes.jsx" hint-size="100%,100%"></x-import>
+</x-dc>
+</body>
+</html>
