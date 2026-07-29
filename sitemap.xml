@@ -41,6 +41,14 @@
     <lastmod>2026-07-12</lastmod>
   </url>
 
+  <!-- Restnutzungsdauergutachten (Money-Page) -->
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/restnutzungsdauergutachten-hannover.html</loc>
+    <priority>0.95</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-29</lastmod>
+  </url>
+
   <!-- Restnutzungsdauer- / AfA-Rechner (Tool + Dienstleistung) -->
   <url>
     <loc>https://www.3dimmobilienbewertung.de/restnutzungsdauer-rechner.html</loc>
