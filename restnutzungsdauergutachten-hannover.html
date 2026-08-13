@@ -211,6 +211,60 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 .vidlist li{position:relative;padding-left:30px;font-size:15.5px;color:var(--ink);line-height:1.55}
 .vidlist li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--gold);font-weight:700}
 @media(max-width:820px){.vidgrid{grid-template-columns:1fr;gap:30px;max-width:420px}.vidtext{text-align:left}}
+/* --- Kennzahlen-Band --- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden;max-width:1000px;margin:0 auto}
+.kpi{background:#fff;padding:26px 18px;text-align:center}
+.kpi .n{font-family:var(--display);font-weight:800;font-size:1.9rem;color:var(--blue);line-height:1;letter-spacing:-.02em}
+.kpi .n .st{color:#F2B500}
+.kpi .l{font-size:13px;color:var(--muted);margin-top:9px;line-height:1.45}
+/* --- Nutzenversprechen --- */
+.usps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.usp{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px 24px;box-shadow:var(--shadow-sm)}
+.usp .ic{font-size:26px;line-height:1}
+.usp b{display:block;font-family:var(--display);font-size:1.06rem;color:var(--ink);margin:14px 0 8px;line-height:1.3}
+.usp span{font-size:14.5px;color:var(--muted);line-height:1.62}
+/* --- 3 Schritte kompakt --- */
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:st}
+.step3{position:relative;background:#fff;border:1px solid var(--border);border-radius:18px;padding:32px 26px 26px;box-shadow:var(--shadow-sm)}
+.step3::before{counter-increment:st;content:counter(st);position:absolute;top:-18px;left:26px;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.05rem;box-shadow:0 8px 20px rgba(22,54,92,.3)}
+.step3 b{display:block;font-family:var(--display);font-size:1.1rem;color:var(--ink);margin-bottom:9px}
+.step3 span{font-size:14.5px;color:var(--muted);line-height:1.62}
+@media(max-width:760px){.steps3{grid-template-columns:1fr;gap:32px}}
+/* --- Vergleichstabelle --- */
+.cmp{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;min-width:640px}
+.cmp th,.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid rgba(16,36,61,.07);vertical-align:top}
+.cmp thead th{background:var(--blue-soft);font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.cmp thead th.own{background:var(--blue);color:#fff}
+.cmp td.own{background:rgba(242,181,0,.07);font-weight:600;color:var(--ink)}
+.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:#2E7D5B;font-weight:700}.cmp .no{color:#B23A2E;font-weight:700}
+/* --- AfA-Tabelle --- */
+.afa{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;min-width:600px}
+.afa th,.afa td{padding:13px 16px;border-bottom:1px solid rgba(16,36,61,.07);text-align:left}
+.afa thead th{background:var(--blue-soft);font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.afa td:not(:first-child){font-variant-numeric:tabular-nums;white-space:nowrap}
+.afa tbody tr:last-child td{border-bottom:0}
+.afa .hi{background:rgba(242,181,0,.09);font-weight:700;color:var(--ink)}
+/* --- Risiko-Umkehr --- */
+.rev{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;background:linear-gradient(135deg,var(--blue-deep),var(--blue));color:#fff;border-radius:22px;padding:38px 36px;box-shadow:var(--shadow);max-width:900px;margin:0 auto}
+.rev .sh{font-size:44px;line-height:1}
+.rev h3{font-family:var(--display);font-size:1.5rem;font-weight:800;margin:0 0 12px;letter-spacing:-.02em}
+.rev p{color:rgba(255,255,255,.86);font-size:15.5px;line-height:1.7;margin:0 0 10px}
+.rev p:last-child{margin-bottom:0}
+@media(max-width:600px){.rev{grid-template-columns:1fr;padding:28px 24px}}
+/* --- Leistungsumfang --- */
+.scope{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.scope div{background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:14px;padding:22px 22px}
+.scope b{display:block;font-family:var(--display);font-size:1rem;color:var(--ink);margin-bottom:7px}
+.scope span{font-size:14.3px;color:var(--muted);line-height:1.6}
+/* --- Kundenstimmen --- */
+.revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.rev-c{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px 24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.rev-c .st{color:#F2B500;letter-spacing:2px;font-size:14px}
+.rev-c p{font-size:14.8px;color:var(--ink);line-height:1.68;margin:14px 0 0;flex:1}
+.rev-c .who{margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+.rev-c .who b{display:block;color:var(--ink);font-size:14px}
+.tblwrap{overflow-x:auto;max-width:940px;margin:0 auto}
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -286,6 +340,19 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 
 <div class="trust-bar"><div class="container trust-inner"><span>&sect;&nbsp;7 Abs.&nbsp;4 S.&nbsp;2 EStG</span><span>Objektindividuelles Gutachten</span><span>Begehung vor Ort</span><span>Festpreis 1.490&nbsp;&euro;</span><span>Hannover &amp; Region</span></div></div>
 
+<!-- ===================== KENNZAHLEN ===================== -->
+<section class="block" style="padding-bottom:0">
+  <div class="container">
+    <div class="kpis r">
+      <div class="kpi"><div class="n"><span class="st">&#9733;</span> 5,0</div><div class="l">aus 22 Google-Bewertungen</div></div>
+      <div class="kpi"><div class="n">250+</div><div class="l">bewertete Immobilien</div></div>
+      <div class="kpi"><div class="n">1.490&nbsp;&euro;</div><div class="l">Festpreis, vorab verbindlich</div></div>
+      <div class="kpi"><div class="n">24&nbsp;h</div><div class="l">R&uuml;ckmeldung auf Anfragen</div></div>
+      <div class="kpi"><div class="n">2022</div><div class="l">Familienbetrieb aus der Wedemark</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== PERSOENLICHE ANSPRACHE ===================== -->
 <section class="block" id="video">
   <div class="container">
@@ -317,6 +384,118 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===================== NUTZEN ===================== -->
+<section class="block alt">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:34px">
+      <span class="eyebrow" style="justify-content:center">Ihr Nutzen</span>
+      <h2>Was Ihnen ein Restnutzungsdauergutachten bringt</h2>
+    </div>
+    <div class="usps r s1">
+      <div class="usp"><div class="ic">&#128200;</div><b>H&ouml;here Abschreibung</b><span>Ist die tats&auml;chliche Restnutzungsdauer k&uuml;rzer als die gesetzliche Typisierung, steigt Ihr j&auml;hrlicher AfA-Satz &ndash; jedes Jahr aufs Neue.</span></div>
+      <div class="usp"><div class="ic">&#128269;</div><b>Klarheit &uuml;ber Ihr Geb&auml;ude</b><span>Sie erfahren belastbar, in welchem Zustand Ihre Bausubstanz wirklich ist &ndash; unabh&auml;ngig davon, wie Sie steuerlich damit umgehen.</span></div>
+      <div class="usp"><div class="ic">&#128220;</div><b>Nachvollziehbare Grundlage</b><span>Ein schriftliches Gutachten, das die Restnutzungsdauer herleitet &ndash; pr&uuml;fbar f&uuml;r Ihre Steuerberatung und das Finanzamt.</span></div>
+      <div class="usp"><div class="ic">&#127959;</div><b>Beurteilung vom Bau her</b><span>Konstruktion, Haustechnik, Instandhaltungsr&uuml;ckstand: Wir sehen, was ein Rechner nicht sehen kann &ndash; weil wir vor Ort sind.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3 SCHRITTE ===================== -->
+<section class="block">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:44px">
+      <span class="eyebrow" style="justify-content:center">So einfach geht es</span>
+      <h2>In drei Schritten zum Gutachten</h2>
+    </div>
+    <div class="steps3 r s1">
+      <div class="step3"><b>Kostenlose Ersteinsch&auml;tzung</b><span>Sie nennen uns Objekt, Baujahr und Nutzung. Wir sagen Ihnen unverbindlich und kostenlos, ob sich ein Gutachten f&uuml;r Ihr Objekt voraussichtlich lohnt.</span></div>
+      <div class="step3"><b>Begehung vor Ort</b><span>Nach Ihrer Beauftragung nehmen wir das Geb&auml;ude auf: Substanz, Technik, Zustand, Instandhaltungsr&uuml;ckstand &ndash; fotografisch dokumentiert.</span></div>
+      <div class="step3"><b>Gutachten &amp; Besprechung</b><span>Sie erhalten das schriftliche Gutachten mit hergeleiteter Restnutzungsdauer &ndash; auf Wunsch besprechen wir es gemeinsam mit Ihrer Steuerberatung.</span></div>
+    </div>
+    <div style="text-align:center;margin-top:34px">
+      <a href="#anfrage" class="btn btn-primary">Kostenlose Ersteinsch&auml;tzung anfordern &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VERGLEICH ===================== -->
+<section class="block alt">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:30px">
+      <span class="eyebrow" style="justify-content:center">Im Vergleich</span>
+      <h2>Warum ein Rechenwert allein nicht gen&uuml;gt</h2>
+      <p class="lead" style="margin-top:14px">Der Bundesfinanzhof hat 2024 klargestellt: Der blo&szlig;e Verweis auf die modellhafte Restnutzungsdauer reicht als Nachweis nicht aus.</p>
+    </div>
+    <div class="tblwrap r s1">
+      <table class="cmp">
+        <thead><tr><th>&nbsp;</th><th>Ohne Gutachten</th><th>Online-Rechner / Ferngutachten</th><th class="own">Unser Gutachten</th></tr></thead>
+        <tbody>
+          <tr><td><b>Grundlage</b></td><td>Gesetzliche Typisierung (50 Jahre)</td><td>Formel auf Basis von Eckdaten</td><td class="own">Objektindividuelle Beurteilung der Bausubstanz</td></tr>
+          <tr><td><b>Besichtigung vor Ort</b></td><td class="no">entf&auml;llt</td><td class="no">nein</td><td class="own"><span class="yes">ja, immer</span></td></tr>
+          <tr><td><b>Ma&szlig;stab der BFH-Rechtsprechung</b></td><td>&ndash;</td><td class="no">nicht erf&uuml;llt</td><td class="own"><span class="yes">erf&uuml;llt</span></td></tr>
+          <tr><td><b>Dokumentation</b></td><td>keine</td><td>Rechenergebnis</td><td class="own">Schriftliches Gutachten mit Fotos und Herleitung</td></tr>
+          <tr><td><b>Ansprechpartner</b></td><td>&ndash;</td><td>meist Plattform</td><td class="own">Die Person, die auch vor Ort war</td></tr>
+          <tr><td><b>Kosten</b></td><td>0&nbsp;&euro;</td><td>gering</td><td class="own">1.490&nbsp;&euro; Festpreis</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaim">Der Rechner auf unserer Website liefert eine gute erste Orientierung &ndash; f&uuml;r den Nachweis gegen&uuml;ber dem Finanzamt ersetzt er das Gutachten aber nicht. <a href="/restnutzungsdauer-rechner.html" style="color:var(--blue);font-weight:700;text-decoration:underline">Zum kostenlosen Rechner</a></p>
+  </div>
+</section>
+
+<!-- ===================== RISIKO-UMKEHR ===================== -->
+<section class="block">
+  <div class="container">
+    <div class="rev r s1">
+      <div class="sh">&#128737;&#65039;</div>
+      <div>
+        <h3>Sie gehen nicht in Vorleistung</h3>
+        <p>Bevor Sie irgendetwas beauftragen, pr&uuml;fen wir kostenlos, ob sich ein Gutachten f&uuml;r Ihr Objekt &uuml;berhaupt lohnt. Kommen wir zu dem Ergebnis, dass es das nicht tut, sagen wir Ihnen das offen &ndash; und Sie zahlen nichts.</p>
+        <p>Der Preis steht vorab verbindlich fest: <strong>1.490&nbsp;&euro;</strong>, inklusive Ortsbegehung, Dokumentation und Besprechung. Keine Nachberechnung, keine Stundens&auml;tze, keine &Uuml;berraschungen auf der Rechnung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEISTUNGSUMFANG ===================== -->
+<section class="block alt">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:32px">
+      <span class="eyebrow" style="justify-content:center">Enthalten</span>
+      <h2>Was zum Festpreis dazugeh&ouml;rt</h2>
+    </div>
+    <div class="scope r s1">
+      <div><b>Termin nach Ihrem Kalender</b><span>Die Begehung richtet sich nach Ihnen &ndash; auch abends oder samstags, wenn es anders nicht passt.</span></div>
+      <div><b>Gutachten in 1&ndash;2 Wochen</b><span>Nach Begehung und Unterlagensichtung erhalten Sie das fertige Gutachten. Bei laufenden Fristen sprechen Sie uns an.</span></div>
+      <div><b>Abstimmung mit Ihrer Steuerberatung</b><span>Auf Wunsch besprechen wir das Ergebnis direkt mit Ihrer Steuerberatung &ndash; ohne Zusatzkosten.</span></div>
+      <div><b>R&uuml;ckfragen inklusive</b><span>Fragen des Finanzamts zum Gutachten beantworten wir Ihnen auch nach Abgabe.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AFA-TABELLE ===================== -->
+<section class="block">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:28px">
+      <span class="eyebrow" style="justify-content:center">Orientierung</span>
+      <h2>Wann sich eine Pr&uuml;fung typischerweise lohnt</h2>
+      <p class="lead" style="margin-top:14px">Modellwerte nach ImmoWertV f&uuml;r Wohngeb&auml;ude, Stichtag 2026. Gelb markiert: Der rechnerische AfA-Satz liegt &uuml;ber den gesetzlichen 2&nbsp;%.</p>
+    </div>
+    <div class="tblwrap r s1">
+      <table class="afa">
+        <thead><tr><th>Baujahr</th><th>kaum modernisiert</th><th>teilmodernisiert</th><th>umfassend modernisiert</th></tr></thead>
+        <tbody>
+          <tr><td><b>bis 1960</b></td><td class="hi">ca. 24 J. &middot; 4,2&nbsp;%</td><td class="hi">ca. 30 J. &middot; 3,3&nbsp;%</td><td class="hi">ca. 40 J. &middot; 2,5&nbsp;%</td></tr>
+          <tr><td><b>1961&ndash;1975</b></td><td class="hi">ca. 24 J. &middot; 4,2&nbsp;%</td><td class="hi">ca. 32 J. &middot; 3,1&nbsp;%</td><td class="hi">ca. 42 J. &middot; 2,4&nbsp;%</td></tr>
+          <tr><td><b>1976&ndash;1990</b></td><td class="hi">ca. 30 J. &middot; 3,3&nbsp;%</td><td class="hi">ca. 38 J. &middot; 2,6&nbsp;%</td><td>ca. 48 J. &middot; 2,1&nbsp;%</td></tr>
+          <tr><td><b>1991&ndash;2005</b></td><td class="hi">ca. 42 J. &middot; 2,4&nbsp;%</td><td>ca. 50 J. &middot; 2,0&nbsp;%</td><td>ca. 58 J. &middot; 1,7&nbsp;%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaim">Reine Modellwerte zur Orientierung (Gesamtnutzungsdauer 80&nbsp;Jahre, Mindest-Restnutzungsdauer nach Modell). Sie ersetzen keine Begutachtung: Der tats&auml;chliche Wert h&auml;ngt vom konkreten Zustand Ihres Geb&auml;udes ab und kann nach oben wie nach unten abweichen. Genau diese objektindividuelle Beurteilung ist der Kern des Gutachtens.</p>
   </div>
 </section>
 
@@ -450,6 +629,23 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="city-info r s2" style="border-left:4px solid var(--gold);margin-top:26px">
       <h3>Was Sie von uns nicht bekommen</h3>
       <p>Keine Pauschalzahl aus dem Rechner, keine Versprechen &uuml;ber Steuerersparnisse und keine Bewertung ohne Ortstermin. Wenn wir nach der ersten Einsch&auml;tzung zu dem Ergebnis kommen, dass sich ein Gutachten f&uuml;r Ihr Objekt nicht lohnt, sagen wir Ihnen das &ndash; bevor Sie etwas beauftragen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KUNDENSTIMMEN ===================== -->
+<section class="block alt">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:32px">
+      <span class="eyebrow" style="justify-content:center">Kundenstimmen</span>
+      <h2>Was unsere Auftraggeber sagen</h2>
+      <p class="lead" style="margin-top:14px"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700"><span style="color:#F2B500;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5,0 aus 22 Google-Bewertungen</a></p>
+    </div>
+    <div class="revs r s1">
+      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Guter, transparenter und zuverl&auml;ssiger Service. Ich brauchte ein Wertgutachten f&uuml;r einen Erbrechtsfall.&ldquo;</p><div class="who"><b>Robin G.</b>Erbschaft &middot; Wertgutachten</div></div>
+      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Sehr angenehmer Kontakt und absolut zuverl&auml;ssige Arbeit. Die Bewertung wurde schnell erstellt und alles wurde verst&auml;ndlich erkl&auml;rt.&ldquo;</p><div class="who"><b>Fabian</b>Google-Rezension</div></div>
+      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Eingehende Beratung und fachliche Expertise haben zu einem sehr guten und schnellen Ergebnis gef&uuml;hrt. Es ging um die Bewertung eines gr&ouml;&szlig;eren Grundst&uuml;ckes.&ldquo;</p><div class="who"><b>Lennart</b>Grundst&uuml;cksbewertung</div></div>
+      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Bin super zufrieden! Alles ging schnell und unkompliziert. Die Bewertung war nachvollziehbar und ich hab mich gut aufgehoben gef&uuml;hlt. Kann ich nur weiterempfehlen.&ldquo;</p><div class="who"><b>Florian</b>Google-Rezension</div></div>
     </div>
   </div>
 </section>
