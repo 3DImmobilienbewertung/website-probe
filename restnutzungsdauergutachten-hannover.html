@@ -48,6 +48,9 @@
 :root{
   --bg:#FFFFFF;--bg-2:#FAF6EF;--bg-3:#E8F0F8;--ink:#10243D;--ink-2:#2A445F;--muted:#5C708A;--faint:#94A6BD;
   --blue:#16365C;--blue-deep:#0E2440;--blue-bright:#2E6BB8;--blue-soft:#E7EEF6;--blue-soft-2:#D3E0EE;--gold:#C9A24B;--gold-light:#F5E6C3;
+  /* Signalrot aus den Meta-Anzeigen: dort traegt es den Verlustgedanken.
+     Auf der Seite bewusst sparsam - nur Garantie und Verlust-Argument. */
+  --signal:#C63A2A;--signal-soft:#FBECE9;
   --border:rgba(16,36,61,.10);--shadow-sm:0 4px 16px rgba(16,36,61,.07);--shadow:0 22px 50px rgba(16,36,61,.12);--shadow-blue:0 18px 44px rgba(22,54,92,.28);
   --radius:18px;--maxw:1180px;--ease:cubic-bezier(.22,1,.36,1);
   --display:'Bricolage Grotesque',sans-serif;--body:'Hanken Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
@@ -72,6 +75,8 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}
 .reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
 .reassure span::before{content:"✓";color:var(--blue);font-weight:800;font-size:11px}
+.reassure span.hi{color:var(--signal);font-weight:700}
+.reassure span.hi::before{color:var(--signal)}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .logo-img{height:34px;width:auto;display:block}
@@ -281,6 +286,25 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 .fall .plus{margin-top:16px;background:linear-gradient(135deg,var(--gold-light),#fff);border:1px solid rgba(201,162,75,.45);border-radius:12px;padding:14px 16px;text-align:center}
 .fall .plus .amt{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
 .fall .plus .cap{display:block;font-size:12.5px;color:var(--ink-2);margin-top:6px;font-weight:600}
+
+/* --- Geld-zurueck-Garantie: staerkstes Vertrauenssignal der Seite,
+       deshalb eigenes Signalrot statt des sonst durchgehenden Golds --- */
+.guarantee{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;
+  max-width:900px;margin:26px auto 0;background:#fff;border:2px solid var(--signal);
+  border-radius:20px;padding:32px 34px;box-shadow:0 14px 40px rgba(198,58,42,.13)}
+.g-seal{width:64px;height:64px;border-radius:50%;background:var(--signal);color:#fff;
+  display:grid;place-items:center;flex-shrink:0}
+.g-seal svg{width:34px;height:34px}
+.g-label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--signal);font-weight:700;display:block;margin-bottom:8px}
+.guarantee h3{font-family:var(--display);font-size:clamp(1.2rem,2.6vw,1.5rem);font-weight:800;
+  color:var(--ink);margin:0 0 12px;line-height:1.24;letter-spacing:-.02em}
+.guarantee p{font-size:15.4px;color:var(--ink-2);line-height:1.68;margin:0 0 10px}
+.guarantee .g-fine{font-size:13.4px;color:var(--muted);margin:0}
+@media(max-width:600px){
+  .guarantee{grid-template-columns:1fr;gap:16px;padding:26px 22px;text-align:left}
+  .g-seal{width:54px;height:54px}
+}
 
 /* --- Sicherheitsversprechen --- */
 .promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px;margin-top:30px}
@@ -544,7 +568,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         <a href="tel:+491747445452" class="btn btn-outline"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.6 5.6l1.4-2 3.8 1.5v3a1.7 1.7 0 0 1-1.9 1.7A16.5 16.5 0 0 1 4.5 5.4 1.7 1.7 0 0 1 6.2 3.5Z"/></svg>Direkt anrufen</a>
       </div>
       <div class="reassure r s3">
-        <span>Festpreis 1.490&nbsp;&euro;</span><span>Begehung vor Ort</span><span>&sect;&nbsp;7 Abs.&nbsp;4 S.&nbsp;2 EStG</span><span>Erstgespr&auml;ch kostenlos</span>
+        <span class="hi">Geld zur&uuml;ck bei Nichtanerkennung</span><span>Festpreis 1.490&nbsp;&euro;</span><span>Begehung vor Ort</span><span>Gutachten in 10 Arbeitstagen</span><span>Erstgespr&auml;ch kostenlos</span>
       </div>
     </div>
     <div class="form-card r s2" id="anfrage">
@@ -800,6 +824,21 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         <div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5z"/><path d="M17.5 3.5 20.5 6.5"/></svg></div>
         <b>Nachbesserung auf unsere Kosten</b>
         <span>Beanstandet das Finanzamt unsere Herleitung fachlich, arbeiten wir nach, bis das Gutachten steht &ndash; ohne zus&auml;tzliche Rechnung.</span>
+      </div>
+    </div>
+
+    <div class="guarantee r s3" id="garantie">
+      <div class="g-seal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2.5l8 3.2v6.1c0 4.9-3.3 9.1-8 10.7-4.7-1.6-8-5.8-8-10.7V5.7z"/>
+          <path d="M8.6 12.3l2.4 2.4 4.6-4.7"/>
+        </svg>
+      </div>
+      <div class="g-body">
+        <span class="g-label">Unsere Garantie</span>
+        <h3>Wird Ihr Gutachten nicht anerkannt, bekommen Sie Ihr Geld zur&uuml;ck.</h3>
+        <p>Erkennt Ihr Finanzamt die von uns hergeleitete Restnutzungsdauer nicht an, bessern wir zuerst kostenlos nach &ndash; schriftlich und fachlich begr&uuml;ndet. L&auml;sst sich der Einwand auch damit nicht ausr&auml;umen, erstatten wir Ihnen <strong>den vollen Betrag von 1.490&nbsp;&euro;</strong>.</p>
+        <p class="g-fine">Sie tragen damit kein finanzielles Risiko. Voraussetzung ist lediglich, dass uns die Beanstandung des Finanzamts vorgelegt wird und die Angaben zum Objekt vollst&auml;ndig und zutreffend waren.</p>
       </div>
     </div>
   </div>
@@ -1178,6 +1217,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <div class="faq"><button>Wie lange dauert die Erstellung?<span class="plus"></span></button><div class="ans"><p>Nach der Begehung und Sichtung der Unterlagen erhalten Sie das fertige Gutachten in der Regel innerhalb von ein bis zwei Wochen. Ist eine Frist zu wahren &ndash; etwa im Einspruchsverfahren &ndash; sprechen Sie uns bitte direkt darauf an.</p></div></div>
       <div class="faq"><button>Was kostet ein Restnutzungsdauergutachten?<span class="plus"></span></button><div class="ans"><p>Ein Restnutzungsdauergutachten kostet bei uns 1.490&nbsp;&euro; zum Festpreis inklusive Ortsbegehung und Dokumentation. Das Erstgespr&auml;ch ist kostenlos. Bei gr&ouml;&szlig;eren Objekten mit vielen Einheiten nennen wir den Preis vorab verbindlich.</p></div></div>
       <div class="faq"><button>Welche Faktoren beeinflussen die Restnutzungsdauer?<span class="plus"></span></button><div class="ans"><p>Ma&szlig;geblich sind Baujahr und Konstruktion, der Zustand der langlebigen Bauteile, durchgef&uuml;hrte Modernisierungen an Dach, Fassade, Fenstern, Heizung und Leitungen, der Instandhaltungsstand sowie Grundriss, Ausstattung und wirtschaftliche Nutzbarkeit. Vernachl&auml;ssigte Instandhaltung verk&uuml;rzt die Restnutzungsdauer, umfassende Modernisierung verl&auml;ngert sie.</p></div></div>
+      <div class="faq"><button>Was passiert, wenn das Finanzamt das Gutachten nicht anerkennt?<span class="plus"></span></button><div class="ans"><p>Dann bessern wir zuerst kostenlos nach: Wir beantworten die R&uuml;ckfrage des Finanzamts schriftlich und erg&auml;nzen die Herleitung fachlich, so lange bis der Punkt ausger&auml;umt ist. L&auml;sst sich der Einwand auch damit nicht ausr&auml;umen, erstatten wir Ihnen den vollen Betrag von 1.490&nbsp;&euro;. Voraussetzung ist, dass uns die Beanstandung vorgelegt wird und die Angaben zum Objekt vollst&auml;ndig und zutreffend waren. Sie tragen damit kein finanzielles Risiko.</p></div></div>
       <div class="faq"><button>Muss der Gutachter zertifiziert sein?<span class="plus"></span></button><div class="ans"><p>Nein. Das BMF-Schreiben vom 22.02.2023, das &ouml;ffentlich bestellte oder nach ISO&nbsp;17024 zertifizierte Sachverst&auml;ndige verlangte, wurde mit BMF-Schreiben vom 01.12.2025 ersatzlos aufgehoben. Ma&szlig;geblich ist die Rechtsprechung des Bundesfinanzhofs: Zul&auml;ssig ist jede sachverst&auml;ndige Methode, die im Einzelfall geeignet ist. Entscheidend sind fachliche Substanz und eine nachvollziehbare, objektindividuelle Begr&uuml;ndung.</p></div></div>
     </div>
   </div>
@@ -1268,6 +1308,59 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
     if(window.gtag)window.gtag('event','video_start',{video_title:'Restnutzungsdauergutachten - persoenliche Vorstellung'});
   });}
 })();
+/* ---------- Anzeigen-Abgleich ----------
+   Es laufen mehrere Meta-Motive mit unterschiedlichen Aufhaengern
+   (Verlust, ungeprueft, 2 %, Erbfall). Wer auf ein Motiv klickt und
+   dann eine andere Botschaft liest, springt ab. Die Seite uebernimmt
+   deshalb Ueberschrift und Vorspann des geklickten Motivs.
+   Anzeigen-URL: ...?utm_content=erbe  (bzw. verschenken, ungeprueft,
+   zweiprozent, jedesjahr). Ohne Parameter bleibt der Standardtext. */
+(function(){
+  var MOTIVE={
+    verschenken:{
+      eyebrow:'Vermietet &amp; Baujahr vor 1990?',
+      h1:'Verschenken Sie jedes Jahr Geld ans <span class="u">Finanzamt</span>?',
+      sub:'Ihre Immobilie wird pauschal &uuml;ber 50&nbsp;Jahre abgeschrieben &ndash; egal, wie sie tats&auml;chlich dasteht. Gepr&uuml;ft hat das vermutlich nie jemand. Ist die <strong>tats&auml;chliche Restnutzungsdauer k&uuml;rzer</strong>, erlaubt &sect;&nbsp;7 Abs.&nbsp;4 Satz&nbsp;2 EStG eine h&ouml;here AfA.'
+    },
+    ungeprueft:{
+      eyebrow:'Mehrfamilienhaus &middot; Region Hannover',
+      h1:'Der teuerste Fehler bei Mehrfamilienh&auml;usern &ndash; und fast niemand <span class="u">pr&uuml;ft ihn</span>',
+      sub:'Ihr Haus verf&auml;llt. Ihre Abschreibung nicht. Wir pr&uuml;fen, was tats&auml;chlich in der Substanz steckt &ndash; die Ersteinsch&auml;tzung kostenlos, das Gutachten nach &sect;&nbsp;7 Abs.&nbsp;4 Satz&nbsp;2 EStG zum Festpreis.'
+    },
+    zweiprozent:{
+      eyebrow:'Standard-Abschreibung 2&nbsp;%',
+      h1:'Sie optimieren jede Position. Warum nicht <span class="u">die gr&ouml;&szlig;te</span>?',
+      sub:'2&nbsp;% ist eine Annahme &ndash; kein Naturgesetz. Wir pr&uuml;fen objektweise, was Ihr Bestand tats&auml;chlich hergibt, und weisen die <strong>tats&auml;chliche Restnutzungsdauer</strong> objektindividuell nach &ndash; mit Begehung vor Ort.'
+    },
+    erbe:{
+      eyebrow:'Geerbte Immobilie',
+      h1:'Immobilie geerbt? Dann l&auml;uft die Abschreibung <span class="u">jetzt neu</span>',
+      sub:'Genau jetzt entscheidet sich, wie hoch sie ausf&auml;llt &ndash; und fast niemand pr&uuml;ft das rechtzeitig. Ist die tats&auml;chliche Restnutzungsdauer k&uuml;rzer als die gesetzliche Typisierung, erlaubt &sect;&nbsp;7 Abs.&nbsp;4 Satz&nbsp;2 EStG eine h&ouml;here AfA.'
+    },
+    jedesjahr:{
+      eyebrow:'Vermietet &amp; Baujahr vor 1990?',
+      h1:'Zu lange abgeschrieben hei&szlig;t: zu viel gezahlt. <span class="u">Immer wieder</span>',
+      sub:'Je h&ouml;her Ihr Steuersatz, desto teurer wird eine falsche Nutzungsdauer &ndash; Jahr f&uuml;r Jahr. Wir weisen die tats&auml;chliche Restnutzungsdauer objektindividuell nach, aus Bauingenieurwesen und Architektur, mit Begehung vor Ort.'
+    }
+  };
+  try{
+    var p=new URLSearchParams(location.search);
+    var m=MOTIVE[(p.get('utm_content')||p.get('motiv')||'').toLowerCase()];
+    if(!m)return;
+    var h1=document.querySelector('.hero h1'),
+        sub=document.querySelector('.hero-sub'),
+        eb=document.querySelector('.hero-eyebrow span:last-child');
+    if(h1)h1.innerHTML=m.h1;
+    if(sub)sub.innerHTML=m.sub;
+    if(eb)eb.innerHTML=m.eyebrow;
+    // Die Bewertungssterne gehoeren zum Standard-Eyebrow; neben einer
+    // Motiv-Zeile wie "Geerbte Immobilie" ergeben sie keinen Sinn.
+    var st=document.querySelector('.hero-eyebrow .hero-stars');
+    if(st)st.style.display='none';
+    document.documentElement.setAttribute('data-motiv',p.get('utm_content')||p.get('motiv'));
+  }catch(e){}
+})();
+
 /* ---------- Anfrage-Funnel ----------
    Fuenf Schritte statt eines Formularblocks. Die ersten vier sind
    reine Klicks; Kontaktdaten kommen zuletzt. Nach der Baujahrfrage
