@@ -61,7 +61,7 @@
   // EINRICHTEN: Pixel-ID im Meta Events Manager kopieren
   // (Events Manager -> Datenquellen -> Pixel -> ID, 15-16 Ziffern)
   // und unten eintragen. Bis dahin bleibt der Pixel inaktiv.
-  var META_PIXEL_ID = ''; // z. B. '1234567890123456'
+  var META_PIXEL_ID = '28092479200415522'; // Datensatz "3D Immobilienbewertung Web"
 
   function ladeMetaPixel() {
     if (!META_PIXEL_ID) return;
