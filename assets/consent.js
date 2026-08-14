@@ -61,7 +61,11 @@
   // EINRICHTEN: Pixel-ID im Meta Events Manager kopieren
   // (Events Manager -> Datenquellen -> Pixel -> ID, 15-16 Ziffern)
   // und unten eintragen. Bis dahin bleibt der Pixel inaktiv.
-  var META_PIXEL_ID = '28092479200415522'; // Datensatz "3D Immobilienbewertung Web"
+  // Datensatz "3D Immobilienbewertung Website" - aus dem Werbekonto heraus
+  // angelegt und dadurch mit ihm verknuepft. Der zuerst im Events Manager
+  // erstellte Datensatz war nicht mit dem Werbekonto verbunden und in der
+  // Kampagne deshalb nicht auswaehlbar.
+  var META_PIXEL_ID = '2126043741457881';
 
   function ladeMetaPixel() {
     if (!META_PIXEL_ID) return;
