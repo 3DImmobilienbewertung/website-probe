@@ -1380,8 +1380,19 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
       summe=document.getElementById('fnSum'),
       fehler=document.getElementById('fnErr');
 
+  /* Meta braucht rund 50 Ereignisse pro Woche und Anzeigengruppe, um die
+     Lernphase zu verlassen. Bei 2-3 Anfragen pro Woche erreicht ein
+     reines Lead-Ereignis das nie - die Kampagne bleibt dauerhaft im
+     Blindflug. Deshalb melden wir haeufigere Zwischenschritte mit, auf
+     die sich waehrend der Lernphase optimieren laesst:
+       InitiateCheckout  = Funnel gestartet   (oft)
+       FunnelQualifiziert = Baujahr + Wert da (mittel, hohe Kaufabsicht)
+       Lead              = Anfrage abgeschickt (selten, echtes Ziel) */
   function melde(name,extra){
     if(window.gtag)window.gtag('event',name,extra||{});
+  }
+  function meldeMeta(name,extra){
+    if(window.trackLead)window.trackLead(name,name,extra||{});
   }
 
   function zeige(n,rueckwaerts){
@@ -1468,8 +1479,18 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
         opt.classList.add('sel');
         daten[feld]=opt.dataset.v.replace(/&auml;/g,'\u00e4').replace(/&szlig;/g,'\u00df')
                                  .replace(/&uuml;/g,'\u00fc').replace(/&euro;/g,'\u20ac');
+        if(akt===1)meldeMeta('InitiateCheckout',{content_name:'Restnutzungsdauer-Funnel'});
         if(feld==='baujahr'){rechnung.rnd=+opt.dataset.rnd; rechnung.afa=parseFloat(opt.dataset.afa.replace(',','.'));}
-        if(feld==='wert'){rechnung.wert=+opt.dataset.wert; baueHinweis();}
+        if(feld==='wert'){
+          rechnung.wert=+opt.dataset.wert; baueHinweis();
+          // Wer Baujahr und Wert genannt hat, ist ein ernsthafter
+          // Interessent - das ist das beste Optimierungsziel waehrend
+          // der Lernphase, weil es haeufig genug vorkommt.
+          meldeMeta('FunnelQualifiziert',{
+            baujahr:daten.baujahr||'',objektart:daten.objekt||'',
+            value:rechnung.wert&&rechnung.afa?Math.round(rechnung.wert*(rechnung.afa-2)/100):0,
+            currency:'EUR'});
+        }
         if(akt===SCHRITTE-1)baueSumme();
         // Kurze Pause, damit der Haken sichtbar wird
         setTimeout(function(){ if(akt<SCHRITTE)zeige(akt+1); },260);

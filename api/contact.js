@@ -6,8 +6,86 @@
 // unter "Runtime Logs" nachlesbar) UND ein 500 zurueckgegeben, damit das
 // Formular im Browser den Fehler anzeigt statt faelschlich "Vielen Dank".
 
+const crypto = require('crypto');
+
 const EMPFAENGER = ['info@3dimmobilienbewertung.de', 'vito.donn85@gmail.com'];
 const ABSENDER = '3D Immobilienbewertung <anfrage@3dimmobilienbewertung.de>';
+
+// ─── Conversions API ────────────────────────────────────────────────
+// Der Browser-Pixel allein verliert je nach Quelle 30-50 % der
+// Ereignisse: iOS-Tracking-Schutz, Adblocker, abgelehnte Cookies.
+// Bei 2-3 Leads pro Woche ist jedes verlorene Signal spuerbar - der
+// Algorithmus hat ohnehin kaum Datenpunkte. Deshalb meldet der Server
+// denselben Lead zusaetzlich direkt an Meta.
+//
+// Beide Wege senden dieselbe event_id; Meta erkennt daran das Duplikat
+// und zaehlt den Lead genau einmal.
+//
+// EINRICHTEN (Vercel -> Projekt -> Settings -> Environment Variables):
+//   META_PIXEL_ID    = die Pixel-ID aus dem Events Manager
+//   META_CAPI_TOKEN  = Events Manager -> Einstellungen -> Conversions API
+//                      -> "Zugriffstoken generieren"
+// Fehlt eine der beiden, wird der Versand still uebersprungen.
+
+function hash(wert) {
+  if (!wert) return undefined;
+  return crypto.createHash('sha256')
+    .update(String(wert).trim().toLowerCase())
+    .digest('hex');
+}
+
+function telefonHash(nummer) {
+  if (!nummer) return undefined;
+  // Meta erwartet nur Ziffern inklusive Laendervorwahl
+  let ziffern = String(nummer).replace(/[^\d]/g, '');
+  if (ziffern.startsWith('0')) ziffern = '49' + ziffern.slice(1);
+  if (!ziffern.startsWith('49') && ziffern.length <= 11) ziffern = '49' + ziffern;
+  return crypto.createHash('sha256').update(ziffern).digest('hex');
+}
+
+async function sendeAnMeta(daten, req) {
+  const pixel = process.env.META_PIXEL_ID;
+  const token = process.env.META_CAPI_TOKEN;
+  if (!pixel || !token) return { uebersprungen: 'Pixel-ID oder Token fehlt' };
+
+  const name = String(daten.name || '').trim().split(/\s+/);
+  const nutzer = {
+    em: hash(daten.email),
+    ph: telefonHash(daten.phone),
+    fn: hash(name[0]),
+    ln: name.length > 1 ? hash(name[name.length - 1]) : undefined,
+    ct: hash(String(daten.ort || '').replace(/[\d\s]/g, '')),
+    country: hash('de'),
+    client_ip_address: (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || undefined,
+    client_user_agent: req.headers['user-agent'] || undefined,
+    fbp: daten.fbp || undefined,
+    fbc: daten.fbc || undefined
+  };
+  Object.keys(nutzer).forEach(k => nutzer[k] === undefined && delete nutzer[k]);
+
+  const koerper = {
+    data: [{
+      event_name: 'Lead',
+      event_time: Math.floor(Date.now() / 1000),
+      event_id: daten.eventId || undefined,   // Deduplizierung mit dem Pixel
+      event_source_url: daten.seite || req.headers.referer || undefined,
+      action_source: 'website',
+      user_data: nutzer,
+      custom_data: {
+        content_name: daten.anlass || 'Restnutzungsdauergutachten',
+        content_category: daten.objekt || undefined
+      }
+    }]
+  };
+
+  const resp = await fetch(
+    `https://graph.facebook.com/v21.0/${pixel}/events?access_token=${encodeURIComponent(token)}`,
+    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(koerper) }
+  );
+  const text = await resp.text();
+  if (!resp.ok) throw new Error(`Meta CAPI ${resp.status}: ${text}`);
+  return JSON.parse(text);
+}
 
 function esc(v) {
   return String(v == null ? '' : v)
@@ -40,6 +118,8 @@ module.exports = async function handler(req, res) {
 
   const b = req.body || {};
   const { name, email, phone, objekt, anlass, ort, zeitrahmen, message, website } = b;
+  // Tracking-Felder werden nie in die E-Mail uebernommen
+  const { eventId, fbp, fbc, seite } = b;
 
   // Honeypot: echte Nutzer sehen das Feld nicht, Bots fuellen es aus.
   // Bots bekommen ein freundliches 200, damit sie nicht erneut probieren.
@@ -129,6 +209,18 @@ module.exports = async function handler(req, res) {
     // Vercel-Runtime-Logs rekonstruiert werden kann.
     console.error('LEAD-NOTFALL – Versand fehlgeschlagen:', err.message, '| Daten:', JSON.stringify(b));
     return res.status(500).json({ error: 'E-Mail konnte nicht gesendet werden.' });
+  }
+
+  // Meldung an Meta: darf den Lead nie gefaehrden, deshalb abgeschirmt.
+  // Ohne diese serverseitige Meldung verliert die Kampagne einen
+  // erheblichen Teil ihrer Lernsignale.
+  try {
+    const meta = await sendeAnMeta(
+      { name, email, phone, ort, objekt, anlass, eventId, fbp, fbc, seite }, req
+    );
+    if (meta && meta.uebersprungen) console.log('Meta CAPI übersprungen:', meta.uebersprungen);
+  } catch (err) {
+    console.error('Meta CAPI fehlgeschlagen (Lead ist zugestellt):', err.message);
   }
 
   // Die Bestaetigung ist ein Bonus. Scheitert sie, ist der Lead trotzdem da –

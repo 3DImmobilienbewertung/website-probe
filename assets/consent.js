@@ -84,12 +84,34 @@
   }
   ladeMetaPixel();
 
-  // Meldet ein Ereignis an alle vorhandenen Messsysteme gleichzeitig
-  function meldeEreignis(gaName, metaName, daten) {
+  // Meldet ein Ereignis an alle vorhandenen Messsysteme gleichzeitig.
+  // metaName darf null sein, wenn nur GA4 gemeint ist.
+  function meldeEreignis(gaName, metaName, daten, optionen) {
     try { gtag('event', gaName, daten || {}); } catch (e) {}
-    try { if (window.fbq) fbq('track', metaName, daten || {}); } catch (e) {}
+    try {
+      if (window.fbq && metaName) {
+        var istStandard = ['Lead', 'Contact', 'ViewContent', 'InitiateCheckout',
+          'CompleteRegistration', 'Schedule', 'SubmitApplication', 'Search'].indexOf(metaName) > -1;
+        fbq(istStandard ? 'track' : 'trackCustom', metaName, daten || {}, optionen || {});
+      }
+    } catch (e) {}
   }
   window.trackLead = meldeEreignis;
+
+  // Eindeutige Ereignis-ID: Browser-Pixel und Server melden denselben
+  // Lead: Meta erkennt am gleichen Wert das Duplikat und zaehlt einmal.
+  window.neueEventId = function () {
+    try {
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    } catch (e) {}
+    return 'ev-' + Date.now() + '-' + Math.floor(Math.random() * 1e9);
+  };
+
+  // Die Meta-Cookies muessen an den Server weitergereicht werden, sonst
+  // kann die Conversions API den Nutzer nicht der Anzeige zuordnen.
+  window.metaCookies = function () {
+    return { fbp: getCookie('_fbp') || '', fbc: getCookie('_fbc') || '' };
+  };
 
   // ─── Lead-Event-Tracking (Schlüsselereignisse) ────────────
   // Misst echte Lead-Aktionen statt nur Seitenaufrufe. Consent Mode v2
@@ -97,17 +119,39 @@
   //   • generate_lead  → jeder erfolgreiche Formular-/Funnel-Versand (HTTP 200 von /api/contact)
   //   • phone_call     → Klick auf eine Telefonnummer (Anruf-Intent), auf allen Seiten
   (function () {
-    // 1) Formular-Leads: erfolgreicher POST an /api/contact (deckt Funnel + alle Formulare ab)
+    // 1) Formular-Leads: erfolgreicher POST an /api/contact.
+    //    Der Abfangmechanismus reichert JEDE Anfrage um Ereignis-ID und
+    //    Meta-Cookies an - damit funktionieren Deduplizierung und
+    //    Conversions API auch auf den aelteren Formularseiten, ohne dass
+    //    dort etwas geaendert werden muss.
     if (window.fetch) {
       var _origFetch = window.fetch;
-      window.fetch = function (input) {
+      window.fetch = function (input, init) {
         var url = (typeof input === 'string') ? input : (input && input.url) || '';
-        var isLead = url.indexOf('/api/contact') !== -1;
-        return _origFetch.apply(this, arguments).then(function (res) {
-          if (isLead && res && res.ok) {
-            // An GA4 und Meta zugleich: Meta braucht dieses Ereignis, um
-            // die Kampagne auf Anfragen statt auf Klicks zu optimieren.
-            meldeEreignis('generate_lead', 'Lead', { lead_source: location.pathname });
+        var istLead = url.indexOf('/api/contact') !== -1;
+        var eventId = null;
+
+        if (istLead && init && typeof init.body === 'string') {
+          try {
+            var nutzlast = JSON.parse(init.body);
+            eventId = nutzlast.eventId || window.neueEventId();
+            var ck = window.metaCookies();
+            nutzlast.eventId = eventId;
+            nutzlast.fbp = nutzlast.fbp || ck.fbp;
+            nutzlast.fbc = nutzlast.fbc || ck.fbc;
+            nutzlast.seite = nutzlast.seite || location.href;
+            init = Object.assign({}, init, { body: JSON.stringify(nutzlast) });
+            arguments[1] = init;
+          } catch (e) { /* kein JSON-Koerper: unveraendert weiterreichen */ }
+        }
+
+        return _origFetch.call(this, input, init).then(function (res) {
+          if (istLead && res && res.ok) {
+            // Meta braucht dieses Ereignis, um die Kampagne auf Anfragen
+            // statt auf Klicks zu optimieren.
+            meldeEreignis('generate_lead', 'Lead',
+              { lead_source: location.pathname },
+              eventId ? { eventID: eventId } : undefined);
           }
           return res;
         });
