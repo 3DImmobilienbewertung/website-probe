@@ -305,6 +305,80 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 .fnote{max-width:940px;margin:22px auto 0;font-size:12.8px;color:var(--muted);line-height:1.6;text-align:center}
 
 /* ============================================================
+   FUNNEL — Der erste Schritt ist ein Klick, keine Tastatureingabe.
+   Kalter Anzeigen-Traffic fuellt kein Formular mit sieben Feldern
+   aus; er beantwortet aber gern eine einfache Frage. Kontaktdaten
+   kommen erst zuletzt, wenn schon Aufwand investiert wurde.
+   ============================================================ */
+.fn-top{margin-bottom:22px}
+.fn-prog{height:6px;background:var(--blue-soft);border-radius:100px;overflow:hidden}
+.fn-prog i{display:block;height:100%;width:20%;border-radius:100px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-bright));
+  transition:width .45s var(--ease)}
+.fn-meta{display:flex;justify-content:space-between;align-items:center;margin-top:9px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fn-back{background:none;border:none;padding:0;cursor:pointer;color:var(--muted);
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.fn-back:hover{color:var(--blue)}
+.fn-back[hidden]{display:none}
+
+.fn-s{display:none}
+.fn-s.on{display:block;animation:fnIn .38s var(--ease) both}
+@keyframes fnIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.fn-s h2{font-size:1.42rem;line-height:1.22;margin-bottom:6px}
+.fn-s .sub{color:var(--muted);font-size:14.5px;margin-bottom:18px;line-height:1.55}
+
+.fn-opts{display:grid;gap:10px}
+.fn-opts.two{grid-template-columns:1fr 1fr}
+.fn-opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;
+  background:var(--bg-2);border:1.5px solid var(--border);border-radius:13px;
+  padding:15px 16px;font-family:var(--body);font-size:15.2px;font-weight:600;color:var(--ink);
+  transition:border-color .18s,background .18s,transform .18s}
+.fn-opt .i{display:grid;place-items:center;width:38px;height:38px;flex-shrink:0;
+  border-radius:10px;background:#fff;border:1px solid var(--border);color:var(--blue)}
+.fn-opt.sel .i{background:var(--blue);border-color:var(--blue);color:#fff}
+.fn-opt .i.jahr{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.fn-opt:hover{border-color:var(--blue);background:#fff;transform:translateX(3px)}
+.fn-opt.sel{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px var(--blue-soft)}
+.fn-opt .ch{margin-left:auto;color:var(--blue);font-weight:800;opacity:0;transition:opacity .18s}
+.fn-opt.sel .ch{opacity:1}
+
+/* Zwischenergebnis: belohnt den bisherigen Aufwand mit einer
+   konkreten Zahl und zieht durch den naechsten Schritt. */
+.fn-hint{background:linear-gradient(135deg,var(--gold-light),#fff);
+  border:1px solid rgba(201,162,75,.5);border-radius:13px;padding:15px 17px;margin-bottom:18px;
+  animation:fnPop .45s var(--ease) both}
+@keyframes fnPop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.fn-hint b{display:block;font-family:var(--display);font-size:1.02rem;color:var(--blue);margin-bottom:4px}
+.fn-hint span{font-size:13.8px;color:var(--ink-2);line-height:1.55}
+.fn-hint .big{font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--blue);
+  letter-spacing:-.02em;display:block;margin:6px 0 2px}
+
+/* Gemeinsame Basis aller SVG-Icons: erben Schriftfarbe und -groesse */
+.ico{width:22px;height:22px;flex-shrink:0;display:block}
+.fn-opt .i .ico{width:20px;height:20px}
+.btn .ico{width:18px;height:18px;margin-right:8px;display:inline-block;vertical-align:-4px}
+.nav-phone .ico{width:16px;height:16px;display:inline-block;vertical-align:-3px;margin-right:6px}
+.usp .ic,.pcard .ic{color:var(--blue)}
+.usp .ic .ico,.pcard .ic .ico{width:28px;height:28px}
+.rev .sh .ico{width:42px;height:42px;color:var(--gold)}
+.fn-note .ico{width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:5px}
+
+.fn-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.5}
+.fn-err{margin-top:12px;padding:12px 14px;background:#FDECEA;border:1px solid #F0B7B0;
+  border-radius:11px;font-size:13.8px;color:#8C2D22;line-height:1.5}
+.fn-err[hidden]{display:none}
+.fn-trust{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin-top:16px;
+  padding-top:15px;border-top:1px solid var(--border)}
+.fn-trust span{font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:5px}
+.fn-trust span::before{content:"✓";color:var(--blue);font-weight:800;font-size:10px}
+@media(max-width:600px){
+  .fn-s h2{font-size:1.3rem}
+  .fn-opt{padding:15px 14px;font-size:15px}
+  .fn-opts.two{grid-template-columns:1fr}
+}
+
+/* ============================================================
    MOBIL — der Grossteil der Besucher kommt ueber Meta-Anzeigen
    und damit vom Smartphone. Ziel: nichts laeuft seitlich aus dem
    Bild, alles ist ohne Zoom lesbar, das Formular ist schnell
@@ -400,7 +474,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   <div class="nav-inner">
     <a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-right">
-      <a href="tel:+491747445452" class="nav-phone">&#128222; +49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a>
+      <a href="tel:+491747445452" class="nav-phone"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.6 5.6l1.4-2 3.8 1.5v3a1.7 1.7 0 0 1-1.9 1.7A16.5 16.5 0 0 1 4.5 5.4 1.7 1.7 0 0 1 6.2 3.5Z"/></svg>+49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a>
       <a href="#anfrage" class="btn btn-primary">Kostenlose Ersteinsch&auml;tzung</a>
     </div>
   </div>
@@ -420,43 +494,98 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <p class="hero-sub r s2">Wer vermietet, schreibt meist pauschal 2&nbsp;% pro Jahr ab &ndash; eine gesetzliche Typisierung, kein Befund an Ihrem Geb&auml;ude. Ist die <strong>tats&auml;chliche Restnutzungsdauer k&uuml;rzer</strong>, erlaubt &sect;&nbsp;7 Abs.&nbsp;4 Satz&nbsp;2 EStG eine h&ouml;here AfA. Wir weisen sie objektindividuell nach &ndash; aus Bauingenieurwesen und Architektur &ndash; mit Begehung vor Ort.</p>
       <div class="hero-actions r s3">
         <a href="#anfrage" class="btn btn-primary">Kostenlose Ersteinsch&auml;tzung anfordern &rarr;</a>
-        <a href="tel:+491747445452" class="btn btn-outline">&#128222; Direkt anrufen</a>
+        <a href="tel:+491747445452" class="btn btn-outline"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.6 5.6l1.4-2 3.8 1.5v3a1.7 1.7 0 0 1-1.9 1.7A16.5 16.5 0 0 1 4.5 5.4 1.7 1.7 0 0 1 6.2 3.5Z"/></svg>Direkt anrufen</a>
       </div>
       <div class="reassure r s3">
         <span>Festpreis 1.490&nbsp;&euro;</span><span>Begehung vor Ort</span><span>&sect;&nbsp;7 Abs.&nbsp;4 S.&nbsp;2 EStG</span><span>Erstgespr&auml;ch kostenlos</span>
       </div>
     </div>
     <div class="form-card r s2" id="anfrage">
-      <h2>Kostenlose Ersteinsch&auml;tzung</h2>
-      <p class="sub">Wir sagen Ihnen unverbindlich, ob sich ein Gutachten f&uuml;r Ihr Objekt &uuml;berhaupt lohnt.</p>
-      <form id="leadForm">
-        <div class="ff-row">
-          <div class="ff"><label>Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" required /></div>
-          <div class="ff"><label>Telefon</label><input type="tel" id="lfTel" placeholder="+49 &hellip;" /></div>
+      <div class="fn-top">
+        <div class="fn-prog"><i id="fnBar"></i></div>
+        <div class="fn-meta">
+          <button type="button" class="fn-back" id="fnBack" hidden>&larr; Zur&uuml;ck</button>
+          <span id="fnStep">Schritt 1 von 5</span>
+          <span id="fnTime">ca. 40 Sekunden</span>
         </div>
-        <div class="ff"><label>E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" required /></div>
-        <div class="ff"><label>Standort der Immobilie</label><input type="text" id="lfOrt" placeholder="PLZ / Ort &ndash; z. B. 30159 Hannover" /></div>
-        <div class="ff-row">
-          <div class="ff"><label>Baujahr</label><input type="number" id="lfBj" min="1800" max="2030" step="1" placeholder="z. B. 1968" /></div>
-          <div class="ff"><label>Wohneinheiten</label><input type="number" id="lfWe" min="1" max="500" step="1" placeholder="z. B. 6" /></div>
+      </div>
+
+      <form id="leadForm" novalidate>
+
+        <!-- 1 — Ein Klick, keine Eingabe: die niedrigste denkbare Huerde -->
+        <div class="fn-s on" data-s="1">
+          <h2>Um welche Immobilie geht es?</h2>
+          <p class="sub">Ein Klick gen&uuml;gt &ndash; Sie m&uuml;ssen nichts eintippen.</p>
+          <div class="fn-opts" data-feld="objekt">
+            <button type="button" class="fn-opt" data-v="Mehrfamilienhaus"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v15"/><path d="M14 11h5a1 1 0 0 1 1 1v9"/><path d="M2 21h20"/><path d="M7 9h2M7 13h2M7 17h2M17 15h1M17 18h1"/></svg></span>Mehrfamilienhaus<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="Zwei- oder Einfamilienhaus (vermietet)"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span>Zwei- oder Einfamilienhaus<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="Eigentumswohnung (vermietet)"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M15 12h.01"/><path d="M6 21h12"/></svg></span>Eigentumswohnung<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="Wohn- und Gesch&auml;ftshaus"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.5-4.5A1 1 0 0 0 18.5 4h-13a1 1 0 0 0-1 .5L3 9Z"/><path d="M4.5 9v11a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V9"/><path d="M9.5 21v-6h5v6"/></svg></span>Wohn- und Gesch&auml;ftshaus<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="Gewerbeobjekt oder Sonstiges"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V7l8 5v9z"/><path d="M2 21h20"/><path d="M7 4h2v3H7z"/></svg></span>Gewerbe oder Sonstiges<span class="ch">&#10003;</span></button>
+          </div>
         </div>
-        <div class="ff"><label>Geb&auml;udeart</label>
-          <select id="lfObj">
-            <option>Mehrfamilienhaus</option>
-            <option>Zweifamilienhaus</option>
-            <option>Einfamilienhaus (vermietet)</option>
-            <option>Eigentumswohnung (vermietet)</option>
-            <option>Wohn- und Gesch&auml;ftshaus</option>
-            <option>Gewerbeobjekt</option>
-            <option>Sonstiges</option>
-          </select>
+
+        <!-- 2 — Baujahr steuert das Zwischenergebnis in Schritt 3 -->
+        <div class="fn-s" data-s="2">
+          <h2>Aus welchem Baujahr stammt das Geb&auml;ude?</h2>
+          <p class="sub">Ungef&auml;hr gen&uuml;gt. Das Baujahr entscheidet am st&auml;rksten dar&uuml;ber, ob sich ein Gutachten lohnt.</p>
+          <div class="fn-opts" data-feld="baujahr">
+            <button type="button" class="fn-opt" data-v="bis 1960" data-rnd="24" data-afa="4,2"><span class="i jahr">&ndash;60</span>bis 1960<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="1961 bis 1975" data-rnd="24" data-afa="4,2"><span class="i jahr">60er</span>1961 &ndash; 1975<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="1976 bis 1990" data-rnd="30" data-afa="3,3"><span class="i jahr">80er</span>1976 &ndash; 1990<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="1991 bis 2005" data-rnd="42" data-afa="2,4"><span class="i jahr">90er</span>1991 &ndash; 2005<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="ab 2006" data-rnd="0" data-afa="0"><span class="i jahr">neu</span>2006 oder neuer<span class="ch">&#10003;</span></button>
+          </div>
         </div>
-        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
-          <label>Website (bitte frei lassen)</label>
-          <input type="text" id="lfHp" name="website" tabindex="-1" autocomplete="off" />
+
+        <!-- 3 — Zustand; darueber erscheint die erste konkrete Zahl -->
+        <div class="fn-s" data-s="3">
+          <div id="fnHint"></div>
+          <h2>Wie ist der Zustand des Geb&auml;udes?</h2>
+          <p class="sub">Ihre Einsch&auml;tzung reicht &ndash; den genauen Befund erheben wir vor Ort.</p>
+          <div class="fn-opts" data-feld="zustand">
+            <button type="button" class="fn-opt" data-v="weitgehend im Originalzustand"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5z"/></svg></span>Weitgehend im Originalzustand<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="teilmodernisiert"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M3 12h4M17 12h4M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg></span>Teilweise modernisiert<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="umfassend modernisiert"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-4.6 3.4L16 19l-4-2.9L8 19l1.1-5.6L4.5 10l5.6-1.4z"/></svg></span>Umfassend modernisiert<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="unbekannt"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4v.4"/><path d="M12 17h.01"/></svg></span>Wei&szlig; ich nicht genau<span class="ch">&#10003;</span></button>
+          </div>
         </div>
-        <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px">Kostenlose Ersteinsch&auml;tzung erhalten &rarr;</button>
-        <p class="note">&#128274; Vertraulich &middot; Kostenlos &amp; unverbindlich &middot; Antwort in 24&nbsp;h</p>
+
+        <!-- 4 — Vermietung: ohne Vermietung greift die AfA nicht -->
+        <div class="fn-s" data-s="4">
+          <h2>Ist das Objekt vermietet?</h2>
+          <p class="sub">Die erh&ouml;hte Abschreibung wirkt nur bei Einkünften aus Vermietung und Verpachtung.</p>
+          <div class="fn-opts two" data-feld="vermietet">
+            <button type="button" class="fn-opt" data-v="ja, vollst&auml;ndig"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.6 2.6L16 9.6"/></svg></span>Ja<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="teilweise"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none" opacity=".85"/></svg></span>Teilweise<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="noch nicht, geplant"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>Noch nicht<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="nein, selbst genutzt"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><circle cx="12" cy="14" r="2"/><path d="M8.5 21c0-2 1.6-3.2 3.5-3.2s3.5 1.2 3.5 3.2"/></svg></span>Selbst genutzt<span class="ch">&#10003;</span></button>
+          </div>
+        </div>
+
+        <!-- 5 — Kontaktdaten erst jetzt, nach vier investierten Klicks -->
+        <div class="fn-s" data-s="5">
+          <div id="fnSum"></div>
+          <h2>Wohin d&uuml;rfen wir die Einsch&auml;tzung senden?</h2>
+          <p class="sub">Sie erhalten sie kostenlos und unverbindlich innerhalb von 24&nbsp;Stunden.</p>
+          <div class="ff"><label>Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" autocomplete="name" required /></div>
+          <div class="ff"><label>E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" autocomplete="email" inputmode="email" required /></div>
+          <div class="ff-row">
+            <div class="ff"><label>Telefon</label><input type="tel" id="lfTel" placeholder="+49 &hellip;" autocomplete="tel" inputmode="tel" /></div>
+            <div class="ff"><label>PLZ / Ort</label><input type="text" id="lfOrt" placeholder="30159 Hannover" autocomplete="postal-code" /></div>
+          </div>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+            <label>Website (bitte frei lassen)</label>
+            <input type="text" id="lfHp" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px;margin-top:6px">Kostenlose Einsch&auml;tzung erhalten &rarr;</button>
+          <div class="fn-err" id="fnErr" hidden></div>
+          <p class="fn-note"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Ihre Angaben bleiben vertraulich und werden nicht weitergegeben.</p>
+        </div>
+
+        <div class="fn-trust">
+          <span>Kostenlos</span><span>Unverbindlich</span><span>Antwort in 24&nbsp;h</span>
+        </div>
       </form>
       <div id="formSuccess" style="display:none;text-align:center;padding:20px 0">
         <div style="font-size:2.5rem;margin-bottom:12px">&#9989;</div>
@@ -510,7 +639,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </ul>
         <div class="hero-actions" style="margin-top:26px">
           <a href="#anfrage" class="btn btn-primary">Kostenlose Ersteinsch&auml;tzung &rarr;</a>
-          <a href="tel:+491747445452" class="btn btn-outline">&#128222; Direkt anrufen</a>
+          <a href="tel:+491747445452" class="btn btn-outline"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.6 5.6l1.4-2 3.8 1.5v3a1.7 1.7 0 0 1-1.9 1.7A16.5 16.5 0 0 1 4.5 5.4 1.7 1.7 0 0 1 6.2 3.5Z"/></svg>Direkt anrufen</a>
         </div>
       </div>
     </div>
@@ -525,10 +654,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <h2>Was Ihnen ein Restnutzungsdauergutachten bringt</h2>
     </div>
     <div class="usps r s1">
-      <div class="usp"><div class="ic">&#128200;</div><b>H&ouml;here Abschreibung</b><span>Ist die tats&auml;chliche Restnutzungsdauer k&uuml;rzer als die gesetzliche Typisierung, steigt Ihr j&auml;hrlicher AfA-Satz &ndash; jedes Jahr aufs Neue.</span></div>
-      <div class="usp"><div class="ic">&#128269;</div><b>Klarheit &uuml;ber Ihr Geb&auml;ude</b><span>Sie erfahren belastbar, in welchem Zustand Ihre Bausubstanz wirklich ist &ndash; unabh&auml;ngig davon, wie Sie steuerlich damit umgehen.</span></div>
-      <div class="usp"><div class="ic">&#128220;</div><b>Nachvollziehbare Grundlage</b><span>Ein schriftliches Gutachten, das die Restnutzungsdauer herleitet &ndash; pr&uuml;fbar f&uuml;r Ihre Steuerberatung und das Finanzamt.</span></div>
-      <div class="usp"><div class="ic">&#127959;</div><b>Beurteilung vom Bau her</b><span>Konstruktion, Haustechnik, Instandhaltungsr&uuml;ckstand: Wir sehen, was ein Rechner nicht sehen kann &ndash; weil wir vor Ort sind.</span></div>
+      <div class="usp"><div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V4"/><path d="M3 20h18"/><path d="M7 15l4-4 3 3 5-6"/><path d="M15 8h4v4"/></svg></div><b>H&ouml;here Abschreibung</b><span>Ist die tats&auml;chliche Restnutzungsdauer k&uuml;rzer als die gesetzliche Typisierung, steigt Ihr j&auml;hrlicher AfA-Satz &ndash; jedes Jahr aufs Neue.</span></div>
+      <div class="usp"><div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div><b>Klarheit &uuml;ber Ihr Geb&auml;ude</b><span>Sie erfahren belastbar, in welchem Zustand Ihre Bausubstanz wirklich ist &ndash; unabh&auml;ngig davon, wie Sie steuerlich damit umgehen.</span></div>
+      <div class="usp"><div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div><b>Nachvollziehbare Grundlage</b><span>Ein schriftliches Gutachten, das die Restnutzungsdauer herleitet &ndash; pr&uuml;fbar f&uuml;r Ihre Steuerberatung und das Finanzamt.</span></div>
+      <div class="usp"><div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M4 21h16"/><path d="M12 3v18"/><path d="M8 12h8"/></svg></div><b>Beurteilung vom Bau her</b><span>Konstruktion, Haustechnik, Instandhaltungsr&uuml;ckstand: Wir sehen, was ein Rechner nicht sehen kann &ndash; weil wir vor Ort sind.</span></div>
     </div>
   </div>
 </section>
@@ -580,7 +709,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 <section class="block">
   <div class="container">
     <div class="rev r s1">
-      <div class="sh">&#128737;&#65039;</div>
+      <div class="sh"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v6c0 4.5-3 8.3-7.5 9.7C7.5 20.3 4.5 16.5 4.5 12V6z"/><path d="M9 12.2l2.2 2.2L15.4 10"/></svg></div>
       <div>
         <h3>Sie gehen nicht in Vorleistung</h3>
         <p>Bevor Sie irgendetwas beauftragen, pr&uuml;fen wir kostenlos, ob sich ein Gutachten f&uuml;r Ihr Objekt &uuml;berhaupt lohnt. Kommen wir zu dem Ergebnis, dass es das nicht tut, sagen wir Ihnen das offen &ndash; und Sie zahlen nichts.</p>
@@ -590,22 +719,22 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 
     <div class="promise r s2">
       <div class="pcard">
-        <div class="ic">&#128269;</div>
+        <div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
         <b>Kostenlose Vorabpr&uuml;fung</b>
         <span>Wir sehen uns Ihr Objekt an, bevor Geld flie&szlig;t. Lohnt sich ein Gutachten nicht, sagen wir Ihnen das &ndash; und Sie zahlen keinen Cent.</span>
       </div>
       <div class="pcard">
-        <div class="ic">&#128176;</div>
+        <div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 12.4 12.4 20.6a2 2 0 0 1-2.8 0l-6.2-6.2a2 2 0 0 1-.6-1.4V4.4a1 1 0 0 1 1-1h8.6a2 2 0 0 1 1.4.6l6.8 6.8a2 2 0 0 1 0 2.6Z"/><circle cx="8" cy="8" r="1.4"/></svg></div>
         <b>Festpreis, schriftlich zugesagt</b>
         <span>1.490&nbsp;&euro; stehen vor der Beauftragung fest. Kein Stundenhonorar, keine Nebenkosten, keine Nachberechnung &ndash; unabh&auml;ngig davon, wie aufwendig die Aufnahme wird.</span>
       </div>
       <div class="pcard">
-        <div class="ic">&#127970;</div>
+        <div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M4.5 10V20M19.5 10V20M8.5 10v10M15.5 10v10M2.5 20h19"/><path d="M12 3 3 8h18z"/></svg></div>
         <b>R&uuml;ckfragen des Finanzamts inklusive</b>
         <span>Hat Ihr Finanzamt Fragen zum Gutachten, beantworten wir sie schriftlich &ndash; kostenfrei und ohne Zeitlimit. Sie stehen damit nicht allein da.</span>
       </div>
       <div class="pcard">
-        <div class="ic">&#128736;&#65039;</div>
+        <div class="ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5z"/><path d="M17.5 3.5 20.5 6.5"/></svg></div>
         <b>Nachbesserung auf unsere Kosten</b>
         <span>Beanstandet das Finanzamt unsere Herleitung fachlich, arbeiten wir nach, bis das Gutachten steht &ndash; ohne zus&auml;tzliche Rechnung.</span>
       </div>
@@ -738,7 +867,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       </article>
 
     </div>
-    <p class="fnote">Beispielrechnungen f&uuml;r typische Objekte unseres Bewertungsgebiets. Sie zeigen die Gr&ouml;&szlig;enordnung &ndash; bei vergleichbaren Geb&auml;uden liegt die zus&auml;tzliche Abschreibung meist zwischen <strong>7.000&nbsp;&euro; und 11.000&nbsp;&euro; pro Jahr</strong>. Ihr tats&auml;chliches Ergebnis h&auml;ngt vom Zustand Ihres Geb&auml;udes und Ihrem Geb&auml;udewertanteil ab und wird im Gutachten objektindividuell hergeleitet. Die steuerliche Auswirkung berechnet Ihre Steuerberatung.</p>
+    <p class="fnote">Bei vergleichbaren Geb&auml;uden liegt die zus&auml;tzliche Abschreibung meist zwischen <strong>7.000&nbsp;&euro; und 11.000&nbsp;&euro; pro Jahr</strong>. Ihr Ergebnis h&auml;ngt vom Zustand Ihres Geb&auml;udes und Ihrem Geb&auml;udewertanteil ab und wird im Gutachten objektindividuell hergeleitet. Die steuerliche Auswirkung berechnet Ihre Steuerberatung.</p>
     <div style="text-align:center;margin-top:30px">
       <a href="#anfrage" class="btn btn-primary">Pr&uuml;fen, was bei meinem Objekt m&ouml;glich ist &rarr;</a>
     </div>
@@ -999,7 +1128,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <p>Lassen Sie in einem kostenlosen Erstgespr&auml;ch pr&uuml;fen, ob sich ein Restnutzungsdauergutachten f&uuml;r Ihre Immobilie lohnt. Ehrliche Einsch&auml;tzung &ndash; auch wenn sie gegen einen Auftrag spricht.</p>
       <div class="btns">
         <a href="#anfrage" class="btn btn-gold">Kostenlose Ersteinsch&auml;tzung sichern &rarr;</a>
-        <a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)">&#128222; Jetzt anrufen</a>
+        <a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.6 5.6l1.4-2 3.8 1.5v3a1.7 1.7 0 0 1-1.9 1.7A16.5 16.5 0 0 1 4.5 5.4 1.7 1.7 0 0 1 6.2 3.5Z"/></svg>Jetzt anrufen</a>
       </div>
       <a href="tel:+491747445452" class="cta-phone">oder direkt: <b>+49 (0) 174 744 5452</b> &nbsp;&middot;&nbsp; Mo&ndash;Fr 09:00&ndash;18:00</a>
     </div>
@@ -1061,7 +1190,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="foot-copy">© <span id="year"></span> 3D Immobilienbewertung · Immobilienbewertung Hannover</div>
   </div>
 </footer>
-<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
+<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.6 5.6l1.4-2 3.8 1.5v3a1.7 1.7 0 0 1-1.9 1.7A16.5 16.5 0 0 1 4.5 5.4 1.7 1.7 0 0 1 6.2 3.5Z"/></svg>Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
@@ -1076,38 +1205,140 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
     if(window.gtag)window.gtag('event','video_start',{video_title:'Restnutzungsdauergutachten - persoenliche Vorstellung'});
   });}
 })();
-document.getElementById('leadForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var n=document.getElementById('lfName').value.trim(),
-      m=document.getElementById('lfMail').value.trim(),
-      t=document.getElementById('lfTel').value.trim(),
-      ort=document.getElementById('lfOrt').value.trim(),
-      bj=document.getElementById('lfBj').value.trim(),
-      we=document.getElementById('lfWe').value.trim(),
-      o=document.getElementById('lfObj').value;
-  if(!n||!m){alert('Bitte Name und E-Mail angeben.');return}
-  var btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Wird gesendet \u2026';
-  var details=['Standort: '+(ort||'\u2013'),'Baujahr: '+(bj||'\u2013'),'Wohneinheiten: '+(we||'\u2013')].join(' | ');
-  var hp=document.getElementById('lfHp');
-  fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:'Restnutzungsdauergutachten',
-      message:details,website:hp?hp.value:''})})
-  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
-  .then(function(){document.getElementById('leadForm').style.display='none';document.getElementById('formSuccess').style.display='block';if(window.gtag)window.gtag('event','generate_lead',{lead_type:'restnutzungsdauergutachten'})})
-  .catch(function(){
-    btn.disabled=false;btn.textContent='Kostenlose Ersteinsch\u00e4tzung erhalten \u2192';
-    // Der Lead darf nicht verloren gehen: sichtbaren Ausweichweg anbieten,
-    // statt nur einen Alert zu zeigen, den man wegklickt und vergisst.
-    var box=document.getElementById('formError');
-    if(!box){
-      box=document.createElement('div');box.id='formError';
-      box.style.cssText='margin-top:14px;padding:14px 16px;background:#FDECEA;border:1px solid #F0B7B0;border-radius:12px;font-size:14px;color:#8C2D22;line-height:1.55';
-      document.getElementById('leadForm').appendChild(box);
+/* ---------- Anfrage-Funnel ----------
+   Fuenf Schritte statt eines Formularblocks. Die ersten vier sind
+   reine Klicks; Kontaktdaten kommen zuletzt. Nach der Baujahrfrage
+   zeigt der Funnel eine konkrete Zahl aus der ImmoWertV-Tabelle
+   dieser Seite - das belohnt den bisherigen Aufwand und zieht durch
+   den Rest. Alle Antworten landen im message-Feld der Anfrage. */
+(function(){
+  var form=document.getElementById('leadForm');
+  if(!form)return;
+
+  var SCHRITTE=5, akt=1, daten={};
+  var bar=document.getElementById('fnBar'),
+      lblStep=document.getElementById('fnStep'),
+      lblTime=document.getElementById('fnTime'),
+      zurueck=document.getElementById('fnBack'),
+      hint=document.getElementById('fnHint'),
+      summe=document.getElementById('fnSum'),
+      fehler=document.getElementById('fnErr');
+
+  function melde(name,extra){
+    if(window.gtag)window.gtag('event',name,extra||{});
+  }
+
+  function zeige(n,rueckwaerts){
+    akt=n;
+    form.querySelectorAll('.fn-s').forEach(function(s){
+      s.classList.toggle('on',+s.dataset.s===n);
+    });
+    bar.style.width=Math.round(n/SCHRITTE*100)+'%';
+    lblStep.textContent='Schritt '+n+' von '+SCHRITTE;
+    lblTime.textContent=n===SCHRITTE?'fast geschafft':'noch ca. '+(SCHRITTE-n)*10+' Sekunden';
+    zurueck.hidden=n===1;
+    if(!rueckwaerts)melde('funnel_step',{schritt:n});
+    // Auf dem Handy den Kartenkopf in den Blick holen, ohne zu springen
+    if(window.innerWidth<=980&&n>1){
+      var k=document.getElementById('anfrage');
+      var y=k.getBoundingClientRect().top+window.pageYOffset-70;
+      if(Math.abs(window.pageYOffset-y)>40)window.scrollTo({top:y,behavior:'smooth'});
     }
-    box.innerHTML='Die Anfrage konnte gerade nicht &uuml;bermittelt werden. Bitte rufen Sie uns kurz an \u2013 wir nehmen Ihre Angaben direkt auf:<br><a href="tel:+491747445452" style="color:#8C2D22;font-weight:800;text-decoration:underline">+49 174 744 5452</a> &middot; <a href="mailto:info@3dimmobilienbewertung.de" style="color:#8C2D22;font-weight:800;text-decoration:underline">info@3dimmobilienbewertung.de</a>';
-    if(window.gtag)window.gtag('event','form_error',{form:'restnutzungsdauergutachten'});
+  }
+
+  // Zwischenergebnis nach der Baujahr-Auswahl
+  function baueHinweis(opt){
+    var rnd=+opt.dataset.rnd, afa=opt.dataset.afa;
+    if(!rnd){
+      hint.innerHTML='<div class="fn-hint"><b>Ehrlich gesagt: eher unwahrscheinlich</b>'+
+        '<span>Bei Geb&auml;uden ab 2006 liegt die Restnutzungsdauer meist noch &uuml;ber der '+
+        'gesetzlichen Typisierung. Wir pr&uuml;fen es trotzdem kostenlos &ndash; und sagen Ihnen offen ab, '+
+        'wenn sich ein Gutachten nicht lohnt.</span></div>';
+      return;
+    }
+    hint.innerHTML='<div class="fn-hint"><b>Das sieht nach Potenzial aus</b>'+
+      '<span>Objekte dieses Baujahrs liegen im ImmoWertV-Modell h&auml;ufig bei rund '+
+      rnd+' Jahren Restnutzungsdauer &ndash; das entspr&auml;che einem AfA-Satz von</span>'+
+      '<span class="big">'+afa+'&nbsp;% statt 2,0&nbsp;%</span>'+
+      '<span>Ein Orientierungswert, kein Ergebnis: Verbindlich wird er erst durch die Begehung.</span></div>';
+  }
+
+  // Zusammenfassung vor der Kontaktabfrage
+  function baueSumme(){
+    var zeilen=[['Objekt',daten.objekt],['Baujahr',daten.baujahr],
+                ['Zustand',daten.zustand],['Vermietet',daten.vermietet]]
+      .filter(function(z){return z[1]});
+    summe.innerHTML='<div class="fn-hint"><b>Ihre Angaben</b><span>'+
+      zeilen.map(function(z){return z[0]+': <strong>'+z[1]+'</strong>'}).join('<br>')+
+      '</span></div>';
+  }
+
+  // Klick auf eine Option: merken, markieren, weiterschalten
+  form.querySelectorAll('.fn-opts').forEach(function(gruppe){
+    var feld=gruppe.dataset.feld;
+    gruppe.querySelectorAll('.fn-opt').forEach(function(opt){
+      opt.addEventListener('click',function(){
+        gruppe.querySelectorAll('.fn-opt').forEach(function(o){o.classList.remove('sel')});
+        opt.classList.add('sel');
+        daten[feld]=opt.dataset.v.replace(/&auml;/g,'\u00e4').replace(/&szlig;/g,'\u00df');
+        if(feld==='baujahr')baueHinweis(opt);
+        if(akt===4)baueSumme();
+        // Kurze Pause, damit der Haken sichtbar wird
+        setTimeout(function(){ if(akt<SCHRITTE)zeige(akt+1); },260);
+      });
+    });
   });
-});
+
+  zurueck.addEventListener('click',function(){ if(akt>1)zeige(akt-1,true) });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('lfName').value.trim(),
+        m=document.getElementById('lfMail').value.trim(),
+        t=document.getElementById('lfTel').value.trim(),
+        ort=document.getElementById('lfOrt').value.trim(),
+        hp=document.getElementById('lfHp');
+    fehler.hidden=true;
+    if(!n||!m||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)){
+      fehler.hidden=false;
+      fehler.textContent='Bitte tragen Sie Ihren Namen und eine g\u00fcltige E-Mail-Adresse ein.';
+      (!n?document.getElementById('lfName'):document.getElementById('lfMail')).focus();
+      return;
+    }
+    var btn=document.getElementById('submitBtn');
+    btn.disabled=true;btn.textContent='Wird gesendet \u2026';
+    var details=[
+      'Objektart: '+(daten.objekt||'\u2013'),
+      'Baujahr: '+(daten.baujahr||'\u2013'),
+      'Zustand: '+(daten.zustand||'\u2013'),
+      'Vermietet: '+(daten.vermietet||'\u2013'),
+      'Ort: '+(ort||'\u2013')
+    ].join('\n');
+    fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:n,email:m,phone:t,ort:ort,
+        objekt:daten.objekt||'Restnutzungsdauergutachten',
+        anlass:'Restnutzungsdauergutachten (Funnel)',
+        message:details,website:hp?hp.value:''})})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+    .then(function(){
+      document.querySelector('.fn-top').style.display='none';
+      form.style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+      melde('generate_lead',{lead_type:'restnutzungsdauergutachten'});
+    })
+    .catch(function(){
+      btn.disabled=false;btn.textContent='Kostenlose Einsch\u00e4tzung erhalten \u2192';
+      // Der Lead darf nicht verloren gehen: sichtbaren Ausweichweg
+      // anbieten statt eines Alerts, den man wegklickt und vergisst.
+      fehler.hidden=false;
+      fehler.innerHTML='Die Anfrage konnte gerade nicht \u00fcbermittelt werden. '+
+        'Bitte rufen Sie uns kurz an \u2013 wir nehmen Ihre Angaben direkt auf:<br>'+
+        '<a href="tel:+491747445452" style="color:#8C2D22;font-weight:800;text-decoration:underline">+49 174 744 5452</a>'+
+        ' &middot; <a href="mailto:info@3dimmobilienbewertung.de" style="color:#8C2D22;font-weight:800;text-decoration:underline">info@3dimmobilienbewertung.de</a>';
+      melde('form_error',{form:'restnutzungsdauergutachten'});
+    });
+  });
+})();
 </script>
 <script src="assets/consent.js"></script>
 </body>
