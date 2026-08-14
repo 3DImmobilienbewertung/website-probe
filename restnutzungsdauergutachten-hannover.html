@@ -365,6 +365,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 .fn-note .ico{width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:5px}
 
 .fn-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.5}
+/* Ausweichweg fuer alle, die lieber sprechen als tippen */
+.fn-alt{font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px;padding-top:12px;
+  border-top:1px dashed var(--border)}
+.fn-alt a{color:var(--blue);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .fn-err{margin-top:12px;padding:12px 14px;background:#FDECEA;border:1px solid #F0B7B0;
   border-radius:11px;font-size:13.8px;color:#8C2D22;line-height:1.5}
 .fn-err[hidden]{display:none}
@@ -581,8 +585,22 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           </div>
         </div>
 
-        <!-- 3 — Zustand; darueber erscheint die erste konkrete Zahl -->
+        <!-- 3 — Gebaeudewert: erst damit laesst sich der Vorteil in Euro
+                 statt in Prozent zeigen, und das qualifiziert die Anfrage -->
         <div class="fn-s" data-s="3">
+          <h2>Was hat das Geb&auml;ude gekostet?</h2>
+          <p class="sub">Nur der Geb&auml;udeanteil ohne Grundst&uuml;ck &ndash; eine grobe Einordnung reicht. Daraus rechnen wir Ihnen den Effekt in Euro aus.</p>
+          <div class="fn-opts" data-feld="wert">
+            <button type="button" class="fn-opt" data-v="bis 200.000 &euro;" data-wert="150000"><span class="i jahr">&lt;200</span>bis 200.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="200.000 bis 400.000 &euro;" data-wert="300000"><span class="i jahr">200+</span>200.000 &ndash; 400.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="400.000 bis 700.000 &euro;" data-wert="550000"><span class="i jahr">400+</span>400.000 &ndash; 700.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="&uuml;ber 700.000 &euro;" data-wert="900000"><span class="i jahr">700+</span>&uuml;ber 700.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="unbekannt" data-wert="0"><span class="i jahr">?</span>Wei&szlig; ich nicht<span class="ch">&#10003;</span></button>
+          </div>
+        </div>
+
+        <!-- 4 — Zustand; darueber erscheint die erste konkrete Zahl -->
+        <div class="fn-s" data-s="4">
           <div id="fnHint"></div>
           <h2>Wie ist der Zustand des Geb&auml;udes?</h2>
           <p class="sub">Ihre Einsch&auml;tzung reicht &ndash; den genauen Befund erheben wir vor Ort.</p>
@@ -595,7 +613,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </div>
 
         <!-- 4 — Vermietung: ohne Vermietung greift die AfA nicht -->
-        <div class="fn-s" data-s="4">
+        <div class="fn-s" data-s="5">
           <h2>Ist das Objekt vermietet?</h2>
           <p class="sub">Die erh&ouml;hte Abschreibung wirkt nur bei Einkünften aus Vermietung und Verpachtung.</p>
           <div class="fn-opts two" data-feld="vermietet">
@@ -607,7 +625,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </div>
 
         <!-- 5 — Kontaktdaten erst jetzt, nach vier investierten Klicks -->
-        <div class="fn-s" data-s="5">
+        <div class="fn-s" data-s="6">
           <div id="fnSum"></div>
           <h2>Wohin d&uuml;rfen wir die Einsch&auml;tzung senden?</h2>
           <p class="sub">Sie erhalten sie kostenlos und unverbindlich innerhalb von 24&nbsp;Stunden.</p>
@@ -624,6 +642,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px;margin-top:6px">Kostenlose Einsch&auml;tzung erhalten &rarr;</button>
           <div class="fn-err" id="fnErr" hidden></div>
           <p class="fn-note"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Ihre Angaben bleiben vertraulich und werden nicht weitergegeben.</p>
+          <p class="fn-alt">Lieber direkt sprechen? <a href="tel:+491747445452">+49&nbsp;174&nbsp;744&nbsp;5452</a> &middot; Mo&ndash;Fr 9&ndash;18&nbsp;Uhr</p>
         </div>
 
         <div class="fn-trust">
@@ -757,6 +776,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         <h3>Sie gehen nicht in Vorleistung</h3>
         <p>Bevor Sie irgendetwas beauftragen, pr&uuml;fen wir kostenlos, ob sich ein Gutachten f&uuml;r Ihr Objekt &uuml;berhaupt lohnt. Kommen wir zu dem Ergebnis, dass es das nicht tut, sagen wir Ihnen das offen &ndash; und Sie zahlen nichts.</p>
         <p>Der Preis steht vorab verbindlich fest: <strong>1.490&nbsp;&euro;</strong>, inklusive Ortsbegehung, Dokumentation und Besprechung. Keine Nachberechnung, keine Stundens&auml;tze, keine &Uuml;berraschungen auf der Rechnung.</p>
+        <p>Achten Sie beim Vergleichen auf die Besichtigung: G&uuml;nstigere Angebote entstehen meist ohne Ortstermin &ndash; und dort, wo eine Begehung angeboten wird, kommt sie h&auml;ufig mit <strong>300&nbsp;bis 400&nbsp;&euro; Aufschlag</strong> obendrauf. Bei uns ist sie im Festpreis enthalten, weil ein Gutachten ohne sie den Ma&szlig;stab der BFH-Rechtsprechung nicht erf&uuml;llt.</p>
       </div>
     </div>
 
@@ -1258,7 +1278,7 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
   var form=document.getElementById('leadForm');
   if(!form)return;
 
-  var SCHRITTE=5, akt=1, daten={};
+  var SCHRITTE=6, akt=1, daten={}, rechnung={};
   var bar=document.getElementById('fnBar'),
       lblStep=document.getElementById('fnStep'),
       lblTime=document.getElementById('fnTime'),
@@ -1289,29 +1309,59 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
     }
   }
 
-  // Zwischenergebnis nach der Baujahr-Auswahl
-  function baueHinweis(opt){
-    var rnd=+opt.dataset.rnd, afa=opt.dataset.afa;
-    if(!rnd){
+  function euro(n){
+    return n.toLocaleString('de-DE',{maximumFractionDigits:0})+' €';
+  }
+
+  /* Zwischenergebnis: Prozentsaetze sagen Eigentuemern wenig, ein
+     Eurobetrag sofort etwas. Sobald Baujahr und Gebaeudewert bekannt
+     sind, rechnen wir die zusaetzliche Abschreibung pro Jahr aus.
+     Bewusst NICHT die Steuerersparnis - die haengt vom persoenlichen
+     Steuersatz ab und waere ein Versprechen, das wir nicht halten koennen. */
+  function baueHinweis(){
+    if(!rechnung.afa){
       hint.innerHTML='<div class="fn-hint"><b>Ehrlich gesagt: eher unwahrscheinlich</b>'+
         '<span>Bei Geb&auml;uden ab 2006 liegt die Restnutzungsdauer meist noch &uuml;ber der '+
         'gesetzlichen Typisierung. Wir pr&uuml;fen es trotzdem kostenlos &ndash; und sagen Ihnen offen ab, '+
         'wenn sich ein Gutachten nicht lohnt.</span></div>';
       return;
     }
-    hint.innerHTML='<div class="fn-hint"><b>Das sieht nach Potenzial aus</b>'+
-      '<span>Objekte dieses Baujahrs liegen im ImmoWertV-Modell h&auml;ufig bei rund '+
-      rnd+' Jahren Restnutzungsdauer &ndash; das entspr&auml;che einem AfA-Satz von</span>'+
-      '<span class="big">'+afa+'&nbsp;% statt 2,0&nbsp;%</span>'+
-      '<span>Ein Orientierungswert, kein Ergebnis: Verbindlich wird er erst durch die Begehung.</span></div>';
+    var afaText=rechnung.afa.toString().replace('.',',');
+    var kopf='<div class="fn-hint"><b>Das sieht nach Potenzial aus</b>';
+    var fuss='<span>Ein Orientierungswert nach ImmoWertV-Modell, kein Ergebnis: '+
+      'Verbindlich wird er erst durch die Begehung. Was das steuerlich bedeutet, '+
+      'h&auml;ngt von Ihrem pers&ouml;nlichen Steuersatz ab.</span></div>';
+
+    if(rechnung.wert>0){
+      var mehr=Math.round(rechnung.wert*(rechnung.afa-2)/100);
+      hint.innerHTML=kopf+
+        '<span>Bei rund '+rechnung.rnd+' Jahren Restnutzungsdauer ('+afaText+'&nbsp;% statt 2,0&nbsp;%) '+
+        'w&auml;ren das zus&auml;tzlich</span>'+
+        '<span class="big">+ '+euro(mehr)+'</span>'+
+        '<span style="display:block;margin:-2px 0 8px;font-weight:700;color:var(--blue)">Abschreibung pro Jahr</span>'+
+        fuss;
+    }else{
+      hint.innerHTML=kopf+
+        '<span>Objekte dieses Baujahrs liegen h&auml;ufig bei rund '+rechnung.rnd+
+        ' Jahren Restnutzungsdauer &ndash; das entspr&auml;che einem AfA-Satz von</span>'+
+        '<span class="big">'+afaText+'&nbsp;% statt 2,0&nbsp;%</span>'+fuss;
+    }
   }
 
-  // Zusammenfassung vor der Kontaktabfrage
+  // Zusammenfassung vor der Kontaktabfrage: erinnert an den Betrag,
+  // bevor nach Name und E-Mail gefragt wird.
   function baueSumme(){
-    var zeilen=[['Objekt',daten.objekt],['Baujahr',daten.baujahr],
+    var zeilen=[['Objekt',daten.objekt],['Baujahr',daten.baujahr],['Geb&auml;udewert',daten.wert],
                 ['Zustand',daten.zustand],['Vermietet',daten.vermietet]]
-      .filter(function(z){return z[1]});
-    summe.innerHTML='<div class="fn-hint"><b>Ihre Angaben</b><span>'+
+      .filter(function(z){return z[1]&&z[1]!=='unbekannt'});
+    var kopf='<b>Ihre Angaben</b>';
+    if(rechnung.afa&&rechnung.wert>0){
+      var mehr=Math.round(rechnung.wert*(rechnung.afa-2)/100);
+      kopf='<b>Ihr rechnerisches Potenzial</b>'+
+        '<span class="big">+ '+euro(mehr)+'</span>'+
+        '<span style="display:block;margin:-2px 0 10px;font-weight:700;color:var(--blue)">Abschreibung pro Jahr</span>';
+    }
+    summe.innerHTML='<div class="fn-hint">'+kopf+'<span>'+
       zeilen.map(function(z){return z[0]+': <strong>'+z[1]+'</strong>'}).join('<br>')+
       '</span></div>';
   }
@@ -1323,9 +1373,11 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
       opt.addEventListener('click',function(){
         gruppe.querySelectorAll('.fn-opt').forEach(function(o){o.classList.remove('sel')});
         opt.classList.add('sel');
-        daten[feld]=opt.dataset.v.replace(/&auml;/g,'\u00e4').replace(/&szlig;/g,'\u00df');
-        if(feld==='baujahr')baueHinweis(opt);
-        if(akt===4)baueSumme();
+        daten[feld]=opt.dataset.v.replace(/&auml;/g,'\u00e4').replace(/&szlig;/g,'\u00df')
+                                 .replace(/&uuml;/g,'\u00fc').replace(/&euro;/g,'\u20ac');
+        if(feld==='baujahr'){rechnung.rnd=+opt.dataset.rnd; rechnung.afa=parseFloat(opt.dataset.afa.replace(',','.'));}
+        if(feld==='wert'){rechnung.wert=+opt.dataset.wert; baueHinweis();}
+        if(akt===SCHRITTE-1)baueSumme();
         // Kurze Pause, damit der Haken sichtbar wird
         setTimeout(function(){ if(akt<SCHRITTE)zeige(akt+1); },260);
       });
@@ -1353,10 +1405,18 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
     var details=[
       'Objektart: '+(daten.objekt||'\u2013'),
       'Baujahr: '+(daten.baujahr||'\u2013'),
+      'Geb\u00e4udewert: '+(daten.wert||'\u2013'),
       'Zustand: '+(daten.zustand||'\u2013'),
       'Vermietet: '+(daten.vermietet||'\u2013'),
       'Ort: '+(ort||'\u2013')
-    ].join('\n');
+    ];
+    // Das im Funnel angezeigte Potenzial mitschicken, damit im Erstgespr\u00e4ch
+    // klar ist, welche Zahl der Interessent gesehen hat.
+    if(rechnung.afa&&rechnung.wert>0){
+      details.push('Angezeigtes Potenzial: + '+euro(Math.round(rechnung.wert*(rechnung.afa-2)/100))+' AfA pro Jahr'
+        +' (RND '+rechnung.rnd+' J., '+String(rechnung.afa).replace('.',',')+' %)');
+    }
+    details=details.join('\n');
     fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name:n,email:m,phone:t,ort:ort,
         objekt:daten.objekt||'Restnutzungsdauergutachten',
@@ -1383,6 +1443,6 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
   });
 })();
 </script>
-<script src="assets/consent.js"></script>
+<script src="assets/consent.js?v=20260814"></script>
 </body>
 </html>

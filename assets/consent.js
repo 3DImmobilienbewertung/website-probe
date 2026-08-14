@@ -53,6 +53,44 @@
   }
   loadGA();
 
+  // ─── Meta-Pixel (Facebook / Instagram) ────────────────────
+  // Ohne Pixel kann Meta die Kampagne nicht auf Anfragen optimieren:
+  // Der Algorithmus lernt dann nur, wer *klickt*, nicht wer *anfragt*.
+  // Genau das erzeugt viele Klicks bei kaum Leads.
+  //
+  // EINRICHTEN: Pixel-ID im Meta Events Manager kopieren
+  // (Events Manager -> Datenquellen -> Pixel -> ID, 15-16 Ziffern)
+  // und unten eintragen. Bis dahin bleibt der Pixel inaktiv.
+  var META_PIXEL_ID = ''; // z. B. '1234567890123456'
+
+  function ladeMetaPixel() {
+    if (!META_PIXEL_ID) return;
+    /* eslint-disable */
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    /* eslint-enable */
+    // Erst nach Einwilligung Cookies setzen; vorher laeuft der Pixel
+    // im eingeschraenkten Modus.
+    var c = getConsent();
+    if (!c || !c.analytics) { try { fbq('consent', 'revoke'); } catch (e) {} }
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+  ladeMetaPixel();
+
+  // Meldet ein Ereignis an alle vorhandenen Messsysteme gleichzeitig
+  function meldeEreignis(gaName, metaName, daten) {
+    try { gtag('event', gaName, daten || {}); } catch (e) {}
+    try { if (window.fbq) fbq('track', metaName, daten || {}); } catch (e) {}
+  }
+  window.trackLead = meldeEreignis;
+
   // ─── Lead-Event-Tracking (Schlüsselereignisse) ────────────
   // Misst echte Lead-Aktionen statt nur Seitenaufrufe. Consent Mode v2
   // regelt die DSGVO-konforme (cookieless bei Ablehnung) Erhebung automatisch.
@@ -67,7 +105,9 @@
         var isLead = url.indexOf('/api/contact') !== -1;
         return _origFetch.apply(this, arguments).then(function (res) {
           if (isLead && res && res.ok) {
-            try { gtag('event', 'generate_lead', { lead_source: location.pathname }); } catch (e) {}
+            // An GA4 und Meta zugleich: Meta braucht dieses Ereignis, um
+            // die Kampagne auf Anfragen statt auf Klicks zu optimieren.
+            meldeEreignis('generate_lead', 'Lead', { lead_source: location.pathname });
           }
           return res;
         });
@@ -81,7 +121,9 @@
       var href = a.getAttribute('href') || '';
       try {
         if (href.indexOf('tel:') === 0) {
-          gtag('event', 'phone_call', { phone_number: href.replace('tel:', ''), link_location: location.pathname });
+          // Ein Anruf ist bei diesem Geschaeft ein vollwertiger Lead
+          meldeEreignis('phone_call', 'Contact',
+            { phone_number: href.replace('tel:', ''), link_location: location.pathname });
         } else if (href.indexOf('mailto:info@3dimmobilienbewertung.de') === 0) {
           // nur Geschäfts-Mail – Behörden-Mail in der Datenschutzerklärung bleibt außen vor
           gtag('event', 'email_click', { link_location: location.pathname });
@@ -97,6 +139,9 @@
     gtag('consent', 'update', {
       'analytics_storage': analyticsAllowed ? 'granted' : 'denied'
     });
+    try {
+      if (window.fbq) fbq('consent', analyticsAllowed ? 'grant' : 'revoke');
+    } catch (e) {}
     setCookie(CONSENT_KEY, JSON.stringify({ analytics: analyticsAllowed, ts: Date.now() }), CONSENT_DURATION);
   }
 
@@ -108,14 +153,18 @@
     'padding:20px 24px;display:flex;align-items:center;' +
     'justify-content:space-between;flex-wrap:wrap;gap:16px;' +
     'font-family:\'Hanken Grotesk\',sans-serif;font-size:14.5px;color:#2A445F;">' +
-    '<div style="flex:1;min-width:240px;max-width:680px;">' +
-    '<strong style="color:#10243D;font-size:15px;">🍪 Diese Website verwendet Cookies</strong>' +
-    '<p style="margin-top:6px;line-height:1.55;color:#5C708A">' +
+    '<div style="flex:1;min-width:200px;max-width:680px;">' +
+    '<strong class="cb-titel" style="color:#10243D;font-size:15px;">Diese Website verwendet Cookies</strong>' +
+    '<p class="cb-lang" style="margin-top:6px;line-height:1.55;color:#5C708A">' +
     'Wir verwenden technisch notwendige Cookies sowie – mit Ihrer Einwilligung – Google Analytics zur anonymisierten Nutzungsanalyse. ' +
     'Ihre Daten werden erst nach Zustimmung erhoben. ' +
     '<a href="/datenschutz.html" style="color:#16365C;font-weight:600;">Datenschutzerklärung</a>' +
+    '</p>' +
+    '<p class="cb-kurz" style="font-size:12.8px">' +
+    'Anonyme Statistik nur mit Ihrer Zustimmung. ' +
+    '<a href="/datenschutz.html" style="color:#16365C;font-weight:600;">Datenschutz</a>' +
     '</p></div>' +
-    '<div style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;">' +
+    '<div class="cb-btns" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:nowrap;">' +
     '<button id="consent-decline" style="' +
     'padding:11px 20px;border:1.5px solid rgba(16,36,61,.2);border-radius:100px;' +
     'background:transparent;color:#5C708A;font-size:14px;font-weight:600;cursor:pointer;' +
@@ -131,8 +180,31 @@
     '</div>' +
     '</div>';
 
+  /* Auf dem Smartphone belegte der Banner rund 30 % des Bildschirms und
+     verdeckte damit genau den Bereich, in dem der erste Handlungsaufruf
+     und die Anrufleiste sitzen. Auf schmalen Displays wird er deshalb
+     deutlich kompakter: kurzer Text, Knoepfe nebeneinander. Er sitzt
+     ueber der Aktionsleiste, nicht auf ihr. */
+  var bannerCSS =
+    '#cookie-banner .cb-lang{display:block}' +
+    '#cookie-banner .cb-kurz{display:none}' +
+    '@media(max-width:600px){' +
+    '#cookie-banner{padding:12px 16px calc(12px + env(safe-area-inset-bottom))!important;' +
+    'gap:10px!important;bottom:74px!important;border-radius:14px 14px 0 0;' +
+    'box-shadow:0 -6px 24px rgba(16,36,61,.16)!important}' +
+    '#cookie-banner .cb-lang{display:none}' +
+    '#cookie-banner .cb-kurz{display:block;line-height:1.45;color:#5C708A;margin-top:3px}' +
+    '#cookie-banner .cb-titel{font-size:14px!important}' +
+    '#cookie-banner .cb-btns{width:100%;gap:8px!important}' +
+    '#cookie-banner .cb-btns button{flex:1;padding:12px 10px!important;font-size:13.5px!important}' +
+    '}';
+
   // ─── Show / Hide banner ────────────────────────────────────
   function showBanner() {
+    var stil = document.createElement('style');
+    stil.textContent = bannerCSS;
+    document.head.appendChild(stil);
+
     var wrap = document.createElement('div');
     wrap.innerHTML = bannerHTML;
     document.body.appendChild(wrap.firstChild);
