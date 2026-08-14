@@ -338,6 +338,12 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   h1,h2,h3,.fall h3,.pcard b,.aflist b{
     overflow-wrap:break-word;word-break:normal;
     -webkit-hyphens:auto;hyphens:auto}
+
+  /* Ausnahme Hero-H1: hier wurde "unterstellt" zu "un-terstellt"
+     getrennt und die goldene Unterstreichung zerfiel in zwei Stuecke.
+     Ganze Woerter umbrechen lassen; break-word bleibt als Notnagel. */
+  .hero h1{-webkit-hyphens:manual;hyphens:manual}
+  .hero h1 .u{white-space:nowrap;text-decoration-thickness:2.5px;text-underline-offset:5px}
   .lead{font-size:16px;line-height:1.62}
 
   /* Grauzonen aufhellen war zu schwach — dunkler = besser lesbar
