@@ -379,6 +379,49 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 }
 
 /* ============================================================
+   TABELLEN AUF SCHMALEN BILDSCHIRMEN
+   Statt seitlich zu scrollen wird jede Zeile zu einer Karte:
+   Die erste Zelle bildet den Kartenkopf, alle weiteren zeigen
+   ihre Spaltenueberschrift (data-label) links neben dem Wert.
+   Damit bleibt jeder Wert ohne Kopfzeile verstaendlich.
+   ============================================================ */
+@media(max-width:720px){
+  .tblwrap{overflow:visible}
+  .cmp,.afa,.calc{min-width:0;width:100%;border:0;background:none;border-radius:0;display:block}
+  .cmp tbody,.afa tbody,.calc tbody{display:block}
+
+  /* Kopfzeile wird nicht mehr angezeigt, bleibt aber fuer
+     Screenreader und Suchmaschinen im Dokument */
+  .cmp thead,.afa thead,.calc thead{position:absolute;width:1px;height:1px;
+    overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  .cmp tr,.afa tr,.calc tr{display:block;background:#fff;border:1px solid var(--border);
+    border-radius:14px;margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
+
+  .cmp td,.afa td,.calc td{display:flex;align-items:baseline;justify-content:space-between;
+    gap:14px;padding:12px 15px;text-align:right;font-size:14.6px;
+    border-bottom:1px solid rgba(16,36,61,.07)}
+  .cmp td::before,.afa td::before,.calc td::before{content:attr(data-label);
+    flex:0 1 auto;text-align:left;color:var(--muted);font-size:13px;font-weight:600;
+    letter-spacing:.01em}
+  .cmp tr td:last-child,.afa tr td:last-child,.calc tr td:last-child{border-bottom:0}
+
+  /* Erste Zelle jeder Zeile = Kartenkopf */
+  .cmp td:first-child,.afa td:first-child,.calc td:first-child{
+    display:block;text-align:left;background:var(--blue-soft);color:var(--blue);
+    font-family:var(--display);font-weight:700;font-size:1.02rem;line-height:1.3;
+    padding:13px 15px;border-bottom:0;white-space:normal}
+  .cmp td:first-child::before,.afa td:first-child::before,.calc td:first-child::before{content:none}
+
+  /* Unsere Spalte bleibt auch als Karte die hervorgehobene */
+  .cmp td.own{background:rgba(242,181,0,.10);font-weight:700}
+  .cmp td.own::before{color:var(--ink-2);font-weight:700}
+  .afa td.hi{background:rgba(242,181,0,.09)}
+  .calc .hl td{background:rgba(242,181,0,.10);font-weight:700}
+  .calc td:last-child,.calc th:last-child{white-space:normal}
+}
+
+/* ============================================================
    MOBIL — der Grossteil der Besucher kommt ueber Meta-Anzeigen
    und damit vom Smartphone. Ziel: nichts laeuft seitlich aus dem
    Bild, alles ist ohne Zoom lesbar, das Formular ist schnell
@@ -692,12 +735,12 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <table class="cmp">
         <thead><tr><th>&nbsp;</th><th>Ohne Gutachten</th><th>Online-Rechner / Ferngutachten</th><th class="own">Unser Gutachten</th></tr></thead>
         <tbody>
-          <tr><td><b>Grundlage</b></td><td>Gesetzliche Typisierung (50 Jahre)</td><td>Formel auf Basis von Eckdaten</td><td class="own">Objektindividuelle Beurteilung der Bausubstanz</td></tr>
-          <tr><td><b>Besichtigung vor Ort</b></td><td class="no">entf&auml;llt</td><td class="no">nein</td><td class="own"><span class="yes">ja, immer</span></td></tr>
-          <tr><td><b>Ma&szlig;stab der BFH-Rechtsprechung</b></td><td>&ndash;</td><td class="no">nicht erf&uuml;llt</td><td class="own"><span class="yes">erf&uuml;llt</span></td></tr>
-          <tr><td><b>Dokumentation</b></td><td>keine</td><td>Rechenergebnis</td><td class="own">Schriftliches Gutachten mit Fotos und Herleitung</td></tr>
-          <tr><td><b>Ansprechpartner</b></td><td>&ndash;</td><td>meist Plattform</td><td class="own">Die Person, die auch vor Ort war</td></tr>
-          <tr><td><b>Kosten</b></td><td>0&nbsp;&euro;</td><td>gering</td><td class="own">1.490&nbsp;&euro; Festpreis</td></tr>
+          <tr><td><b>Grundlage</b></td><td data-label="Ohne Gutachten">Gesetzliche Typisierung (50 Jahre)</td><td data-label="Online-Rechner">Formel auf Basis von Eckdaten</td><td class="own" data-label="Unser Gutachten">Objektindividuelle Beurteilung der Bausubstanz</td></tr>
+          <tr><td><b>Besichtigung vor Ort</b></td><td class="no" data-label="Ohne Gutachten">entf&auml;llt</td><td class="no" data-label="Online-Rechner">nein</td><td class="own" data-label="Unser Gutachten"><span class="yes">ja, immer</span></td></tr>
+          <tr><td><b>Ma&szlig;stab der BFH-Rechtsprechung</b></td><td data-label="Ohne Gutachten">&ndash;</td><td class="no" data-label="Online-Rechner">nicht erf&uuml;llt</td><td class="own" data-label="Unser Gutachten"><span class="yes">erf&uuml;llt</span></td></tr>
+          <tr><td><b>Dokumentation</b></td><td data-label="Ohne Gutachten">keine</td><td data-label="Online-Rechner">Rechenergebnis</td><td class="own" data-label="Unser Gutachten">Schriftliches Gutachten mit Fotos und Herleitung</td></tr>
+          <tr><td><b>Ansprechpartner</b></td><td data-label="Ohne Gutachten">&ndash;</td><td data-label="Online-Rechner">meist Plattform</td><td class="own" data-label="Unser Gutachten">Die Person, die auch vor Ort war</td></tr>
+          <tr><td><b>Kosten</b></td><td data-label="Ohne Gutachten">0&nbsp;&euro;</td><td data-label="Online-Rechner">gering</td><td class="own" data-label="Unser Gutachten">1.490&nbsp;&euro; Festpreis</td></tr>
         </tbody>
       </table>
     </div>
@@ -770,10 +813,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <table class="afa">
         <thead><tr><th>Baujahr</th><th>kaum modernisiert</th><th>teilmodernisiert</th><th>umfassend modernisiert</th></tr></thead>
         <tbody>
-          <tr><td><b>bis 1960</b></td><td class="hi">ca. 24 J. &middot; 4,2&nbsp;%</td><td class="hi">ca. 30 J. &middot; 3,3&nbsp;%</td><td class="hi">ca. 40 J. &middot; 2,5&nbsp;%</td></tr>
-          <tr><td><b>1961&ndash;1975</b></td><td class="hi">ca. 24 J. &middot; 4,2&nbsp;%</td><td class="hi">ca. 32 J. &middot; 3,1&nbsp;%</td><td class="hi">ca. 42 J. &middot; 2,4&nbsp;%</td></tr>
-          <tr><td><b>1976&ndash;1990</b></td><td class="hi">ca. 30 J. &middot; 3,3&nbsp;%</td><td class="hi">ca. 38 J. &middot; 2,6&nbsp;%</td><td>ca. 48 J. &middot; 2,1&nbsp;%</td></tr>
-          <tr><td><b>1991&ndash;2005</b></td><td class="hi">ca. 42 J. &middot; 2,4&nbsp;%</td><td>ca. 50 J. &middot; 2,0&nbsp;%</td><td>ca. 58 J. &middot; 1,7&nbsp;%</td></tr>
+          <tr><td><b>bis 1960</b></td><td class="hi" data-label="kaum modernisiert">ca. 24 J. &middot; 4,2&nbsp;%</td><td class="hi" data-label="teilmodernisiert">ca. 30 J. &middot; 3,3&nbsp;%</td><td class="hi" data-label="umfassend modernisiert">ca. 40 J. &middot; 2,5&nbsp;%</td></tr>
+          <tr><td><b>1961&ndash;1975</b></td><td class="hi" data-label="kaum modernisiert">ca. 24 J. &middot; 4,2&nbsp;%</td><td class="hi" data-label="teilmodernisiert">ca. 32 J. &middot; 3,1&nbsp;%</td><td class="hi" data-label="umfassend modernisiert">ca. 42 J. &middot; 2,4&nbsp;%</td></tr>
+          <tr><td><b>1976&ndash;1990</b></td><td class="hi" data-label="kaum modernisiert">ca. 30 J. &middot; 3,3&nbsp;%</td><td class="hi" data-label="teilmodernisiert">ca. 38 J. &middot; 2,6&nbsp;%</td><td data-label="umfassend modernisiert">ca. 48 J. &middot; 2,1&nbsp;%</td></tr>
+          <tr><td><b>1991&ndash;2005</b></td><td class="hi" data-label="kaum modernisiert">ca. 42 J. &middot; 2,4&nbsp;%</td><td data-label="teilmodernisiert">ca. 50 J. &middot; 2,0&nbsp;%</td><td data-label="umfassend modernisiert">ca. 58 J. &middot; 1,7&nbsp;%</td></tr>
         </tbody>
       </table>
     </div>
@@ -909,11 +952,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <table class="calc">
         <thead><tr><th>Position</th><th>Standard-AfA</th><th>Mit Gutachten</th></tr></thead>
         <tbody>
-          <tr><td>Geb&auml;udeanteil (ohne Grund und Boden)</td><td>400.000&nbsp;&euro;</td><td>400.000&nbsp;&euro;</td></tr>
-          <tr><td>Angesetzte Nutzungsdauer</td><td>50 Jahre</td><td>25 Jahre</td></tr>
-          <tr><td>AfA-Satz</td><td>2,0&nbsp;%</td><td>4,0&nbsp;%</td></tr>
-          <tr><td>Abschreibung pro Jahr</td><td>8.000&nbsp;&euro;</td><td>16.000&nbsp;&euro;</td></tr>
-          <tr class="hl"><td>Zus&auml;tzliches AfA-Volumen pro Jahr</td><td>&mdash;</td><td>+&nbsp;8.000&nbsp;&euro;</td></tr>
+          <tr><td>Geb&auml;udeanteil (ohne Grund und Boden)</td><td data-label="Standard-AfA">400.000&nbsp;&euro;</td><td data-label="Mit Gutachten">400.000&nbsp;&euro;</td></tr>
+          <tr><td>Angesetzte Nutzungsdauer</td><td data-label="Standard-AfA">50 Jahre</td><td data-label="Mit Gutachten">25 Jahre</td></tr>
+          <tr><td>AfA-Satz</td><td data-label="Standard-AfA">2,0&nbsp;%</td><td data-label="Mit Gutachten">4,0&nbsp;%</td></tr>
+          <tr><td>Abschreibung pro Jahr</td><td data-label="Standard-AfA">8.000&nbsp;&euro;</td><td data-label="Mit Gutachten">16.000&nbsp;&euro;</td></tr>
+          <tr class="hl"><td>Zus&auml;tzliches AfA-Volumen pro Jahr</td><td data-label="Standard-AfA">&mdash;</td><td data-label="Mit Gutachten">+&nbsp;8.000&nbsp;&euro;</td></tr>
         </tbody>
       </table>
       <p class="disclaim">Beispielhafte Modellrechnung bei einem Geb&auml;udeanteil von 400.000&nbsp;&euro; und einer gutachterlich ermittelten Restnutzungsdauer von 25&nbsp;Jahren. Das zus&auml;tzliche AfA-Volumen mindert die Bemessungsgrundlage; wie stark sich das auf Ihre Steuerlast auswirkt, h&auml;ngt von Ihrem pers&ouml;nlichen Steuersatz und Ihrer Gesamtsituation ab. Wir erstellen das Gutachten &ndash; die steuerliche Beratung und Erkl&auml;rung &uuml;bernimmt Ihre Steuerberatung.</p>
