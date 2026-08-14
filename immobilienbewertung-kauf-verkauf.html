@@ -683,7 +683,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: n, email: m, phone: t, objekt: o, anlass: 'Kauf / Verkauf – ' + ort, message: msg || 'Anfrage über Landingpage Kauf/Verkauf' })
   })
-  .then(function(r) { return r.json(); })
+  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
   .then(function(d) {
     document.getElementById('leadForm').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';

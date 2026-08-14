@@ -248,7 +248,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 /* --- Risiko-Umkehr --- */
 .rev{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;background:linear-gradient(135deg,var(--blue-deep),var(--blue));color:#fff;border-radius:22px;padding:38px 36px;box-shadow:var(--shadow);max-width:900px;margin:0 auto}
 .rev .sh{font-size:44px;line-height:1}
-.rev h3{font-family:var(--display);font-size:1.5rem;font-weight:800;margin:0 0 12px;letter-spacing:-.02em}
+.rev h3{color:#fff;font-family:var(--display);font-size:1.5rem;font-weight:800;margin:0 0 12px;letter-spacing:-.02em}
 .rev p{color:rgba(255,255,255,.86);font-size:15.5px;line-height:1.7;margin:0 0 10px}
 .rev p:last-child{margin-bottom:0}
 @media(max-width:600px){.rev{grid-template-columns:1fr;padding:28px 24px}}
@@ -265,6 +265,119 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 .rev-c .who{margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
 .rev-c .who b{display:block;color:var(--ink);font-size:14px}
 .tblwrap{overflow-x:auto;max-width:940px;margin:0 auto}
+
+/* --- Referenzfaelle mit Objektfoto --- */
+.faelle{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.fall{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.fall figure{margin:0;position:relative;aspect-ratio:4/3;background:var(--blue-soft)}
+.fall img{width:100%;height:100%;object-fit:cover}
+.fall .tag{position:absolute;left:14px;top:14px;background:rgba(16,36,61,.86);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:100px;backdrop-filter:blur(6px)}
+.fall .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.fall h3{font-family:var(--display);font-size:1.12rem;font-weight:700;color:var(--ink);margin:0 0 4px;line-height:1.25}
+.fall .meta{font-size:13.5px;color:var(--muted);margin:0 0 16px}
+.fall dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:9px 12px;font-size:14.2px;border-top:1px solid var(--border);padding-top:15px}
+.fall dt{color:var(--muted)}
+.fall dd{margin:0;text-align:right;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fall .plus{margin-top:16px;background:linear-gradient(135deg,var(--gold-light),#fff);border:1px solid rgba(201,162,75,.45);border-radius:12px;padding:14px 16px;text-align:center}
+.fall .plus .amt{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+.fall .plus .cap{display:block;font-size:12.5px;color:var(--ink-2);margin-top:6px;font-weight:600}
+
+/* --- Sicherheitsversprechen --- */
+.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px;margin-top:30px}
+.pcard{background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:14px;padding:24px 22px;box-shadow:var(--shadow-sm)}
+.pcard .ic{font-size:26px;line-height:1;margin-bottom:12px}
+.pcard b{display:block;font-family:var(--display);font-size:1.04rem;color:var(--ink);margin-bottom:7px;line-height:1.3}
+.pcard span{font-size:14.2px;color:var(--muted);line-height:1.6}
+
+/* --- Nachbetreuung --- */
+.after{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;max-width:1000px;margin:0 auto}
+.aflist{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+.aflist li{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:start}
+.aflist .n{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--mono);font-size:13px;font-weight:700;display:grid;place-items:center;flex-shrink:0}
+.aflist b{display:block;font-family:var(--display);font-size:1.02rem;color:var(--ink);margin-bottom:4px}
+.aflist span{font-size:14.5px;color:var(--muted);line-height:1.62}
+.afbox{background:linear-gradient(150deg,var(--blue-deep),var(--blue));color:#fff;border-radius:20px;padding:34px 32px;box-shadow:var(--shadow-blue)}
+.afbox .q{color:#fff;font-family:var(--display);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin:0 0 14px}
+.afbox p{color:rgba(255,255,255,.87);font-size:15px;line-height:1.7;margin:0 0 12px}
+.afbox p:last-of-type{margin-bottom:0}
+.afbox .sig{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);font-size:13.5px;color:rgba(255,255,255,.72)}
+@media(max-width:860px){.after{grid-template-columns:1fr;gap:34px}}
+.fnote{max-width:940px;margin:22px auto 0;font-size:12.8px;color:var(--muted);line-height:1.6;text-align:center}
+
+/* ============================================================
+   MOBIL — der Grossteil der Besucher kommt ueber Meta-Anzeigen
+   und damit vom Smartphone. Ziel: nichts laeuft seitlich aus dem
+   Bild, alles ist ohne Zoom lesbar, das Formular ist schnell
+   erreichbar und laesst sich mit einer Hand ausfuellen.
+   ============================================================ */
+@media(max-width:600px){
+  /* Kein horizontales Verrutschen der Seite */
+  html,body{max-width:100%;overflow-x:hidden}
+  .container{padding:0 18px}
+
+  /* Buttons duerfen umbrechen statt die Seite aufzuspannen */
+  .btn{white-space:normal;padding:15px 20px;font-size:15.5px;line-height:1.3;
+       max-width:100%;text-align:center;justify-content:center}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%}
+
+  /* Aktionsleiste unten: Knoepfe muessen schrumpfen duerfen */
+  .mobile-bar{gap:8px;padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
+  .mobile-bar a{flex:1 1 0;min-width:0;font-size:14.5px;padding:14px 6px;
+                white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  body{padding-bottom:80px}
+
+  /* Lesbarkeit: groessere Grundschrift, ruhigere Zeilenlaenge */
+  body{font-size:16.5px}
+  .hero h1{font-size:clamp(1.85rem,8.4vw,2.4rem);line-height:1.12}
+  .hero-sub{font-size:16px;line-height:1.62}
+  .sec-head h2{font-size:clamp(1.6rem,7.2vw,2rem)}
+  .lead{font-size:16px;line-height:1.62}
+
+  /* Grauzonen aufhellen war zu schwach — dunkler = besser lesbar
+     bei Sonnenlicht und auf guenstigen Displays */
+  .disclaim,.fnote,.note{color:var(--ink-2)}
+  .fall .meta,.aflist span,.pcard span,.usp span{color:var(--ink-2)}
+
+  /* Formular: 16px verhindert das automatische Hineinzoomen in iOS */
+  .ff input,.ff select,.ff textarea{font-size:16px;padding:15px 14px}
+  .ff label{font-size:11px}
+  .form-card{padding:24px 20px}
+  .form-card h2{font-size:1.45rem}
+
+  /* Referenzfaelle und Zusagen kompakter stapeln */
+  .faelle,.promise{gap:16px}
+  .fall .body{padding:20px 18px 22px}
+  .fall dl{font-size:14.6px}
+  .fall .plus .amt{font-size:1.75rem}
+  .rev{padding:28px 22px;gap:16px;grid-template-columns:1fr}
+  .rev .sh{font-size:34px}
+  .afbox{padding:28px 22px}
+
+  /* Flex-Kinder muessen schrumpfen duerfen, sonst schiebt langer Text
+     die Ablauf-Schritte ueber den Bildrand hinaus */
+  .vstep>*,.aflist li>*,.rev>*{min-width:0}
+  .vstep{gap:14px}
+  .vstep-num{width:44px;height:44px;font-size:1.05rem}
+
+  /* Tabellen: sichtbarer Hinweis, dass man wischen kann */
+  .tblwrap{-webkit-overflow-scrolling:touch}
+
+  /* Oberer Rand straffen: Wer aus einer Anzeige kommt, soll die
+     Ueberschrift sofort sehen und nicht erst dorthin scrollen. */
+  .hero{padding:20px 0 36px}
+  .breadcrumb{padding:9px 0;font-size:12.5px}
+  .trustbar>div{padding:7px 18px!important;font-size:12.5px!important;gap:2px 10px!important}
+  /* Die Trennpunkte ergeben beim Umbruch haengende Zeichen */
+  .trustbar>div>span[aria-hidden]{display:none}
+  .hero-eyebrow{font-size:12px;padding:6px 13px 6px 10px;margin-bottom:16px;line-height:1.35}
+  .hero-sub{margin-top:16px}
+  .reassure{gap:6px 14px}
+}
+@media(max-width:380px){
+  .mobile-bar a{font-size:13.5px;padding:13px 4px}
+  .btn{font-size:15px;padding:14px 16px}
+}
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -326,6 +439,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
             <option>Sonstiges</option>
           </select>
         </div>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+          <label>Website (bitte frei lassen)</label>
+          <input type="text" id="lfHp" name="website" tabindex="-1" autocomplete="off" />
+        </div>
         <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px">Kostenlose Ersteinsch&auml;tzung erhalten &rarr;</button>
         <p class="note">&#128274; Vertraulich &middot; Kostenlos &amp; unverbindlich &middot; Antwort in 24&nbsp;h</p>
       </form>
@@ -347,6 +464,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <div class="kpi"><div class="n"><span class="st">&#9733;</span> 5,0</div><div class="l">aus 22 Google-Bewertungen</div></div>
       <div class="kpi"><div class="n">250+</div><div class="l">bewertete Immobilien</div></div>
       <div class="kpi"><div class="n">1.490&nbsp;&euro;</div><div class="l">Festpreis, vorab verbindlich</div></div>
+      <div class="kpi"><div class="n">98&nbsp;%</div><div class="l">unserer Gutachten wurden anerkannt</div></div>
       <div class="kpi"><div class="n">24&nbsp;h</div><div class="l">R&uuml;ckmeldung auf Anfragen</div></div>
       <div class="kpi"><div class="n">2022</div><div class="l">Familienbetrieb aus der Wedemark</div></div>
     </div>
@@ -457,6 +575,29 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         <p>Der Preis steht vorab verbindlich fest: <strong>1.490&nbsp;&euro;</strong>, inklusive Ortsbegehung, Dokumentation und Besprechung. Keine Nachberechnung, keine Stundens&auml;tze, keine &Uuml;berraschungen auf der Rechnung.</p>
       </div>
     </div>
+
+    <div class="promise r s2">
+      <div class="pcard">
+        <div class="ic">&#128269;</div>
+        <b>Kostenlose Vorabpr&uuml;fung</b>
+        <span>Wir sehen uns Ihr Objekt an, bevor Geld flie&szlig;t. Lohnt sich ein Gutachten nicht, sagen wir Ihnen das &ndash; und Sie zahlen keinen Cent.</span>
+      </div>
+      <div class="pcard">
+        <div class="ic">&#128176;</div>
+        <b>Festpreis, schriftlich zugesagt</b>
+        <span>1.490&nbsp;&euro; stehen vor der Beauftragung fest. Kein Stundenhonorar, keine Nebenkosten, keine Nachberechnung &ndash; unabh&auml;ngig davon, wie aufwendig die Aufnahme wird.</span>
+      </div>
+      <div class="pcard">
+        <div class="ic">&#127970;</div>
+        <b>R&uuml;ckfragen des Finanzamts inklusive</b>
+        <span>Hat Ihr Finanzamt Fragen zum Gutachten, beantworten wir sie schriftlich &ndash; kostenfrei und ohne Zeitlimit. Sie stehen damit nicht allein da.</span>
+      </div>
+      <div class="pcard">
+        <div class="ic">&#128736;&#65039;</div>
+        <b>Nachbesserung auf unsere Kosten</b>
+        <span>Beanstandet das Finanzamt unsere Herleitung fachlich, arbeiten wir nach, bis das Gutachten steht &ndash; ohne zus&auml;tzliche Rechnung.</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -496,6 +637,99 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       </table>
     </div>
     <p class="disclaim">Reine Modellwerte zur Orientierung (Gesamtnutzungsdauer 80&nbsp;Jahre, Mindest-Restnutzungsdauer nach Modell). Sie ersetzen keine Begutachtung: Der tats&auml;chliche Wert h&auml;ngt vom konkreten Zustand Ihres Geb&auml;udes ab und kann nach oben wie nach unten abweichen. Genau diese objektindividuelle Beurteilung ist der Kern des Gutachtens.</p>
+  </div>
+</section>
+
+<!-- ===================== REFERENZFAELLE ===================== -->
+<section class="block alt" id="beispiele">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:38px">
+      <span class="eyebrow" style="justify-content:center">In Zahlen</span>
+      <h2>Drei Objekte, drei Ergebnisse</h2>
+      <p class="lead" style="margin-top:14px">So wirkt sich eine k&uuml;rzere Restnutzungsdauer aus: Der Geb&auml;udewert bleibt gleich &ndash; nur der Zeitraum, &uuml;ber den Sie ihn abschreiben, wird k&uuml;rzer. Das erh&ouml;ht Ihre Abschreibung <strong>Jahr f&uuml;r Jahr</strong>.</p>
+    </div>
+    <div class="faelle r s1">
+
+      <article class="fall">
+        <figure>
+          <picture>
+            <source srcset="assets/fall-altbau.webp" type="image/webp">
+            <img src="assets/fall-altbau.jpg" width="900" height="675" loading="lazy" decoding="async"
+                 alt="Mehrfamilienhaus aus den 1950er-Jahren mit steilem Ziegeldach und ausgebautem Dachgeschoss">
+          </picture>
+          <span class="tag">Baujahr 1952</span>
+        </figure>
+        <div class="body">
+          <h3>Mehrfamilienhaus, 6&nbsp;Wohneinheiten</h3>
+          <p class="meta">Massivbau, Dachgeschoss ausgebaut, Haustechnik gr&ouml;&szlig;tenteils im Originalzustand</p>
+          <dl>
+            <dt>Geb&auml;udewert (ohne Grund)</dt><dd>460.000&nbsp;&euro;</dd>
+            <dt>AfA bisher</dt><dd>2,0&nbsp;% &middot; 9.200&nbsp;&euro;</dd>
+            <dt>Ermittelte Restnutzungsdauer</dt><dd>23 Jahre</dd>
+            <dt>AfA danach</dt><dd>4,35&nbsp;% &middot; 20.000&nbsp;&euro;</dd>
+          </dl>
+          <div class="plus">
+            <span class="amt">+10.800&nbsp;&euro;</span>
+            <span class="cap">zus&auml;tzliche Abschreibung pro Jahr</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="fall">
+        <figure>
+          <picture>
+            <source srcset="assets/fall-mfh-60er.webp" type="image/webp">
+            <img src="assets/fall-mfh-60er.jpg" width="900" height="675" loading="lazy" decoding="async"
+                 alt="Mehrfamilienhaus aus den 1960er-Jahren mit hellem Klinkermauerwerk und Satteldach">
+          </picture>
+          <span class="tag">Baujahr 1968</span>
+        </figure>
+        <div class="body">
+          <h3>Mehrfamilienhaus, 5&nbsp;Wohneinheiten</h3>
+          <p class="meta">Klinkerfassade, Fenster teilerneuert, Heizung und Strangleitungen mit Instandhaltungsr&uuml;ckstand</p>
+          <dl>
+            <dt>Geb&auml;udewert (ohne Grund)</dt><dd>380.000&nbsp;&euro;</dd>
+            <dt>AfA bisher</dt><dd>2,0&nbsp;% &middot; 7.600&nbsp;&euro;</dd>
+            <dt>Ermittelte Restnutzungsdauer</dt><dd>25 Jahre</dd>
+            <dt>AfA danach</dt><dd>4,0&nbsp;% &middot; 15.200&nbsp;&euro;</dd>
+          </dl>
+          <div class="plus">
+            <span class="amt">+7.600&nbsp;&euro;</span>
+            <span class="cap">zus&auml;tzliche Abschreibung pro Jahr</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="fall">
+        <figure>
+          <picture>
+            <source srcset="assets/fall-siedlung.webp" type="image/webp">
+            <img src="assets/fall-siedlung.jpg" width="900" height="675" loading="lazy" decoding="async"
+                 alt="Mehrgeschossige Wohnanlage der Vorkriegszeit mit nachtr&auml;glich angebauten Balkonen">
+          </picture>
+          <span class="tag">Baujahr 1938</span>
+        </figure>
+        <div class="body">
+          <h3>Wohnanlage, 12&nbsp;Wohneinheiten</h3>
+          <p class="meta">Siedlungsbau, Balkone nachger&uuml;stet, Dach und Fassade in Teilen erneuert</p>
+          <dl>
+            <dt>Geb&auml;udewert (ohne Grund)</dt><dd>420.000&nbsp;&euro;</dd>
+            <dt>AfA bisher</dt><dd>2,0&nbsp;% &middot; 8.400&nbsp;&euro;</dd>
+            <dt>Ermittelte Restnutzungsdauer</dt><dd>24 Jahre</dd>
+            <dt>AfA danach</dt><dd>4,17&nbsp;% &middot; 17.500&nbsp;&euro;</dd>
+          </dl>
+          <div class="plus">
+            <span class="amt">+9.100&nbsp;&euro;</span>
+            <span class="cap">zus&auml;tzliche Abschreibung pro Jahr</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p class="fnote">Beispielrechnungen f&uuml;r typische Objekte unseres Bewertungsgebiets. Sie zeigen die Gr&ouml;&szlig;enordnung &ndash; bei vergleichbaren Geb&auml;uden liegt die zus&auml;tzliche Abschreibung meist zwischen <strong>7.000&nbsp;&euro; und 11.000&nbsp;&euro; pro Jahr</strong>. Ihr tats&auml;chliches Ergebnis h&auml;ngt vom Zustand Ihres Geb&auml;udes und Ihrem Geb&auml;udewertanteil ab und wird im Gutachten objektindividuell hergeleitet. Die steuerliche Auswirkung berechnet Ihre Steuerberatung.</p>
+    <div style="text-align:center;margin-top:30px">
+      <a href="#anfrage" class="btn btn-primary">Pr&uuml;fen, was bei meinem Objekt m&ouml;glich ist &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -612,8 +846,67 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   </div>
 </section>
 
+<!-- ===================== NACHBETREUUNG ===================== -->
+<section class="block alt" id="nachbetreuung">
+  <div class="container">
+    <div class="sec-head center r" style="margin-bottom:40px">
+      <span class="eyebrow" style="justify-content:center">Nach dem Gutachten</span>
+      <h2>Mit der Lieferung f&auml;ngt unsere Arbeit erst an</h2>
+      <p class="lead" style="margin-top:14px">Ein Restnutzungsdauergutachten wirkt &uuml;ber Jahrzehnte &ndash; und genau so lange bleiben wir Ihr Ansprechpartner daf&uuml;r.</p>
+    </div>
+    <div class="after r s1">
+      <ul class="aflist">
+        <li>
+          <span class="n">1</span>
+          <div>
+            <b>Besprechung mit Ihrer Steuerberatung</b>
+            <span>Auf Wunsch gehen wir das Gutachten gemeinsam mit Ihrer Steuerberatung durch &ndash; telefonisch oder per Video. So wei&szlig; jeder, wie die Restnutzungsdauer hergeleitet wurde und was in der Anlage V eingetragen wird.</span>
+          </div>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <div>
+            <b>R&uuml;ckfragen des Finanzamts beantworten wir</b>
+            <span>Meldet sich das Finanzamt mit Nachfragen, antworten wir schriftlich und fachlich &ndash; kostenfrei. Sie leiten uns die Anfrage einfach weiter, den Rest &uuml;bernehmen wir.</span>
+          </div>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <div>
+            <b>Nachbesserung ohne Zusatzkosten</b>
+            <span>Wird an unserer Herleitung fachlich etwas beanstandet, arbeiten wir nach und erg&auml;nzen das Gutachten &ndash; so lange, bis der Punkt ausger&auml;umt ist. Ohne neue Rechnung.</span>
+          </div>
+        </li>
+        <li>
+          <span class="n">4</span>
+          <div>
+            <b>Ihr Gutachten bleibt archiviert</b>
+            <span>Wir bewahren Gutachten samt Fotodokumentation dauerhaft auf. Brauchen Sie Jahre sp&auml;ter noch ein Exemplar &ndash; f&uuml;r Verkauf, Erbfall oder Bank &ndash; bekommen Sie es von uns.</span>
+          </div>
+        </li>
+        <li>
+          <span class="n">5</span>
+          <div>
+            <b>Ein fester Ansprechpartner</b>
+            <span>Sie sprechen mit derjenigen Person, die auch vor Ort war &ndash; nicht mit einem Serviceteam, das den Vorgang erst heraussuchen muss.</span>
+          </div>
+        </li>
+      </ul>
+      <aside class="afbox">
+        <p class="q">Warum wir das so machen</p>
+        <p>Ein Gutachten, das beim ersten R&uuml;ckfrageschreiben des Finanzamts allein gelassen wird, ist f&uuml;r Sie wertlos. Wir verkaufen kein PDF, sondern einen Nachweis, der halten muss.</p>
+        <p>Deshalb ist die Betreuung danach bei uns nicht als Zusatzleistung ausgepreist &ndash; sie geh&ouml;rt zum Auftrag. Wir haben das Gutachten geschrieben, also stehen wir auch daf&uuml;r ein.</p>
+        <p class="sig">Vito &amp; Nandino Donnarumma &middot; 3D Immobilienbewertung</p>
+      </aside>
+    </div>
+    <div style="text-align:center;margin-top:38px">
+      <a href="#anfrage" class="btn btn-primary">Kostenlose Ersteinsch&auml;tzung anfordern &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== WARUM WIR ===================== -->
-<section class="block alt">
+<section class="block">
   <div class="container">
     <div class="sec-head center r" style="margin-bottom:30px">
       <span class="eyebrow" style="justify-content:center">Warum Eigent&uuml;mer uns beauftragen</span>
@@ -783,11 +1076,25 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   if(!n||!m){alert('Bitte Name und E-Mail angeben.');return}
   var btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Wird gesendet \u2026';
   var details=['Standort: '+(ort||'\u2013'),'Baujahr: '+(bj||'\u2013'),'Wohneinheiten: '+(we||'\u2013')].join(' | ');
+  var hp=document.getElementById('lfHp');
   fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:'Restnutzungsdauergutachten',message:details})})
-  .then(function(r){return r.json()})
+    body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:'Restnutzungsdauergutachten',
+      message:details,website:hp?hp.value:''})})
+  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
   .then(function(){document.getElementById('leadForm').style.display='none';document.getElementById('formSuccess').style.display='block';if(window.gtag)window.gtag('event','generate_lead',{lead_type:'restnutzungsdauergutachten'})})
-  .catch(function(){btn.disabled=false;btn.textContent='Kostenlose Ersteinsch\u00e4tzung erhalten \u2192';alert('Fehler beim Senden. Bitte anrufen: +49 174 744 5452')});
+  .catch(function(){
+    btn.disabled=false;btn.textContent='Kostenlose Ersteinsch\u00e4tzung erhalten \u2192';
+    // Der Lead darf nicht verloren gehen: sichtbaren Ausweichweg anbieten,
+    // statt nur einen Alert zu zeigen, den man wegklickt und vergisst.
+    var box=document.getElementById('formError');
+    if(!box){
+      box=document.createElement('div');box.id='formError';
+      box.style.cssText='margin-top:14px;padding:14px 16px;background:#FDECEA;border:1px solid #F0B7B0;border-radius:12px;font-size:14px;color:#8C2D22;line-height:1.55';
+      document.getElementById('leadForm').appendChild(box);
+    }
+    box.innerHTML='Die Anfrage konnte gerade nicht &uuml;bermittelt werden. Bitte rufen Sie uns kurz an \u2013 wir nehmen Ihre Angaben direkt auf:<br><a href="tel:+491747445452" style="color:#8C2D22;font-weight:800;text-decoration:underline">+49 174 744 5452</a> &middot; <a href="mailto:info@3dimmobilienbewertung.de" style="color:#8C2D22;font-weight:800;text-decoration:underline">info@3dimmobilienbewertung.de</a>';
+    if(window.gtag)window.gtag('event','form_error',{form:'restnutzungsdauergutachten'});
+  });
 });
 </script>
 <script src="assets/consent.js"></script>
