@@ -328,6 +328,20 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 @media(max-width:860px){.after{grid-template-columns:1fr;gap:34px}}
 .fnote{max-width:940px;margin:22px auto 0;font-size:12.8px;color:var(--muted);line-height:1.6;text-align:center}
 
+/* --- Presse: regionale Bekanntheit als Vertrauensanker. Bewusst nur
+       Namen, keine Logos - die sind markenrechtlich geschuetzt. --- */
+.presse{max-width:1000px;margin:26px auto 0;text-align:center}
+.presse .lab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);display:block;margin-bottom:12px}
+.presse ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;justify-content:center;
+  gap:10px 26px}
+.presse li{font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink-2);
+  letter-spacing:-.01em;white-space:nowrap}
+@media(max-width:600px){
+  .presse ul{gap:8px 18px}
+  .presse li{font-size:13.6px;white-space:normal}
+}
+
 /* ============================================================
    FUNNEL — Der erste Schritt ist ein Klick, keine Tastatureingabe.
    Kalter Anzeigen-Traffic fuellt kein Formular mit sieben Feldern
@@ -694,6 +708,17 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <div class="kpi"><div class="n">98&nbsp;%</div><div class="l">unserer Gutachten wurden anerkannt</div></div>
       <div class="kpi"><div class="n">24&nbsp;h</div><div class="l">R&uuml;ckmeldung auf Anfragen</div></div>
       <div class="kpi"><div class="n">2022</div><div class="l">Familienbetrieb aus der Wedemark</div></div>
+    </div>
+    <div class="presse r s1">
+      <span class="lab">Bekannt aus der regionalen Presse</span>
+      <ul>
+        <li>Hannoversche Allgemeine Zeitung</li>
+        <li>Langenhagener Echo</li>
+        <li>Schwarmstedter Echo</li>
+        <li>Marktspiegel Burgwedel</li>
+        <li>Marktspiegel Burgdorf</li>
+        <li>Marktspiegel Lehrte</li>
+      </ul>
     </div>
   </div>
 </section>
