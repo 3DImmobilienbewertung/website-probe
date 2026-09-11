@@ -1,0 +1,9 @@
+{
+  "name": "3dim-rnd-local-tests",
+  "private": true,
+  "scripts": {
+    "test": "node --test rnd-contact.test.cjs rnd-consent.test.cjs rnd-form.test.cjs"
+  },
+  "engines": {"node": ">=24"},
+  "devDependencies": {"jsdom": "30.0.1"}
+}

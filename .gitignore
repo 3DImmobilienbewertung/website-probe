@@ -11,3 +11,9 @@
 
 # Vercel
 .vercel
+
+# Local test dependencies
+node_modules/
+
+# Local release checklist: account access and operational decisions
+/RND-REVIEW.md

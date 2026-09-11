@@ -8,9 +8,9 @@
 <meta name="robots" content="noindex, follow" />
 <meta name="theme-color" content="#16365C" />
 <link rel="icon" type="image/png" href="assets/logo_icon.png" /><link rel="apple-touch-icon" href="/assets/logo_icon.png" /><link rel="manifest" href="/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/fonts.css?v=20260910">
+
+
 <style>
 :root{
   --bg:#FFFFFF;--bg-2:#FAF6EF;--ink:#0E2A47;--ink-2:#27425F;--muted:#5A7088;--faint:#92A6BE;
@@ -88,8 +88,9 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
         <li><a href="#logfiles">4. Server-Logfiles</a></li>
         <li><a href="#kontaktformular">5. Kontaktformular &amp; E-Mail (Resend)</a></li>
         <li><a href="#analytics">6. Google Analytics 4</a></li>
-        <li><a href="#fonts">7. Google Fonts</a></li>
+        <li><a href="#fonts">7. Lokal bereitgestellte Schriften</a></li>
         <li><a href="#cookies">8. Cookies &amp; Einwilligungsverwaltung</a></li>
+        <li><a href="#meta">8a. Meta Pixel &amp; Conversions API</a></li>
         <li><a href="#rechte">9. Ihre Rechte als betroffene Person</a></li>
         <li><a href="#ssl">10. SSL-/TLS-Verschlüsselung</a></li>
         <li><a href="#aenderungen">11. Aktualität dieser Erklärung</a></li>
@@ -106,7 +107,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
       E-Mail: <a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></p>
       <p style="margin-top:8px"><strong>Gesellschafter:</strong> Nandino Donnarumma &amp; Vito Donnarumma</p>
     </div>
-    <p>Bei Fragen zum Datenschutz wenden Sie sich direkt an die oben genannte Adresse oder E-Mail-Adresse. Wir sind keine juristische Person, die zur Benennung eines Datenschutzbeauftragten verpflichtet ist (Art. 37 DSGVO), stehen jedoch für alle datenschutzrelevanten Anfragen persönlich zur Verfügung.</p>
+    <p>Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte wenden Sie sich bitte direkt an die oben genannte Adresse oder E-Mail-Adresse.</p>
 
     <!-- ─── 2. GRUNDSÄTZE ──────────────────────────────── -->
     <h2 id="grundsaetze">2. Grundsätze der Datenverarbeitung</h2>
@@ -121,10 +122,10 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
 
     <!-- ─── 3. HOSTING ──────────────────────────────── -->
     <h2 id="hosting">3. Hosting (Vercel)</h2>
-    <p>Diese Website wird bei <strong>Vercel Inc.</strong>, 340 Pine Street, Suite 900, San Francisco, CA 94104, USA gehostet. Vercel ist ein US-amerikanischer Anbieter für Cloud-Infrastruktur und Webhosting.</p>
-    <p>Beim Aufruf unserer Website werden automatisch Daten an die Server von Vercel übertragen, einschließlich Ihrer IP-Adresse. Die Datenübertragung in die USA erfolgt auf Grundlage der <strong>EU-Standardvertragsklauseln</strong> (Art. 46 Abs. 2 lit. c DSGVO). Mit Vercel besteht ein Vertrag zur Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO.</p>
+    <p>Diese Website wird bei <strong>Vercel Inc., USA</strong> gehostet. Vercel ist ein US-amerikanischer Anbieter für Cloud-Infrastruktur und Webhosting.</p>
+    <p>Zum Bereitstellen der Website verarbeitet Vercel insbesondere IP-Adresse, Zeitpunkt, angeforderte URL, Browser-/Geräteinformationen und technische Anfrageinformationen. Dabei kann eine Verarbeitung in den USA stattfinden. Die einschlägigen Vereinbarungen zur Auftragsverarbeitung und zu internationalen Übermittlungen beschreibt Vercel im <a href="https://vercel.com/legal/dpa" target="_blank" rel="noopener noreferrer">Data Processing Addendum</a>. Dieses sieht insbesondere EU-Standardvertragsklauseln als Übermittlungsinstrument vor.</p>
     <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und effizienten Bereitstellung unseres Onlineangebots).</p>
-    <p>Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">https://vercel.com/legal/privacy-policy</a></p>
+    <p>Weitere Informationen und Kontakt zum Anbieter: <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer">Datenschutzhinweise von Vercel</a></p>
 
     <!-- ─── 4. SERVER-LOGFILES ──────────────────────────────── -->
     <h2 id="logfiles">4. Server-Logfiles</h2>
@@ -135,26 +136,28 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
       <li>Referrer-URL (zuvor besuchte Seite)</li>
       <li>Hostname des zugreifenden Rechners</li>
       <li>Datum und Uhrzeit der Serveranfrage</li>
-      <li>IP-Adresse (anonymisiert)</li>
+      <li>IP-Adresse</li>
     </ul>
-    <p>Eine Zusammenführung dieser Daten mit anderen Datenquellen findet nicht statt. Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch fehlerfreien Darstellung und Optimierung unserer Website. Logfiles werden nach spätestens 30 Tagen automatisch gelöscht.</p>
+    <p>Die Verarbeitung dient der technischen Bereitstellung, Fehleranalyse und Abwehr von Missbrauch auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Die Vorhaltung technischer Protokolle richtet sich nach der eingesetzten Hosting-Konfiguration und dem erforderlichen Sicherheits- oder Fehleranalysezweck. Informationen zu den tarifabhängigen Fristen für Laufzeitlogs stellt <a href="https://vercel.com/docs/logs/runtime" target="_blank" rel="noopener noreferrer">Vercel</a> bereit. Der Kontakt-Endpunkt protokolliert keine vollständigen Kontakt- oder Objektangaben; für Zustellprüfungen werden Anfrage- und E-Mail-IDs sowie technische Statuswerte verwendet.</p>
 
     <!-- ─── 5. KONTAKTFORMULAR ──────────────────────────────── -->
     <h2 id="kontaktformular">5. Kontaktformular &amp; E-Mail-Versand (Resend)</h2>
     <p>Über das Kontaktformular auf unserer Website können Sie uns eine Anfrage senden. Dabei erheben wir folgende Daten:</p>
     <ul>
       <li>Name</li>
-      <li>Telefonnummer oder E-Mail-Adresse</li>
-      <li>Ort / Adresse der Immobilie (optional)</li>
-      <li>Art der Immobilie (optional)</li>
+      <li>Telefonnummer und/oder E-Mail-Adresse entsprechend den gekennzeichneten Pflichtfeldern</li>
+      <li>Ort bzw. Postleitzahl der Immobilie; im Restnutzungsdauer-Formular ist die Objekt-PLZ ein Pflichtfeld</li>
+      <li>Art, Baujahrsgruppe, Nutzung und Modernisierungsstand der Immobilie sowie Eigentumssituation, soweit im jeweiligen Formular abgefragt</li>
       <li>Freitext-Nachricht (optional)</li>
+      <li>Anfrage-ID und gegebenenfalls Nachweis Ihrer Mess-Einwilligung (Auswahl, Fassung, Zeitpunkt und Einwilligungs-ID)</li>
     </ul>
 
     <h3>E-Mail-Versanddienst Resend</h3>
-    <p>Die über das Formular übermittelten Daten werden über den Dienst <strong>Resend</strong> (Resend Inc., 2261 Market Street #4008, San Francisco, CA 94114, USA) an uns weitergeleitet. Resend fungiert dabei als Auftragsverarbeiter gemäß Art. 28 DSGVO.</p>
-    <p>Die Übertragung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Resend speichert die übermittelten Daten ausschließlich zur Zustellzwecken und löscht diese nach Zustellung der E-Mail.</p>
+    <p>Die über das Formular übermittelten Daten werden über den Dienst <strong>Resend</strong> (Plus Five Five, Inc., USA) an uns weitergeleitet. Resend verarbeitet die Anfrageinhalte für den E-Mail-Versand als Auftragsverarbeiter gemäß Art. 28 DSGVO.</p>
+    <p>Resend übermittelt die Anfrage an die für deren Bearbeitung zuständigen Personen unseres Unternehmens und versendet eine Eingangsbestätigung an Ihre angegebene E-Mail-Adresse. Die interne Zustellung umfasst auch ein betrieblich genutztes Gmail-Postfach bei Google. Dadurch werden die zur Bearbeitung erforderlichen Anfrageinhalte auch durch die beteiligten E-Mail-Anbieter verarbeitet.</p>
+    <p>Resend beschreibt die Verarbeitung als Auftragsverarbeiter und die verwendeten EU-Standardvertragsklauseln in seinem <a href="https://resend.com/legal/dpa" target="_blank" rel="noopener noreferrer">Data Processing Addendum</a>. Eine Verarbeitung in den USA ist möglich. Nach den <a href="https://resend.com/security/gdpr" target="_blank" rel="noopener noreferrer">Angaben von Resend</a> werden E-Mail- und Logdaten in den Standardtarifen 30 Tage vorgehalten; Enterprise-Konfigurationen können abweichen. Eine sofortige Löschung nach Zustellung findet daher nicht generell statt.</p>
     <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertragsverhältnisses) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
-    <p><strong>Speicherdauer:</strong> Anfragen werden in unserer E-Mail-Kommunikation gespeichert und nach Abschluss des Anliegens gelöscht, spätestens jedoch nach 3 Jahren, sofern keine steuerrechtlichen Aufbewahrungspflichten gelten (§ 147 AO: bis zu 10 Jahre).</p>
+    <p><strong>Speicherdauer:</strong> Wir speichern Anfragen so lange, wie dies zur Bearbeitung Ihres Anliegens erforderlich ist. Darüber hinaus bleiben Daten nur erhalten, soweit gesetzliche Aufbewahrungspflichten oder die erforderliche Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen dies rechtfertigen. Einwilligungsnachweise werden zur Erfüllung unserer Nachweispflichten berücksichtigt. Die technischen Speicherfristen der E-Mail-Dienste sind hiervon zu unterscheiden.</p>
     <p>Weitere Informationen zu Resend: <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">https://resend.com/legal/privacy-policy</a></p>
 
     <p>Sie können uns jederzeit auch per E-Mail oder Telefon kontaktieren, ohne das Formular zu nutzen. Die Datenverarbeitung bei direkter E-Mail-Kontaktaufnahme erfolgt auf identischer Rechtsgrundlage.</p>
@@ -172,19 +175,19 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
     <ul>
       <li>Besuchte Seiten und Verweildauer</li>
       <li>Gerätetyp, Betriebssystem und Browser</li>
-      <li>Herkunftsland (auf Basis der anonymisierten IP-Adresse)</li>
+      <li>Ungefähre geografische Zuordnung, die Google aus der technisch übermittelten IP-Adresse ableiten kann</li>
       <li>Über welche Quelle Sie auf unsere Website gelangt sind</li>
       <li>Interaktionen mit Formularen und Links</li>
     </ul>
 
-    <h3>IP-Anonymisierung &amp; Consent Mode</h3>
-    <p>Wir setzen Google Analytics 4 in Verbindung mit dem <strong>Google Consent Mode v2</strong> ein. Das bedeutet: Ohne Ihre Einwilligung werden keine identifizierenden Cookies gesetzt. Google nutzt lediglich anonymisierte Signale zur modellbasierten Messung. Ihre IP-Adresse wird bei Übertragung an Google automatisch anonymisiert (IP-Masking).</p>
+    <h3>IP-Verarbeitung &amp; Consent Mode</h3>
+    <p>Wir verwenden den <strong>Basic Consent Mode</strong>: Ohne Ihre Statistik-Einwilligung wird das Google-Analytics-Skript nicht geladen; es werden auch keine Analyse-Signale ohne Cookies zur Modellierung versendet. Mit Einwilligung werden Nutzungsdaten mit Kennungen verarbeitet. Diese sind nicht allein dadurch anonym, dass wir keine Namen mitschicken. Wir übermitteln über unsere eigenen Analyseereignisse keine Kontaktfelder, Objektwerte, Angaben zur Erbschaft oder sonstige Formularinhalte. Google erhält bei Netzwerkverbindungen technisch eine IP-Adresse; nach den Angaben zu GA4 wird diese nicht als einzelne IP-Adresse protokolliert oder gespeichert.</p>
 
     <h3>Datenübermittlung in die USA</h3>
-    <p>Google verarbeitet Daten auch in den USA. Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO). Zusätzlich wurden EU-Standardvertragsklauseln vereinbart (Art. 46 Abs. 2 lit. c DSGVO).</p>
+    <p>Google verarbeitet Daten auch in den USA. Die vertraglichen Bedingungen für diese Übermittlungen und die dort vorgesehenen Schutzinstrumente, insbesondere Standardvertragsklauseln, beschreibt Google in seinen <a href="https://business.safety.google/adsprocessorterms/" target="_blank" rel="noopener noreferrer">Datenverarbeitungsbedingungen</a>. Rechtsgrundlage für die freiwillige Analyse ist Art. 6 Abs. 1 lit. a DSGVO, für den Zugriff auf Ihr Endgerät zusätzlich § 25 Abs. 1 TDDDG.</p>
 
     <h3>Auftragsverarbeitung</h3>
-    <p>Wir haben mit Google einen Vertrag zur Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO geschlossen.</p>
+    <p>Die Rollen und Pflichten zur Auftragsverarbeitung sind in den Google-Datenverarbeitungsbedingungen beschrieben. Zur Analyse werden Seitenaufrufe und allgemeine Interaktionen verwendet; Google-Werbesignale und die Freigabe für personalisierte Google-Werbung werden in unserer Einbindung nicht aktiviert.</p>
 
     <p>Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a><br />
     Opt-out-Add-on für den Browser: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout</a></p>
@@ -196,18 +199,15 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
     </button>
 
     <!-- ─── 7. GOOGLE FONTS ──────────────────────────────── -->
-    <h2 id="fonts">7. Google Fonts</h2>
-    <p>Diese Website verwendet <strong>Google Fonts</strong>, einen Dienst der Google Ireland Limited, zur einheitlichen Darstellung von Schriftarten. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten von Google-Servern, wobei Ihre IP-Adresse an Google übermittelt werden kann.</p>
-    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der einheitlichen und ansprechenden Darstellung unserer Website).</p>
-    <p>Weitere Informationen: <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">https://developers.google.com/fonts/faq/privacy</a></p>
-    <div class="note"><strong>Hinweis:</strong> Für ein Maximum an Rechtssicherheit empfehlen wir, Schriftarten künftig lokal zu hosten. Dabei werden keine Verbindungen zu Google-Servern aufgebaut. Dies kann auf Wunsch jederzeit umgestellt werden.</div>
+    <h2 id="fonts">7. Lokal bereitgestellte Schriften</h2>
+    <p>Die eingesetzten Schriftdateien werden vom eigenen Website-Host geladen. Allein für die Darstellung von Schriften wird keine Verbindung zu Google Fonts oder anderen externen Schriftanbietern aufgebaut.</p>
 
     <!-- ─── 8. COOKIES ──────────────────────────────── -->
     <h2 id="cookies">8. Cookies &amp; Einwilligungsverwaltung</h2>
     <p>Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden.</p>
 
     <h3>Technisch notwendige Cookies</h3>
-    <p>Diese Cookies sind für die grundlegende Funktionsfähigkeit der Website erforderlich und können nicht deaktiviert werden. Sie speichern keine personenbezogenen Daten und benötigen keine Einwilligung. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+    <p>Zur Einwilligungsverwaltung speichern wir Ihre Auswahl, einen Zeitstempel, die Fassung des Hinweises und eine zufällige Einwilligungs-ID. Dieser Speicher dient dazu, Ihre Entscheidung umzusetzen und nachzuweisen. Rechtsgrundlage ist § 25 Abs. 2 Nr. 2 TDDDG sowie Art. 6 Abs. 1 lit. c DSGVO in Verbindung mit unseren Nachweispflichten. Die ID kann bei einer Kontaktanfrage mit dem Einwilligungsnachweis verbunden werden und wird nicht als Marketing-Kennung verwendet.</p>
 
     <div class="table-wrap">
       <table>
@@ -215,13 +215,13 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
           <tr><th>Cookie</th><th>Anbieter</th><th>Zweck</th><th>Speicherdauer</th></tr>
         </thead>
         <tbody>
-          <tr><td>3dim_consent</td><td>3D Immobilienbewertung</td><td>Speicherung Ihrer Cookie-Einwilligung</td><td>12 Monate</td></tr>
+          <tr><td>3dim_consent_v2</td><td>3D Immobilienbewertung</td><td>Auswahl, Zeitpunkt, Hinweisfassung und Einwilligungs-ID</td><td>180 Tage ab Ihrer Auswahl</td></tr>
         </tbody>
       </table>
     </div>
 
     <h3>Analyse-Cookies (nur mit Einwilligung)</h3>
-    <p>Die folgenden Cookies werden nur gesetzt, wenn Sie Ihrer Einwilligung zugestimmt haben:</p>
+    <p>Die folgenden Cookies werden nur mit Ihrer Statistik-Einwilligung gesetzt:</p>
 
     <div class="table-wrap">
       <table>
@@ -229,18 +229,26 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
           <tr><th>Cookie</th><th>Anbieter</th><th>Zweck</th><th>Speicherdauer</th></tr>
         </thead>
         <tbody>
-          <tr><td>_ga</td><td>Google Analytics</td><td>Unterscheidung von Nutzern (anonymisiert)</td><td>2 Jahre</td></tr>
-          <tr><td>_ga_XXXXXX</td><td>Google Analytics</td><td>Session-Verwaltung in GA4</td><td>2 Jahre</td></tr>
+          <tr><td>_ga, _ga_*</td><td>Google Analytics</td><td>Pseudonyme Besucher- und Sitzungszuordnung</td><td>In unserer Einbindung auf bis zu 180 Tage begrenzt</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p>Sie können Ihre Einwilligung für Analyse-Cookies jederzeit widerrufen, indem Sie die Cookie-Einstellungen unten öffnen:</p>
+    <p>Statistik und Werbemessung sind getrennt wählbar und standardmäßig ausgeschaltet. Eine frühere Zustimmung zu einem allgemeinen „Analytics“-Hinweis wird nicht als Meta-Einwilligung übernommen. Sie können Ihre Auswahl jederzeit über die Cookie-Einstellungen ändern oder widerrufen. Ein Widerruf berührt die Rechtmäßigkeit bereits zuvor erfolgter Verarbeitung nicht. Lokale Entwicklungs- und Vorschauversionen senden keine Ereignisse an die Analyseanbieter.</p>
     <button class="consent-btn" onclick="if(window.__cmp){window.__cmp('showUi')}else{document.getElementById('cookie-banner').style.display='flex'}">
       🍪 Cookie-Einstellungen verwalten
     </button>
 
     <!-- ─── 9. IHRE RECHTE ──────────────────────────────── -->
+    <h2 id="meta">8a. Meta Pixel &amp; Conversions API</h2>
+    <p>Auf unserer Restnutzungsdauer-Landingpage können wir mit Ihrer freiwilligen Marketing-Einwilligung Dienste der <strong>Meta Platforms Ireland Limited, Irland</strong>, einsetzen. Damit ordnen wir Seitenaufrufe und erfolgreich angenommene Anfragen unseren Facebook-/Instagram-Anzeigen zu und verbessern deren Auslieferung. Ohne diese Einwilligung wird auf der Seite kein Meta-Skript geladen und der Kontakt-Endpunkt übermittelt den Lead nicht an Meta.</p>
+    <p>Beim Browser-Pixel fallen insbesondere aufgerufene Seite, Ereignis, Zeitpunkt, IP-Adresse, Browser-/Geräteinformationen und Werbe-Kennungen an. Nach einer erfolgreich angenommenen Anfrage kann die Conversions API zusätzlich eine serverseitige Meldung mit derselben Ereignis-ID versenden. So können Browser- und Servermeldung als dasselbe Ereignis erkannt werden.</p>
+    <p>Die Servermeldung kann Ihre E-Mail-Adresse und Telefonnummer in gehashter Form, IP-/Browserinformationen sowie vorhandene Meta-Kennungen enthalten. Hashing ist eine Pseudonymisierung, keine Anonymisierung: Meta kann die Daten zur Zuordnung mit eigenen Daten abgleichen. Namen, Objektadresse, Baujahr, Gebäudewerte, Modernisierungsstand, Eigentumssituation und Freitext werden von unserer Messschnittstelle nicht an Meta gesendet. Der Browser-Pixel erhält von uns keine Kontaktfelder für einen automatischen erweiterten Abgleich.</p>
+    <p>Meta kann die übermittelten Ereignisse einem Meta-Konto zuordnen und entsprechend seinen Bedingungen weiterverarbeiten. Dabei kann eine Übermittlung in die USA erfolgen. Die Einbindung richtet sich nach den <a href="https://www.facebook.com/legal/terms/businesstools" target="_blank" rel="noopener noreferrer">Meta Business Tools Terms</a> und für die dort erfasste gemeinsame Verarbeitung nach der <a href="https://www.facebook.com/legal/controller_addendum" target="_blank" rel="noopener noreferrer">Zusatzvereinbarung für Verantwortliche</a>. Weitere Zwecke, Speicherfristen und Betroffenenrechte beschreibt die <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta-Datenschutzrichtlinie</a>.</p>
+    <p>Rechtsgrundlagen sind Art. 6 Abs. 1 lit. a DSGVO und, soweit auf das Endgerät zugegriffen wird, § 25 Abs. 1 TDDDG. Die Kontaktanfrage und das kostenlose Erstgespräch sind nicht von einer Tracking-Einwilligung abhängig.</p>
+    <div class="table-wrap"><table><thead><tr><th>Kennung</th><th>Zweck</th><th>Speicherdauer</th></tr></thead><tbody><tr><td>_fbp</td><td>Browserzuordnung für Meta</td><td>Üblicherweise bis zu 90 Tage; durch Nutzung gegebenenfalls erneuert</td></tr><tr><td>_fbc / Facebook-Klickkennung</td><td>Zuordnung eines Anzeigenklicks</td><td>Ein vorhandenes _fbc-Cookie kann bis zu 90 Tage bestehen. Wir erzeugen zusätzlich keine lokale Speicherung der Klickkennung.</td></tr></tbody></table></div>
+    <p>Bei einem Widerruf unterbinden wir künftige eigene Ereignismeldungen, widerrufen die Freigabe der geladenen Messskripte und entfernen erreichbare Analyse-/Meta-Cookies unserer Domain. Bereits an Anbieter übermittelte Daten werden dadurch nicht automatisch zurückgerufen. Für Auskunft oder Löschung können Sie sich an uns und an den jeweiligen Anbieter wenden.</p>
+
     <h2 id="rechte">9. Ihre Rechte als betroffene Person</h2>
     <p>Nach der DSGVO stehen Ihnen folgende Rechte zu:</p>
     <ul>
@@ -260,7 +268,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
 
     <p>Darüber hinaus haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren. Die für uns zuständige Behörde ist:</p>
     <div class="block">
-      <p><strong>Die Landesbeauftragte für den Datenschutz Niedersachsen (LfD Niedersachsen)</strong></p>
+      <p><strong>Der Landesbeauftragte für den Datenschutz Niedersachsen (LfD Niedersachsen)</strong></p>
       <p>Prinzenstraße 5, 30159 Hannover</p>
       <p>Telefon: +49 511 120-4500</p>
       <p>E-Mail: <a href="mailto:poststelle@lfd.niedersachsen.de">poststelle@lfd.niedersachsen.de</a></p>
@@ -273,9 +281,9 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
 
     <!-- ─── 11. AKTUALITÄT ──────────────────────────────── -->
     <h2 id="aenderungen">11. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
-    <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2025. Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Seite von Ihnen abgerufen werden.</p>
+    <p>Diese Fassung beschreibt die Website-Einbindung mit Stand 10. September 2026. Durch die Weiterentwicklung der Website oder geänderte rechtliche Anforderungen können Anpassungen erforderlich werden. Bei wesentlichen Änderungen der optionalen Messzwecke holen wir eine neue Einwilligung ein.</p>
 
-    <p style="margin-top:44px;color:var(--faint);font-size:13px;font-family:var(--mono)">Stand: Mai 2025 · Donnarumma &amp; Donnarumma GbR · 3D Immobilienbewertung</p>
+    <p style="margin-top:44px;color:var(--faint);font-size:13px;font-family:var(--mono)">Stand: 10. September 2026 · Donnarumma &amp; Donnarumma GbR · 3D Immobilienbewertung</p>
 
   </div>
 </main>
@@ -292,6 +300,6 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
   </div>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-<script src="assets/consent.js?v=20260815b"></script>
+<script src="assets/consent.js?v=20260910"></script>
 </body>
 </html>
