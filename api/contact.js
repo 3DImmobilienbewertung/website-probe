@@ -1,22 +1,33 @@
 // Kontakt-Endpunkt. Leitet Anfragen per Resend an das Postfach weiter und
 // bestaetigt dem Interessenten den Eingang.
 //
-// Wichtig: Ein Lead darf niemals still verloren gehen. Schlaegt der Versand
-// fehl, wird der komplette Datensatz in die Vercel-Logs geschrieben (dort
-// unter "Runtime Logs" nachlesbar) UND ein 500 zurueckgegeben, damit das
-// Formular im Browser den Fehler anzeigt statt faelschlich "Vielen Dank".
+// Bei fehlgeschlagener Zustellung meldet das Formular einen Fehler und
+// behält die Eingaben für einen erneuten Versuch. Keine Kontaktdaten in Logs.
 
 const crypto = require('crypto');
 
 const EMPFAENGER = ['info@3dimmobilienbewertung.de', 'vito.donn85@gmail.com'];
 const ABSENDER = '3D Immobilienbewertung <anfrage@3dimmobilienbewertung.de>';
+const CONSENT_VERSION = '3dim-2026-09-10';
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+function consentReceipt(body, req) {
+  try {
+    const entry = String(req.headers.cookie || '').split(';').map(v => v.trim()).find(v => v.startsWith('3dim_consent_v2='));
+    const saved = JSON.parse(decodeURIComponent((entry || '').slice('3dim_consent_v2='.length)));
+    if (saved.version !== CONSENT_VERSION || body.consentVersion !== saved.version ||
+        !UUID.test(saved.id || '') || body.consentId !== saved.id || body.consentAt !== saved.at ||
+        !Number.isFinite(saved.at) || saved.at > Date.now() + 300000 || Date.now() - saved.at > 180 * 864e5 ||
+        typeof saved.analytics !== 'boolean' || typeof saved.marketing !== 'boolean') return null;
+    return {version:saved.version, id:saved.id, at:saved.at,
+      analytics:saved.analytics && body.analyticsConsent === true,
+      marketing:saved.marketing && body.marketingConsent === true};
+  } catch (_) { return null; }
+}
 
 // ─── Conversions API ────────────────────────────────────────────────
-// Der Browser-Pixel allein verliert je nach Quelle 30-50 % der
-// Ereignisse: iOS-Tracking-Schutz, Adblocker, abgelehnte Cookies.
-// Bei 2-3 Leads pro Woche ist jedes verlorene Signal spuerbar - der
-// Algorithmus hat ohnehin kaum Datenpunkte. Deshalb meldet der Server
-// denselben Lead zusaetzlich direkt an Meta.
+// CAPI darf eine fehlende oder abgelehnte Marketing-Einwilligung niemals
+// umgehen. Nur explizite, versionierte Zustimmung kann den Versand erlauben.
 //
 // Beide Wege senden dieselbe event_id; Meta erkennt daran das Duplikat
 // und zaehlt den Lead genau einmal.
@@ -38,28 +49,29 @@ function telefonHash(nummer) {
   if (!nummer) return undefined;
   // Meta erwartet nur Ziffern inklusive Laendervorwahl
   let ziffern = String(nummer).replace(/[^\d]/g, '');
-  if (ziffern.startsWith('0')) ziffern = '49' + ziffern.slice(1);
-  if (!ziffern.startsWith('49') && ziffern.length <= 11) ziffern = '49' + ziffern;
+  if (ziffern.startsWith('00')) ziffern = ziffern.slice(2);
+  else if (ziffern.startsWith('0')) ziffern = '49' + ziffern.slice(1);
+  else if (!String(nummer).trim().startsWith('+')) return undefined;
+  if (!/^\d{7,15}$/.test(ziffern)) return undefined;
   return crypto.createHash('sha256').update(ziffern).digest('hex');
 }
 
 async function sendeAnMeta(daten, req) {
+  if (!daten.consent || daten.consent.marketing !== true) {
+    return { uebersprungen: 'Keine ausdrückliche Marketing-Einwilligung' };
+  }
   const pixel = process.env.META_PIXEL_ID;
   const token = process.env.META_CAPI_TOKEN;
   if (!pixel || !token) return { uebersprungen: 'Pixel-ID oder Token fehlt' };
+  if (daten.testMode && !process.env.META_TEST_EVENT_CODE) return {uebersprungen:'Testmodus ohne Meta-Testcode'};
 
-  const name = String(daten.name || '').trim().split(/\s+/);
   const nutzer = {
     em: hash(daten.email),
     ph: telefonHash(daten.phone),
-    fn: hash(name[0]),
-    ln: name.length > 1 ? hash(name[name.length - 1]) : undefined,
-    ct: hash(String(daten.ort || '').replace(/[\d\s]/g, '')),
-    country: hash('de'),
     client_ip_address: (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || undefined,
     client_user_agent: req.headers['user-agent'] || undefined,
-    fbp: daten.fbp || undefined,
-    fbc: daten.fbc || undefined
+    fbp: /^fb\.[12]\.\d{13}\.[A-Za-z0-9._-]{1,500}$/.test(daten.fbp || '') ? daten.fbp : undefined,
+    fbc: /^fb\.[12]\.\d{13}\.[A-Za-z0-9._-]{1,500}$/.test(daten.fbc || '') ? daten.fbc : undefined
   };
   Object.keys(nutzer).forEach(k => nutzer[k] === undefined && delete nutzer[k]);
 
@@ -68,19 +80,19 @@ async function sendeAnMeta(daten, req) {
       event_name: 'Lead',
       event_time: Math.floor(Date.now() / 1000),
       event_id: daten.eventId || undefined,   // Deduplizierung mit dem Pixel
-      event_source_url: daten.seite || req.headers.referer || undefined,
+      event_source_url: 'https://www.3dimmobilienbewertung.de/restnutzungsdauergutachten-hannover.html',
       action_source: 'website',
       user_data: nutzer,
       custom_data: {
-        content_name: daten.anlass || 'Restnutzungsdauergutachten',
-        content_category: daten.objekt || undefined
+        content_name: 'Restnutzungsdauergutachten'
       }
     }]
   };
+  if (daten.testMode) koerper.test_event_code = process.env.META_TEST_EVENT_CODE;
 
   const resp = await fetch(
     `https://graph.facebook.com/v21.0/${pixel}/events?access_token=${encodeURIComponent(token)}`,
-    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(koerper) }
+    { method: 'POST', signal:AbortSignal.timeout(5000), headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(koerper) }
   );
   const text = await resp.text();
   if (!resp.ok) throw new Error(`Meta CAPI ${resp.status}: ${text}`);
@@ -98,10 +110,12 @@ function zeile(label, wert) {
          `<td style="padding:10px 0;font-weight:600;color:#16365C;border-bottom:1px solid #f0f4f8">${wert || '&mdash;'}</td></tr>`;
 }
 
-async function sendeMail(apiKey, payload) {
+async function sendeMail(apiKey, payload, idempotencyKey) {
   const resp = await fetch('https://api.resend.com/emails', {
     method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    signal: AbortSignal.timeout(10000),
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json',
+      ...(idempotencyKey ? {'Idempotency-Key': idempotencyKey} : {}) },
     body: JSON.stringify(payload)
   });
   if (!resp.ok) throw new Error(`Resend ${resp.status}: ${await resp.text()}`);
@@ -109,7 +123,16 @@ async function sendeMail(apiKey, payload) {
 }
 
 module.exports = async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Cache-Control', 'no-store');
+  // The forms post to their own host. No permissive cross-origin relay.
+  const origin = req.headers.origin;
+  if (origin) {
+    try {
+      if (new URL(origin).host !== req.headers.host) return res.status(403).json({error:'Origin not allowed'});
+    } catch (_) { return res.status(403).json({error:'Origin not allowed'}); }
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -123,7 +146,7 @@ module.exports = async function handler(req, res) {
 
   // Honeypot: echte Nutzer sehen das Feld nicht, Bots fuellen es aus.
   // Bots bekommen ein freundliches 200, damit sie nicht erneut probieren.
-  if (website) return res.status(200).json({ ok: true });
+  if (website) return res.status(200).json({ ok: true, accepted: false });
 
   if (!name || !email) {
     return res.status(400).json({ error: 'Name und E-Mail sind Pflichtfelder.' });
@@ -132,8 +155,33 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Bitte eine gueltige E-Mail-Adresse angeben.' });
   }
 
-  const eingang = new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
-  const quelle = req.headers.referer || '—';
+  // Additional validation is scoped to the new RND funnel. Existing forms
+  // retain their field contract. A PLZ is only a plausibility check, not geofencing.
+  const isRnd = b.formId === 'rnd-v2';
+  const consent = isRnd ? consentReceipt(b, req) : null;
+  const testMode = isRnd && b.testMode === true && String(email).trim().toLowerCase() === EMPFAENGER[0];
+  if (isRnd) {
+    const allowed = {
+      nutzung: ['vermietet', 'teilweise', 'betrieblich', 'geplant'],
+      objekt: ['Mehrfamilienhaus', 'Ein- oder Zweifamilienhaus', 'Eigentumswohnung', 'Wohn- und Geschäftshaus', 'Gewerbeimmobilie'],
+      baujahr: ['Vor 1925', '1925–1959', '1960–1974', '1975–1984', '1985 oder jünger', 'Weiß ich noch nicht'],
+      eigentum: ['Bereits länger in meinem Eigentum', 'Kürzlich gekauft', 'Geerbt – Alleinerbe / Alleinerbin', 'Geerbt – Teil einer Erbengemeinschaft', 'Kauf geplant', 'Ich vertrete den Eigentümer'],
+      zustand: ['Überwiegend ursprünglicher Zustand', 'Teilweise modernisiert', 'Umfassend modernisiert', 'Weiß ich noch nicht']
+    };
+    const phoneText = typeof phone === 'string' ? phone.trim() : '';
+    const invalid = Object.entries(allowed).some(([key, values]) => !values.includes(b[key]));
+    if (invalid || typeof name !== 'string' || !name.trim() || name.length > 120 ||
+        typeof email !== 'string' || email.length > 254 ||
+        typeof ort !== 'string' || !/^\d{5}$/.test(ort) || ort === '00000' ||
+        phoneText.length > 30 || !/^[+\d\s()/.-]+$/.test(phoneText) || !/^\d{7,15}$/.test(phoneText.replace(/\D/g, '')) ||
+        !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(b.requestId || '')) {
+      return res.status(400).json({error:'Bitte prüfen Sie die Pflichtangaben zu Objekt und Rückruf.'});
+    }
+  }
+
+  // Keep the Resend body stable across retries with the same idempotency key.
+  const eingang = isRnd ? 'Rückrufanfrage über die Website' : new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
+  const quelle = isRnd ? 'Restnutzungsdauer-Landingpage' : (req.headers.referer || '—');
 
   const html = `
     <div style="font-family:Arial,Helvetica,sans-serif;max-width:620px;padding:24px;background:#f9fbff">
@@ -150,6 +198,8 @@ module.exports = async function handler(req, res) {
           ${zeile('Anlass', esc(anlass))}
           ${zeile('Ort / PLZ', esc(ort))}
           ${zeile('Zeitrahmen', esc(zeitrahmen))}
+          ${isRnd ? zeile('Mess-Einwilligung', consent ? esc('Statistik: ' + (consent.analytics ? 'ja' : 'nein') + '; Meta: ' + (consent.marketing ? 'ja' : 'nein') + '; ' + consent.version + '; ' + new Date(consent.at).toISOString() + '; ID ' + consent.id) : 'Keine nachgewiesene Einwilligung') : ''}
+          ${isRnd ? zeile('Anfrage-ID', esc(b.requestId)) : ''}
           <tr><td style="padding:10px 0;color:#5c7088;font-size:14px;vertical-align:top">Angaben</td>
               <td style="padding:10px 0;color:#16365C">${esc(message || '—').replace(/\n/g, '<br>')}</td></tr>
         </table>
@@ -192,50 +242,53 @@ module.exports = async function handler(req, res) {
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error('LEAD-NOTFALL (kein API-Key):', JSON.stringify(b));
+    console.error('Kontaktzustellung fehlgeschlagen: RESEND_API_KEY fehlt.');
     return res.status(500).json({ error: 'Konfigurationsfehler – API Key fehlt.' });
   }
 
+  let ownerMail;
   try {
-    await sendeMail(apiKey, {
+    ownerMail = await sendeMail(apiKey, {
       from: ABSENDER,
       to: EMPFAENGER,
       reply_to: String(email).trim(),
-      subject: `Neue Anfrage: ${name} – ${anlass || objekt || 'Immobilienbewertung'}`,
+      subject: `${testMode ? '[TEST – KEIN KUNDENLEAD] ' : ''}Neue Anfrage: ${name} – ${anlass || objekt || 'Immobilienbewertung'}`,
       html
-    });
+    }, isRnd ? 'rnd-' + b.requestId + '-owner' : undefined);
   } catch (err) {
-    // Der Lead ist wertvoll: vollstaendig protokollieren, damit er aus den
-    // Vercel-Runtime-Logs rekonstruiert werden kann.
-    console.error('LEAD-NOTFALL – Versand fehlgeschlagen:', err.message, '| Daten:', JSON.stringify(b));
+    console.error('Kontaktzustellung fehlgeschlagen. Keine Kontaktdaten protokolliert.');
     return res.status(500).json({ error: 'E-Mail konnte nicht gesendet werden.' });
   }
 
-  // Meldung an Meta: darf den Lead nie gefaehrden, deshalb abgeschirmt.
-  // Ohne diese serverseitige Meldung verliert die Kampagne einen
-  // erheblichen Teil ihrer Lernsignale.
+  // Optional measurement is strictly independent of inquiry delivery.
+  let capiStatus = 'skipped';
   try {
     const meta = await sendeAnMeta(
-      { name, email, phone, ort, objekt, anlass, eventId, fbp, fbc, seite }, req
+      { email, phone, eventId:isRnd ? b.requestId : eventId, fbp, fbc, consent, testMode }, req
     );
     if (meta && meta.uebersprungen) console.log('Meta CAPI übersprungen:', meta.uebersprungen);
+    else capiStatus = meta && meta.events_received === 1 ? 'accepted' : 'unconfirmed';
   } catch (err) {
-    console.error('Meta CAPI fehlgeschlagen (Lead ist zugestellt):', err.message);
+    capiStatus = 'failed';
+    console.error('Meta CAPI fehlgeschlagen (Lead ist zugestellt).');
   }
 
   // Die Bestaetigung ist ein Bonus. Scheitert sie, ist der Lead trotzdem da –
   // deshalb darf sie die Antwort an den Browser nicht auf Fehler kippen.
+  let confirmationMail, confirmationSent = false;
   try {
-    await sendeMail(apiKey, {
+    confirmationMail = await sendeMail(apiKey, {
       from: ABSENDER,
       to: [String(email).trim()],
       reply_to: 'info@3dimmobilienbewertung.de',
-      subject: 'Ihre Anfrage bei 3D Immobilienbewertung – wir melden uns in 24 Stunden',
+      subject: (testMode ? '[TEST] ' : '') + 'Ihre Anfrage bei 3D Immobilienbewertung – wir melden uns in 24 Stunden',
       html: bestaetigung
-    });
+    }, isRnd ? 'rnd-' + b.requestId + '-confirmation' : undefined);
+    confirmationSent = true;
   } catch (err) {
-    console.error('Bestaetigungsmail fehlgeschlagen (Lead ist zugestellt):', err.message);
+    console.error('Bestaetigungsmail fehlgeschlagen (Lead ist zugestellt).');
   }
 
-  return res.status(200).json({ ok: true });
+  if (isRnd) console.log('RND_DELIVERY', JSON.stringify({requestId:b.requestId, ownerMailId:ownerMail && ownerMail.id, confirmationMailId:confirmationMail && confirmationMail.id, confirmationSent, capiStatus, testMode}));
+  return res.status(200).json({ ok: true, confirmationSent, ...(isRnd ? {requestId:b.requestId,testMode} : {}) });
 };

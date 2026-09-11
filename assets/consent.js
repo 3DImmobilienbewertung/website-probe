@@ -1,301 +1,221 @@
-/**
- * 3D Immobilienbewertung – Cookie Consent & Google Analytics
- * DSGVO-konform mit Google Consent Mode v2
- *
- * SETUP: Ersetzen Sie 'G-XXXXXXXXXX' durch Ihre echte Google Analytics 4 Mess-ID.
- * Diese finden Sie in Google Analytics unter: Verwaltung → Datenstreams → Mess-ID
+/* 3D consent v2: basic opt-in, purpose separation, RND-only Meta measurement.
+ * No provider script before consent. Never replay events collected while denied.
  */
-
 (function () {
   'use strict';
-
-  var GA_ID = 'G-XS9EQ5RSRC'; // Google Analytics 4 – 3D Immobilienbewertung
-  var CONSENT_KEY = '3dim_consent';
-  var CONSENT_DURATION = 365; // Tage
-
-  // ─── Helper ───────────────────────────────────────────────
-  function getCookie(name) {
-    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
+  if (window.__threeDConsentLoaded) return;
+  window.__threeDConsentLoaded = true;
+  var VERSION = '3dim-2026-09-10', KEY = '3dim_consent_v2', DAYS = 180;
+  var GA_ID = 'G-XS9EQ5RSRC', META_ID = '2126043741457881';
+  var RND_PATH = '/restnutzungsdauergutachten-hannover.html';
+  var isRnd = location.pathname === RND_PATH;
+  var isProduction = /^(www\.)?3dimmobilienbewertung\.de$/.test(location.hostname);
+  // Preview and localhost remain provider-free. Tests inspect the same adapter.
+  var providersAllowed = isProduction;
+  var pending = new Map(), sent = new Set(), gaLoaded = false, metaLoaded = false;
+  var banner, dialog, beforeDialog, expiryTimer, applied = {analytics:false, marketing:false};
+  function uuid() { return crypto.randomUUID(); }
+  function cookie(name) {
+    var match = document.cookie.split('; ').find(function (part) { return part.startsWith(name + '='); });
+    if (!match) return '';
+    try { return decodeURIComponent(match.slice(name.length + 1)); } catch (_) { return ''; }
   }
-
-  function setCookie(name, value, days) {
-    var expires = new Date(Date.now() + days * 864e5).toUTCString();
-    document.cookie = name + '=' + value + ';expires=' + expires + ';path=/;SameSite=Lax';
+  function read() {
+    try {
+      var c = JSON.parse(cookie(KEY));
+      if (c.version !== VERSION || typeof c.analytics !== 'boolean' || typeof c.marketing !== 'boolean' ||
+          !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(c.id || '') || !Number.isFinite(c.at) ||
+          Date.now() - c.at > DAYS * 864e5 || c.at > Date.now() + 300000) return null;
+      return c;
+    } catch (_) { return null; }
   }
-
-  function getConsent() {
-    try { return JSON.parse(getCookie(CONSENT_KEY) || 'null'); } catch (e) { return null; }
+  function write(c) {
+    document.cookie = KEY + '=' + encodeURIComponent(JSON.stringify(c)) + ';path=/;max-age=' + DAYS * 86400 + ';SameSite=Lax' + (location.protocol === 'https:' ? ';Secure' : '');
   }
-
-  // ─── Google Consent Mode v2 Default (blocked) ─────────────
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  window.gtag = gtag;
-
-  gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'wait_for_update': 500
-  });
-
-  // ─── Load GA4 (always, but blocked by consent) ────────────
+  var state = read();
+  function allowed(purpose) { return !!state && state[purpose] === true && state.version === VERSION && Date.now() - state.at < DAYS * 864e5; }
+  function clearCookies(pattern) {
+    document.cookie.split(';').forEach(function (part) {
+      var name = part.trim().split('=')[0];
+      if (!pattern.test(name)) return;
+      var domains = ['', location.hostname, '.' + location.hostname];
+      if (isProduction) domains.push('.3dimmobilienbewertung.de', '3dimmobilienbewertung.de');
+      domains.forEach(function (domain) {
+        document.cookie = name + '=;Max-Age=0;path=/;SameSite=Lax' + (domain ? ';domain=' + domain : '');
+      });
+    });
+  }
+  function rawGtag() { window.dataLayer.push(arguments); }
+  function safePage() { return location.origin + location.pathname; }
+  function gaEvent(name, details) {
+    if (!providersAllowed || !allowed('analytics') || !gaLoaded) return;
+    var permitted = ['form_start', 'form_step', 'form_error', 'phone_click', 'email_click', 'video_start', 'generate_lead'];
+    if (permitted.indexOf(name) < 0) return;
+    var data = {page_location:safePage(), page_referrer:'', form_name:isRnd ? 'rnd' : 'contact', send_to:GA_ID};
+    if (details && Number.isInteger(details.step) && details.step >= 1 && details.step <= 4) data.step = details.step;
+    rawGtag('event', name, data);
+  }
   function loadGA() {
-    if (!GA_ID || GA_ID === 'G-XXXXXXXXXX') return; // Noch keine ID gesetzt
-    var s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    s.async = true;
-    document.head.appendChild(s);
-    gtag('js', new Date());
-    gtag('config', GA_ID, { 'anonymize_ip': true });
+    if (!providersAllowed || !allowed('analytics')) return;
+    window['ga-disable-' + GA_ID] = false;
+    if (gaLoaded) return;
+    gaLoaded = true;
+    window.dataLayer = [];
+    rawGtag('consent', 'default', {analytics_storage:'denied', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
+    rawGtag('consent', 'update', {analytics_storage:'granted', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
+    rawGtag('js', new Date());
+    rawGtag('config', GA_ID, {send_page_view:false, allow_google_signals:false, allow_ad_personalization_signals:false, page_location:safePage(), page_referrer:'', cookie_expires:180 * 86400, cookie_update:false});
+    rawGtag('event', 'page_view', {send_to:GA_ID, page_location:safePage(), page_referrer:''});
+    var script = document.createElement('script'); script.id = 'threeDGA'; script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.append(script);
   }
-  loadGA();
-
-  // ─── Meta-Pixel (Facebook / Instagram) ────────────────────
-  // Ohne Pixel kann Meta die Kampagne nicht auf Anfragen optimieren:
-  // Der Algorithmus lernt dann nur, wer *klickt*, nicht wer *anfragt*.
-  // Genau das erzeugt viele Klicks bei kaum Leads.
-  //
-  // EINRICHTEN: Pixel-ID im Meta Events Manager kopieren
-  // (Events Manager -> Datenquellen -> Pixel -> ID, 15-16 Ziffern)
-  // und unten eintragen. Bis dahin bleibt der Pixel inaktiv.
-  // Datensatz "3D Immobilienbewertung Website" - aus dem Werbekonto heraus
-  // angelegt und dadurch mit ihm verknuepft. Der zuerst im Events Manager
-  // erstellte Datensatz war nicht mit dem Werbekonto verbunden und in der
-  // Kampagne deshalb nicht auswaehlbar.
-  var META_PIXEL_ID = '2126043741457881';
-
-  function ladeMetaPixel() {
-    if (!META_PIXEL_ID) return;
-    /* eslint-disable */
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
-      t = b.createElement(e); t.async = !0; t.src = v;
-      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
-    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    /* eslint-enable */
-    // Erst nach Einwilligung Cookies setzen; vorher laeuft der Pixel
-    // im eingeschraenkten Modus.
-    var c = getConsent();
-    if (!c || !c.analytics) { try { fbq('consent', 'revoke'); } catch (e) {} }
-    fbq('init', META_PIXEL_ID);
-    fbq('track', 'PageView');
+  function loadMeta() {
+    if (!providersAllowed || !isRnd || !allowed('marketing')) return;
+    if (metaLoaded) { if (window.fbq) window.fbq('consent', 'grant'); return; }
+    metaLoaded = true;
+    var fbq = function () { fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments); };
+    fbq.push = fbq; fbq.loaded = true; fbq.version = '2.0'; fbq.queue = [];
+    window.fbq = fbq; window._fbq = fbq;
+    fbq('consent', 'grant');
+    fbq('set', 'autoConfig', false, META_ID);
+    // No automatic advanced matching: contact fields never enter the browser pixel.
+    fbq('init', META_ID);
+    fbq('trackSingle', META_ID, 'PageView');
+    var script = document.createElement('script'); script.id = 'threeDMeta'; script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/fbevents.js'; document.head.append(script);
   }
-  ladeMetaPixel();
-
-  // Meldet ein Ereignis an alle vorhandenen Messsysteme gleichzeitig.
-  // metaName darf null sein, wenn nur GA4 gemeint ist.
-  function meldeEreignis(gaName, metaName, daten, optionen) {
-    try { gtag('event', gaName, daten || {}); } catch (e) {}
-    try {
-      if (window.fbq && metaName) {
-        var istStandard = ['Lead', 'Contact', 'ViewContent', 'InitiateCheckout',
-          'CompleteRegistration', 'Schedule', 'SubmitApplication', 'Search'].indexOf(metaName) > -1;
-        fbq(istStandard ? 'track' : 'trackCustom', metaName, daten || {}, optionen || {});
-      }
-    } catch (e) {}
-  }
-  window.trackLead = meldeEreignis;
-
-  // Eindeutige Ereignis-ID: Browser-Pixel und Server melden denselben
-  // Lead: Meta erkennt am gleichen Wert das Duplikat und zaehlt einmal.
-  window.neueEventId = function () {
-    try {
-      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
-    } catch (e) {}
-    return 'ev-' + Date.now() + '-' + Math.floor(Math.random() * 1e9);
-  };
-
-  // Die Meta-Cookies muessen an den Server weitergereicht werden, sonst
-  // kann die Conversions API den Nutzer nicht der Anzeige zuordnen.
-  window.metaCookies = function () {
-    return { fbp: getCookie('_fbp') || '', fbc: getCookie('_fbc') || '' };
-  };
-
-  // ─── Lead-Event-Tracking (Schlüsselereignisse) ────────────
-  // Misst echte Lead-Aktionen statt nur Seitenaufrufe. Consent Mode v2
-  // regelt die DSGVO-konforme (cookieless bei Ablehnung) Erhebung automatisch.
-  //   • generate_lead  → jeder erfolgreiche Formular-/Funnel-Versand (HTTP 200 von /api/contact)
-  //   • phone_call     → Klick auf eine Telefonnummer (Anruf-Intent), auf allen Seiten
-  (function () {
-    // 1) Formular-Leads: erfolgreicher POST an /api/contact.
-    //    Der Abfangmechanismus reichert JEDE Anfrage um Ereignis-ID und
-    //    Meta-Cookies an - damit funktionieren Deduplizierung und
-    //    Conversions API auch auf den aelteren Formularseiten, ohne dass
-    //    dort etwas geaendert werden muss.
-    if (window.fetch) {
-      var _origFetch = window.fetch;
-      window.fetch = function (input, init) {
-        var url = (typeof input === 'string') ? input : (input && input.url) || '';
-        var istLead = url.indexOf('/api/contact') !== -1;
-        var eventId = null;
-
-        if (istLead && init && typeof init.body === 'string') {
-          try {
-            var nutzlast = JSON.parse(init.body);
-            eventId = nutzlast.eventId || window.neueEventId();
-            var ck = window.metaCookies();
-            nutzlast.eventId = eventId;
-            nutzlast.fbp = nutzlast.fbp || ck.fbp;
-            nutzlast.fbc = nutzlast.fbc || ck.fbc;
-            nutzlast.seite = nutzlast.seite || location.href;
-            init = Object.assign({}, init, { body: JSON.stringify(nutzlast) });
-            arguments[1] = init;
-          } catch (e) { /* kein JSON-Koerper: unveraendert weiterreichen */ }
-        }
-
-        return _origFetch.call(this, input, init).then(function (res) {
-          if (istLead && res && res.ok) {
-            // Meta braucht dieses Ereignis, um die Kampagne auf Anfragen
-            // statt auf Klicks zu optimieren.
-            meldeEreignis('generate_lead', 'Lead',
-              { lead_source: location.pathname },
-              eventId ? { eventID: eventId } : undefined);
-          }
-          return res;
-        });
-      };
-    }
-    // 2) Click-Kontakt-Intents auf jeder Seite: Telefon, E-Mail, WhatsApp
-    document.addEventListener('click', function (e) {
-      var t = e.target;
-      var a = (t && t.closest) ? t.closest('a[href]') : null;
-      if (!a) return;
-      var href = a.getAttribute('href') || '';
-      try {
-        if (href.indexOf('tel:') === 0) {
-          // Ein Anruf ist bei diesem Geschaeft ein vollwertiger Lead
-          meldeEreignis('phone_call', 'Contact',
-            { phone_number: href.replace('tel:', ''), link_location: location.pathname });
-        } else if (href.indexOf('mailto:info@3dimmobilienbewertung.de') === 0) {
-          // nur Geschäfts-Mail – Behörden-Mail in der Datenschutzerklärung bleibt außen vor
-          gtag('event', 'email_click', { link_location: location.pathname });
-        } else if (href.indexOf('wa.me/') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
-          gtag('event', 'whatsapp_click', { link_location: location.pathname });
-        }
-      } catch (e2) {}
-    }, true);
-  })();
-
-  // ─── Update consent after user choice ─────────────────────
-  function updateConsent(analyticsAllowed) {
-    gtag('consent', 'update', {
-      'analytics_storage': analyticsAllowed ? 'granted' : 'denied'
-    });
-    try {
-      if (window.fbq) fbq('consent', analyticsAllowed ? 'grant' : 'revoke');
-    } catch (e) {}
-    setCookie(CONSENT_KEY, JSON.stringify({ analytics: analyticsAllowed, ts: Date.now() }), CONSENT_DURATION);
-  }
-
-  // ─── Banner HTML ───────────────────────────────────────────
-  var bannerHTML = '<div id="cookie-banner" style="' +
-    'position:fixed;bottom:0;left:0;right:0;z-index:9999;' +
-    'background:#fff;border-top:1px solid rgba(16,36,61,.12);' +
-    'box-shadow:0 -8px 40px rgba(16,36,61,.12);' +
-    'padding:20px 24px;display:flex;align-items:center;' +
-    'justify-content:space-between;flex-wrap:wrap;gap:16px;' +
-    'font-family:\'Hanken Grotesk\',sans-serif;font-size:14.5px;color:#2A445F;">' +
-    '<div style="flex:1;min-width:200px;max-width:680px;">' +
-    '<strong class="cb-titel" style="color:#10243D;font-size:15px;">Diese Website verwendet Cookies</strong>' +
-    '<p class="cb-lang" style="margin-top:6px;line-height:1.55;color:#5C708A">' +
-    'Wir verwenden technisch notwendige Cookies sowie – mit Ihrer Einwilligung – Google Analytics zur anonymisierten Nutzungsanalyse. ' +
-    'Ihre Daten werden erst nach Zustimmung erhoben. ' +
-    '<a href="/datenschutz.html" style="color:#16365C;font-weight:600;">Datenschutzerklärung</a>' +
-    '</p>' +
-    '<p class="cb-kurz" style="font-size:12.8px">' +
-    'Anonyme Statistik nur mit Ihrer Zustimmung. ' +
-    '<a href="/datenschutz.html" style="color:#16365C;font-weight:600;">Datenschutz</a>' +
-    '</p></div>' +
-    '<div class="cb-btns" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:nowrap;">' +
-    '<button id="consent-decline" style="' +
-    'padding:11px 20px;border:1.5px solid rgba(16,36,61,.2);border-radius:100px;' +
-    'background:transparent;color:#5C708A;font-size:14px;font-weight:600;cursor:pointer;' +
-    'font-family:inherit;white-space:nowrap;">' +
-    'Nur notwendige' +
-    '</button>' +
-    '<button id="consent-accept" style="' +
-    'padding:11px 22px;border:none;border-radius:100px;' +
-    'background:#16365C;color:#fff;font-size:14px;font-weight:700;cursor:pointer;' +
-    'font-family:inherit;white-space:nowrap;box-shadow:0 4px 16px rgba(22,54,92,.3);">' +
-    'Alle akzeptieren ✓' +
-    '</button>' +
-    '</div>' +
-    '</div>';
-
-  /* Auf dem Smartphone belegte der Banner rund 30 % des Bildschirms und
-     verdeckte damit genau den Bereich, in dem der erste Handlungsaufruf
-     und die Anrufleiste sitzen. Auf schmalen Displays wird er deshalb
-     deutlich kompakter: kurzer Text, Knoepfe nebeneinander. Er sitzt
-     ueber der Aktionsleiste, nicht auf ihr. */
-  var bannerCSS =
-    '#cookie-banner .cb-lang{display:block}' +
-    '#cookie-banner .cb-kurz{display:none}' +
-    '@media(max-width:600px){' +
-    '#cookie-banner{padding:12px 16px calc(12px + env(safe-area-inset-bottom))!important;' +
-    'gap:10px!important;bottom:74px!important;border-radius:14px 14px 0 0;' +
-    'box-shadow:0 -6px 24px rgba(16,36,61,.16)!important}' +
-    '#cookie-banner .cb-lang{display:none}' +
-    '#cookie-banner .cb-kurz{display:block;line-height:1.45;color:#5C708A;margin-top:3px}' +
-    '#cookie-banner .cb-titel{font-size:14px!important}' +
-    '#cookie-banner .cb-btns{width:100%;gap:8px!important}' +
-    '#cookie-banner .cb-btns button{flex:1;padding:12px 10px!important;font-size:13.5px!important}' +
-    '}';
-
-  // ─── Show / Hide banner ────────────────────────────────────
-  function showBanner() {
-    var stil = document.createElement('style');
-    stil.textContent = bannerCSS;
-    document.head.appendChild(stil);
-
-    var wrap = document.createElement('div');
-    wrap.innerHTML = bannerHTML;
-    document.body.appendChild(wrap.firstChild);
-
-    document.getElementById('consent-accept').addEventListener('click', function () {
-      updateConsent(true);
-      hideBanner();
-    });
-    document.getElementById('consent-decline').addEventListener('click', function () {
-      updateConsent(false);
-      hideBanner();
-    });
-  }
-
-  function hideBanner() {
-    var b = document.getElementById('cookie-banner');
-    if (b) {
-      b.style.transition = 'transform .3s ease, opacity .3s ease';
-      b.style.transform = 'translateY(100%)';
-      b.style.opacity = '0';
-      setTimeout(function () { if (b.parentNode) b.parentNode.removeChild(b); }, 320);
-    }
-  }
-
-  // ─── Init ─────────────────────────────────────────────────
-  function init() {
-    var stored = getConsent();
-    if (stored !== null) {
-      // Bereits entschieden – Consent wiederherstellen
-      updateConsent(stored.analytics === true);
+  function apply() {
+    if (allowed('analytics')) {
+      if (!applied.analytics && gaLoaded) { window['ga-disable-' + GA_ID] = false; rawGtag('consent', 'update', {analytics_storage:'granted'}); }
+      loadGA();
     } else {
-      // Noch keine Entscheidung – Banner zeigen
-      showBanner();
+      window['ga-disable-' + GA_ID] = true;
+      // Block own calls first; discard still-pending commands on revocation.
+      if (gaLoaded) { window.dataLayer.length = 0; rawGtag('consent', 'update', {analytics_storage:'denied', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'}); }
+      clearCookies(/^(_ga(?:_|$)|_gid$|_gat(?:_|$))/);
+    }
+    if (allowed('marketing')) loadMeta();
+    else {
+      if (window.fbq) { if (Array.isArray(window.fbq.queue)) window.fbq.queue.length = 0; window.fbq('consent', 'revoke'); }
+      clearCookies(/^_fb[pc]$/);
+    }
+    applied = {analytics:allowed('analytics'), marketing:allowed('marketing')};
+    clearTimeout(expiryTimer);
+    if (state) expiryTimer = setTimeout(function () {
+      state=read(); apply(); if (banner) banner.hidden=!!state;
+    }, Math.min(Math.max(1, DAYS * 864e5 - (Date.now() - state.at) + 1), 2147483000));
+  }
+  function select(analytics, marketing) {
+    state = {version:VERSION, id:uuid(), at:Date.now(), analytics:analytics === true, marketing:marketing === true};
+    write(state); apply(); if (banner) banner.hidden = true;
+    if (dialog && dialog.open) dialog.close();
+    if (channel) channel.postMessage('changed');
+    document.dispatchEvent(new CustomEvent('threeDConsentChanged', {detail:{analytics:allowed('analytics'), marketing:allowed('marketing')}}));
+  }
+  function proof() {
+    var data = {marketingConsent:isRnd && providersAllowed && allowed('marketing'), analyticsConsent:providersAllowed && allowed('analytics')};
+    if (state) { data.consentVersion=VERSION; data.consentId=state.id; data.consentAt=state.at; }
+    return data;
+  }
+  function metadata(id) {
+    var c = state;
+    var marketing = isRnd && providersAllowed && allowed('marketing');
+    var analytics = providersAllowed && allowed('analytics');
+    pending.set(id, {marketing:marketing, analytics:analytics, consentId:c ? c.id : ''});
+    var data = proof();
+    if (marketing) {
+      data.eventId = id;
+      data.fbp = cookie('_fbp');
+      data.fbc = cookie('_fbc');
+      // Only after opt-in. The click ID is an advertising identifier, not form data.
+      var clickId = new URLSearchParams(location.search).get('fbclid');
+      if (!data.fbc && /^[A-Za-z0-9._-]{1,500}$/.test(clickId || '')) data.fbc = 'fb.1.' + Date.now() + '.' + clickId;
+      data.seite = location.origin + RND_PATH;
+    }
+    return data;
+  }
+  function accepted(id, result) {
+    var attempt = pending.get(id);
+    pending.delete(id);
+    if (!attempt || sent.has(id) || !state || attempt.consentId !== state.id || (result && (result.testMode || result.ok === false || result.accepted === false))) return;
+    sent.add(id);
+    if (attempt.analytics && allowed('analytics')) gaEvent('generate_lead');
+    if (attempt.marketing && allowed('marketing') && providersAllowed && isRnd && window.fbq) {
+      window.fbq('trackSingle', META_ID, 'Lead', {}, {eventID:id});
     }
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
+  window.rndMeasurement = Object.freeze({event:gaEvent, proof:proof, submission:metadata, accepted:accepted});
+  // Compatibility for older pages: ignore manual Lead events, which would double-count.
+  window.gtag = function (command, name, data) {
+    if (command === 'event' && name !== 'generate_lead') gaEvent(name, data);
+  };
+  window.trackLead = function (gaName) { if (gaName !== 'generate_lead') gaEvent(gaName); };
+  window.neueEventId = uuid;
+  window.metaCookies = function () { return allowed('marketing') && isRnd && providersAllowed ? {fbp:cookie('_fbp'),fbc:cookie('_fbc')} : {fbp:'',fbc:''}; };
+  // Exact same-origin endpoint only. Never intercept unrelated URLs containing /api/contact.
+  var nativeFetch = window.fetch;
+  if (nativeFetch) window.fetch = function (input, init) {
+    var target;
+    try { target = new URL(typeof input === 'string' ? input : input.url, location.href); } catch (_) { return nativeFetch.apply(this, arguments); }
+    var payload;
+    if (target.origin !== location.origin || target.pathname !== '/api/contact' || !init || String(init.method || '').toUpperCase() !== 'POST' || typeof init.body !== 'string') return nativeFetch.apply(this, arguments);
+    try { payload = JSON.parse(init.body); } catch (_) { return nativeFetch.apply(this, arguments); }
+    if (payload.formId === 'rnd-v2') return nativeFetch.apply(this, arguments);
+    var id = uuid();
+    Object.assign(payload, metadata(id), {marketingConsent:false});
+    pending.get(id).marketing = false;
+    delete payload.eventId; delete payload.fbp; delete payload.fbc; delete payload.seite;
+    init = Object.assign({}, init, {body:JSON.stringify(payload)});
+    return nativeFetch.call(this, input, init).then(function (response) {
+      if (response.ok) response.clone().json().then(function (body) { if (body.ok === true && body.accepted !== false) accepted(id, body); }).catch(function () {});
+      return response;
+    });
+  };
+  function settings() {
+    if (!dialog) return;
+    dialog.querySelector('#consentAnalytics').checked = allowed('analytics');
+    dialog.querySelector('#consentMarketing').checked = allowed('marketing');
+    if (!dialog.open) { beforeDialog=document.activeElement; dialog.showModal(); }
   }
-
-  // Öffentliche API für Datenschutz-Seite
-  window.__cmp = { showUi: showBanner };
-
+  var cmp = function (command) { if (!command || command === 'showUi') settings(); };
+  cmp.showUi=settings; window.__cmp=cmp;
+  var channel = typeof BroadcastChannel === 'function' ? new BroadcastChannel('threeDConsent') : null;
+  function sync() { var latest = read(); if (JSON.stringify(latest) !== JSON.stringify(state)) { state=latest; apply(); if (banner) banner.hidden=!!state; } }
+  if (channel) channel.onmessage=sync;
+  window.addEventListener('focus', sync);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) sync(); });
+  function init() {
+    var style=document.createElement('link');style.rel='stylesheet';style.href='/assets/consent.css?v=20260910';document.head.append(style);
+    banner=document.createElement('section');banner.id='cookie-banner';banner.className='cmp-banner';banner.setAttribute('aria-label','Cookie-Einwilligung');
+    banner.innerHTML='<div><strong>Ihre Privatsphäre</strong><p>Statistik mit Google Analytics und Werbemessung mit Meta Pixel / Conversions API nur mit Ihrer Einwilligung. Dabei können Daten in die USA gelangen. Die Anfrage funktioniert auch ohne Tracking. <a href="/datenschutz.html#cookies">Details</a></p></div><div class="cmp-actions"><button type="button" data-choice="none">Alle ablehnen</button><button type="button" data-choice="settings">Auswahl</button><button type="button" data-choice="all">Alle akzeptieren</button></div>';
+    banner.hidden=!!state;document.body.append(banner);
+    dialog=document.createElement('dialog');dialog.className='cmp-dialog';dialog.id='consent-dialog';dialog.setAttribute('aria-labelledby','consentTitle');
+    dialog.innerHTML='<h2 id="consentTitle">Cookie-Einstellungen</h2><p>Sie entscheiden getrennt über die Zwecke. Ein Widerruf ist jederzeit hier möglich und gilt für künftige Verarbeitungen.</p><div class="cmp-purpose"><strong>Notwendig · immer aktiv</strong><p>Speichert Ihre Auswahl für 180 Tage. Dafür werden keine Analyse- oder Marketingdienste benötigt.</p></div><label class="cmp-purpose"><span><strong>Statistik – Google Analytics 4</strong><span>Google Ireland Limited. Seitenaufrufe und allgemeine Formularschritte zur Verbesserung der Website; keine Kontakt- oder Objektangaben. Verarbeitung auch in den USA.</span></span><input id="consentAnalytics" type="checkbox"></label><label class="cmp-purpose"><span><strong>Werbemessung – Meta Pixel / Conversions API</strong><span>Meta Platforms Ireland Limited. Nur auf der Restnutzungsdauer-Seite: Seitenaufrufe und erfolgreiche Anfragen zur Anzeigenzuordnung und -optimierung. Mit Zustimmung werden Werbe-Kennungen, IP-/Browserdaten und serverseitig gehashte E-Mail/Telefonnummer übermittelt. Meta kann Daten einem Konto zuordnen; Verarbeitung auch in den USA.</span></span><input id="consentMarketing" type="checkbox"></label><p><a href="/datenschutz.html#meta">Empfänger, Datenflüsse und Ihre Rechte</a></p><div class="cmp-actions"><button type="button" data-choice="none">Alle ablehnen</button><button type="button" data-choice="save">Auswahl speichern</button><button type="button" data-choice="all">Alle akzeptieren</button></div><button type="button" class="cmp-close">Schließen ohne Änderung</button>';
+    document.body.append(dialog);
+    function click(event) {
+      var button=event.target.closest('button');if (!button) return;
+      var choice=button.dataset.choice;
+      if (choice === 'none') select(false,false);
+      if (choice === 'all') select(true,true);
+      if (choice === 'settings') settings();
+      if (choice === 'save') select(dialog.querySelector('#consentAnalytics').checked,dialog.querySelector('#consentMarketing').checked);
+      if (button.classList.contains('cmp-close')) dialog.close();
+    }
+    banner.addEventListener('click',click);dialog.addEventListener('click',click);
+    dialog.addEventListener('close',function(){if (beforeDialog && beforeDialog.isConnected) beforeDialog.focus();});
+    document.querySelectorAll('#cookieSettings,[data-consent-settings]').forEach(function(button){button.addEventListener('click',settings);});
+    // A persistent reopening control on older pages without a footer control.
+    if (!document.querySelector('#cookieSettings,[data-consent-settings],.consent-btn')) {
+      var reopen=document.createElement('button');reopen.type='button';reopen.className='cmp-reopen';reopen.textContent='Cookies';reopen.addEventListener('click',settings);document.body.append(reopen);
+    }
+    document.addEventListener('click',function(event){
+      var link=event.target.closest('a[href]');if(!link)return;
+      var href=link.getAttribute('href');
+      if(href.startsWith('tel:'))gaEvent('phone_click');
+      if(href.startsWith('mailto:info@3dimmobilienbewertung.de'))gaEvent('email_click');
+    });
+    apply();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
