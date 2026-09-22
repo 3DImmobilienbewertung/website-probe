@@ -4,6 +4,7 @@ Run from any directory: python3 tests/local-seo.py
 Uses only the Python standard library; sends no requests or contact forms.
 """
 import json
+from datetime import date
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
@@ -14,7 +15,10 @@ ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://www.3dimmobilienbewertung.de'
 PAGES = ['index.html', 'blog/index.html',
          'immobilienbewertung-isernhagen.html', 'immobilienbewertung-burgwedel.html',
-         'blog/haus-bewerten-isernhagen.html', 'blog/bodenrichtwert-grossburgwedel-2026.html']
+         'blog/haus-bewerten-isernhagen.html', 'blog/bodenrichtwert-grossburgwedel-2026.html',
+         'blog/wohnung-bewerten-isernhagen-altwarmbuechen.html',
+         'blog/haus-verkaufen-grossburgwedel-angebotspreis.html',
+         'checkliste-immobilienbewertung.html']
 
 
 class Page(HTMLParser):
@@ -74,7 +78,16 @@ for filename in PAGES:
     assert canonical == [url], (filename, 'canonical', canonical)
     robots = [a.get('content', '') for a in page.find('meta') if a.get('name') == 'robots']
     assert robots and all('noindex' not in r and 'nofollow' not in r for r in robots)
-    assert entries.get(url) == '2026-09-17', (filename, 'sitemap lastmod')
+    assert entries.get(url), (filename, 'missing sitemap entry')
+    assert date(2026, 9, 21) <= date.fromisoformat(entries[url]) <= date.today(), (filename, 'sitemap lastmod')
+    descriptions = [a.get('content', '') for a in page.find('meta') if a.get('name') == 'description']
+    assert len(descriptions) == 1 and 80 <= len(descriptions[0]) <= 170, (filename, 'description')
+    for schema in page.schemas:
+        for entity in schema.get('@graph', [schema]):
+            if 'dateModified' in entity:
+                assert entity['dateModified'] == entries[url], (filename, 'schema/sitemap date mismatch')
+            if entity.get('@type') == 'BlogPosting':
+                assert entity['datePublished'] <= entity['dateModified'], (filename, 'article dates')
     assert page.schemas, (filename, 'missing schema')
     ids = [a['id'] for _, a in page.tags if 'id' in a]
     assert not [i for i, n in Counter(ids).items() if n > 1], (filename, 'duplicate ID')
@@ -98,6 +111,10 @@ for filename in PAGES:
         source = (ROOT / filename).read_text()
         assert not any(term in source for term in ['Eltze', 'Mühlenfeld', 'gerichtsfest'])
         assert '.r{opacity:1;transform:none}' in source
+        assert 'local-contact.js?v=20260921' in source
+        assert 'document.getElementById(\'leadForm\').addEventListener' not in source
+        assert any(a.get('id') == 'formError' and a.get('role') == 'alert' for _, a in page.tags)
+        assert any(a.get('id') == 'formSuccess' and 'hidden' in a for _, a in page.tags)
         labels = {a.get('for') for a in page.find('label')}
         assert {'lfName', 'lfTel', 'lfMail', 'lfObj', 'lfOrt', 'lfMsg'} <= labels
         graph = page.schemas[0]['@graph']
@@ -108,8 +125,22 @@ for filename in PAGES:
     print('PASS', filename)
 
 for article, city in [('blog/haus-bewerten-isernhagen.html', 'isernhagen'),
-                      ('blog/bodenrichtwert-grossburgwedel-2026.html', 'burgwedel')]:
+                      ('blog/bodenrichtwert-grossburgwedel-2026.html', 'burgwedel'),
+                      ('blog/wohnung-bewerten-isernhagen-altwarmbuechen.html', 'isernhagen'),
+                      ('blog/haus-verkaufen-grossburgwedel-angebotspreis.html', 'burgwedel')]:
     for parent in ['index.html', 'blog/index.html', 'immobilienbewertung-' + city + '.html']:
         destinations = [urljoin(url_for(parent), a.get('href', '')) for a in parse(parent).find('a')]
         assert url_for(article) in destinations, (article, 'missing incoming link', parent)
 print('PASS sitemap, links/assets/anchors, schema JSON, FAQ parity, labels, local content and incoming links')
+
+checklist = parse('checkliste-immobilienbewertung.html')
+checkboxes = [a for a in checklist.find('input') if a.get('type') == 'checkbox']
+assert len(checkboxes) == 17, 'Checklist items unexpectedly changed'
+labels = {a.get('for') for a in checklist.find('label')}
+assert all(a['id'] in labels for a in checkboxes), 'Unlabelled checkbox'
+for parent in PAGES:
+    if parent == 'checkliste-immobilienbewertung.html':
+        continue
+    assert any(urljoin(url_for(parent), a.get('href', '')) == url_for('checkliste-immobilienbewertung.html')
+               for a in parse(parent).find('a')), (parent, 'missing checklist link')
+print('PASS checklist labels, 17 items, incoming links, metadata and sitemap dates')

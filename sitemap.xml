@@ -6,7 +6,7 @@
     <loc>https://www.3dimmobilienbewertung.de/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
   </url>
 
   <!-- Themen-Landingpages (Kaufintention) -->
@@ -102,13 +102,13 @@
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-isernhagen.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-burgwedel.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-sehnde.html</loc>
@@ -194,7 +194,7 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/</loc>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauergutachten-hannover.html</loc>
@@ -254,10 +254,22 @@
 
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/haus-bewerten-isernhagen.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/bodenrichtwert-grossburgwedel-2026.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/wohnung-bewerten-isernhagen-altwarmbuechen.html</loc>
+    <lastmod>2026-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/haus-verkaufen-grossburgwedel-angebotspreis.html</loc>
+    <lastmod>2026-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/checkliste-immobilienbewertung.html</loc>
+    <lastmod>2026-09-22</lastmod>
   </url>
 </urlset>

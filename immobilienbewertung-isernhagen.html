@@ -73,7 +73,7 @@
           }
         ]
       },
-      "dateModified": "2026-09-17",
+      "dateModified": "2026-09-22",
       "inLanguage": "de-DE"
     },
     {
@@ -192,6 +192,14 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 [id]{scroll-margin-top:90px}a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 @media(max-width:600px){.nav-inner{padding:0 16px;gap:10px}.nav-right{min-width:0}.nav-right .btn{white-space:normal;text-align:center;font-size:12px;padding:10px 12px}.logo-img{height:26px}.hero-actions .btn,.city-info .btn{white-space:normal;max-width:100%;text-align:center}.city-info{padding:24px}.hero{padding-top:36px}.mobile-bar{padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}body{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}}
 @media(max-width:600px){h1,h2,h3{overflow-wrap:anywhere;hyphens:auto}.btn{white-space:normal;max-width:100%;text-align:center}.form-card{padding:28px 24px}.nav-right .btn{min-width:0}}
+
+.local-jump{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:24px;font-size:14px}.local-jump a,.decision a,.guide-links a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.decision{max-width:840px;margin:32px auto 0;padding:28px;border:1px solid var(--border);border-radius:18px;background:#fff}.decision h3{font-size:1.3rem;margin-bottom:12px}.decision p{margin-top:12px;color:var(--ink-2)}.decision ul{padding-left:22px;margin:16px 0}.decision li{margin:8px 0}
+.guide-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}.guide-links .city-info{margin-top:0}.guide-links h3{line-height:1.3}
+.form-error{margin:12px 0;padding:12px;border:2px solid #8b2635;border-radius:10px;color:#70212d;background:#fff3f4;font-size:14px}.form-card .note{color:var(--muted)}
+#formSuccess:focus,.form-error:focus{outline:3px solid var(--blue);outline-offset:4px}.ff input,.ff textarea,.ff select{font-size:16px}
+[hidden]{display:none!important}#anfrage,#leistungen,#ablauf,#bodenrichtwerte{scroll-margin-top:90px}.btn:disabled{opacity:.65;cursor:wait}
+@media(max-width:620px){.guide-links{grid-template-columns:1fr}.decision{padding:22px}.local-jump a{padding:5px 0}}
 </style>
 </head>
 <body>
@@ -206,20 +214,22 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <p class="hero-sub r s2">Was ist Ihre Immobilie in Isernhagen wert? Wir bewerten Häuser, Wohnungen und Grundstücke mit persönlicher Besichtigung und Fachwissen aus Bauingenieurwesen und Architektur. Büro in der Wedemark, Objekttermine bei Ihnen vor Ort.</p>
     <div class="hero-actions r s3"><a href="#anfrage" class="btn btn-primary">Immobilie in Isernhagen bewerten →</a><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a></div>
     <div class="reassure r s3"><span>Lokale Marktkenntnis</span><span>§194 BauGB</span><span>Bautechnischer Sachverstand</span><span>Erstgespräch kostenlos</span></div>
+    <nav class="local-jump" aria-label="Direkt zu den Informationen"><a href="#leistungen">Leistungen &amp; Kosten</a><a href="#ablauf">Ablauf</a><a href="#bodenrichtwerte">Bodenrichtwerte</a><a href="/checkliste-immobilienbewertung.html">Unterlagen-Checkliste</a></nav>
   </div>
   <div class="form-card r s2" id="anfrage">
     <h2>Immobilie in Isernhagen bewerten</h2>
     <p class="sub">Kostenloses Erstgespräch – Antwort in 24 Stunden.</p>
-    <form id="leadForm">
-      <div class="ff-row"><div class="ff"><label for="lfName">Name *</label><input type="text" id="lfName" autocomplete="name" placeholder="Vor- &amp; Nachname" required /></div><div class="ff"><label for="lfTel">Telefon</label><input type="tel" id="lfTel" autocomplete="tel" placeholder="+49 …" /></div></div>
-      <div class="ff"><label for="lfMail">E-Mail *</label><input type="email" id="lfMail" autocomplete="email" placeholder="ihre@email.de" required /></div>
-      <div class="ff-row"><div class="ff"><label for="lfObj">Objektart</label><select id="lfObj"><option>Einfamilienhaus</option><option>Eigentumswohnung</option><option>Mehrfamilienhaus</option><option>Grundstück</option><option>Sonstiges</option></select></div><div class="ff"><label for="lfOrt">Anlass</label><select id="lfOrt"><option>Kauf / Verkauf</option><option>Erbschaft</option><option>Scheidung</option><option>Finanzierung</option><option>Sonstiges</option></select></div></div>
-      <div class="ff"><label for="lfMsg">Nachricht</label><textarea id="lfMsg" placeholder="Kurze Beschreibung des Objekts …"></textarea></div>
+    <form id="leadForm" data-region="Isernhagen">
+      <div class="ff-row"><div class="ff"><label for="lfName">Name *</label><input type="text" id="lfName" name="name" maxlength="160" autocomplete="name" placeholder="Vor- &amp; Nachname" required /></div><div class="ff"><label for="lfTel">Telefon (optional)</label><input type="tel" id="lfTel" name="phone" maxlength="60" autocomplete="tel" placeholder="+49 …" /></div></div>
+      <div class="ff"><label for="lfMail">E-Mail *</label><input type="email" id="lfMail" name="email" maxlength="254" autocomplete="email" placeholder="ihre@email.de" required /></div>
+      <div class="ff-row"><div class="ff"><label for="lfObj">Objektart</label><select id="lfObj" name="objekt"><option>Einfamilienhaus</option><option>Eigentumswohnung</option><option>Mehrfamilienhaus</option><option>Grundstück</option><option>Sonstiges</option></select></div><div class="ff"><label for="lfOrt">Anlass</label><select id="lfOrt" name="anlass"><option>Kauf / Verkauf</option><option>Erbschaft</option><option>Scheidung</option><option>Finanzierung</option><option>Sonstiges</option></select></div></div>
+      <div class="ff"><label for="lfMsg">Nachricht</label><textarea id="lfMsg" name="message" maxlength="5000" placeholder="Ortsteil, Objekt und Ihre Frage – bitte keine vertraulichen Dokumente einfügen."></textarea></div>
+      <p id="formError" class="form-error" role="alert" tabindex="-1" hidden></p>
       <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px">Kostenloses Erstgespräch anfragen →</button>
       <p class="note">Vertraulich · Kostenlos &amp; unverbindlich. <a href="/datenschutz.html" style="text-decoration:underline">Datenschutz</a></p>
       <noscript><p>Bitte rufen Sie uns unter <a href="tel:+491747445452">0174 744 5452</a> an oder schreiben Sie an <a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a>. Das Onlineformular benötigt JavaScript.</p><style>#submitBtn{display:none}</style></noscript>
     </form>
-    <div id="formSuccess" style="display:none;text-align:center;padding:20px 0"><div style="font-size:2.5rem;margin-bottom:12px">✅</div><p style="font-weight:700;font-size:1.1rem">Vielen Dank!</p><p style="color:var(--muted);font-size:14px;margin-top:8px">Wir melden uns innerhalb von 24 Stunden.</p></div>
+    <div id="formSuccess" role="status" tabindex="-1" hidden style="text-align:center;padding:20px 0"><div style="font-size:2.5rem;margin-bottom:12px">✅</div><p style="font-weight:700;font-size:1.1rem">Vielen Dank – Ihre Anfrage wurde übermittelt.</p><p style="color:var(--muted);font-size:14px;margin-top:8px">Wir melden uns innerhalb von 24 Stunden.</p></div>
   </div>
 </div></section>
 <div class="trust-bar"><div class="container trust-inner"><span>Isernhagen &amp; Region</span><span>Bautechnischer Sachverstand</span><span>§194 BauGB</span><span>Persönliche Besichtigung</span><span>Festpreisangebot</span></div></div>
@@ -232,12 +242,19 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="pin-list"><span class="pin">Altwarmbüchen</span><span class="pin">Kirchhorst</span><span class="pin">Neuwarmbüchen</span><span class="pin">Isernhagen F.B.</span><span class="pin">Isernhagen H.B.</span><span class="pin">Isernhagen K.B.</span><span class="pin">Isernhagen N.B.</span></div>
   </div>
 </div></section>
-<section class="block alt"><div class="container">
+<section class="block alt" id="leistungen"><div class="container">
   <div class="sec-head center r" style="margin-bottom:36px"><span class="eyebrow" style="justify-content:center">Leistungen</span><h2>Das passende Gutachten für Isernhagen</h2></div>
   <div class="services-grid">
     <div class="svc r s1"><div class="num">01 / Kompakt</div><h3>Immobilienkurzgutachten</h3><p>Schnelle, fundierte Werteinschätzung für Kauf, Verkauf oder Verhandlung in Isernhagen.</p><span class="tag">ab 490 €</span></div>
     <div class="svc r s2"><div class="num">02 / Vollständig</div><h3>Verkehrswertgutachten §194 BauGB</h3><p>Ausführliche Wertermittlung nach ImmoWertV. Verwendungszweck und Anforderungen der empfangenden Stelle werden vorab geklärt.</p><span class="tag">Preis nach Objekt</span></div>
     <div class="svc r s3"><div class="num">03 / Kostenlos</div><h3>Erstgespräch</h3><p>Wir klären Ihren Bedarf und nennen einen Festpreis – kostenlos und unverbindlich.</p><span class="tag">kostenlos</span></div>
+  </div>
+  <div class="decision"><h3>Welche Bewertung benötigen Sie wirklich?</h3>
+    <p>Bei einer Eigentumswohnung in Altwarmbüchen schauen wir neben Lage und Wohnfläche auch auf den dokumentierten Zustand des Gemeinschaftseigentums. Bei einem älteren Haus in einer Bauerschaft können Umbauten und Nebengebäude die Unterlagenprüfung prägen.</p>
+    <ul><li><strong>Kauf oder Verkauf vorbereiten:</strong> Ein Kurzgutachten kann eine nachvollziehbare Entscheidungsgrundlage bieten. Ob der kompakte Umfang für Ihren Zweck reicht, klären wir vor der Beauftragung.</li><li><strong>Umfangreiche Dokumentation benötigt:</strong> Bei einem ausführlichen Verkehrswertgutachten stimmen wir Zweck, Stichtag, Unterlagen und die Anforderungen des Empfängers vorab ab.</li><li><strong>Noch unsicher:</strong> Für das Erstgespräch genügen zunächst Ort, Objektart und Ihr Anliegen. Fehlende Unterlagen können wir anschließend gemeinsam einordnen.</li></ul>
+    <p><strong>Was ist kostenlos?</strong> Das Erstgespräch und die Klärung des passenden Angebots. Die anschließende Wertermittlung ist eine beauftragte Leistung; ein Kurzgutachten beginnt bei 490 €. Umfang, Preis und Termin werden vor Auftragserteilung vereinbart.</p>
+    <p>Sie erhalten eine nachvollziehbare Herleitung im vereinbarten Gutachtenumfang und eine Erläuterung der Ergebnisse. Eine technische Vollprüfung, Bauteilöffnung oder Rechtsberatung ist damit nicht automatisch verbunden.</p>
+    <p><a href="/checkliste-immobilienbewertung.html">Unterlagen-Checkliste öffnen und ausdrucken →</a></p>
   </div>
 </div></section>
 <section class="block"><div class="container">
@@ -289,7 +306,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <h3>Wertfaktoren in Isernhagen</h3>
     <p>In den Bauerschaften können ältere Wohn- und Hofgebäude andere Bewertungsfragen aufwerfen als jüngere Einfamilienhäuser. Entscheidend sind die tatsächliche Nutzung, der Umfang genehmigter Umbauten, die Grundstücksmerkmale und der dokumentierte Gebäudezustand.</p><p>Altwarmbüchen bildet mit Einkaufszentrum, gutem ÖPNV und der Nähe zur A2/A37 das urbane Zentrum und weist eine eigene Preisdynamik mit Wohnungen und neueren Wohnquartieren auf. Wir bewerten beide Welten – vom historischen Hofgebäude bis zur modernen Eigentumswohnung – marktgerecht und nachvollziehbar.</p>
   </div>
-  <div class="city-info r s2" style="margin-top:24px;border-left:4px solid var(--blue)">
+  <div class="city-info r s2" id="ablauf" style="margin-top:24px;border-left:4px solid var(--blue)">
     <h3>In 4 Schritten zum Gutachten in Isernhagen</h3>
     <p style="margin-bottom:14px">So läuft Ihre Immobilienbewertung in Isernhagen ab – transparent und ohne Überraschungen:</p>
     <ol style="margin:0 0 0 20px;padding:0;color:var(--ink-2);font-size:15px;line-height:1.75">
@@ -301,12 +318,13 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   </div>
   <div class="city-info r s3" style="margin-top:24px">
     <h3>Welches Bewertungsverfahren passt?</h3>
-    <p>Je nach Objektart wenden wir das passende Verfahren an: das <strong>Vergleichswertverfahren</strong> für Eigentumswohnungen und Grundstücke, das <strong>Sachwertverfahren</strong> für selbstgenutzte Ein- und Zweifamilienhäuser sowie das <strong>Ertragswertverfahren</strong> für vermietete Mehrfamilien- und Renditeobjekte. So entsteht für jede Immobilie in Isernhagen ein nachvollziehbar hergeleiteter Verkehrswert nach §194 BauGB.</p>
+    <p>Objektart, Bewertungszweck und verfügbare Marktdaten bestimmen die Auswahl und Gewichtung von Vergleichswert-, Sachwert- und Ertragswertverfahren. So können zum Beispiel Vergleichsdaten auch bei einem selbstgenutzten Haus relevant sein. Die Verfahrenswahl wird für Ihr Objekt begründet – nicht allein aus der Objektart abgeleitet.</p>
   </div>
 </div></section>
 <section class="block alt" aria-labelledby="lokaler-ratgeber"><div class="container">
   <div class="sec-head"><span class="eyebrow">Für Eigentümer in Isernhagen</span><h2 id="lokaler-ratgeber">Haus bewerten in Isernhagen: Lage, Zustand &amp; Unterlagen</h2></div>
   <div class="city-info"><p>Welche Lageunterschiede zählen wirklich? Unser Ratgeber erklärt die sieben Ortschaften, zeigt amtliche Bodenrichtwertbeispiele mit Zonennummern und bietet eine Unterlagen-Checkliste.</p><a class="btn btn-primary" href="/blog/haus-bewerten-isernhagen.html">Lokalen Ratgeber lesen →</a></div>
+  <div class="guide-links"><div class="city-info"><h3>Wohnung bewerten in Isernhagen: WEG-Unterlagen prüfen</h3><p>Wohnungsbewertung in Isernhagen und Altwarmbüchen: Hausgeld, Rücklagen, Sonderumlagen und Unterlagen verstehen. Mit Checkliste für Eigentümer.</p><a href="/blog/wohnung-bewerten-isernhagen-altwarmbuechen.html">Zum vertiefenden Ratgeber →</a></div><div class="city-info"><h3>Welche Unterlagen sind schon vorhanden?</h3><p>Für Haus, Wohnung oder vermietete Immobilie: Die Checkliste unterscheidet zwischen Erstgespräch und späterer Gutachtenerstellung. Kostenlos nutzbar, ohne Registrierung.</p><a href="/checkliste-immobilienbewertung.html">Checkliste abhaken und drucken →</a></div></div>
   <div class="city-info"><h3>Ihre Ansprechpartner: Nandino und Vito Donnarumma</h3><p>Nandino bringt einen M.Sc. im Bauingenieurwesen mit, Vito einen B.Sc. in Architektur und den abgeschlossenen Zertifikatslehrgang „Immobilienwertermittlung (IHK)“. Unsere Erfahrung aus Planung, Erwerb, Prüfung und Sanierung fließt in die Bewertung ein.</p><p><a href="/ueber-uns.html#qualifikationen" style="text-decoration:underline">Team, Unternehmensgeschichte und Qualifikationen ansehen →</a></p></div>
 </div></section>
 <section class="block alt"><div class="container"><div class="cta-band r"><h2>Immobilienbewertung Isernhagen – jetzt anfragen</h2><p>Kostenlos, unverbindlich, Antwort innerhalb von 24 Stunden.</p><div class="btns"><a href="#anfrage" class="btn btn-gold">Kostenloses Erstgespräch →</a><a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)">📞 Jetzt anrufen</a></div><a href="tel:+491747445452" class="cta-phone">oder direkt: <b>+49 (0) 174 744 5452</b></a></div></div></section>
@@ -357,10 +375,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 
 <footer><div class="container"><div class="foot-top"><div class="foot-brand"><a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a><p>Persönliche Immobilienbewertung in Hannover und Region.</p></div><div class="foot-links"><h4>Stadtseiten</h4><a href="immobilienbewertung-wedemark.html">Wedemark</a><a href="immobilienbewertung-langenhagen.html">Langenhagen</a><a href="immobilienbewertung-garbsen.html">Garbsen</a><a href="immobilienbewertung-lehrte.html">Lehrte</a><a href="immobilienbewertung-sehnde.html">Sehnde</a><a href="immobilienbewertung-hemmingen.html">Hemmingen</a><a href="immobilienbewertung-ronnenberg.html">Ronnenberg</a><a href="immobilienbewertung-wunstorf.html">Wunstorf</a><a href="immobilienbewertung-neustadt-am-ruebenberge.html">Neustadt</a><a href="immobilienbewertung-burgwedel.html">Burgwedel</a><a href="immobilienbewertung-burgdorf.html">Burgdorf</a><a href="immobilienbewertung-uetze.html">Uetze</a><a href="immobilienbewertung-seelze.html">Seelze</a><a href="immobilienbewertung-gehrden.html">Gehrden</a><a href="immobilienbewertung-pattensen.html">Pattensen</a><a href="immobilienbewertung-barsinghausen.html">Barsinghausen</a><a href="immobilienbewertung-wennigsen.html">Wennigsen</a><a href="/">Startseite</a></div><div class="foot-links"><h4>Kontakt</h4><a href="tel:+491747445452">+49 (0) 174 744 5452</a><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div><div class="foot-copy">© <span id="year"></span> 3D Immobilienbewertung · Hannover &amp; Region</div></div></footer>
 <div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('leadForm').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('lfName').value.trim(),m=document.getElementById('lfMail').value.trim(),t=document.getElementById('lfTel').value.trim(),o=document.getElementById('lfObj').value,ort=document.getElementById('lfOrt').value,msg=document.getElementById('lfMsg').value.trim();if(!n||!m){alert('Bitte Name und E-Mail angeben.');return}var btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Wird gesendet …';fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:'Isernhagen – '+ort,message:msg||'Anfrage über LP Isernhagen'})}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(function(){document.getElementById('leadForm').style.display='none';document.getElementById('formSuccess').style.display='block'}).catch(function(){btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Fehler: +49 174 744 5452')});});
-</script>
+<script src="/assets/local-contact.js?v=20260921" defer></script>
 <script src="assets/consent.js?v=20260815b"></script>
 </body>
 </html>
