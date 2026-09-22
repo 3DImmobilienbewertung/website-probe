@@ -308,33 +308,33 @@ body.brand-editorial{--paper:#f3f3ef;--line:#d7dddf;--line-soft:#e8ecee;--card:#
 
 /* Warm, personal practice identity. Native buttons need an explicit text colour on iOS. */
 body.brand-editorial{
- --bg:#fffdf9;--bg-2:#f4eee5;--bg-3:#eae2d6;--surface:#fffdf9;
- --paper:#f4eee5;--ink:#283b3e;--ink-2:#465552;--muted:#626b63;
- --blue:#304e4c;--blue-deep:#233c3b;--blue-bright:#466a63;
- --blue-soft:#edf0e9;--blue-soft-2:#dce4d9;--gold:#93643f;
+ --bg:#fff;--bg-2:#faf6ef;--bg-3:#eee5d8;--surface:#fff;
+ --paper:#faf6ef;--ink:#0e2a47;--ink-2:#27425f;--muted:#5a6b7d;
+ --blue:#16365c;--blue-deep:#0e2440;--blue-bright:#31577e;
+ --blue-soft:#edf2f8;--blue-soft-2:#dce6f2;--gold:#93643f;
  --border:#ddd5c9;--border-strong:#b4ab9d;--line:#ddd5c9;
  --radius:14px;background:var(--bg);
 }
-.brand-editorial .brand-header,.brand-editorial header.nav,.brand-editorial header.nav.scrolled{background:#fffdf9}
+.brand-editorial .brand-header,.brand-editorial header.nav,.brand-editorial header.nav.scrolled{background:#fff}
 .brand-editorial .btn,.brand-editorial .button{border-radius:9px}
-.brand-editorial .form-card,.brand-editorial .wc-card{border-radius:18px;background:#fffdf9;box-shadow:0 12px 34px rgba(77,61,38,.06)}
-.brand-home .wertcheck{background:#f4eee5;color:var(--ink)}
+.brand-editorial .form-card,.brand-editorial .wc-card{border-radius:18px;background:#fff;box-shadow:0 12px 34px rgba(77,61,38,.06)}
+.brand-home .wertcheck{background:#faf6ef;color:var(--ink)}
 .brand-home .wertcheck .wc-grid h2{color:var(--ink)}
 .brand-home .wertcheck .wc-grid p,.brand-home .wc-points li{color:var(--ink-2)}
 .brand-home .wc-points li::before{color:var(--blue)}
 .brand-home .wc-grid .eyebrow{color:#785538}
 .brand-home .wc-grid .eyebrow::before{background:#93643f}
 .brand-home .wc-card{border:1px solid var(--border)}
-.brand-home .wc-opt{color:#304e4c;-webkit-text-fill-color:#304e4c;background:#fffdf9;border:1px solid #c8c1b4;border-radius:10px;min-height:58px;transition:background .15s,border-color .15s}
-.brand-home .wc-opt:hover,.brand-home .wc-opt:focus-visible{background:#edf0e9;border-color:#466a63}
-.brand-home .wc-opt:active{background:#dde6da}
+.brand-home .wc-opt{color:#16365c;-webkit-text-fill-color:#16365c;background:#fff;border:1px solid #c8c1b4;border-radius:10px;min-height:58px;transition:background .15s,border-color .15s}
+.brand-home .wc-opt:hover,.brand-home .wc-opt:focus-visible{background:#edf2f8;border-color:#16365c}
+.brand-home .wc-opt:active{background:#dce6f2}
 .brand-home .wc-opt .ic{display:inline-block;font-size:19px}
 .brand-home .portrait-pair img{border-radius:14px}
 .brand-home .hero-promise{color:#785538}
-.brand-home .practice-strip{background:#f4eee5}
-.brand-home .mobile-bar,.brand-editorial .mobile-contact{background:#fffdf9}
-.brand-home .wc-progress .lbl{color:#626b63}
-.brand-editorial .credential-strip{background:#f4eee5}
+.brand-home .practice-strip{background:#faf6ef}
+.brand-home .mobile-bar,.brand-editorial .mobile-contact{background:#fff}
+.brand-home .wc-progress .lbl{color:#5a6b7d}
+.brand-editorial .credential-strip{background:#faf6ef}
 .brand-editorial .credential-document{border-radius:12px}
 .brand-editorial .post-card,.brand-editorial .city-info,.brand-editorial .decision{border-radius:12px}
 .brand-editorial .faq button{overflow-wrap:anywhere;hyphens:auto;min-width:0}
