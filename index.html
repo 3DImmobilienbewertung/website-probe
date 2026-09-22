@@ -31,9 +31,6 @@
 <meta name="twitter:title" content="Immobilienbewertung Hannover | Haus & Immobilie bewerten lassen" />
 <meta name="twitter:description" content="Erfahren Sie den echten Wert Ihrer Immobilie in Hannover – Verkehrswertgutachten mit bautechnischem Sachverstand." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <!-- ===================== STRUCTURED DATA: PROFESSIONAL SERVICE ===================== -->
 <script type="application/ld+json">
@@ -643,9 +640,11 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 @media(max-width:380px){.steps,.steps-5{grid-template-columns:minmax(0,1fr)}}
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="stylesheet" href="/assets/brand-editorial.css?v=20260922d">
 </head>
 
-<body>
+<body class="brand-editorial brand-home">
+<a class="skip-link" href="#top">Zum Inhalt</a>
 <div class="progress" id="progress"></div>
 <div class="wrap">
 
@@ -658,16 +657,14 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <nav>
       <ul class="nav-links">
         <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#vorteile">Vorteile</a></li>
-        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#region">Region</a></li>
         <li><a href="#team">Team</a></li>
-        <li><a href="#faq">FAQ</a></li>
         <li><a href="/blog/">Blog</a></li><li><a href="/ueber-uns.html">Über uns</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
       <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch <span class="ar">→</span></a>
-      <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -675,7 +672,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <div class="mobile-menu" id="mobileMenu">
   <button class="close" id="closeMenu" aria-label="Menü schließen">×</button>
   <a href="#leistungen">Leistungen</a>
-  <a href="#vorteile">Vorteile</a>
+  <a href="#region">Region &amp; Orte</a>
   <a href="#ablauf">Ablauf</a>
   <a href="#team">Team</a>
   <a href="#faq">FAQ</a>
@@ -686,53 +683,35 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <main id="top">
 
 <!-- ===================== HERO ===================== -->
-<section class="hero">
+<section class="hero" aria-labelledby="hero-title">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <span class="hero-badge reveal-hero d1"><span class="stars-mini">★★★★★</span> 5,0 · 22 Google-Bewertungen · Über 250 Immobilien bewertet</span>
-      <h1 class="reveal-hero d2">Was ist Ihre<br>Immobilie in Hannover<br><span class="accent">wirklich</span> wert?</h1>
-      <p class="lead reveal-hero d3"><strong>Immobilienbewertung Hannover</strong> – ehrlich, verständlich und persönlich. Ob Verkauf, Erbschaft oder Scheidung: Hinter jeder Immobilie steht eine wichtige Entscheidung. Als Familienbetrieb zweier Brüder aus Wedemark begleiten wir Sie mit einem fundierten Gutachten nach §194 BauGB – und nehmen uns die Zeit, Ihnen jeden Schritt in Ruhe zu erklären.</p>
-      <div class="hero-actions reveal-hero d4">
-        <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch <span class="ar">→</span></a>
-        <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+      <span class="eyebrow">Donnarumma &amp; Donnarumma · Seit 2022</span>
+      <h1 id="hero-title">Immobilienbewertung<br>Hannover &amp; Region.</h1>
+      <p class="hero-promise">Mit Blick für die Bausubstanz.</p>
+      <p class="lead">Wir sind Nandino und Vito Donnarumma. Mit Fachwissen aus Bauingenieurwesen und Architektur bewerten wir Häuser, Wohnungen und Grundstücke – persönlich vor Ort und nachvollziehbar begründet.</p>
+      <div class="hero-actions">
+        <a href="tel:+491747445452" class="btn btn-primary">0174 744 5452 anrufen</a>
+        <a href="#wertcheck" class="btn btn-ghost">Rückruf anfragen <span class="ar" aria-hidden="true">→</span></a>
       </div>
-      <div class="reassure reveal-hero d5">
-        <span>Erstgespräch 100&nbsp;% kostenlos</span>
-        <span>Antwort binnen 24&nbsp;h</span>
-        <span>Streng vertraulich</span>
-      </div>
+      <p class="hero-detail">Erstgespräch kostenlos · Kurzgutachten ab 490 €<br><a href="#leistungen">Leistungen und Umfang ansehen</a></p>
     </div>
-    <div class="hero-stage reveal-hero d3">
-      <div class="hero-glow"></div>
-      <span class="stage-tag tl">Immobilie</span>
-      <span class="stage-tag br">Verkehrswert</span>
-      <canvas id="scene" aria-label="Rotierendes 3D-Modell eines Hauses"></canvas>
-      <div class="hero-float-card">
-        <div class="hfc-ic">📈</div>
-        <div><div class="hfc-n">Verkehrswert ermittelt</div><div class="hfc-l">nach ImmoWertV · §194 BauGB</div></div>
+    <figure class="hero-people">
+      <div class="portrait-pair">
+        <img src="/assets/team-1.webp" width="800" height="999" fetchpriority="high" alt="Nandino Donnarumma, M.Sc. Bauingenieurwesen">
+        <img src="/assets/team-2.webp" width="800" height="999" decoding="async" alt="Vito Donnarumma, B.Sc. Architektur">
       </div>
-    </div>
+      <figcaption>
+        <div><b>Nandino Donnarumma</b><span>M.Sc. Bauingenieurwesen</span></div>
+        <div><b>Vito Donnarumma</b><span>B.Sc. Architektur</span></div>
+      </figcaption>
+      <div class="hero-signature"><span>Büro in der Wedemark. Für die Region vor Ort.</span><a href="/ueber-uns.html#qualifikationen">Qualifikationen ansehen ↗</a></div>
+    </figure>
   </div>
 </section>
 
-<!-- ===================== MARQUEE ===================== -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Bauingenieurwesen &amp; Architektur</span>
-    <span class="marquee-item">§194 BauGB</span>
-    <span class="marquee-item">Individuell · Marktgerecht · Neutral</span>
-    <span class="marquee-item">ImmoWertV 2021</span>
-    <span class="marquee-item">Experten im Raum Hannover</span>
-    <span class="marquee-item">Sachwert · Ertragswert</span>
-    <span class="marquee-item">Privat · Unternehmen · Erbengemeinschaften</span>
-    <span class="marquee-item">Bauingenieurwesen &amp; Architektur</span>
-    <span class="marquee-item">§194 BauGB</span>
-    <span class="marquee-item">Individuell · Marktgerecht · Neutral</span>
-    <span class="marquee-item">ImmoWertV 2021</span>
-    <span class="marquee-item">Experten im Raum Hannover</span>
-    <span class="marquee-item">Sachwert · Ertragswert</span>
-    <span class="marquee-item">Privat · Unternehmen · Erbengemeinschaften</span>
-  </div>
+<div class="practice-strip">
+  <div class="container"><span><b>01</b> Persönlicher Ansprechpartner</span><span><b>02</b> Objektbezogene Besichtigung</span><span><b>03</b> Nachvollziehbares Gutachten</span></div>
 </div>
 
 <!-- ===================== ERSTGESPRÄCH (Conversion-Funnel) ===================== -->
@@ -874,7 +853,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="sec-head r" style="max-width:680px">
       <span class="eyebrow">Warum ein Gutachten?</span>
       <h2 class="section-title">Warum sich ein echtes Gutachten lohnt.</h2>
-      <p class="lead">Online-Rechner und Makler-Schätzungen liefern schnell eine Hausnummer – aber selten den Wert, der vor Finanzamt oder Gericht zählt. Ein unabhängiges Gutachten schützt Sie vor teuren Fehlentscheidungen.</p>
+      <p class="lead">Ein Online-Richtwert, eine Einschätzung zur Vermarktung und ein ausführliches Gutachten erfüllen unterschiedliche Zwecke. Wir klären zuerst, welche Grundlage Sie für Ihre Entscheidung benötigen.</p>
     </div>
     <div class="compare">
       <div class="cmp bad r s1">
@@ -882,10 +861,10 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <h3>Die schnelle Hausnummer</h3>
         <ul>
           <li>Grobe Schätzung aus Durchschnittswerten – ohne den Zustand Ihrer Immobilie zu kennen</li>
-          <li>Oft interessengeleitet, z.&nbsp;B. zur Gewinnung eines Verkaufsauftrags</li>
-          <li>Wird von Finanzamt und Gericht nicht anerkannt</li>
-          <li>Bausubstanz, Schäden und Besonderheiten bleiben unberücksichtigt</li>
-          <li>Im Streitfall (Erbe, Scheidung) keine belastbare Grundlage</li>
+          <li>Umfang und Zweck der Einschätzung können unterschiedlich sein</li>
+          <li>Anforderungen eines bestimmten Empfängers müssen gesondert geprüft werden</li>
+          <li>Objektspezifische Besonderheiten können bei automatischen Schätzungen fehlen</li>
+          <li>Für eine Vermögensaufteilung ist die Herleitung des Werts besonders wichtig</li>
         </ul>
       </div>
       <div class="cmp good r s2">
@@ -894,9 +873,9 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <ul>
           <li>Ermittlung nach anerkannten Verfahren der ImmoWertV – objektiv und nachvollziehbar</li>
           <li>Unabhängig &amp; neutral – ganz ohne Verkaufsinteresse</li>
-          <li>Geeignet für Finanzamt, Gericht und Behörden</li>
+          <li>Verwendungszweck und erforderliche Qualifikation vorab abgestimmt</li>
           <li>Bausubstanz und Zustand fachlich bewertet – durch ein interdisziplinäres Team</li>
-          <li>Schützt vor zu niedrigem Verkauf, zu hoher Steuer und Streit</li>
+          <li>Nachvollziehbare Grundlage für Ihre weitere Entscheidung</li>
         </ul>
       </div>
     </div>
@@ -930,22 +909,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   </div>
 </section>
 
-<!-- ===================== STATS ===================== -->
-<section style="padding-top:0;padding-bottom:0">
-  <div class="container" style="transform:translateY(-50px)">
-    <div class="stats">
-      <div class="stat r s1"><div class="n"><span class="count" data-count="250">0</span>+</div><div class="l">Immobilien bewertet</div></div>
-      <div class="stat r s2"><div class="n"><span class="count" data-count="15">0</span></div><div class="l">Jahre Erfahrung</div></div>
-      <div class="stat r s3"><div class="n"><span class="count" data-count="100">0</span>%</div><div class="l">Normkonform</div></div>
-      <div class="stat r s4"><div class="n"><span class="count" data-count="24">0</span> h</div><div class="l">Bis zur Rückmeldung</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== TEAM =====================
-     Hinweis: Namen, Initialen und Zitate sind Platzhalter.
-     Durch echte Namen (und optional Fotos) ersetzen.
--->
+<!-- ===================== TEAM ===================== -->
 <section id="team" class="alt">
   <div class="container">
     <div class="sec-head r" style="text-align:center;margin:0 auto 14px;max-width:680px">
@@ -997,36 +961,25 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="team-edge r s3">
       <span class="eyebrow">Unser entscheidender Vorteil</span>
       <h3>Wir bewerten nicht nur – wir verstehen Gebäude.</h3>
-      <p>Anders als viele herkömmliche Bewerter kommen wir aus <strong>Bauingenieurwesen, Architektur und Planung</strong>. Wir sehen nicht nur Quadratmeter und Tabellenwerte – wir erkennen <strong>Bausubstanz, Statik, Bauschäden und das bauliche Potenzial</strong> Ihrer Immobilie. Dieses Fachwissen fließt direkt in eine präzisere, belastbarere Bewertung ein, die andere so nicht leisten können.</p>
+      <p>Unsere Erfahrung mit Planung, Erwerb und Sanierung von Häusern hat uns 2022 zur Immobilienbewertung geführt. Fachwissen aus <strong>Bauingenieurwesen und Architektur</strong> hilft uns, Unterlagen, Modernisierungen und den sichtbaren Gebäudezustand einzuordnen. Welche Untersuchungen zum Auftrag gehören und wo zusätzliche Fachprüfungen nötig sind, besprechen wir vorab.</p>
     </div>
   </div>
 </section>
 
 <!-- ===================== REGION ===================== -->
-<section id="region">
+<section id="region" aria-labelledby="region-title">
   <div class="container region">
-    <div class="r">
-      <span class="eyebrow">Einzugsgebiet</span>
-      <h2 class="section-title">Wir sind da, wo Sie uns brauchen.</h2>
-      <p class="lead" style="margin-top:16px">Wir bewerten Immobilien in Hannover und der gesamten Region – schnell vor Ort und mit echter Marktkenntnis für Ihre Lage. Unter anderem in Wedemark, Großburgwedel, Isernhagen, Burgwedel, Langenhagen, Garbsen und Gehrden.</p>
-      <ul class="region-pins">
-        <li>Hannover</li><li>Gehrden</li><li>Wedemark</li><li><a href="/immobilienbewertung-burgwedel.html">Großburgwedel</a></li><li><a href="/immobilienbewertung-isernhagen.html">Isernhagen</a></li><li><a href="/immobilienbewertung-burgwedel.html">Burgwedel</a></li><li>Langenhagen</li><li>Barsinghausen</li><li>Ronnenberg</li><li>Seelze</li><li>Wennigsen</li><li>Garbsen</li><li>Region Hannover</li>
-      </ul>
-      <a href="#wertcheck" class="btn btn-primary" style="margin-top:30px">Kostenloses Erstgespräch vereinbaren <span class="ar">→</span></a>
+    <div class="region-intro">
+      <div><span class="eyebrow">Unser Einzugsgebiet</span><h2 class="section-title" id="region-title">Ihre Immobilie in der Region Hannover.</h2></div>
+      <p>Unser Büro ist in der Wedemark. Wir vereinbaren Besichtigungen in Hannover und den folgenden Orten der Region. Wählen Sie den Standort Ihrer Immobilie für Informationen zu Bewertung, Unterlagen und Kontakt. Die Ortsseiten beschreiben unser Einzugsgebiet, keine zusätzlichen Niederlassungen.</p>
     </div>
-    <div class="region-map r s2" aria-label="Karte des Einzugsgebiets Region Hannover">
-      <iframe
-        src="https://maps.google.com/maps?q=Region+Hannover,+Deutschland&t=&z=10&ie=UTF8&iwloc=&output=embed"
-        title="Einzugsgebiet 3D Immobilienbewertung – Region Hannover"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        style="width:100%;height:100%;border:0;display:block;filter:saturate(.85) contrast(1.05)"
-        allowfullscreen>
-      </iframe>
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(22,54,92,.82),transparent);pointer-events:none">
-        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#bcd6ff;margin:0">📍 Einzugsgebiet · Region Hannover</p>
-      </div>
-    </div>
+    <nav class="region-directory" aria-label="Immobilienbewertung nach Ort">
+      <div class="region-group"><h3>Hannover &amp; Norden</h3><ul><li><a href="/lp-immobilienbewertung-hannover.html">Hannover</a></li><li><a href="/immobilienbewertung-wedemark.html">Wedemark</a></li><li><a href="/immobilienbewertung-langenhagen.html">Langenhagen</a></li><li><a href="/immobilienbewertung-isernhagen.html">Isernhagen</a></li><li><a href="/immobilienbewertung-burgwedel.html">Burgwedel / Großburgwedel</a></li></ul></div>
+      <div class="region-group"><h3>Westen</h3><ul><li><a href="/immobilienbewertung-garbsen.html">Garbsen</a></li><li><a href="/immobilienbewertung-seelze.html">Seelze</a></li><li><a href="/immobilienbewertung-wunstorf.html">Wunstorf</a></li><li><a href="/immobilienbewertung-neustadt-am-ruebenberge.html">Neustadt am Rübenberge</a></li></ul></div>
+      <div class="region-group"><h3>Osten</h3><ul><li><a href="/immobilienbewertung-burgdorf.html">Burgdorf</a></li><li><a href="/immobilienbewertung-uetze.html">Uetze</a></li><li><a href="/immobilienbewertung-lehrte.html">Lehrte</a></li><li><a href="/immobilienbewertung-sehnde.html">Sehnde</a></li></ul></div>
+      <div class="region-group"><h3>Süden &amp; Deister</h3><ul><li><a href="/immobilienbewertung-hemmingen.html">Hemmingen</a></li><li><a href="/immobilienbewertung-pattensen.html">Pattensen</a></li><li><a href="/immobilienbewertung-ronnenberg.html">Ronnenberg</a></li><li><a href="/immobilienbewertung-gehrden.html">Gehrden</a></li><li><a href="/immobilienbewertung-barsinghausen.html">Barsinghausen</a></li><li><a href="/immobilienbewertung-wennigsen.html">Wennigsen</a></li></ul></div>
+    </nav>
+    <div class="region-help"><p>Ihr Ort fehlt? <a href="#kontakt">Adresse und Bewertungsanlass mitteilen</a> – wir klären, ob wir den Auftrag übernehmen können.</p><a href="/checkliste-immobilienbewertung.html">Unterlagen für die Bewertung vorbereiten ↗</a></div>
   </div>
 </section>
 
@@ -1060,7 +1013,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <div class="tag-card r s2"><div class="ic">⚖️</div><b>Erbschaft &amp; Schenkung</b><span>Faire Aufteilung und korrekte Werte fürs Finanzamt.</span></div>
       <div class="tag-card r s3"><div class="ic">💔</div><b>Scheidung &amp; Trennung</b><span>Neutrale Grundlage für die Vermögensauseinandersetzung.</span></div>
       <div class="tag-card r s1"><div class="ic">🧾</div><b>Steuer &amp; Finanzamt</b><span>Belastbare Werte für Erbschaft-, Schenkung- &amp; Grundsteuer.</span></div>
-      <div class="tag-card r s2"><div class="ic">🏛️</div><b>Gericht &amp; Zwangsversteigerung</b><span>Gerichtsfeste Verkehrswertermittlung.</span></div>
+      <div class="tag-card r s2"><div class="ic">🏛️</div><b>Gericht &amp; Zwangsversteigerung</b><span>Umfang und Qualifikationsanforderungen vorab klären.</span></div>
       <div class="tag-card r s3"><div class="ic">🏢</div><b>Bilanz &amp; Unternehmen</b><span>Belastbare Verkehrswerte für die Bilanzierung von Betriebsimmobilien.</span></div>
     </div>
   </div>
@@ -1179,7 +1132,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
             <h3 class="ic-title">Verkehrswertgutachten – Was sollte man wissen?</h3>
             <ul class="ic-facts">
               <li>Gesetzlich nach §194 BauGB definiert</li>
-              <li>Anerkannt bei Finanzamt, Gericht &amp; Behörden</li>
+              <li>Anforderungen der empfangenden Stelle vorab klären</li>
               <li>Ermittelt nach ImmoWertV-Verfahren</li>
               <li>Stichtagsbezogener, neutraler Marktwert</li>
             </ul>
@@ -1385,57 +1338,11 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 
 <a href="#wertcheck" class="float-cta" id="floatCta"><span class="btn btn-primary">Kostenloses Erstgespräch <span class="ar">→</span></span></a>
 
-<!-- Mobile Sticky CTA Bar -->
-<div class="mobile-cta-bar" aria-label="Schnellkontakt">
-  <a href="tel:+491747445452" class="mob-btn mob-phone">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 01.1 1 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-    Anrufen
-  </a>
-  <a href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung." class="mob-btn mob-wa" target="_blank" rel="noopener">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    WhatsApp
-  </a>
-</div>
-
 <a href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung%20und%20m%C3%B6chte%20ein%20kostenloses%20Erstgespr%C3%A4ch%20vereinbaren." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp-Chat starten" title="WhatsApp schreiben">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
 </div>
-
-<!-- ===================== THREE.JS 3D HOUSE (Marken-Optik) ===================== -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-(function(){
-  if(!window.THREE) return;
-  var canvas=document.getElementById('scene'); if(!canvas) return;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  try{
-    var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    var scene=new THREE.Scene();
-    var camera=new THREE.PerspectiveCamera(42,1,0.1,100);
-    camera.position.set(0,1.1,5.4); camera.lookAt(0,0.1,0);
-    var BLUE=0x16365C, BLUEB=0x2E6BB8;
-    var group=new THREE.Group(); scene.add(group);
-    var hx=1.15,hz=0.9,y0=-0.85,y1=0.45,y2=1.2;
-    var V={b0:[-hx,y0,-hz],b1:[hx,y0,-hz],b2:[hx,y0,hz],b3:[-hx,y0,hz],t0:[-hx,y1,-hz],t1:[hx,y1,-hz],t2:[hx,y1,hz],t3:[-hx,y1,hz],r0:[0,y2,-hz],r1:[0,y2,hz]};
-    var edges=[['b0','b1'],['b1','b2'],['b2','b3'],['b3','b0'],['b0','t0'],['b1','t1'],['b2','t2'],['b3','t3'],['t0','t1'],['t1','t2'],['t2','t3'],['t3','t0'],['t0','r0'],['t1','r0'],['t3','r1'],['t2','r1'],['r0','r1']];
-    var pos=[]; edges.forEach(function(e){var a=V[e[0]],b=V[e[1]];pos.push(a[0],a[1],a[2],b[0],b[1],b[2]);});
-    var lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
-    group.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:BLUE,transparent:true,opacity:.95})));
-    var pp=[]; Object.keys(V).forEach(function(k){pp.push(V[k][0],V[k][1],V[k][2]);});
-    var pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.Float32BufferAttribute(pp,3));
-    group.add(new THREE.Points(pg,new THREE.PointsMaterial({color:BLUEB,size:0.1,sizeAttenuation:true,transparent:true,opacity:1})));
-    var grid=new THREE.GridHelper(7,14,0xbcd0ec,0xdce8f8); grid.position.y=y0; grid.material.transparent=true; grid.material.opacity=.6; group.add(grid);
-    var mx=0,my=0,tx=0,ty=0;
-    window.addEventListener('pointermove',function(e){tx=(e.clientX/window.innerWidth-.5);ty=(e.clientY/window.innerHeight-.5);});
-    function resize(){var r=canvas.getBoundingClientRect();var w=r.width||canvas.clientWidth,h=r.height||canvas.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
-    window.addEventListener('resize',resize); resize();
-    (function loop(){requestAnimationFrame(loop);if(!reduce)group.rotation.y+=0.0045;mx+=(tx-mx)*0.05;my+=(ty-my)*0.05;group.rotation.x=-0.12+my*0.35;group.position.x=mx*0.35;renderer.render(scene,camera);})();
-  }catch(e){}
-})();
-</script>
 
 <!-- ===================== UI + CONVERSION LOGIC ===================== -->
 <script>
@@ -1450,9 +1357,18 @@ window.addEventListener('scroll',function(){
 
 // mobile menu
 var burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu'),cm=document.getElementById('closeMenu');
-if(burger)burger.addEventListener('click',function(){mm.classList.add('open')});
-if(cm)cm.addEventListener('click',function(){mm.classList.remove('open')});
-mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open')})});
+function closeMobileMenu(){mm.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus();}
+if(burger)burger.addEventListener('click',function(){mm.classList.add('open');burger.setAttribute('aria-expanded','true');cm.focus();});
+if(cm)cm.addEventListener('click',closeMobileMenu);
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');burger.setAttribute('aria-expanded','false');})});
+mm.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){closeMobileMenu();return;}
+  if(e.key==='Tab'){
+    var items=mm.querySelectorAll('a,button'),first=items[0],last=items[items.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
 
 // FAQ accordion
 document.querySelectorAll('.faq button').forEach(function(b){
@@ -1468,11 +1384,6 @@ var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isInter
 document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
 // safety net: reveal everything after 2.5s even if the observer never fires
 setTimeout(function(){document.querySelectorAll('.r').forEach(function(el){el.classList.add('in')})},2500);
-
-// animated counters
-var counted=false;
-var cio=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting&&!counted){counted=true;document.querySelectorAll('.count').forEach(function(c){var t=+c.dataset.count,d=1400,s=performance.now();(function tick(now){var p=Math.min((now-s)/d,1);c.textContent=Math.floor(p*t);if(p<1)requestAnimationFrame(tick);else c.textContent=t;})(s);});}});},{threshold:.4});
-var statsEl=document.querySelector('.stats'); if(statsEl)cio.observe(statsEl);
 
 // year
 document.getElementById('year').textContent=new Date().getFullYear();
