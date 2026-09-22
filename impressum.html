@@ -8,9 +8,6 @@
 <meta name="robots" content="noindex, follow" />
 <meta name="theme-color" content="#16365C" />
 <link rel="icon" type="image/png" href="assets/logo_icon.png" /><link rel="apple-touch-icon" href="/assets/logo_icon.png" /><link rel="manifest" href="/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
 :root{
   --bg:#FFFFFF;--bg-2:#FAF6EF;--ink:#0E2A47;--ink-2:#27425F;--muted:#5A7088;--faint:#92A6BE;
@@ -59,10 +56,11 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
 .foot-inner nav{display:flex;gap:22px}.foot-inner nav a{font-size:13px;color:var(--ink-2)}.foot-inner nav a:hover{color:var(--blue)}
 @media(max-width:600px){.gbr-partners{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="/assets/brand-editorial.css?v=warm-20260922">
 </head>
-<body>
+<body class="brand-editorial brand-legal">
 
-<header>
+<header class="brand-header">
   <div class="nav-inner">
     <a href="/" aria-label="Zur Startseite"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a>
     <a href="/" class="back">← Zurück zur Startseite</a>
@@ -178,7 +176,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
   </div>
 </main>
 
-<footer>
+<footer class="brand-footer">
   <div class="foot-inner">
     <p>© <span id="year"></span> Donnarumma &amp; Donnarumma GbR · 3D Immobilienbewertung</p>
     <nav>
