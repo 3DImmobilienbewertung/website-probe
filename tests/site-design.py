@@ -31,15 +31,16 @@ for path in pages:
         assert any(t == 'meta' and a.get('name') == 'robots' and 'noindex' in a.get('content', '') for t, a in tags), path
     for block in re.findall(r'<script[^>]*type=[\"\']application/ld\+json[\"\'][^>]*>(.*?)</script>', source, re.S):
         json.loads(block)
-    if path.name in ('index.html', 'ueber-uns.html') and path.parent == ROOT:
+    if path.name in ('index.html', 'ueber-uns.html', 'impressum.html') and path.parent == ROOT:
         for date in ('2025-07-08', '2025-08-06', '2024-11-08', '08.07.2025', '08.11.2024'):
             assert date not in source, (path, date)
 assert len(pages) == 46, len(pages)
 home = (ROOT / 'index.html').read_text()
 assert 'class="practice-strip"' not in home
 assert 'class="team-quals"' not in home
-assert home.count('class="member-photo media-reserved"') == 2
-assert home.count('class="media-reserved" data-person=') == 2
+assert home.count('class="member-photo"') == 2
+assert home.count('src="/assets/team-1.webp"') == 2
+assert home.count('src="/assets/team-2.webp"') == 2
 for font in ('bricolage', 'hanken', 'jetbrains'):
     assert (ROOT / f'assets/{font}-latin.woff2').read_bytes()[:4] == b'wOF2'
     assert (ROOT / f'assets/{font}-OFL.txt').is_file()

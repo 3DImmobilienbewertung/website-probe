@@ -29,8 +29,7 @@
       "founder":[
         {"@type":"Person","name":"Nandino Donnarumma","honorificSuffix":"M.Sc.","jobTitle":"Sachverst\u00e4ndiger f\u00fcr Immobilienbewertung","knowsAbout":["Bauingenieurwesen","Verkehrswertermittlung","Bausch\u00e4den","ImmoWertV","Tragwerksplanung"]},
         {"@type":"Person","name":"Vito Donnarumma","honorificSuffix":"B.Sc.","jobTitle":"Sachverst\u00e4ndiger f\u00fcr Immobilienbewertung","alumniOf":{"@type":"CollegeOrUniversity","name":"Gottfried Wilhelm Leibniz Universit\u00e4t Hannover","sameAs":"https://www.uni-hannover.de/"},"hasCredential":[{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","educationalLevel":"Bachelor","name":"Bachelor of Science (B.Sc.) Architektur","recognizedBy":{"@type":"CollegeOrUniversity","name":"Gottfried Wilhelm Leibniz Universit\u00e4t Hannover"}},{"@type":"EducationalOccupationalCredential","credentialCategory":"certificate","name":"Zertifikatslehrgang Wertermittlung (IHK)","recognizedBy":{"@type":"Organization","name":"Industrie- und Handelskammer Hannover"}}],"knowsAbout":["Architektur","Bausubstanz","Geb\u00e4udeplanung","Immobilienbewertung"]}
-      ],
-      "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"22","bestRating":"5","worstRating":"1"}}
+      ]}
   ]
 }
 </script>
@@ -472,7 +471,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="foot-copy">© <span id="year"></span> 3D Immobilienbewertung · Immobilienbewertung Hannover</div>
   </div>
 </footer>
-<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
+<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a><a href="/#wertcheck" class="btn btn-primary">Erstgespräch</a></div>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
