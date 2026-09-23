@@ -23,7 +23,7 @@ for path in pages:
     assert sum(t == 'h1' for t, _ in tags) == 1, path
     assert any(t == 'body' and 'brand-editorial' in a.get('class', '').split() for t, a in tags), path
     styles = [a['href'] for t, a in tags if t == 'link' and 'brand-editorial.css' in a.get('href', '')]
-    assert styles == ['/assets/brand-editorial.css?v=architectural-20260922'], path
+    assert styles == ['/assets/brand-editorial.css?v=brand-correction-20260923'], path
     assert 'fonts.googleapis.com' not in source, path
     if path.name not in ('datenschutz.html', 'impressum.html'):
         assert sum(t == 'link' and a.get('rel') == 'canonical' for t, a in tags) == 1, path
@@ -35,4 +35,12 @@ for path in pages:
         for date in ('2025-07-08', '2025-08-06', '2024-11-08', '08.07.2025', '08.11.2024'):
             assert date not in source, (path, date)
 assert len(pages) == 46, len(pages)
+home = (ROOT / 'index.html').read_text()
+assert 'class="practice-strip"' not in home
+assert 'class="team-quals"' not in home
+assert home.count('class="member-photo media-reserved"') == 2
+assert home.count('class="media-reserved" data-person=') == 2
+for font in ('bricolage', 'hanken', 'jetbrains'):
+    assert (ROOT / f'assets/{font}-latin.woff2').read_bytes()[:4] == b'wOF2'
+    assert (ROOT / f'assets/{font}-OFL.txt').is_file()
 print(f'PASS: {len(pages)} pages — shared theme, H1, canonical, JSON-LD, local fonts and private qualification dates')

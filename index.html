@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- ===================== SEO ===================== -->
-<title>Immobilienbewertung Hannover – Immobilie bewerten lassen</title>
+<title>Immobilienbewertung Hannover &amp; Region | 3D</title>
 <meta name="description" content="Haus, Wohnung oder Grundstück in Hannover und der Region bewerten lassen. Persönliche Besichtigung, Kurzgutachten ab 490 €. Erstgespräch kostenlos." />
 <!-- Google Analytics: DSGVO-konform via assets/consent.js – laedt erst nach Einwilligung -->
 <meta name="keywords" content="Immobilienbewertung Hannover, Bewertung Immobilie Hannover, Haus Wert, Preis Immobilie, Immobilie bewerten lassen Hannover, Verkehrswertgutachten Hannover, Hauswert ermitteln, Immobiliengutachter Hannover, Wert Haus berechnen, Immobilienbewerter Hannover, Immobilienbewertung, Sachverständiger Immobilien Hannover" />
@@ -640,7 +640,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 @media(max-width:380px){.steps,.steps-5{grid-template-columns:minmax(0,1fr)}}
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
-<link rel="stylesheet" href="/assets/brand-editorial.css?v=architectural-20260922">
+<link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 
@@ -699,8 +699,8 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     </div>
     <figure class="hero-people">
       <div class="portrait-pair">
-        <img src="/assets/team-1.webp" width="800" height="999" fetchpriority="high" alt="Nandino Donnarumma, M.Sc. Bauingenieurwesen">
-        <img src="/assets/team-2.webp" width="800" height="999" decoding="async" alt="Vito Donnarumma, B.Sc. Architektur">
+        <div class="media-reserved" data-person="nandino" aria-hidden="true"></div>
+        <div class="media-reserved" data-person="vito" aria-hidden="true"></div>
       </div>
       <figcaption>
         <div><b>Nandino Donnarumma</b><span>M.Sc. Bauingenieurwesen</span></div>
@@ -711,9 +711,6 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   </div>
 </section>
 
-<div class="practice-strip">
-  <div class="container"><a href="/ueber-uns.html#qualifikationen">M.Sc. Bauingenieurwesen</a><a href="/ueber-uns.html#qualifikationen">B.Sc. Architektur</a><a href="/ueber-uns.html#qualifikationen">Wertermittlung (IHK) · Zertifikatslehrgang</a></div>
-</div>
 
 <!-- ===================== ERSTGESPRÄCH (Conversion-Funnel) ===================== -->
 <section id="wertcheck" class="wertcheck">
@@ -721,7 +718,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="r">
       <span class="eyebrow">Gutachten-Vorab-Check</span>
       <h2>Erzählen Sie uns von Ihrer Immobilie.</h2>
-      <p>Ein paar Angaben genügen. Nandino oder Vito meldet sich persönlich bei Ihnen. Das Erstgespräch ist kostenlos.</p>
+      <p>Ein paar Angaben genügen. Nandino oder Vito meldet sich persönlich bei Ihnen. Kostenlos ist das Erstgespräch – nicht das Gutachten. Mit Ihrer Anfrage erteilen Sie noch keinen kostenpflichtigen Auftrag.</p>
       <ul class="wc-points">
         <li>Erstgespräch vom unabhängigen Sachverständigen</li>
         <li>Kostenlos &amp; ohne Verpflichtung</li>
@@ -789,11 +786,11 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <div class="wc-step" data-step="5">
         <div class="wc-q">Wie dürfen wir Sie für das Erstgespräch erreichen?</div>
         <div class="wc-sub">Wir melden uns binnen 24 Stunden – garantiert unverbindlich.</div>
-        <div class="wc-field"><label for="wcName">Name</label><input type="text" id="wcName" placeholder="Vor- und Nachname"></div>
-        <div class="wc-field"><label for="wcMail">E-Mail</label><input type="email" id="wcMail" placeholder="ihre@email.de"></div>
-        <div class="wc-field"><label for="wcTel">Telefon (optional)</label><input type="tel" id="wcTel" placeholder="Für schnellere Rückmeldung"></div>
+        <div class="wc-field"><label for="wcName">Name</label><input type="text" id="wcName" autocomplete="name" required placeholder="Vor- und Nachname"></div>
+        <div class="wc-field"><label for="wcMail">E-Mail</label><input type="email" id="wcMail" autocomplete="email" required placeholder="ihre@email.de"></div>
+        <div class="wc-field"><label for="wcTel">Telefon (optional)</label><input type="tel" id="wcTel" autocomplete="tel" placeholder="Für schnellere Rückmeldung"></div>
         <button class="btn btn-primary" id="wcSubmit" style="width:100%">Kostenloses Erstgespräch anfragen <span class="ar">→</span></button>
-        <p class="wc-note">🔒 Ihre Daten werden vertraulich behandelt und nicht weitergegeben.</p>
+        <p class="wc-note">Wir benötigen Ihre Angaben zur Bearbeitung Ihrer Anfrage. Bitte senden Sie hier noch keine Grundbuchauszüge oder anderen vertraulichen Dokumente. <a href="/datenschutz.html">Informationen zum Datenschutz</a>.</p>
         <button class="wc-back" data-back>← Zurück</button>
       </div>
 
@@ -859,45 +856,20 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <span class="eyebrow" style="justify-content:center">Unser Team</span>
       <h2 class="section-title">Zwei Brüder. Ein persönlicher Ansprechpartner.</h2>
       <p class="lead" style="margin:16px auto 0">Bei uns sprechen Sie mit den Menschen, die Ihre Immobilie bewerten. Fachwissen aus Bauingenieurwesen und Architektur, persönliche Besichtigung und klare Antworten – ohne unnötige Umwege.</p>
-      <div class="team-quals" style="justify-content:center">
-        <span class="q"><span class="ic">🏗️</span> M.Sc.Bauingenieurwesen</span>
-        <span class="q"><span class="ic">📐</span> B.Sc.Architektur</span>
-        <span class="q"><span class="ic">🎓</span> Immobilien-Wertermittler</span>
-      </div>
     </div>
     <div class="team-grid">
       <div class="member r s1">
-        <div class="member-photo">
-          <!-- FOTO M.SC BAUINGENIEUR: Datei 'assets/team-1.jpg' hochladen, dann <img> aktivieren -->
-          <picture>
-            <source srcset="assets/team-1.webp" type="image/webp" />
-            <img loading="lazy" width="800" height="999" decoding="async" src="assets/team-1.jpg" alt="M.Sc.Bauingenieur & Immobilien-Wertermittler bei 3D Immobilienbewertung" onerror="this.style.display='none';this.closest('.member-photo').querySelector('.ph-fallback').style.display='flex';" />
-          </picture>
-          <div class="ph-fallback" style="display:none">
-            <div class="av">★</div>
-            <span>Foto folgt:<br>assets/team-1.jpg</span>
-          </div>
-        </div>
+<div class="member-photo media-reserved" aria-hidden="true"></div>
         <div class="member-body">
           <p class="quote">„Hinter jeder Bewertung steht ein Mensch mit einer wichtigen Entscheidung. Diese Verantwortung nehmen wir ernst – mit Sorgfalt, Ehrlichkeit und echtem Interesse an Ihrer Immobilie."</p>
-          <div class="who"><b>Nandino Donnarumma</b><div class="role">M.Sc.Bauingenieurwesen<br>Immobilien-Wertermittler</div></div>
+          <div class="who"><b>Nandino Donnarumma</b><div class="role">M.Sc. Bauingenieurwesen<br>Immobilien-Wertermittler</div></div>
         </div>
       </div>
       <div class="member r s2">
-        <div class="member-photo">
-          <!-- FOTO B.SC ARCHITEKTUR: Datei 'assets/team-2.jpg' hochladen, dann <img> aktivieren -->
-          <picture>
-            <source srcset="assets/team-2.webp" type="image/webp" />
-            <img loading="lazy" width="800" height="999" decoding="async" src="assets/team-2.jpg" alt="B.Sc.Architektur & Immobilien-Wertermittler bei 3D Immobilienbewertung" onerror="this.style.display='none';this.closest('.member-photo').querySelector('.ph-fallback').style.display='flex';" />
-          </picture>
-          <div class="ph-fallback" style="display:none">
-            <div class="av">★</div>
-            <span>Foto folgt:<br>assets/team-2.jpg</span>
-          </div>
-        </div>
+<div class="member-photo media-reserved" aria-hidden="true"></div>
         <div class="member-body">
           <p class="quote">„Wir bewerten Ihre Immobilie mit Leidenschaft und nehmen uns die Zeit, die es braucht. Am wichtigsten ist uns, dass Sie sich verstanden und gut aufgehoben fühlen."</p>
-          <div class="who"><b>Vito Donnarumma</b><div class="role">B.Sc.Architektur<br>Immobilien-Wertermittler</div></div>
+          <div class="who"><b>Vito Donnarumma</b><div class="role">B.Sc. Architektur<br>Wertermittlung (IHK) · Zertifikatslehrgang</div></div>
         </div>
       </div>
     </div>
@@ -1228,6 +1200,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
           <img src="assets/logo_white.png" alt="3D Immobilienbewertung" class="logo-img" style="height:44px" width="594" height="160" decoding="async" loading="lazy" />
         </a>
         <p>Ihr Sachverständigenbüro für die unabhängige Bewertung von Immobilien und Verkehrswertgutachten. Hannover &amp; Region.</p>
+        <address>Donnarumma &amp; Donnarumma GbR<br>Gailhoferstraße 17 · 30900 Wedemark<br><a href="tel:+491747445452">0174 744 5452</a><br><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></address>
       </div>
       <div class="foot-col"><h4>Leistungen</h4><ul>
         <li><a href="#leistungen">Verkehrswertgutachten</a></li>
@@ -1356,7 +1329,10 @@ if(wcSubmit)wcSubmit.addEventListener('click',function(){
   var n=document.getElementById('wcName').value.trim();
   var m=document.getElementById('wcMail').value.trim();
   var t=document.getElementById('wcTel').value.trim();
-  if(!n||!m){alert('Bitte geben Sie Name und E-Mail an.');return;}
+  if(wcSubmit.disabled)return;
+  var nameField=document.getElementById('wcName'),mailField=document.getElementById('wcMail');
+  if(!n){nameField.focus();nameField.reportValidity();return;}
+  if(!mailField.checkValidity()){mailField.focus();mailField.reportValidity();return;}
   wcSubmit.disabled=true;
   wcSubmit.textContent='Wird gesendet …';
   function wcFail(){

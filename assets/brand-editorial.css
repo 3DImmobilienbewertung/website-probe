@@ -1,5 +1,8 @@
 /* Shared visual identity: 3D Immobilienbewertung, September 2026.
    Loaded after legacy page styles; intentionally scoped to opted-in pages. */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-display:swap;src:url('/assets/bricolage-latin.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url('/assets/hanken-latin.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url('/assets/jetbrains-latin.woff2') format('woff2')}
 body.brand-editorial{
   --bg:#fff;--bg-2:#f3f3ef;--bg-3:#e9edf0;--surface:#fff;
   --ink:#152d42;--ink-2:#334653;--muted:#52616b;--faint:#65717a;
@@ -414,3 +417,63 @@ body.brand-editorial{--display:Georgia,'Times New Roman',serif;--body:Arial,Helv
  .brand-home .region-group a{height:100%;font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){.brand-editorial .editorial-reveal{opacity:1;transform:none}}
+
+/* Approved brand restoration. Keep all base sections white; hierarchy comes from
+   spacing, navy borders and consistent card boundaries, not cream backgrounds. */
+body.brand-editorial{--bg:#fff;--bg-2:#fff;--bg-3:#f1f4f7;--surface:#fff;--paper:#fff;--blue:#16365C;--gold:#C9A24B;--border:#dce2e9;--display:'Bricolage Grotesque',sans-serif;--body:'Hanken Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;font-family:var(--body);background:#fff}
+.brand-editorial :is(h1,h2,h3,.section-title){font-family:var(--display);font-weight:600;letter-spacing:-.035em}
+.brand-editorial .hero{background:#fff}
+.brand-home :is(.wertcheck,.practice-strip,.credential-strip,.region-group){background:#fff}
+.brand-home .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.3rem,3.7vw,3.5rem);line-height:1.08}
+.brand-home section.hero{padding:120px 0 64px}
+.brand-home .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+.brand-home .hero-people{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;max-width:none;width:100%}
+.brand-home .hero-people::before{content:none}
+.brand-home .portrait-pair{gap:16px}
+.brand-home .media-reserved{background:#fff;border:1px solid var(--border);border-radius:6px;aspect-ratio:4/5;min-width:0}
+.brand-home .hero-people figcaption{padding-top:16px;font-family:var(--body);font-size:15px;gap:16px;overflow-wrap:anywhere}
+.brand-home .hero-people figcaption span{font-size:13px}
+.brand-home .hero-signature{font-size:12px;margin-top:20px;line-height:1.5}
+.brand-home .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:520px;align-items:stretch}
+.brand-home .hero-actions .btn{width:100%;min-height:54px;padding:14px 12px;border-radius:6px;font:600 15px/1.35 var(--body)}
+.brand-home .hero-actions .btn-ghost{border:1px solid var(--blue);color:var(--blue);background:#fff;text-decoration:none;box-shadow:0 2px 5px rgba(22,54,92,.04)}
+.brand-home .hero-actions .btn-ghost:hover{background:#f1f4f7;transform:translateY(-1px)}
+.brand-home section:not(.hero){padding:64px 0;background:#fff}
+.brand-home .sec-head{margin-bottom:32px}
+.brand-home :is(.member,.card,.review,.tcard,.region-group,.post-card){border:1px solid var(--border);border-radius:8px;background:#fff;box-shadow:0 4px 14px rgba(22,54,92,.035);overflow:hidden}
+.brand-home .post-card{padding:24px}
+.brand-home .member{display:flex;flex-direction:column;min-width:0}
+.brand-home .member-photo{border:0;border-bottom:1px solid var(--border);border-radius:0;aspect-ratio:4/3;background:#fff}
+.brand-home .member-body{padding:28px;min-width:0}
+.brand-home .member .who{display:block;margin-top:20px;min-width:0}
+.brand-home .member .who .role{white-space:normal;overflow-wrap:anywhere;font-size:12px;line-height:1.7;text-transform:none}
+.brand-home .team-edge{border:1px solid var(--border);border-left:3px solid var(--gold);padding:28px;background:#fff;border-radius:6px}
+.brand-home .foot-top{gap:32px}
+.brand-home .foot-brand{min-width:0}
+.brand-home .foot-brand address{font-style:normal;font-size:14px;line-height:1.8;margin-top:20px}
+@media(max-width:900px){
+ .brand-home .hero-grid{grid-template-columns:minmax(0,1fr);gap:32px}
+ .brand-home section.hero{padding:108px 0 48px}
+ .brand-home .hero-copy{display:block;max-width:none}
+ .brand-home .hero-people{max-width:620px}
+ .brand-home .portrait-pair .media-reserved{aspect-ratio:5/4}
+ .brand-home .hero h1{max-width:none;margin:18px 0;font-size:clamp(2rem,5.3vw,3.5rem)}
+.brand-home .hero-promise{margin-bottom:20px}
+ .brand-home .hero-actions{margin-top:24px}
+ .brand-home .hero-detail{margin-top:16px}
+}
+@media(max-width:600px){
+ .brand-home section.hero{padding:96px 0 36px}
+ .brand-home .hero h1{font-size:clamp(1.85rem,7.8vw,2.6rem);hyphens:auto}
+ .brand-home .hero .lead{font-size:16px;line-height:1.6}
+ .brand-home .hero-actions{gap:10px;max-width:none}
+ .brand-home .hero-actions .btn{font-size:14px;padding:12px 10px;min-height:58px}
+ .brand-home .hero-people figcaption{font-size:13px;gap:12px}
+ .brand-home .hero-people figcaption span{font-size:12px}
+ .brand-home section:not(.hero){padding:40px 0}
+ .brand-home .member-body{padding:22px}
+.brand-home .portrait-pair{gap:12px}
+}
+.brand-home h2{hyphens:none}
+.brand-home .wc-grid .eyebrow{color:var(--blue)}
+@media(min-width:700px){.brand-home .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
