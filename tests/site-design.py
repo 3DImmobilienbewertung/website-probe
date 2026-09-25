@@ -46,6 +46,9 @@ assert len(pages) == 46, len(pages)
 home = (ROOT / 'index.html').read_text()
 assert 'class="practice-strip"' not in home
 assert 'class="team-quals"' not in home
+assert 'Bei wichtigen Entscheidungen sind Sie bei uns keine Nummer.' in home
+assert 'ohne Weitergabe an externe Gutachter' in home
+assert 'Die Originalnachweise zeigen wir Ihnen auf Anfrage.' not in (ROOT / 'ueber-uns.html').read_text()
 assert home.count('class="member-photo"') == 2
 assert home.count('src="/assets/team-1.webp"') == 2
 assert home.count('src="/assets/team-2.webp"') == 2
