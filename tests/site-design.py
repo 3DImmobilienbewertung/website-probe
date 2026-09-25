@@ -24,6 +24,14 @@ for path in pages:
     assert any(t == 'body' and 'brand-editorial' in a.get('class', '').split() for t, a in tags), path
     styles = [a['href'] for t, a in tags if t == 'link' and 'brand-editorial.css' in a.get('href', '')]
     assert styles == ['/assets/brand-editorial.css?v=brand-correction-20260923'], path
+    components = [a['href'] for t, a in tags if t == 'link' and 'brand-components.css' in a.get('href', '')]
+    assert components == ['/assets/brand-components.css?v=20260925'], path
+    assert sum(t == 'footer' and 'office-footer' in a.get('class', '').split() for t, a in tags) == 1, path
+    for label in ('Leistungen im Footer', 'Orientierung im Footer', 'Ansprechpartner im Footer'):
+        assert any(t == 'nav' and a.get('aria-label') == label for t, a in tags), (path, label)
+    footer = re.search(r'<footer[^>]*office-footer[^>]*>.*?</footer>', source, re.S)[0]
+    assert 'Gailhoferstraße 17 · 30900 Wedemark' in footer, path
+    assert 'href="/ueber-uns.html#qualifikationen"' in footer, path
     assert 'fonts.googleapis.com' not in source, path
     if path.name not in ('datenschutz.html', 'impressum.html'):
         assert sum(t == 'link' and a.get('rel') == 'canonical' for t, a in tags) == 1, path

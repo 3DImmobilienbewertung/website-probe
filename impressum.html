@@ -57,6 +57,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
 @media(max-width:600px){.gbr-partners{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
+<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-legal">
@@ -177,15 +178,35 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--bg-2)}
   </div>
 </main>
 
-<footer class="brand-footer">
-  <div class="foot-inner">
-    <p>© <span id="year"></span> Donnarumma &amp; Donnarumma GbR · 3D Immobilienbewertung</p>
-    <nav>
-      <a href="/">Startseite</a>
-      <a href="/blog/">Blog</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-    </nav>
+<footer class="brand-footer office-footer" id="office-footer">
+  <div class="office-footer-inner">
+    <div class="office-footer-grid">
+      <div class="office-footer-brand">
+        <a href="/" aria-label="3D Immobilienbewertung – Startseite"><img class="office-footer-logo" src="/assets/logo_white.png" width="594" height="160" loading="lazy" decoding="async" alt="3D Immobilienbewertung"></a>
+        <p>Persönliche Immobilienbewertung in Hannover und der Region. Bauingenieurwesen und Architektur – gemeinsam für Ihre Immobilie.</p>
+        <address>Donnarumma &amp; Donnarumma GbR<br>Gailhoferstraße 17 · 30900 Wedemark<br><a href="tel:+491747445452">0174 744 5452</a><br><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></address>
+      </div>
+      <nav aria-label="Leistungen im Footer"><h2>Ihre Immobilie</h2><ul>
+        <li><a href="/lp-haus-bewerten-hannover.html">Haus bewerten</a></li>
+        <li><a href="/wohnungsbewertung-hannover.html">Wohnung bewerten</a></li>
+        <li><a href="/lp-immobilienbewertung-hannover.html">Gutachten &amp; Kosten</a></li>
+        <li><a href="/restnutzungsdauergutachten-hannover.html">Restnutzungsdauer</a></li>
+      </ul></nav>
+      <nav aria-label="Orientierung im Footer"><h2>Gut vorbereitet</h2><ul>
+        <li><a href="/#region">Unsere Region</a></li>
+        <li><a href="/blog/">Immobilienwissen</a></li>
+        <li><a href="/checkliste-immobilienbewertung.html">Unterlagen-Checkliste</a></li>
+        <li><a href="/#ablauf">So läuft die Bewertung ab</a></li>
+      </ul></nav>
+      <nav aria-label="Ansprechpartner im Footer"><h2>Persönlich für Sie da</h2><ul>
+        <li><a href="/ueber-uns.html">Nandino &amp; Vito</a></li>
+        <li><a href="/ueber-uns.html#qualifikationen">Unsere Qualifikationen</a></li>
+        <li><a href="/#wertcheck">Kostenloses Erstgespräch</a></li>
+        <li><a href="tel:+491747445452">Direkt anrufen</a></li>
+      </ul></nav>
+    </div>
+
+    <div class="office-footer-bottom"><span>© <span id="year">2026</span> 3D Immobilienbewertung</span><div class="office-footer-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></div>
   </div>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
