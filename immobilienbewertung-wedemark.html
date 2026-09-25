@@ -33,7 +33,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .btn-primary{background:var(--blue);color:#fff;box-shadow:var(--shadow-blue)}.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}.btn-outline:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
 .btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:#b88e3a;transform:translateY(-2px)}
-.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"✓";color:var(--blue);font-weight:800;font-size:11px}
+.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:800;font-size:11px}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .logo-img{height:34px;width:auto;display:block}.nav-right{display:flex;align-items:center;gap:18px}.nav-phone{font-weight:700;color:var(--blue);font-size:14.5px}.nav-right .btn{padding:10px 20px;font-size:13.5px}
@@ -82,25 +82,25 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
 </style>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-landing">
 <div class="wrap">
-<header class="nav brand-header"><div class="nav-inner"><a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a><div class="nav-right"><a href="tel:+491747445452" class="nav-phone">📞 +49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a><a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch</a></div></div></header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">★★★★★</span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
+<header class="nav brand-header"><div class="nav-inner"><a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a><div class="nav-right"><a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> +49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a><a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch</a></div></div></header>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 <div class="container"><nav class="breadcrumb"><a href="/">Startseite</a><span>›</span>Immobilienbewertung Wedemark</nav></div>
 
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="hero-badge r">📍 Ihr lokaler Sachverständiger · Wedemark</div>
+      <div class="hero-badge r"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Ihr lokaler Sachverständiger · Wedemark</div>
       <h1 class="r s1">Immobilienbewertung <span class="city">Wedemark</span> – <span class="u">Ihr Gutachter vor Ort</span></h1>
       <p class="hero-sub r s2">Als ansässiger Sachverständiger für Immobilienbewertung in der Wedemark kennen wir den lokalen Immobilienmarkt aus erster Hand. Ob Immobilienbewertung oder Wertermittlung nach §194 BauGB – wir ermitteln den echten Verkehrswert Ihrer Immobilie schnell, persönlich und präzise.</p>
 <div class="region-people"><div class="region-people-images"><img src="/assets/team-1.webp" width="800" height="999" loading="lazy" alt="Nandino Donnarumma"><img src="/assets/team-2.webp" width="800" height="999" loading="lazy" alt="Vito Donnarumma"></div><p><strong>Nandino &amp; Vito Donnarumma</strong><br>Bauingenieurwesen &amp; Architektur<br><a href="/ueber-uns.html#qualifikationen">Team und Qualifikationen</a></p></div>
       <div class="hero-actions r s3">
-        <a href="#anfrage" class="btn btn-primary">Immobilie in Wedemark bewerten lassen →</a>
-        <a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a>
+        <a href="#anfrage" class="btn btn-primary">Immobilie in Wedemark bewerten lassen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
+        <a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
       </div>
       <div class="reassure r s3"><span>Lokale Marktkenntnis</span><span>Vor-Ort-Termin</span><span>§194 BauGB</span><span>Erstgespräch kostenlos</span></div>
     </div>
@@ -108,14 +108,14 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <h2>Immobilie in Wedemark bewerten lassen</h2>
       <p class="sub">Kostenloses Erstgespräch – Antwort innerhalb von 24 Stunden.</p>
       <form id="leadForm">
-        <div class="ff-row"><div class="ff"><label>Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" required /></div><div class="ff"><label>Telefon</label><input type="tel" id="lfTel" placeholder="+49 …" /></div></div>
-        <div class="ff"><label>E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" required /></div>
-        <div class="ff-row"><div class="ff"><label>Objektart</label><select id="lfObj"><option>Einfamilienhaus</option><option>Doppelhaushälfte</option><option>Eigentumswohnung</option><option>Grundstück</option><option>Sonstiges</option></select></div><div class="ff"><label>Ortsteil</label><input type="text" id="lfOrt" placeholder="z. B. Mellendorf, Bissendorf …" /></div></div>
-        <div class="ff"><label>Anlass</label><textarea id="lfMsg" placeholder="z. B. Verkauf, Erbschaft, Scheidung, Finanzierung …"></textarea></div>
-        <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px">Kostenloses Erstgespräch anfragen →</button>
-        <p class="note">🔒 Vertraulich · Kostenlos &amp; unverbindlich</p>
+        <div class="ff-row"><div class="ff"><label for="lfName">Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" required /></div><div class="ff"><label for="lfTel">Telefon</label><input type="tel" id="lfTel" placeholder="+49 …" /></div></div>
+        <div class="ff"><label for="lfMail">E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" required /></div>
+        <div class="ff-row"><div class="ff"><label for="lfObj">Objektart</label><select id="lfObj"><option>Einfamilienhaus</option><option>Doppelhaushälfte</option><option>Eigentumswohnung</option><option>Grundstück</option><option>Sonstiges</option></select></div><div class="ff"><label for="lfOrt">Ortsteil</label><input type="text" id="lfOrt" placeholder="z. B. Mellendorf, Bissendorf …" /></div></div>
+        <div class="ff"><label for="lfMsg">Anlass</label><textarea id="lfMsg" placeholder="z. B. Verkauf, Erbschaft, Scheidung, Finanzierung …"></textarea></div>
+        <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px">Kostenloses Erstgespräch anfragen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></button>
+        <p class="note"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#lock"></use></svg> Vertraulich · Kostenlos &amp; unverbindlich</p>
       </form>
-      <div id="formSuccess" style="display:none;text-align:center;padding:20px 0"><div style="font-size:2.5rem;margin-bottom:12px">✅</div><p style="font-weight:700;font-size:1.1rem">Vielen Dank!</p><p style="color:var(--muted);font-size:14px;margin-top:8px">Wir melden uns innerhalb von 24 Stunden.</p></div>
+      <div id="formSuccess" style="display:none;text-align:center;padding:20px 0"><div style="font-size:2.5rem;margin-bottom:12px"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></div><p style="font-weight:700;font-size:1.1rem">Vielen Dank!</p><p style="color:var(--muted);font-size:14px;margin-top:8px">Wir melden uns innerhalb von 24 Stunden.</p></div>
     </div>
   </div>
 </section>
@@ -136,9 +136,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <div class="addr">
         <b>3D Immobilienbewertung</b>
         Gailhoferstraße 17<br>30900 Wedemark<br><br>
-        📞 +49 (0) 174 744 5452<br>
-        ✉ info@3dimmobilienbewertung.de<br>
-        🕐 Mo–Fr 09:00–18:00
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> +49 (0) 174 744 5452<br>
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#mail"></use></svg> info@3dimmobilienbewertung.de<br>
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#clock"></use></svg> Mo–Fr 09:00–18:00
       </div>
     </div>
   </div>
@@ -148,9 +148,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   <div class="container">
     <div class="sec-head center r" style="margin-bottom:36px"><span class="eyebrow" style="justify-content:center">Unsere Leistungen</span><h2>Gutachten für jede Situation in der Wedemark</h2></div>
     <div class="benefits-grid">
-      <div class="benefit r s1"><div class="ic">🏠</div><h3>Einfamilienhäuser &amp; Grundstücke</h3><p>Präzise Bewertung von Wohnhäusern und Grundstücken in allen Ortschaften der Wedemark – gestützt auf lokale Vergleichswerte.</p></div>
-      <div class="benefit r s2"><div class="ic">📋</div><h3>Verkehrswertgutachten §194 BauGB</h3><p>Gerichtsfestes Vollgutachten für Finanzamt, Gericht, Notar und Bank – anerkannt und rechtssicher nach ImmoWertV.</p></div>
-      <div class="benefit r s3"><div class="ic">⚡</div><h3>Kurzgutachten ab 490 €</h3><p>Schnelle, fundierte Werteinschätzung als Entscheidungsgrundlage für Kauf, Verkauf oder Finanzierungsgespräch.</p></div>
+      <div class="benefit r s1"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#house"></use></svg></div><h3>Einfamilienhäuser &amp; Grundstücke</h3><p>Präzise Bewertung von Wohnhäusern und Grundstücken in allen Ortschaften der Wedemark – gestützt auf lokale Vergleichswerte.</p></div>
+      <div class="benefit r s2"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#clipboard"></use></svg></div><h3>Verkehrswertgutachten §194 BauGB</h3><p>Gerichtsfestes Vollgutachten für Finanzamt, Gericht, Notar und Bank – anerkannt und rechtssicher nach ImmoWertV.</p></div>
+      <div class="benefit r s3"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#clock"></use></svg></div><h3>Kurzgutachten ab 490 €</h3><p>Schnelle, fundierte Werteinschätzung als Entscheidungsgrundlage für Kauf, Verkauf oder Finanzierungsgespräch.</p></div>
     </div>
   </div>
 </section>
@@ -193,7 +193,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     </table>
   </div>
   <p style="max-width:720px;margin:16px auto 0;font-size:13px;color:var(--faint,#94A6BD);text-align:center">Quelle: Gutachterausschüsse für Grundstückswerte in Niedersachsen, BORIS.NI / LGLN (Datenlizenz Deutschland – Namensnennung 2.0), Stichtag 01.01.2026. Werte für Einfamilienhaus-Zonen; weitere Zonen (Mehrfamilienhaus, Gewerbe, Außenbereich) auf Anfrage.</p>
-  <p style="max-width:720px;margin:18px auto 0;color:var(--muted,#5C708A)"><b>Wichtig:</b> Der Bodenrichtwert beziffert nur den Grund und Boden – der <b>Verkehrswert Ihrer Immobilie</b> hängt zusätzlich von Bausubstanz, Baujahr, Zustand, Ausstattung und der konkreten Mikrolage ab. Genau diese Faktoren bewerten wir mit Fachwissen aus Bauingenieurwesen und Architektur vor Ort. <a href="#anfrage" style="color:var(--blue,#16365C);font-weight:700;text-decoration:underline">Kostenloses Erstgespräch anfragen&nbsp;→</a></p>
+  <p style="max-width:720px;margin:18px auto 0;color:var(--muted,#5C708A)"><b>Wichtig:</b> Der Bodenrichtwert beziffert nur den Grund und Boden – der <b>Verkehrswert Ihrer Immobilie</b> hängt zusätzlich von Bausubstanz, Baujahr, Zustand, Ausstattung und der konkreten Mikrolage ab. Genau diese Faktoren bewerten wir mit Fachwissen aus Bauingenieurwesen und Architektur vor Ort. <a href="#anfrage" style="color:var(--blue,#16365C);font-weight:700;text-decoration:underline">Kostenloses Erstgespräch anfragen&nbsp;<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a></p>
 </div></section>
 <section class="block"><div class="container">
   <div class="sec-head center r" style="margin-bottom:0"><span class="eyebrow" style="justify-content:center">Unser Vorteil</span><h2>Als Familienbetrieb aus der Wedemark kennen wir die Region</h2></div>
@@ -202,7 +202,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <p>Die Wedemark ist unsere Heimat – und Bauingenieurwesen sowie Architektur sind unser Fach. Wir bewerten Ihre Immobilie hier mit echter Marktkenntnis und dem geschulten Blick für Bausubstanz und Potenzial. Diese Verbindung aus Expertise, langjähriger Erfahrung und der Leidenschaft für jedes Objekt finden Sie bei herkömmlichen Bewertern selten.</p>
   </div>
 </div></section>
-<section class="block alt"><div class="container"><div class="cta-band r"><h2>Immobilienbewertung Wedemark – von Ihrem Gutachter vor Ort</h2><p>Kostenlos anfragen, persönlich beraten werden, fairen Preis erhalten – direkt in der Wedemark.</p><div class="btns"><a href="#anfrage" class="btn btn-gold">Kostenloses Erstgespräch sichern →</a><a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)">📞 Jetzt anrufen</a></div><a href="tel:+491747445452" class="cta-phone">oder direkt: <b>+49 (0) 174 744 5452</b> &nbsp;·&nbsp; Mo–Fr 09:00–18:00</a></div></div></section>
+<section class="block alt"><div class="container"><div class="cta-band r"><h2>Immobilienbewertung Wedemark – von Ihrem Gutachter vor Ort</h2><p>Kostenlos anfragen, persönlich beraten werden, fairen Preis erhalten – direkt in der Wedemark.</p><div class="btns"><a href="#anfrage" class="btn btn-gold">Kostenloses Erstgespräch sichern <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a><a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Jetzt anrufen</a></div><a href="tel:+491747445452" class="cta-phone">oder direkt: <b>+49 (0) 174 744 5452</b> &nbsp;·&nbsp; Mo–Fr 09:00–18:00</a></div></div></section>
 </div>
 
 <!-- seo-internal-links-mesh -->
@@ -249,7 +249,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   </div>
 </section>
 
-<aside class="regional-return" aria-label="Weitere Orte und Vorbereitung"><div><a href="/#region">Alle Orte in der Region Hannover ↗</a><a href="/checkliste-immobilienbewertung.html">Unterlagen-Checkliste ↗</a><span>Büro: Gailhoferstraße 17 · 30900 Wedemark</span></div></aside>
+<aside class="regional-return" aria-label="Weitere Orte und Vorbereitung"><div><a href="/#region">Alle Orte in der Region Hannover <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a><a href="/checkliste-immobilienbewertung.html">Unterlagen-Checkliste <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a><span>Büro: Gailhoferstraße 17 · 30900 Wedemark</span></div></aside>
 <footer class="brand-footer office-footer" id="office-footer">
   <div class="office-footer-inner">
     <div class="office-footer-grid">
@@ -281,7 +281,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="office-footer-bottom"><span>© <span id="year">2026</span> 3D Immobilienbewertung</span><div class="office-footer-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></div>
   </div>
 </footer>
-<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
+<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});

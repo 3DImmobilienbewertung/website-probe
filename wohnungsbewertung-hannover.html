@@ -29,7 +29,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .btn-primary{background:var(--blue);color:#fff;box-shadow:var(--shadow-blue)}.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}.btn-outline:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
 .btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:#b88e3a;transform:translateY(-2px)}
-.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"✓";color:var(--blue);font-weight:800;font-size:11px}
+.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:800;font-size:11px}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .logo-img{height:34px;width:auto}.nav-right{display:flex;align-items:center;gap:18px}.nav-phone{font-weight:700;color:var(--blue);font-size:14.5px}.nav-right .btn{padding:10px 20px;font-size:13.5px}
@@ -92,7 +92,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 .sr{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.sr.visible{opacity:1;transform:none}
 </style>
 <noscript><style>.sr{opacity:1!important;transform:none!important}</style></noscript><link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-landing">
@@ -101,23 +101,23 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
   <div class="nav-inner">
     <a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung Logo" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-right">
-      <a href="tel:+491747445452" class="nav-phone">📞 0174 744 5452</a>
+      <a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> 0174 744 5452</a>
       <a href="#anfrage" class="btn btn-primary">Kostenlos anfragen</a>
     </div>
   </div>
 </header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">★★★★★</span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-badge">🏢 Eigentumswohnungen · Hannover</div>
+        <div class="hero-badge"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg> Eigentumswohnungen · Hannover</div>
         <h1>Wohnungs&shy;bewertung<br/><span class="u">Hannover</span> – präzise &amp; rechtssicher</h1>
         <p class="hero-sub">Wie viel ist Ihre Eigentumswohnung in Hannover wirklich wert? Unser zertifizierter Sachverständige ermittelt den genauen Marktwert – nachvollziehbar, für Verkauf, Erbschaft oder Scheidung.</p>
         <div class="hero-actions">
-          <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch →</a>
-          <a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a>
+          <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
+          <a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
         </div>
         <div class="reassure">
           <span>Nach ImmoWertV</span>
@@ -131,12 +131,12 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
           <h2>Wohnungswert ermitteln</h2>
           <p class="sub">Kostenlose Erstberatung · Antwort in 24 h</p>
           <form id="contactForm">
-            <div class="ff"><label>Ihr Name</label><input type="text" name="name" placeholder="Max Mustermann" required /></div>
-            <div class="ff"><label>Telefon oder E-Mail</label><input type="text" name="email" placeholder="0511 … oder name@mail.de" required /></div>
-            <div class="ff"><label>Adresse der Wohnung</label><input type="text" name="ort" id="ort" placeholder="Straße, Stadtteil Hannover" /></div>
+            <div class="ff"><label for="contact-name">Ihr Name</label><input id="contact-name" type="text" name="name" placeholder="Max Mustermann" required /></div>
+            <div class="ff"><label for="contact-email">E-Mail (Pflichtfeld)</label><input id="contact-email" type="email" name="email" autocomplete="email" placeholder="name@mail.de" required /></div><div class="ff"><label for="contact-phone">Telefon (optional)</label><input id="contact-phone" type="tel" name="phone" autocomplete="tel" placeholder="Für einen Rückruf" /></div>
+            <div class="ff"><label for="ort">Adresse der Wohnung</label><input type="text" name="ort" id="ort" placeholder="Straße, Stadtteil Hannover" /></div>
             <div class="ff">
-              <label>Anlass der Bewertung</label>
-              <select name="typ">
+              <label for="contact-typ">Anlass der Bewertung</label>
+              <select id="contact-typ" name="typ">
                 <option value="">Bitte wählen …</option>
                 <option>Verkauf der Wohnung</option>
                 <option>Kauf – Wert prüfen</option>
@@ -146,10 +146,10 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
                 <option>Sonstiges</option>
               </select>
             </div>
-            <div class="ff"><label>Wohnfläche (ca.)</label><input type="text" name="message" placeholder="z. B. 78 m²" /></div>
-            <button type="submit" class="btn btn-gold">Jetzt kostenlos anfragen ✓</button>
+            <div class="ff"><label for="contact-message">Wohnfläche (ca.)</label><input id="contact-message" type="text" name="message" placeholder="z. B. 78 m²" /></div>
+            <button type="submit" class="btn btn-gold">Kostenloses Erstgespräch anfragen</button>
           </form>
-          <p class="form-note">🔒 Ihre Daten sind sicher – keine Weitergabe</p>
+          <p class="form-note"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#lock"></use></svg> Ihre Daten sind sicher – keine Weitergabe</p>
         </div>
       </div>
     </div>
@@ -159,18 +159,18 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <div class="trust-bar">
   <div class="container">
     <div class="trust-scroll">
-      <span class="trust-item"><span class="icon">✓</span> Sachverständiger für Immobilienbewertung</span>
-      <span class="trust-item"><span class="icon">✓</span> Vergleichswertverfahren für Wohnungen</span>
-      <span class="trust-item"><span class="icon">✓</span> Nach §194 BauGB</span>
-      <span class="trust-item"><span class="icon">✓</span> Alle Hannoveraner Stadtteile</span>
-      <span class="trust-item"><span class="icon">✓</span> Kostenloses Erstgespräch</span>
-      <span class="trust-item"><span class="icon">✓</span> Antwort in 24 Stunden</span>
-      <span class="trust-item"><span class="icon">✓</span> Sachverständiger für Immobilienbewertung</span>
-      <span class="trust-item"><span class="icon">✓</span> Vergleichswertverfahren für Wohnungen</span>
-      <span class="trust-item"><span class="icon">✓</span> Nach §194 BauGB</span>
-      <span class="trust-item"><span class="icon">✓</span> Alle Hannoveraner Stadtteile</span>
-      <span class="trust-item"><span class="icon">✓</span> Kostenloses Erstgespräch</span>
-      <span class="trust-item"><span class="icon">✓</span> Antwort in 24 Stunden</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Sachverständiger für Immobilienbewertung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Vergleichswertverfahren für Wohnungen</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Nach §194 BauGB</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Alle Hannoveraner Stadtteile</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Kostenloses Erstgespräch</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Antwort in 24 Stunden</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Sachverständiger für Immobilienbewertung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Vergleichswertverfahren für Wohnungen</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Nach §194 BauGB</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Alle Hannoveraner Stadtteile</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Kostenloses Erstgespräch</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Antwort in 24 Stunden</span>
     </div>
   </div>
 </div>
@@ -184,32 +184,32 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     </div>
     <div class="factors-grid">
       <div class="factor sr">
-        <div class="emoji">📍</div>
+        <div class="emoji"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg></div>
         <h3>Lage &amp; Stadtteil</h3>
         <p>Lage ist der wichtigste Wertfaktor. Hannover-Mitte, List, Linden oder Südstadt – jeder Stadtteil hat ein anderes Preisniveau.</p>
       </div>
       <div class="factor sr">
-        <div class="emoji">📐</div>
+        <div class="emoji"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#ruler"></use></svg></div>
         <h3>Größe &amp; Grundriss</h3>
         <p>Wohnfläche, Zimmeranzahl und Grundrissqualität bestimmen den Wert erheblich. Auch die Etage spielt eine Rolle.</p>
       </div>
       <div class="factor sr">
-        <div class="emoji">🏗️</div>
+        <div class="emoji"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg></div>
         <h3>Baujahr &amp; Zustand</h3>
         <p>Modernisierungen, Sanierungen und der allgemeine Erhaltungszustand werden bei der Bewertung detailliert erfasst.</p>
       </div>
       <div class="factor sr">
-        <div class="emoji">🅿️</div>
+        <div class="emoji"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg></div>
         <h3>Ausstattung &amp; Extras</h3>
         <p>Tiefgaragenstellplatz, Balkon, Aufzug, Fußbodenheizung – jedes Extra hat einen konkreten Werteinfluss.</p>
       </div>
       <div class="factor sr">
-        <div class="emoji">🏘️</div>
+        <div class="emoji"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg></div>
         <h3>Hausgeld &amp; WEG</h3>
         <p>Rücklagen der Eigentümergemeinschaft, Hausgeldabrechnungen und anstehende Sanierungen beeinflussen den Wert.</p>
       </div>
       <div class="factor sr">
-        <div class="emoji">📈</div>
+        <div class="emoji"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#trend"></use></svg></div>
         <h3>Aktuelle Marktlage</h3>
         <p>Wir nutzen aktuelle Vergleichspreise aus dem Gutachterausschuss Hannover für eine marktgerechte Bewertung.</p>
       </div>
@@ -246,19 +246,19 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     </div>
     <div class="services-grid">
       <div class="s-card sr">
-        <div class="icon">📋</div>
+        <div class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#clipboard"></use></svg></div>
         <h3>Kurzgutachten Wohnung</h3>
         <p>Schnelle, fundierte Werteinschätzung für Kauf- und Verkaufsentscheidungen. Mit Vergleichswerten und Markteinordnung.</p>
         <div class="price">ab 490 € · Lieferzeit 3–5 Tage</div>
       </div>
       <div class="s-card sr">
-        <div class="icon">⚖️</div>
+        <div class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#scales"></use></svg></div>
         <h3>Verkehrswertgutachten</h3>
         <p>Vollständiges Gutachten §194 BauGB. Anforderungen von Finanzamt, Gericht oder Behörden vorab klären.</p>
         <div class="price">Preis nach Objekt · Lieferzeit 7–10 Tage</div>
       </div>
       <div class="s-card sr">
-        <div class="icon">💬</div>
+        <div class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#chat"></use></svg></div>
         <h3>Kostenloses Erstgespräch</h3>
         <p>Wir besprechen Ihren Fall, erklären das optimale Gutachten und geben Ihnen einen Festpreis.</p>
         <div class="price">Kostenlos &amp; unverbindlich</div>
@@ -275,19 +275,19 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     </div>
     <div class="testimonials-grid">
       <div class="tcard sr">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <blockquote>"Meine Eigentumswohnung in der Südstadt sollte verkauft werden. Das Gutachten hat mir geholfen, den richtigen Preis zu setzen – und ich habe tatsächlich mehr erzielt als erwartet."</blockquote>
-        <cite><div class="av">A</div><div><div class="nm">Anna K.</div><div class="loc">📍 Hannover-Südstadt</div></div></cite>
+        <cite><div class="av">A</div><div><div class="nm">Anna K.</div><div class="loc"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Hannover-Südstadt</div></div></cite>
       </div>
       <div class="tcard sr">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <blockquote>"Wir haben geerbt und das Finanzamt hat den Bedarfswert viel zu hoch angesetzt. Das Gutachten hat uns geholfen, einen deutlich niedrigeren Wert nachzuweisen und Steuern zu sparen."</blockquote>
-        <cite><div class="av">B</div><div><div class="nm">Bernhard &amp; Eva M.</div><div class="loc">📍 Hannover-List</div></div></cite>
+        <cite><div class="av">B</div><div><div class="nm">Bernhard &amp; Eva M.</div><div class="loc"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Hannover-List</div></div></cite>
       </div>
       <div class="tcard sr">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <blockquote>"Vor dem Kauf einer Wohnung in Linden wollten wir sichergehen, dass der Preis stimmt. Das unabhängige Gutachten hat bestätigt, dass der Wert fair war. Super Service!"</blockquote>
-        <cite><div class="av">S</div><div><div class="nm">Stefan L.</div><div class="loc">📍 Hannover-Linden</div></div></cite>
+        <cite><div class="av">S</div><div><div class="nm">Stefan L.</div><div class="loc"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Hannover-Linden</div></div></cite>
       </div>
     </div>
   </div>
@@ -301,7 +301,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
   </div>
 </div></section>
 
-<div style="max-width:var(--maxw,1180px);margin:0 auto;padding:0 28px 26px"><div style="background:var(--blue-soft,#E7EEF6);border:1px solid var(--border,rgba(16,36,61,.1));border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.6;color:var(--ink,#10243D)">💡 <b>Vermietete Immobilie?</b> Mit unserem kostenlosen <a href="/restnutzungsdauer-rechner.html" style="color:var(--blue,#16365C);font-weight:700;text-decoration:underline">Restnutzungsdauer-Rechner</a> prüfen Sie in 2 Minuten, ob ein Gutachten Ihre AfA erhöht und jährlich Steuern spart.</div></div>
+<div style="max-width:var(--maxw,1180px);margin:0 auto;padding:0 28px 26px"><div style="background:var(--blue-soft,#E7EEF6);border:1px solid var(--border,rgba(16,36,61,.1));border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.6;color:var(--ink,#10243D)"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#bulb"></use></svg> <b>Vermietete Immobilie?</b> Mit unserem kostenlosen <a href="/restnutzungsdauer-rechner.html" style="color:var(--blue,#16365C);font-weight:700;text-decoration:underline">Restnutzungsdauer-Rechner</a> prüfen Sie in 2 Minuten, ob ein Gutachten Ihre AfA erhöht und jährlich Steuern spart.</div></div>
 <section class="section section-soft">
   <div class="container">
     <div class="sec-head sr" style="text-align:center">
@@ -338,8 +338,8 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     <h2>Wohnungswert in Hannover ermitteln –<br/>jetzt kostenloses Erstgespräch</h2>
     <p>Unverbindlich, diskret, Antwort innerhalb von 24 Stunden.</p>
     <div class="btns">
-      <a href="#anfrage" class="btn btn-gold">Jetzt Wert anfragen →</a>
-      <a href="tel:+491747445452" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)">📞 0174 744 5452</a>
+      <a href="#anfrage" class="btn btn-gold">Jetzt Wert anfragen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
+      <a href="tel:+491747445452" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> 0174 744 5452</a>
     </div>
   </div>
 </div>
@@ -431,7 +431,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 </div>
 
 <div class="mobile-bar" style="display:none">
-  <a href="tel:+491747445452" class="btn btn-outline" style="flex:1;justify-content:center">📞 Anrufen</a>
+  <a href="tel:+491747445452" class="btn btn-outline" style="flex:1;justify-content:center"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
   <a href="#anfrage" class="btn btn-primary" style="flex:1;justify-content:center">Kostenlos anfragen</a>
 </div>
 
@@ -444,14 +444,24 @@ if(window.innerWidth<=600)document.querySelector('.mobile-bar').style.display='f
 document.getElementById('contactForm').addEventListener('submit',async function(e){
   e.preventDefault();
   const btn=this.querySelector('button[type=submit]');
+  if(btn.disabled)return;
   btn.textContent='Wird gesendet …';btn.disabled=true;
+  this.setAttribute('aria-busy','true');
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),20000);
   const ort=document.getElementById('ort').value||'Hannover';
-  const data={name:this.name.value,email:this.email.value,message:this.message.value,anlass:'Wohnungsbewertung Hannover – '+ort,typ:this.typ.value};
+  const data={phone:this.elements.namedItem('phone').value.trim(),name:this.elements.namedItem('name').value.trim(),email:this.elements.namedItem('email').value.trim(),message:this.elements.namedItem('message').value.trim(),anlass:'Wohnungsbewertung Hannover – '+ort,typ:this.elements.namedItem('typ').value.trim()};
+  data.anlass += data.typ ? ' – '+data.typ : '';
   try{
-    const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-    if(r.ok){this.innerHTML='<p style="text-align:center;color:#16365C;font-weight:700;padding:20px">✅ Vielen Dank! Wir melden uns innerhalb von 24 Stunden.</p>';}
-    else{btn.textContent='Fehler – bitte anrufen';btn.disabled=false;}
-  }catch(err){btn.textContent='Fehler – bitte anrufen';btn.disabled=false;}
+    const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:controller.signal});
+    if(r.ok && (await r.json()).ok===true){this.innerHTML='<p style="text-align:center;color:#16365C;font-weight:700;padding:20px"> Vielen Dank! Wir melden uns innerhalb von 24 Stunden.</p>';}
+    else{throw new Error('Unconfirmed delivery');}
+  }catch(err){
+    btn.textContent='Kostenloses Erstgespräch anfragen';btn.disabled=false;
+    let feedback=this.querySelector('.form-feedback');
+    if(!feedback){feedback=document.createElement('p');feedback.className='form-feedback';feedback.setAttribute('role','alert');feedback.tabIndex=-1;this.appendChild(feedback);}
+    feedback.textContent='Wir konnten die Übermittlung nicht bestätigen. Ihre Angaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie 0174 744 5452 an.';feedback.focus();
+  }finally{clearTimeout(timer);this.removeAttribute('aria-busy');}
 });
 </script>
 <script src="assets/consent.js?v=20260815b"></script>

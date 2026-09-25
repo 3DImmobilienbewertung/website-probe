@@ -32,7 +32,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .btn-primary{background:var(--blue);color:#fff;box-shadow:var(--shadow-blue)}.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}.btn-outline:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
 .btn-gold{background:var(--gold);color:#fff;box-shadow:0 10px 30px rgba(201,162,75,.35)}.btn-gold:hover{background:#b88e3a;transform:translateY(-2px)}
-.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"✓";color:var(--blue);font-weight:800;font-size:11px}
+.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:800;font-size:11px}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .logo-img{height:34px;width:auto;display:block}.nav-right{display:flex;align-items:center;gap:18px}.nav-phone{font-weight:700;color:var(--blue);font-size:14.5px}.nav-right .btn{padding:10px 20px;font-size:13.5px}
@@ -58,7 +58,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .testi-stars{color:var(--gold);font-size:15px;letter-spacing:2px}.testi-text{font-size:15px;color:var(--ink-2);line-height:1.65;flex:1;font-style:italic}
 .testi-text::before{content:'"';color:var(--gold);font-size:2.5rem;font-family:var(--display);line-height:.6;display:block;margin-bottom:10px}
 .testi-who{display:flex;align-items:center;gap:12px}.testi-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-bright));color:#fff;font-family:var(--display);font-weight:700;font-size:15px;display:grid;place-items:center;flex-shrink:0}
-.testi-name{font-weight:700;font-size:14.5px}.testi-loc{font-size:13px;color:var(--muted);margin-top:1px}.testi-source{font-family:var(--mono);font-size:10.5px;color:var(--faint);display:flex;align-items:center;gap:5px;margin-top:4px}.testi-source::before{content:"★";color:#4285f4;font-size:11px}
+.testi-name{font-weight:700;font-size:14.5px}.testi-loc{font-size:13px;color:var(--muted);margin-top:1px}.testi-source{font-family:var(--mono);font-size:10.5px;color:var(--faint);display:flex;align-items:center;gap:5px;margin-top:4px}.testi-source::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%204%201%207-6-3-6%203%201-7-4-4%206-1Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%204%201%207-6-3-6%203%201-7-4-4%206-1Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:#4285f4;font-size:11px}
 .faq-wrap{max-width:840px;margin:44px auto 0}.faq{border-bottom:1px solid var(--border)}.faq:first-child{border-top:1px solid var(--border)}
 .faq button{width:100%;background:none;border:none;color:var(--ink);cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.3}
 .faq .plus{flex-shrink:0;width:22px;height:22px;position:relative;transition:transform .4s var(--ease)}.faq .plus::before,.faq .plus::after{content:"";position:absolute;background:var(--blue)}.faq .plus::before{top:50%;left:0;right:0;height:2px;transform:translateY(-50%)}.faq .plus::after{left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%)}
@@ -82,24 +82,24 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
 </style>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-landing">
 <div class="wrap">
-<header class="nav brand-header"><div class="nav-inner"><a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a><div class="nav-right"><a href="tel:+491747445452" class="nav-phone">📞 +49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a><a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch</a></div></div></header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">★★★★★</span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
+<header class="nav brand-header"><div class="nav-inner"><a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a><div class="nav-right"><a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> +49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a><a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch</a></div></div></header>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 <div class="container"><nav class="breadcrumb"><a href="/">Startseite</a><span>›</span>Immobilienbewertung bei Scheidung</nav></div>
 
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="hero-eyebrow r"><span class="hero-stars">★★★★★</span><span>Neutral · Unabhängig · Nachvollziehbar</span></div>
+      <div class="hero-eyebrow r"><span class="hero-stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span><span>Neutral · Unabhängig · Nachvollziehbar</span></div>
       <h1 class="r s1">Immobilienbewertung bei <span class="u">Scheidung</span> – neutral, schnell, nachvollziehbar</h1>
       <p class="hero-sub r s2">Eine Scheidung ist belastend genug. Der Immobilienwert sollte keine Streitquelle sein. Als unabhängiger Sachverständiger ermitteln wir einen neutralen Verkehrswert – anerkannt von Familiengerichten in Hannover.</p>
       <div class="hero-actions r s3">
-        <a href="#anfrage" class="btn btn-primary">Jetzt Beratung anfragen →</a>
-        <a href="tel:+491747445452" class="btn btn-outline">📞 Direkt anrufen</a>
+        <a href="#anfrage" class="btn btn-primary">Jetzt Beratung anfragen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
+        <a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Direkt anrufen</a>
       </div>
       <div class="reassure r s3"><span>Unabhängig &amp; neutral</span><span>Familiengerichts-anerkannt</span><span>Diskretion garantiert</span><span>Erstgespräch kostenlos</span></div>
     </div>
@@ -107,14 +107,14 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <h2>Scheidung – Beratung anfragen</h2>
       <p class="sub">Kostenloses, vertrauliches Erstgespräch – Antwort innerhalb von 24 Stunden.</p>
       <form id="leadForm">
-        <div class="ff-row"><div class="ff"><label>Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" required /></div><div class="ff"><label>Telefon</label><input type="tel" id="lfTel" placeholder="+49 …" /></div></div>
-        <div class="ff"><label>E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" required /></div>
-        <div class="ff-row"><div class="ff"><label>Objektart</label><select id="lfObj"><option>Einfamilienhaus</option><option>Eigentumswohnung</option><option>Zweifamilienhaus</option><option>Grundstück</option><option>Sonstiges</option></select></div><div class="ff"><label>Ort / Lage</label><input type="text" id="lfOrt" placeholder="z. B. Hannover …" /></div></div>
-        <div class="ff"><label>Ihre Situation</label><textarea id="lfMsg" placeholder="z. B. einvernehmliche Scheidung, streitig, Gericht beauftragt? …"></textarea></div>
-        <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px">Kostenloses Erstgespräch anfragen →</button>
-        <p class="note">🔒 Streng vertraulich · Kostenlos &amp; unverbindlich</p>
+        <div class="ff-row"><div class="ff"><label for="lfName">Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" required /></div><div class="ff"><label for="lfTel">Telefon</label><input type="tel" id="lfTel" placeholder="+49 …" /></div></div>
+        <div class="ff"><label for="lfMail">E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" required /></div>
+        <div class="ff-row"><div class="ff"><label for="lfObj">Objektart</label><select id="lfObj"><option>Einfamilienhaus</option><option>Eigentumswohnung</option><option>Zweifamilienhaus</option><option>Grundstück</option><option>Sonstiges</option></select></div><div class="ff"><label for="lfOrt">Ort / Lage</label><input type="text" id="lfOrt" placeholder="z. B. Hannover …" /></div></div>
+        <div class="ff"><label for="lfMsg">Ihre Situation</label><textarea id="lfMsg" placeholder="z. B. einvernehmliche Scheidung, streitig, Gericht beauftragt? …"></textarea></div>
+        <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px">Kostenloses Erstgespräch anfragen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></button>
+        <p class="note"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#lock"></use></svg> Streng vertraulich · Kostenlos &amp; unverbindlich</p>
       </form>
-      <div id="formSuccess" style="display:none;text-align:center;padding:20px 0"><div style="font-size:2.5rem;margin-bottom:12px">✅</div><p style="font-weight:700;font-size:1.1rem">Vielen Dank!</p><p style="color:var(--muted);font-size:14px;margin-top:8px">Wir melden uns innerhalb von 24 Stunden.</p></div>
+      <div id="formSuccess" style="display:none;text-align:center;padding:20px 0"><div style="font-size:2.5rem;margin-bottom:12px"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></div><p style="font-weight:700;font-size:1.1rem">Vielen Dank!</p><p style="color:var(--muted);font-size:14px;margin-top:8px">Wir melden uns innerhalb von 24 Stunden.</p></div>
     </div>
   </div>
 </section>
@@ -125,9 +125,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   <div class="container">
     <div class="sec-head center r" style="margin-bottom:36px"><span class="eyebrow" style="justify-content:center">Warum ein Gutachten?</span><h2>Beim Hauswert brauchen beide Seiten Sicherheit</h2></div>
     <div class="benefits-grid">
-      <div class="benefit r s1"><div class="ic">⚖️</div><h3>Zugewinnausgleich</h3><p>Der Verkehrswert der Immobilie bildet die Grundlage für den Zugewinnausgleich. Ein neutrales Gutachten schützt beide Parteien vor einseitigen Schätzungen.</p></div>
-      <div class="benefit r s2"><div class="ic">🏛️</div><h3>Nachvollziehbar</h3><p>Verkehrswertgutachten nach §194 BauGB werden von Familiengerichten in Hannover anerkannt – auch in streitigen Verfahren.</p></div>
-      <div class="benefit r s3"><div class="ic">🤝</div><h3>Einvernehmliche Lösung</h3><p>Ein gemeinsam beauftragtes Gutachten schafft eine neutrale Grundlage und ermöglicht oft eine schnellere, kostengünstigere Einigung.</p></div>
+      <div class="benefit r s1"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#scales"></use></svg></div><h3>Zugewinnausgleich</h3><p>Der Verkehrswert der Immobilie bildet die Grundlage für den Zugewinnausgleich. Ein neutrales Gutachten schützt beide Parteien vor einseitigen Schätzungen.</p></div>
+      <div class="benefit r s2"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#court"></use></svg></div><h3>Nachvollziehbar</h3><p>Verkehrswertgutachten nach §194 BauGB werden von Familiengerichten in Hannover anerkannt – auch in streitigen Verfahren.</p></div>
+      <div class="benefit r s3"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#chat"></use></svg></div><h3>Einvernehmliche Lösung</h3><p>Ein gemeinsam beauftragtes Gutachten schafft eine neutrale Grundlage und ermöglicht oft eine schnellere, kostengünstigere Einigung.</p></div>
     </div>
   </div>
 </section>
@@ -136,9 +136,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   <div class="container">
     <div class="sec-head center r"><span class="eyebrow" style="justify-content:center">Kundenstimmen</span><h2>Was Kunden in Trennungssituationen sagen</h2></div>
     <div class="testi-grid">
-      <div class="testi r s1"><div class="testi-stars">★★★★★</div><p class="testi-text">Wir haben das Gutachten gemeinsam beauftragt – das hat viel Stress gespart. Der Wert war für beide Seiten nachvollziehbar und hat die Einigung deutlich beschleunigt.</p><div class="testi-who"><div class="testi-av">KL</div><div><div class="testi-name">Klaus &amp; Sandra L.</div><div class="testi-loc">Hannover · Einfamilienhaus</div><div class="testi-source">Google Bewertung</div></div></div></div>
-      <div class="testi r s2"><div class="testi-stars">★★★★★</div><p class="testi-text">Mein Anwalt hatte das Gutachten empfohlen. Es war wirklich neutral und hat meine Position beim Zugewinnausgleich gestärkt. Schnell, kompetent, diskret.</p><div class="testi-who"><div class="testi-av">AM</div><div><div class="testi-name">Andrea M.</div><div class="testi-loc">Langenhagen · Eigentumswohnung</div><div class="testi-source">Google Bewertung</div></div></div></div>
-      <div class="testi r s3"><div class="testi-stars">★★★★★</div><p class="testi-text">In einer so schwierigen Situation war die professionelle und diskrete Abwicklung sehr wohltuend. Das Gutachten hat mir die Sicherheit gegeben, die ich brauchte.</p><div class="testi-who"><div class="testi-av">PH</div><div><div class="testi-name">Peter H.</div><div class="testi-loc">Garbsen · Doppelhaushälfte</div><div class="testi-source">Google Bewertung</div></div></div></div>
+      <div class="testi r s1"><div class="testi-stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div><p class="testi-text">Wir haben das Gutachten gemeinsam beauftragt – das hat viel Stress gespart. Der Wert war für beide Seiten nachvollziehbar und hat die Einigung deutlich beschleunigt.</p><div class="testi-who"><div class="testi-av">KL</div><div><div class="testi-name">Klaus &amp; Sandra L.</div><div class="testi-loc">Hannover · Einfamilienhaus</div><div class="testi-source">Google Bewertung</div></div></div></div>
+      <div class="testi r s2"><div class="testi-stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div><p class="testi-text">Mein Anwalt hatte das Gutachten empfohlen. Es war wirklich neutral und hat meine Position beim Zugewinnausgleich gestärkt. Schnell, kompetent, diskret.</p><div class="testi-who"><div class="testi-av">AM</div><div><div class="testi-name">Andrea M.</div><div class="testi-loc">Langenhagen · Eigentumswohnung</div><div class="testi-source">Google Bewertung</div></div></div></div>
+      <div class="testi r s3"><div class="testi-stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div><p class="testi-text">In einer so schwierigen Situation war die professionelle und diskrete Abwicklung sehr wohltuend. Das Gutachten hat mir die Sicherheit gegeben, die ich brauchte.</p><div class="testi-who"><div class="testi-av">PH</div><div><div class="testi-name">Peter H.</div><div class="testi-loc">Garbsen · Doppelhaushälfte</div><div class="testi-source">Google Bewertung</div></div></div></div>
     </div>
     <p style="text-align:center;margin-top:24px;font-size:13.5px;color:var(--faint)">* Namen auf Wunsch anonymisiert.</p>
   </div>
@@ -164,7 +164,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <p>Im Zugewinnausgleich muss der Immobilienwert für beide Seiten nachvollziehbar und nachvollziehbar sein. Mit unserem Hintergrund in Bauingenieurwesen, Architektur und Planung ermitteln wir ihn objektiv und fundiert. Diese Expertise, langjährige Erfahrung und die nötige Sorgfalt in einer sensiblen Situation geben Ihnen eine neutrale Grundlage, der beide Parteien vertrauen können.</p>
   </div>
 </div></section>
-<section class="block alt"><div class="container"><div class="cta-band r"><h2>Lassen Sie den Hauswert neutral ermitteln.</h2><p>Für eine faire Einigung brauchen Sie eine belastbare Grundlage. Das Erstgespräch ist kostenlos und vertraulich.</p><div class="btns"><a href="#anfrage" class="btn btn-gold">Kostenloses Erstgespräch sichern →</a><a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)">📞 Jetzt anrufen</a></div><a href="tel:+491747445452" class="cta-phone">oder direkt: <b>+49 (0) 174 744 5452</b> &nbsp;·&nbsp; Mo–Fr 09:00–18:00</a></div></div></section>
+<section class="block alt"><div class="container"><div class="cta-band r"><h2>Lassen Sie den Hauswert neutral ermitteln.</h2><p>Für eine faire Einigung brauchen Sie eine belastbare Grundlage. Das Erstgespräch ist kostenlos und vertraulich.</p><div class="btns"><a href="#anfrage" class="btn btn-gold">Kostenloses Erstgespräch sichern <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a><a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Jetzt anrufen</a></div><a href="tel:+491747445452" class="cta-phone">oder direkt: <b>+49 (0) 174 744 5452</b> &nbsp;·&nbsp; Mo–Fr 09:00–18:00</a></div></div></section>
 
 </div>
 <!-- seo-internal-links-mesh -->
@@ -242,7 +242,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="office-footer-bottom"><span>© <span id="year">2026</span> 3D Immobilienbewertung</span><div class="office-footer-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></div>
   </div>
 </footer>
-<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
+<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a><a href="#anfrage" class="btn btn-primary">Erstgespräch</a></div>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});

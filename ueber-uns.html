@@ -60,7 +60,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .btn-gold{background:var(--gold);color:#fff;box-shadow:0 10px 30px rgba(201,162,75,.35)}.btn-gold:hover{background:#b88e3a;transform:translateY(-2px)}
 .reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}
 .reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
-.reassure span::before{content:"✓";color:var(--blue);font-weight:800;font-size:11px}
+.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:800;font-size:11px}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .logo-img{height:34px;width:auto;display:block}
@@ -110,7 +110,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .testi-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-bright));color:#fff;font-family:var(--display);font-weight:700;font-size:15px;display:grid;place-items:center;flex-shrink:0}
 .testi-name{font-weight:700;font-size:14.5px}.testi-loc{font-size:13px;color:var(--muted);margin-top:1px}
 .testi-source{font-family:var(--mono);font-size:10.5px;color:var(--faint);display:flex;align-items:center;gap:5px;margin-top:4px}
-.testi-source::before{content:"★";color:#4285f4;font-size:11px}
+.testi-source::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%204%201%207-6-3-6%203%201-7-4-4%206-1Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%204%201%207-6-3-6%203%201-7-4-4%206-1Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:#4285f4;font-size:11px}
 .faq-wrap{max-width:840px;margin:44px auto 0}
 .faq{border-bottom:1px solid var(--border)}.faq:first-child{border-top:1px solid var(--border)}
 .faq button{width:100%;background:none;border:none;color:var(--ink);cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.3}
@@ -191,7 +191,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-about">
@@ -201,12 +201,12 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
   <div class="nav-inner">
     <a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-right">
-      <a href="tel:+491747445452" class="nav-phone">&#128222; +49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a>
+      <a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> +49&nbsp;(0)&nbsp;174&nbsp;744&nbsp;5452</a>
       <a href="/#wertcheck" class="btn btn-primary">Kostenloses Erstgespr&auml;ch</a>
     </div>
   </div>
 </header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5,0 &middot; 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">&middot;</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">&middot;</span><span>Familienbetrieb aus der Wedemark</span></div></div>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 &middot; 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">&middot;</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">&middot;</span><span>Familienbetrieb aus der Wedemark</span></div></div>
 
 <div class="container">
   <nav class="breadcrumb"><a href="/">Startseite</a><span>&rsaquo;</span>&Uuml;ber uns</nav>
@@ -216,18 +216,18 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 <section class="hero">
   <div class="container">
     <div style="max-width:860px">
-      <div class="hero-eyebrow r"><span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Familienbetrieb aus der Wedemark &middot; seit 2022</span></div>
+      <div class="hero-eyebrow r"><span class="hero-stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span><span>Familienbetrieb aus der Wedemark &middot; seit 2022</span></div>
       <h1 class="r s1">Wir bewerten H&auml;user, weil wir sie vorher <span class="u">gebaut</span> haben</h1>
       <p class="hero-sub r s2">Sanierung, Planung, Generalunternehmen: Bevor wir Immobilien bewertet haben, haben wir sie geplant, gekauft, gepr&uuml;ft und saniert. Diese Perspektive &ndash; von der Bausubstanz her gedacht &ndash; ist der Grund, warum es 3D Immobilienbewertung gibt.</p>
       <div class="hero-actions r s3">
         <a href="/#wertcheck" class="btn btn-primary">Kostenloses Erstgespr&auml;ch &rarr;</a>
-        <a href="tel:+491747445452" class="btn btn-outline">&#128222; Direkt anrufen</a>
+        <a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Direkt anrufen</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="trust-bar"><div class="container trust-inner"><span>Gegr&uuml;ndet 2022</span><span>&Uuml;ber 250 Immobilien bewertet</span><span>5,0 &#9733; bei Google</span><span>Hannover &amp; Region</span></div></div>
+<div class="trust-bar"><div class="container trust-inner"><span>Gegr&uuml;ndet 2022</span><span>&Uuml;ber 250 Immobilien bewertet</span><span>5,0 <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg> bei Google</span><span>Hannover &amp; Region</span></div></div>
 
 <!-- ===================== GESCHICHTE ===================== -->
 <section class="block">
@@ -327,7 +327,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="facts r s1">
       <div class="fact"><div class="n">2022</div><div class="l">gegr&uuml;ndet in der Wedemark</div></div>
       <div class="fact"><div class="n">250+</div><div class="l">bewertete Immobilien</div></div>
-      <div class="fact"><div class="n">5,0&nbsp;&#9733;</div><div class="l">aus 22 Google-Bewertungen</div></div>
+      <div class="fact"><div class="n">5,0&nbsp;<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg></div><div class="l">aus 22 Google-Bewertungen</div></div>
       <div class="fact"><div class="n">19</div><div class="l">Kommunen in der Region Hannover</div></div>
       <div class="fact"><div class="n">24&nbsp;h</div><div class="l">R&uuml;ckmeldung auf Anfragen</div></div>
     </div>
@@ -348,7 +348,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     </div>
     <div class="creds r s1">
       <div class="cred">
-        <div class="cred-ico">&#127891;</div>
+        <div class="cred-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#graduation"></use></svg></div>
         <div>
           <b>Bachelor of Science (B.Sc.) Architektur</b>
           <span class="iss">Gottfried Wilhelm Leibniz Universit&auml;t Hannover &middot; Fakult&auml;t f&uuml;r Architektur und Landschaft</span>
@@ -356,7 +356,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </div>
       </div>
       <div class="cred">
-        <div class="cred-ico">&#128220;</div>
+        <div class="cred-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#document"></use></svg></div>
         <div>
           <b>Zertifikatslehrgang Wertermittlung (IHK)</b>
           <span class="iss">Industrie- und Handelskammer Hannover</span>
@@ -364,7 +364,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </div>
       </div>
       <div class="cred">
-        <div class="cred-ico">&#128208;</div>
+        <div class="cred-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#ruler"></use></svg></div>
         <div>
           <b>Master of Science (M.Sc.) Bauingenieurwesen</b>
           <span class="iss">Hochschulabschluss im Bauingenieurwesen</span>
@@ -372,7 +372,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </div>
       </div>
       <div class="cred">
-        <div class="cred-ico">&#127959;</div>
+        <div class="cred-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg></div>
         <div>
           <b>Praxis aus Sanierung, Planung und Generalunternehmen</b>
           <span class="iss">Jahrelange Bau- und Sanierungspraxis vor der Gr&uuml;ndung</span>
@@ -411,7 +411,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <p>Im kostenlosen Erstgespr&auml;ch kl&auml;ren wir, worum es bei Ihrer Immobilie geht &ndash; und ob wir die Richtigen daf&uuml;r sind. Ehrlich, auch wenn die Antwort einmal Nein lautet.</p>
       <div class="btns">
         <a href="/#wertcheck" class="btn btn-gold">Kostenloses Erstgespr&auml;ch sichern &rarr;</a>
-        <a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)">&#128222; Jetzt anrufen</a>
+        <a href="tel:+491747445452" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5)"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Jetzt anrufen</a>
       </div>
       <a href="tel:+491747445452" class="cta-phone">oder direkt: <b>+49 (0) 174 744 5452</b> &nbsp;&middot;&nbsp; Mo&ndash;Fr 09:00&ndash;18:00</a>
     </div>
@@ -492,7 +492,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="office-footer-bottom"><span>© <span id="year">2026</span> 3D Immobilienbewertung</span><div class="office-footer-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></div>
   </div>
 </footer>
-<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a><a href="/#wertcheck" class="btn btn-primary">Erstgespräch</a></div>
+<div class="mobile-bar"><a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a><a href="/#wertcheck" class="btn btn-primary">Erstgespräch</a></div>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});

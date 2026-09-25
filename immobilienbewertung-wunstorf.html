@@ -31,7 +31,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .btn-primary{background:var(--blue);color:#fff;box-shadow:var(--shadow-blue)}.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}.btn-outline:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
 .btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:#b88e3a;transform:translateY(-2px)}
-.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"✓";color:var(--blue);font-weight:800;font-size:11px}
+.reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}.reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:800;font-size:11px}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .logo-img{height:34px;width:auto}.nav-right{display:flex;align-items:center;gap:18px}.nav-phone{font-weight:700;color:var(--blue);font-size:14.5px}.nav-right .btn{padding:10px 20px;font-size:13.5px}
@@ -63,7 +63,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .stadtteile{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .stadtteile span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:6px 14px;font-size:13px;color:rgba(255,255,255,.9);font-weight:500}
 .stat-pin{display:flex;align-items:center;gap:8px;color:var(--gold);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
-.stat-pin::before{content:"📍";font-size:14px}
+.stat-pin::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M19%2010c0%205-7%2011-7%2011S5%2015%205%2010a7%207%200%200%201%2014%200ZM12%208v4%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M19%2010c0%205-7%2011-7%2011S5%2015%205%2010a7%207%200%200%201%2014%200ZM12%208v4%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;font-size:14px}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .s-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:box-shadow .3s,transform .3s}
 .s-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
@@ -99,7 +99,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 .sr{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.sr.visible{opacity:1;transform:none}
 </style>
 <noscript><style>.sr{opacity:1!important;transform:none!important}</style></noscript><link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-landing">
@@ -108,24 +108,24 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
   <div class="nav-inner">
     <a href="/"><img src="assets/logo.png" alt="3D Immobilienbewertung Logo" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-right">
-      <a href="tel:+491747445452" class="nav-phone">📞 0174 744 5452</a>
+      <a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> 0174 744 5452</a>
       <a href="#anfrage" class="btn btn-primary">Kostenlos anfragen</a>
     </div>
   </div>
 </header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">★★★★★</span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-badge">📍 Ihr Sachverständiger · Wunstorf</div>
+        <div class="hero-badge"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Ihr Sachverständiger · Wunstorf</div>
         <h1>Immobilien&shy;bewertung <span class="city">Wunstorf</span><br/><span class="u">zuverlässig & rechtssicher</span></h1>
         <p class="hero-sub">Als Sachverständiger für Immobilienbewertung erstellen wir Ihnen ein nachvollziehbares Verkehrswertgutachten nach §194 BauGB — für Wunstorf und die gesamte Region. Kostenloses Erstgespräch.</p>
 <div class="region-people"><div class="region-people-images"><img src="/assets/team-1.webp" width="800" height="999" loading="lazy" alt="Nandino Donnarumma"><img src="/assets/team-2.webp" width="800" height="999" loading="lazy" alt="Vito Donnarumma"></div><p><strong>Nandino &amp; Vito Donnarumma</strong><br>Bauingenieurwesen &amp; Architektur<br><a href="/ueber-uns.html#qualifikationen">Team und Qualifikationen</a></p></div>
         <div class="hero-actions">
-          <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch →</a>
-          <a href="tel:+491747445452" class="btn btn-outline">📞 Anrufen</a>
+          <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
+          <a href="tel:+491747445452" class="btn btn-outline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
         </div>
         <div class="reassure">
           <span>Nach ImmoWertV</span>
@@ -139,12 +139,12 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
           <h2>Kostenlose Erstberatung</h2>
           <p class="sub">Unverbindlich · Antwort in 24 h</p>
           <form id="contactForm">
-            <div class="ff"><label>Ihr Name</label><input type="text" name="name" placeholder="Max Mustermann" required /></div>
-            <div class="ff"><label>Telefon oder E-Mail</label><input type="text" name="email" placeholder="0511 … oder name@mail.de" required /></div>
-            <div class="ff"><label>Ort / Adresse der Immobilie</label><input type="text" name="ort" id="ort" placeholder="Wunstorf …" /></div>
+            <div class="ff"><label for="contact-name">Ihr Name</label><input id="contact-name" type="text" name="name" placeholder="Max Mustermann" required /></div>
+            <div class="ff"><label for="contact-email">E-Mail (Pflichtfeld)</label><input id="contact-email" type="email" name="email" autocomplete="email" placeholder="name@mail.de" required /></div><div class="ff"><label for="contact-phone">Telefon (optional)</label><input id="contact-phone" type="tel" name="phone" autocomplete="tel" placeholder="Für einen Rückruf" /></div>
+            <div class="ff"><label for="ort">Ort / Adresse der Immobilie</label><input type="text" name="ort" id="ort" placeholder="Wunstorf …" /></div>
             <div class="ff">
-              <label>Art der Immobilie</label>
-              <select name="typ">
+              <label for="contact-typ">Art der Immobilie</label>
+              <select id="contact-typ" name="typ">
                 <option value="">Bitte wählen …</option>
                 <option>Einfamilienhaus</option>
                 <option>Doppelhaushälfte / Reihenhaus</option>
@@ -154,10 +154,10 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
                 <option>Gewerbeimmobilie</option>
               </select>
             </div>
-            <div class="ff"><label>Ihre Nachricht (optional)</label><textarea name="message" rows="3" placeholder="Kurze Beschreibung Ihres Anliegens …"></textarea></div>
-            <button type="submit" class="btn btn-gold">Jetzt kostenlos anfragen ✓</button>
+            <div class="ff"><label for="contact-message">Ihre Nachricht (optional)</label><textarea id="contact-message" name="message" rows="3" placeholder="Kurze Beschreibung Ihres Anliegens …"></textarea></div>
+            <button type="submit" class="btn btn-gold">Kostenloses Erstgespräch anfragen</button>
           </form>
-          <p class="form-note">🔒 Ihre Daten sind sicher – keine Weitergabe an Dritte</p>
+          <p class="form-note"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#lock"></use></svg> Ihre Daten sind sicher – keine Weitergabe an Dritte</p>
         </div>
       </div>
     </div>
@@ -167,20 +167,20 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <div class="trust-bar">
   <div class="container">
     <div class="trust-scroll">
-      <span class="trust-item"><span class="icon">✓</span> Sachverständiger für Immobilienbewertung</span>
-      <span class="trust-item"><span class="icon">✓</span> Gutachten §194 BauGB</span>
-      <span class="trust-item"><span class="icon">✓</span> Vor Ort in Wunstorf &amp; Umgebung</span>
-      <span class="trust-item"><span class="icon">✓</span> Kostenloses Erstgespräch</span>
-      <span class="trust-item"><span class="icon">✓</span> Antwort innerhalb 24 Stunden</span>
-      <span class="trust-item"><span class="icon">✓</span> Diskret &amp; vertraulich</span>
-      <span class="trust-item"><span class="icon">✓</span> ImmoWertV-konforme Bewertung</span>
-      <span class="trust-item"><span class="icon">✓</span> Sachverständiger für Immobilienbewertung</span>
-      <span class="trust-item"><span class="icon">✓</span> Gutachten §194 BauGB</span>
-      <span class="trust-item"><span class="icon">✓</span> Vor Ort in Wunstorf &amp; Umgebung</span>
-      <span class="trust-item"><span class="icon">✓</span> Kostenloses Erstgespräch</span>
-      <span class="trust-item"><span class="icon">✓</span> Antwort innerhalb 24 Stunden</span>
-      <span class="trust-item"><span class="icon">✓</span> Diskret &amp; vertraulich</span>
-      <span class="trust-item"><span class="icon">✓</span> ImmoWertV-konforme Bewertung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Sachverständiger für Immobilienbewertung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Gutachten §194 BauGB</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Vor Ort in Wunstorf &amp; Umgebung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Kostenloses Erstgespräch</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Antwort innerhalb 24 Stunden</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Diskret &amp; vertraulich</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> ImmoWertV-konforme Bewertung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Sachverständiger für Immobilienbewertung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Gutachten §194 BauGB</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Vor Ort in Wunstorf &amp; Umgebung</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Kostenloses Erstgespräch</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Antwort innerhalb 24 Stunden</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> Diskret &amp; vertraulich</span>
+      <span class="trust-item"><span class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span> ImmoWertV-konforme Bewertung</span>
     </div>
   </div>
 </div>
@@ -211,19 +211,19 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     </div>
     <div class="services-grid">
       <div class="s-card sr">
-        <div class="icon">📋</div>
+        <div class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#clipboard"></use></svg></div>
         <h3>Kurzgutachten</h3>
         <p>Schnelle, fundierte Werteinschätzung für Kauf- und Verkaufsentscheidungen. Ideal als erste Orientierung.</p>
         <div class="price">ab 490 € · Lieferzeit 3–5 Tage</div>
       </div>
       <div class="s-card sr">
-        <div class="icon">⚖️</div>
+        <div class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#scales"></use></svg></div>
         <h3>Verkehrswertgutachten</h3>
         <p>Vollgutachten nach §194 BauGB und ImmoWertV. Objektbezogen begründet; Verwendungszweck vorab klären.</p>
         <div class="price">Preis nach Objekt · Lieferzeit 7–10 Tage</div>
       </div>
       <div class="s-card sr">
-        <div class="icon">💬</div>
+        <div class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#chat"></use></svg></div>
         <h3>Kostenlose Erstberatung</h3>
         <p>Wir besprechen Ihr Anliegen, erklären das optimale Gutachten und nennen Ihnen einen Festpreis.</p>
         <div class="price">Kostenlos &amp; unverbindlich</div>
@@ -240,19 +240,19 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     </div>
     <div class="testimonials-grid">
       <div class="tcard sr">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <blockquote>"Wir haben ein Haus am Steinhuder Meer geerbt. Der Sachverständige kannte den Markt dort sehr gut – das Gutachten war detailliert und überzeugend."</blockquote>
-        <cite><div class="av">F</div><div><div class="nm">Familie Schäfer</div><div class="loc">📍 Steinhude</div></div></cite>
+        <cite><div class="av">F</div><div><div class="nm">Familie Schäfer</div><div class="loc"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Steinhude</div></div></cite>
       </div>
       <div class="tcard sr">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <blockquote>"Professionelle Abwicklung von A bis Z. Fester Preis wie vereinbart, pünktliche Lieferung. Sehr empfehlenswert!"</blockquote>
-        <cite><div class="av">R</div><div><div class="nm">Reinhard K.</div><div class="loc">📍 Wunstorf</div></div></cite>
+        <cite><div class="av">R</div><div><div class="nm">Reinhard K.</div><div class="loc"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Wunstorf</div></div></cite>
       </div>
       <div class="tcard sr">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <blockquote>"Sehr kompetente Beratung, faire Preise und ein Gutachten, das beim Finanzamt sofort akzeptiert wurde. Klar empfehlenswert!"</blockquote>
-        <cite><div class="av">M</div><div><div class="nm">Michael R.</div><div class="loc">📍 Wunstorf</div></div></cite>
+        <cite><div class="av">M</div><div><div class="nm">Michael R.</div><div class="loc"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#pin"></use></svg> Wunstorf</div></div></cite>
       </div>
     </div>
   </div>
@@ -296,7 +296,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     </table>
   </div>
   <p style="max-width:720px;margin:16px auto 0;font-size:13px;color:var(--faint,#94A6BD);text-align:center">Quelle: Gutachterausschüsse für Grundstückswerte in Niedersachsen, BORIS.NI / LGLN (Datenlizenz Deutschland – Namensnennung 2.0), Stichtag 01.01.2026. Werte für Einfamilienhaus-Zonen; weitere Zonen (Mehrfamilienhaus, Gewerbe, Außenbereich) auf Anfrage.</p>
-  <p style="max-width:720px;margin:18px auto 0;color:var(--muted,#5C708A)"><b>Wichtig:</b> Der Bodenrichtwert beziffert nur den Grund und Boden – der <b>Verkehrswert Ihrer Immobilie</b> hängt zusätzlich von Bausubstanz, Baujahr, Zustand, Ausstattung und der konkreten Mikrolage ab. Genau diese Faktoren bewerten wir mit Fachwissen aus Bauingenieurwesen und Architektur vor Ort. <a href="#anfrage" style="color:var(--blue,#16365C);font-weight:700;text-decoration:underline">Kostenloses Erstgespräch anfragen&nbsp;→</a></p>
+  <p style="max-width:720px;margin:18px auto 0;color:var(--muted,#5C708A)"><b>Wichtig:</b> Der Bodenrichtwert beziffert nur den Grund und Boden – der <b>Verkehrswert Ihrer Immobilie</b> hängt zusätzlich von Bausubstanz, Baujahr, Zustand, Ausstattung und der konkreten Mikrolage ab. Genau diese Faktoren bewerten wir mit Fachwissen aus Bauingenieurwesen und Architektur vor Ort. <a href="#anfrage" style="color:var(--blue,#16365C);font-weight:700;text-decoration:underline">Kostenloses Erstgespräch anfragen&nbsp;<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a></p>
 </div></section>
 <section class="block"><div class="container">
   <div class="sec-head center r" style="margin-bottom:0"><span class="eyebrow" style="justify-content:center">Unser Vorteil</span><h2>Was Sie bei uns für Wunstorf erwartet</h2></div>
@@ -341,8 +341,8 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
     <h2>Immobilienbewertung in Wunstorf<br/>– jetzt kostenloses Erstgespräch sichern</h2>
     <p>Unverbindlich, vertraulich, innerhalb von 24 Stunden zurück bei Ihnen.</p>
     <div class="btns">
-      <a href="#anfrage" class="btn btn-gold">Jetzt anfragen →</a>
-      <a href="tel:+491747445452" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)">📞 0174 744 5452</a>
+      <a href="#anfrage" class="btn btn-gold">Jetzt anfragen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
+      <a href="tel:+491747445452" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> 0174 744 5452</a>
     </div>
   </div>
 </div>
@@ -400,7 +400,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
   </div>
 </section>
 
-<aside class="regional-return" aria-label="Weitere Orte und Vorbereitung"><div><a href="/#region">Alle Orte in der Region Hannover ↗</a><a href="/checkliste-immobilienbewertung.html">Unterlagen-Checkliste ↗</a><span>Büro: Gailhoferstraße 17 · 30900 Wedemark</span></div></aside>
+<aside class="regional-return" aria-label="Weitere Orte und Vorbereitung"><div><a href="/#region">Alle Orte in der Region Hannover <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a><a href="/checkliste-immobilienbewertung.html">Unterlagen-Checkliste <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a><span>Büro: Gailhoferstraße 17 · 30900 Wedemark</span></div></aside>
 <footer class="brand-footer office-footer" id="office-footer">
   <div class="office-footer-inner">
     <div class="office-footer-grid">
@@ -435,7 +435,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 </div>
 
 <div class="mobile-bar">
-  <a href="tel:+491747445452" class="btn btn-outline" style="flex:1;justify-content:center">📞 Anrufen</a>
+  <a href="tel:+491747445452" class="btn btn-outline" style="flex:1;justify-content:center"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
   <a href="#anfrage" class="btn btn-primary" style="flex:1;justify-content:center">Kostenlos anfragen</a>
 </div>
 
@@ -447,14 +447,24 @@ setTimeout(function(){document.querySelectorAll('.sr').forEach(function(el){el.c
 document.getElementById('contactForm').addEventListener('submit',async function(e){
   e.preventDefault();
   const btn=this.querySelector('button[type=submit]');
+  if(btn.disabled)return;
   btn.textContent='Wird gesendet …';btn.disabled=true;
+  this.setAttribute('aria-busy','true');
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),20000);
   const ort=document.getElementById('ort').value||'Wunstorf';
-  const data={name:this.name.value,email:this.email.value,message:this.message.value,anlass:'Immobilienbewertung Wunstorf – '+ort,typ:this.typ.value};
+  const data={phone:this.elements.namedItem('phone').value.trim(),name:this.elements.namedItem('name').value.trim(),email:this.elements.namedItem('email').value.trim(),message:this.elements.namedItem('message').value.trim(),anlass:'Immobilienbewertung Wunstorf – '+ort,typ:this.elements.namedItem('typ').value.trim()};
+  data.anlass += data.typ ? ' – '+data.typ : '';
   try{
-    const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-    if(r.ok){this.innerHTML='<p style="text-align:center;color:#16365C;font-weight:700;padding:20px">✅ Vielen Dank! Wir melden uns innerhalb von 24 Stunden.</p>';}
-    else{btn.textContent='Fehler – bitte anrufen';btn.disabled=false;}
-  }catch(err){btn.textContent='Fehler – bitte anrufen';btn.disabled=false;}
+    const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:controller.signal});
+    if(r.ok && (await r.json()).ok===true){this.innerHTML='<p style="text-align:center;color:#16365C;font-weight:700;padding:20px"> Vielen Dank! Wir melden uns innerhalb von 24 Stunden.</p>';}
+    else{throw new Error('Unconfirmed delivery');}
+  }catch(err){
+    btn.textContent='Kostenloses Erstgespräch anfragen';btn.disabled=false;
+    let feedback=this.querySelector('.form-feedback');
+    if(!feedback){feedback=document.createElement('p');feedback.className='form-feedback';feedback.setAttribute('role','alert');feedback.tabIndex=-1;this.appendChild(feedback);}
+    feedback.textContent='Wir konnten die Übermittlung nicht bestätigen. Ihre Angaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie 0174 744 5452 an.';feedback.focus();
+  }finally{clearTimeout(timer);this.removeAttribute('aria-busy');}
 });
 </script>
 <script src="assets/consent.js?v=20260815b"></script>

@@ -319,7 +319,7 @@
   @media(max-width:560px){.sb-foot-inner{flex-direction:column;align-items:flex-start}}
 </style>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="mode-schnell brand-editorial brand-calculator">
@@ -337,11 +337,11 @@
     </ul>
     <div class="site-nav-cta">
       <a href="tel:+491747445452" class="site-nav-phone">0174&nbsp;744&nbsp;5452</a>
-      <a href="/#wertcheck" class="btn primary">Kostenloses Erstgespräch <span class="ar">→</span></a>
+      <a href="/#wertcheck" class="btn primary">Kostenloses Erstgespräch <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
     </div>
   </div>
 </header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">★★★★★</span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 <input type="hidden" id="kanzlei" value="3D Immobilienbewertung">
 
 <section class="rnd-hero">
@@ -390,7 +390,7 @@
               <span class="hint">Bei der AfA-Prüfung ist das <b>Erwerbsjahr</b> maßgeblich – also das Jahr, in dem Sie die Immobilie gekauft haben.</span>
             </div>
             <div class="field full">
-              <label for="gebTyp">Gebäudeart → Gesamtnutzungsdauer (GND)</label>
+              <label for="gebTyp">Gebäudeart <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg> Gesamtnutzungsdauer (GND)</label>
               <select id="gebTyp"></select>
             </div>
             <div class="field expert-only">
@@ -447,7 +447,7 @@
               </select>
             </div>
             <div class="slider-wrap">
-              <label class="hint">Feineinstellung: <b id="quickPtsLbl">0</b> Punkte</label>
+              <label class="hint" for="quickSlider">Feineinstellung: <b id="quickPtsLbl">0</b> Punkte</label>
               <input type="range" id="quickSlider" min="0" max="20" step="1" value="0">
               <div class="slider-scale"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span></div>
             </div>
@@ -539,7 +539,7 @@
         <fieldset class="fieldset">
           <div class="legend">Restnutzungsdauer</div>
           <div class="frow">
-            <div class="field"><label for="rndGutachten">RND lt. Gutachten <span class="hint" id="rndLinkHint">🔗 aus Schritt 1</span></label><div class="input-affix"><input type="number" id="rndGutachten" min="1" max="80" step="1" placeholder="aus Schritt 1"><span class="suffix">J.</span></div></div>
+            <div class="field"><label for="rndGutachten">RND lt. Gutachten <span class="hint" id="rndLinkHint"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#link"></use></svg> aus Schritt 1</span></label><div class="input-affix"><input type="number" id="rndGutachten" min="1" max="80" step="1" placeholder="aus Schritt 1"><span class="suffix">J.</span></div></div>
             <div class="field expert-only"><div class="derived"><span>RND lt. Finanzamt (aus AfA)</span><b id="d_rndfa">–</b></div></div>
           </div>
         </fieldset>
@@ -655,7 +655,7 @@
     <p>Eine verkürzte Restnutzungsdauer senkt Ihre Steuerlast nur, wenn sie gutachterlich belegt ist. Als Sachverständiger für Immobilienbewertung erstellen wir Ihr Gutachten objektspezifisch nach dem Modell der ImmoWertV 2021 – nachvollziehbar, prüfsicher und auf die Anerkennung nach § 7 Abs. 4 S. 2 EStG ausgelegt.</p>
     <div class="sb-conv-actions">
       <a href="tel:+491747445452" class="sb-btn-gold">Anrufen · 0174&nbsp;744&nbsp;5452</a>
-      <a href="/#wertcheck" class="sb-btn-outline">Kostenloses Erstgespräch <span aria-hidden="true">→</span></a>
+      <a href="/#wertcheck" class="sb-btn-outline">Kostenloses Erstgespräch <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
     </div>
     <p class="sb-price">Komplettpreis <b>1.490 €</b> · Festpreis ohne versteckte Kosten</p>
   </div>
@@ -781,9 +781,9 @@ let modMethod='detail', gebOverridden=false;
       '<option value="'+pts[1]+'">≤ 10 Jahre — '+pts[1]+' P.</option>',
       '<option value="'+pts[2]+'">≤ 15 Jahre — '+pts[2]+' P.</option>',
       '<option value="'+pts[3]+'">≤ 20 Jahre — '+pts[3]+' P.</option>'].join('');
-    return '<div class="mod-el"><div class="ml">'+name+'</div><select id="el_'+key+'" data-max="'+pts[0]+'">'+opts+'</select><div class="mp" id="mp_'+key+'">0</div></div>';
+    return '<div class="mod-el"><label class="ml" for="el_'+key+'">'+name+'</label><select id="el_'+key+'" data-max="'+pts[0]+'">'+opts+'</select><div class="mp" id="mp_'+key+'">0</div></div>';
   }).join('') +
-  '<div class="mod-el"><div class="ml">Wesentliche Verbesserung der Grundrissgestaltung<small>zeitunabhängig</small></div><select id="el_grundriss" data-max="2"><option value="0">keine — 0 P.</option><option value="1">leicht — 1 P.</option><option value="2">wesentlich — 2 P.</option></select><div class="mp" id="mp_grundriss">0</div></div>';
+  '<div class="mod-el"><label class="ml" for="el_grundriss">Wesentliche Verbesserung der Grundrissgestaltung<small>zeitunabhängig</small></label><select id="el_grundriss" data-max="2"><option value="0">keine — 0 P.</option><option value="1">leicht — 1 P.</option><option value="2">wesentlich — 2 P.</option></select><div class="mp" id="mp_grundriss">0</div></div>';
 
   $('stichtag').value=new Date().getFullYear();
 
@@ -812,7 +812,7 @@ let modMethod='detail', gebOverridden=false;
   loadExample();
 })();
 
-function updateLinkHint(){$('rndLinkHint').innerHTML=$('linkRnd').checked?'🔗 aus Schritt 1':'✏️ manuell';}
+function updateLinkHint(){$('rndLinkHint').innerHTML=$('linkRnd').checked?' aus Schritt 1':'✏️ manuell';}
 
 /* ===== RND computation ===== */
 function getGND(){const sel=parseFloat($('gebTyp').value);return sel>0?sel:(num('gndCustom')||80);}

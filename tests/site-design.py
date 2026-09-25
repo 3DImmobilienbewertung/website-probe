@@ -25,7 +25,7 @@ for path in pages:
     styles = [a['href'] for t, a in tags if t == 'link' and 'brand-editorial.css' in a.get('href', '')]
     assert styles == ['/assets/brand-editorial.css?v=brand-correction-20260923'], path
     components = [a['href'] for t, a in tags if t == 'link' and 'brand-components.css' in a.get('href', '')]
-    assert components == ['/assets/brand-components.css?v=20260925'], path
+    assert components == ['/assets/brand-components.css?v=preview-20260925'], path
     assert sum(t == 'footer' and 'office-footer' in a.get('class', '').split() for t, a in tags) == 1, path
     for label in ('Leistungen im Footer', 'Orientierung im Footer', 'Ansprechpartner im Footer'):
         assert any(t == 'nav' and a.get('aria-label') == label for t, a in tags), (path, label)

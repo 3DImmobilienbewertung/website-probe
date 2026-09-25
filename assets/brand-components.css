@@ -95,3 +95,130 @@ body.brand-editorial{
  .office-footer li a{min-height:44px}
 }
 @media(prefers-reduced-motion:reduce){.brand-editorial .post-card{transition:none}}
+
+/* REVIEW PREVIEW — deliberate contrast, one enquiry action, unchanged media. */
+body.brand-editorial{--action:#C9A24B;--night:#102b4c;--line-on-dark:#48617c;--component-shadow:0 6px 24px rgba(22,54,92,.045)}
+.brand-editorial .ui-icon{display:inline-block;width:1.1em;height:1.1em;max-width:none;flex-shrink:0;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.brand-editorial .ui-rating{width:5.5em;height:1.1em;color:var(--gold)}
+.brand-editorial .trustbar svg.ui-icon[aria-hidden="true"]{display:inline-block}
+.brand-home .wc-opt .ic{display:inline-flex;font-size:22px;color:var(--blue)}
+.brand-editorial [hidden]{display:none!important}
+.brand-editorial :is(.btn-primary,.btn.primary),.brand-editorial .brand-header .btn-primary{background:var(--action);border-color:var(--action);color:#102b4c;box-shadow:none;font-weight:700}
+.brand-editorial :is(.btn-primary,.btn.primary):hover{background:#dfba67;border-color:#dfba67;color:#102b4c;box-shadow:0 5px 16px rgba(16,43,76,.14)}
+.brand-editorial .btn{min-height:50px;border-radius:7px;letter-spacing:0;transition:background-color .18s,box-shadow .18s}
+.brand-editorial .btn:active{transform:translateY(1px)}
+.brand-editorial .brand-header{border-bottom:1px solid var(--border);box-shadow:none}
+.brand-editorial :is(.hero h1,.page-head h1,.article-head h1){letter-spacing:-.05em;line-height:1.04;font-weight:600}
+.brand-editorial :is(.hero-sub,.hero .lead){font-size:17px;line-height:1.65}
+.brand-home section.hero,.brand-landing section.hero,.brand-about section.hero,.brand-blog .page-head{background:var(--night);color:#fff;border-bottom:0}
+.brand-home section.hero{padding:132px 0 76px}
+.brand-home .hero-grid{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:56px;align-items:center}
+.brand-home .hero h1{font-size:clamp(2.25rem,4.35vw,4.3rem);color:white;line-height:1.04;margin:22px 0}
+.brand-home .hero h1 span{color:#b9cce0;display:inline-block}
+.brand-landing .hero h1 :is(span,em,strong),.brand-about .hero h1 :is(span,em,strong){color:#b9cce0}
+.brand-editorial .hero :is(h1,.hero-badge,.hero-sub,.lead,.hero-promise,.hero-detail,.hero-detail a,.hero-signature,.hero-signature a),.brand-blog .page-head :is(h1,p,.eyebrow){color:#fff}
+.brand-home .hero .eyebrow,.brand-about .hero .eyebrow{color:#c4d1df}
+.brand-home .hero-promise{font-size:19px;line-height:1.45;border-left:2px solid var(--gold);padding-left:16px;max-width:36ch;margin-bottom:20px}
+.brand-home .hero .lead{color:#d3dfeb;max-width:49ch}
+.brand-home .hero-detail{font-size:12px;line-height:1.7;max-width:56ch;color:#c4d1df}
+.brand-home .hero-detail a{display:inline-block;min-height:36px;padding-top:5px;text-underline-offset:4px}
+.brand-home .hero-actions{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);max-width:none;margin-top:28px}
+.brand-home .hero-actions .btn{font-size:14px;min-height:60px}
+.brand-editorial .hero .hero-actions :is(.btn-ghost,.btn-outline,.btn-white){background:transparent;color:white;border-color:#8ea4bd;box-shadow:none}
+.brand-editorial .hero .hero-actions :is(.btn-ghost,.btn-outline,.btn-white):hover{background:#234465;border-color:white}
+.brand-home .hero-people figcaption{color:white;font-size:13px}
+.brand-home .hero-people figcaption b{color:white}
+.brand-home .hero-people figcaption span{color:#c4d1df;font-size:12px}
+.brand-home .hero-signature{border-color:var(--line-on-dark);color:#c4d1df;line-height:1.6}
+.brand-editorial .hero :focus-visible,.brand-home #ablauf :focus-visible{outline-color:var(--gold)}
+.brand-landing .hero :is(.reassure,.reassure span),.brand-about .hero .reassure{color:#d3dfeb}
+.brand-landing .hero :is(.form-card,.lead-form){color:var(--ink);border-top-color:var(--gold)}
+.brand-landing .hero .region-people{background:#183858;border-color:var(--line-on-dark);border-left-color:var(--gold)}
+.brand-landing .hero .region-people :is(p,a){color:#e2eaf3}
+.brand-about .hero :is(.hero-sub,.lead-p){color:#d3dfeb}
+.brand-home section:not(.hero){padding-block:80px}
+.brand-home :is(.section-title,.sec-head h2){font-size:clamp(1.9rem,3.3vw,3rem);letter-spacing:-.04em;max-width:25ch}
+.brand-home .sec-head{margin-bottom:36px}
+.brand-home .sec-head[style*="text-align:center"] .section-title{margin-inline:auto}
+.brand-home .personal-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start}
+.brand-home .personal-grid h2{font-size:clamp(1.9rem,3.3vw,3rem);line-height:1.1;margin-top:16px}
+.brand-home .personal-grid p{font-size:17px;line-height:1.8;color:var(--ink-2);margin:0 0 16px}
+.brand-editorial .text-action{display:inline-flex;gap:12px;align-items:center;min-height:44px;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:5px;color:var(--blue)}
+.brand-home .intent-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:40px}
+.brand-home .intent-links a{padding:24px;border:1px solid var(--border);color:var(--ink);font-size:18px;line-height:1.4;transition:background .18s;display:block}
+.brand-home .intent-links a+a{border-left:0}
+.brand-home .intent-links a:hover{background:#f1f4f7}
+.brand-home .intent-links a>span:first-child{display:block;font:11px/1.6 var(--mono);color:var(--muted);margin-bottom:12px}
+.brand-home .intent-links a>span:last-child{display:inline-block;margin-left:10px;color:var(--blue)}
+.brand-home #leistungen{background:#f4f6f8}
+.brand-home #leistungen .cards-3{gap:18px;align-items:stretch}
+.brand-home #leistungen .card{padding:30px;border:1px solid #d5dee7;box-shadow:none}
+.brand-home #leistungen .card h3{font-size:1.7rem;line-height:1.16;letter-spacing:-.035em}
+.brand-home #leistungen .card .num{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.05em}
+.brand-home #leistungen .card .for{border-top:1px solid var(--border);padding-top:16px;color:var(--blue)}
+.brand-home #leistungen .card.feature{border-left:3px solid var(--gold);background:white}
+.brand-home #wertcheck{background:white}
+.brand-home .wc-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.brand-home .wc-card{padding:32px;border-radius:12px;border-top:3px solid var(--gold);box-shadow:0 16px 48px rgba(16,43,76,.09)}
+.brand-home .wc-grid h2{font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.12}
+.brand-home .wc-q{font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.2;letter-spacing:-.03em}
+.brand-home .wc-q:focus{outline:none}
+.brand-home .wc-sub{font-size:14px;line-height:1.7}
+.brand-home .wc-progress{gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:30px}
+.brand-home .wc-progress .bar{flex:1;min-width:90px}
+.brand-home .wc-progress .lbl{font:11px/1.6 var(--mono);white-space:normal;color:var(--muted)}
+.brand-home .wc-opt{min-height:62px;border:1px solid #bac7d5;border-radius:7px;padding:16px;font:600 15px/1.4 var(--body);color:var(--blue);text-align:left;display:flex;align-items:center}
+.brand-home .wc-opt .ic{display:inline-flex}
+.brand-home .wc-opt[aria-pressed="true"]{background:#e9f0f7;border:2px solid var(--blue)}
+.brand-home .wc-opt:hover{background:#f1f5f9;border-color:var(--blue)}
+.brand-home .wc-field select{width:100%;min-height:50px;border:1px solid #bac7d5;border-radius:6px;background:white;color:var(--ink);font:16px var(--body);padding:12px}
+.brand-home .wc-summary{font-size:13px;line-height:1.65;border-left:2px solid var(--gold);padding:10px 14px;margin:16px 0 22px;background:#f4f6f8;color:var(--ink-2);overflow-wrap:anywhere}
+.brand-home .wc-back{min-height:44px;font:14px var(--body);text-decoration:underline;text-underline-offset:4px;color:var(--muted);margin-top:14px}
+.brand-editorial .form-feedback{border-left:3px solid #9e3535;background:#fff3f1;padding:16px;color:#762727;font-size:14px;line-height:1.6;margin-top:16px}
+.brand-editorial button:disabled{opacity:.6;cursor:wait;transform:none}
+.brand-home #ablauf{background:var(--night);color:white}
+.brand-home #ablauf :is(h2,h3,.eyebrow){color:white}
+.brand-home #ablauf :is(.lead,.step p){color:#d3dfeb}
+.brand-home #ablauf .steps{gap:20px}
+.brand-home #ablauf .step{background:transparent;border:0;border-top:1px solid #698099;padding:24px 0;border-radius:0;box-shadow:none}
+.brand-home #ablauf .step .n{color:var(--gold);font:400 2.2rem var(--mono);margin-bottom:28px}
+.brand-home #ablauf .step h3{font-size:1.2rem;line-height:1.3}
+.brand-home #ablauf .step .dot,.brand-home #ablauf .steps::before{display:none}
+.brand-home #kontakt{background:#f4f6f8}
+.brand-home #kontakt .contact-card{background:white;border:1px solid var(--border);box-shadow:none}
+.brand-editorial .brand-page-links{background:#f4f6f8}
+.brand-editorial .page-head{padding-block:56px}
+.brand-editorial .guide-shell>header h1{font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.08;letter-spacing:-.045em}
+.brand-editorial .post-card{border-top-color:var(--gold)}
+@media(max-width:980px){
+ .brand-home .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+ .brand-home section.hero{padding:114px 0 48px}
+ .brand-home .hero h1{font-size:clamp(2.3rem,6vw,4rem)}
+ .brand-home .hero-people{max-width:620px}
+ .brand-home .personal-grid,.brand-home .wc-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+ .brand-home .intent-links a{padding:20px;font-size:16px}
+ .brand-home section:not(.hero){padding-block:56px}
+}
+@media(max-width:600px){
+ .brand-home section.hero{padding:100px 0 36px}
+ .brand-home .hero h1{font-size:clamp(2rem,8.8vw,2.7rem);hyphens:auto;line-height:1.08}
+ .brand-home .hero-promise{font-size:17px;line-height:1.45}
+ .brand-home .hero .lead{font-size:16px;line-height:1.65}
+ .brand-home .hero-actions{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:22px}
+ .brand-home .hero-actions .btn{font-size:14px;min-height:52px}
+ .brand-home .hero-people figcaption{font-size:12px}
+ .brand-home .hero-people figcaption span{font-size:11px}
+ .brand-home section:not(.hero){padding-block:40px}
+ .brand-home .personal-grid p{font-size:16px}
+ .brand-home .intent-links{grid-template-columns:minmax(0,1fr);margin-top:28px}
+ .brand-home .intent-links a+a{border-left:1px solid var(--border);border-top:0}
+ .brand-home #leistungen .card{padding:24px}
+ .brand-home #leistungen .card h3{font-size:1.55rem}
+ .brand-home .wc-card{padding:24px 18px}
+ .brand-home .wc-opt{padding:14px 10px;font-size:14px;min-height:78px;flex-direction:column;align-items:flex-start;gap:8px}
+ .brand-home .wc-q{font-size:1.4rem}
+ .brand-home .wc-progress{margin-bottom:22px}
+ .brand-home #ablauf .step .n{margin-bottom:14px}
+ .brand-editorial .page-head{padding-block:32px}
+}
+@media(prefers-reduced-motion:reduce){.brand-editorial .btn,.brand-home .intent-links a{transition:none;transform:none}}

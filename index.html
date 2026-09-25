@@ -215,7 +215,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spac
 /* reassurance microcopy */
 .reassure{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px}
 .reassure span{font-size:13.5px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
-.reassure span::before{content:"✓";color:var(--blue);font-weight:700}
+.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:700}
 
 /* ============================================================ NAV */
 header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s,box-shadow .4s;border-bottom:1px solid transparent}
@@ -289,7 +289,7 @@ section{position:relative;padding:110px 0}
 .wc-grid p{color:#d7e6ff;margin-top:16px;max-width:440px}
 .wc-points{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:12px}
 .wc-points li{display:flex;gap:11px;align-items:center;color:#e7f0ff;font-size:15.5px}
-.wc-points li::before{content:"✓";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:12px;flex-shrink:0}
+.wc-points li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:12px;flex-shrink:0}
 /* card */
 .wc-card{background:#fff;border-radius:22px;padding:36px;box-shadow:0 30px 70px rgba(8,30,70,.4);color:var(--ink)}
 .wc-progress{display:flex;align-items:center;gap:8px;margin-bottom:24px}
@@ -361,8 +361,8 @@ section{position:relative;padding:110px 0}
 .cmp li{display:flex;gap:12px;font-size:15.5px;line-height:1.5;color:var(--ink-2)}
 .cmp.good li{color:#e7f0ff}
 .cmp li::before{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:1px}
-.cmp.bad li::before{content:"✕";background:#fbe3e3;color:#c0392b}
-.cmp.good li::before{content:"✓";background:rgba(255,255,255,.2);color:#fff}
+.cmp.bad li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m6%206%2012%2012M6%2018%2018%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m6%206%2012%2012M6%2018%2018%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;background:#fbe3e3;color:#c0392b}
+.cmp.good li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;background:rgba(255,255,255,.2);color:#fff}
 
 /* ============================================================ REGION */
 .region{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -370,7 +370,7 @@ section{position:relative;padding:110px 0}
 .region-map svg{width:100%;height:100%}
 .region-pins{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .region-pins li{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:9px 16px;font-size:14px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-sm)}
-.region-pins li::before{content:"📍";font-size:14px}
+.region-pins li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M19%2010c0%205-7%2011-7%2011S5%2015%205%2010a7%207%200%200%201%2014%200ZM12%208v4%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M19%2010c0%205-7%2011-7%2011S5%2015%205%2010a7%207%200%200%201%2014%200ZM12%208v4%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;font-size:14px}
 
 /* ============================================================ SEO TEXT */
 .seo-text .section-title{margin-bottom:28px}
@@ -544,7 +544,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .ic-title{font-family:var(--display);font-size:1.15rem;font-weight:700;color:#fff;line-height:1.3;letter-spacing:-.01em;margin:0}
 .ic-facts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
 .ic-facts li{font-size:13.5px;color:#bcd6ff;padding-left:18px;position:relative;line-height:1.4}
-.ic-facts li::before{content:'✓';position:absolute;left:0;color:#C9A24B;font-weight:700;font-size:12px}
+.ic-facts li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;position:absolute;left:0;color:#C9A24B;font-weight:700;font-size:12px}
 .ic-cta{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-size:13px;font-weight:700;color:#C9A24B;text-decoration:none;font-family:var(--body);transition:gap .2s}
 .ic-cta:hover{gap:10px;text-decoration:none}
 @media(max-width:900px){.ic-body{padding:20px 22px}.ic-title{font-size:1rem}.ic-facts li{font-size:12.5px}}
@@ -629,8 +629,9 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
+<script src="/assets/home-funnel.js?v=preview1" defer></script>
 </head>
 
 <body class="brand-editorial brand-home">
@@ -653,7 +654,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch <span class="ar">→</span></a>
+      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
       <button class="burger" id="burger" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -667,7 +668,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   <a href="#team">Team</a>
   <a href="#faq">FAQ</a>
   <a href="/blog/">Blog</a>
-  <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch →</a>
+  <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
 </div>
 
 <main id="top">
@@ -677,14 +678,14 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">Donnarumma &amp; Donnarumma · Seit 2022</span>
-      <h1 id="hero-title">Immobilienbewertung<br>Hannover &amp; Region.</h1>
+      <h1 id="hero-title">Immobilienbewertung<br><span>Hannover &amp; Region.</span></h1>
       <p class="hero-promise">Bei wichtigen Entscheidungen sind Sie bei uns keine Nummer.</p>
-      <p class="lead">Wir sind Nandino und Vito. Als kleines Büro nehmen wir nur Aufträge an, die wir selbst sorgfältig bearbeiten können. Ihre Immobilie begutachten wir persönlich – mit festen Ansprechpartnern, ausreichend Zeit und ohne Weitergabe an externe Gutachter.</p>
+      <p class="lead">Haus, Wohnung oder Grundstück: Wir schaffen eine nachvollziehbare Grundlage für Ihren Kauf, Verkauf oder andere wichtige Immobilienentscheidungen.</p>
       <div class="hero-actions">
-        <a href="tel:+491747445452" class="btn btn-primary">0174 744 5452 anrufen</a>
-        <a href="#wertcheck" class="btn btn-ghost">Rückruf anfragen <span class="ar" aria-hidden="true">→</span></a>
+        <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch anfragen <span class="ar" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
+        <a href="tel:+491747445452" class="btn btn-ghost">0174 744 5452 anrufen</a>
       </div>
-      <p class="hero-detail">Erstgespräch kostenlos · Kurzgutachten ab 490 €<br><a href="#leistungen">Leistungen und Umfang ansehen</a></p>
+      <p class="hero-detail">Erstgespräch kostenlos. Gutachten kostenpflichtig – Kurzgutachten ab 490 €.<br><a href="#leistungen">Leistungen und Umfang ansehen</a></p>
     </div>
     <figure class="hero-people">
       <div class="portrait-pair">
@@ -695,106 +696,24 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <div><b>Nandino Donnarumma</b><span>M.Sc. Bauingenieurwesen</span></div>
         <div><b>Vito Donnarumma</b><span>B.Sc. Architektur</span></div>
       </figcaption>
-      <div class="hero-signature"><span>Büro in der Wedemark. Für die Region vor Ort.</span><a href="/ueber-uns.html#qualifikationen">Qualifikationen ansehen ↗</a></div>
+      <div class="hero-signature"><span>Büro in der Wedemark. Für die Region vor Ort.</span><a href="/ueber-uns.html#qualifikationen">Qualifikationen ansehen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a></div>
     </figure>
   </div>
 </section>
 
 
 <!-- ===================== ERSTGESPRÄCH (Conversion-Funnel) ===================== -->
-<section id="wertcheck" class="wertcheck">
-  <div class="container wc-grid">
-    <div class="r">
-      <span class="eyebrow">Gutachten-Vorab-Check</span>
-      <h2>Erzählen Sie uns von Ihrer Immobilie.</h2>
-      <p>Ein paar Angaben genügen. Nandino oder Vito meldet sich persönlich bei Ihnen. Kostenlos ist das Erstgespräch – nicht das Gutachten. Mit Ihrer Anfrage erteilen Sie noch keinen kostenpflichtigen Auftrag.</p>
-      <ul class="wc-points">
-        <li>Erstgespräch vom unabhängigen Sachverständigen</li>
-        <li>Kostenlos &amp; ohne Verpflichtung</li>
-        <li>Antwort binnen 24 Stunden</li>
-      </ul>
-    </div>
-    <div class="wc-card r s2">
-      <div class="wc-progress">
-        <div class="bar"><i id="wcBar"></i></div>
-        <span class="lbl" id="wcLbl">Schritt 1 / 5</span>
-      </div>
-
-      <!-- Step 1 -->
-      <div class="wc-step active" data-step="1">
-        <div class="wc-q">Um welche Immobilie geht es?</div>
-        <div class="wc-sub">Wählen Sie die passende Objektart.</div>
-        <div class="wc-opts">
-          <button class="wc-opt" data-field="objekt" data-val="Eigentumswohnung"><span class="ic">🏢</span> Eigentumswohnung</button>
-          <button class="wc-opt" data-field="objekt" data-val="Einfamilienhaus"><span class="ic">🏡</span> Einfamilienhaus</button>
-          <button class="wc-opt" data-field="objekt" data-val="Mehrfamilienhaus"><span class="ic">🏘️</span> Mehrfamilienhaus</button>
-          <button class="wc-opt" data-field="objekt" data-val="Grundstück"><span class="ic">📐</span> Grundstück</button>
-          <button class="wc-opt" data-field="objekt" data-val="Gewerbeimmobilie"><span class="ic">🏬</span> Gewerbe</button>
-          <button class="wc-opt" data-field="objekt" data-val="Sonstiges"><span class="ic">❔</span> Sonstiges</button>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="wc-step" data-step="2">
-        <div class="wc-q">Was ist der Anlass?</div>
-        <div class="wc-sub">So können wir Sie gezielter beraten.</div>
-        <div class="wc-opts">
-          <button class="wc-opt" data-field="anlass" data-val="Kauf / Verkauf"><span class="ic">🏷️</span> Kauf / Verkauf</button>
-          <button class="wc-opt" data-field="anlass" data-val="Erbschaft / Schenkung"><span class="ic">⚖️</span> Erbe / Schenkung</button>
-          <button class="wc-opt" data-field="anlass" data-val="Scheidung / Trennung"><span class="ic">💔</span> Scheidung</button>
-          <button class="wc-opt" data-field="anlass" data-val="Steuer / Finanzamt"><span class="ic">🧾</span> Steuer / Finanzamt</button>
-          <button class="wc-opt" data-field="anlass" data-val="Gericht"><span class="ic">🏛️</span> Gericht</button>
-          <button class="wc-opt" data-field="anlass" data-val="Nur Wissen"><span class="ic">💡</span> Nur Interesse</button>
-        </div>
-        <button class="wc-back" data-back>← Zurück</button>
-      </div>
-
-      <!-- Step 3: Ort -->
-      <div class="wc-step" data-step="3">
-        <div class="wc-q">Wo befindet sich die Immobilie?</div>
-        <div class="wc-sub">Ort oder Postleitzahl genügt – so ordnen wir Ihre Immobilie dem richtigen lokalen Markt zu.</div>
-        <div class="wc-field"><label for="wcOrt">Ort / PLZ</label><input type="text" id="wcOrt" placeholder="z. B. Hannover, Wedemark, 30900"></div>
-        <button class="btn btn-primary" id="wcOrtNext" style="width:100%">Weiter <span class="ar">→</span></button>
-        <button class="wc-back" data-back>← Zurück</button>
-      </div>
-
-      <!-- Step 4: Zeitrahmen -->
-      <div class="wc-step" data-step="4">
-        <div class="wc-q">Bis wann benötigen Sie das Gutachten?</div>
-        <div class="wc-sub">So planen wir den Ablauf passend für Sie.</div>
-        <div class="wc-opts">
-          <button class="wc-opt" data-field="zeitrahmen" data-val="So schnell wie möglich"><span class="ic">⚡</span> So schnell wie möglich</button>
-          <button class="wc-opt" data-field="zeitrahmen" data-val="Innerhalb eines Monats"><span class="ic">📅</span> Innerhalb 1 Monats</button>
-          <button class="wc-opt" data-field="zeitrahmen" data-val="In ein bis drei Monaten"><span class="ic">🗓️</span> In 1–3 Monaten</button>
-          <button class="wc-opt" data-field="zeitrahmen" data-val="Erst einmal Orientierung"><span class="ic">💡</span> Erst Orientierung</button>
-        </div>
-        <button class="wc-back" data-back>← Zurück</button>
-      </div>
-
-      <!-- Step 5: Kontakt -->
-      <div class="wc-step" data-step="5">
-        <div class="wc-q">Wie dürfen wir Sie für das Erstgespräch erreichen?</div>
-        <div class="wc-sub">Wir melden uns binnen 24 Stunden – garantiert unverbindlich.</div>
-        <div class="wc-field"><label for="wcName">Name</label><input type="text" id="wcName" autocomplete="name" required placeholder="Vor- und Nachname"></div>
-        <div class="wc-field"><label for="wcMail">E-Mail</label><input type="email" id="wcMail" autocomplete="email" required placeholder="ihre@email.de"></div>
-        <div class="wc-field"><label for="wcTel">Telefon (optional)</label><input type="tel" id="wcTel" autocomplete="tel" placeholder="Für schnellere Rückmeldung"></div>
-        <button class="btn btn-primary" id="wcSubmit" style="width:100%">Kostenloses Erstgespräch anfragen <span class="ar">→</span></button>
-        <p class="wc-note">Wir benötigen Ihre Angaben zur Bearbeitung Ihrer Anfrage. Bitte senden Sie hier noch keine Grundbuchauszüge oder anderen vertraulichen Dokumente. <a href="/datenschutz.html">Informationen zum Datenschutz</a>.</p>
-        <button class="wc-back" data-back>← Zurück</button>
-      </div>
-
-      <!-- Done -->
-      <div class="wc-step" data-step="done">
-        <div class="wc-done">
-          <div class="chk">✓</div>
-          <h3>Vielen Dank für Ihr Vertrauen!</h3>
-          <p>Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden und völlig unverbindlich. Wir freuen uns darauf, Sie kennenzulernen!</p>
-        </div>
-      </div>
-    </div>
+<section class="personal-intro" aria-labelledby="personal-heading">
+  <div class="container personal-grid">
+    <div><span class="eyebrow">Ihr Anliegen. Unsere Verantwortung.</span><h2 id="personal-heading">Persönlich betreut.<br>Sorgfältig bewertet.</h2></div>
+    <div><p>Wir sind Nandino und Vito. Als kleines Büro nehmen wir nur Aufträge an, die wir selbst sorgfältig bearbeiten können. Ihre Immobilie begutachten wir persönlich – mit festen Ansprechpartnern, ausreichend Zeit und ohne Weitergabe an externe Gutachter.</p><a class="text-action" href="/ueber-uns.html#qualifikationen">Team und Qualifikationen kennenlernen <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a></div>
   </div>
+  <nav class="container intent-links" aria-label="Einstieg nach Ihrem Anliegen">
+    <a href="/immobilienbewertung-kauf-verkauf.html"><span>01 / Kauf &amp; Verkauf</span>Den Immobilienwert kennen <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a>
+    <a href="/immobilienbewertung-erbschaft.html"><span>02 / Erbschaft</span>Eine gemeinsame Grundlage <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a>
+    <a href="/immobilienbewertung-scheidung.html"><span>03 / Trennung</span>Werte nachvollziehbar klären <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a>
+  </nav>
 </section>
-
 <!-- ===================== LEISTUNGEN ===================== -->
 <section id="leistungen">
   <div class="container">
@@ -806,7 +725,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="cards-feature">
       <div class="card feature r">
         <span class="tag">Kerngeschäft</span>
-        <div class="num">★ / Verfahren</div>
+        <div class="num"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg> / Verfahren</div>
         <h3>Sach- &amp; Ertragswertverfahren</h3>
         <p>Sachwertverfahren für selbstgenutzte, Ertragswertverfahren für vermietete Objekte – wir wählen die passende Methode für eine marktgerechte, nachvollziehbare Bewertung Ihrer Immobilie.</p>
         <div class="for">Marktgerecht nach ImmoWertV</div>
@@ -825,9 +744,92 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <p>Viele Bestandsimmobilien lassen sich schneller abschreiben, als das Finanzamt pauschal annimmt. Wir weisen die tatsächliche, kürzere Restnutzungsdauer nach ImmoWertV 2021 gutachterlich nach (§&nbsp;7 Abs.&nbsp;4 S.&nbsp;2 EStG) – das erhöht Ihre jährliche Gebäude-AfA und spart spürbar Steuern.</p>
         <div class="for">Höhere AfA · Steuern sparen · Für Kapitalanleger</div>
         <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
-          <a href="/restnutzungsdauergutachten-hannover.html" class="btn btn-primary">Restnutzungsdauergutachten ansehen <span class="ar">→</span></a>
+          <a href="/restnutzungsdauergutachten-hannover.html" class="btn btn-primary">Restnutzungsdauergutachten ansehen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
           <a href="/restnutzungsdauer-rechner.html" class="btn btn-outline">Steuervorteil berechnen</a>
           <div style="display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue-deep);border-radius:100px;padding:7px 14px;font-family:var(--mono);font-size:12px;font-weight:600">1.490 €</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wertcheck" class="wertcheck">
+  <div class="container wc-grid">
+    <div class="r">
+      <span class="eyebrow">Ihr erster Schritt</span>
+      <h2>Erzählen Sie uns von Ihrer Immobilie.</h2>
+      <p>Ein paar Angaben genügen. Nandino oder Vito meldet sich persönlich bei Ihnen. Kostenlos ist das Erstgespräch – nicht das Gutachten. Mit Ihrer Anfrage erteilen Sie noch keinen kostenpflichtigen Auftrag.</p>
+      <ul class="wc-points">
+        <li>Erstgespräch vom unabhängigen Sachverständigen</li>
+        <li>Kostenlos &amp; ohne Verpflichtung</li>
+        <li>Antwort binnen 24 Stunden</li>
+      </ul>
+    </div>
+    <div class="wc-card r s2">
+      <div class="wc-progress">
+        <div class="bar" role="progressbar" aria-label="Fortschritt Ihrer Anfrage" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1"><i id="wcBar"></i></div>
+        <span class="lbl" id="wcLbl" aria-live="polite">Schritt 1 / 4 · Immobilie</span>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="wc-step active" data-step="1">
+        <div class="wc-q">Um welche Immobilie geht es?</div>
+        <div class="wc-sub">Wählen Sie die passende Objektart.</div>
+        <div class="wc-opts">
+          <button class="wc-opt" data-field="objekt" data-val="Eigentumswohnung"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg></span> Eigentumswohnung</button>
+          <button class="wc-opt" data-field="objekt" data-val="Einfamilienhaus"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#house"></use></svg></span> Einfamilienhaus</button>
+          <button class="wc-opt" data-field="objekt" data-val="Mehrfamilienhaus"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg></span> Mehrfamilienhaus</button>
+          <button class="wc-opt" data-field="objekt" data-val="Grundstück"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#ruler"></use></svg></span> Grundstück</button>
+          <button class="wc-opt" data-field="objekt" data-val="Gewerbeimmobilie"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#briefcase"></use></svg></span> Gewerbe</button>
+          <button class="wc-opt" data-field="objekt" data-val="Sonstiges"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#help"></use></svg></span> Sonstiges</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="wc-step" data-step="2">
+        <div class="wc-q">Was ist der Anlass?</div>
+        <div class="wc-sub">So können wir Sie gezielter beraten.</div>
+        <div class="wc-opts">
+          <button class="wc-opt" data-field="anlass" data-val="Kauf / Verkauf"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#tag"></use></svg></span> Kauf / Verkauf</button>
+          <button class="wc-opt" data-field="anlass" data-val="Erbschaft / Schenkung"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#scales"></use></svg></span> Erbe / Schenkung</button>
+          <button class="wc-opt" data-field="anlass" data-val="Scheidung / Trennung"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#split"></use></svg></span> Scheidung</button>
+          <button class="wc-opt" data-field="anlass" data-val="Steuer / Finanzamt"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#document"></use></svg></span> Steuer / Finanzamt</button>
+          <button class="wc-opt" data-field="anlass" data-val="Gericht"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#court"></use></svg></span> Gericht</button>
+          <button class="wc-opt" data-field="anlass" data-val="Nur Wissen"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#bulb"></use></svg></span> Nur Interesse</button>
+        </div>
+        <button class="wc-back" data-back>← Zurück</button>
+      </div>
+
+      <!-- Step 3: Ort -->
+      <div class="wc-step" data-step="3">
+        <div class="wc-q">Wo befindet sich die Immobilie?</div>
+        <div class="wc-sub">Ort oder Postleitzahl genügt. Den gewünschten Zeitrahmen können Sie gleich mit angeben.</div>
+        <div class="wc-field"><label for="wcOrt">Ort / PLZ (optional)</label><input type="text" id="wcOrt" autocomplete="address-level2" placeholder="z. B. Hannover, Wedemark, 30900"></div>
+        <div class="wc-field"><label for="wcZeit">Bis wann benötigen Sie das Gutachten? (optional)</label><select id="wcZeit"><option value="">Noch offen</option><option>So schnell wie möglich</option><option value="Innerhalb eines Monats">Innerhalb 1 Monats</option><option value="In ein bis drei Monaten">In 1–3 Monaten</option><option value="Erst einmal Orientierung">Erst Orientierung</option></select></div>
+        <button class="btn btn-primary" id="wcOrtNext" style="width:100%">Weiter <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></button>
+        <button class="wc-back" data-back>← Zurück</button>
+      </div>
+
+      <!-- Step 4: Kontakt -->
+      <div class="wc-step" data-step="4">
+        <div class="wc-q">Wie dürfen wir Sie für das Erstgespräch erreichen?</div>
+        <div class="wc-sub">Wir melden uns binnen 24 Stunden – garantiert unverbindlich.</div>
+        <p id="wcSummary" class="wc-summary"></p>
+        <div class="wc-field"><label for="wcName">Name (Pflichtfeld)</label><input type="text" id="wcName" autocomplete="name" required placeholder="Vor- und Nachname"></div>
+        <div class="wc-field"><label for="wcMail">E-Mail (Pflichtfeld)</label><input type="email" id="wcMail" autocomplete="email" required placeholder="ihre@email.de"></div>
+        <div class="wc-field"><label for="wcTel">Telefon (optional)</label><input type="tel" id="wcTel" autocomplete="tel" placeholder="Für schnellere Rückmeldung"></div>
+        <button class="btn btn-primary" id="wcSubmit" style="width:100%">Kostenloses Erstgespräch anfragen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></button>
+        <p id="wcError" class="form-feedback" role="alert" tabindex="-1" hidden></p>
+        <p class="wc-note">Wir benötigen Ihre Angaben zur Bearbeitung Ihrer Anfrage. Bitte senden Sie hier noch keine Grundbuchauszüge oder anderen vertraulichen Dokumente. <a href="/datenschutz.html">Informationen zum Datenschutz</a>.</p>
+        <button class="wc-back" data-back>← Zurück</button>
+      </div>
+
+      <!-- Done -->
+      <div class="wc-step" data-step="done">
+        <div class="wc-done">
+          <div class="chk"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></div>
+          <h3>Vielen Dank für Ihr Vertrauen!</h3>
+          <p>Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden und völlig unverbindlich. Wir freuen uns darauf, Sie kennenzulernen!</p>
         </div>
       </div>
     </div>
@@ -913,12 +915,12 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <p class="lead">Ein unabhängiges Wertgutachten schafft Sicherheit – privat wie geschäftlich.</p>
     </div>
     <div class="tags">
-      <div class="tag-card r s1"><div class="ic">🏷️</div><b>Kauf &amp; Verkauf</b><span>Den richtigen Preis kennen und sicher verhandeln.</span></div>
-      <div class="tag-card r s2"><div class="ic">⚖️</div><b>Erbschaft &amp; Schenkung</b><span>Faire Aufteilung und korrekte Werte fürs Finanzamt.</span></div>
-      <div class="tag-card r s3"><div class="ic">💔</div><b>Scheidung &amp; Trennung</b><span>Neutrale Grundlage für die Vermögensauseinandersetzung.</span></div>
-      <div class="tag-card r s1"><div class="ic">🧾</div><b>Steuer &amp; Finanzamt</b><span>Belastbare Werte für Erbschaft-, Schenkung- &amp; Grundsteuer.</span></div>
-      <div class="tag-card r s2"><div class="ic">🏛️</div><b>Gericht &amp; Zwangsversteigerung</b><span>Umfang und Qualifikationsanforderungen vorab klären.</span></div>
-      <div class="tag-card r s3"><div class="ic">🏢</div><b>Bilanz &amp; Unternehmen</b><span>Belastbare Verkehrswerte für die Bilanzierung von Betriebsimmobilien.</span></div>
+      <div class="tag-card r s1"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#tag"></use></svg></div><b>Kauf &amp; Verkauf</b><span>Den richtigen Preis kennen und sicher verhandeln.</span></div>
+      <div class="tag-card r s2"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#scales"></use></svg></div><b>Erbschaft &amp; Schenkung</b><span>Faire Aufteilung und korrekte Werte fürs Finanzamt.</span></div>
+      <div class="tag-card r s3"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#split"></use></svg></div><b>Scheidung &amp; Trennung</b><span>Neutrale Grundlage für die Vermögensauseinandersetzung.</span></div>
+      <div class="tag-card r s1"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#document"></use></svg></div><b>Steuer &amp; Finanzamt</b><span>Belastbare Werte für Erbschaft-, Schenkung- &amp; Grundsteuer.</span></div>
+      <div class="tag-card r s2"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#court"></use></svg></div><b>Gericht &amp; Zwangsversteigerung</b><span>Umfang und Qualifikationsanforderungen vorab klären.</span></div>
+      <div class="tag-card r s3"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg></div><b>Bilanz &amp; Unternehmen</b><span>Belastbare Verkehrswerte für die Bilanzierung von Betriebsimmobilien.</span></div>
     </div>
   </div>
 </section>
@@ -934,67 +936,67 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:11px 22px;box-shadow:var(--shadow-sm)">
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
           <span style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2);font-weight:500">5,0 · 22 Google-Bewertungen</span>
-          <span style="color:#F2B500;font-size:15px;letter-spacing:1px">★★★★★</span>
+          <span style="color:#F2B500;font-size:15px;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span>
         </div>
       </div>
       <div style="margin-top:16px;text-align:center">
-        <a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px">★ Jetzt auf Google bewerten</a>
+        <a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg> Jetzt auf Google bewerten</a>
       </div>
     </div>
     <!-- Echte Google-Rezensionen (verifizierbar über das Google-Profil) -->
     <div class="tgrid">
       <div class="tcard r s1">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Die Immobilienbewertung lief absolut reibungslos und extrem professionell ab. Das Ergebnis ist detailliert und nachvollziehbar aufbereitet. Wer einen zuverlässigen und zertifizierten Gutachter sucht, ist hier genau richtig. 5 Sterne!"</p>
         <div class="who"><div class="av">Y</div><div><b>Y. L.</b><span>Google-Rezension</span></div></div>
       </div>
       <div class="tcard r s2">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Wir haben unser Haus von Herrn Donnarumma bewerten lassen und waren mit der Immobilienbewertung in Hannover sehr zufrieden."</p>
         <div class="who"><div class="av">J</div><div><b>Jennifer P.</b><span>Hannover · Hausbewertung</span></div></div>
       </div>
       <div class="tcard r s3">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Eingehende Beratung und fachliche Expertise haben zu einem sehr guten und schnellen Ergebnis geführt. Es ging um die Bewertung eines größeren Grundstückes."</p>
         <div class="who"><div class="av">L</div><div><b>Lennart</b><span>Grundstücksbewertung</span></div></div>
       </div>
       <div class="tcard r s1">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Bin super zufrieden! Alles ging schnell und unkompliziert. Die Bewertung war nachvollziehbar und ich hab mich gut aufgehoben gefühlt. Kann ich nur weiterempfehlen."</p>
         <div class="who"><div class="av">F</div><div><b>Florian</b><span>Google-Rezension</span></div></div>
       </div>
       <div class="tcard r s2">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Die Immobilienbewertung in Celle war für uns sehr hilfreich, weil wir den Wert vom Haus unabhängig einschätzen lassen wollten und nicht direkt über einen Makler gehen wollten."</p>
         <div class="who"><div class="av">F</div><div><b>Frank P.</b><span>Celle · Hausbewertung</span></div></div>
       </div>
       <div class="tcard r s3">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Wir wollten unser Haus bewerten lassen, bevor wir es verkaufen, und sind dabei auf Herrn Donnarumma gestoßen."</p>
         <div class="who"><div class="av">M</div><div><b>Maximilian M.</b><span>Hausverkauf</span></div></div>
       </div>
       <div class="tcard r s1">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Auf der Suche nach einer unabhängigen und realistischen Immobilienbewertung bin ich auf 3D Immobilienbewertungen aufmerksam geworden."</p>
         <div class="who"><div class="av">J</div><div><b>Jonas Strahl</b><span>Google-Rezension</span></div></div>
       </div>
       <div class="tcard r s2">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Guter, transparenter und zuverlässiger Service. Ich brauchte ein Wertgutachten für einen Erbrechtsfall."</p>
         <div class="who"><div class="av">R</div><div><b>Robin G.</b><span>Erbschaft · Wertgutachten</span></div></div>
       </div>
       <div class="tcard r s3">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Wir wollten den Wert unserer Immobilie möglichst realistisch ermitteln lassen."</p>
         <div class="who"><div class="av">M</div><div><b>Mark Schäfer</b><span>Immobilienbewertung</span></div></div>
       </div>
       <div class="tcard r s1">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Tolle Beratung und sehr freundliches Personal, absolut empfehlenswert!"</p>
         <div class="who"><div class="av">L</div><div><b>Leo Petrusch</b><span>Google-Rezension</span></div></div>
       </div>
       <div class="tcard r s2">
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div>
         <p>„Sehr angenehmer Kontakt und absolut zuverlässige Arbeit. Die Bewertung wurde schnell erstellt und alles wurde verständlich erklärt."</p>
         <div class="who"><div class="av">F</div><div><b>Fabian</b><span>Google-Rezension</span></div></div>
       </div>
@@ -1040,7 +1042,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
               <li>Ermittelt nach ImmoWertV-Verfahren</li>
               <li>Stichtagsbezogener, neutraler Marktwert</li>
             </ul>
-            <a href="#wertcheck" class="ic-cta">Jetzt kostenlos anfragen <span>→</span></a>
+            <a href="#wertcheck" class="ic-cta">Jetzt kostenlos anfragen <span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
           </div>
         </div>
         <p class="video-label">Verkehrswertgutachten · Was sollte man wissen?</p>
@@ -1057,7 +1059,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
               <li>Transparente Herleitung, kein Fachchinesisch</li>
               <li>Persönliche Erläuterung durch Experten</li>
             </ul>
-            <a href="#wertcheck" class="ic-cta">Erstgespräch vereinbaren <span>→</span></a>
+            <a href="#wertcheck" class="ic-cta">Erstgespräch vereinbaren <span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
           </div>
         </div>
         <p class="video-label">Immobilienbewertung · Einfach erklärt</p>
@@ -1090,7 +1092,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="cta-band r">
       <h2>Lernen Sie uns im kostenlosen Erstgespräch kennen</h2>
       <p>Unverbindlich und vom unabhängigen Sachverständigen. Wir besprechen Ihr Anliegen und das passende Vorgehen – Antwort binnen 24 Stunden.</p>
-      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch sichern <span class="ar">→</span></a>
+      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch sichern <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
     </div>
   </div>
 </section>
@@ -1115,7 +1117,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
             <select id="objekt" name="objekt"><option>Eigentumswohnung</option><option>Einfamilienhaus</option><option>Mehrfamilienhaus</option><option>Grundstück</option><option>Gewerbeimmobilie</option><option>Sonstiges</option></select>
           </div>
           <div class="form-field"><label for="msg">Ihr Anliegen</label><textarea id="msg" name="msg" placeholder="Anlass der Bewertung, Lage des Objekts, gewünschter Termin …"></textarea></div>
-          <button type="submit" class="btn btn-primary" style="width:100%">Anfrage senden <span class="ar">→</span></button>
+          <button type="submit" class="btn btn-primary" style="width:100%">Anfrage senden <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></button>
           <div class="reassure" style="margin-top:16px;justify-content:center">
             <span>Kostenlos</span><span>Unverbindlich</span><span>Vertraulich</span>
           </div>
@@ -1123,8 +1125,8 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       </div>
       <aside class="contact-side r s2">
         <h3>Direkt erreichen</h3>
-        <div class="ci"><span class="ic">✆</span><div><div class="l">Telefon</div><div class="v"><a href="tel:+491747445452">+49 (0) 174 744 5452</a></div></div></div>
-        <div class="ci"><span class="ic">✉</span><div><div class="l">E-Mail</div><div class="v"><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></div></div></div>
+        <div class="ci"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg></span><div><div class="l">Telefon</div><div class="v"><a href="tel:+491747445452">+49 (0) 174 744 5452</a></div></div></div>
+        <div class="ci"><span class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#mail"></use></svg></span><div><div class="l">E-Mail</div><div class="v"><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></div></div></div>
         <div class="ci"><span class="ic">⌖</span><div><div class="l">Büro</div><div class="v">Gailhoferstraße 17<br>30900 Wedemark</div></div></div>
         <div class="ci"><span class="ic">◷</span><div><div class="l">Erreichbar</div><div class="v">Mo – Fr · 09:00 – 18:00</div></div></div>
         <div class="ci"><span class="ic">⬡</span><div><div class="l">Einzugsgebiet</div><div class="v">Hannover · Wedemark · Großburgwedel · Isernhagen · Burgwedel · Langenhagen · Garbsen · Gehrden · gesamte Region Hannover</div></div></div>
@@ -1159,23 +1161,23 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     </div>
     <div class="blog-grid">
       <a href="/blog/wohnung-bewerten-isernhagen-altwarmbuechen.html" class="post-card">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#0E2440,#2E6BB8)"><span aria-hidden="true">🏢</span></div>
-        <div class="post-body"><div class="post-meta"><span class="post-cat">Isernhagen</span><time class="post-date" datetime="2026-09-22">September 2026</time></div><h3>Wohnung bewerten in Isernhagen: WEG-Unterlagen prüfen</h3><p>Wohnungsbewertung in Isernhagen und Altwarmbüchen: Hausgeld, Rücklagen, Sonderumlagen und Unterlagen verstehen. Mit Checkliste für Eigentümer.</p><span class="post-link">Jetzt lesen <span class="ar">→</span></span></div>
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0E2440,#2E6BB8)"><span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#building"></use></svg></span></div>
+        <div class="post-body"><div class="post-meta"><span class="post-cat">Isernhagen</span><time class="post-date" datetime="2026-09-22">September 2026</time></div><h3>Wohnung bewerten in Isernhagen: WEG-Unterlagen prüfen</h3><p>Wohnungsbewertung in Isernhagen und Altwarmbüchen: Hausgeld, Rücklagen, Sonderumlagen und Unterlagen verstehen. Mit Checkliste für Eigentümer.</p><span class="post-link">Jetzt lesen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></span></div>
       </a>
 
       <a href="/blog/haus-verkaufen-grossburgwedel-angebotspreis.html" class="post-card">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#0E2440,#C9A24B)"><span aria-hidden="true">🏡</span></div>
-        <div class="post-body"><div class="post-meta"><span class="post-cat">Großburgwedel</span><time class="post-date" datetime="2026-09-22">September 2026</time></div><h3>Haus verkaufen in Großburgwedel: Angebotspreis bestimmen</h3><p>Hausverkauf in Großburgwedel vorbereiten: Marktwert und Angebotspreis unterscheiden, Unterlagen ordnen und Modernisierungen sinnvoll einordnen.</p><span class="post-link">Jetzt lesen <span class="ar">→</span></span></div>
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0E2440,#C9A24B)"><span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#house"></use></svg></span></div>
+        <div class="post-body"><div class="post-meta"><span class="post-cat">Großburgwedel</span><time class="post-date" datetime="2026-09-22">September 2026</time></div><h3>Haus verkaufen in Großburgwedel: Angebotspreis bestimmen</h3><p>Hausverkauf in Großburgwedel vorbereiten: Marktwert und Angebotspreis unterscheiden, Unterlagen ordnen und Modernisierungen sinnvoll einordnen.</p><span class="post-link">Jetzt lesen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></span></div>
       </a>
 
       <a href="/checkliste-immobilienbewertung.html" class="post-card">
-        <div class="post-thumb" style="background:linear-gradient(135deg,#0E2440,#2E6BB8)"><span aria-hidden="true">✓</span></div>
-        <div class="post-body"><div class="post-meta"><span class="post-cat">Vorbereitung</span><time class="post-date" datetime="2026-09-22">September 2026</time></div><h3>Unterlagen zur Immobilienbewertung: Ihre Checkliste</h3><p>Vom ersten Gespräch bis zum Gutachten: Unterlagen für Häuser, Eigentumswohnungen und vermietete Immobilien abhaken und ausdrucken. Ohne Registrierung.</p><span class="post-link">Jetzt lesen <span class="ar">→</span></span></div>
+        <div class="post-thumb" style="background:linear-gradient(135deg,#0E2440,#2E6BB8)"><span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></div>
+        <div class="post-body"><div class="post-meta"><span class="post-cat">Vorbereitung</span><time class="post-date" datetime="2026-09-22">September 2026</time></div><h3>Unterlagen zur Immobilienbewertung: Ihre Checkliste</h3><p>Vom ersten Gespräch bis zum Gutachten: Unterlagen für Häuser, Eigentumswohnungen und vermietete Immobilien abhaken und ausdrucken. Ohne Registrierung.</p><span class="post-link">Jetzt lesen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></span></div>
       </a>
     </div>
     <p style="margin-top:24px;text-align:center">Weitere lokale Ratgeber: <a href="/blog/haus-bewerten-isernhagen.html" style="text-decoration:underline">Haus bewerten in Isernhagen</a> · <a href="/blog/bodenrichtwert-grossburgwedel-2026.html" style="text-decoration:underline">Bodenrichtwert Großburgwedel 2026</a></p>
     <div class="blog-all r">
-      <a href="/blog/" class="btn btn-ghost">Alle Beiträge ansehen <span class="ar">→</span></a>
+      <a href="/blog/" class="btn btn-ghost">Alle Beiträge ansehen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
     </div>
   </div>
 </section>
@@ -1213,7 +1215,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   </div>
 </footer>
 
-<a href="#wertcheck" class="float-cta" id="floatCta"><span class="btn btn-primary">Kostenloses Erstgespräch <span class="ar">→</span></span></a>
+<a href="#wertcheck" class="float-cta" id="floatCta"><span class="btn btn-primary">Kostenloses Erstgespräch <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></span></a>
 
 <a href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung%20und%20m%C3%B6chte%20ein%20kostenloses%20Erstgespr%C3%A4ch%20vereinbaren." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp-Chat starten" title="WhatsApp schreiben">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -1265,52 +1267,6 @@ setTimeout(function(){document.querySelectorAll('.r').forEach(function(el){el.cl
 // year
 document.getElementById('year').textContent=new Date().getFullYear();
 
-// ---------- ERSTGESPRÄCH funnel ----------
-var wc={objekt:'',anlass:'',ort:'',zeitrahmen:''};
-var steps=document.querySelectorAll('.wc-step'), bar=document.getElementById('wcBar'), lbl=document.getElementById('wcLbl');
-function showStep(n){
-  steps.forEach(function(s){s.classList.toggle('active',s.dataset.step==String(n));});
-  if(n==='done'){bar.style.width='100%';lbl.textContent='Geschafft ✓';return;}
-  bar.style.width=(n/5*100)+'%'; lbl.textContent='Schritt '+n+' / 5';
-}
-document.querySelectorAll('.wc-opt').forEach(function(o){
-  o.addEventListener('click',function(){
-    wc[o.dataset.field]=o.dataset.val;
-    var cur=+o.closest('.wc-step').dataset.step;
-    showStep(cur+1);
-  });
-});
-document.querySelectorAll('[data-back]').forEach(function(b){
-  b.addEventListener('click',function(){var cur=+b.closest('.wc-step').dataset.step;showStep(Math.max(1,cur-1));});
-});
-var wcOrtNext=document.getElementById('wcOrtNext');
-if(wcOrtNext)wcOrtNext.addEventListener('click',function(){wc.ort=document.getElementById('wcOrt').value.trim();showStep(4);});
-var wcSubmit=document.getElementById('wcSubmit');
-if(wcSubmit)wcSubmit.addEventListener('click',function(){
-  var n=document.getElementById('wcName').value.trim();
-  var m=document.getElementById('wcMail').value.trim();
-  var t=document.getElementById('wcTel').value.trim();
-  if(wcSubmit.disabled)return;
-  var nameField=document.getElementById('wcName'),mailField=document.getElementById('wcMail');
-  if(!n){nameField.focus();nameField.reportValidity();return;}
-  if(!mailField.checkValidity()){mailField.focus();mailField.reportValidity();return;}
-  wcSubmit.disabled=true;
-  wcSubmit.textContent='Wird gesendet …';
-  function wcFail(){
-    wcSubmit.disabled=false;
-    wcSubmit.innerHTML='Kostenloses Erstgespräch anfragen <span class="ar">→</span>';
-    alert('Beim Senden ist leider etwas schiefgelaufen. Bitte rufen Sie uns kurz direkt an: 0174 744 5452 – wir sind gern persönlich für Sie da.');
-  }
-  fetch('/api/contact',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name:n,email:m,phone:t,objekt:wc.objekt,anlass:wc.anlass,ort:wc.ort,zeitrahmen:wc.zeitrahmen,message:'Erstgespräch-Anfrage über Gutachten-Vorab-Check'})
-  })
-  .then(function(r){return r.json();})
-  .then(function(d){ if(d&&d.ok){showStep('done');} else {wcFail();} })
-  .catch(wcFail);
-});
-
 // contact form -> /api/contact (Vercel serverless)
 var form=document.getElementById('contactForm');
 if(form)form.addEventListener('submit',function(e){
@@ -1341,7 +1297,7 @@ if(form)form.addEventListener('submit',function(e){
 });
 </script>
 <div class="mobile-bar">
-  <a href="tel:+491747445452" class="btn call">📞 Anrufen</a>
+  <a href="tel:+491747445452" class="btn call"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
   <a href="#wertcheck" class="btn btn-primary">Kostenlos anfragen</a>
 </div>
 <script src="assets/consent.js?v=20260815b"></script>

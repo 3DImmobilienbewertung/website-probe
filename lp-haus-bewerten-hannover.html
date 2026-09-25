@@ -65,7 +65,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .btn-white:hover{transform:translateY(-2px)}
 .reassure{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px}
 .reassure span{font-size:13.5px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
-.reassure span::before{content:"✓";color:var(--blue);font-weight:700}
+.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:700}
 
 /* nav */
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
@@ -140,8 +140,8 @@ section{position:relative}
 .cmp ul{list-style:none;display:flex;flex-direction:column;gap:13px}
 .cmp li{display:flex;gap:12px;font-size:15px;line-height:1.5;color:var(--ink-2)}.cmp.good li{color:#e7f0ff}
 .cmp li::before{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:1px}
-.cmp:not(.good) li::before{content:"✕";background:#fbe3e3;color:#c0392b}
-.cmp.good li::before{content:"✓";background:rgba(255,255,255,.2);color:#fff}
+.cmp:not(.good) li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m6%206%2012%2012M6%2018%2018%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m6%206%2012%2012M6%2018%2018%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;background:#fbe3e3;color:#c0392b}
+.cmp.good li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;background:rgba(255,255,255,.2);color:#fff}
 
 /* cta band */
 .cta-band{background:var(--ink);color:#fff;border-radius:26px;padding:60px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
@@ -197,7 +197,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was kostet es, ein Haus bewerten zu lassen?", "acceptedAnswer": {"@type": "Answer", "text": "Die Preise variieren je nach Objektart, Umfang und Zweck. Das Erstgespräch ist kostenlos – darin nennen wir Ihnen einen transparenten Festpreis ohne versteckte Kosten."}}, {"@type": "Question", "name": "Wie schnell erhalte ich den Wert meines Hauses?", "acceptedAnswer": {"@type": "Answer", "text": "Eine erste Rückmeldung erhalten Sie binnen 24 Stunden. Das fertige Gutachten liegt in der Regel innerhalb von ein bis zwei Wochen nach der Begehung vor."}}, {"@type": "Question", "name": "In welchen Orten bewerten Sie Häuser?", "acceptedAnswer": {"@type": "Answer", "text": "Wir sind im gesamten Raum Hannover für Sie da – u. a. in Hannover, Wedemark, Großburgwedel, Isernhagen, Burgwedel, Langenhagen, Garbsen und Gehrden."}}]}
 </script>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-landing">
@@ -207,23 +207,23 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
   <div class="nav-inner">
     <a href="/" aria-label="3D Immobilienbewertung"><img src="assets/logo.png" alt="3D Immobilienbewertung Hannover" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-cta">
-      <a href="tel:+491747445452" class="nav-phone">📞 +49 (0) 174 744 5452</a>
+      <a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> +49 (0) 174 744 5452</a>
       <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch</a>
     </div>
   </div>
 </header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">★★★★★</span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="hero-badge r"><span class="stars-mini">★★★★★</span> Persönlich · Raum Hannover</span>
+      <span class="hero-badge r"><span class="stars-mini"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> Persönlich · Raum Hannover</span>
       <h1 class="r s1">Haus bewerten lassen in Hannover – <span class="accent">was ist Ihr Haus wirklich wert?</span></h1>
       <p class="lead r s2">Erfahren Sie den echten Wert Ihres Hauses – vom Sachverständigen für Immobilienbewertung. Wir erstellen Ihr nachvollziehbares Verkehrswertgutachten nach §194 BauGB. Individuell, marktgerecht und neutral.</p>
       <div class="hero-actions r s3">
-        <a href="#anfrage" class="btn btn-primary">Jetzt Hauswert ermitteln <span>→</span></a>
-        <a href="tel:+491747445452" class="btn btn-white">📞 Anrufen</a>
+        <a href="#anfrage" class="btn btn-primary">Jetzt Hauswert ermitteln <span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
+        <a href="tel:+491747445452" class="btn btn-white"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
       </div>
       <div class="reassure r s3">
         <span>Erstgespräch kostenlos</span><span>Antwort in 24&nbsp;h</span><span>Streng vertraulich</span>
@@ -234,14 +234,14 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
       <p class="sub">Kostenloses Erstgespräch anfragen – Antwort binnen 24 Stunden.</p>
       <form id="leadForm">
         <div class="ff-row">
-          <div class="ff"><label>Name</label><input type="text" id="lfName" placeholder="Vor- und Nachname" required></div>
-          <div class="ff"><label>Telefon</label><input type="tel" id="lfTel" placeholder="Für Rückruf"></div>
+          <div class="ff"><label for="lfName">Name</label><input type="text" id="lfName" placeholder="Vor- und Nachname" required></div>
+          <div class="ff"><label for="lfTel">Telefon</label><input type="tel" id="lfTel" placeholder="Für Rückruf"></div>
         </div>
-        <div class="ff"><label>E-Mail</label><input type="email" id="lfMail" placeholder="ihre@email.de" required></div>
-        <div class="ff"><label>Objektart</label><select id="lfObj"><option>Einfamilienhaus</option><option>Zweifamilienhaus</option><option>Eigentumswohnung</option><option>Mehrfamilienhaus</option><option>Grundstück</option><option>Sonstiges</option></select></div>
-        <div class="ff"><label>Ort / Lage</label><input type="text" id="lfOrt" placeholder="z. B. Hannover, Isernhagen …"></div>
-        <button type="submit" class="btn btn-primary" style="width:100%">Kostenloses Erstgespräch anfragen <span>→</span></button>
-        <p class="note">🔒 Ihre Daten werden vertraulich behandelt.</p>
+        <div class="ff"><label for="lfMail">E-Mail</label><input type="email" id="lfMail" placeholder="ihre@email.de" required></div>
+        <div class="ff"><label for="lfObj">Objektart</label><select id="lfObj"><option>Einfamilienhaus</option><option>Zweifamilienhaus</option><option>Eigentumswohnung</option><option>Mehrfamilienhaus</option><option>Grundstück</option><option>Sonstiges</option></select></div>
+        <div class="ff"><label for="lfOrt">Ort / Lage</label><input type="text" id="lfOrt" placeholder="z. B. Hannover, Isernhagen …"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Kostenloses Erstgespräch anfragen <span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></button>
+        <p class="note"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#lock"></use></svg> Ihre Daten werden vertraulich behandelt.</p>
       </form>
     </div>
   </div>
@@ -262,9 +262,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
       <h2 style="font-size:clamp(1.9rem,4vw,2.8rem)">Den echten Wert Ihres Hauses kennen</h2>
     </div>
     <div class="benefits">
-      <div class="benefit r s1"><div class="ic">🎯</div><h3>Präzise statt geschätzt</h3><p>Keine grobe Online-Hausnummer: Unsere Wertermittlung erfasst Ihr Haus individuell nach Lage, Zustand und Markt.</p></div>
-      <div class="benefit r s2"><div class="ic">🎓</div><h3>Nach ImmoWertV</h3><p>Bewertung vom geprüften Immobilien-Wertermittler – fundiert nach ImmoWertV.</p></div>
-      <div class="benefit r s3"><div class="ic">⚖️</div><h3>Nachvollziehbar</h3><p>Verkehrswertgutachten nach §194 BauGB – anerkannt von Finanzamt, Gericht und Behörden.</p></div>
+      <div class="benefit r s1"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#target"></use></svg></div><h3>Präzise statt geschätzt</h3><p>Keine grobe Online-Hausnummer: Unsere Wertermittlung erfasst Ihr Haus individuell nach Lage, Zustand und Markt.</p></div>
+      <div class="benefit r s2"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#graduation"></use></svg></div><h3>Nach ImmoWertV</h3><p>Bewertung vom geprüften Immobilien-Wertermittler – fundiert nach ImmoWertV.</p></div>
+      <div class="benefit r s3"><div class="ic"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#scales"></use></svg></div><h3>Nachvollziehbar</h3><p>Verkehrswertgutachten nach §194 BauGB – anerkannt von Finanzamt, Gericht und Behörden.</p></div>
     </div>
   </div>
 </section>
@@ -320,7 +320,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
     <div class="cta-band r">
       <h2>Was ist Ihr Haus wert?</h2>
       <p>Finden Sie es heraus – im kostenlosen Erstgespräch mit Ihrem Sachverständigen für Immobilienbewertung in Hannover.</p>
-      <a href="#anfrage" class="btn btn-white">Kostenloses Erstgespräch sichern →</a>
+      <a href="#anfrage" class="btn btn-white">Kostenloses Erstgespräch sichern <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
       <a href="tel:+491747445452" class="cta-phone">oder direkt anrufen: <b>+49 (0) 174 744 5452</b></a>
     </div>
   </div>
@@ -420,7 +420,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
 </footer>
 
 <div class="mobile-bar">
-  <a href="tel:+491747445452" class="btn btn-white">📞 Anrufen</a>
+  <a href="tel:+491747445452" class="btn btn-white"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
   <a href="#anfrage" class="btn btn-primary">Erstgespräch</a>
 </div>
 
@@ -429,7 +429,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
 document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener('click',function(){var f=b.parentElement,a=f.querySelector('.ans'),o=f.classList.contains('open');document.querySelectorAll('.faq').forEach(function(x){x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null});if(!o){f.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}})});
-document.getElementById('leadForm').addEventListener('submit',async function(e){e.preventDefault();var btn=this.querySelector('button[type=submit]');var n=lfName.value,m=lfMail.value,t=lfTel.value,o=lfObj.value,ort=lfOrt.value;if(!n||!m){alert('Bitte Name und E-Mail angeben.');return;}btn.disabled=true;btn.textContent='Wird gesendet…';try{var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:ort,message:''})});if(r.ok){document.getElementById('leadForm').innerHTML='<div style="text-align:center;padding:32px 16px"><div style="font-size:48px;margin-bottom:16px">✅</div><h3 style="color:#16365C;margin-bottom:8px">Anfrage gesendet!</h3><p style="color:#5a7088">Wir melden uns binnen 24 Stunden.</p></div>';}else{btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}catch(err){btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');}});
+document.getElementById('leadForm').addEventListener('submit',async function(e){e.preventDefault();var btn=this.querySelector('button[type=submit]');var n=lfName.value,m=lfMail.value,t=lfTel.value,o=lfObj.value,ort=lfOrt.value;if(!n||!m){alert('Bitte Name und E-Mail angeben.');return;}btn.disabled=true;btn.textContent='Wird gesendet…';try{var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:ort,message:''})});if(r.ok){document.getElementById('leadForm').innerHTML='<div style="text-align:center;padding:32px 16px"><div style="font-size:48px;margin-bottom:16px"></div><h3 style="color:#16365C;margin-bottom:8px">Anfrage gesendet!</h3><p style="color:#5a7088">Wir melden uns binnen 24 Stunden.</p></div>';}else{btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}catch(err){btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');}});
 </script>
 <script src="assets/consent.js?v=20260815b"></script>
 </body>

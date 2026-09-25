@@ -71,7 +71,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spac
 .btn-gold{background:var(--gold);color:#fff;box-shadow:0 10px 30px rgba(201,162,75,.35)}.btn-gold:hover{background:#b88e3a;transform:translateY(-2px)}
 .reassure{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}
 .reassure span{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px}
-.reassure span::before{content:"✓";color:var(--blue);font-weight:800;font-size:11px}
+.reassure span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:800;font-size:11px}
 .reassure span.hi{color:var(--signal);font-weight:700}
 .reassure span.hi::before{color:var(--signal)}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
@@ -123,7 +123,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .testi-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-bright));color:#fff;font-family:var(--display);font-weight:700;font-size:15px;display:grid;place-items:center;flex-shrink:0}
 .testi-name{font-weight:700;font-size:14.5px}.testi-loc{font-size:13px;color:var(--muted);margin-top:1px}
 .testi-source{font-family:var(--mono);font-size:10.5px;color:var(--faint);display:flex;align-items:center;gap:5px;margin-top:4px}
-.testi-source::before{content:"★";color:#4285f4;font-size:11px}
+.testi-source::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%204%201%207-6-3-6%203%201-7-4-4%206-1Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%204%201%207-6-3-6%203%201-7-4-4%206-1Z%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:#4285f4;font-size:11px}
 .faq-wrap{max-width:840px;margin:44px auto 0}
 .faq{border-bottom:1px solid var(--border)}.faq:first-child{border-top:1px solid var(--border)}
 .faq button{width:100%;background:none;border:none;color:var(--ink);cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.3}
@@ -188,7 +188,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 .pricebox .amount small{font-size:.95rem;font-weight:600;opacity:.75;letter-spacing:0;display:block;margin-top:10px}
 .pricebox ul{list-style:none;padding:0;margin:26px auto 28px;max-width:520px;text-align:left;display:grid;gap:10px}
 .pricebox li{font-size:15px;color:rgba(255,255,255,.9);padding-left:28px;position:relative;line-height:1.5}
-.pricebox li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.pricebox li::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;position:absolute;left:0;color:var(--gold);font-weight:700}
 .qual{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:8px}
 .qual div{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 22px}
 .qual b{display:block;font-family:var(--display);font-size:1rem;color:var(--ink);margin-bottom:6px}
@@ -396,7 +396,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 .fn-trust{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin-top:16px;
   padding-top:15px;border-top:1px solid var(--border)}
 .fn-trust span{font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:5px}
-.fn-trust span::before{content:"✓";color:var(--blue);font-weight:800;font-size:10px}
+.fn-trust span::before{content:"";display:inline-block;width:1em;height:1em;background:currentColor!important;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22m5%2012%204%204L19%206%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;color:var(--blue);font-weight:800;font-size:10px}
 @media(max-width:600px){
   .fn-s h2{font-size:1.3rem}
   .fn-opt{padding:15px 14px;font-size:15px}
@@ -535,7 +535,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
-<link rel="stylesheet" href="/assets/brand-components.css?v=20260925">
+<link rel="stylesheet" href="/assets/brand-components.css?v=preview-20260925">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="brand-editorial brand-landing">
@@ -550,7 +550,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     </div>
   </div>
 </header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5,0 &middot; 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">&middot;</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">&middot;</span><span>R&uuml;ckmeldung in 24&nbsp;h</span></div></div>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 &middot; 22 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">&middot;</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">&middot;</span><span>R&uuml;ckmeldung in 24&nbsp;h</span></div></div>
 
 <div class="container">
   <nav class="breadcrumb"><a href="/">Startseite</a><span>&rsaquo;</span>Restnutzungsdauergutachten</nav>
@@ -560,7 +560,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="hero-eyebrow r"><span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Sachverst&auml;ndige f&uuml;r Immobilienbewertung &middot; Region Hannover</span></div>
+      <div class="hero-eyebrow r"><span class="hero-stars"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span><span>Sachverst&auml;ndige f&uuml;r Immobilienbewertung &middot; Region Hannover</span></div>
       <h1 class="r s1">Ihre Immobilie ist &auml;lter, als das Finanzamt <span class="u">unterstellt</span></h1>
       <p class="hero-sub r s2">Wer vermietet, schreibt meist pauschal 2&nbsp;% pro Jahr ab &ndash; eine gesetzliche Typisierung, kein Befund an Ihrem Geb&auml;ude. Ist die <strong>tats&auml;chliche Restnutzungsdauer k&uuml;rzer</strong>, erlaubt &sect;&nbsp;7 Abs.&nbsp;4 Satz&nbsp;2 EStG eine h&ouml;here AfA. Wir weisen sie objektindividuell nach &ndash; aus Bauingenieurwesen und Architektur &ndash; mit Begehung vor Ort.</p>
       <div class="hero-actions r s3">
@@ -588,11 +588,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           <h2>Um welche Immobilie geht es?</h2>
           <p class="sub">Ein Klick gen&uuml;gt &ndash; Sie m&uuml;ssen nichts eintippen.</p>
           <div class="fn-opts" data-feld="objekt">
-            <button type="button" class="fn-opt" data-v="Mehrfamilienhaus"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v15"/><path d="M14 11h5a1 1 0 0 1 1 1v9"/><path d="M2 21h20"/><path d="M7 9h2M7 13h2M7 17h2M17 15h1M17 18h1"/></svg></span>Mehrfamilienhaus<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="Zwei- oder Einfamilienhaus (vermietet)"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span>Zwei- oder Einfamilienhaus<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="Eigentumswohnung (vermietet)"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M15 12h.01"/><path d="M6 21h12"/></svg></span>Eigentumswohnung<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="Wohn- und Gesch&auml;ftshaus"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.5-4.5A1 1 0 0 0 18.5 4h-13a1 1 0 0 0-1 .5L3 9Z"/><path d="M4.5 9v11a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V9"/><path d="M9.5 21v-6h5v6"/></svg></span>Wohn- und Gesch&auml;ftshaus<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="Gewerbeobjekt oder Sonstiges"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V7l8 5v9z"/><path d="M2 21h20"/><path d="M7 4h2v3H7z"/></svg></span>Gewerbe oder Sonstiges<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="Mehrfamilienhaus"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v15"/><path d="M14 11h5a1 1 0 0 1 1 1v9"/><path d="M2 21h20"/><path d="M7 9h2M7 13h2M7 17h2M17 15h1M17 18h1"/></svg></span>Mehrfamilienhaus<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="Zwei- oder Einfamilienhaus (vermietet)"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span>Zwei- oder Einfamilienhaus<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="Eigentumswohnung (vermietet)"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M15 12h.01"/><path d="M6 21h12"/></svg></span>Eigentumswohnung<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="Wohn- und Gesch&auml;ftshaus"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.5-4.5A1 1 0 0 0 18.5 4h-13a1 1 0 0 0-1 .5L3 9Z"/><path d="M4.5 9v11a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V9"/><path d="M9.5 21v-6h5v6"/></svg></span>Wohn- und Gesch&auml;ftshaus<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="Gewerbeobjekt oder Sonstiges"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l5 3V11l5 3V7l8 5v9z"/><path d="M2 21h20"/><path d="M7 4h2v3H7z"/></svg></span>Gewerbe oder Sonstiges<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
           </div>
         </div>
 
@@ -601,11 +601,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           <h2>Aus welchem Baujahr stammt das Geb&auml;ude?</h2>
           <p class="sub">Ungef&auml;hr gen&uuml;gt. Das Baujahr entscheidet am st&auml;rksten dar&uuml;ber, ob sich ein Gutachten lohnt.</p>
           <div class="fn-opts" data-feld="baujahr">
-            <button type="button" class="fn-opt" data-v="bis 1960" data-rnd="24" data-afa="4,2"><span class="i jahr">&ndash;60</span>bis 1960<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="1961 bis 1975" data-rnd="24" data-afa="4,2"><span class="i jahr">60er</span>1961 &ndash; 1975<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="1976 bis 1990" data-rnd="30" data-afa="3,3"><span class="i jahr">80er</span>1976 &ndash; 1990<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="1991 bis 2005" data-rnd="42" data-afa="2,4"><span class="i jahr">90er</span>1991 &ndash; 2005<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="ab 2006" data-rnd="0" data-afa="0"><span class="i jahr">neu</span>2006 oder neuer<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="bis 1960" data-rnd="24" data-afa="4,2"><span class="i jahr">&ndash;60</span>bis 1960<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="1961 bis 1975" data-rnd="24" data-afa="4,2"><span class="i jahr">60er</span>1961 &ndash; 1975<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="1976 bis 1990" data-rnd="30" data-afa="3,3"><span class="i jahr">80er</span>1976 &ndash; 1990<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="1991 bis 2005" data-rnd="42" data-afa="2,4"><span class="i jahr">90er</span>1991 &ndash; 2005<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="ab 2006" data-rnd="0" data-afa="0"><span class="i jahr">neu</span>2006 oder neuer<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
           </div>
         </div>
 
@@ -615,11 +615,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           <h2>Was hat das Geb&auml;ude gekostet?</h2>
           <p class="sub">Nur der Geb&auml;udeanteil ohne Grundst&uuml;ck &ndash; eine grobe Einordnung reicht. Daraus rechnen wir Ihnen den Effekt in Euro aus.</p>
           <div class="fn-opts" data-feld="wert">
-            <button type="button" class="fn-opt" data-v="bis 200.000 &euro;" data-wert="150000"><span class="i jahr">&lt;200</span>bis 200.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="200.000 bis 400.000 &euro;" data-wert="300000"><span class="i jahr">200+</span>200.000 &ndash; 400.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="400.000 bis 700.000 &euro;" data-wert="550000"><span class="i jahr">400+</span>400.000 &ndash; 700.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="&uuml;ber 700.000 &euro;" data-wert="900000"><span class="i jahr">700+</span>&uuml;ber 700.000&nbsp;&euro;<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="unbekannt" data-wert="0"><span class="i jahr">?</span>Wei&szlig; ich nicht<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="bis 200.000 &euro;" data-wert="150000"><span class="i jahr">&lt;200</span>bis 200.000&nbsp;&euro;<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="200.000 bis 400.000 &euro;" data-wert="300000"><span class="i jahr">200+</span>200.000 &ndash; 400.000&nbsp;&euro;<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="400.000 bis 700.000 &euro;" data-wert="550000"><span class="i jahr">400+</span>400.000 &ndash; 700.000&nbsp;&euro;<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="&uuml;ber 700.000 &euro;" data-wert="900000"><span class="i jahr">700+</span>&uuml;ber 700.000&nbsp;&euro;<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="unbekannt" data-wert="0"><span class="i jahr">?</span>Wei&szlig; ich nicht<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
           </div>
         </div>
 
@@ -629,10 +629,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           <h2>Wie ist der Zustand des Geb&auml;udes?</h2>
           <p class="sub">Ihre Einsch&auml;tzung reicht &ndash; den genauen Befund erheben wir vor Ort.</p>
           <div class="fn-opts" data-feld="zustand">
-            <button type="button" class="fn-opt" data-v="weitgehend im Originalzustand"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5z"/></svg></span>Weitgehend im Originalzustand<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="teilmodernisiert"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M3 12h4M17 12h4M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg></span>Teilweise modernisiert<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="umfassend modernisiert"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-4.6 3.4L16 19l-4-2.9L8 19l1.1-5.6L4.5 10l5.6-1.4z"/></svg></span>Umfassend modernisiert<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="unbekannt"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4v.4"/><path d="M12 17h.01"/></svg></span>Wei&szlig; ich nicht genau<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="weitgehend im Originalzustand"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5z"/></svg></span>Weitgehend im Originalzustand<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="teilmodernisiert"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M3 12h4M17 12h4M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg></span>Teilweise modernisiert<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="umfassend modernisiert"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-4.6 3.4L16 19l-4-2.9L8 19l1.1-5.6L4.5 10l5.6-1.4z"/></svg></span>Umfassend modernisiert<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="unbekannt"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4v.4"/><path d="M12 17h.01"/></svg></span>Wei&szlig; ich nicht genau<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
           </div>
         </div>
 
@@ -641,10 +641,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           <h2>Ist das Objekt vermietet?</h2>
           <p class="sub">Die erh&ouml;hte Abschreibung wirkt nur bei Einkünften aus Vermietung und Verpachtung.</p>
           <div class="fn-opts two" data-feld="vermietet">
-            <button type="button" class="fn-opt" data-v="ja, vollst&auml;ndig"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.6 2.6L16 9.6"/></svg></span>Ja<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="teilweise"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none" opacity=".85"/></svg></span>Teilweise<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="noch nicht, geplant"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>Noch nicht<span class="ch">&#10003;</span></button>
-            <button type="button" class="fn-opt" data-v="nein, selbst genutzt"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><circle cx="12" cy="14" r="2"/><path d="M8.5 21c0-2 1.6-3.2 3.5-3.2s3.5 1.2 3.5 3.2"/></svg></span>Selbst genutzt<span class="ch">&#10003;</span></button>
+            <button type="button" class="fn-opt" data-v="ja, vollst&auml;ndig"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.6 2.6L16 9.6"/></svg></span>Ja<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="teilweise"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none" opacity=".85"/></svg></span>Teilweise<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="noch nicht, geplant"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>Noch nicht<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
+            <button type="button" class="fn-opt" data-v="nein, selbst genutzt"><span class="i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><circle cx="12" cy="14" r="2"/><path d="M8.5 21c0-2 1.6-3.2 3.5-3.2s3.5 1.2 3.5 3.2"/></svg></span>Selbst genutzt<span class="ch"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></span></button>
           </div>
         </div>
 
@@ -653,14 +653,14 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
           <div id="fnSum"></div>
           <h2>Wohin d&uuml;rfen wir die Einsch&auml;tzung senden?</h2>
           <p class="sub">Sie erhalten sie kostenlos und unverbindlich innerhalb von 24&nbsp;Stunden.</p>
-          <div class="ff"><label>Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" autocomplete="name" required /></div>
-          <div class="ff"><label>E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" autocomplete="email" inputmode="email" required /></div>
+          <div class="ff"><label for="lfName">Name *</label><input type="text" id="lfName" placeholder="Vor- &amp; Nachname" autocomplete="name" required /></div>
+          <div class="ff"><label for="lfMail">E-Mail *</label><input type="email" id="lfMail" placeholder="ihre@email.de" autocomplete="email" inputmode="email" required /></div>
           <div class="ff-row">
-            <div class="ff"><label>Telefon</label><input type="tel" id="lfTel" placeholder="+49 &hellip;" autocomplete="tel" inputmode="tel" /></div>
-            <div class="ff"><label>PLZ / Ort</label><input type="text" id="lfOrt" placeholder="30159 Hannover" autocomplete="postal-code" /></div>
+            <div class="ff"><label for="lfTel">Telefon</label><input type="tel" id="lfTel" placeholder="+49 &hellip;" autocomplete="tel" inputmode="tel" /></div>
+            <div class="ff"><label for="lfOrt">PLZ / Ort</label><input type="text" id="lfOrt" placeholder="30159 Hannover" autocomplete="postal-code" /></div>
           </div>
           <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
-            <label>Website (bitte frei lassen)</label>
+            <label for="lfHp">Website (bitte frei lassen)</label>
             <input type="text" id="lfHp" name="website" tabindex="-1" autocomplete="off" />
           </div>
           <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;font-size:16px;padding:17px;margin-top:6px">Kostenlose Einsch&auml;tzung erhalten &rarr;</button>
@@ -674,7 +674,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
         </div>
       </form>
       <div id="formSuccess" style="display:none;text-align:center;padding:20px 0">
-        <div style="font-size:2.5rem;margin-bottom:12px">&#9989;</div>
+        <div style="font-size:2.5rem;margin-bottom:12px"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#check"></use></svg></div>
         <p style="font-weight:700;font-size:1.1rem;color:var(--ink)">Vielen Dank &ndash; Ihre Anfrage ist eingegangen!</p>
         <p style="color:var(--muted);font-size:14px;margin-top:8px">Wir melden uns innerhalb von 24 Stunden mit einer ersten Einsch&auml;tzung.</p>
       </div>
@@ -688,7 +688,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
 <section class="block" style="padding-bottom:0">
   <div class="container">
     <div class="kpis r">
-      <div class="kpi"><div class="n"><span class="st">&#9733;</span> 5,0</div><div class="l">aus 22 Google-Bewertungen</div></div>
+      <div class="kpi"><div class="n"><span class="st"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg></span> 5,0</div><div class="l">aus 22 Google-Bewertungen</div></div>
       <div class="kpi"><div class="n">250+</div><div class="l">bewertete Immobilien</div></div>
       <div class="kpi"><div class="n">1.490&nbsp;&euro;</div><div class="l">Festpreis, vorab verbindlich</div></div>
       <div class="kpi"><div class="n">98&nbsp;%</div><div class="l">unserer Gutachten wurden anerkannt</div></div>
@@ -984,7 +984,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <h2>Viele Vermieter schreiben jahrelang zu langsam ab</h2>
     </div>
     <div class="alert-box r s1">
-      <div class="icon">&#9888;&#65039;</div>
+      <div class="icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#warning"></use></svg></div>
       <div>
         <h3>2&nbsp;% pro Jahr sind eine Annahme des Gesetzgebers &ndash; keine Aussage &uuml;ber Ihr Geb&auml;ude</h3>
         <p>Die gesetzliche Geb&auml;ude-AfA unterstellt pauschal eine Nutzungsdauer von 50&nbsp;Jahren (Fertigstellung 1925&ndash;2022), 40&nbsp;Jahren (vor 1925) bzw. 33&nbsp;Jahren (ab 2023). Ob Ihr konkretes Haus diesem Schema entspricht, pr&uuml;ft dabei niemand. Ein Mehrfamilienhaus von 1965 mit originaler Haustechnik, alter Fassade und Instandhaltungsr&uuml;ckstand hat wirtschaftlich in aller Regel <strong>keine 50&nbsp;Jahre mehr vor sich</strong> &ndash; abgeschrieben wird trotzdem so, als h&auml;tte es sie.</p>
@@ -1160,7 +1160,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
       <div><b>Bauingenieurwesen &amp; Architektur</b><span>M.Sc. Bauingenieurwesen und B.Sc. Architektur &ndash; wir beurteilen Konstruktion, Statik und Bausch&auml;den fachlich, nicht nach Tabelle.</span></div>
       <div><b>Immobilienwertermittlung (IHK)</b><span>Zertifikatslehrgang &bdquo;Immobilienwertermittlung (IHK)&ldquo; der Industrie- und Handelskammer Hannover (2024) &ndash; erg&auml;nzt um laufende Bewertungspraxis. <a href="/ueber-uns.html#qualifikationen" style="color:var(--blue);font-weight:600">Nachweise ansehen</a></span></div>
       <div><b>Immer mit Begehung</b><span>Wir bewerten kein Geb&auml;ude vom Schreibtisch aus. Die Beurteilung entsteht vor Ort &ndash; das ist der Kern eines belastbaren Gutachtens.</span></div>
-      <div><b>Familienbetrieb aus der Region</b><span>Zwei Br&uuml;der aus der Wedemark, &uuml;ber 250 bewertete Immobilien in Hannover und Umgebung. 5,0&nbsp;&#9733; bei Google.</span></div>
+      <div><b>Familienbetrieb aus der Region</b><span>Zwei Br&uuml;der aus der Wedemark, &uuml;ber 250 bewertete Immobilien in Hannover und Umgebung. 5,0&nbsp;<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg> bei Google.</span></div>
     </div>
     <div class="city-info r s2" style="border-left:4px solid var(--gold);margin-top:26px">
       <h3>Was Sie von uns nicht bekommen</h3>
@@ -1175,13 +1175,13 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:48px 0 
     <div class="sec-head center r" style="margin-bottom:32px">
       <span class="eyebrow" style="justify-content:center">Kundenstimmen</span>
       <h2>Was unsere Auftraggeber sagen</h2>
-      <p class="lead" style="margin-top:14px"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700"><span style="color:#F2B500;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5,0 aus 22 Google-Bewertungen</a></p>
+      <p class="lead" style="margin-top:14px"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 aus 22 Google-Bewertungen</a></p>
     </div>
     <div class="revs r s1">
-      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Guter, transparenter und zuverl&auml;ssiger Service. Ich brauchte ein Wertgutachten f&uuml;r einen Erbrechtsfall.&ldquo;</p><div class="who"><b>Robin G.</b>Erbschaft &middot; Wertgutachten</div></div>
-      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Sehr angenehmer Kontakt und absolut zuverl&auml;ssige Arbeit. Die Bewertung wurde schnell erstellt und alles wurde verst&auml;ndlich erkl&auml;rt.&ldquo;</p><div class="who"><b>Fabian</b>Google-Rezension</div></div>
-      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Eingehende Beratung und fachliche Expertise haben zu einem sehr guten und schnellen Ergebnis gef&uuml;hrt. Es ging um die Bewertung eines gr&ouml;&szlig;eren Grundst&uuml;ckes.&ldquo;</p><div class="who"><b>Lennart</b>Grundst&uuml;cksbewertung</div></div>
-      <div class="rev-c"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&bdquo;Bin super zufrieden! Alles ging schnell und unkompliziert. Die Bewertung war nachvollziehbar und ich hab mich gut aufgehoben gef&uuml;hlt. Kann ich nur weiterempfehlen.&ldquo;</p><div class="who"><b>Florian</b>Google-Rezension</div></div>
+      <div class="rev-c"><div class="st"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div><p>&bdquo;Guter, transparenter und zuverl&auml;ssiger Service. Ich brauchte ein Wertgutachten f&uuml;r einen Erbrechtsfall.&ldquo;</p><div class="who"><b>Robin G.</b>Erbschaft &middot; Wertgutachten</div></div>
+      <div class="rev-c"><div class="st"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div><p>&bdquo;Sehr angenehmer Kontakt und absolut zuverl&auml;ssige Arbeit. Die Bewertung wurde schnell erstellt und alles wurde verst&auml;ndlich erkl&auml;rt.&ldquo;</p><div class="who"><b>Fabian</b>Google-Rezension</div></div>
+      <div class="rev-c"><div class="st"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div><p>&bdquo;Eingehende Beratung und fachliche Expertise haben zu einem sehr guten und schnellen Ergebnis gef&uuml;hrt. Es ging um die Bewertung eines gr&ouml;&szlig;eren Grundst&uuml;ckes.&ldquo;</p><div class="who"><b>Lennart</b>Grundst&uuml;cksbewertung</div></div>
+      <div class="rev-c"><div class="st"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></div><p>&bdquo;Bin super zufrieden! Alles ging schnell und unkompliziert. Die Bewertung war nachvollziehbar und ich hab mich gut aufgehoben gef&uuml;hlt. Kann ich nur weiterempfehlen.&ldquo;</p><div class="who"><b>Florian</b>Google-Rezension</div></div>
     </div>
   </div>
 </section>
