@@ -20,6 +20,13 @@ parsed = {p: Page(s) for p, s in sources.items()}
 urls = []
 titles = []
 incoming = Counter()
+business_coordinates = set()
+business_address = {
+    'streetAddress': 'Gailhoferstraße 17',
+    'addressLocality': 'Wedemark',
+    'postalCode': '30900',
+    'addressCountry': 'DE',
+}
 links = 0
 ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
 sitemap = [n.text for n in ET.parse(ROOT/'sitemap.xml').findall('s:url/s:loc', ns)]
@@ -45,6 +52,10 @@ for path, page in parsed.items():
     visible = normalize(re.sub(r'<(script|style)[^>]*>.*?</\1>', '', source, flags=re.S))
     def check_faq(node):
         if isinstance(node, dict):
+            if node.get('@type') == 'PostalAddress':
+                assert all(node.get(k) == v for k, v in business_address.items()), (path, 'inconsistent business address', node)
+            if node.get('@type') == 'GeoCoordinates':
+                business_coordinates.add((float(node['latitude']), float(node['longitude'])))
             if node.get('@type') == 'Question':
                 assert normalize(node['name']) in visible, (path, 'hidden FAQ question')
                 assert normalize(node['acceptedAnswer']['text']) in visible, (path, 'FAQ answer mismatch', node['name'])
@@ -69,6 +80,7 @@ for path, page in parsed.items():
                 assert unquote(target.fragment) in ids_target, (path, 'broken anchor', value)
             if tag == 'a' and path != local: incoming[local] += 1
 assert len(titles) == len(set(titles)), 'Duplicate titles'
+assert len(business_coordinates) <= 1, 'Conflicting coordinates for the same office; verify location before publishing geo data'
 assert set(urls) == set(sitemap), 'Sitemap/public page mismatch'
 assert all(incoming[p] for p in files), 'Orphan page'
 assert 'Disallow: /\n' not in (ROOT/'robots.txt').read_text()

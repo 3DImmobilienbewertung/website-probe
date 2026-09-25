@@ -1,5 +1,6 @@
 """Offline regression checks for the regional design rollout. No external requests."""
 import json
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
@@ -49,7 +50,10 @@ for filename in ['index.html'] + CITIES:
     expected = ORIGIN + ('/' if filename == 'index.html' else '/' + filename)
     assert [a['href'] for t,a in page.tags if t=='link' and a.get('rel')=='canonical'] == [expected], filename
     assert any(t=='meta' and a.get('name')=='robots' and 'noindex' not in a.get('content','') for t,a in page.tags), filename
-    assert entries.get(expected) == '2026-09-22', filename
+    # Subsequent content updates may legitimately advance lastmod.
+    lastmod = entries.get(expected)
+    assert lastmod and len(lastmod) == 10, (filename, 'missing/invalid lastmod')
+    assert date(2026, 9, 22) <= date.fromisoformat(lastmod) <= date.today(), (filename, 'stale/future lastmod')
     for t,a in page.tags:
         if t in ('img','script') and a.get('src','').startswith('/assets/'):
             assert (ROOT / urlparse(a['src']).path.lstrip('/')).is_file(), (filename,a)
