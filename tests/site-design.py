@@ -42,7 +42,7 @@ for path in pages:
     if path.name in ('index.html', 'ueber-uns.html', 'impressum.html') and path.parent == ROOT:
         for date in ('2025-07-08', '2025-08-06', '2024-11-08', '08.07.2025', '08.11.2024'):
             assert date not in source, (path, date)
-assert len(pages) == 46, len(pages)
+assert len(pages) == 50, len(pages)
 home = (ROOT / 'index.html').read_text()
 assert 'class="practice-strip"' not in home
 assert 'class="team-quals"' not in home
