@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/rnd",
       "destination": "/restnutzungsdauergutachten-hannover.html?utm_source=print&utm_medium=qr&utm_campaign=restnutzungsdauer",
       "permanent": false

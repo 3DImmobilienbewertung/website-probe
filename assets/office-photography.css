@@ -1,0 +1,80 @@
+/* Real office photography. Focal points only affect the layout, never the files. */
+.brand-editorial .office-photo{margin:0;min-width:0;--photo-position:center}
+.brand-editorial .office-shot{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:var(--photo-position);border-radius:4px;filter:none;background:var(--blue-soft)}
+.brand-editorial .office-photo figcaption{padding-top:14px;border-top:0;font:400 13px/1.55 var(--body);color:var(--muted)}
+.brand-editorial .office-photo figcaption strong{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
+.brand-editorial .office-photo--team .office-shot{aspect-ratio:3/2}
+.brand-editorial .office-photo--besichtigung{--photo-position:center 83%}
+.brand-editorial .office-photo--pruefung{--photo-position:center 70%}
+.brand-editorial .office-photo--beratung{--photo-position:center 68%}
+.brand-editorial .office-photo--grundriss{--photo-position:center 65%}
+.brand-editorial .office-photo--unterlagen{--photo-position:center 62%}
+.brand-editorial .office-photo--vito{--photo-position:center 40%}
+.brand-editorial .office-photo--auswertung{--photo-position:center 52%}
+.brand-editorial .office-feature{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,72px);margin-top:40px}
+.brand-editorial .office-feature>*{min-width:0}
+.brand-editorial .office-feature>.city-info{margin:0}
+.brand-editorial .office-feature .office-shot{aspect-ratio:4/5}
+.brand-editorial .office-feature .office-photo--team .office-shot{aspect-ratio:3/2}
+.brand-editorial .office-feature .vstep{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:18px;row-gap:6px}
+.brand-editorial .office-feature .vstep-num{grid-row:1/3;width:44px;height:44px}
+.brand-editorial .office-feature .vstep h3{grid-column:2;margin:0}
+.brand-editorial .office-feature .vstep p{grid-column:2;margin:0}
+.brand-editorial .office-process{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;margin-top:48px;padding-top:40px;border-top:1px solid var(--line-on-dark,var(--border))}
+.brand-editorial .office-process>.office-photo:first-child{grid-row:span 2}
+.brand-editorial .office-process>.office-photo:first-child .office-shot{aspect-ratio:3/4;object-position:center 74%}
+.brand-editorial .office-process>.office-photo:not(:first-child) .office-shot{aspect-ratio:4/3}
+.brand-editorial .office-process>.office-photo--pruefung{--photo-position:center 55%}
+.brand-editorial .office-process>.office-photo--auswertung{--photo-position:center 42%}
+.brand-home #ablauf .office-photo figcaption{color:#c4d1df}
+.brand-home #ablauf .office-photo figcaption strong{color:white}
+.brand-home .contact-side>.office-photo{margin-bottom:26px}
+.brand-home .contact-side .office-photo figcaption{color:#d3dfeb}
+.brand-home .hero-people.office-team-hero{width:100%;max-width:none}
+.brand-home .office-team-hero>.office-shot{aspect-ratio:2/1;object-position:center 30%;border:1px solid var(--line-on-dark);box-shadow:0 16px 44px rgba(0,0,0,.12)}
+.brand-home .office-team-hero>figcaption{display:flex;align-items:start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line-on-dark);padding-bottom:18px}
+.brand-home .office-team-hero>figcaption strong{color:white;font-size:16px}
+.brand-home .office-team-hero>figcaption span{font-size:13px;color:#c4d1df}
+.brand-home .office-team-hero .hero-signature{margin-top:0;padding-top:18px;border-top:0}
+.brand-about .office-about-hero{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:center}
+.brand-about .office-about-hero .office-shot{aspect-ratio:2/1;object-position:center top}
+.brand-about .hero .office-photo figcaption{color:#c4d1df}
+.brand-guide .office-feature{margin-block:40px;padding-top:28px;border-top:1px solid var(--border)}
+.brand-guide .office-feature h2{font-size:1.55rem}
+.brand-home .hero-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+.brand-home .hero-copy{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:48px;max-width:none}
+.brand-home .hero-copy>*{min-width:0}
+.brand-home .hero h1{font-size:clamp(2rem,3.45vw,3.125rem)}
+.brand-home .hero-next-step .lead{margin-top:0}
+.brand-home .hero-next-step .hero-actions{margin-top:20px;gap:12px}
+.brand-home .hero-next-step .hero-detail{margin-bottom:0}
+/* Motion is ornamental: no hidden content, scroll hijacking or JS dependency. */
+@media(prefers-reduced-motion:no-preference){
+ .brand-home .office-team-hero,.brand-about .office-about-hero>.office-photo{animation:office-arrive .65s ease-out both}
+ @keyframes office-arrive{from{transform:translateY(12px)}to{transform:translateY(0)}}
+ @media(hover:hover) and (pointer:fine){
+  .brand-editorial .office-photo .office-shot{transition:transform .3s ease,box-shadow .3s ease}
+  .brand-editorial .office-photo:hover .office-shot{transform:translateY(-3px);box-shadow:0 18px 36px rgba(22,54,92,.14)}
+ }
+}
+@media(max-width:980px){
+ .brand-home .hero-copy{grid-template-columns:minmax(0,1fr);gap:20px}
+ .brand-home .hero-grid{gap:28px}
+ .brand-home .hero h1{font-size:clamp(1.9rem,5.1vw,3rem)}
+ .brand-home .hero-promise{margin-bottom:0}
+ .brand-about .office-about-hero{gap:32px}
+}
+@media(max-width:700px){
+ .brand-editorial .office-feature{grid-template-columns:minmax(0,1fr);gap:22px}
+ .brand-editorial .office-feature .office-shot{aspect-ratio:4/3}
+ .brand-editorial .office-feature .office-photo--team .office-shot{aspect-ratio:3/2}
+ .brand-editorial .office-process{grid-template-columns:minmax(0,1fr);gap:28px}
+ .brand-editorial .office-process>.office-photo:first-child{grid-row:auto}
+ .brand-editorial .office-process>.office-photo:first-child .office-shot{aspect-ratio:4/5}
+ .brand-editorial .office-process>.office-photo:not(:first-child) .office-shot{aspect-ratio:4/3}
+ .brand-home .office-team-hero>.office-shot,.brand-about .office-about-hero .office-shot{aspect-ratio:3/2;object-position:center}
+ .brand-home .office-team-hero>figcaption{display:block;padding-top:12px;padding-bottom:14px}
+ .brand-home .office-team-hero>figcaption>span{display:block;margin-top:6px}
+ .brand-home .office-team-hero .hero-signature{padding-top:12px}
+}
+@media print{.brand-guide .office-feature{display:none}}

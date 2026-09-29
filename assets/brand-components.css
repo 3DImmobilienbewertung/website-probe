@@ -22,6 +22,8 @@ body.brand-editorial{
 .brand-editorial :is(.ff,.form-field) label{font-size:13px;font-weight:600;color:var(--ink)}
 .brand-editorial :is(.form-card,.lead-form) .note{font-family:var(--body);font-size:12px;line-height:1.6;color:var(--muted)}
 .brand-editorial :is(.s-card,.city-info,.decision,.review,.tcard,.post-card,.rel-card,.credential-document){border:1px solid var(--border);border-radius:var(--component-radius);background:#fff;box-shadow:var(--component-shadow);min-width:0}
+.brand-editorial .section-dark .tcard blockquote,.brand-editorial .section-dark .tcard cite .nm{color:var(--ink)}
+.brand-editorial .section-dark .tcard cite .loc{color:var(--muted)}
 .brand-editorial :is(.s-card,.city-info,.decision,.credential-document){padding:28px}
 .brand-editorial :is(.sec-head h2,.section-title){font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.15;text-wrap:balance}
 .brand-editorial :is(.hero-sub,.hero .lead){max-width:58ch;color:var(--ink-2);line-height:1.7}

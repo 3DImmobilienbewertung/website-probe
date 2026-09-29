@@ -33,7 +33,8 @@ home = (ROOT / 'index.html').read_text()
 assert 'three.min.js' not in home
 assert '<canvas id="scene"' not in home
 assert '<div class="mobile-cta-bar"' not in home
-assert 'class="portrait-pair"' in home
+assert 'class="hero-people office-photo office-team-hero"' in home
+assert 'data-office-photo="team-besprechung"' in home
 assert 'class="region-directory"' in home
 assert 'aria-controls="mobileMenu" aria-expanded="false"' in home
 ns = {'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}

@@ -25,7 +25,8 @@ for path in pages:
     styles = [a['href'] for t, a in tags if t == 'link' and 'brand-editorial.css' in a.get('href', '')]
     assert styles == ['/assets/brand-editorial.css?v=brand-correction-20260923'], path
     components = [a['href'] for t, a in tags if t == 'link' and 'brand-components.css' in a.get('href', '')]
-    assert components == ['/assets/brand-components.css?v=preview-20260925'], path
+    component_version = 'contrast-20260929' if 'section-dark' in source and 'class="tcard' in source else 'preview-20260925'
+    assert components == ['/assets/brand-components.css?v=' + component_version], path
     assert sum(t == 'footer' and 'office-footer' in a.get('class', '').split() for t, a in tags) == 1, path
     for label in ('Leistungen im Footer', 'Orientierung im Footer', 'Ansprechpartner im Footer'):
         assert any(t == 'nav' and a.get('aria-label') == label for t, a in tags), (path, label)
@@ -42,7 +43,7 @@ for path in pages:
     if path.name in ('index.html', 'ueber-uns.html', 'impressum.html') and path.parent == ROOT:
         for date in ('2025-07-08', '2025-08-06', '2024-11-08', '08.07.2025', '08.11.2024'):
             assert date not in source, (path, date)
-assert len(pages) == 50, len(pages)
+assert len(pages) == 53, len(pages)
 home = (ROOT / 'index.html').read_text()
 assert 'class="practice-strip"' not in home
 assert 'class="team-quals"' not in home
@@ -50,8 +51,11 @@ assert 'Bei wichtigen Entscheidungen sind Sie bei uns keine Nummer.' in home
 assert 'ohne Weitergabe an externe Gutachter' in home
 assert 'Die Originalnachweise zeigen wir Ihnen auf Anfrage.' not in (ROOT / 'ueber-uns.html').read_text()
 assert home.count('class="member-photo"') == 2
-assert home.count('src="/assets/team-1.webp"') == 2
-assert home.count('src="/assets/team-2.webp"') == 2
+assert home.count('src="/assets/nandino-donnarumma-20260928.webp"') == 1
+assert home.count('src="/assets/vito-donnarumma-20260928.webp"') == 1
+hero = re.search(r'<section class="hero".*?</section>', home, re.S)[0]
+assert 'data-office-photo="team-besprechung"' in hero
+assert 'office-portrait' not in hero
 for font in ('bricolage', 'hanken', 'jetbrains'):
     assert (ROOT / f'assets/{font}-latin.woff2').read_bytes()[:4] == b'wOF2'
     assert (ROOT / f'assets/{font}-OFL.txt').is_file()

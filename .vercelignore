@@ -1,2 +1,4 @@
 # Local verification tools are not public website assets.
 tests/
+scripts/
+docs/

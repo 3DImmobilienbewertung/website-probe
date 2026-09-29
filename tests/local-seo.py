@@ -85,7 +85,11 @@ for filename in PAGES:
     for schema in page.schemas:
         for entity in schema.get('@graph', [schema]):
             if 'dateModified' in entity:
-                assert entity['dateModified'] == entries[url], (filename, 'schema/sitemap date mismatch')
+                if entity.get('@type') == 'BlogPosting':
+                    # Publisher maintenance is not an editorial update to the article.
+                    assert entity['dateModified'] <= entries[url], (filename, 'article newer than sitemap')
+                else:
+                    assert entity['dateModified'] == entries[url], (filename, 'schema/sitemap date mismatch')
             if entity.get('@type') == 'BlogPosting':
                 assert entity['datePublished'] <= entity['dateModified'], (filename, 'article dates')
     assert page.schemas, (filename, 'missing schema')

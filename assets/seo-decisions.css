@@ -1,0 +1,7 @@
+/* Contextual service navigation and decision content; no client-side rendering. */
+.brand-editorial .regional-services{margin-top:28px;padding-top:24px;border-top:1px solid var(--border);font-size:15px;line-height:1.85}
+.brand-editorial :is(.regional-services,#hauswert-pruefen,#gutachten-auswaehlen,#bewertungsweg) a{color:var(--blue);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.brand-editorial :is(#hauswert-pruefen,#gutachten-auswaehlen,#bewertungsweg) .container{max-width:1000px}
+.brand-editorial :is(#hauswert-pruefen,#gutachten-auswaehlen,#bewertungsweg) .city-info{margin-top:20px}
+.brand-editorial :is(#hauswert-pruefen,#gutachten-auswaehlen,#bewertungsweg) p{max-width:78ch;margin-top:14px;line-height:1.75}
+.brand-editorial :is(#hauswert-pruefen,#gutachten-auswaehlen,#bewertungsweg) h3{line-height:1.25}
