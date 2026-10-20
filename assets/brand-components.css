@@ -224,3 +224,45 @@ body.brand-editorial{--action:#C9A24B;--night:#102b4c;--line-on-dark:#48617c;--c
  .brand-editorial .page-head{padding-block:32px}
 }
 @media(prefers-reduced-motion:reduce){.brand-editorial .btn,.brand-home .intent-links a{transition:none;transform:none}}
+
+/* =====================================================================
+   Editorial-Typografie 2026-10-21
+   Vorbild bywater.group: grosse Headlines in leichtem Schnitt, Zeilen
+   dicht gesetzt, Laufweite fast neutral. Bisher lief es andersherum -
+   Weight 600 bei -0.05em Laufweite, das wirkt gedrueckt und schwer.
+   Farben bleiben unveraendert: Navy #16365C, Gold #C9A24B.
+   ===================================================================== */
+body.brand-editorial{--display:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif}
+
+.brand-editorial :is(h1,h2,h3,.section-title,.title){
+  font-family:var(--display);
+  font-weight:500;
+  letter-spacing:-.018em;
+  text-wrap:balance;
+}
+.brand-editorial :is(h1,h2,.section-title){line-height:1.06}
+.brand-editorial h3{font-weight:600;letter-spacing:-.012em;line-height:1.25}
+
+/* Hero: groesser und dichter gesetzt, der Satz traegt sich selbst. */
+.brand-editorial .hero h1{font-weight:450;letter-spacing:-.022em;line-height:1.03}
+.brand-home .hero h1{font-size:clamp(2.45rem,4.2vw,3.9rem)}
+.brand-editorial .page-head h1,.brand-blog .page-head h1{font-weight:450;letter-spacing:-.022em;line-height:1.05}
+
+/* Abschnittsueberschriften duerfen groesser werden, wenn sie leichter sind. */
+.brand-editorial .section-title{font-size:clamp(2rem,3.4vw,2.9rem)}
+
+/* Fliesstext etwas ruhiger im Ton, Navy bleibt die Textfarbe. */
+.brand-editorial .lead{font-size:clamp(1.02rem,1.25vw,1.18rem);line-height:1.62}
+
+/* Fotos: Karten-Lift durch eine Bewegung im Bild ersetzt - ruhiger. */
+@media(hover:hover){
+  .brand-editorial .office-photo:hover .office-shot{transform:none;box-shadow:none}
+  .brand-editorial .office-photo{overflow:hidden}
+  .brand-editorial .office-photo .office-shot{transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+  .brand-editorial .office-photo:hover .office-shot{transform:scale(1.025)}
+}
+
+@media(max-width:700px){
+  .brand-home .hero h1{font-size:clamp(2.1rem,8.6vw,3rem);line-height:1.05}
+  .brand-editorial .section-title{font-size:clamp(1.75rem,6.8vw,2.3rem)}
+}

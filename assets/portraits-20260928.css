@@ -1,3 +1,34 @@
 /* User-supplied portraits: preserve their original colours and aspect ratio. */
 .brand-editorial img.office-portrait{filter:none;object-fit:cover;object-position:center top}
 .brand-about .founder .office-portrait{display:block;width:100%;height:auto;aspect-ratio:4/5;margin:0 0 22px;border:1px solid var(--border);border-radius:4px}
+
+/* ---- Portraitführung 2026-10-21 -------------------------------------
+   Die Portraits sind Freisteller ohne Alphakanal: das Weiss ist im Bild.
+   Deshalb kein farbiges Panel dahinter, sondern ein engerer, bei beiden
+   Brüdern identischer Ausschnitt. Ziel: gleiche Kopfgroesse, gleiche
+   Augenlinie, Schultern am Rahmenrand - statt zwei frei schwebender
+   Koepfe in unterschiedlichem Massstab. */
+.brand-home .member-photo{
+  aspect-ratio:1/1;
+  background:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.brand-home .member-photo .office-portrait{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 22%;
+  transform:scale(1.18);
+  transform-origin:center 24%;
+}
+/* Pro Person nachjustiert, damit die Augen auf einer Hoehe liegen.
+   Nandino steht im Original hoeher im Bild als Vito. */
+.brand-home .member:nth-child(1) .member-photo .office-portrait{object-position:center 24%;transform:scale(1.16)}
+.brand-home .member:nth-child(2) .member-photo .office-portrait{object-position:center 14%;transform:scale(1.17)}
+
+/* Weicher Uebergang zur Karte, damit der Freisteller nicht abrupt endet. */
+.brand-home .member-photo::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:34%;
+  background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,#fff 82%);
+  pointer-events:none;
+}
