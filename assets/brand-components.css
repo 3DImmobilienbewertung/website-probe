@@ -266,3 +266,12 @@ body.brand-editorial{--display:'Hanken Grotesk','Helvetica Neue',Arial,sans-seri
   .brand-home .hero h1{font-size:clamp(2.1rem,8.6vw,3rem);line-height:1.05}
   .brand-editorial .section-title{font-size:clamp(1.75rem,6.8vw,2.3rem)}
 }
+
+/* Sterne gefuellt statt als Umriss.
+   Die .ui-icon-Grundregel setzt fill:none/stroke:currentColor - richtig
+   fuer Linien-Icons, falsch fuer Bewertungssterne: fuenf hohle Sterne
+   neben "5,0" lesen sich wie eine leere Bewertung. Die Pfade im Sprite
+   sind geschlossene Formen und zum Fuellen gedacht. */
+.brand-editorial .ui-rating,
+.brand-editorial .st > .ui-icon,
+.brand-editorial .hero-stars > .ui-icon{fill:currentColor;stroke:none}
