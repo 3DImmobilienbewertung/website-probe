@@ -203,7 +203,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spac
 .lead{color:var(--muted);font-size:clamp(1.02rem,1.6vw,1.18rem);max-width:560px;line-height:1.65}
 
 /* ---------- buttons ---------- */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15px;padding:16px 28px;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),background .3s,border-color .3s,color .3s,box-shadow .3s;white-space:nowrap;overflow:hidden}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:flex-start;gap:10px;font-family:var(--body);font-weight:600;font-size:15px;padding:16px 28px;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),background .3s,border-color .3s,color .3s,box-shadow .3s;white-space:nowrap;overflow:hidden}
 .btn::before{content:"";position:absolute;top:0;left:-80%;width:60%;height:100%;background:linear-gradient(110deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s var(--ease)}
 .btn:hover::before{left:130%}
 .btn .ar{transition:transform .35s var(--ease)}
@@ -248,7 +248,7 @@ header.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:blur(16px);
 @keyframes underline{to{transform:scaleX(1)}}
 .hero .lead{margin-top:26px;max-width:510px;font-size:clamp(1.05rem,1.6vw,1.22rem)}
 .hero-actions{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.hero-stage{position:relative;height:560px;display:flex;align-items:center;justify-content:center}
+.hero-stage{position:relative;height:560px;display:flex;align-items:center;justify-content:flex-start}
 .hero-glow{position:absolute;width:86%;height:86%;border-radius:50%;background:radial-gradient(circle,rgba(46,107,184,.22),rgba(22,54,92,.06) 55%,transparent 72%);filter:blur(14px);animation:glowPulse 6s ease-in-out infinite}
 @keyframes glowPulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.08);opacity:1}}
 #scene{width:100%;height:100%;display:block;position:relative;z-index:1}
@@ -333,7 +333,7 @@ section{position:relative;padding:110px 0}
 
 /* ============================================================ VORTEILE SPLIT */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.split-visual{position:relative;aspect-ratio:1/1;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)}
+.split-visual{position:relative;aspect-ratio:1/1;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-2);overflow:hidden;display:flex;align-items:center;justify-content:flex-start;box-shadow:var(--shadow-sm)}
 .split-visual svg{width:74%;height:74%}
 .split-visual .grid-bg{position:absolute;inset:0;opacity:.6;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(circle at center,#000 30%,transparent 75%)}
 .feat-list{list-style:none;margin-top:32px;display:flex;flex-direction:column;gap:0}
@@ -390,7 +390,7 @@ section{position:relative;padding:110px 0}
 .member-photo{position:relative;aspect-ratio:4/5;background:linear-gradient(150deg,var(--blue-soft),var(--bg-3));overflow:hidden}
 .member-photo picture{display:block;width:100%;height:100%}
 .member-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.member-photo .ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--blue);text-align:center;padding:20px}
+.member-photo .ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:10px;color:var(--blue);text-align:center;padding:20px}
 .member-photo .ph-fallback .av{width:72px;height:72px;border-radius:50%;background:linear-gradient(150deg,var(--blue),var(--blue-bright));color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:25px;box-shadow:var(--shadow-blue)}
 .member-photo .ph-fallback span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
 .member-body{padding:30px 32px 32px}
@@ -490,12 +490,12 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .float-cta .btn{box-shadow:0 12px 30px rgba(26,91,208,.4);padding:16px 26px}
 
 /* WhatsApp floating button */
-.wa-btn{position:fixed;left:24px;bottom:24px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;box-shadow:0 6px 24px rgba(37,211,102,.50);display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease),box-shadow .35s}
+.wa-btn{position:fixed;left:24px;bottom:24px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;box-shadow:0 6px 24px rgba(37,211,102,.50);display:flex;align-items:center;justify-content:flex-start;transition:transform .35s var(--ease),box-shadow .35s}
 .wa-btn:hover{transform:scale(1.09);box-shadow:0 10px 32px rgba(37,211,102,.60)}
 .wa-btn svg{width:30px;height:30px;fill:#fff}
 
 /* mobile menu */
-.mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .35s}
+.mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .35s}
 .mobile-menu.open{opacity:1;pointer-events:auto}
 .mobile-menu a{font-family:var(--display);font-size:1.8rem;font-weight:600;color:var(--ink)}
 .mobile-menu .close{position:absolute;top:24px;right:26px;background:none;border:none;color:var(--ink);font-size:34px;cursor:pointer;line-height:1}
@@ -540,7 +540,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .ic-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0E2A47 0%,#16365C 55%,#1e4a7a 100%)}
 .ic-bg2{background:linear-gradient(135deg,#0a1e35 0%,#16365C 45%,#2a5a8c 100%)}
 .ic-bg::after,.ic-bg2::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.ic-body{position:relative;z-index:1;padding:28px 30px;display:flex;flex-direction:column;justify-content:center;gap:14px;width:100%}
+.ic-body{position:relative;z-index:1;padding:28px 30px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;width:100%}
 .ic-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9A24B;font-weight:500}
 .ic-title{font-family:var(--display);font-size:1.15rem;font-weight:700;color:#fff;line-height:1.3;letter-spacing:-.01em;margin:0}
 .ic-facts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
@@ -560,7 +560,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   .float-cta .btn{width:100%}
   main{padding-bottom:70px}
 }
-.mob-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:12px;font-family:var(--body);font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,opacity .2s}
+.mob-btn{flex:1;display:flex;align-items:center;justify-content:flex-start;gap:8px;padding:14px 10px;border-radius:12px;font-family:var(--body);font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,opacity .2s}
 .mob-btn:active{transform:scale(.97);opacity:.9}
 .mob-phone{background:var(--blue);color:#fff;box-shadow:0 4px 14px rgba(22,54,92,.35)}
 .mob-wa{background:#25D366;color:#fff;box-shadow:0 4px 14px rgba(37,211,102,.35)}
@@ -569,7 +569,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .post-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:border-color .4s,transform .4s var(--ease),box-shadow .4s}
 .post-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:var(--shadow)}
-.post-thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:2.6rem;position:relative;overflow:hidden}
+.post-thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:flex-start;font-size:2.6rem;position:relative;overflow:hidden}
 .post-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,36,64,.4))}
 .post-thumb span{position:relative;z-index:1}
 .post-body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
@@ -600,7 +600,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 /* ---- Erklaerfilm: Klick-Fassade, iframe laedt erst auf Wunsch ---- */
 .explainer{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue) 100%)}
 .explainer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
-.explainer-cover{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:28px;border:0;cursor:pointer;color:#fff;background:transparent;font-family:var(--body);text-align:center}
+.explainer-cover{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:18px;padding:28px;border:0;cursor:pointer;color:#fff;background:transparent;font-family:var(--body);text-align:center}
 .explainer-cover::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 45%,rgba(46,107,184,.35),transparent 70%)}
 .explainer-cover>*{position:relative}
 .explainer-cover .play{width:78px;height:78px;border-radius:50%;background:var(--gold);color:var(--blue-deep);display:grid;place-items:center;box-shadow:0 16px 40px rgba(201,162,75,.45);transition:transform .3s var(--ease)}
@@ -612,7 +612,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 
 /* ---- Mobile Aktionsleiste: Anrufen / Anfragen immer erreichbar ---- */
 .mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 16px calc(14px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-top:1px solid var(--border);box-shadow:0 -6px 24px rgba(16,36,61,.10)}
-.mobile-bar a{flex:1;text-align:center;justify-content:center;font-size:14.5px;padding:13px 10px}
+.mobile-bar a{flex:1;text-align:center;justify-content:flex-start;font-size:14.5px;padding:13px 10px}
 .mobile-bar .call{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}
 @media(max-width:680px){.mobile-bar{display:flex}body{padding-bottom:78px}}
 
@@ -636,6 +636,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <link rel="stylesheet" href="/assets/portraits-20260928.css?v=20261021">
 <link rel="stylesheet" href="/assets/office-photography.css?v=20261021">
 <link rel="stylesheet" href="/assets/seo-decisions.css?v=20260928">
+<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261021b">
 </head>
 
 <body class="brand-editorial brand-home">
@@ -698,7 +699,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <figure class="hero-people office-photo office-team-hero">
       <img class="office-shot" data-office-photo="team-besprechung" src="/assets/office-team-besprechung-1440.webp" srcset="/assets/office-team-besprechung-640.webp 640w, /assets/office-team-besprechung-1440.webp 1440w" sizes="(max-width: 1240px) calc(100vw - 40px), 1184px" width="1440" height="960" fetchpriority="high" decoding="async" alt="Vito und Nandino Donnarumma bei der gemeinsamen Besprechung am Laptop und Tablet">
       <figcaption><div><strong>Vito &amp; Nandino Donnarumma</strong><span>Ihre persönlichen Ansprechpartner.</span></div><span>B.Sc. Architektur<br>M.Sc. Bauingenieurwesen</span></figcaption>
-      <div class="hero-signature"><span>Büro in der Wedemark. Für die Region vor Ort.<br><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener">5,0 von 5 · 31 Google-Bewertungen ansehen</a></span><a href="/ueber-uns.html#qualifikationen">Qualifikationen ansehen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a></div>
+      <div class="hero-signature"><span>Büro in der Wedemark. Für die Region vor Ort.<br><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener">5,0 von 5 · 76 Google-Bewertungen ansehen</a></span><a href="/ueber-uns.html#qualifikationen">Qualifikationen ansehen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a></div>
     </figure>
   </div>
 </section>
@@ -845,10 +846,10 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <!-- ===================== TEAM ===================== -->
 <section id="team" class="alt">
   <div class="container">
-    <div class="sec-head r" style="text-align:center;margin:0 auto 14px;max-width:680px">
-      <span class="eyebrow" style="justify-content:center">Unser Team</span>
+    <div class="sec-head r" class="sec-head-lead">
+      <span class="eyebrow" >Unser Team</span>
       <h2 class="section-title">Zwei Brüder. Ein persönlicher Ansprechpartner.</h2>
-      <p class="lead" style="margin:16px auto 0">Bei uns sprechen Sie mit den Menschen, die Ihre Immobilie bewerten. Fachwissen aus Bauingenieurwesen und Architektur, persönliche Besichtigung und klare Antworten – ohne unnötige Umwege.</p>
+      <p class="lead" style="margin:16px 0 0">Bei uns sprechen Sie mit den Menschen, die Ihre Immobilie bewerten. Fachwissen aus Bauingenieurwesen und Architektur, persönliche Besichtigung und klare Antworten – ohne unnötige Umwege.</p>
     </div>
     <div class="team-grid">
       <div class="member r s1">
@@ -937,19 +938,19 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <!-- ===================== BEWERTUNGEN ===================== -->
 <section id="bewertungen" class="alt">
   <div class="container">
-    <div class="sec-head r" style="text-align:center;margin:0 auto 54px;max-width:680px">
-      <span class="eyebrow" style="justify-content:center">Kundenstimmen</span>
+    <div class="sec-head r" style="margin:0 0 54px">
+      <span class="eyebrow" >Kundenstimmen</span>
       <h2 class="section-title">Was unsere Kunden sagen</h2>
-      <p class="lead" style="margin:16px auto 0">Über 250 Immobilien bewertet – hier sind einige Stimmen unserer Auftraggeber aus Hannover und der Region.</p>
-      <div style="margin-top:22px;display:flex;align-items:center;justify-content:center">
-        <div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:11px 22px;box-shadow:var(--shadow-sm)">
+      <p class="lead" style="margin:16px 0 0">Über 250 Immobilien bewertet – hier sind einige Stimmen unserer Auftraggeber aus Hannover und der Region.</p>
+      <div style="margin-top:22px;display:flex;align-items:center;justify-content:flex-start">
+        <div class="google-badge">
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-          <span style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2);font-weight:500">5,0 · 31 Google-Bewertungen</span>
+          <span style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2);font-weight:500">5,0 · 76 Google-Bewertungen</span>
           <span style="color:#F2B500;font-size:15px;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span>
         </div>
       </div>
-      <div style="margin-top:16px;text-align:center">
-        <a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg> Jetzt auf Google bewerten</a>
+      <div style="margin-top:16px">
+        <a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" class="btn btn-quiet"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg> Jetzt auf Google bewerten</a>
       </div>
     </div>
     <!-- Echte Google-Rezensionen (verifizierbar über das Google-Profil) -->
@@ -1080,8 +1081,8 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <!-- ===================== FAQ ===================== -->
 <section id="faq">
   <div class="container">
-    <div class="sec-head r" style="margin:0 auto 48px;text-align:center;max-width:620px">
-      <span class="eyebrow" style="justify-content:center">FAQ</span>
+    <div class="sec-head r" style="margin:0 0 48px">
+      <span class="eyebrow" >FAQ</span>
       <h2 class="section-title">Häufige Fragen</h2>
     </div>
     <div class="faq-wrap r s1">
@@ -1109,10 +1110,10 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <!-- ===================== KONTAKT ===================== -->
 <section id="kontakt" class="alt">
   <div class="container">
-    <div class="sec-head r" style="text-align:center;margin:0 auto 50px;max-width:620px">
-      <span class="eyebrow" style="justify-content:center">Kontakt</span>
+    <div class="sec-head r" style="margin:0 0 50px">
+      <span class="eyebrow" >Kontakt</span>
       <h2 class="section-title">Lassen Sie uns sprechen</h2>
-      <p class="lead" style="margin:16px auto 0">Schildern Sie uns Ihr Anliegen – wir melden uns für ein kostenloses, unverbindliches Erstgespräch.</p>
+      <p class="lead" style="margin:16px 0 0">Schildern Sie uns Ihr Anliegen – wir melden uns für ein kostenloses, unverbindliches Erstgespräch.</p>
     </div>
     <div class="contact-grid">
       <div class="form-card r s1">
@@ -1127,7 +1128,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
           </div>
           <div class="form-field"><label for="msg">Ihr Anliegen</label><textarea id="msg" name="msg" placeholder="Anlass der Bewertung, Lage des Objekts, gewünschter Termin …"></textarea></div>
           <button type="submit" class="btn btn-primary" style="width:100%">Anfrage senden <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></button>
-          <div class="reassure" style="margin-top:16px;justify-content:center">
+          <div class="reassure" style="margin-top:16px;justify-content:flex-start">
             <span>Kostenlos</span><span>Unverbindlich</span><span>Vertraulich</span>
           </div>
         </form>
@@ -1164,10 +1165,10 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <!-- ===================== BLOG TEASER ===================== -->
 <section id="blog" class="alt">
   <div class="container">
-    <div class="sec-head r" style="text-align:center;margin:0 auto 48px;max-width:620px">
-      <span class="eyebrow" style="justify-content:center">Ratgeber</span>
+    <div class="sec-head r" style="margin:0 0 48px">
+      <span class="eyebrow" >Ratgeber</span>
       <h2 class="section-title">Aktuelles aus dem Blog</h2>
-      <p class="lead" style="margin:16px auto 0">Konkrete Hilfen für Eigentümer: Wohnungen in Isernhagen bewerten, Hausverkäufe in Großburgwedel vorbereiten und Unterlagen zusammenstellen.</p>
+      <p class="lead" style="margin:16px 0 0">Konkrete Hilfen für Eigentümer: Wohnungen in Isernhagen bewerten, Hausverkäufe in Großburgwedel vorbereiten und Unterlagen zusammenstellen.</p>
     </div>
     <div class="blog-grid">
       <a href="/blog/wohnung-bewerten-isernhagen-altwarmbuechen.html" class="post-card">
@@ -1185,7 +1186,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
         <div class="post-body"><div class="post-meta"><span class="post-cat">Vorbereitung</span><time class="post-date" datetime="2026-09-22">September 2026</time></div><h3>Unterlagen zur Immobilienbewertung: Ihre Checkliste</h3><p>Vom ersten Gespräch bis zum Gutachten: Unterlagen für Häuser, Eigentumswohnungen und vermietete Immobilien abhaken und ausdrucken. Ohne Registrierung.</p><span class="post-link">Jetzt lesen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></span></div>
       </a>
     </div>
-    <p style="margin-top:24px;text-align:center">Weitere lokale Ratgeber: <a href="/blog/haus-bewerten-isernhagen.html" style="text-decoration:underline">Haus bewerten in Isernhagen</a> · <a href="/blog/bodenrichtwert-grossburgwedel-2026.html" style="text-decoration:underline">Bodenrichtwert Großburgwedel 2026</a></p>
+    <p style="margin-top:24px">Weitere lokale Ratgeber: <a href="/blog/haus-bewerten-isernhagen.html" style="text-decoration:underline">Haus bewerten in Isernhagen</a> · <a href="/blog/bodenrichtwert-grossburgwedel-2026.html" style="text-decoration:underline">Bodenrichtwert Großburgwedel 2026</a></p>
     <div class="blog-all r">
       <a href="/blog/" class="btn btn-ghost">Alle Beiträge ansehen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
     </div>
@@ -1294,7 +1295,7 @@ if(form)form.addEventListener('submit',function(e){
   .then(function(r){return r.json();})
   .then(function(d){
     if(d.ok){
-      form.innerHTML='<div style="text-align:center;padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Vielen Dank für Ihr Vertrauen!</h3><p style="color:var(--muted)">Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden.</p></div>';
+      form.innerHTML='<div style="padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Vielen Dank für Ihr Vertrauen!</h3><p style="color:var(--muted)">Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden.</p></div>';
     } else {
       btn.disabled=false; btn.textContent='Anfrage senden →';
       alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: +49 174 744 5452');

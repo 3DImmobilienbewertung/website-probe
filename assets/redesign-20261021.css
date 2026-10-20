@@ -1,0 +1,78 @@
+/* =====================================================================
+   Redesign-Layer 2026-10-21 — Vorbild bywater.group
+   Laedt als letztes Stylesheet. Farben unveraendert:
+   Navy #16365C, Gold #C9A24B.
+
+   Vier Eingriffe, die den Template-Eindruck nehmen:
+   1. Linksbuendig statt zentriert. bywater setzt durchgehend
+      text-align:start. Zentrierte Fliesstextbloecke wirken wie ein
+      Baukasten, linksbuendige wie eine gestaltete Seite.
+   2. Grosser vertikaler Rhythmus. bywater arbeitet mit 120-168px
+      Sektionsabstand, hier waren es 56-64px.
+   3. Keine umrandeten Kaesteln. Statt 1px-Rahmen plus Radius plus
+      Schatten: flache Flaechen und Haarlinien.
+   4. Gold nur als Akzent. Zwei grosse Goldflaechen nebeneinander
+      heben sich gegenseitig auf.
+   ===================================================================== */
+
+/* ---- 1. Linksbuendig ---------------------------------------------- */
+.brand-home .sec-head{text-align:left;margin-left:0;margin-right:0;max-width:none}
+.brand-home .sec-head .section-title{margin-inline:0;max-width:19ch}
+.brand-home .sec-head .lead{margin-inline:0;max-width:52ch}
+.brand-home .sec-head .eyebrow{justify-content:flex-start}
+.brand-home .sec-head[style*="text-align:center"] .section-title{margin-inline:0}
+
+/* ---- 2. Rhythmus --------------------------------------------------- */
+.brand-home section:not(.hero){padding-block:clamp(68px,8.5vw,124px);border-bottom:0}
+.brand-home section:not(.hero)+section:not(.hero){border-top:1px solid var(--border)}
+.brand-home .sec-head{margin-bottom:clamp(36px,4.4vw,64px)}
+
+/* ---- 3. Flaechen statt Kaesteln ------------------------------------ */
+.brand-home :is(.card,.review,.tcard,.post-card,.region-group){
+  border:0;border-radius:0;box-shadow:none;background:transparent;
+  border-top:1px solid var(--border);padding:26px 0 0;
+}
+.brand-home .member{
+  border:0;border-radius:0;box-shadow:none;background:transparent;overflow:visible;
+}
+.brand-home .member-photo{background:var(--bg-3);border-bottom:0}
+.brand-home .member-body{padding:24px 0 0}
+.brand-home .region-group{background:transparent;padding:24px 0 0}
+
+/* ---- 4. Gold zurueckgenommen --------------------------------------- */
+/* Der goldene Haupt-CTA bleibt. Zweitrangige Goldflaechen werden ruhig. */
+.brand-home .reviews-cta,
+.brand-home a.btn-gold-secondary{
+  background:transparent;color:var(--blue);
+  border:1px solid var(--border);box-shadow:none;
+}
+.brand-home .reviews-cta:hover{border-color:var(--blue)}
+
+/* ---- Google-Zeile: flach statt Pille ------------------------------- */
+.brand-home .google-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  background:transparent;border:0;border-radius:0;box-shadow:none;
+  padding:0;font-size:15px;color:var(--ink);
+}
+.brand-home .google-badge .ui-rating{color:var(--gold)}
+
+/* ---- Typografie etwas groesser ------------------------------------- */
+.brand-home .section-title{font-size:clamp(2.1rem,3.9vw,3.3rem);line-height:1.04}
+
+@media(max-width:700px){
+  .brand-home .sec-head .section-title{max-width:none}
+  .brand-home :is(.card,.review,.tcard,.post-card,.region-group){padding-top:22px}
+}
+
+/* Zweitrangiger CTA: ruhig statt gold. Zwei Goldflaechen nebeneinander
+   heben sich gegenseitig auf - der Haupt-CTA soll alleine wirken. */
+.brand-editorial .btn.btn-quiet{
+  background:transparent;color:var(--blue);
+  border:1px solid var(--border);box-shadow:none;font-size:14px;
+}
+.brand-editorial .btn.btn-quiet:hover{border-color:var(--blue);background:var(--bg-3)}
+.brand-editorial .btn.btn-quiet .ui-icon{fill:var(--gold);stroke:none}
+
+/* Bewertungszeile in der Lesefont statt Monospace - Monospace liest
+   sich technisch, nicht wie ein Vertrauenssignal. */
+.brand-home .google-badge{font-family:var(--body);letter-spacing:0}
