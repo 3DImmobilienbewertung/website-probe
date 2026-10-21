@@ -1,77 +1,90 @@
 # Taskboard — 3dimmobilienbewertung.de
 
 Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
-Regeln stehen in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen,
-Eigentümer der Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
+Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
+Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-10-21, CC · Basis `98c0eca`
+Letzte Änderung: 2026-10-21, CC · Stand `9c1509f` · **live auf der Domain**
 
 ---
 
-## Läuft / offen
+## Für GPT — morgen
 
-### T-07 · Inline-Styles auf 52 Seiten entfernen
+### T-13 · Abnahme des Redesigns
 **Eigentümer: GPT · Status: offen**
-Der Redesign-Layer greift nicht, wo Inline-Styles im Weg stehen. Muster und
-Pflicht-Textvergleich stehen im Briefing, Abschnitt „Deine Aufgabe 1".
-Referenz, wie es aussehen soll: `index.html` (von CC erledigt).
-→ danach T-10 an CC
 
-### T-08 · Dunkle Vollbildsektion pro Ortsseite
+Der Inhaber möchte, dass du meine Arbeit prüfst. Basis ist `main` ab Commit
+`98c0eca` bis `9c1509f`. Vier Commits:
+
+| Commit | Inhalt |
+|---|---|
+| `98c0eca` | Redesign-Layer, linksbündig, Bewertungszahl 31→76 |
+| `2ccd5be` | Dieses Board und das Briefing |
+| `9c1509f` | Kinematischer Hero auf der Startseite |
+
+**Prüfe bitte gezielt diese Punkte — dort bin ich mir am wenigsten sicher:**
+
+1. **Hero-Zoom.** Ich skaliere das Hero-Foto per CSS auf `scale(1.55)` mit
+   `transform-origin: center 46%`. Das ist nötig, weil das Motiv ein helles
+   Büro ist und ohne Zoom unter dem Verlauf zu grauem Matsch wird. Prüfe auf
+   Geräten zwischen 768px und 1024px, ob der Ausschnitt dort noch sinnvoll
+   sitzt. Ich habe nur 375px und 1280px gesehen.
+2. **Aufgelöstes `figure`/`figcaption` im Hero.** Ich habe es in `hero-media`
+   plus `hero-footer` zerlegt. Alt-Text und `fetchpriority` sind am `img`
+   geblieben. Prüfe, ob das aus deiner Sicht semantisch vertretbar ist.
+3. **Bewertungszahl 76.** Stammt aus dem Screenshot des Inhabers im
+   Abnahmeverfahren. Google Maps konnte ich nicht gegenprüfen, dort steht
+   eine Consent-Wall. Wenn du an die echte Zahl kommst: gegenprüfen.
+4. **Kontrast auf dem Hero.** Weiße Schrift über Foto plus Verlauf. Miss bitte
+   nach, ob WCAG AA (4,5:1) an den Textstellen eingehalten ist. Mein eigener
+   Kontrasttest kann Text über Bildern nicht bewerten — das ist in einer
+   früheren Runde schon einmal zu 19 Falschbefunden geführt.
+
+Melde zurück als BLOCKIEREND / WICHTIG / SPÄTER mit Datei:Zeile.
+→ danach T-14 an CC
+
+### T-14 · Hero-Prinzip auf Unterseiten ausrollen
+**Eigentümer: GPT · Status: offen, erst nach T-13**
+Der kinematische Hero liegt bisher nur auf `index.html`. Ortsseiten und
+Geldseite sollen folgen. Vorhandene Fotos nutzen, keine neuen. Die Klassen
+`hero-cine`, `hero-media`, `hero-footer` und das CSS in
+`assets/redesign-20261021.css` sind vorbereitet und wiederverwendbar.
+Textinhalt muss vorher/nachher identisch bleiben — maschinell vergleichen.
+
+### T-09 · Mobil 375px über alle Seiten
 **Eigentümer: GPT · Status: offen**
-Eine Sektion je Ortsseite auf Vollbreite mit vorhandenem Foto und dunkler
-Überlagerung. Text unverändert, nur die Hülle. Briefing Abschnitt 2.
-→ danach T-10 an CC
+Startseite und Geldseite habe ich geprüft. Die übrigen 51 fehlen.
+Eingabefelder ≥16px, sonst zoomt iOS beim Fokus.
 
-### T-09 · Mobil 375px nachziehen
-**Eigentümer: GPT · Status: offen**
-Kein horizontaler Überlauf, Eingabefelder ≥16px. Haupttraffic ist Meta Ads
-auf dem Smartphone.
-→ danach T-10 an CC
+---
 
-### T-10 · Abnahme der Ausrollung
-**Eigentümer: CC · Status: wartet auf T-07/08/09**
-Prüfung gegen: Tagbilanz, JSON-LD, Textidentität vor/nach, `r.ok`-Abdeckung,
-tote Links, Überlauf bei 375px, gerenderte Sichtprüfung jeder Seite.
-Rückmeldung als BLOCKIEREND / WICHTIG / SPÄTER mit Datei:Zeile.
+## Beim Inhaber
 
 ### T-11 · Kundenstimme „zertifizierter Gutachter"
-**Eigentümer: Inhaber · Status: blockiert**
+**Status: wartet auf Entscheidung**
 Zitat auf der Startseite trägt die Aussage „zertifiziert" an den Leser. Die
-Inhaber dürfen das nicht führen. Weder eigenmächtig ändern noch stehen
-lassen — Entscheidung des Inhabers.
+Inhaber dürfen das nicht führen. Weder eigenmächtig ändern noch stehen lassen.
 
 ### T-12 · Meta-Variablen in Vercel
-**Eigentümer: Inhaber · Status: offen**
-`META_PIXEL_ID` = `2126043741457881` und `META_CAPI_TOKEN` (aus Events
-Manager) als Umgebungsvariablen, danach Redeploy. CC kann es nicht prüfen:
-der Vercel-Connector darf Umgebungsvariablen nicht lesen (403).
+**Status: offen**
+`META_PIXEL_ID` = `2126043741457881`, `META_CAPI_TOKEN` aus dem Events
+Manager, danach Redeploy. CC kann es nicht prüfen — der Vercel-Connector
+bekommt 403 auf Umgebungsvariablen.
 
 ---
 
 ## Fertig
 
-### T-01 · Editorial-Typografie · CC · `fb9cb0c`
-Hanken Grotesk statt Bricolage, Weight 450/500, Laufweite −0,018em.
-Bricolage entfällt damit komplett: 40,4 KB weniger pro Erstbesuch.
+| Nr. | Was | Wer | Commit |
+|---|---|---|---|
+| T-01 | Hanken Grotesk statt Bricolage, Weight 450/500. Bricolage entfällt: 40,4 KB weniger | CC | `fb9cb0c` |
+| T-02 | Portraits: gleicher Ausschnitt, gleiche Augenlinie | CC | `fb9cb0c` |
+| T-03 | Schwarmstedt 5→19, Laatzen 4→18 interne Links. **Nicht entfernen.** | CC | `eec2128` |
+| T-04 | 22 Fotos farbkorrigiert, 78 KB kleiner | CC | `85e1e14` |
+| T-05 | Bewertungssterne gefüllt statt Umriss | CC | `93e6de8` |
+| T-06 | Redesign-Layer, linksbündig, Rhythmus, randlose Flächen, Gold als Akzent; Bewertungszahl 76 | CC | `98c0eca` |
+| T-07 | Inline-Zentrierungen aus `index.html` | CC | `98c0eca` |
+| T-13a | Kinematischer Hero auf der Startseite | CC | `9c1509f` |
 
-### T-02 · Portraitführung · CC · `fb9cb0c`
-Quadratischer Rahmen, gleiche Kopfgröße, gleiche Augenlinie. Kein farbiges
-Panel möglich — die Freisteller haben keinen Alphakanal, Weiß ist im Bild.
-
-### T-03 · Internes Linknetz · CC · `eec2128`
-Schwarmstedt 5→19, Laatzen 4→18 eingehende Links. Beide fehlten komplett im
-Block „Weitere Orte in der Region". **Nicht wieder entfernen.**
-
-### T-04 · Fotos farbkorrigiert · CC · `85e1e14`
-Alle 22 Dateien: Tonwertkurve, Lichterkompression, Vignette. 78 KB kleiner
-als vorher.
-
-### T-05 · Bewertungssterne gefüllt · CC · `93e6de8`
-Die `.ui-icon`-Grundregel zeichnete sie als Umriss — fünf hohle Sterne neben
-„5,0".
-
-### T-06 · Redesign-Layer + Bewertungszahl · CC · `98c0eca`
-`assets/redesign-20261021.css` auf allen 53 Seiten. Linksbündig, Rhythmus
-`clamp(68px,8.5vw,124px)`, randlose Flächen, Gold nur als Akzent.
-Bewertungszahl 31→76 an 38 Stellen.
+**Ladegewicht gesamt:** rund 118 KB leichter als am Morgen des 21.10. — eine
+Schriftdatei weniger plus kleinere Bilder, trotz besserer Darstellung.
