@@ -232,7 +232,11 @@ body.brand-editorial{--action:#C9A24B;--night:#102b4c;--line-on-dark:#48617c;--c
    Weight 600 bei -0.05em Laufweite, das wirkt gedrueckt und schwer.
    Farben bleiben unveraendert: Navy #16365C, Gold #C9A24B.
    ===================================================================== */
-body.brand-editorial{--display:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif}
+/* Display bleibt Bricolage Grotesque (Markenvorgabe des Inhabers).
+   Die Verbesserung liegt nicht in der Schriftwahl, sondern in Gewicht,
+   Laufweite und Zeilenabstand: vorher 600 bei -0.035em, das wirkte
+   gedrueckt. */
+body.brand-editorial{--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif}
 
 .brand-editorial :is(h1,h2,h3,.section-title,.title){
   font-family:var(--display);
