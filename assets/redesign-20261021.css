@@ -16,19 +16,19 @@
    ===================================================================== */
 
 /* ---- 1. Linksbuendig ---------------------------------------------- */
-.brand-home .sec-head{text-align:left;margin-left:0;margin-right:0;max-width:none}
-.brand-home .sec-head .section-title{margin-inline:0;max-width:19ch}
-.brand-home .sec-head .lead{margin-inline:0;max-width:52ch}
-.brand-home .sec-head .eyebrow{justify-content:flex-start}
-.brand-home .sec-head[style*="text-align:center"] .section-title{margin-inline:0}
+.brand-editorial .sec-head{text-align:left;margin-left:0;margin-right:0;max-width:none}
+.brand-editorial .sec-head :is(.section-title,h2){margin-inline:0;max-width:19ch}
+.brand-editorial .sec-head .lead{margin-inline:0;max-width:52ch}
+.brand-editorial .sec-head .eyebrow{justify-content:flex-start}
+.brand-editorial .sec-head.center :is(.section-title,h2){margin-inline:0}
 
 /* ---- 2. Rhythmus --------------------------------------------------- */
-.brand-home section:not(.hero){padding-block:clamp(68px,8.5vw,124px);border-bottom:0}
-.brand-home section:not(.hero)+section:not(.hero){border-top:1px solid var(--border)}
-.brand-home .sec-head{margin-bottom:clamp(36px,4.4vw,64px)}
+.brand-editorial section:not(.hero){padding-block:clamp(68px,8.5vw,124px);border-bottom:0}
+.brand-editorial section:not(.hero)+section:not(.hero){border-top:1px solid var(--border)}
+.brand-editorial .sec-head{margin-bottom:clamp(36px,4.4vw,64px)}
 
 /* ---- 3. Flaechen statt Kaesteln ------------------------------------ */
-.brand-home :is(.card,.review,.tcard,.post-card,.region-group){
+.brand-editorial :is(.card,.review,.tcard,.post-card,.region-group){
   border:0;border-radius:0;box-shadow:none;background:transparent;
   border-top:1px solid var(--border);padding:26px 0 0;
 }
@@ -57,11 +57,11 @@
 .brand-home .google-badge .ui-rating{color:var(--gold)}
 
 /* ---- Typografie etwas groesser ------------------------------------- */
-.brand-home .section-title{font-size:clamp(2.1rem,3.9vw,3.3rem);line-height:1.04}
+.brand-editorial .section-title{font-size:clamp(2.1rem,3.9vw,3.3rem);line-height:1.04}
 
 @media(max-width:700px){
-  .brand-home .sec-head .section-title{max-width:none}
-  .brand-home :is(.card,.review,.tcard,.post-card,.region-group){padding-top:22px}
+  .brand-editorial .sec-head :is(.section-title,h2){max-width:none}
+  .brand-editorial :is(.card,.review,.tcard,.post-card,.region-group){padding-top:22px}
 }
 
 /* Zweitrangiger CTA: ruhig statt gold. Zwei Goldflaechen nebeneinander
@@ -166,3 +166,8 @@
   .brand-home .hero-cine .hero-media .office-shot{object-position:center 56%}
   .brand-home .hero-footer .container{flex-direction:column;gap:10px}
 }
+
+/* Die Klasse "center" an .sec-head stammt aus der alten Fassung und
+   zentrierte ganze Textbloecke. Linksbuendig wie alles andere. */
+.brand-editorial .sec-head.center{text-align:left}
+.brand-editorial .sec-head.center .eyebrow{justify-content:flex-start}
