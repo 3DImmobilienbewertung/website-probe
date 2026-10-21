@@ -76,3 +76,93 @@
 /* Bewertungszeile in der Lesefont statt Monospace - Monospace liest
    sich technisch, nicht wie ein Vertrauenssignal. */
 .brand-home .google-badge{font-family:var(--body);letter-spacing:0}
+
+/* =====================================================================
+   Kinematischer Hero — Kernmotiv von bywater.group
+   Dort fuellt ein dunkles Foto den ganzen ersten Bildschirm, Logo klein
+   oben links, die Aussage steht linksbuendig darueber. Bisher lag hier
+   Text auf Navy und das Foto darunter: zwei getrennte Bloecke statt
+   eines Bildes.
+   ===================================================================== */
+.brand-home .hero.hero-cine{
+  position:relative;
+  min-height:min(92vh,860px);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0;overflow:hidden;isolation:isolate;
+  background:var(--blue);
+}
+.brand-home .hero-cine .hero-media{
+  position:absolute;inset:0;z-index:0;margin:0;
+}
+.brand-home .hero-cine .hero-media .office-shot{
+  width:100%;height:100%;object-fit:cover;object-position:center 52%;
+  aspect-ratio:auto;border:0;box-shadow:none;display:block;
+  /* Hineinzoomen: das Motiv ist ein helles Buero. Erst wenn die dunklen
+     Anzuege das Bild fuellen, traegt der Verlauf und die Schrift steht. */
+  transform:scale(1.55);transform-origin:center 46%;
+}
+/* Verlauf von unten, damit die Schrift traegt und das Foto oben frei bleibt */
+.brand-home .hero-cine .hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,
+    rgba(10,22,38,.94) 0%,
+    rgba(10,22,38,.86) 26%,
+    rgba(10,22,38,.46) 58%,
+    rgba(10,22,38,.14) 100%);
+}
+.brand-home .hero-cine .hero-grid{
+  position:relative;z-index:1;
+  display:block;
+  padding-top:clamp(120px,22vh,230px);
+  padding-bottom:clamp(26px,3.4vw,44px);
+}
+.brand-home .hero-cine .hero-copy{display:grid;gap:clamp(20px,2.6vw,34px);max-width:none}
+@media(min-width:900px){
+  .brand-home .hero-cine .hero-copy{
+    grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+    align-items:end;gap:clamp(32px,4vw,64px);
+  }
+}
+.brand-home .hero-cine .hero-heading{min-width:0}
+.brand-home .hero-cine h1{
+  font-size:clamp(2.5rem,5.6vw,5rem);
+  line-height:1.0;letter-spacing:-.028em;font-weight:450;
+  margin:14px 0 0;max-width:none;
+  hyphens:none;overflow-wrap:normal;text-wrap:balance;
+}
+.brand-home .hero-cine .hero-promise{
+  margin:18px 0 0;padding-left:16px;
+  border-left:2px solid var(--gold);
+  font-size:clamp(1rem,1.3vw,1.16rem);line-height:1.5;max-width:30ch;
+}
+.brand-home .hero-cine .hero-next-step{min-width:0}
+.brand-home .hero-cine .lead{max-width:44ch}
+.brand-home .hero-cine .hero-detail{font-size:13px;line-height:1.6}
+
+/* Infozeile als schmaler Streifen unter dem Bild, nicht als zweiter Block */
+.brand-home .hero-footer{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,.18);
+  padding-block:clamp(16px,2vw,24px);
+  background:rgba(10,22,38,.72);
+  backdrop-filter:saturate(140%) blur(2px);
+}
+.brand-home .hero-footer .container{
+  display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline;
+  justify-content:space-between;
+}
+.brand-home .hero-footer :is(.hero-ident,.hero-signature){
+  display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;
+  margin:0;padding:0;border:0;font-size:13px;color:#c9d6e4;
+}
+.brand-home .hero-footer .hero-ident strong{color:#fff;font-size:15px;font-weight:600;display:block}
+.brand-home .hero-footer .hero-ident div{min-width:0}
+.brand-home .hero-footer a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:899px){
+  .brand-home .hero.hero-cine{min-height:min(88vh,760px)}
+  .brand-home .hero-cine .hero-grid{padding-top:clamp(96px,26vh,180px)}
+  .brand-home .hero-cine h1{font-size:clamp(2.1rem,9vw,3.1rem);max-width:none}
+  .brand-home .hero-cine .hero-media .office-shot{object-position:center 56%}
+  .brand-home .hero-footer .container{flex-direction:column;gap:10px}
+}
