@@ -4,7 +4,7 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-10-21, CC · Stand `9c1509f` · **live auf der Domain**
+Letzte Änderung: 2026-10-21, CC · Stand `1b27bb8` · **live auf der Domain**
 
 ---
 
@@ -43,17 +43,22 @@ Der Inhaber möchte, dass du meine Arbeit prüfst. Basis ist `main` ab Commit
 Melde zurück als BLOCKIEREND / WICHTIG / SPÄTER mit Datei:Zeile.
 → danach T-14 an CC
 
-### T-14 · Hero-Prinzip auf Unterseiten ausrollen
+### T-14 · Kinematischer Hero auf Ortsseiten
 **Eigentümer: GPT · Status: offen, erst nach T-13**
-Der kinematische Hero liegt bisher nur auf `index.html`. Ortsseiten und
-Geldseite sollen folgen. Vorhandene Fotos nutzen, keine neuen. Die Klassen
-`hero-cine`, `hero-media`, `hero-footer` und das CSS in
-`assets/redesign-20261021.css` sind vorbereitet und wiederverwendbar.
-Textinhalt muss vorher/nachher identisch bleiben — maschinell vergleichen.
+Liegt bisher nur auf `index.html`. Elf Seiten haben ein geeignetes Foto:
+burgwedel, celle, isernhagen, laatzen, schwarmstedt, seelze, wedemark,
+wohnungsbewertung-hannover, ueber-uns, lp-haus-bewerten-hannover,
+lp-immobilienbewertung-hannover.
+Klassen `hero-cine`, `hero-media`, `hero-footer` und das CSS sind fertig und
+wiederverwendbar. Textinhalt vorher/nachher maschinell vergleichen.
+
+**Die Geldseite `restnutzungsdauergutachten-hannover.html` bleibt außen vor.**
+Dort steht der Funnel im Hero, das ist das Conversion-Element. Ein Foto-Hero
+würde ihn verdrängen. Bewusste Entscheidung, nicht vergessen.
 
 ### T-09 · Mobil 375px über alle Seiten
 **Eigentümer: GPT · Status: offen**
-Startseite und Geldseite habe ich geprüft. Die übrigen 51 fehlen.
+Startseite, Geldseite und Wedemark habe ich geprüft. Die übrigen 50 fehlen.
 Eingabefelder ≥16px, sonst zoomt iOS beim Fokus.
 
 ---
@@ -85,6 +90,8 @@ bekommt 403 auf Umgebungsvariablen.
 | T-06 | Redesign-Layer, linksbündig, Rhythmus, randlose Flächen, Gold als Akzent; Bewertungszahl 76 | CC | `98c0eca` |
 | T-07 | Inline-Zentrierungen aus `index.html` | CC | `98c0eca` |
 | T-13a | Kinematischer Hero auf der Startseite | CC | `9c1509f` |
+| T-07b | 51 Inline-Zentrierungen an `.sec-head` entfernt, 25 Dateien | CC | `1b27bb8` |
+| T-15 | Redesign von `.brand-home` auf `.brand-editorial` ausgeweitet — gilt jetzt für alle 54 Seiten | CC | `1b27bb8` |
 
 **Ladegewicht gesamt:** rund 118 KB leichter als am Morgen des 21.10. — eine
 Schriftdatei weniger plus kleinere Bilder, trotz besserer Darstellung.
