@@ -2,3 +2,6 @@
 tests/
 scripts/
 docs/
+# Interne Abstimmung (Claude Code / ChatGPT) - nicht oeffentlich ausliefern.
+TASKS.md
+BRIEFING-CHATGPT.md
