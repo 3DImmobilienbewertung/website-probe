@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Immobilie bewerten lassen Hannover – Kosten &amp; Ablauf</title>
-<meta name="description" content="Immobilie in Hannover bewerten lassen: Kosten, Ablauf &amp; Dauer. Rückmeldung in 24 h · 5,0 ★ (76 Google-Bewertungen) · Kostenloses Erstgespräch." />
+<meta name="description" content="Immobilie in Hannover bewerten lassen: Kosten, Ablauf &amp; Dauer. Rückmeldung in 24 h · 5,0 ★ (78 Google-Bewertungen) · Kostenloses Erstgespräch." />
 <!-- Google Analytics: DSGVO-konform via assets/consent.js – laedt erst nach Einwilligung -->
 <meta name="keywords" content="Immobilienbewertung Hannover, Bewertung Immobilie Hannover, Preis Immobilie, Immobilie bewerten lassen Hannover, Immobilienpreis ermitteln, Verkehrswertgutachten Hannover, Immobiliengutachter Hannover" />
 <meta name="robots" content="index, follow" />
@@ -191,7 +191,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 <link rel="stylesheet" href="/assets/office-photography.css?v=20261021">
 <link rel="stylesheet" href="/assets/seo-decisions.css?v=20260928">
-<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261022n">
+<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261023d">
 </head>
 <body class="brand-editorial brand-landing">
 <div class="wrap">
@@ -201,11 +201,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
     <a href="/" aria-label="3D Immobilienbewertung"><img src="/assets/logo-420.webp" alt="3D Immobilienbewertung Hannover" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-cta">
       <a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> +49 (0) 174 744 5452</a>
-      <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch</a>
+      <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch anfragen</a>
     </div>
   </div>
 </header>
-<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 76 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
+<div class="trustbar" style="background:var(--bg-2,#FAF6EF);border-bottom:1px solid var(--border,rgba(16,36,61,.1))"><div style="max-width:var(--maxw,1180px);margin:0 auto;padding:9px 28px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:center;font-size:13px;color:var(--muted,#5C708A);text-align:center"><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-weight:700"><span style="color:#F2B500;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span> 5,0 · 78 Google-Bewertungen</a><span aria-hidden="true" style="opacity:.4">·</span><span>M.Sc. Bauingenieurwesen &amp; B.Sc. Architektur</span><span aria-hidden="true" style="opacity:.4">·</span><span>Rückmeldung in 24&nbsp;h</span></div></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -452,9 +452,38 @@ document.getElementById('year').textContent=new Date().getFullYear();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
 document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener('click',function(){var f=b.parentElement,a=f.querySelector('.ans'),o=f.classList.contains('open');document.querySelectorAll('.faq').forEach(function(x){x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null});if(!o){f.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}})});
-document.getElementById('leadForm').addEventListener('submit',async function(e){e.preventDefault();var btn=this.querySelector('button[type=submit]');var n=lfName.value,m=lfMail.value,t=lfTel.value,o=lfObj.value,ort=lfOrt.value;if(!n||!m){alert('Bitte Name und E-Mail angeben.');return;}btn.disabled=true;btn.textContent='Wird gesendet…';try{var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:ort,message:''})});if(r.ok){document.getElementById('leadForm').innerHTML='<div style="text-align:center;padding:32px 16px"><div style="font-size:48px;margin-bottom:16px"></div><h3 style="color:#16365C;margin-bottom:8px">Anfrage gesendet!</h3><p style="color:#5a7088">Wir melden uns binnen 24 Stunden.</p></div>';}else{btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}catch(err){btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');}});
+(function(){
+  // Erfolg nur bei HTTP 2xx und {ok:true}; sonst sichtbarer Hinweis mit Telefonnummer.
+  var form=document.getElementById('leadForm');
+  var hinweis=document.createElement('p');
+  hinweis.className='form-feedback';hinweis.setAttribute('role','alert');hinweis.tabIndex=-1;hinweis.hidden=true;
+  hinweis.style.cssText='margin:12px 0 0;padding:12px 14px;border:1px solid #c9a24b;background:#fff8e8;color:#16365C;font-size:14px;line-height:1.5';
+  form.appendChild(hinweis);
+  function zeigen(text,feld){hinweis.textContent=text;hinweis.hidden=false;(feld||hinweis).focus();}
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=this.querySelector('button[type=submit]');
+    if(btn.disabled)return;
+    var n=lfName.value.trim(),m=lfMail.value.trim(),t=lfTel.value.trim(),o=lfObj.value,ort=lfOrt.value;
+    hinweis.hidden=true;
+    if(!n){zeigen('Bitte geben Sie Ihren Namen an.',lfName);return;}
+    if(!m||!lfMail.checkValidity()){zeigen('Bitte geben Sie eine gültige E-Mail-Adresse an.',lfMail);return;}
+    btn.disabled=true;btn.textContent='Wird gesendet…';
+    try{
+      var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:ort,message:''})});
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      var d=await r.json();
+      if(!d||d.ok!==true)throw new Error('nicht bestaetigt');
+      form.innerHTML='<div style="text-align:center;padding:32px 16px"><h3 tabindex="-1" style="color:#16365C;margin-bottom:8px">Anfrage gesendet!</h3><p style="color:#5a7088">Wir melden uns in der Regel innerhalb von 24 Stunden.</p></div>';
+      form.querySelector('h3').focus();
+    }catch(err){
+      btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';
+      zeigen('Wir konnten die Übermittlung nicht bestätigen. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns unter 0174 744 5452 an.');
+    }
+  });
+})();
 </script>
 <script src="assets/consent.js?v=20261022"></script>
-<script src="/assets/motion.js?v=20261022b" defer></script>
+<script src="/assets/motion.js?v=20261023" defer></script>
 </body>
 </html>

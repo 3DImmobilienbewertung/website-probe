@@ -27,7 +27,7 @@ for city, name in [('celle', 'Celle'), ('schwarmstedt', 'Schwarmstedt'), ('laatz
     assert source.count('/assets/local-contact.js?') == 1
     assert 'Kurzgutachten ab 490 €' in source and 'Erstgespräch kostenlos' in source
     assert 'keine zusätzliche Niederlassung' in source
-    assert '31 Google-Bewertungen' in source
+    assert '78 Google-Bewertungen' in source
     assert f'href="/{path}"' in home and f'/{path}</loc>' in sitemap
     assert source.count('<details>') == 4
     schemas = [json.loads(block) for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', source, re.S)]
@@ -46,5 +46,8 @@ for path in (ROOT / 'blog').glob('*.html'):
     assert source.index('regional-bridge-actions') < source.index('<h2')
     assert 'noindex' not in source
     bridges.append(path.name)
-assert len(bridges) == 8
-print('PASS: 3 distinct regional landing pages, existing contact contract, real office, costs, sitemap, 8 early guide-to-service links')
+# 8 Ratgeber aus dem September-Release plus 4 Ortsratgeber vom 22.10.2026
+assert len(bridges) == 12, sorted(bridges)
+for neu in ('altbauwohnung-bewerten-hannover.html','resthof-bewerten-schwarmstedt.html','fachwerkhaus-bewerten-isernhagen.html','doppelhaushaelfte-reihenhaus-bewerten-grossburgwedel.html'):
+    assert neu in bridges, neu
+print(f'PASS: 3 distinct regional landing pages, existing contact contract, real office, costs, sitemap, {len(bridges)} early guide-to-service links')

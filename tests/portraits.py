@@ -10,7 +10,7 @@ class Page(HTMLParser):
         if t=='img':self.images.append(dict(a))
 count=0;pages=0
 for p in ROOT.glob('*.html'):
-    source=p.read_text();portraits=[a for a in Page(source).images if 'donnarumma-20260928' in a.get('src','')]
+    source=p.read_text();portraits=[a for a in Page(source).images if any(v in a.get('src','') for v in ('donnarumma-20260928','donnarumma-20261022'))]
     if not portraits:continue
     pages+=1
     assert '/assets/portraits-20260928.css' in source
@@ -23,8 +23,14 @@ for p in ROOT.glob('*.html'):
         assert name+' Donnarumma' in a['alt']
         assert a['class']=='office-portrait'
         small='-small.webp' in a['src']
-        assert image.size==((160,200) if small else (800,1000))
+        # Nandinos Studioportraet vom 22.10.2026 (vom Inhaber freigegeben) hat 960x1200
+        large=(960,1200) if 'nandino-donnarumma-20261022' in a['src'] else (800,1000)
+        assert image.size==((160,200) if small else large)
         assert (ROOT/a['src'].lstrip('/')).stat().st_size<(10000 if small else 80000)
+        if 'srcset' in a:
+            for part in a['srcset'].split(','):
+                fn,d=part.strip().split();pic=Image.open(ROOT/fn.lstrip('/'))
+                assert pic.format=='WEBP' and pic.width==int(a['width'])*int(d[:-1].rstrip('x') or 1)
         count+=1
 assert (pages,count)==(20,40),(pages,count)
 for name in ('team-1.webp','team-2.webp','team-1.jpg','team-2.jpg'):

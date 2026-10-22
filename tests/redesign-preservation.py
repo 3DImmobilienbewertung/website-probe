@@ -1,4 +1,10 @@
-"""Compare the preview with the approved live baseline, not with guesses."""
+"""Compare the preview with the approved live baseline, not with guesses.
+
+Baseline is the last released and reviewed state (main d838d34, 23.10.2026;
+previously f711a9e from 25.09.2026). Only the deliberate changes of this
+release are allowed: review count 76->78, new hero slideshow images on the home
+page, recompressed portrait, the repaired /#vorteile link and sitemap/schema
+dates (equality is asserted in local-seo.py)."""
 from pathlib import Path
 from html.parser import HTMLParser
 from collections import Counter
@@ -6,18 +12,12 @@ import subprocess, re, json
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-BASELINE = 'f711a9e'
-NEW_PAGES = {
-    'immobilienbewertung-celle.html',
-    'immobilienbewertung-schwarmstedt.html',
-    'immobilienbewertung-laatzen.html',
-    'blog/haus-bewerten-wedemark-modernisierung.html',
-    'blog/haus-bewerten-schwarmstedt-lage-hochwasser.html',
-    'blog/restnutzungsdauer-grossburgwedel-vermietete-haeuser.html',
-    'blog/restnutzungsdauer-isernhagen-eigentumswohnung.html',
-}
+BASELINE = 'd838d34'
+NEW_PAGES = set()
+RELEASE_DATE = '2026-10-23'
+ALLOWED_LOST_LINKS = {'restnutzungsdauer-rechner.html': {'/#vorteile'}}  # broken anchor, now /#warum
 CREDENTIAL = {'@type':'EducationalOccupationalCredential','credentialCategory':'certificate','name':'Zertifikatslehrgang Wertermittlung (IHK)','recognizedBy':{'@type':'Organization','name':'Industrie- und Handelskammer Hannover'}}
-PORTRAITS={f'assets/{name}-donnarumma-20260928{size}.webp' for name in ('nandino','vito') for size in ('','-small')}
+PORTRAITS={f'assets/{name}-donnarumma-20260928{size}.webp' for name in ('nandino','vito') for size in ('','-small')}|{f'assets/nandino-donnarumma-20261022{size}.webp' for size in ('','-small','-small-2x')}
 OFFICE_KEYS=('nandino-beratung','nandino-grundriss','nandino-unterlagen','nandino-besichtigung','nandino-pruefung','team-auswertung','team-besprechung','vito-beratung','vito-auswertung')
 OFFICE_PHOTOS={f'assets/office-{key}-{size}.webp' for key in OFFICE_KEYS for size in ((640,1440) if key.startswith('team-') else (480,960))}
 def normalized_media(tags,path):
@@ -28,6 +28,8 @@ def normalized_media(tags,path):
         if t=='img' and a.get('src','').lstrip('/') in OFFICE_PHOTOS:
             assert a.get('data-office-photo') in OFFICE_KEYS
             continue # New user-supplied photos, checked by office-photography.py.
+        if path=='index.html' and any('hero-team-' in (a.get(k) or '') or 'hero-hannover-' in (a.get(k) or '') for k in ('src','data-src','srcset','data-srcset')):
+            continue # Hero slideshow, checked by office-photography.py and hero-slideshow.cjs.
         if path=='index.html' and t=='img' and a.get('src') in ('/assets/team-1.webp','/assets/team-2.webp') and a.get('alt') in ('Nandino Donnarumma, M.Sc. Bauingenieurwesen','Vito Donnarumma, B.Sc. Architektur'):
             continue # Hero portrait pair explicitly replaced by the joint team photo.
         if t=='img' and a.get('src','').lstrip('/') in PORTRAITS:
@@ -50,9 +52,8 @@ def normalized_schema(source, path=None):
                 node['url']='https://www.3dimmobilienbewertung.de/'
                 if set(kinds)&{'LocalBusiness','ProfessionalService'}:
                     node['address']={'@type':'PostalAddress','streetAddress':'Gailhoferstraße 17','addressLocality':'Wedemark','postalCode':'30900','addressRegion':'Niedersachsen','addressCountry':'DE'}
-            if path in ('checkliste-immobilienbewertung.html','immobilienbewertung-isernhagen.html','immobilienbewertung-burgwedel.html') and 'dateModified' in node:
-                assert node['dateModified'] in ('2026-09-22','2026-09-26','2026-09-28')
-                node['dateModified']='2026-09-22'
+            if 'dateModified' in node and node.get('@type')!='BlogPosting':
+                node['dateModified']='sitemap'  # equal to sitemap lastmod, asserted in local-seo.py
             if node.get('@type') == 'Person' and node.get('name') == 'Nandino Donnarumma' and 'hasCredential' in node:
                 assert node['hasCredential'] == [CREDENTIAL]
                 del node['hasCredential']
@@ -69,7 +70,12 @@ class Page(HTMLParser):
         super().__init__(); self.tags=[]; self.feed(source)
     def handle_starttag(self, tag, attrs): self.tags.append((tag, dict(attrs)))
 def protected(source, path=None):
-    source=source.replace('31 Google-Bewertungen','22 Google-Bewertungen')
+    source=source.replace('78 Google-Bewertungen','76 Google-Bewertungen')
+    # Bewusste Korrektur dieses Releases: ausdruecklicher Hinweis "keine zusaetzliche Niederlassung"
+    if path=='immobilienbewertung-laatzen.html':
+        source=source.replace('Nein, in Laatzen unterhalten wir keine zusätzliche Niederlassung. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark); nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.','Nein. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark). Nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.')
+    if path=='immobilienbewertung-schwarmstedt.html':
+        source=source.replace('In Schwarmstedt selbst haben wir keine zusätzliche Niederlassung.','Eine eigene Niederlassung in Schwarmstedt haben wir nicht.')
     if path=='lp-haus-bewerten-hannover.html':
         source=source.replace('Haus bewerten lassen in Hannover und der Region: Zustand, Modernisierung und Lage prüfen. Kurzgutachten ab 490 €. Kostenloses Erstgespräch anfragen.','Haus bewerten lassen in Hannover: Wertermittlung vom Sachverständigen für Immobilienbewertung. Rückmeldung in 24 h · 5,0 ★ (22 Google-Bewertungen) · Kostenloses Erstgespräch.')
     tags=Page(source).tags
@@ -89,13 +95,14 @@ for p in pages:
     assert protected(old,str(relative))==protected(new,str(relative)),(relative,'metadata/schema/media changed')
     before=Page(old).tags; after=Page(new).tags
     assert {a['id'] for _,a in before if 'id' in a} <= {a['id'] for _,a in after if 'id' in a},(relative,'lost anchors')
-    assert {a['href'] for t,a in before if t=='a' and 'href' in a} <= {a['href'] for t,a in after if t=='a' and 'href' in a},(relative,'lost links')
+    lost={a['href'] for t,a in before if t=='a' and 'href' in a} - {a['href'] for t,a in after if t=='a' and 'href' in a}
+    assert lost <= ALLOWED_LOST_LINKS.get(str(relative),set()),(relative,'lost links',lost)
 for filename in ['robots.txt','api/contact.js','assets/consent.js','assets/editorial-ui.js','assets/local-contact.js','assets/home-funnel.js']:
     assert (ROOT/filename).read_bytes()==previous(filename),(filename,'protected integration changed')
 deployment=json.loads((ROOT/'vercel.json').read_text())
 redirect={'source':'/index.html','destination':'/','permanent':True}
 assert deployment['redirects'].count(redirect)==1
-deployment['redirects'].remove(redirect)
+# Die Baseline enthaelt die Weiterleitung bereits: keinerlei Routing-Aenderung erlaubt
 assert deployment==json.loads(previous('vercel.json')),'unexpected routing/integration change'
 for p in (ROOT/'assets').iterdir():
     if str(p.relative_to(ROOT)) in PORTRAITS|OFFICE_PHOTOS:continue # Validated separately by image tests.
@@ -107,11 +114,11 @@ def sitemap_entries(data):
 oldmap=sitemap_entries(previous('sitemap.xml')); newmap=sitemap_entries((ROOT/'sitemap.xml').read_bytes())
 origin='https://www.3dimmobilienbewertung.de/'
 assert set(newmap)==set(oldmap)|{origin+p for p in NEW_PAGES}
-updated={'','blog/','ueber-uns.html','immobilienbewertung-wedemark.html','immobilienbewertung-burgwedel.html','immobilienbewertung-isernhagen.html','restnutzungsdauergutachten-hannover.html'}
-seo_updated={origin+('' if p=='index.html' else p) for p in json.loads((ROOT/'tests/seo-release-pages.json').read_text())}
+changed=set(subprocess.check_output(['git','diff','--name-only',BASELINE],cwd=ROOT,text=True).split())
 for url,entry in oldmap.items():
     expected=dict(entry)
-    if url in {origin+p for p in updated}:expected['lastmod']='2026-09-26'
-    if url in seo_updated:expected['lastmod']='2026-09-28'
+    page=url[len(origin):] or 'index.html'
+    if page.endswith('/'):page+='index.html'
+    if page in changed:expected['lastmod']=RELEASE_DATE
     assert newmap[url]==expected,(url,'unexpected sitemap change')
-print(f'PASS: {len(baseline_pages)} existing URLs/metadata/media/anchors/integrations preserved; four articles and user-confirmed qualification added against {BASELINE}')
+print(f'PASS: {len(baseline_pages)} existing URLs/metadata/media/anchors/integrations preserved against {BASELINE}; only release changes (reviews, hero, portrait, anchor fix, dates)')

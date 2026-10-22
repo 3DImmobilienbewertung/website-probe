@@ -1,5 +1,6 @@
 """September SEO fixes: reviews, one business identity, links and crawl intent."""
 from pathlib import Path
+from datetime import date
 from html.parser import HTMLParser
 import json,re,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
@@ -14,9 +15,9 @@ def nodes(n):
 pages=[*ROOT.glob('*.html'),*(ROOT/'blog').glob('*.html')];businesses=0;review_pages=0
 for p in pages:
  s=p.read_text()
- assert not re.search(r'\b22\s+(?:Google-Bewertungen|Bewertungen|Rezensionen)',s),p
+ assert not re.search(r'\b(?:22|31|76)\s+(?:Google-Bewertungen|Bewertungen|Rezensionen)',s),p  # Stand 23.10.2026: 78, auf Google Maps geprueft
  if 'Google-Bewertungen' in s:
-  review_pages+=1;assert '31 Google-Bewertungen' in s,p
+  review_pages+=1;assert '78 Google-Bewertungen' in s,p
  for payload in re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>',s,re.S):
   for n in nodes(json.loads(payload)):
    assert 'aggregateRating' not in n,'Do not invent first-party review rich results'
@@ -25,7 +26,7 @@ for p in pages:
     businesses+=1;assert n['@id']==ORIGIN+'#organisation' and n['url']==ORIGIN,p
     if set(types)&{'LocalBusiness','ProfessionalService'}:assert n['address']==ADDRESS,p
 assert review_pages==32,review_pages
-home=(ROOT/'index.html').read_text();assert '31 Google-Bewertungen ansehen' in home
+home=(ROOT/'index.html').read_text();assert re.search(r'href="https://www\.google\.com/maps\?cid=6207380212816867001"[^>]*>.{0,400}?78 Google-Bewertungen',home,re.S)
 for filename,anchor in [('lp-haus-bewerten-hannover.html','hauswert-pruefen'),('lp-immobilienbewertung-hannover.html','gutachten-auswaehlen')]:
  s=(ROOT/filename).read_text();assert s.count('id="'+anchor+'"')==1
  assert 'Gerichtsfestes Verkehrswertgutachten' not in s
@@ -41,8 +42,12 @@ ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 entries={n.find('s:loc',ns).text:n.find('s:lastmod',ns).text for n in ET.parse(ROOT/'sitemap.xml').findall('s:url',ns)}
 release=json.loads((ROOT/'tests/seo-release-pages.json').read_text())
 new_regions={f'immobilienbewertung-{c}.html' for c in ('celle','schwarmstedt','laatzen')}
-assert len(release)==50 and len(entries)==51
-for p in release:assert entries[ORIGIN+('' if p=='index.html' else p)]==('2026-09-29' if p in new_regions else '2026-09-28')
+# Release vom 28./29.09.: alle Seiten weiter in der Sitemap; spaetere Pflege darf lastmod vorziehen
+indexable=[p for p in list(ROOT.glob('*.html'))+list((ROOT/'blog').glob('*.html')) if not p.name.startswith('google') and 'noindex' not in p.read_text()]
+assert len(release)==50 and len(entries)==len(indexable)
+for p in release:
+    lastmod=entries[ORIGIN+('' if p=='index.html' else p)]
+    assert ('2026-09-29' if p in new_regions else '2026-09-28')<=lastmod<=date.today().isoformat(),(p,lastmod)
 config=json.loads((ROOT/'vercel.json').read_text());assert {'source':'/index.html','destination':'/','permanent':True} in config['redirects']
 assert (ROOT/'robots.txt').read_text().find('Allow: /')>=0
-print(f'PASS: 31 Google reviews on {review_pages} pages, {businesses} consistent business/publisher entities, service clusters, distinct landing-page intent and accurate release sitemap')
+print(f'PASS: 78 Google reviews on {review_pages} pages, {businesses} consistent business/publisher entities, service clusters, distinct landing-page intent and accurate release sitemap')

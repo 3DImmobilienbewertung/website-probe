@@ -396,9 +396,9 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .float-cta .btn{box-shadow:0 12px 30px rgba(26,91,208,.4);padding:16px 26px}
 
 /* WhatsApp floating button */
-.wa-btn{position:fixed;left:24px;bottom:24px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;box-shadow:0 6px 24px rgba(37,211,102,.50);display:flex;align-items:center;justify-content:flex-start;transition:transform .35s var(--ease),box-shadow .35s}
-.wa-btn:hover{transform:scale(1.09);box-shadow:0 10px 32px rgba(37,211,102,.60)}
-.wa-btn svg{width:30px;height:30px;fill:#fff}
+
+
+
 
 /* mobile menu */
 .mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .35s}
@@ -461,7 +461,6 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:59;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 16px 14px;gap:10px;box-shadow:0 -4px 20px rgba(16,36,61,.10)}
 @media(max-width:680px){
   .mobile-cta-bar{display:flex}
-  .wa-btn{display:none}
   .float-cta{bottom:76px;left:16px;right:16px}
   .float-cta .btn{width:100%}
   main{padding-bottom:70px}
@@ -535,8 +534,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 @media(max-width:380px){.steps,.steps-5{grid-template-columns:minmax(0,1fr)}}
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
-<link rel="preload" as="image" href="/assets/hero-hannover-rathaus-quer-700.webp" imagesrcset="/assets/hero-hannover-rathaus-quer-700.webp 700w, /assets/hero-hannover-rathaus-quer-1000.webp 1000w, /assets/hero-hannover-rathaus-quer-1600.webp 1600w" imagesizes="calc(100vw - 40px)" media="(max-width:999px)" fetchpriority="high">
-<link rel="preload" as="image" href="/assets/hero-hannover-rathaus-hoch-900.webp" imagesrcset="/assets/hero-hannover-rathaus-hoch-900.webp 900w, /assets/hero-hannover-rathaus-hoch-1400.webp 1400w" imagesizes="48vw" media="(min-width:1000px)" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/hero-team-900.webp" imagesrcset="/assets/hero-team-600.webp 600w, /assets/hero-team-900.webp 900w, /assets/hero-team-1200.webp 1200w, /assets/hero-team-1536.webp 1536w" imagesizes="(min-width:1000px) min(46vw,720px), calc(100vw - 40px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="/assets/hanken-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/bricolage-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
@@ -546,7 +544,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <link rel="stylesheet" href="/assets/portraits-20260928.css?v=20261022b">
 <link rel="stylesheet" href="/assets/office-photography.css?v=20261021">
 <link rel="stylesheet" href="/assets/seo-decisions.css?v=20260928">
-<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261022n">
+<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261023d">
 </head>
 
 <body class="brand-editorial brand-home">
@@ -569,7 +567,8 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
+      <a href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung%20und%20m%C3%B6chte%20ein%20kostenloses%20Erstgespr%C3%A4ch%20vereinbaren." class="nav-wa" target="_blank" rel="noopener" aria-label="Per WhatsApp schreiben (öffnet WhatsApp)"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch anfragen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
       <button class="burger" id="burger" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -583,7 +582,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   <a href="#team">Team</a>
   <a href="#faq">FAQ</a>
   <a href="/blog/">Blog</a>
-  <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
+  <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch anfragen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></a>
 </div>
 
 <main id="top">
@@ -596,29 +595,33 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <span class="eyebrow">Donnarumma &amp; Donnarumma · Seit 2022</span>
       <h1 id="hero-title"><span class="hw" style="--i:0"><span>Immobilienbewertung</span></span><br><span><span class="hw" style="--i:1"><span>Hannover</span></span> <span class="hw" style="--i:2"><span>&amp;</span></span> <span class="hw" style="--i:3"><span>Region.</span></span></span></h1>
       </div>
-      <p class="hero-promise">Bei wichtigen Entscheidungen sind Sie bei uns keine Nummer.</p>
+      <p class="hero-promise">Wir verstehen Gebäude. Damit Sie ihren Wert nachvollziehen können.</p>
       <div class="hero-next-step">
-      <p class="lead">Haus, Wohnung oder Grundstück: Wir schaffen eine nachvollziehbare Grundlage für Ihren Kauf, Verkauf oder andere wichtige Immobilienentscheidungen.</p>
+      <p class="hero-kompetenz">Fachwissen aus Bauingenieurwesen und Architektur – persönlich betreut von Nandino und Vito Donnarumma. <a href="/ueber-uns.html#qualifikationen">Qualifikationen</a></p>
       <div class="hero-actions">
         <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch anfragen <span class="ar" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
         <a href="tel:+491747445452" class="btn btn-ghost">0174 744 5452 anrufen</a>
       </div>
-      <p class="hero-detail">Erstgespräch kostenlos. Gutachten kostenpflichtig – Kurzgutachten ab 490 €.<br><a href="#leistungen">Leistungen und Umfang ansehen</a></p>
+      <div class="hero-belege">
+        <a class="hero-bewertung" href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg><span><strong>5,0</strong> · 78 Google-Bewertungen</span></a>
+        <a class="hero-wa" href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung%20und%20m%C3%B6chte%20ein%20kostenloses%20Erstgespr%C3%A4ch%20vereinbaren." target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>Per WhatsApp schreiben</span></a>
+      </div>
+      <p class="hero-detail">Erstgespräch kostenlos und unverbindlich. Gutachten kostenpflichtig – Kurzgutachten ab 490 €. <a href="#leistungen">Leistungen und Preise</a></p>
       </div>
     </div>
-      <figure class="hero-figure hero-slides" aria-hidden="true"><picture class="slide"><source media="(min-width:1000px)" srcset="/assets/hero-hannover-rathaus-hoch-900.webp 900w, /assets/hero-hannover-rathaus-hoch-1400.webp 1400w" sizes="48vw"><img src="/assets/hero-hannover-rathaus-quer-700.webp" srcset="/assets/hero-hannover-rathaus-quer-700.webp 700w, /assets/hero-hannover-rathaus-quer-1000.webp 1000w, /assets/hero-hannover-rathaus-quer-1600.webp 1600w" sizes="calc(100vw - 40px)" width="1600" height="1067" fetchpriority="high" decoding="async" alt=""></picture><picture class="slide"><source media="(min-width:1000px)" data-srcset="/assets/hero-hannover-luftbild-hoch-900.webp 900w, /assets/hero-hannover-luftbild-hoch-1400.webp 1400w" sizes="48vw"><img data-src="/assets/hero-hannover-luftbild-quer-1000.webp" data-srcset="/assets/hero-hannover-luftbild-quer-700.webp 700w, /assets/hero-hannover-luftbild-quer-1000.webp 1000w, /assets/hero-hannover-luftbild-quer-1600.webp 1600w" sizes="calc(100vw - 40px)" width="1600" height="1067" decoding="async" alt=""></picture><picture class="slide"><source media="(min-width:1000px)" data-srcset="/assets/hero-hannover-fassade-hoch-900.webp 900w, /assets/hero-hannover-fassade-hoch-1400.webp 1400w" sizes="48vw"><img data-src="/assets/hero-hannover-fassade-quer-1000.webp" data-srcset="/assets/hero-hannover-fassade-quer-700.webp 700w, /assets/hero-hannover-fassade-quer-1000.webp 1000w, /assets/hero-hannover-fassade-quer-1600.webp 1600w" sizes="calc(100vw - 40px)" width="1600" height="1067" decoding="async" alt=""></picture><picture class="slide"><source media="(min-width:1000px)" data-srcset="/assets/hero-hannover-herrenhausen-hoch-900.webp 900w, /assets/hero-hannover-herrenhausen-hoch-1400.webp 1400w" sizes="48vw"><img data-src="/assets/hero-hannover-herrenhausen-quer-1000.webp" data-srcset="/assets/hero-hannover-herrenhausen-quer-700.webp 700w, /assets/hero-hannover-herrenhausen-quer-1000.webp 1000w, /assets/hero-hannover-herrenhausen-quer-1600.webp 1600w" sizes="calc(100vw - 40px)" width="1600" height="1067" decoding="async" alt=""></picture></figure>
-    
+    <figure class="hero-figure hero-slides"><div class="slide"><img src="/assets/hero-team-900.webp" srcset="/assets/hero-team-600.webp 600w, /assets/hero-team-900.webp 900w, /assets/hero-team-1200.webp 1200w, /assets/hero-team-1536.webp 1536w" sizes="(min-width:1000px) min(46vw,720px), calc(100vw - 40px)" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Nandino Donnarumma skizziert auf einem Tablet in einen Grundriss, Vito Donnarumma erläutert dazu eine Einschätzung"></div><div class="slide" hidden><img data-src="/assets/hero-hannover-rathaus-quer-1000.webp" data-srcset="/assets/hero-hannover-rathaus-quer-700.webp 700w, /assets/hero-hannover-rathaus-quer-1000.webp 1000w, /assets/hero-hannover-rathaus-quer-1600.webp 1600w" sizes="(min-width:1000px) min(46vw,720px), calc(100vw - 40px)" width="1600" height="1067" decoding="async" alt=""></div><div class="slide" hidden><img data-src="/assets/hero-hannover-luftbild-quer-1000.webp" data-srcset="/assets/hero-hannover-luftbild-quer-700.webp 700w, /assets/hero-hannover-luftbild-quer-1000.webp 1000w, /assets/hero-hannover-luftbild-quer-1600.webp 1600w" sizes="(min-width:1000px) min(46vw,720px), calc(100vw - 40px)" width="1600" height="1067" decoding="async" alt=""></div><div class="slide" hidden><img data-src="/assets/hero-hannover-herrenhausen-quer-1000.webp" data-srcset="/assets/hero-hannover-herrenhausen-quer-700.webp 700w, /assets/hero-hannover-herrenhausen-quer-1000.webp 1000w, /assets/hero-hannover-herrenhausen-quer-1600.webp 1600w" sizes="(min-width:1000px) min(46vw,720px), calc(100vw - 40px)" width="1600" height="1067" decoding="async" alt=""></div><button type="button" class="diashow-knopf" hidden data-zustand="laeuft"><svg class="diashow-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg><svg class="diashow-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z"/></svg><span class="diashow-text">Diashow anhalten</span></button></figure>
   </div>
-<div class="hero-footer"><div class="container"><div class="hero-ident"><div><strong>Vito &amp; Nandino Donnarumma</strong><span>Ihre persönlichen Ansprechpartner.</span></div><span>B.Sc. Architektur<br>M.Sc. Bauingenieurwesen</span></div><div class="hero-signature"><span>Büro in der Wedemark. Für die Region vor Ort.<br><a href="https://www.google.com/maps?cid=6207380212816867001" target="_blank" rel="noopener">5,0 von 5 · 76 Google-Bewertungen ansehen</a></span><a href="/ueber-uns.html#qualifikationen">Qualifikationen ansehen <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></a></div></div></div>
 </section>
 
 
 <!-- ===================== ERSTGESPRÄCH (Conversion-Funnel) ===================== -->
-<section class="personal-intro" aria-labelledby="personal-heading">
-  <div class="container personal-grid mit-foto">
+<section class="personal-intro" id="warum" aria-labelledby="personal-heading">
+  <div class="container personal-grid">
     <div><span class="eyebrow">Ihr Anliegen. Unsere Verantwortung.</span><h2 id="personal-heading">Persönlich betreut.<br>Sorgfältig bewertet.</h2></div>
-    <div><p>Wir sind Nandino und Vito. Als kleines Büro nehmen wir nur Aufträge an, die wir selbst sorgfältig bearbeiten können. Ihre Immobilie begutachten wir persönlich – mit festen Ansprechpartnern, ausreichend Zeit und ohne Weitergabe an externe Gutachter.</p><a class="text-action" href="/ueber-uns.html#qualifikationen">Team und Qualifikationen kennenlernen <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a></div>
-  <figure class="intro-figure"><img class="intro-portrait" src="/assets/hero-team-1200.webp" srcset="/assets/hero-team-600.webp 600w, /assets/hero-team-900.webp 900w, /assets/hero-team-1200.webp 1200w, /assets/hero-team-1536.webp 1536w" sizes="(min-width:900px) min(48vw,640px), calc(100vw - 40px)" width="1536" height="1024" loading="lazy" decoding="async" alt="Nandino Donnarumma zeichnet auf einem Tablet in einen Grundriss, Vito Donnarumma erläutert dazu eine Einschätzung"></figure></div>
+    <div><p>Bei wichtigen Entscheidungen sind Sie bei uns keine Nummer. Wir sind Nandino und Vito. Als kleines Büro nehmen wir nur Aufträge an, die wir selbst sorgfältig bearbeiten können. Wir besichtigen Ihre Immobilie, prüfen die Unterlagen und besprechen das Ergebnis mit Ihnen – ohne Weitergabe an externe Gutachter. Was zum Auftrag gehört und was es kostet, klären wir vorher.</p>
+      <ul class="feat-list"><li><span class="k">01</span><span class="t"><b>Persönlich erreichbar</b><span>Ihr Anliegen bleibt bei uns – vom ersten Gespräch bis zur Erläuterung.</span></span></li><li><span class="k">02</span><span class="t"><b>Genau hinschauen</b><span>Gebäudezustand, Unterlagen und Marktdaten werden gemeinsam betrachtet.</span></span></li><li><span class="k">03</span><span class="t"><b>Verständlich erklären</b><span>Sie erfahren, wie der Wert zustande kommt und welche Annahmen dahinterstehen.</span></span></li></ul>
+      <a class="text-action" href="/ueber-uns.html#qualifikationen">Team und Qualifikationen kennenlernen <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a></div>
+  </div>
   <nav class="container intent-links" aria-label="Einstieg nach Ihrem Anliegen">
     <a href="/immobilienbewertung-kauf-verkauf.html"><span>01 / Kauf &amp; Verkauf</span>Den Immobilienwert kennen <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a>
     <a href="/immobilienbewertung-erbschaft.html"><span>02 / Erbschaft</span>Eine gemeinsame Grundlage <span aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow"></use></svg></span></a>
@@ -631,36 +634,52 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="sec-head r">
       <span class="eyebrow">Leistungen</span>
       <h2 class="section-title">Immobilienbewertung in Hannover – fundiert ermittelt.</h2>
-      <p class="lead">Ob Haus, Wohnung oder Grundstück: Für jede Wertermittlung liefern wir das passende Gutachten – für Privatpersonen, Unternehmen und Erbengemeinschaften, stets normkonform nach ImmoWertV.</p>
+      <p class="lead">Ob Haus, Wohnung oder Grundstück: Welches Gutachten passt, hängt vom Anlass ab und davon, wer es später lesen soll. Das klären wir im kostenlosen Erstgespräch – den Festpreis kennen Sie vor der Beauftragung.</p>
     </div>
-    <div class="cards-feature">
-      <div class="card feature r">
-        <span class="tag">Kerngeschäft</span>
-        <div class="num"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#star"></use></svg> / Verfahren</div>
-        <h3>Sach- &amp; Ertragswertverfahren</h3>
-        <p>Sachwertverfahren für selbstgenutzte, Ertragswertverfahren für vermietete Objekte – wir wählen die passende Methode für eine marktgerechte, nachvollziehbare Bewertung Ihrer Immobilie.</p>
-        <div class="for">Marktgerecht nach ImmoWertV</div>
-      </div>
-    </div>
-    <div class="cards-3">
-      <div class="card r s1"><div class="num">01 / Gutachten</div><h3>Immobilien&shy;kurzgutachten</h3><p>Die kompakte, kostengünstige Werteinschätzung für eine erste fundierte Orientierung zum Wert Ihrer Immobilie.</p><div class="for">Schnell · Kompakt · Bezahlbar</div><div style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue-deep);border-radius:100px;padding:7px 14px;font-family:var(--mono);font-size:12px;font-weight:600">ab 490 €</div></div>
-      <div class="card r s2"><div class="num">02 / Gutachten</div><h3>Immobilien&shy;gutachten</h3><p>Das ausführliche Gutachten mit detaillierter Analyse aller wertrelevanten Faktoren Ihres Hauses oder Ihrer Wohnung.</p><div class="for">Haus · Wohnung · Grundstück</div><div style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue-deep);border-radius:100px;padding:7px 14px;font-family:var(--mono);font-size:12px;font-weight:600">ab 890 €</div></div>
-      <div class="card r s3"><div class="num">03 / Gutachten</div><h3>Verkehrswert&shy;gutachten §194 BauGB</h3><p>Ausführliche Wertermittlung nach ImmoWertV mit nachvollziehbarer Herleitung. Verwendungszweck, erforderliche Qualifikation und Anforderungen des Empfängers klären wir vor der Beauftragung.</p><div class="for">Nachvollziehbar · Objektbezogen · Unabhängig</div><div style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue-deep);border-radius:100px;padding:7px 14px;font-family:var(--mono);font-size:12px;font-weight:600">Preis nach Objekt</div></div>
-    </div>
-    <div class="cards-feature" style="margin-top:20px">
-      <div class="card feature r">
-        <span class="tag">Steuervorteil</span>
+    <div class="leistungen-grid">
+      <article class="leistung">
+        <div class="num">01 / Gutachten</div>
+        <h3>Immobilien&shy;kurzgutachten</h3>
+        <p class="leistung-preis">ab 490 €</p>
+        <dl>
+          <dt>Anlass</dt><dd>Preisfindung bei Kauf oder Verkauf, Familienentscheidungen oder eine erste Orientierung.</dd>
+          <dt>Sie erhalten</dt><dd>Eine kompakte Werteinschätzung mit Objektbesichtigung und nachvollziehbarer Herleitung.</dd>
+          <dt>Umfang &amp; Zweck</dt><dd>Kompakt und für private Entscheidungen gedacht – nicht für Gericht oder Finanzamt bestimmt.</dd>
+        </dl>
+      </article>
+      <article class="leistung">
+        <div class="num">02 / Gutachten</div>
+        <h3>Immobilien&shy;gutachten</h3>
+        <p class="leistung-preis">ab 890 €</p>
+        <dl>
+          <dt>Anlass</dt><dd>Wichtige private Entscheidungen, für die Sie eine belastbare, detaillierte Wertermittlung brauchen.</dd>
+          <dt>Sie erhalten</dt><dd>Ein ausführliches Gutachten mit Analyse aller wertrelevanten Faktoren nach ImmoWertV.</dd>
+          <dt>Umfang &amp; Zweck</dt><dd>Für Haus, Wohnung oder Grundstück; ausführlicher als das Kurzgutachten, für private Zwecke.</dd>
+        </dl>
+      </article>
+      <article class="leistung">
+        <div class="num">03 / Gutachten</div>
+        <h3>Verkehrswert&shy;gutachten §194 BauGB</h3>
+        <p class="leistung-preis">Preis nach Objekt · Festpreisangebot vorab</p>
+        <dl>
+          <dt>Anlass</dt><dd>Zum Beispiel Erbschaft, Schenkung, Scheidung, Zwangsversteigerung oder ein gerichtliches Verfahren.</dd>
+          <dt>Sie erhalten</dt><dd>Ein vollständiges Gutachten nach ImmoWertV mit umfassender Dokumentation, Fotoanhang und Begründung.</dd>
+          <dt>Umfang &amp; Zweck</dt><dd>Für die Vorlage bei Dritten. Verwendungszweck, erforderliche Qualifikation und Anforderungen des Empfängers klären wir vor der Beauftragung; über die Annahme entscheidet die empfangende Stelle.</dd>
+        </dl>
+      </article>
+      <article class="leistung">
         <div class="num">04 / Gutachten</div>
-        <h3>Restnutzungsdauer&shy;gutachten zur AfA-Optimierung</h3>
-        <p>Viele Bestandsimmobilien lassen sich schneller abschreiben, als das Finanzamt pauschal annimmt. Wir weisen die tatsächliche, kürzere Restnutzungsdauer nach ImmoWertV 2021 gutachterlich nach (§&nbsp;7 Abs.&nbsp;4 S.&nbsp;2 EStG) – das erhöht Ihre jährliche Gebäude-AfA und spart spürbar Steuern.</p>
-        <div class="for">Höhere AfA · Steuern sparen · Für Kapitalanleger</div>
-        <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
-          <a href="/restnutzungsdauergutachten-hannover.html" class="btn btn-primary">Restnutzungsdauergutachten ansehen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
-          <a href="/restnutzungsdauer-rechner.html" class="btn btn-outline">Steuervorteil berechnen</a>
-          <div style="display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue-deep);border-radius:100px;padding:7px 14px;font-family:var(--mono);font-size:12px;font-weight:600">1.490 €</div>
-        </div>
-      </div>
+        <h3>Restnutzungs&shy;dauergutachten</h3>
+        <p class="leistung-preis">1.490 €</p>
+        <dl>
+          <dt>Anlass</dt><dd>Vermietete Bestandsimmobilie, deren Gebäude kürzer nutzbar ist als die steuerliche Pauschale annimmt (§&nbsp;7 Abs.&nbsp;4 S.&nbsp;2 EStG).</dd>
+          <dt>Sie erhalten</dt><dd>Eine gutachterliche Herleitung der tatsächlichen Restnutzungsdauer nach ImmoWertV.</dd>
+          <dt>Umfang &amp; Zweck</dt><dd>Als Nachweis gegenüber dem Finanzamt, das im Einzelfall entscheidet. Eine höhere AfA ist möglich, aber nicht garantiert.</dd>
+        </dl>
+        <div class="leistung-links"><a href="/restnutzungsdauergutachten-hannover.html" class="btn btn-primary">Restnutzungsdauergutachten ansehen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a><a href="/restnutzungsdauer-rechner.html" class="btn btn-outline">Steuervorteil berechnen</a></div>
+      </article>
     </div>
+    <p class="leistungen-verfahren">Welches Verfahren passt – Vergleichswert, Sachwert oder Ertragswert nach ImmoWertV –, richtet sich nach Objekt und Zweck. Wir begründen die Wahl im Gutachten. Das Erstgespräch ist immer kostenlos; jedes Gutachten ist eine kostenpflichtige Leistung.</p>
   </div>
 </section>
 
@@ -746,16 +765,6 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     </div>
   </div>
 </section>
-
-<section id="warum" class="alt warum-merged">
-  <div class="container">
-    <div class="warum-aussage"><span class="eyebrow">Was Sie bei uns erwartet</span><h2 class="section-title">Sorgfalt statt Durchreichen.</h2><p class="lead">Wir besichtigen Ihre Immobilie, prüfen die Unterlagen und besprechen das Ergebnis mit Ihnen. Was zum Auftrag gehört und was es kostet, klären wir vorher.</p></div>
-    <div class="warum-punkte"><span class="eyebrow">Klein. Direkt. Engagiert.</span><h2 class="section-title">Sie wissen, wer sich kümmert.</h2><ul class="feat-list"><li><span class="k">01</span><span class="t"><b>Persönlich erreichbar</b><span>Ihr Anliegen bleibt bei uns – vom ersten Gespräch bis zur Erläuterung.</span></span></li><li><span class="k">02</span><span class="t"><b>Genau hinschauen</b><span>Gebäudezustand, Unterlagen und Marktdaten werden gemeinsam betrachtet.</span></span></li><li><span class="k">03</span><span class="t"><b>Verständlich erklären</b><span>Sie erfahren, wie der Wert zustande kommt und welche Annahmen dahinterstehen.</span></span></li></ul></div>
-  </div>
-</section>
-
-
-
 <!-- ===================== TEAM ===================== -->
 <section id="team" class="alt">
   <div class="container">
@@ -786,7 +795,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
 <!-- Statement-Band: Architekturbild Unsplash wxJscL5ZzDA (Unsplash License), dekorativ -->
 <section class="statement-band" aria-labelledby="statement-title"><div class="statement-media"><img src="/assets/band-treppe-1600.webp" srcset="/assets/band-treppe-900.webp 900w, /assets/band-treppe-1600.webp 1600w, /assets/band-treppe-2400.webp 2400w, /assets/band-treppe-3200.webp 3200w" sizes="100vw" width="3200" height="1949" alt="" loading="lazy" data-parallax="0.09" decoding="async"></div><div class="container statement-inner r">
       <span class="eyebrow">Unser entscheidender Vorteil</span>
-      <h2 id="statement-title">Wir bewerten nicht nur – wir verstehen Gebäude.</h2>
+      <h2 id="statement-title">Aus Planung und Sanierung zur Bewertung.</h2>
       <p>Unsere Erfahrung mit Planung, Erwerb und Sanierung von Häusern hat uns 2022 zur Immobilienbewertung geführt. Fachwissen aus <strong>Bauingenieurwesen und Architektur</strong> hilft uns, Unterlagen, Modernisierungen und den sichtbaren Gebäudezustand einzuordnen. Welche Untersuchungen zum Auftrag gehören und wo zusätzliche Fachprüfungen nötig sind, besprechen wir vorab.</p>
     </div></section>
 
@@ -857,7 +866,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
       <div style="margin-top:22px;display:flex;align-items:center;justify-content:flex-start">
         <div class="google-badge">
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-          <span style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2);font-weight:500">5,0 · 76 Google-Bewertungen</span>
+          <span style="font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2);font-weight:500">5,0 · 78 Google-Bewertungen</span>
           <span style="color:#F2B500;font-size:15px;letter-spacing:1px"><svg class="ui-icon ui-rating" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#rating"></use></svg></span>
         </div>
       </div>
@@ -1008,7 +1017,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
     <div class="cta-band r">
       <h2>Lernen Sie uns im kostenlosen Erstgespräch kennen</h2>
       <p>Unverbindlich und vom unabhängigen Sachverständigen. Wir besprechen Ihr Anliegen und das passende Vorgehen – Antwort binnen 24 Stunden.</p>
-      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch sichern <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
+      <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch anfragen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></a>
     </div>
   </div>
 </section>
@@ -1132,12 +1141,7 @@ footer{border-top:1px solid var(--border);padding:72px 0 34px;background:var(--b
   </div>
 </footer>
 
-<a href="#wertcheck" class="float-cta" id="floatCta"><span class="btn btn-primary">Kostenloses Erstgespräch <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></span></a>
-
-<a href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung%20und%20m%C3%B6chte%20ein%20kostenloses%20Erstgespr%C3%A4ch%20vereinbaren." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp-Chat starten" title="WhatsApp schreiben">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
-
+<a href="#wertcheck" class="float-cta" id="floatCta"><span class="btn btn-primary">Kostenloses Erstgespräch anfragen <span class="ar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#arrow-right"></use></svg></span></span></a>
 </div>
 
 <!-- ===================== UI + CONVERSION LOGIC ===================== -->
@@ -1185,37 +1189,43 @@ setTimeout(function(){document.querySelectorAll('.r').forEach(function(el){el.cl
 document.getElementById('year').textContent=new Date().getFullYear();
 
 // contact form -> /api/contact (Vercel serverless)
+// Erfolg nur bei HTTP 2xx UND {ok:true}; sonst sichtbarer Hinweis mit Telefonnummer.
 var form=document.getElementById('contactForm');
-if(form)form.addEventListener('submit',function(e){
-  e.preventDefault();
-  var btn=form.querySelector('button[type=submit]');
-  btn.disabled=true; btn.textContent='Wird gesendet …';
-  var data={
-    name:document.getElementById('name').value.trim(),
-    email:document.getElementById('email').value.trim(),
-    phone:document.getElementById('phone').value.trim(),
-    objekt:document.getElementById('objekt').value,
-    message:document.getElementById('msg').value.trim()
-  };
-  fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-  .then(function(r){return r.json();})
-  .then(function(d){
-    if(d.ok){
-      form.innerHTML='<div style="padding:32px 0"><div style="width:62px;height:62px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:30px;margin:0 auto 18px">✓</div><h3 style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Vielen Dank für Ihr Vertrauen!</h3><p style="color:var(--muted)">Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – garantiert binnen 24 Stunden.</p></div>';
-    } else {
+if(form){
+  var hinweis=document.createElement('p');
+  hinweis.className='form-feedback';hinweis.setAttribute('role','alert');hinweis.tabIndex=-1;hinweis.hidden=true;
+  form.appendChild(hinweis);
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]');
+    if(btn.disabled)return;
+    btn.disabled=true; btn.textContent='Wird gesendet …'; hinweis.hidden=true;
+    var data={
+      name:document.getElementById('name').value.trim(),
+      email:document.getElementById('email').value.trim(),
+      phone:document.getElementById('phone').value.trim(),
+      objekt:document.getElementById('objekt').value,
+      message:document.getElementById('msg').value.trim()
+    };
+    fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+    .then(function(d){
+      if(!d||d.ok!==true)throw new Error('nicht bestaetigt');
+      form.innerHTML='<div class="form-erfolg" style="padding:32px 0"><h3 tabindex="-1" style="font-family:var(--display);font-size:1.4rem;margin-bottom:10px">Vielen Dank für Ihr Vertrauen!</h3><p style="color:var(--muted)">Ihre Anfrage ist bei uns angekommen. Nandino oder Vito meldet sich persönlich bei Ihnen – in der Regel innerhalb von 24 Stunden.</p></div>';
+      form.querySelector('h3').focus();
+    })
+    .catch(function(){
       btn.disabled=false; btn.textContent='Anfrage senden →';
-      alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: +49 174 744 5452');
-    }
-  })
-  .catch(function(){
-    btn.disabled=false; btn.textContent='Anfrage senden →';
-    alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: +49 174 744 5452');
+      hinweis.textContent='Wir konnten die Übermittlung nicht bestätigen. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns unter 0174 744 5452 an.';
+      hinweis.hidden=false; hinweis.focus();
+    });
   });
-});
+}
 </script>
 <div class="mobile-bar">
-  <a href="tel:+491747445452" class="btn call"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> Anrufen</a>
-  <a href="#wertcheck" class="btn btn-primary">Kostenlos anfragen</a>
+  <a href="tel:+491747445452" class="btn call" aria-label="Anrufen: 0174 744 5452"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg></a>
+  <a href="https://wa.me/491747445452?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Immobilienbewertung%20und%20m%C3%B6chte%20ein%20kostenloses%20Erstgespr%C3%A4ch%20vereinbaren." class="btn wa" target="_blank" rel="noopener" aria-label="Per WhatsApp schreiben (öffnet WhatsApp)"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+  <a href="#wertcheck" class="btn btn-primary">Kostenloses Erstgespräch anfragen</a>
 </div>
 <script src="assets/consent.js?v=20261022"></script>
 <script>
@@ -1238,6 +1248,7 @@ if(form)form.addEventListener('submit',function(e){
   });
 })();
 </script>
-<script src="/assets/motion.js?v=20261022b" defer></script>
+<script src="/assets/motion.js?v=20261023" defer></script>
+<script src="/assets/diashow.js?v=20261023" defer></script>
 </body>
 </html>
