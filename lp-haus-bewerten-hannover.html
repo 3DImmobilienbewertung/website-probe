@@ -191,7 +191,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 <link rel="stylesheet" href="/assets/office-photography.css?v=20261021">
 <link rel="stylesheet" href="/assets/seo-decisions.css?v=20260928">
-<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261021r">
+<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261022i">
 </head>
 <body class="brand-editorial brand-landing">
 <div class="wrap">
@@ -428,5 +428,6 @@ document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener(
 document.getElementById('leadForm').addEventListener('submit',async function(e){e.preventDefault();var btn=this.querySelector('button[type=submit]');var n=lfName.value,m=lfMail.value,t=lfTel.value,o=lfObj.value,ort=lfOrt.value;if(!n||!m){alert('Bitte Name und E-Mail angeben.');return;}btn.disabled=true;btn.textContent='Wird gesendet…';try{var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:ort,message:''})});if(r.ok){document.getElementById('leadForm').innerHTML='<div style="text-align:center;padding:32px 16px"><div style="font-size:48px;margin-bottom:16px"></div><h3 style="color:#16365C;margin-bottom:8px">Anfrage gesendet!</h3><p style="color:#5a7088">Wir melden uns binnen 24 Stunden.</p></div>';}else{btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}catch(err){btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');}});
 </script>
 <script src="assets/consent.js?v=20260815b"></script>
+<script src="/assets/motion.js?v=20261022" defer></script>
 </body>
 </html>

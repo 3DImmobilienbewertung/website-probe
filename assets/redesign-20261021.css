@@ -103,25 +103,24 @@
      ohne Rundung und ohne Rahmen. Das ist der strukturelle Unterschied
      zur Referenz: dort fuellt Fotografie die Flaeche, statt als Kachel
      in einem farbigen Kasten zu liegen. */
-  .brand-home .hero.hero-split{min-height:min(88vh,840px);display:flex;flex-direction:column}
+  .brand-home .hero.hero-split{display:flex;flex-direction:column}
   .brand-home .hero-split .hero-grid{
     grid-template-columns:minmax(0,1fr) minmax(0,.96fr);
     max-width:none;
     padding-left:max(20px,calc((100vw - 1184px)/2));
-    padding-right:0;
-    padding-top:0;padding-bottom:0;
-    align-items:stretch;
+    padding-right:max(20px,calc((100vw - 1184px)/2));
+    padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(40px,5vw,72px);
+    align-items:center;
     flex:1;
   }
-  .brand-home .hero-split .hero-copy{
-    align-content:center;
-    padding-block:clamp(96px,12vh,140px) clamp(30px,3.6vw,52px);
-  }
-  .brand-home .hero-split .hero-figure,
-  .brand-home .hero-split picture{height:100%}
+  .brand-home .hero-split .hero-copy{align-content:center;padding-block:clamp(56px,7vh,96px) 0}
+    /* Foto in seinen echten Proportionen (3:2) und nie breiter als 768px:
+     auf Retina sind das genau die 1536px der Quelle. Die vorige Fassung
+     streckte einen 1024px hohen Ausschnitt ueber die volle Hero-Hoehe -
+     auf 2x-Bildschirmen 1,4-fach hochgerechnet, daher die Pixel. */
+  .brand-home .hero-split .hero-figure{align-self:center;max-width:768px}
   .brand-home .hero-split .hero-portrait{
-    height:100%;width:100%;aspect-ratio:auto;object-fit:cover;
-    object-position:center 20%;border-radius:0;
+    width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:0;
   }
 }
 .brand-home .hero-split .hero-copy{
@@ -151,12 +150,12 @@
 .brand-home .hero-split picture{display:block}
 .brand-home .hero-split .hero-portrait{
   display:block;width:100%;height:auto;
-  aspect-ratio:920/1024;object-fit:cover;object-position:center 18%;
+  aspect-ratio:3/2;object-fit:cover;object-position:center;
   border:0;border-radius:0;
 }
 @media(max-width:999px){
   /* Gestapelt: Querformat, damit das Foto nicht den halben Bildschirm frisst */
-  .brand-home .hero-split .hero-portrait{aspect-ratio:3/2;object-position:center 30%}
+  .brand-home .hero-split .hero-portrait{aspect-ratio:3/2}
 }
 
 /* Infozeile als schmaler Streifen unter dem Hero */
@@ -255,21 +254,126 @@
 .statement-band p{color:#d5dfea;max-width:58ch;font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.65;margin:0}
 .statement-band p strong{color:#fff}
 
-/* Dezente Bewegung ohne JavaScript: das Bild zieht beim Scrollen leicht
-   zurueck. Nur wo der Browser scroll-getriebene Animationen kann und
-   niemand reduzierte Bewegung eingestellt hat; sonst steht es still. */
-@media (prefers-reduced-motion:no-preference){
-  @supports (animation-timeline:view()){
-    .statement-band .statement-media img{
-      animation:band-zoom linear both;animation-timeline:view();animation-range:entry 0% exit 60%;
-    }
-    @keyframes band-zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-  }
-}
-
 @media(max-width:899px){
   /* Gestapelt: Text ueber dem ganzen Bild, daher wieder Verlauf von unten */
   .statement-band .statement-media::after{
     background:linear-gradient(to top,rgba(14,36,64,.95) 0%,rgba(14,36,64,.78) 55%,rgba(14,36,64,.35) 100%);
   }
 }
+
+/* =====================================================================
+   Bewegung nach Vorbild bywater.group
+   Hero: reine CSS-Animation ab dem ersten Bild - wartet nicht auf
+   JavaScript, damit die Ladezeit-Messung (LCP) nicht leidet. Das Foto
+   bewegt sich nur per transform, nie per Deckkraft.
+   Weitere Ueberschriften: Wort fuer Wort per assets/motion.js.
+   ===================================================================== */
+/* Die Grundfassung faerbt jedes span in der Hero-Headline hellblau.
+   Die Wort-Huellen erben stattdessen - Zeile 1 weiss, Zeile 2 hellblau. */
+.brand-home .hero-split h1 .hw,
+.brand-home .hero-split h1 .hw>span{color:inherit}
+
+@media (prefers-reduced-motion:no-preference){
+  .brand-home .hero-split h1 .hw{
+    display:inline-block;overflow:hidden;vertical-align:top;
+    padding-bottom:.14em;margin-bottom:-.14em;
+  }
+  .brand-home .hero-split h1 .hw>span{
+    display:inline-block;
+    animation:wort-hoch .95s cubic-bezier(.16,.84,.3,1) both;
+    animation-delay:calc(var(--i) * 85ms + 120ms);
+  }
+  .brand-home .hero-split .eyebrow{animation:sanft-ein .8s ease both}
+  .brand-home .hero-split .hero-promise{animation:sanft-ein .9s cubic-bezier(.16,.84,.3,1) .5s both}
+  .brand-home .hero-split .hero-next-step{animation:sanft-ein .9s cubic-bezier(.16,.84,.3,1) .62s both}
+  .brand-home .hero-split .hero-figure{overflow:hidden}
+  .brand-home .hero-split .hero-portrait{animation:bild-ein 1.9s cubic-bezier(.16,.84,.3,1) both}
+  .brand-home .hero-footer{animation:sanft-ein .9s ease .85s both}
+}
+@keyframes wort-hoch{from{transform:translateY(108%)}to{transform:none}}
+@keyframes sanft-ein{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes bild-ein{from{transform:scale(1.07)}to{transform:none}}
+
+/* Ueberschriften weiter unten: Wort fuer Wort, sobald sie ins Bild kommen */
+.wort-anim .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.wort-anim .wi{
+  display:inline-block;transform:translateY(108%);opacity:0;
+  transition:transform .85s cubic-bezier(.16,.84,.3,1),opacity .5s ease;
+}
+.wort-anim.ist-sichtbar .wi{transform:none;opacity:1}
+
+/* Parallaxe: das Bild ist etwas groesser als seine Flaeche, damit beim
+   Verschieben kein Rand sichtbar wird. */
+.statement-band .statement-media{overflow:hidden}
+.statement-band .statement-media img[data-parallax]{will-change:transform;transform:scale(1.1)}
+@media (prefers-reduced-motion:reduce){
+  .statement-band .statement-media img[data-parallax]{transform:none!important}
+}
+
+/* =====================================================================
+   Farbabstimmung 2026-10-22 — hell statt Navy-Flaeche
+   Rueckmeldung des Inhabers: der dunkelblaue Hero ist zu schwer. Das
+   helle Buerofoto auf grosser Navy-Flaeche gab einen harten Bruch.
+   Navy wird Schriftfarbe statt Flaeche, Gold bleibt Akzent. Dunkel nur
+   noch im Treppen-Band und im Footer - der Rhythmus der Referenz:
+   ueberwiegend hell, ein dramatisches dunkles Bildband.
+
+   Alle Textpaarungen nach WCAG geprueft (Papier #F6F4F0):
+   Tinte #10243D 14,3:1 · Schiefer #56708E 4,7:1 · Text #34465C 8,8:1 ·
+   Klein #55667B 5,4:1 · Navy #16365C 11,1:1 · Gold-tief #9C7A2E 3,7:1
+   (nur Grossziffern). Markengold #C9A24B nur als Linie und Button-
+   Flaeche - als Schrift auf Hell 2,2:1, zu schwach.
+   ===================================================================== */
+body.brand-home{
+  --papier:#F6F4F0;--linie-warm:#E2DCD1;--schiefer:#56708E;
+  --text-ton:#34465C;--klein-ton:#55667B;--gold-tief:#9C7A2E;
+}
+
+/* ---- Hero ---
+   Spezifitaet bewusst erhoeht: eine aeltere Regel nutzt :is(...), das
+   die hoechste Spezifitaet seiner Liste uebernimmt (0,3,1) und sonst
+   die Schrift weiss liess. */
+/* ---------------------------------------------------------- */
+body.brand-home .hero.hero-split{background:var(--papier);color:var(--text-ton)}
+body.brand-home .hero.hero-split h1{color:var(--ink,#10243D)}
+/* nur die zweite Zeile - die Wort-Huelle der ersten ist ebenfalls direktes Kind */
+body.brand-home .hero.hero-split h1>span:not(.hw){color:var(--schiefer)}
+body.brand-home .hero.hero-split .eyebrow{color:var(--klein-ton)}
+body.brand-home .hero.hero-split .hero-promise{color:var(--ink,#10243D);border-left-color:var(--gold)}
+body.brand-home .hero.hero-split .lead{color:var(--text-ton)}
+body.brand-home .hero.hero-split .hero-detail{color:var(--klein-ton)}
+body.brand-home .hero.hero-split .hero-detail a{color:var(--blue)}
+body.brand-home .hero.hero-split .btn-ghost,
+.brand-home .hero .hero-actions .btn-ghost{
+  background:transparent;color:var(--blue);border:1px solid var(--blue);
+}
+body.brand-home .hero.hero-split .btn-ghost:hover,
+.brand-home .hero .hero-actions .btn-ghost:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+body.brand-home .hero.hero-split :focus-visible{outline-color:var(--blue)}
+
+/* Infostreifen unter dem Hero */
+.brand-home .hero-split .hero-footer{border-top:1px solid var(--linie-warm);background:transparent}
+.brand-home .hero-footer :is(.hero-ident,.hero-signature){color:var(--klein-ton)}
+.brand-home .hero-footer .hero-ident strong{color:var(--ink,#10243D)}
+.brand-home .hero-footer a{color:var(--blue)}
+
+/* Kopfzeile mit dem Hero verbinden statt als weisser Balken darueber */
+.brand-home header.brand-header{background:var(--papier);border-bottom-color:var(--linie-warm)}
+
+/* ---- Wechselflaechen: ein warmer Ton statt kuehlem Grau ------------- */
+.brand-home #leistungen,.brand-home #kontakt{background:var(--papier)}
+
+/* ---- Ablauf hell --------------------------------------------------- */
+.brand-home #ablauf{background:var(--papier);color:var(--text-ton)}
+/* Spezifitaet wird klassenweise verglichen: die alte Regel #ablauf :is(h2,h3,.eyebrow)
+   hat (1,2,0). Mit #ablauf.alt kommt diese auf (1,2,2) und gewinnt. */
+body.brand-home #ablauf.alt :is(h2,h3){color:var(--ink,#10243D)}
+.brand-home #ablauf .eyebrow{color:var(--klein-ton)}
+.brand-home #ablauf :is(.lead,.step p){color:var(--text-ton)}
+.brand-home #ablauf .step{border-top-color:var(--linie-warm)}
+.brand-home #ablauf .step .n{color:var(--gold-tief)}
+.brand-home #ablauf :focus-visible{outline-color:var(--blue)}
+
+/* Infostreifen: die alte Regel .hero :is(...,.hero-signature a) hat (0,3,1) */
+body.brand-home .hero.hero-split .hero-footer :is(.hero-signature,.hero-signature span,.hero-ident span){color:var(--klein-ton)}
+body.brand-home .hero.hero-split .hero-footer :is(.hero-signature a,.hero-ident a){color:var(--blue)}
