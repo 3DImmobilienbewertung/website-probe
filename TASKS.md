@@ -175,6 +175,26 @@ Inhaber dürfen das nicht führen. Weder eigenmächtig ändern noch stehen lasse
 Manager, danach Redeploy. CC kann es nicht prüfen — der Vercel-Connector
 bekommt 403 auf Umgebungsvariablen.
 
+### T-22 · Dubletten auf den übrigen 15 Ortsseiten
+**Status: offen · Eigentümer: GPT (Entwurf) → CC (Abnahme)**
+Isernhagen, Burgwedel und Schwarmstedt sind seit `1e9920f` eigenständig
+formuliert (geteilte Sätze jetzt 17–19 %, vorher bis 49 %). Die anderen 15
+Ortsseiten teilen noch 40–52 % ihrer Sätze untereinander. Je Seite den Block
+„Leistungen / Welche Bewertung benötigen Sie wirklich?“, die FAQ-Antworten
+und die vier Ablauf-Schritte mit echten Ortsbezügen (Ortsteile,
+Bodenrichtwert-Zonen aus der eigenen Tabelle) neu schreiben. FAQ in JSON-LD
+und sichtbarem Text identisch halten. Keine erfundenen Zahlen, keine
+Anerkennungszusagen. Reihenfolge: Langenhagen, Seelze, Garbsen, Laatzen,
+dann der Rest. Messung: Satzvergleich gegen alle anderen Seiten < 20 %.
+
+### T-23 · Apex-Weiterleitung 307 → 308
+**Status: offen · Eigentümer: Inhaber**
+`https://3dimmobilienbewertung.de/` leitet mit **307 (vorläufig)** auf www.
+Die Apex-Domain hängt an keinem Projekt im Team `3dimmobilienbewertungs-projects`
+(Vercel-API: nur `www` im Projekt `website-probe`). In Vercel unter
+Domains prüfen, wo die Apex-Domain liegt, und auf „Redirect to
+www.3dimmobilienbewertung.de · 308 Permanent“ stellen.
+
 ---
 
 ## Fertig
@@ -190,6 +210,7 @@ bekommt 403 auf Umgebungsvariablen.
 | T-07 | Inline-Zentrierungen aus `index.html` | CC | `98c0eca` |
 | T-13a | Kinematischer Hero auf der Startseite | CC | `9c1509f` |
 | T-07b | 51 Inline-Zentrierungen an `.sec-head` entfernt, 25 Dateien | CC | `1b27bb8` |
+| T-21b | Textbausteine Isernhagen/Burgwedel/Schwarmstedt eigenständig, FAQ-Schema nachgezogen | CC | `1e9920f` |
 | T-15 | Redesign von `.brand-home` auf `.brand-editorial` ausgeweitet — gilt jetzt für alle 54 Seiten | CC | `1b27bb8` |
 
 **Ladegewicht gesamt:** rund 118 KB leichter als am Morgen des 21.10. — eine
