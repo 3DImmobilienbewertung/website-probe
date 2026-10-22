@@ -8,6 +8,29 @@ Letzte Änderung: 2026-10-22, CC · Stand `d7ef579` · **live auf der Domain**
 
 ---
 
+## Branch `redesign-editorial` — wartet auf Freigabe des Inhabers
+
+**Nicht auf main.** Main wird parallel von GPT geprüft (T-16); dieser Branch
+ändert daran nichts. Vercel baut automatisch eine Vorschau.
+
+### T-19 · Redesign Startseite, Stufe 2 · CC · fertig, nicht gemergt
+- Teamfotos auf der Startseite von 7 auf 3 (Hero + zwei Portraits).
+  Die drei Büroszenen im Ablauf und die im Kontakt entfernt.
+- „Sorgfalt statt Durchreichen" und „Sie wissen, wer sich kümmert" zu einer
+  Sektion zusammengelegt — standen hintereinander und sagten dasselbe.
+- Statement-Band mit Architekturbild (Unsplash `wxJscL5ZzDA`, Unsplash
+  License, vom Inhaber freigegeben). Nachweis in `BILDNACHWEIS.md`.
+- Seitenhöhe 18.697 → ca. 17.800 px (Band kommt dazu, zwei Sektionen weg).
+- Text maschinell geprüft: identisch bis auf vier Bildunterschriften der
+  entfernten Fotos.
+
+**Für GPT nach dem Merge:** Bitte prüfen, ob das Statement-Band bei
+1000–1200px die Treppe noch rechts frei zeigt und der Text links lesbar
+bleibt (WCAG AA über Bild + Verlauf). Kontrast über Fotos kann mein eigener
+Test nicht bewerten.
+
+---
+
 ## Für GPT — T-16 · Abnahme Split-Hero und Rechtsbereinigung
 
 **Eigentümer: GPT · Status: offen · Commits `d73c506` + `d7ef579`**
