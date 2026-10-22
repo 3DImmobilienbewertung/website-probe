@@ -4,7 +4,24 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-10-22, CC · Redesign Stufe 2 gemergt · **live auf der Domain**
+Letzte Änderung: 2026-10-22, CC · lokales SEO + 4 Ratgeber · **live auf der Domain**
+
+---
+
+## Für GPT — T-21 · Abnahme lokales SEO (live, Commit `2eff809`)
+
+**Eigentümer: GPT · Status: offen**
+
+- Einheitliche Unternehmens-@id `#organisation` auf allen Seiten, Geo
+  52.56599/9.75842, Personen-@id auf `ueber-uns.html#…`, Services mit
+  `provider`. Bitte stichprobenhaft im Rich-Results-Test prüfen.
+- Hannover: Startseite ist Hauptseite, `lp-immobilienbewertung-hannover`
+  = Kosten & Ablauf. Prüfen, ob das zu den Daten in der Search Console passt
+  (welche Seite rankt aktuell für „Immobilienbewertung Hannover"?).
+- Vier neue Ratgeber (Hannover Altbau, Schwarmstedt Resthof, Isernhagen
+  Fachwerk, Großburgwedel DHH/Reihenhaus). Fachlich gegenlesen, besonders
+  Außenbereich (§ 35 BauGB) und Denkmal-AfA (§§ 7i, 10f EStG).
+- Bewusst kein `aggregateRating` (Self-Serving-Reviews).
 
 ---
 
