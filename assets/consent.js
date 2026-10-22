@@ -67,8 +67,15 @@
   // Kampagne deshalb nicht auswaehlbar.
   var META_PIXEL_ID = '2126043741457881';
 
+  // Das Skript von connect.facebook.net wird erst nach Einwilligung geladen.
+  // Vorher hielt der Pixel Ereignisse zwar zurueck ("revoke"), der Abruf
+  // allein uebermittelte Meta aber schon die IP-Adresse. Ohne Einwilligung
+  // gingen ohnehin keine Ereignisse raus - Leads meldet zusaetzlich die
+  // Conversions API serverseitig.
   function ladeMetaPixel() {
-    if (!META_PIXEL_ID) return;
+    if (!META_PIXEL_ID || window.fbq) return;
+    var c = getConsent();
+    if (!c || !c.analytics) return;
     /* eslint-disable */
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
@@ -79,10 +86,6 @@
       s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
     }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     /* eslint-enable */
-    // Erst nach Einwilligung Cookies setzen; vorher laeuft der Pixel
-    // im eingeschraenkten Modus.
-    var c = getConsent();
-    if (!c || !c.analytics) { try { fbq('consent', 'revoke'); } catch (e) {} }
     fbq('init', META_PIXEL_ID);
     fbq('track', 'PageView');
   }
@@ -191,6 +194,7 @@
       if (window.fbq) fbq('consent', analyticsAllowed ? 'grant' : 'revoke');
     } catch (e) {}
     setCookie(CONSENT_KEY, JSON.stringify({ analytics: analyticsAllowed, ts: Date.now() }), CONSENT_DURATION);
+    if (analyticsAllowed) ladeMetaPixel();
   }
 
   // ─── Banner HTML ───────────────────────────────────────────

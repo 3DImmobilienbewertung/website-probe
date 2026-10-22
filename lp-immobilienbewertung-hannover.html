@@ -184,6 +184,8 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
 </style>
 <!-- faq-schema-added -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet eine Immobilienbewertung in Hannover?","acceptedAnswer":{"@type":"Answer","text":"Die Preise variieren je nach Objektart, Umfang und Zweck. Das Erstgespräch ist kostenlos – darin nennen wir Ihnen einen transparenten Festpreis ohne versteckte Kosten."}},{"@type":"Question","name":"Wie schnell kenne ich den Preis meiner Immobilie?","acceptedAnswer":{"@type":"Answer","text":"Eine erste Rückmeldung erhalten Sie binnen 24 Stunden. Das fertige Gutachten liegt in der Regel innerhalb von ein bis zwei Wochen nach der Begehung vor."}},{"@type":"Question","name":"In welchen Orten bewerten Sie Immobilien?","acceptedAnswer":{"@type":"Answer","text":"Wir sind im gesamten Raum Hannover für Sie da – u. a. in Hannover, Wedemark, Großburgwedel, Isernhagen, Burgwedel, Langenhagen, Garbsen und Gehrden."}}]}</script>
+<link rel="preload" as="font" type="font/woff2" href="/assets/hanken-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/bricolage-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
 <link rel="stylesheet" href="/assets/brand-components.css?v=20261021c">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
@@ -196,7 +198,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
 
 <header class="nav brand-header">
   <div class="nav-inner">
-    <a href="/" aria-label="3D Immobilienbewertung"><img src="assets/logo.png" alt="3D Immobilienbewertung Hannover" class="logo-img" width="594" height="160" decoding="async" /></a>
+    <a href="/" aria-label="3D Immobilienbewertung"><img src="/assets/logo-420.webp" alt="3D Immobilienbewertung Hannover" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-cta">
       <a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> +49 (0) 174 744 5452</a>
       <a href="#anfrage" class="btn btn-primary">Kostenloses Erstgespräch</a>
@@ -412,7 +414,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:50px 0 
   <div class="office-footer-inner">
     <div class="office-footer-grid">
       <div class="office-footer-brand">
-        <a href="/" aria-label="3D Immobilienbewertung – Startseite"><img class="office-footer-logo" src="/assets/logo_white.png" width="594" height="160" loading="lazy" decoding="async" alt="3D Immobilienbewertung"></a>
+        <a href="/" aria-label="3D Immobilienbewertung – Startseite"><img class="office-footer-logo" src="/assets/logo-420.webp" width="594" height="160" loading="lazy" decoding="async" alt="3D Immobilienbewertung"></a>
         <p>Persönliche Immobilienbewertung in Hannover und der Region. Bauingenieurwesen und Architektur – gemeinsam für Ihre Immobilie.</p>
         <address>Donnarumma &amp; Donnarumma GbR<br>Gailhoferstraße 17 · 30900 Wedemark<br><a href="tel:+491747445452">0174 744 5452</a><br><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></address>
       </div>
@@ -452,7 +454,7 @@ document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
 document.querySelectorAll('.faq button').forEach(function(b){b.addEventListener('click',function(){var f=b.parentElement,a=f.querySelector('.ans'),o=f.classList.contains('open');document.querySelectorAll('.faq').forEach(function(x){x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null});if(!o){f.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}})});
 document.getElementById('leadForm').addEventListener('submit',async function(e){e.preventDefault();var btn=this.querySelector('button[type=submit]');var n=lfName.value,m=lfMail.value,t=lfTel.value,o=lfObj.value,ort=lfOrt.value;if(!n||!m){alert('Bitte Name und E-Mail angeben.');return;}btn.disabled=true;btn.textContent='Wird gesendet…';try{var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:m,phone:t,objekt:o,anlass:ort,message:''})});if(r.ok){document.getElementById('leadForm').innerHTML='<div style="text-align:center;padding:32px 16px"><div style="font-size:48px;margin-bottom:16px"></div><h3 style="color:#16365C;margin-bottom:8px">Anfrage gesendet!</h3><p style="color:#5a7088">Wir melden uns binnen 24 Stunden.</p></div>';}else{btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}catch(err){btn.disabled=false;btn.textContent='Kostenloses Erstgespräch anfragen →';alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');}});
 </script>
-<script src="assets/consent.js?v=20260815b"></script>
+<script src="assets/consent.js?v=20261022"></script>
 <script src="/assets/motion.js?v=20261022b" defer></script>
 </body>
 </html>

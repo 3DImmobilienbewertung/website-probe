@@ -66,6 +66,8 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 .sr{opacity:1;transform:none}.post-meta{flex-wrap:wrap}.post-card h2{overflow-wrap:break-word}.post-card h2 a{color:inherit;text-decoration:none}.post-card h2 a:hover{text-decoration:underline}@media(max-width:380px){.nav-inner{padding:0 16px;gap:12px}.nav-right .btn{padding:10px;font-size:12px}.logo-img{height:25px}.post-body{padding:20px}}
 </style>
 <noscript><style>.sr{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="preload" as="font" type="font/woff2" href="/assets/hanken-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/bricolage-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
 <link rel="stylesheet" href="/assets/brand-components.css?v=20261021c">
 <link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261022n">
@@ -75,7 +77,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
 <div class="wrap">
 <header class="nav brand-header">
   <div class="nav-inner">
-    <a href="/"><img src="../assets/logo.png" alt="3D Immobilienbewertung Logo" class="logo-img" width="594" height="160" decoding="async" /></a>
+    <a href="/"><img src="/assets/logo-420.webp" alt="3D Immobilienbewertung Logo" class="logo-img" width="594" height="160" decoding="async" /></a>
     <div class="nav-right">
       <a href="tel:+491747445452" class="nav-phone"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/office-icons.svg#phone"></use></svg> 0174 744 5452</a>
       <a href="/#wertcheck" class="btn btn-primary">Kostenlos anfragen</a>
@@ -301,7 +303,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
   <div class="office-footer-inner">
     <div class="office-footer-grid">
       <div class="office-footer-brand">
-        <a href="/" aria-label="3D Immobilienbewertung – Startseite"><img class="office-footer-logo" src="/assets/logo_white.png" width="594" height="160" loading="lazy" decoding="async" alt="3D Immobilienbewertung"></a>
+        <a href="/" aria-label="3D Immobilienbewertung – Startseite"><img class="office-footer-logo" src="/assets/logo-420.webp" width="594" height="160" loading="lazy" decoding="async" alt="3D Immobilienbewertung"></a>
         <p>Persönliche Immobilienbewertung in Hannover und der Region. Bauingenieurwesen und Architektur – gemeinsam für Ihre Immobilie.</p>
         <address>Donnarumma &amp; Donnarumma GbR<br>Gailhoferstraße 17 · 30900 Wedemark<br><a href="tel:+491747445452">0174 744 5452</a><br><a href="mailto:info@3dimmobilienbewertung.de">info@3dimmobilienbewertung.de</a></address>
       </div>
@@ -329,7 +331,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.55);padding:40px 0}
   </div>
 </footer>
 </div>
-<script src="../assets/consent.js"></script>
+<script src="../assets/consent.js?v=20261022"></script>
 <script>
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.1});
 document.querySelectorAll('.sr').forEach(el=>io.observe(el));
