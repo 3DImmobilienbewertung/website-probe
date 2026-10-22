@@ -4,7 +4,142 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-10-22, CC · lokales SEO + 4 Ratgeber · **live auf der Domain**
+Letzte Änderung: 2026-10-23, CC · T-26 Prüfauftrag GPT umgesetzt · **live, Commit `7d8089c`**
+
+---
+
+## T-26 · Prüfauftrag GPT (Basis `1196f2c`) — Abschlussbericht CC, 23.10.2026
+
+**Status: umgesetzt, gepusht, deployt, live geprüft.** Commit `7d8089c` auf `main`
+(fast-forward von `d838d34`, kein Force-Push). Vercel-Deployment
+`dpl_E4t3jNkME8XucpuTgBWzaJLRxy9H` = READY (Production). Screenshots:
+`docs/abnahme-2026-10-23/` (nicht öffentlich ausgeliefert).
+
+### Was geändert wurde
+- **Fehler:** `/#vorteile` im Rechner → `/#warum` (Sprungziel bleibt beim
+  zusammengelegten Abschnitt). Diashow neu in `assets/diashow.js`: nur
+  geladene **und** dekodierte Bilder rotieren, Ausfälle werden übersprungen,
+  ein gültiges Startbild bleibt, Cache-Treffer erkannt, spätere Ladefehler
+  (Quellwechsel) entfernen die Folie. Pause/Fortsetzen-Taste in der (nicht
+  mehr aria-hidden) Figur, `type=button`, Enter/Leertaste getestet. Ohne JS /
+  reduzierte Bewegung: stilles Startbild, keine Taste, kein Nachladen.
+  Hero-Aktionen ohne Einblendverzögerung.
+- **Formulare (zusätzlicher Befund):** Startseiten-Kontaktformular hatte kein
+  `r.ok`, Fehler per `alert()`, „garantiert binnen 24 Stunden“ → jetzt HTTP- und
+  `{ok:true}`-Prüfung, sichtbare Fehlerbox mit Telefonnummer, Doppelklickschutz,
+  Fokus. `lp-immobilienbewertung-hannover`/`lp-haus-bewerten-hannover` ebenso
+  (vorher `alert()` ohne Telefonnummer).
+- **Einstieg:** H1 unverändert; „Wir verstehen Gebäude. Damit Sie ihren Wert
+  nachvollziehen können.“; Kompetenzhinweis mit beiden Namen; direkt an der
+  Hauptaktion: Telefon, ★ 5,0 · 78 Google-Bewertungen (Link Google-Profil),
+  WhatsApp, Hinweis kostenlos/kostenpflichtig. Mobil alles vor dem Foto.
+- **Bild:** Startbild = gemeinsames Arbeitsfoto (`hero-team-*`, 1536 px Quelle,
+  Darstellung max. 720 px → keine Hochrechnung); Rathaus, Luftbild, Herrenhausen
+  ergänzen. Ausschnitt bei 375/1000/1100/1200/1440 geprüft: beide Gesichter,
+  Hände, Tablet im Bild. Fassade-Motiv entfernt.
+- **Leistungen:** vier Gutachtenarten mit Anlass / Sie erhalten / Umfang & Zweck
+  / Preis, ausschließlich aus vorhandenen Angaben (Preisratgeber):
+  Kurzgutachten ab 490 € (nicht für Gericht/Finanzamt), Immobiliengutachten
+  ab 890 € (ausführlich, private Zwecke), Verkehrswertgutachten (Preis nach
+  Objekt, Vorlage bei Dritten, Annahme entscheidet die Stelle), RND 1.490 €.
+- **Wiederholungen gebündelt:** „Persönlich betreut“ + „Sorgfalt statt
+  Durchreichen / Sie wissen, wer sich kümmert“ → ein Abschnitt; Infostreifen
+  unter dem Hero und doppeltes Teamfoto entfallen; Treppenband-Titel geändert,
+  damit „verstehen Gebäude“ nicht doppelt steht. Keine Links/IDs verloren
+  (redesign-preservation.py).
+- **Hauptaktion** auf allen Seiten „Kostenloses Erstgespräch anfragen“ (85
+  Schaltflächen). Bewusst nicht geändert: kurze „Erstgespräch“-Knöpfe in engen
+  Mobilleisten, RND-„Ersteinschätzung“ (eigene Leistung).
+- **Bewertungen:** 78 auf 32 Seiten, keine 76 mehr. **Öffentlich geprüft** am
+  23.10.2026 auf Google Maps (cid 6207380212816867001): „5,0 (78)“. Kein
+  aggregateRating-Markup.
+- **WhatsApp (Befund: war per CSS `display:none`, live unsichtbar):** Nummer
+  +49 174 7445452 = Telefonnummer, Link `wa.me/491747445452?text=…` geprüft (nicht
+  gesendet). Jetzt: Kopfzeile (Desktop, Icon mit aria-label), mobile
+  Kontaktleiste (Icon), Hero (Textlink). SVG statt Emoji, Fokusrahmen, kleiner
+  als Hauptaktion, kein schwebender Knopf mehr → keine Überlagerung mit
+  Cookie-Banner/Formularen. Kein Tracking ergänzt.
+- **Kontrast Treppenband:** über reale Bildpixel bei 375/768/1000/1100/1200/1440
+  und je 9 Parallaxe-Positionen gerechnet (162 Messpunkte). Vorher Fließtext bei
+  1100/1440 an hellen Stufen 3,4–3,5:1 → Verlauf verstärkt, jetzt ≥ 6,2:1
+  (H2 ≥ 8,4:1, Kicker ≥ 5,7:1). Skript: scratchpad `kontrast_band.py`.
+- **CSS:** tote Regeln entfernt (Infostreifen, alte Diashow, Teamfigur,
+  warum-merged, ungenutzte CTA-Klassen); geprüft, dass Anfang/Mitte/Ende greifen.
+  **Keine Bündelung**: die Seiten nutzen 12 verschiedene Kombinationen der 6
+  Dateien; ohne Build-Schritt laufen Bündel und Einzeldateien auseinander.
+- **Bildnachweis** mit Fotografen, Quellen, Aufnahmeort, allen Varianten und
+  dem Hinweis, dass die Unsplash-Lizenz keine Drittrechte klärt. Treppenfoto
+  stammt aus London (nur dekorativ, nirgends als Hannover bezeichnet).
+- Nandino-Porträt 125 → 59 KB (Budget 80 KB, 1:1-Vergleich ohne sichtbaren
+  Unterschied); 10 unbenutzte Hero-Varianten gelöscht.
+- Laatzen/Schwarmstedt: ausdrücklicher Satz „keine zusätzliche Niederlassung“
+  wiederhergestellt (war bei der Entdopplung am 22.10. verloren gegangen).
+
+### Tests (lokal, vor dem Push)
+| Test | Ergebnis |
+|---|---|
+| site-seo.py, local-seo.py, office-icons.py, office-photography.py, portraits.py, redesign-preservation.py, regional-content.py, regional-design.py, regional-landings.py, seo-improvements.py, site-design.py | 11/11 PASS |
+| home-funnel.cjs, editorial-ui.cjs, local-ui.cjs, **hero-slideshow.cjs (neu)** | 4/4 PASS — **ohne Node**, mit Node-Ersatz auf macOS-JavaScriptCore (`jsc`); Gegenprobe: absichtlich falsche Assertion wird als FAIL erkannt |
+| indexnow.cjs | **nicht ausgeführt** (braucht `URL`, `AbortSignal`, `assert.rejects`; Skript unverändert) |
+| preview-server.cjs | **nicht ausgeführt** (braucht `node:http`; `api/contact.js` unverändert) |
+
+**Testpflege, nicht abgeschwächt:** 8 Python-Tests scheiterten schon an `1196f2c`
+(Stände von Ende September). Erwartungen auf den freigegebenen Stand gezogen:
+31→78 Bewertungen (und 22/31/76 jetzt verboten), Versionsnummern →
+Einheitlichkeitsprüfung, Hero-Erwartung → Teamfoto-Startbild mit
+Auflösungsprüfung, Seitenzahl 53→57 mit Namensliste der 4 neuen Ratgeber,
+Brücken 8→12 mit Namensliste, Portrait-Budget inkl. neuem Porträt (dabei
+echtes Übergewicht gefunden und behoben), redesign-preservation neu
+gegen den letzten Live-Stand `d838d34` mit ausdrücklichen Ausnahmen.
+Echter Fehler durch local-seo.py gefunden: schema `dateModified` ≠ Sitemap →
+`scripts/sync-lastmod.py`.
+
+### Browser- und Funktionsprüfung (getrennt dokumentiert)
+- **DOM/Browser lokal (Chromium-Fenster, kein echtes Smartphone):** 375, 768,
+  1000, 1100, 1200, 1440 px — kein horizontaler Überlauf auf Start, Rechner,
+  RND-Landingpage, Über uns, Isernhagen, Schwarmstedt, Wunstorf, Hemmingen,
+  Uetze, Erbschaft, Wohnungsbewertung, LP Hannover, Blogartikel; keine
+  herausragenden/umbrechenden Kopf-CTAs.
+- **Diashow:** alle 4 Motive geladen und angezeigt; echter Ladefehler im
+  Browser simuliert (fehlende Datei) → Motiv ausgelassen, Rotation läuft weiter.
+- **Tastatur:** Tab-Reihenfolge Kopf → Hero logisch, überall sichtbarer
+  Fokusrahmen (2–3 px), Pause-Taste per Enter/Leertaste.
+- **Formulare (lokal, `fetch` im Testfenster ersetzt — keine Anfrage ans
+  Postfach):** Funnel: 4 Schritte, Zusammenfassung, Zurück mit erhaltenen
+  Eingaben, Pflichtfelder (leerer Name, ungültige E-Mail) mit Fokus,
+  Fehlerfall mit Hinweisbox, Erfolg mit Fokus auf Danke-Überschrift.
+  Kontaktformular Startseite und beide LPs: HTTP 500 trotz `{ok:true}` →
+  Fehler; Netzwerkfehler → Fehler; Erfolg → Bestätigung.
+- **Accessibility-Baum:** animierte Überschriften haben vollständige Sätze als
+  Namen (z. B. „Aus Planung und Sanierung zur Bewertung.“).
+- **Screenreader real (VoiceOver/NVDA): nicht ausgeführt.** VoiceOver
+  einzuschalten hätte Systemeinstellungen verändert.
+- **Handy-Messung auf echtem Gerät: nicht ausgeführt.**
+- **Labormessung (PageSpeed) nach dem Release: nicht erfolgreich.** API-Kontingent
+  erschöpft (429); Weboberfläche: Lauf 1 `net::ERR_TIMED_OUT` (Seite antwortete
+  hier zeitgleich in 0,2 s, kein Vercel-Angriffsschutz aktiv), Lauf 2 nicht
+  beendet. Letzte gültige Messung: 22.10. vor diesem Release, mobil 79 / LCP
+  4,8 s. **Keine Aussage über Ladezeitverbesserung durch dieses Release.**
+
+### Live-Check nach Deployment (23.10.2026)
+- 8 Seiten HTTP 200 und **byte-identisch mit dem Commit**; 78 Bewertungen
+  sichtbar, keine 76; Telefonlinks überall, WhatsApp-Link auf der Startseite
+  (3 Platzierungen, öffnet in neuem Tab, nicht gesendet).
+- Hero-, Diashow-, CSS- und Skriptdateien 200; `TASKS.md` weiterhin 404.
+- Startseite mobil/desktop optisch geprüft (Screenshots 01–04); Funnel live
+  bis Schritt 4 und zurück bedient, **nicht abgeschickt**.
+- Meta-Pixel lädt live vor Zustimmung nicht.
+
+### Offen
+| Nr. | Punkt | Bei |
+|---|---|---|
+| T-17/T-25 | Ungeklärte Kundenstimmen auf Ortsseiten (u. a. „rechtssicher“ im Zitat Hemmingen) — nicht verifiziert, nicht umformuliert | Inhaber |
+| T-18 | „98 % unserer Gutachten wurden anerkannt“ (RND-Seite) — Nachweis offen, unverändert, nicht als geprüft gekennzeichnet | Inhaber |
+| T-23 | Apex-Weiterleitung 307 → 308 | Inhaber (Vercel) |
+| T-24 | Ladezeit: PageSpeed erneut messen; CSS-Bündelung nur mit Build-Schritt | CC |
+| T-27 | Fehlertext des Funnels nennt die Nummer nur als Text (kein tel-Link; Test-Harness müsste erweitert werden) | CC, niedrig |
+| T-28 | WhatsApp nur auf der Startseite; Unterseiten bisher ohne | Inhaber-Entscheidung |
+| — | indexnow.cjs/preview-server.cjs mit echtem Node ausführen | CC/GPT |
 
 ---
 
