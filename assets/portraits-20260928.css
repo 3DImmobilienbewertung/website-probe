@@ -23,8 +23,10 @@
 }
 /* Pro Person nachjustiert, damit die Augen auf einer Hoehe liegen.
    Nandino steht im Original hoeher im Bild als Vito. */
-.brand-home .member:nth-child(1) .member-photo .office-portrait{object-position:center 24%;transform:scale(1.16)}
-.brand-home .member:nth-child(2) .member-photo .office-portrait{object-position:center 14%;transform:scale(1.17)}
+/* Nandino: Studioportrait seit 2026-10-22, Kopf im Original groesser als bei Vito -
+   daher kaum Zoom, Ausschnitt etwas hoeher, damit die Augenlinien fluchten. */
+.brand-home .member:nth-child(1) .member-photo .office-portrait{object-position:center 42%;transform:none}
+.brand-home .member:nth-child(2) .member-photo .office-portrait{object-position:center 14%;transform:scale(1.22)}
 
 /* Weicher Uebergang zur Karte, damit der Freisteller nicht abrupt endet. */
 .brand-home .member-photo::after{
