@@ -99,8 +99,29 @@
   padding-bottom:clamp(30px,3.6vw,52px);
 }
 @media(min-width:1000px){
+  /* Das Foto laeuft bis an den rechten Bildschirmrand, in voller Hoehe,
+     ohne Rundung und ohne Rahmen. Das ist der strukturelle Unterschied
+     zur Referenz: dort fuellt Fotografie die Flaeche, statt als Kachel
+     in einem farbigen Kasten zu liegen. */
+  .brand-home .hero.hero-split{min-height:min(88vh,840px);display:flex;flex-direction:column}
   .brand-home .hero-split .hero-grid{
-    grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+    grid-template-columns:minmax(0,1fr) minmax(0,.96fr);
+    max-width:none;
+    padding-left:max(20px,calc((100vw - 1184px)/2));
+    padding-right:0;
+    padding-top:0;padding-bottom:0;
+    align-items:stretch;
+    flex:1;
+  }
+  .brand-home .hero-split .hero-copy{
+    align-content:center;
+    padding-block:clamp(96px,12vh,140px) clamp(30px,3.6vw,52px);
+  }
+  .brand-home .hero-split .hero-figure,
+  .brand-home .hero-split picture{height:100%}
+  .brand-home .hero-split .hero-portrait{
+    height:100%;width:100%;aspect-ratio:auto;object-fit:cover;
+    object-position:center 20%;border-radius:0;
   }
 }
 .brand-home .hero-split .hero-copy{
@@ -131,7 +152,7 @@
 .brand-home .hero-split .hero-portrait{
   display:block;width:100%;height:auto;
   aspect-ratio:920/1024;object-fit:cover;object-position:center 18%;
-  border:0;border-radius:2px;
+  border:0;border-radius:0;
 }
 @media(max-width:999px){
   /* Gestapelt: Querformat, damit das Foto nicht den halben Bildschirm frisst */
@@ -169,3 +190,22 @@
      ohne an den Rand zu stossen. */
   .brand-home .hero-split h1{font-size:clamp(1.85rem,8.2vw,2.2rem)}
 }
+
+/* Keine abgerundeten Kacheln im Hero. Die Referenz kennt keine Radien;
+   jede Rundung laesst eine Flaeche wie ein Widget wirken. */
+.brand-home .hero-split :is(img,picture,figure,.btn){border-radius:0}
+.brand-home .hero-split .btn{box-shadow:none}
+.brand-home .hero-split .btn-primary{background:var(--gold);color:#102B4C;border:0}
+.brand-home .hero-split .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.brand-home .hero-split .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.07)}
+@media(min-width:1000px){.brand-home .hero-split h1{font-size:clamp(2.2rem,3.9vw,3.5rem)}}
+/* "Immobilienbewertung" ist das laengste Wort und bestimmt die Groesse.
+   Bei 4,3rem stiess es mit 0px Abstand ans Foto. */
+.brand-home .hero-split .hero-heading{padding-right:clamp(12px,2vw,32px)}
+/* Infostreifen streckt sich ueber die volle Breite und fluchtet mit dem
+   Text darueber. In der Flex-Spalte schrumpfte er sonst auf 909px. */
+.brand-home .hero-split .hero-footer{width:100%;align-self:stretch}
+.brand-home .hero-split .hero-footer .container{width:100%}
+
+/* Schmalgeraete zuletzt, damit keine spaetere Regel sie ueberschreibt. */
+@media(max-width:420px){.brand-home .hero-split h1{font-size:clamp(1.85rem,8.2vw,2.2rem)}}
