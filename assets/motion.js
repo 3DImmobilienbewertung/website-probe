@@ -56,6 +56,29 @@
     }, 1500);
   });
 
+  // Diashow im Hero: das erste Bild laedt sofort, die weiteren erst nach
+  // dem vollstaendigen Seitenaufbau. Die Ueberblendung startet erst, wenn
+  // alle da sind - sonst wuerde in eine leere Flaeche geblendet.
+  var diashow = document.querySelector('.hero-slides');
+  if (diashow) {
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var bilder = diashow.querySelectorAll('img[data-src]'), offen = bilder.length;
+        function geladen() { if (--offen <= 0) diashow.classList.add('diashow-bereit'); }
+        [].forEach.call(diashow.querySelectorAll('source[data-srcset]'), function (s) {
+          s.srcset = s.getAttribute('data-srcset');
+        });
+        [].forEach.call(bilder, function (img) {
+          img.addEventListener('load', geladen, { once: true });
+          img.addEventListener('error', geladen, { once: true });
+          img.srcset = img.getAttribute('data-srcset');
+          img.src = img.getAttribute('data-src');
+        });
+        if (!offen) diashow.classList.add('diashow-bereit');
+      }, 800);
+    });
+  }
+
   // Leichte Parallaxe auf grossflaechigen Bildern
   var bilder = document.querySelectorAll('[data-parallax]');
   if (!bilder.length) return;
