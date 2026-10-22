@@ -176,7 +176,7 @@ Manager, danach Redeploy. CC kann es nicht prüfen — der Vercel-Connector
 bekommt 403 auf Umgebungsvariablen.
 
 ### T-22 · Dubletten auf den übrigen 15 Ortsseiten
-**Status: offen · Eigentümer: GPT (Entwurf) → CC (Abnahme)**
+**Status: fertig (CC, `d571b30`) · GPT: bitte gegenlesen** — geteilte Sätze jetzt 9–15 %, Laatzen/Celle entzwillingt, „rechtssicher“ und Vergleichsbehauptungen entfernt. Prüfauftrag an GPT: Ortsangaben auf Plausibilität (Ortsteile, Zonen aus der jeweils eigenen Bodenrichtwerttabelle), keine Anerkennungszusagen.
 Isernhagen, Burgwedel und Schwarmstedt sind seit `1e9920f` eigenständig
 formuliert (geteilte Sätze jetzt 17–19 %, vorher bis 49 %). Die anderen 15
 Ortsseiten teilen noch 40–52 % ihrer Sätze untereinander. Je Seite den Block
@@ -194,6 +194,12 @@ Die Apex-Domain hängt an keinem Projekt im Team `3dimmobilienbewertungs-project
 (Vercel-API: nur `www` im Projekt `website-probe`). In Vercel unter
 Domains prüfen, wo die Apex-Domain liegt, und auf „Redirect to
 www.3dimmobilienbewertung.de · 308 Permanent“ stellen.
+
+### T-24 · Ladezeit Mobil
+**Status: teilweise erledigt (CC, `4935d7f`)** — PSI mobil vorher 73, LCP 6,1 s. Erledigt: Hero 700w, LCP-Preload, Font-Preload, WebP-Logo. Offen: sechs render-blockierende CSS-Dateien (Bündelung erst, wenn das Redesign stabil ist, sonst laufen Bündel und Einzeldateien auseinander).
+
+### T-25 · Kundenstimmen auf Ortsseiten (T-17) – zusätzlich „rechtssicher“ im Zitat
+**Status: beim Inhaber** — Hemmingen zeigt „Martina & Jürgen F.“ mit „präzise, schnell und rechtssicher“. Gleiche Entscheidung wie T-17.
 
 ---
 
