@@ -222,3 +222,54 @@
 .brand-home .warum-punkte>.container{max-width:none;padding:0;margin:0}
 .brand-home .warum-punkte .sec-head{margin-bottom:28px}
 .brand-home .warum-punkte .sec-head .section-title{font-size:clamp(1.5rem,2.2vw,1.9rem)}
+
+/* =====================================================================
+   Statement-Band — vollflaechiges Architekturbild mit grosser Aussage.
+   Das Stilmittel der Referenz, fuer das die eigenen Bueroaufnahmen zu
+   hell sind. Bild: Unsplash wxJscL5ZzDA, Unsplash License, rein
+   dekorativ (alt="") - es wird nicht als eigenes Projekt ausgegeben.
+   ===================================================================== */
+.brand-editorial section.statement-band{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:flex;align-items:flex-end;
+  min-height:min(78vh,760px);
+  padding:0;border:0;background:#0e2440;color:#fff;
+}
+.statement-band .statement-media{position:absolute;inset:0;z-index:-1}
+.statement-band .statement-media img{
+  width:100%;height:100%;object-fit:cover;object-position:right 62%;display:block;
+}
+.statement-band .statement-media::after{
+  content:"";position:absolute;inset:0;
+  /* Dunkel nur links, wo die Schrift steht; rechts bleibt die Treppe frei. */
+  background:
+    linear-gradient(90deg,rgba(14,36,64,.92) 0%,rgba(14,36,64,.74) 38%,rgba(14,36,64,.18) 72%,rgba(14,36,64,.05) 100%),
+    linear-gradient(to top,rgba(14,36,64,.55) 0%,rgba(14,36,64,0) 45%);
+}
+.statement-band .statement-inner{padding-block:clamp(80px,11vw,150px) clamp(56px,7vw,104px)}
+.statement-band .eyebrow{color:var(--gold)}
+.brand-editorial .statement-band h2{
+  color:#fff;font-size:clamp(2.1rem,5vw,4.4rem);line-height:1.02;
+  font-weight:500;letter-spacing:-.025em;max-width:15ch;margin:16px 0 22px;
+}
+.statement-band p{color:#d5dfea;max-width:58ch;font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.65;margin:0}
+.statement-band p strong{color:#fff}
+
+/* Dezente Bewegung ohne JavaScript: das Bild zieht beim Scrollen leicht
+   zurueck. Nur wo der Browser scroll-getriebene Animationen kann und
+   niemand reduzierte Bewegung eingestellt hat; sonst steht es still. */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .statement-band .statement-media img{
+      animation:band-zoom linear both;animation-timeline:view();animation-range:entry 0% exit 60%;
+    }
+    @keyframes band-zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+  }
+}
+
+@media(max-width:899px){
+  /* Gestapelt: Text ueber dem ganzen Bild, daher wieder Verlauf von unten */
+  .statement-band .statement-media::after{
+    background:linear-gradient(to top,rgba(14,36,64,.95) 0%,rgba(14,36,64,.78) 55%,rgba(14,36,64,.35) 100%);
+  }
+}
