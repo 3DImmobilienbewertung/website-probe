@@ -4,30 +4,45 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-10-22, CC · Stand `d7ef579` · **live auf der Domain**
+Letzte Änderung: 2026-10-22, CC · Redesign Stufe 2 gemergt · **live auf der Domain**
 
 ---
 
-## Branch `redesign-editorial` — wartet auf Freigabe des Inhabers
+## Für GPT — T-20 · Abnahme Redesign Stufe 2 (jetzt auf main, live)
 
-**Nicht auf main.** Main wird parallel von GPT geprüft (T-16); dieser Branch
-ändert daran nichts. Vercel baut automatisch eine Vorschau.
+**Eigentümer: GPT · Status: offen**
 
-### T-19 · Redesign Startseite, Stufe 2 · CC · fertig, nicht gemergt
-- Teamfotos auf der Startseite von 7 auf 3 (Hero + zwei Portraits).
-  Die drei Büroszenen im Ablauf und die im Kontakt entfernt.
-- „Sorgfalt statt Durchreichen" und „Sie wissen, wer sich kümmert" zu einer
-  Sektion zusammengelegt — standen hintereinander und sagten dasselbe.
-- Statement-Band mit Architekturbild (Unsplash `wxJscL5ZzDA`, Unsplash
-  License, vom Inhaber freigegeben). Nachweis in `BILDNACHWEIS.md`.
-- Seitenhöhe 18.697 → ca. 17.800 px (Band kommt dazu, zwei Sektionen weg).
-- Text maschinell geprüft: identisch bis auf vier Bildunterschriften der
-  entfernten Fotos.
+Vom Inhaber am 2026-10-22 freigegeben und gemergt. Fünf Commits, von
+`4f92e85` bis `d24d68f`. Was sich geändert hat:
 
-**Für GPT nach dem Merge:** Bitte prüfen, ob das Statement-Band bei
-1000–1200px die Treppe noch rechts frei zeigt und der Text links lesbar
-bleibt (WCAG AA über Bild + Verlauf). Kontrast über Fotos kann mein eigener
-Test nicht bewerten.
+- **Hero hell** (Papier `#F6F4F0`) statt Navy-Fläche, rechts eine Diashow mit
+  vier Hannover-Motiven (Unsplash, Nachweis `BILDNACHWEIS.md`).
+- **Teamfotos auf der Startseite von 7 auf 3.** Teamfoto (unbearbeitetes
+  Original) jetzt neben „Wir sind Nandino und Vito".
+- **Statement-Band** mit Architekturbild und Parallaxe.
+- **Bewegung nach bywater:** Hero per CSS-Animation, weitere Überschriften
+  Wort für Wort per `assets/motion.js`.
+- „Ablauf" hell; dunkel nur noch Treppen-Band und Footer.
+- Zwei inhaltsgleiche Sektionen zusammengelegt.
+
+**Bitte gezielt prüfen — hier bin ich unsicher:**
+
+1. **LCP der Startseite auf echtem Mobilgerät.** Das erste Diashow-Bild ist
+   das größte Element (88 KB, `fetchpriority="high"`). Die Hero-Schrift
+   animiert per CSS-Keyframes ab dem ersten Frame. Ich konnte das nur in
+   einem Browser messen, der im Hintergrund verzögert rendert.
+2. **Kontrast über Fotos.** Treppen-Band: weiße Schrift über Bild und
+   Verlauf. Mein Prüfskript bewertet Text über Bildern nicht.
+3. **Diashow bei 1000–1200px.** Die Bildspalte ist dort am schmalsten; prüfe,
+   ob die Hochformat-Ausschnitte (4:5) noch sinnvoll sitzen.
+4. **Screenreader und Wortanimation.** `motion.js` zerlegt Überschriften in
+   `<span>`-Elemente. Prüfe mit VoiceOver, ob sie als ganze Sätze vorgelesen
+   werden.
+5. **Rechte.** Alle vier Hannover-Bilder und das Treppenbild sind unter der
+   Unsplash License. Bitte gegenlesen, ob die Einbindung (dekorativ, `alt=""`,
+   nie als eigenes Objekt) aus deiner Sicht sauber ist.
+
+Rückmeldung bitte als BLOCKIEREND / WICHTIG / SPÄTER mit Datei:Zeile.
 
 ---
 
