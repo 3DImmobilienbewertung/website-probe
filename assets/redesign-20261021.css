@@ -209,3 +209,16 @@
 
 /* Schmalgeraete zuletzt, damit keine spaetere Regel sie ueberschreibt. */
 @media(max-width:420px){.brand-home .hero-split h1{font-size:clamp(1.85rem,8.2vw,2.2rem)}}
+
+/* Zusammengelegte Sektion "Sorgfalt statt Durchreichen" + "Sie wissen,
+   wer sich kuemmert". Beide standen direkt hintereinander und sagten
+   dasselbe. Jetzt eine Sektion: Aussage links, drei Punkte rechts. */
+@media(min-width:900px){
+  .brand-home .warum-merged>.container{
+    display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+    gap:clamp(40px,6vw,96px);align-items:start;
+  }
+}
+.brand-home .warum-punkte>.container{max-width:none;padding:0;margin:0}
+.brand-home .warum-punkte .sec-head{margin-bottom:28px}
+.brand-home .warum-punkte .sec-head .section-title{font-size:clamp(1.5rem,2.2vw,1.9rem)}
