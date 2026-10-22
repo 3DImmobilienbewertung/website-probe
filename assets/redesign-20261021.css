@@ -218,9 +218,12 @@
     gap:clamp(40px,6vw,96px);align-items:start;
   }
 }
-.brand-home .warum-punkte>.container{max-width:none;padding:0;margin:0}
-.brand-home .warum-punkte .sec-head{margin-bottom:28px}
-.brand-home .warum-punkte .sec-head .section-title{font-size:clamp(1.5rem,2.2vw,1.9rem)}
+/* Beide Bloecke liegen im selben Container. Vorher stand der zweite
+   ausserhalb und ohne Randabstand - er klebte links am Bildschirmrand. */
+.brand-home .warum-aussage,.brand-home .warum-punkte{min-width:0}
+.brand-home .warum-aussage .lead{margin-left:0;max-width:44ch}
+.brand-home .warum-punkte .section-title{font-size:clamp(1.5rem,2.3vw,2rem);margin-bottom:18px}
+@media(max-width:899px){.brand-home .warum-punkte{margin-top:clamp(40px,8vw,64px)}}
 
 /* =====================================================================
    Statement-Band — vollflaechiges Architekturbild mit grosser Aussage.
@@ -398,7 +401,12 @@ body.brand-home .hero.hero-split .hero-footer :is(.hero-signature a,.hero-ident 
     padding-right:0;padding-top:0;padding-bottom:0;align-items:stretch;
   }
   .brand-home .hero-split .hero-copy{padding-block:clamp(84px,12vh,132px) clamp(56px,7vh,96px);padding-right:clamp(8px,2vw,32px);align-self:center}
-  .brand-home .hero-split .hero-slides{align-self:stretch;height:100%;max-width:none}
+  /* Kein height:100%: Safari bezieht das auf die ganze Section samt
+     Infostreifen, das Bild ragte dann ueber den Streifen. Das Rasterelement
+     wird ueber stretch so hoch wie die Zeile - in allen Browsern gleich. */
+  .brand-home .hero-split .hero-slides{align-self:stretch;height:auto;min-height:420px;max-width:none}
+  /* Zeile fuellt die ganze Rasterhoehe, damit das Bild buendig auf dem Streifen sitzt */
+  .brand-home .hero-split .hero-grid{grid-template-rows:minmax(0,1fr)}
   .brand-home .hero-split .hero-slides .slide:first-child{position:absolute}
   .brand-home .hero-split .hero-slides img{aspect-ratio:auto}
 }
