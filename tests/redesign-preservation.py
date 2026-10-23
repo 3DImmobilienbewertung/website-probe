@@ -70,7 +70,7 @@ class Page(HTMLParser):
         super().__init__(); self.tags=[]; self.feed(source)
     def handle_starttag(self, tag, attrs): self.tags.append((tag, dict(attrs)))
 def protected(source, path=None):
-    source=source.replace('78 Google-Bewertungen','76 Google-Bewertungen')
+    source=source.replace('79 Google-Bewertungen','76 Google-Bewertungen')
     # Bewusste Korrektur dieses Releases: ausdruecklicher Hinweis "keine zusaetzliche Niederlassung"
     if path=='immobilienbewertung-laatzen.html':
         source=source.replace('Nein, in Laatzen unterhalten wir keine zusätzliche Niederlassung. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark); nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.','Nein. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark). Nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.')

@@ -27,7 +27,7 @@ for city, name in [('celle', 'Celle'), ('schwarmstedt', 'Schwarmstedt'), ('laatz
     assert source.count('/assets/local-contact.js?') == 1
     assert 'Kurzgutachten ab 490 €' in source and 'Erstgespräch kostenlos' in source
     assert 'keine zusätzliche Niederlassung' in source
-    assert '78 Google-Bewertungen' in source
+    assert '79 Google-Bewertungen' in source
     assert f'href="/{path}"' in home and f'/{path}</loc>' in sitemap
     assert source.count('<details>') == 4
     schemas = [json.loads(block) for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', source, re.S)]

@@ -415,3 +415,24 @@ body.brand-home #ablauf.alt :is(h2,h3){color:var(--ink,#10243D)}
   .brand-home .hero-split .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
   .brand-home .hero-split .hero-actions .btn{white-space:nowrap;width:auto}
 }
+
+/* Verweis auf das vollstaendige Google-Profil statt ausgewaehlter Zitate */
+.brand-editorial .google-beleg{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin:clamp(20px,3vw,32px) 0 0}
+.brand-editorial .google-beleg .ui-rating{width:110px;height:22px;color:var(--gold)}
+.brand-editorial .google-beleg .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+/* Anruf-Schaltflaeche erscheint nur zusammen mit der Fehlermeldung des Funnels */
+.brand-home .wc-error-tel{display:none}
+.brand-home #wcError:not([hidden])+.wc-error-tel{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;padding:10px 16px;border:1px solid var(--blue);color:var(--blue);font-weight:600;text-decoration:none}
+.brand-home #wcError:not([hidden])+.wc-error-tel:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* WhatsApp in den mobilen Kontaktleisten der Unterseiten: Symbol, der Hauptaktion untergeordnet */
+.brand-editorial :is(.mobile-bar,.mobile-contact) .mb-wa{flex:0 0 44px;width:44px;min-width:44px;min-height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border,#E2DCD1);border-radius:8px;background:#fff;color:#128C7E}
+.brand-editorial :is(.mobile-bar,.mobile-contact) .mb-wa .wa-icon{width:22px;height:22px}
+.brand-editorial :is(.mobile-bar,.mobile-contact) .mb-wa:focus-visible{outline:2px solid var(--blue,#16365C);outline-offset:2px}
+/* Startseite: ganz schmale Geraete bekommen die kurze Fassung, statt sie abzuschneiden */
+.brand-home .mobile-bar .mb-kurz{display:none}
+@media(max-width:420px){.brand-home .mobile-bar .mb-lang{display:none}.brand-home .mobile-bar .mb-kurz{display:inline}}
+.brand-editorial .section-dark .sec-head .lead{color:#d5dfea}
+/* Kopf-Schaltflaeche: auf schmalen Geraeten Kurzfassung statt Zeilenumbruch */
+.brand-editorial header .cta-kurz{display:none}
+@media(max-width:420px){.brand-editorial header .cta-lang{display:none}.brand-editorial header .cta-kurz{display:inline}}
