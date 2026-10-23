@@ -268,13 +268,13 @@
 
    Alle Textpaarungen nach WCAG geprueft (Papier #F6F4F0):
    Tinte #10243D 14,3:1 · Schiefer #56708E 4,7:1 · Text #34465C 8,8:1 ·
-   Klein #55667B 5,4:1 · Navy #16365C 11,1:1 · Gold-tief #9C7A2E 3,7:1
-   (nur Grossziffern). Markengold #C9A24B nur als Linie und Button-
+   Klein #55667B 5,4:1 · Navy #16365C 11,1:1 · Gold-tief #7F6120 5,3:1
+   (vorher #9C7A2E mit 3,7:1 - zu schwach fuer die Preise). Markengold #C9A24B nur als Linie und Button-
    Flaeche - als Schrift auf Hell 2,2:1, zu schwach.
    ===================================================================== */
 body.brand-home{
   --papier:#F6F4F0;--linie-warm:#E2DCD1;--schiefer:#56708E;
-  --text-ton:#34465C;--klein-ton:#55667B;--gold-tief:#9C7A2E;
+  --text-ton:#34465C;--klein-ton:#55667B;--gold-tief:#7F6120;
 }
 
 /* ---- Hero ---
@@ -436,3 +436,18 @@ body.brand-home #ablauf.alt :is(h2,h3){color:var(--ink,#10243D)}
 /* Kopf-Schaltflaeche: auf schmalen Geraeten Kurzfassung statt Zeilenumbruch */
 .brand-editorial header .cta-kurz{display:none}
 @media(max-width:420px){.brand-editorial header .cta-lang{display:none}.brand-editorial header .cta-kurz{display:inline}}
+
+/* Kontrast-Korrekturen (WCAG AA, geprueft 23.10.2026) */
+/* Google-Abschnitt auf Navy: Kicker gold (5,1:1), Ueberschrift weiss */
+.brand-editorial section:has(.google-beleg) .eyebrow{color:var(--gold)}
+.brand-editorial section:has(.google-beleg) h2{color:#fff}
+/* Rechner: Gold/Gruen/Grau als Schrift auf Hell zu schwach */
+.brand-calculator .tab[aria-selected="true"] .sub,
+.brand-calculator table.kpi tr.accent td.v{color:#7F6120}
+.brand-calculator .pos,
+.brand-calculator .verdict.green .verdict-label{color:#17703D!important}
+.brand-calculator .tab .sub{color:#56636D}
+/* Restnutzungsdauer-Seite: Kartenziffern */
+.brand-editorial .rnd-card .n{color:#7F6120}
+/* Rechner-Legende: Farbe traegt das Farbfeld, Text bleibt dunkel und lesbar */
+.brand-calculator span.li{color:var(--ink,#10243D)!important}
