@@ -4,7 +4,45 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-10-23, CC · T-26 Prüfauftrag GPT umgesetzt · **live, Commit `7d8089c`**
+Letzte Änderung: 2026-10-23 (Nachmittag), CC · T-29 offene Punkte · **live, Commits `f56defe`, `e46b92e`, `8dddf2f`**
+
+---
+
+## T-29 · Offene Punkte abgearbeitet — CC, 23.10.2026 (Freigabe Inhaber: „du hast alle Berechtigungen“)
+
+**Status: gepusht, deployt, live geprüft** (`f56defe`, `e46b92e`, `8dddf2f`).
+
+| Punkt | Ergebnis |
+|---|---|
+| T-17/T-25 Kundenstimmen | 18 Stimmen auf 8 Unterseiten **entfernt, nicht umformuliert**. Grund: nicht verifizierbar (Muster „Vorname + Initial + Ort“, Google zeigt volle Namen; Abgleich aller 79 Rezensionen ohne Google-Login nicht möglich), teils mit Anerkennungs-/Gerichtsaussagen („anerkannte Bewertung“, „vor Gericht Bestand gehalten“, „Rechtsanwalt Dr. Berger“). Ersatz: Abschnitt „5,0 von 5 Sternen bei 79 Google-Bewertungen“ mit Link aufs vollständige Profil. Startseiten-Stimmen bleiben (Namen wie Lennart, Mark Schäfer sind öffentlich bei Google sichtbar). |
+| Bewertungszahl | Google Maps zeigt am 23.10. **5,0 (79)** → überall 79 (46 Stellen). |
+| T-23 Apex 307→308 | **Nicht umsetzbar durch CC:** Vercel-API 403 (Connector ohne Schreibrecht), keine CLI, Dashboard verlangt Login. Domain ist im Team verifiziert, aber keinem Projekt zugeordnet. → Inhaber, Anleitung unten. |
+| T-27 Funnel-Fehler ohne tel-Link | Anruf-Schaltfläche erscheint per CSS mit der Fehlermeldung (geschütztes `home-funnel.js` unverändert). E2E geprüft. |
+| T-28 WhatsApp Unterseiten | Symbol in den mobilen Kontaktleisten aller 39 Unterseiten mit Leiste (aria-label, Fokus, 44×44 px). |
+| **Neuer Fehler aus `7d8089c`** | Lange CTA-Beschriftung brach in mobilen Leisten (9 Seiten, 86 px hoch) und Kopfzeilen ≤ 420 px um / wurde abgeschnitten → Kurzfassung „Erstgespräch (anfragen)“ auf schmalen Geräten; geprüft 11 Seiten × 6 Breiten. |
+| Kontrast | PageSpeed meldete Barrierefreiheit 97: Leistungspreise 3,65:1 → `--gold-tief` #7F6120 (5,3:1). Eigene Prüfung über 10 Seiten: Google-Abschnitt (Kicker/H2 auf Navy), Rechner (Gold 2,4:1, Grün 4,38/3,9:1, Grau 4,45:1, Legende), RND-Kartenziffern korrigiert. Restliche Treffer = Fehlalarme über Verlaufs-/Overlay-Ebenen, einzeln geprüft. |
+| Render-blockierendes CSS | Startseite 6 → 3 blockierende Dateien (portraits/office-photography/seo-decisions nicht blockierend, noscript-Fallback). Layout alt/neu nach dem Laden identisch (20 Elemente, 375/768/1280 px). Keine Bündelung (Begründung T-26). |
+| Node-Tests | Offizielles Node 24.22.1 LTS (nodejs.org, SHA-256 geprüft) nur im Sitzungsordner. **Alle 5 Tests mit echtem Node grün.** Dabei gefunden: `hero-slideshow.cjs` scheiterte unter echtem Node (Array aus vm-Kontext bei deepStrictEqual) – Testfehler, behoben. Die frühere „PASS“-Meldung unter dem jsc-Ersatz war damit zu optimistisch. |
+| E2E Formulare | `tests/preview-server.cjs` (echter `api/contact.js`, Schein-Mailanbieter, kein Tracking): Funnel, Kontaktformular Startseite, LP Hannover – Anbieterausfall → Hinweis (+ Anruf-Schaltfläche), Erfolg → Bestätigung. Hinweis: Port 8768 war bereits durch eine Codex-Instanz desselben Servers (seit 29.09., gleicher Projektordner, liest Dateien je Anfrage frisch) belegt; Test lief dagegen. |
+| IndexNow | 55 geänderte URLs gemeldet, HTTP 200. |
+
+**Messung PageSpeed mobil** (23.10., 13:42, vor `e46b92e`/`8dddf2f`): Leistung 79 · Barrierefreiheit 97 · Best Practices 100 · SEO 100; LCP 5,0 s (davon 1,95 s Renderverzögerung), TBT 40 ms. Nachmessung nach `8dddf2f`: PageSpeed-Oberfläche hing zweimal (kein Ergebnis).
+Ersatz: **Lighthouse 13.5.0 lokal** (Chrome headless, Mobilprofil, simulierte Drosselung):
+- Live-Site: Leistung 98/98/99, Barrierefreiheit 100, Best Practices 100, SEO 100, LCP 2,1–2,3 s.
+  **Nicht mit PageSpeed (79) vergleichbar** – andere, schnellere Hardware.
+- Fairer Vorher/Nachher-Vergleich auf derselben Maschine (je 3 Läufe, lokaler Server):
+  `e46b92e` (6 blockierende CSS) LCP 3,54 s, FCP 2,11 s · `8dddf2f` (3 blockierende CSS) LCP 3,61 s,
+  FCP 2,26 s → **kein messbarer Gewinn** durch das Verschieben der drei kleinen Stylesheets.
+  Verbleibender Hebel: die drei großen (brand-editorial, brand-components, redesign, je ~600 ms
+  simuliert) – nur mit Build-Schritt bündeln/kritisches CSS inline (T-24).
+
+### Weiter offen
+| Nr. | Punkt | Bei |
+|---|---|---|
+| T-18 | „98 % unserer Gutachten wurden anerkannt“ – bleibt (frühere ausdrückliche Entscheidung des Inhabers), Nachweis offen | Inhaber |
+| T-30 | „Über 250 Immobilien bewertet“ (Startseite) – Nachweis offen | Inhaber |
+| T-23 | Vercel → Project website-probe → Settings → Domains → Add `3dimmobilienbewertung.de` → „Redirect to www.3dimmobilienbewertung.de“, **308 Permanent** | Inhaber |
+| — | Screenreader real, Messung auf echtem Gerät | offen |
 
 ---
 
