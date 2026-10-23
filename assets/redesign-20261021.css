@@ -457,3 +457,7 @@ body.brand-home #ablauf.alt :is(h2,h3){color:var(--ink,#10243D)}
 .brand-home .hero-copy{align-items:center}
 .brand-home .hero-copy>*{min-width:0}
 .brand-home .hero-next-step .hero-actions{margin-top:20px;gap:12px}
+
+/* RND-Kennzahlen: letzte Reihe fuellt die Breite, keine leeren Rasterzellen */
+.brand-landing .kpis{display:flex;flex-wrap:wrap}
+.brand-landing .kpis .kpi{flex:1 1 150px}

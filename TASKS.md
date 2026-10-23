@@ -39,7 +39,7 @@ Ersatz: **Lighthouse 13.5.0 lokal** (Chrome headless, Mobilprofil, simulierte Dr
 ### Weiter offen
 | Nr. | Punkt | Bei |
 |---|---|---|
-| T-18 | „98 % unserer Gutachten wurden anerkannt“ – bleibt (frühere ausdrückliche Entscheidung des Inhabers), Nachweis offen | Inhaber |
+| T-18 | **Erledigt 23.10.2026:** Kennzahl „98 % unserer Gutachten wurden anerkannt“ auf Wunsch des Inhabers vorerst entfernt (RND-Seite, einzige Fundstelle); Kennzahlenraster füllt sich jetzt ohne Lücken | — |
 | T-30 | „Über 250 Immobilien bewertet“ (Startseite) – Nachweis offen | Inhaber |
 | T-23 | **Erledigt 23.10.2026** durch Inhaber in Vercel: Apex leitet jetzt mit **308** auf www (geprüft per curl, auch Unterseiten). Optional: A-Eintrag bei Namecheap von 76.76.21.21 auf 216.198.79.1 (Vercel-Empfehlung, keine Störung) | — |
 | — | Screenreader real, Messung auf echtem Gerät | offen |
