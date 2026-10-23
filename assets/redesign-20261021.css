@@ -451,3 +451,9 @@ body.brand-home #ablauf.alt :is(h2,h3){color:var(--ink,#10243D)}
 .brand-editorial .rnd-card .n{color:#7F6120}
 /* Rechner-Legende: Farbe traegt das Farbfeld, Text bleibt dunkel und lesbar */
 .brand-calculator span.li{color:var(--ink,#10243D)!important}
+
+/* Aus office-photography.css uebernommen: die einzigen Werte, die dort noch im
+   Hero wirkten. Die Datei laedt auf der Startseite jetzt nicht blockierend. */
+.brand-home .hero-copy{align-items:center}
+.brand-home .hero-copy>*{min-width:0}
+.brand-home .hero-next-step .hero-actions{margin-top:20px;gap:12px}
