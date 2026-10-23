@@ -41,7 +41,7 @@ Ersatz: **Lighthouse 13.5.0 lokal** (Chrome headless, Mobilprofil, simulierte Dr
 |---|---|---|
 | T-18 | „98 % unserer Gutachten wurden anerkannt“ – bleibt (frühere ausdrückliche Entscheidung des Inhabers), Nachweis offen | Inhaber |
 | T-30 | „Über 250 Immobilien bewertet“ (Startseite) – Nachweis offen | Inhaber |
-| T-23 | Vercel → Project website-probe → Settings → Domains → Add `3dimmobilienbewertung.de` → „Redirect to www.3dimmobilienbewertung.de“, **308 Permanent** | Inhaber |
+| T-23 | **Erledigt 23.10.2026** durch Inhaber in Vercel: Apex leitet jetzt mit **308** auf www (geprüft per curl, auch Unterseiten). Optional: A-Eintrag bei Namecheap von 76.76.21.21 auf 216.198.79.1 (Vercel-Empfehlung, keine Störung) | — |
 | — | Screenreader real, Messung auf echtem Gerät | offen |
 
 ---
