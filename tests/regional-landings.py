@@ -42,12 +42,14 @@ for path in (ROOT / 'blog').glob('*.html'):
         continue
     bridge = re.search(r'<div class="regional-bridge-actions">(.*?)</div>', source, re.S)[1]
     target = re.search(r'href="([^"]+)"', bridge)[1]
-    assert (ROOT / target.lstrip('/')).is_file()
+    assert (ROOT / (target.split('#')[0].lstrip('/') or 'index.html')).is_file(), target  # '/' = Startseite
     assert source.index('regional-bridge-actions') < source.index('<h2')
     assert 'noindex' not in source
     bridges.append(path.name)
-# 8 Ratgeber aus dem September-Release plus 4 Ortsratgeber vom 22.10.2026
-assert len(bridges) == 12, sorted(bridges)
+# 8 Ratgeber aus dem September-Release, 4 Ortsratgeber vom 22.10. und 6 vom 25.10.2026
+assert len(bridges) == 18, sorted(bridges)
+for neu in ('haus-bewerten-langenhagen-flughafen-lage.html', 'immobilienbewertung-lindwedel-hope.html', 'baugrundstueck-bewerten-wedemark.html', 'haus-60er-70er-bewerten-altwarmbuechen.html', 'eigentumswohnung-bewerten-grossburgwedel.html', 'mehrfamilienhaus-bewerten-hannover-ertragswert.html'):
+    assert neu in bridges, neu
 for neu in ('altbauwohnung-bewerten-hannover.html','resthof-bewerten-schwarmstedt.html','fachwerkhaus-bewerten-isernhagen.html','doppelhaushaelfte-reihenhaus-bewerten-grossburgwedel.html'):
     assert neu in bridges, neu
 print(f'PASS: 3 distinct regional landing pages, existing contact contract, real office, costs, sitemap, {len(bridges)} early guide-to-service links')

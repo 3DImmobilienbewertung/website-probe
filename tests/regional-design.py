@@ -35,7 +35,7 @@ assert '<canvas id="scene"' not in home
 assert '<div class="mobile-cta-bar"' not in home
 # Hero seit 23.10.2026: gemeinsames Arbeitsfoto als Startbild der Diashow
 assert '<figure class="hero-figure hero-slides">' in home
-assert 'src="/assets/hero-team-900.webp"' in home
+assert 'src="/assets/hero-team-besprechung-900.webp"' in home  # seit 25.10.2026 Besprechungsfoto
 assert 'class="region-directory"' in home
 assert 'aria-controls="mobileMenu" aria-expanded="false"' in home
 ns = {'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}

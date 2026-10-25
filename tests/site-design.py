@@ -43,10 +43,12 @@ for path in pages:
     if path.name in ('index.html', 'ueber-uns.html', 'impressum.html') and path.parent == ROOT:
         for date in ('2025-07-08', '2025-08-06', '2024-11-08', '08.07.2025', '08.11.2024'):
             assert date not in source, (path, date)
-# 53 Seiten (Stand 29.09.) plus vier Ortsratgeber vom 22.10.2026
+# 53 Seiten (Stand 29.09.) plus vier Ortsratgeber vom 22.10. und sechs vom 25.10.2026
 NEW_GUIDES = {'altbauwohnung-bewerten-hannover.html','resthof-bewerten-schwarmstedt.html','fachwerkhaus-bewerten-isernhagen.html','doppelhaushaelfte-reihenhaus-bewerten-grossburgwedel.html'}
 assert NEW_GUIDES <= {p.name for p in pages}
-assert len(pages) == 57, len(pages)
+GUIDES_20261025 = {'immobilienbewertung-lindwedel-hope.html', 'eigentumswohnung-bewerten-grossburgwedel.html', 'haus-bewerten-langenhagen-flughafen-lage.html', 'baugrundstueck-bewerten-wedemark.html', 'mehrfamilienhaus-bewerten-hannover-ertragswert.html', 'haus-60er-70er-bewerten-altwarmbuechen.html'}
+assert GUIDES_20261025 <= {p.name for p in pages}
+assert len(pages) == 63, len(pages)
 home = (ROOT / 'index.html').read_text()
 assert 'class="practice-strip"' not in home
 assert 'class="team-quals"' not in home
@@ -57,7 +59,7 @@ assert home.count('class="member-photo"') == 2
 assert home.count('src="/assets/nandino-donnarumma-20261022.webp"') == 1  # Studioportraet vom 22.10.2026
 assert home.count('src="/assets/vito-donnarumma-20260928.webp"') == 1
 hero = re.search(r'<section class="hero[ "].*?</section>', home, re.S)[0]
-assert 'src="/assets/hero-team-900.webp"' in hero  # gemeinsames Arbeitsfoto als Startbild
+assert 'src="/assets/hero-team-besprechung-900.webp"' in hero  # gemeinsames Besprechungsfoto als Startbild (seit 25.10.2026)
 assert 'office-portrait' not in hero
 for font in ('bricolage', 'hanken', 'jetbrains'):
     assert (ROOT / f'assets/{font}-latin.woff2').read_bytes()[:4] == b'wOF2'

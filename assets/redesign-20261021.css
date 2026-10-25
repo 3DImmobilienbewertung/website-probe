@@ -461,3 +461,10 @@ body.brand-home #ablauf.alt :is(h2,h3){color:var(--ink,#10243D)}
 /* RND-Kennzahlen: letzte Reihe fuellt die Breite, keine leeren Rasterzellen */
 .brand-landing .kpis{display:flex;flex-wrap:wrap}
 .brand-landing .kpis .kpi{flex:1 1 150px}
+
+/* Ratgeber-Karten auf Ortsseiten (auch dort, wo das Seiten-CSS sie nicht kennt) */
+.brand-editorial .guide-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
+.brand-editorial .guide-links .city-info{margin-top:0}
+.brand-editorial .guide-links h3{line-height:1.3}
+.brand-editorial .guide-links a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:620px){.brand-editorial .guide-links{grid-template-columns:1fr}}

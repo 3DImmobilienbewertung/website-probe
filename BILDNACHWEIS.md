@@ -1,10 +1,12 @@
 # Bildnachweis
 
-Stand: 23.10.2026. Fremdbilder auf 3dimmobilienbewertung.de. Alle übrigen
-Fotos – insbesondere das Teamfoto im Hero (`assets/hero-team-*.webp`) und die
-Porträts – stammen aus dem eigenen Bestand von Donnarumma & Donnarumma
-(Quelle Teamfoto: `Team Fotos/2-optimiert.png`, 1536 × 1024 px, ohne
-weitere Farbbearbeitung skaliert).
+Stand: 25.10.2026. Fremdbilder auf 3dimmobilienbewertung.de. Alle übrigen
+Fotos stammen aus dem eigenen Bestand von Donnarumma & Donnarumma:
+- Hero-Startbild seit 25.10.2026: Besprechungsfoto, `assets/hero-team-besprechung-{600,900,1200}.webp`
+  plus `assets/office-team-besprechung-1440.webp` (Quelle 1440 × 960 px, nur verkleinert).
+- Bisheriges Teamfoto `assets/hero-team-*.webp` (Quelle `Team Fotos/2-optimiert.png`, 1536 × 1024 px):
+  nicht mehr auf der Website eingebunden, nur noch Quelle für interne Bilder der Google-Beiträge.
+- Porträts und übrige Bürofotos (`office-*`).
 
 ## Fremdbilder (Unsplash)
 

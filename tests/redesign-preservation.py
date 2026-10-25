@@ -13,8 +13,10 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = 'd838d34'
-NEW_PAGES = set()
+# Ortsratgeber vom 25.10.2026
+NEW_PAGES = {'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
 RELEASE_DATE = '2026-10-23'
+RELEASE_DATES = {'2026-10-23', '2026-10-25'}  # Releases seit der Baseline
 ALLOWED_LOST_LINKS = {'restnutzungsdauer-rechner.html': {'/#vorteile'}}  # broken anchor, now /#warum
 CREDENTIAL = {'@type':'EducationalOccupationalCredential','credentialCategory':'certificate','name':'Zertifikatslehrgang Wertermittlung (IHK)','recognizedBy':{'@type':'Organization','name':'Industrie- und Handelskammer Hannover'}}
 PORTRAITS={f'assets/{name}-donnarumma-20260928{size}.webp' for name in ('nandino','vito') for size in ('','-small')}|{f'assets/nandino-donnarumma-20261022{size}.webp' for size in ('','-small','-small-2x')}
@@ -106,6 +108,7 @@ assert deployment['redirects'].count(redirect)==1
 assert deployment==json.loads(previous('vercel.json')),'unexpected routing/integration change'
 for p in (ROOT/'assets').iterdir():
     if str(p.relative_to(ROOT)) in PORTRAITS|OFFICE_PHOTOS:continue # Validated separately by image tests.
+    if p.name.startswith('hero-team-besprechung-'):continue # Hero-Startbild seit 25.10.2026, geprueft in office-photography.py
     if p.suffix.lower() in ('.webp','.png','.jpg','.jpeg','.mp4','.woff2'):
         assert p.read_bytes()==previous(p.relative_to(ROOT)),(p,'media/font changed')
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
@@ -119,6 +122,8 @@ for url,entry in oldmap.items():
     expected=dict(entry)
     page=url[len(origin):] or 'index.html'
     if page.endswith('/'):page+='index.html'
-    if page in changed:expected['lastmod']=RELEASE_DATE
+    if page in changed:
+        assert newmap[url].get('lastmod') in RELEASE_DATES,(url,'lastmod',newmap[url].get('lastmod'))
+        expected['lastmod']=newmap[url]['lastmod']
     assert newmap[url]==expected,(url,'unexpected sitemap change')
 print(f'PASS: {len(baseline_pages)} existing URLs/metadata/media/anchors/integrations preserved against {BASELINE}; only release changes (reviews, hero, portrait, anchor fix, dates)')
