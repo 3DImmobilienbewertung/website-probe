@@ -16,6 +16,8 @@ Letzte Änderung: 2026-10-25, CC · T-31 Hero-Foto + 6 Ortsratgeber · **live, C
 - Dublettenprüfung: je Artikel nur Kontaktbox/Haftungshinweis mit anderen Seiten geteilt; keine verbotenen Begriffe.
 - **Hinweis für GPT:** GEG §§ 47/72 sind „weggefallen“ (Gesetz neu gefasst) – keine Nachrüstpflichten aus dem alten GEG zitieren.
 - Prüfauftrag an GPT: Ortsangaben (Lindwedel: nur Lindwedel und Hope; Adolfsglück bewusst weggelassen), Bodenrichtwerte gegen die Tabellen der Ortsseiten.
+- **Search Console (25.10.):** Sitemap neu eingereicht (61 Seiten erkannt). Indexierung beantragt für die 6 neuen Ratgeber sowie Schwarmstedt, LP Immobilienbewertung Hannover, LP Haus bewerten Hannover, Laatzen und Celle. GSC-Stand: 44 indexiert; nicht indexiert sind 4 Weiterleitungen (gewollt), 2 noindex (Impressum/Datenschutz, gewollt) und 7 „Gefunden – zurzeit nicht indexiert“.
+- **Offen (Tageskontingent erschöpft), am 26.10. beantragen:** `checkliste-immobilienbewertung.html`, `blog/restnutzungsdauer-grossburgwedel-vermietete-haeuser.html`.
 
 ---
 
