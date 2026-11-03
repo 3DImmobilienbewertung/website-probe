@@ -4,9 +4,26 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-03, CC · T-32 Hannover-Offensive (6 Ratgeber, Signale gebündelt, Google-Plakette, Ratgeber-Laufband)
+Letzte Änderung: 2026-11-04, CC · T-33 Langenhagen/Nord, Restnutzungsdauer Hannover, Bing
 
 ---
+
+## T-33 · Langenhagen/Nord, Restnutzungsdauer Hannover, Bing — CC, 04.11.2026
+
+- **Neue Ratgeber:** Eigentumswohnung Langenhagen, Restnutzungsdauer Langenhagen, Hannover-Nord als Überblick.
+  - Jeder hat einen Vertrauensblock: 5,0 ★ aus 88 Google-Bewertungen, wörtliche Zitate, Link auf den Rezensionen-Reiter.
+  - Nach dem Bestand geprüft: kein Überschneiden mit der Langenhagen-Ortsseite (Bewertung allgemein) oder dem Haus-Ratgeber (Flughafen).
+- **RND-Seite:**
+  - H1 mit der Kennzeile „Restnutzungsdauergutachten Hannover“
+  - Titel „… | Festpreis 1.490 €“
+  - neuer Abschnitt „in Hannover und der Region“ mit Partner-Hinweis
+  - regionale RND-Ratgeber verlinken mit dem Ankertext „Restnutzungsdauergutachten Hannover“
+- **Bing (03.11. geprüft):**
+  - Bing zeigt die Startseite nur bei der Suche nach der Domain. Bei „3D Immobilienbewertung Wedemark“ erscheinen nur Cylex und Firmania.
+  - Technisch ist alles in Ordnung: bingbot bekommt 200, kein noindex, msvalidate vorhanden.
+  - Alle 70 Sitemap-URLs per IndexNow gemeldet (200).
+  - Offen beim Inhaber: Bing Webmaster Tools (Sitemap einreichen, Import aus der GSC) und Bing Places for Business (Import aus dem Google-Profil).
+- Sitemap-lastmod nur noch für inhaltlich geänderte Seiten; reine CSS-Versionssprünge setzen das Datum zurück.
 
 ## T-32 · Hannover-Offensive „Immobilienbewertung Hannover“ — CC, 03.11.2026
 
