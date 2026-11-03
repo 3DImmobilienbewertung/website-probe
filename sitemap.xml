@@ -6,7 +6,7 @@
     <loc>https://www.3dimmobilienbewertung.de/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
 
   <!-- Themen-Landingpages (Kaufintention) -->
@@ -70,7 +70,7 @@
     <loc>https://www.3dimmobilienbewertung.de/lp-immobilienbewertung-hannover.html</loc>
     <priority>0.90</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/lp-haus-bewerten-hannover.html</loc>
@@ -194,7 +194,7 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/</loc>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauergutachten-hannover.html</loc>
@@ -206,13 +206,13 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/was-kostet-immobilienbewertung-hannover.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/immobilienpreise-hannover-2026.html</loc>
     <priority>0.88</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/verkehrswert-immobilie.html</loc>
@@ -242,7 +242,7 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/erbengemeinschaft-immobilie.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/verkehrswert-vs-marktwert.html</loc>
@@ -302,7 +302,7 @@
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/altbauwohnung-bewerten-hannover.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/resthof-bewerten-schwarmstedt.html</loc>
@@ -310,7 +310,7 @@
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/fachwerkhaus-bewerten-isernhagen.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/doppelhaushaelfte-reihenhaus-bewerten-grossburgwedel.html</loc>
@@ -339,6 +339,30 @@
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/erbbaurecht-hannover-bewerten.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/bodenrichtwert-hannover-abfragen.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/mietspiegel-hannover-wohnung-bewerten.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/denkmalgeschuetztes-haus-bewerten-hannover.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/online-immobilienbewertung-hannover-gutachten.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/wohnrecht-niessbrauch-immobilie-bewerten.html</loc>
+    <lastmod>2026-11-03</lastmod>
   </url>
 </urlset>

@@ -468,3 +468,41 @@ body.brand-home #ablauf.alt :is(h2,h3){color:var(--ink,#10243D)}
 .brand-editorial .guide-links h3{line-height:1.3}
 .brand-editorial .guide-links a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:620px){.brand-editorial .guide-links{grid-template-columns:1fr}}
+
+/* ---- Google-Bewertung als Plakette im Hero (2026-11-03) ------------- */
+.brand-home .hero-belege a.google-badge{gap:12px;min-height:58px;padding:10px 18px 10px 12px;background:#fff;border:1px solid var(--linie-warm);border-radius:14px;box-shadow:0 6px 18px rgba(16,36,61,.08);transition:box-shadow .2s,border-color .2s}
+.brand-home .hero-belege a.google-badge span{text-decoration:none}
+.brand-home .hero-belege a.google-badge:hover{border-color:#C9A24B;box-shadow:0 10px 24px rgba(16,36,61,.14)}
+.google-badge .g-logo{width:30px;height:30px;flex:none}
+.google-badge .gb-text{display:grid;gap:3px;line-height:1.15;text-align:left}
+.google-badge .gb-titel{font-size:14px;font-weight:700;color:var(--ink,#10243D)}
+.google-badge .gb-wert{display:flex;align-items:center;gap:7px;font-size:16px;color:var(--ink,#10243D)}
+.brand-home .google-badge .gb-wert .ui-rating{width:84px;height:16px;color:#C9A24B}
+.google-badge .gb-anzahl{font-size:12.5px;color:var(--klein-ton)}
+
+/* ---- Ratgeber-Laufband unter dem Hero (2026-11-03) ------------------ */
+.brand-editorial section.ratgeber-band{padding-block:20px 22px;background:var(--papier);border-top:1px solid var(--linie-warm);border-bottom:1px solid var(--linie-warm)}
+.brand-editorial section.ratgeber-band+section{border-top:0}
+.rb-kopf{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;max-width:1240px;margin:0 auto 12px;padding-inline:20px}
+.brand-editorial .rb-titel{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-tief);font-family:inherit;line-height:1.3}
+.rb-aktionen{display:flex;align-items:center;gap:14px}
+.rb-alle{font-size:14px;font-weight:600;color:#16365C;text-underline-offset:4px}
+.rb-knopf{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--linie-warm);border-radius:999px;background:#fff;color:#16365C;font:600 13px/1 inherit;cursor:pointer}
+.rb-knopf svg{width:14px;height:14px;fill:currentColor}
+.rb-knopf[data-zustand="laeuft"] .rb-play,.rb-knopf[data-zustand="pause"] .rb-pause{display:none}
+.rb-knopf:focus-visible,.rb-alle:focus-visible,.rb-spur a:focus-visible{outline:2px solid #16365C;outline-offset:3px}
+.rb-fenster{overflow-x:auto;scrollbar-width:none;padding-inline:20px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 24px,#000 calc(100% - 24px),transparent)}
+.rb-fenster::-webkit-scrollbar{display:none}
+.rb-spur{display:flex;width:max-content;margin:0;padding:4px 0;list-style:none}
+.rb-spur li{padding-right:12px}
+.rb-spur a{display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 18px;background:#fff;border:1px solid var(--linie-warm);border-radius:999px;font-size:15px;font-weight:600;color:#16365C;text-decoration:none;white-space:nowrap;transition:border-color .2s}
+.rb-spur a:hover{border-color:#C9A24B}
+.rb-ort{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-tief)}
+.rb-klon{display:none}
+.ratgeber-band.rb-laeuft .rb-fenster{overflow:hidden;padding-inline:0}
+.ratgeber-band.rb-laeuft .rb-klon{display:list-item}
+.ratgeber-band.rb-laeuft .rb-spur{animation:rb-lauf var(--rb-dauer,90s) linear infinite}
+.ratgeber-band.rb-laeuft .rb-fenster:hover .rb-spur{animation-play-state:paused}
+@keyframes rb-lauf{to{transform:translate3d(-50%,0,0)}}
+@media (prefers-reduced-motion:reduce){.ratgeber-band .rb-spur{animation:none!important}}
+@media (max-width:520px){.rb-spur a{font-size:14px;padding:8px 14px}.rb-alle{display:none}}

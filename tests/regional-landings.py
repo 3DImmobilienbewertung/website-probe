@@ -47,7 +47,7 @@ for path in (ROOT / 'blog').glob('*.html'):
     assert 'noindex' not in source
     bridges.append(path.name)
 # 8 Ratgeber aus dem September-Release, 4 Ortsratgeber vom 22.10. und 6 vom 25.10.2026
-assert len(bridges) == 18, sorted(bridges)
+assert len(bridges) == 24, sorted(bridges)
 for neu in ('haus-bewerten-langenhagen-flughafen-lage.html', 'immobilienbewertung-lindwedel-hope.html', 'baugrundstueck-bewerten-wedemark.html', 'haus-60er-70er-bewerten-altwarmbuechen.html', 'eigentumswohnung-bewerten-grossburgwedel.html', 'mehrfamilienhaus-bewerten-hannover-ertragswert.html'):
     assert neu in bridges, neu
 for neu in ('altbauwohnung-bewerten-hannover.html','resthof-bewerten-schwarmstedt.html','fachwerkhaus-bewerten-isernhagen.html','doppelhaushaelfte-reihenhaus-bewerten-grossburgwedel.html'):

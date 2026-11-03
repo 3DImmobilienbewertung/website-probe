@@ -14,10 +14,13 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = 'd838d34'
 # Ortsratgeber vom 25.10.2026
-NEW_PAGES = {'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
+NEW_PAGES = {'blog/erbbaurecht-hannover-bewerten.html', 'blog/bodenrichtwert-hannover-abfragen.html', 'blog/mietspiegel-hannover-wohnung-bewerten.html', 'blog/denkmalgeschuetztes-haus-bewerten-hannover.html', 'blog/online-immobilienbewertung-hannover-gutachten.html', 'blog/wohnrecht-niessbrauch-immobilie-bewerten.html', 'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
 RELEASE_DATE = '2026-10-23'
-RELEASE_DATES = {'2026-10-23', '2026-10-25'}  # Releases seit der Baseline
+RELEASE_DATES = {'2026-10-23', '2026-10-25', '2026-11-03'}  # Releases seit der Baseline
 ALLOWED_LOST_LINKS = {'restnutzungsdauer-rechner.html': {'/#vorteile'}}  # broken anchor, now /#warum
+# 03.11.2026: Orts-Chip 'Hannover' zeigt auf die Startseite statt auf die LP (Hannover-Signale buendeln);
+# die LP bleibt ueber den Footer-Link 'Gutachten & Kosten' erreichbar
+HANNOVER_CHIP = {'lp-immobilienbewertung-hannover.html'}
 CREDENTIAL = {'@type':'EducationalOccupationalCredential','credentialCategory':'certificate','name':'Zertifikatslehrgang Wertermittlung (IHK)','recognizedBy':{'@type':'Organization','name':'Industrie- und Handelskammer Hannover'}}
 PORTRAITS={f'assets/{name}-donnarumma-20260928{size}.webp' for name in ('nandino','vito') for size in ('','-small')}|{f'assets/nandino-donnarumma-20261022{size}.webp' for size in ('','-small','-small-2x')}
 OFFICE_KEYS=('nandino-beratung','nandino-grundriss','nandino-unterlagen','nandino-besichtigung','nandino-pruefung','team-auswertung','team-besprechung','vito-beratung','vito-auswertung')
@@ -80,6 +83,13 @@ def protected(source, path=None):
         source=source.replace('In Schwarmstedt selbst haben wir keine zusätzliche Niederlassung.','Eine eigene Niederlassung in Schwarmstedt haben wir nicht.')
     if path=='lp-haus-bewerten-hannover.html':
         source=source.replace('Haus bewerten lassen in Hannover und der Region: Zustand, Modernisierung und Lage prüfen. Kurzgutachten ab 490 €. Kostenloses Erstgespräch anfragen.','Haus bewerten lassen in Hannover: Wertermittlung vom Sachverständigen für Immobilienbewertung. Rückmeldung in 24 h · 5,0 ★ (22 Google-Bewertungen) · Kostenloses Erstgespräch.')
+    # 03.11.2026: LP auf eigenes Suchthema "Immobiliengutachten" geschaerft, die Startseite steht allein fuer "Immobilienbewertung Hannover"
+    if path=='lp-immobilienbewertung-hannover.html':
+        for neu,alt in [('Immobiliengutachten Hannover: Gutachtenarten &amp; Kosten','Immobilie bewerten lassen Hannover – Kosten &amp; Ablauf'),
+                        ('Welches Immobiliengutachten passt? Kurzgutachten oder ausführliches Gutachten in Hannover: Umfang, Kosten, Ablauf. 5,0 ★ (76 Google-Bewertungen) · Erstgespräch kostenlos.','Immobilie in Hannover bewerten lassen: Kosten, Ablauf &amp; Dauer. Rückmeldung in 24 h · 5,0 ★ (76 Google-Bewertungen) · Kostenloses Erstgespräch.'),
+                        ('Immobiliengutachten Hannover: Gutachtenarten & Kosten','Immobilie bewerten lassen in Hannover – Kosten & Ablauf'),
+                        ('"name":"Immobiliengutachten Hannover","item"','"name":"Immobilie bewerten lassen Hannover","item"')]:
+            source=source.replace(neu,alt)
     tags=Page(source).tags
     return {
         'title': re.findall(r'<title>.*?</title>', source, re.S),
@@ -98,7 +108,7 @@ for p in pages:
     before=Page(old).tags; after=Page(new).tags
     assert {a['id'] for _,a in before if 'id' in a} <= {a['id'] for _,a in after if 'id' in a},(relative,'lost anchors')
     lost={a['href'] for t,a in before if t=='a' and 'href' in a} - {a['href'] for t,a in after if t=='a' and 'href' in a}
-    assert lost <= ALLOWED_LOST_LINKS.get(str(relative),set()),(relative,'lost links',lost)
+    assert lost <= ALLOWED_LOST_LINKS.get(str(relative),set()) | HANNOVER_CHIP,(relative,'lost links',lost)
 for filename in ['robots.txt','api/contact.js','assets/consent.js','assets/editorial-ui.js','assets/local-contact.js','assets/home-funnel.js']:
     assert (ROOT/filename).read_bytes()==previous(filename),(filename,'protected integration changed')
 deployment=json.loads((ROOT/'vercel.json').read_text())

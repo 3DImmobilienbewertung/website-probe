@@ -4,7 +4,32 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-10-25, CC · T-31 Hero-Foto + 6 Ortsratgeber · **live, Commit `a5d373d`**
+Letzte Änderung: 2026-11-03, CC · T-32 Hannover-Offensive (6 Ratgeber, Signale gebündelt, Google-Plakette, Ratgeber-Laufband)
+
+---
+
+## T-32 · Hannover-Offensive „Immobilienbewertung Hannover“ — CC, 03.11.2026
+
+Anlass: Der Inhaber findet die Seite für „immobilienbewertung hannover“ kaum. Ziel: Top 3.
+- **Signale gebündelt:** Die Startseite ist die einzige Zielseite für „Immobilienbewertung Hannover“.
+  - Der Orts-Chip „Hannover“ zeigte auf 26 Seiten auf die LP und zeigt jetzt auf `/`.
+  - Die LP ist auf „Immobiliengutachten Hannover: Gutachtenarten & Kosten“ geschärft (Title, Description, OG, H1, Breadcrumb).
+  - Die LP bleibt indexierbar, ihre Suchabsicht unterscheidet sich jetzt klar von der Startseite.
+- **6 neue Hannover-Ratgeber** (Quellen geprüft, Autor = Organisation): Erbbaurecht, Bodenrichtwert, Mietspiegel 2025, Baudenkmal, Online-Bewertung vs. Gutachten, Wohnrecht/Nießbrauch.
+  - Belegte Zahlen:
+    - Klosterkammer: rund 17.000 Erbbaurechte, davon knapp 170 in Hannover
+    - GAG Hameln-Hannover: Erbbaugrundstücke im Mittel 55 % vom Baulandrichtwert; Erbbauzins 2,0–5,5 %
+    - Mieterschutzverordnung vom 20.12.2024: Kappungsgrenze in Hannover bis 31.12.2029
+  - § 198 BewG bewusst nicht behandelt; der Inhaber will die Erbschaftsseite unverändert lassen (Partner erstellen Gutachten mit).
+- **Startseite:**
+  - Google-Plakette im Hero („Google bewertet 5,0 ★ · 79 Google-Bewertungen“, Link auf Maps-CID)
+  - Ratgeber-Laufband „Ratgeber aus Hannover & Region“ mit 19 echten Links im HTML; die Kopien setzt JS, mit `aria-hidden` und `tabindex=-1`
+  - Pause-Taste, Halt bei Hover und Fokus; bei reduzierter Bewegung eine wischbare Liste
+- **„Bekannt aus“-Leiste abgelehnt:** OLG Hamburg 15 U 108/22. Nur mit echter redaktioneller Erwähnung und Fundstelle erlaubt; aktuell gibt es keine.
+- Offen für den Inhaber und die Einordnung:
+  - Das Büro liegt in der Wedemark, deshalb ist das Google-Kartenpaket für „Hannover“ strukturell schwer.
+  - Hebel: mehr Bewertungen mit Ortsnennung, Branchenbucheinträge, lokale Presse und Backlinks.
+- **Hinweis für GPT:** Bitte die Ortsangaben und Zahlen der 6 Ratgeber gegenprüfen. Die Mietpreisbremse (§ 1 MieterschutzVO lief Ende 2025 aus, Änderung 12/2025) habe ich bewusst nicht erwähnt.
 
 ---
 
