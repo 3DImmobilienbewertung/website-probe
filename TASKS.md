@@ -4,9 +4,26 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-04, CC · T-33 Langenhagen/Nord, Restnutzungsdauer Hannover, Bing
+Letzte Änderung: 2026-11-04, CC · T-34 Restnutzungsdauer-Ausbau, Bing-Befund korrigiert
 
 ---
+
+## T-34 · Restnutzungsdauer-Ausbau, Bing-Befund korrigiert — CC, 04.11.2026
+
+- **GSC (3 Monate):**
+  - „restnutzungsdauergutachten hannover“: 22 Impressionen, Position 12,9; RND-Seite 14,5, Startseite (auch http-Variante) rankt mit
+  - Rechner: 230 Impressionen, Position 59,6 („restnutzungsdauer berechnen/rechner/tabelle“)
+- **Rechner:**
+  - Fehler behoben: Modernisierungsgrad-Stufen jetzt nach Tabelle 2 Anlage 2 (2–5/6–10/11–17/18–20); Formel und Faktoren waren korrekt
+  - Titel/H1 auf „Restnutzungsdauer berechnen“; Wissensblock mit Anlage 1 und 2, Rechenbeispiel (38 Jahre, im Browser nachgerechnet), FAQ
+- **Ortsseiten:** 21 Seiten mit Abschnitt „Restnutzungsdauergutachten in {Ort}“; Kappungsgrenze nur dort, wo die Mieterschutz-VO den Ort nennt.
+- **RND-Seite:** Einzugsgebiet im Schema, FAQ zum Umland. Footer-Anker sitewide „Restnutzungsdauergutachten“, Startseite „Restnutzungsdauergutachten Hannover“.
+- **Pause-Tasten:** kompakt, am Handy nur Symbol (Name bleibt für Screenreader).
+- **Bing, Korrektur zu T-33:**
+  - Die Seite ist nicht „kaum indexiert“: 36 URLs indexiert, 0 Fehler, Verifizierung über das Firmenkonto 3dimmobilienbewertung@gmail.com
+  - Sitemap am 03.11. neu eingereicht
+  - Eigentliches Problem: Backlink-Bericht leer, Bings Top-Empfehlung sind mehr Links von hochwertigen Domains
+  - Bing Places ist nicht angelegt/geprüft: Das bleibt beim Inhaber
 
 ## T-33 · Langenhagen/Nord, Restnutzungsdauer Hannover, Bing — CC, 04.11.2026
 

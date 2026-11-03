@@ -107,6 +107,17 @@ def protected(source, path=None):
     # 04.11.2026: Titel der Restnutzungsdauer-Seite mit Festpreis
     if path=='restnutzungsdauergutachten-hannover.html':
         source=source.replace('<title>Restnutzungsdauergutachten Hannover | Festpreis 1.490 €</title>','<title>Restnutzungsdauergutachten Hannover | Immobilienbewertung</title>')
+    # 04.11.2026: Rechner auf "Restnutzungsdauer berechnen" geschaerft, Wissensblock mit amtlichen Tabellen und FAQ
+    if path=='restnutzungsdauer-rechner.html':
+        source=re.sub(r'<!-- rnd-wissen:start -->.*?<!-- rnd-wissen:ende -->','',source,flags=re.S)
+        for neu,alt in [('<title>Restnutzungsdauer berechnen: Rechner &amp; Tabelle (ImmoWertV)</title>','<title>Restnutzungsdauer-Rechner &amp; AfA nach ImmoWertV 2021</title>'),
+                        ('Restnutzungsdauer kostenlos berechnen: Rechner mit Formel, Modernisierungspunkten und Tabellen nach ImmoWertV Anlage 1 und 2 – und prüfen, ob sich ein Gutachten lohnt.','Kostenloser Restnutzungsdauer-Rechner nach ImmoWertV 2021: Restnutzungsdauer ermitteln und in Sekunden prüfen, ob sich ein Gutachten zur AfA-Optimierung lohnt.'),
+                        ('<meta property="og:title" content="Restnutzungsdauer berechnen: Rechner &amp; Tabelle (ImmoWertV)">','<meta property="og:title" content="Restnutzungsdauer-Rechner &amp; AfA-Optimierung – 3D Immobilienbewertung">')]:
+            source=source.replace(neu,alt)
+    # 04.11.2026: RND-Seite nennt das Einzugsgebiet im Schema und beantwortet die Frage nach dem Umland
+    if path=='restnutzungsdauergutachten-hannover.html':
+        source=re.sub(r'(\{"@type":"City","name":"Hannover"\},)(?:\{"@type":"City","name":"[^"]+"\},)+(\{"@type":"AdministrativeArea")',r'\1\2',source)
+        source=re.sub(r'\{"@type":"Question","name":"Erstellen Sie Restnutzungsdauergutachten auch im Umland von Hannover\?".*?\}\},(\{"@type":"Question")',r'\1',source,count=1,flags=re.S)
     if path in NETZWERK:
         source=source.replace(*NETZWERK[path])
     if path=='immobilienbewertung-isernhagen.html':

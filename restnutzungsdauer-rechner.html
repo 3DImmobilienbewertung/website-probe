@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restnutzungsdauer-Rechner &amp; AfA nach ImmoWertV 2021</title>
-<meta name="description" content="Kostenloser Restnutzungsdauer-Rechner nach ImmoWertV 2021: Restnutzungsdauer ermitteln und in Sekunden prüfen, ob sich ein Gutachten zur AfA-Optimierung lohnt.">
+<title>Restnutzungsdauer berechnen: Rechner &amp; Tabelle (ImmoWertV)</title>
+<meta name="description" content="Restnutzungsdauer kostenlos berechnen: Rechner mit Formel, Modernisierungspunkten und Tabellen nach ImmoWertV Anlage 1 und 2 – und prüfen, ob sich ein Gutachten lohnt.">
 <link rel="canonical" href="https://www.3dimmobilienbewertung.de/restnutzungsdauer-rechner.html">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#10243D">
@@ -13,7 +13,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Restnutzungsdauer-Rechner &amp; AfA-Optimierung – 3D Immobilienbewertung">
+<meta property="og:title" content="Restnutzungsdauer berechnen: Rechner &amp; Tabelle (ImmoWertV)">
 <meta property="og:description" content="Restnutzungsdauer nach ImmoWertV 2021 ermitteln und berechnen, ob sich ein AfA-Gutachten lohnt: Mehr-Abschreibung, Steuerersparnis &amp; Amortisation auf einen Blick.">
 <meta property="og:url" content="https://www.3dimmobilienbewertung.de/restnutzungsdauer-rechner.html">
 <meta property="og:image" content="https://www.3dimmobilienbewertung.de/assets/og-image-20261023.jpg">
@@ -299,7 +299,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/assets/bricolage-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/brand-editorial.css?v=brand-correction-20260923">
 <link rel="stylesheet" href="/assets/brand-components.css?v=20261021c">
-<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261104a">
+<link rel="stylesheet" href="/assets/redesign-20261021.css?v=20261104b">
 <script src="/assets/editorial-ui.js?v=20260922" defer></script>
 </head>
 <body class="mode-schnell brand-editorial brand-calculator">
@@ -327,7 +327,7 @@
 <section class="rnd-hero">
   <div class="rnd-hero-inner">
     <p class="eyebrow">Restnutzungsdauer &amp; AfA-Optimierung</p>
-    <h1 class="title">Restnutzungsdauer ermitteln &amp; prüfen, ob ein Gutachten <span class="lohnt">sich lohnt</span></h1>
+    <h1 class="title">Restnutzungsdauer berechnen &amp; prüfen, ob ein Gutachten <span class="lohnt">sich lohnt</span></h1>
     <p class="subtitle">Schritt 1: Restnutzungsdauer aus Gebäudealter und Modernisierungsgrad nach dem Modell der ImmoWertV 2021 (Anlage 2) ableiten. Schritt 2: in Sekunden berechnen, wie hoch die zusätzliche Abschreibung und Steuerersparnis ausfällt – und nach wie vielen Monaten sich das Gutachten amortisiert.</p>
   </div>
 </section>
@@ -409,7 +409,7 @@
           </div>
 
           <div id="modDetail" style="margin-top:14px">
-            <p class="hint" style="margin:0 0 6px">Punkte sinken, je länger die Maßnahme zurückliegt (Tabelle a, Anlage 2).</p>
+            <p class="hint" style="margin:0 0 6px">Liegt eine Maßnahme länger zurück, setzt der Rechner weniger Punkte an (Anlage 2 sieht dafür eine Prüfung im Einzelfall vor).</p>
             <div id="modElements"></div>
             <div class="mod-total"><span>Modernisierungspunkte</span><span><span class="pts" id="modPts">0</span><span style="font-size:13px;color:var(--muted)"> / 20</span></span></div>
             <div style="text-align:right;margin-top:2px"><span class="grade" id="modGrade">nicht modernisiert</span></div>
@@ -420,10 +420,10 @@
               <label for="gradeSel">Modernisierungsgrad (Tabelle 2)</label>
               <select id="gradeSel">
                 <option value="1">nicht modernisiert (0–1 P.)</option>
-                <option value="3">kleinere Modernisierungen / Instandhaltung (2–4 P.)</option>
-                <option value="6">mittlere Modernisierung (4–8 P.)</option>
-                <option value="11">überwiegend modernisiert (9–13 P.)</option>
-                <option value="17">umfassend modernisiert (14–20 P.)</option>
+                <option value="3">kleinere Modernisierungen / Instandhaltung (2–5 P.)</option>
+                <option value="6">mittlerer Modernisierungsgrad (6–10 P.)</option>
+                <option value="11">überwiegend modernisiert (11–17 P.)</option>
+                <option value="18">umfassend modernisiert (18–20 P.)</option>
               </select>
             </div>
             <div class="slider-wrap">
@@ -627,6 +627,28 @@
   </div>
 </div>
 
+<!-- rnd-wissen:start -->
+<section class="rnd-wissen" aria-labelledby="rnd-wissen-titel"><div class="rnd-wissen-inner">
+<h2 id="rnd-wissen-titel">So berechnen Sie die Restnutzungsdauer</h2>
+<p>Die Restnutzungsdauer (RND) gibt an, wie viele Jahre ein Gebäude bei ordnungsgemäßer Bewirtschaftung voraussichtlich noch wirtschaftlich genutzt werden kann (§ 4 ImmoWertV). Ohne Modernisierung ist die Rechnung einfach:</p>
+<p class="rnd-formel"><strong>Restnutzungsdauer = Gesamtnutzungsdauer − Gebäudealter</strong></p>
+<p><strong>Beispiel:</strong> Ein Mehrfamilienhaus, Baujahr 1970, hat im Jahr 2026 ein Alter von 56 Jahren. Bei einer Gesamtnutzungsdauer von 80 Jahren bleiben 24 Jahre.</p>
+<h3>Tabelle: Gesamtnutzungsdauer nach Anlage 1 ImmoWertV (Auszug)</h3>
+<div class="rnd-tabelle"><table><thead><tr><th scope="col">Gebäudeart</th><th scope="col">Jahre</th></tr></thead><tbody><tr><td>Ein- und Zweifamilienhäuser, Doppelhaushälften, Reihenhäuser</td><td>80</td></tr><tr><td>Mehrfamilienhäuser</td><td>80</td></tr><tr><td>Wohnhäuser mit Mischnutzung</td><td>80</td></tr><tr><td>Geschäftshäuser</td><td>60</td></tr><tr><td>Bürogebäude, Banken</td><td>60</td></tr><tr><td>Einzelgaragen</td><td>60</td></tr><tr><td>Kindergärten, Schulen</td><td>50</td></tr><tr><td>Wohnheime, Alten- und Pflegeheime</td><td>50</td></tr><tr><td>Kauf- und Warenhäuser</td><td>50</td></tr><tr><td>Hotels, Gaststätten</td><td>40</td></tr><tr><td>Betriebs-, Werkstatt- und Produktionsgebäude</td><td>40</td></tr><tr><td>Lager- und Versandgebäude</td><td>40</td></tr><tr><td>Verbrauchermärkte, Autohäuser</td><td>30</td></tr></tbody></table></div>
+<h3>Modifizierte Restnutzungsdauer: Modernisierungen einrechnen</h3>
+<p>Wurde modernisiert, verlängert sich die Restnutzungsdauer. Das Modell der Anlage 2 arbeitet mit bis zu 20 Modernisierungspunkten:</p>
+<div class="rnd-tabelle"><table><thead><tr><th scope="col">Modernisierungselement</th><th scope="col">max. Punkte</th></tr></thead><tbody><tr><td>Dacherneuerung inkl. Verbesserung der Wärmedämmung</td><td>4</td></tr><tr><td>Wärmedämmung der Außenwände</td><td>4</td></tr><tr><td>Fenster und Außentüren</td><td>2</td></tr><tr><td>Leitungssysteme (Strom, Gas, Wasser, Abwasser)</td><td>2</td></tr><tr><td>Heizungsanlage</td><td>2</td></tr><tr><td>Bäder</td><td>2</td></tr><tr><td>Innenausbau (z. B. Decken, Fußböden, Treppen)</td><td>2</td></tr><tr><td>Wesentliche Verbesserung der Grundrissgestaltung</td><td>2</td></tr></tbody></table></div>
+<div class="rnd-tabelle"><table><thead><tr><th scope="col">Modernisierungsgrad</th><th scope="col">Punkte</th></tr></thead><tbody><tr><td>nicht modernisiert</td><td>0–1</td></tr><tr><td>kleine Modernisierungen im Rahmen der Instandhaltung</td><td>2–5</td></tr><tr><td>mittlerer Modernisierungsgrad</td><td>6–10</td></tr><tr><td>überwiegend modernisiert</td><td>11–17</td></tr><tr><td>umfassend modernisiert</td><td>18–20</td></tr></tbody></table></div>
+<p>Ab einem bestimmten relativen Alter gilt die Formel <strong>RND = a × Alter² ÷ GND − b × Alter + c × GND</strong>. Die Faktoren a, b und c hängen von der Punktzahl ab und stehen in Tabelle 3 der Anlage 2; der Rechner oben verwendet sie automatisch. Das Modell streckt die Restnutzungsdauer auf höchstens 70 % der Gesamtnutzungsdauer, bei fachgerechter Kernsanierung sind bis zu 90 % möglich.</p>
+<p><strong>Beispiel:</strong> Dasselbe Haus mit 8 Punkten (a = 0,5; b = 1,1; c = 1,0): 0,5 × 56² ÷ 80 − 1,1 × 56 + 1,0 × 80 = <strong>38 Jahre</strong> statt 24 Jahre.</p>
+<h3>Berechnung und Nachweis sind zweierlei</h3>
+<p>Das Modell der ImmoWertV dient der Wertermittlung. Für eine höhere Gebäude-AfA nach § 7 Abs. 4 Satz 2 EStG genügt der Verweis darauf nicht: Die kürzere tatsächliche Nutzungsdauer muss für Ihr Gebäude begründet werden. Der Rechner zeigt das Potenzial, den Nachweis liefert ein <a href="/restnutzungsdauergutachten-hannover.html">Restnutzungsdauergutachten in Hannover und der Region</a>. Regionale Hinweise finden Sie für <a href="/blog/restnutzungsdauer-langenhagen-vermietete-immobilie.html">Langenhagen</a>, <a href="/blog/restnutzungsdauer-isernhagen-eigentumswohnung.html">Isernhagen</a> und <a href="/blog/restnutzungsdauer-grossburgwedel-vermietete-haeuser.html">Großburgwedel</a>.</p>
+<h2>Häufige Fragen zur Restnutzungsdauer</h2>
+<h3>Wie berechnet man die Restnutzungsdauer?</h3><p>Im einfachsten Fall gilt: Restnutzungsdauer = Gesamtnutzungsdauer minus Gebäudealter. Wurde modernisiert, ergibt sich die Restnutzungsdauer aus der Formel und den Faktoren der Anlage 2 ImmoWertV, abhängig von der Modernisierungspunktzahl.</p><h3>Wie hoch ist die Gesamtnutzungsdauer eines Wohnhauses?</h3><p>Nach Anlage 1 ImmoWertV beträgt der Modellansatz für Ein- und Zweifamilienhäuser, Reihenhäuser und Mehrfamilienhäuser 80 Jahre.</p><h3>Was ist die modifizierte Restnutzungsdauer?</h3><p>Das ist die Restnutzungsdauer, die sich unter Berücksichtigung von Modernisierungen ergibt. Sie ist länger als die einfache Differenz aus Gesamtnutzungsdauer und Alter und wird im Modell auf höchstens 70 % der Gesamtnutzungsdauer gestreckt, bei Kernsanierung bis zu 90 %.</p><h3>Reicht das Ergebnis des Rechners für das Finanzamt?</h3><p>Nein. Der Bundesfinanzhof hat entschieden, dass ein bloßer Verweis auf die modellhafte Restnutzungsdauer der ImmoWertV für den Nachweis einer kürzeren Nutzungsdauer nicht genügt (BFH, IX R 14/23). Nötig ist eine objektbezogene Begründung.</p>
+<p class="rnd-quellen">Quellen: <a href="https://www.gesetze-im-internet.de/immowertv_2022/anlage_1.html">Anlage 1 ImmoWertV</a> · <a href="https://www.gesetze-im-internet.de/immowertv_2022/anlage_2.html">Anlage 2 ImmoWertV</a> · <a href="https://www.gesetze-im-internet.de/immowertv_2022/__4.html">§ 4 ImmoWertV</a> · <a href="https://www.gesetze-im-internet.de/estg/__7.html">§ 7 EStG</a>. Stand: 04.11.2026.</p>
+</div></section>
+<script type="application/ld+json" id="rnd-faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wie berechnet man die Restnutzungsdauer?","acceptedAnswer":{"@type":"Answer","text":"Im einfachsten Fall gilt: Restnutzungsdauer = Gesamtnutzungsdauer minus Gebäudealter. Wurde modernisiert, ergibt sich die Restnutzungsdauer aus der Formel und den Faktoren der Anlage 2 ImmoWertV, abhängig von der Modernisierungspunktzahl."}},{"@type":"Question","name":"Wie hoch ist die Gesamtnutzungsdauer eines Wohnhauses?","acceptedAnswer":{"@type":"Answer","text":"Nach Anlage 1 ImmoWertV beträgt der Modellansatz für Ein- und Zweifamilienhäuser, Reihenhäuser und Mehrfamilienhäuser 80 Jahre."}},{"@type":"Question","name":"Was ist die modifizierte Restnutzungsdauer?","acceptedAnswer":{"@type":"Answer","text":"Das ist die Restnutzungsdauer, die sich unter Berücksichtigung von Modernisierungen ergibt. Sie ist länger als die einfache Differenz aus Gesamtnutzungsdauer und Alter und wird im Modell auf höchstens 70 % der Gesamtnutzungsdauer gestreckt, bei Kernsanierung bis zu 90 %."}},{"@type":"Question","name":"Reicht das Ergebnis des Rechners für das Finanzamt?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Bundesfinanzhof hat entschieden, dass ein bloßer Verweis auf die modellhafte Restnutzungsdauer der ImmoWertV für den Nachweis einer kürzeren Nutzungsdauer nicht genügt (BFH, IX R 14/23). Nötig ist eine objektbezogene Begründung."}}]}</script>
+<!-- rnd-wissen:ende -->
 <!-- ===== Conversion-CTA + Footer (3D Immobilienbewertung) ===== -->
 <section class="sb-convert">
   <div class="sb-convert-inner">
@@ -652,7 +674,7 @@
         <li><a href="/lp-haus-bewerten-hannover.html">Haus bewerten</a></li>
         <li><a href="/wohnungsbewertung-hannover.html">Wohnung bewerten</a></li>
         <li><a href="/lp-immobilienbewertung-hannover.html">Gutachten &amp; Kosten</a></li>
-        <li><a href="/restnutzungsdauergutachten-hannover.html">Restnutzungsdauer</a></li>
+        <li><a href="/restnutzungsdauergutachten-hannover.html">Restnutzungsdauergutachten</a></li>
       </ul></nav>
       <nav aria-label="Orientierung im Footer"><h2>Gut vorbereitet</h2><ul>
         <li><a href="/#region">Unsere Region</a></li>
@@ -716,7 +738,7 @@ const ELEMENTS=[
  ['baeder','Bäder',[2,1,0,0]],
  ['innen','Innenausbau (Decken, Böden, Treppen)',[2,2,2,1]]
 ];
-function gradeOf(p){if(p<=1)return 'nicht modernisiert';if(p<=4)return 'kleinere Modernisierungen (Instandhaltung)';if(p<=8)return 'mittlere Modernisierung';if(p<=13)return 'überwiegend modernisiert';return 'umfassend modernisiert';}
+function gradeOf(p){if(p<=1)return 'nicht modernisiert';if(p<=5)return 'kleinere Modernisierungen (Instandhaltung)';if(p<=10)return 'mittlerer Modernisierungsgrad';if(p<=17)return 'überwiegend modernisiert';return 'umfassend modernisiert';}
 
 /* ===== Potenzial (Sachverständigen-Logik) ===== */
 function computePotential(d, afaAlt, zustand){
