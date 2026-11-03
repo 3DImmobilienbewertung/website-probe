@@ -6,7 +6,7 @@
     <loc>https://www.3dimmobilienbewertung.de/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
 
   <!-- Themen-Landingpages (Kaufintention) -->
@@ -54,7 +54,7 @@
     <loc>https://www.3dimmobilienbewertung.de/restnutzungsdauergutachten-hannover.html</loc>
     <priority>0.95</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
 
   <!-- Restnutzungsdauer- / AfA-Rechner (Tool + Dienstleistung) -->
@@ -84,13 +84,13 @@
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-wedemark.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-langenhagen.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-garbsen.html</loc>
@@ -102,13 +102,13 @@
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-isernhagen.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-burgwedel.html</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-sehnde.html</loc>
@@ -194,7 +194,7 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/</loc>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauergutachten-hannover.html</loc>
@@ -278,7 +278,7 @@
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauer-grossburgwedel-vermietete-haeuser.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/haus-bewerten-schwarmstedt-lage-hochwasser.html</loc>
@@ -286,7 +286,7 @@
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauer-isernhagen-eigentumswohnung.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/immobilienbewertung-celle.html</loc>
@@ -364,5 +364,17 @@
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/wohnrecht-niessbrauch-immobilie-bewerten.html</loc>
     <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/eigentumswohnung-bewerten-langenhagen.html</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauer-langenhagen-vermietete-immobilie.html</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/immobilienbewertung-hannover-nord.html</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>

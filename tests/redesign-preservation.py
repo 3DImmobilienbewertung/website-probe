@@ -14,9 +14,9 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = 'd838d34'
 # Ortsratgeber vom 25.10.2026
-NEW_PAGES = {'blog/erbbaurecht-hannover-bewerten.html', 'blog/bodenrichtwert-hannover-abfragen.html', 'blog/mietspiegel-hannover-wohnung-bewerten.html', 'blog/denkmalgeschuetztes-haus-bewerten-hannover.html', 'blog/online-immobilienbewertung-hannover-gutachten.html', 'blog/wohnrecht-niessbrauch-immobilie-bewerten.html', 'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
+NEW_PAGES = {'blog/eigentumswohnung-bewerten-langenhagen.html', 'blog/restnutzungsdauer-langenhagen-vermietete-immobilie.html', 'blog/immobilienbewertung-hannover-nord.html', 'blog/erbbaurecht-hannover-bewerten.html', 'blog/bodenrichtwert-hannover-abfragen.html', 'blog/mietspiegel-hannover-wohnung-bewerten.html', 'blog/denkmalgeschuetztes-haus-bewerten-hannover.html', 'blog/online-immobilienbewertung-hannover-gutachten.html', 'blog/wohnrecht-niessbrauch-immobilie-bewerten.html', 'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
 RELEASE_DATE = '2026-10-23'
-RELEASE_DATES = {'2026-10-23', '2026-10-25', '2026-11-03'}  # Releases seit der Baseline
+RELEASE_DATES = {'2026-10-23', '2026-10-25', '2026-11-03', '2026-11-04'}  # Releases seit der Baseline
 ALLOWED_LOST_LINKS = {'restnutzungsdauer-rechner.html': {'/#vorteile'}}  # broken anchor, now /#warum
 # 03.11.2026: Orts-Chip 'Hannover' zeigt auf die Startseite statt auf die LP (Hannover-Signale buendeln);
 # die LP bleibt ueber den Footer-Link 'Gutachten & Kosten' erreichbar
@@ -104,6 +104,9 @@ def protected(source, path=None):
         if 'mit dieser Qualifikation' in alt and path!='index.html': continue
         if 'Sachverständigen aus unserem Netzwerk' in alt and 'öffentlich' not in alt.split('mit einem')[1] and path=='index.html': continue
         source=source.replace(neu,alt)
+    # 04.11.2026: Titel der Restnutzungsdauer-Seite mit Festpreis
+    if path=='restnutzungsdauergutachten-hannover.html':
+        source=source.replace('<title>Restnutzungsdauergutachten Hannover | Festpreis 1.490 €</title>','<title>Restnutzungsdauergutachten Hannover | Immobilienbewertung</title>')
     if path in NETZWERK:
         source=source.replace(*NETZWERK[path])
     if path=='immobilienbewertung-isernhagen.html':
