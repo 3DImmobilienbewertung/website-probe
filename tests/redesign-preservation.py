@@ -21,6 +21,8 @@ ALLOWED_LOST_LINKS = {'restnutzungsdauer-rechner.html': {'/#vorteile'}}  # broke
 # 03.11.2026: Orts-Chip 'Hannover' zeigt auf die Startseite statt auf die LP (Hannover-Signale buendeln);
 # die LP bleibt ueber den Footer-Link 'Gutachten & Kosten' erreichbar
 HANNOVER_CHIP = {'lp-immobilienbewertung-hannover.html'}
+# 03.11.2026: Bewertungslinks oeffnen direkt den Reiter Rezensionen statt der Maps-CID
+HANNOVER_CHIP |= {'https://www.google.com/maps?cid=6207380212816867001'}
 CREDENTIAL = {'@type':'EducationalOccupationalCredential','credentialCategory':'certificate','name':'Zertifikatslehrgang Wertermittlung (IHK)','recognizedBy':{'@type':'Organization','name':'Industrie- und Handelskammer Hannover'}}
 PORTRAITS={f'assets/{name}-donnarumma-20260928{size}.webp' for name in ('nandino','vito') for size in ('','-small')}|{f'assets/nandino-donnarumma-20261022{size}.webp' for size in ('','-small','-small-2x')}
 OFFICE_KEYS=('nandino-beratung','nandino-grundriss','nandino-unterlagen','nandino-besichtigung','nandino-pruefung','team-auswertung','team-besprechung','vito-beratung','vito-auswertung')
@@ -75,7 +77,7 @@ class Page(HTMLParser):
         super().__init__(); self.tags=[]; self.feed(source)
     def handle_starttag(self, tag, attrs): self.tags.append((tag, dict(attrs)))
 def protected(source, path=None):
-    source=source.replace('79 Google-Bewertungen','76 Google-Bewertungen')
+    source=source.replace('88 Google-Bewertungen','76 Google-Bewertungen')
     # Bewusste Korrektur dieses Releases: ausdruecklicher Hinweis "keine zusaetzliche Niederlassung"
     if path=='immobilienbewertung-laatzen.html':
         source=source.replace('Nein, in Laatzen unterhalten wir keine zusätzliche Niederlassung. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark); nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.','Nein. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark). Nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.')
@@ -98,6 +100,12 @@ def protected(source, path=None):
                        'Ein niedrigerer gemeiner Wert kann unter den Voraussetzungen des §198 BewG nachgewiesen werden. Nicht jedes Gutachten erfüllt die Anforderungen. Besprechen Sie Nachweisform, Qualifikation und etwaige Fristen mit Ihrer Steuerberatung; eine pauschale Anerkennung unseres Gutachtens versprechen wir nicht.')}
     if path in NETZWERK:
         source=source.replace(*NETZWERK[path])
+    if path=='immobilienbewertung-isernhagen.html':
+        source=source.replace('Wir stimmen jedes Gutachten auf seinen Zweck ab. Für den steuerlichen Nachweis eines niedrigeren gemeinen Werts stellt § 198 BewG besondere Anforderungen an die Person des Gutachters. Solche Gutachten erstellen wir gemeinsam mit einem öffentlich bestellten und vereidigten Sachverständigen aus unserem Netzwerk – Sie haben dennoch einen Ansprechpartner. Welche Form Ihr Fall braucht, legen wir vor der Beauftragung fest; über die Anerkennung entscheidet die anfordernde Stelle.',
+            'Nein, eine pauschale Anerkennung lässt sich nicht zusagen. Für den steuerlichen Nachweis eines niedrigeren gemeinen Werts enthält § 198 BewG besondere Anforderungen. Unser IHK-Zertifikatslehrgang ist keine öffentliche Bestellung oder Personenzertifizierung nach DIN EN ISO/IEC 17024. Klären Sie die erforderliche Qualifikation und den Gutachtenumfang vorab mit der anfordernden Stelle.')
+    if path=='wohnungsbewertung-hannover.html':
+        source=source.replace('Vor der Beauftragung klären wir die Anforderungen an Gutachten und Qualifikation für den vorgesehenen Verwendungszweck. Wird eine öffentlich bestellte und vereidigte Person verlangt, erstellen wir das Gutachten gemeinsam mit einem Sachverständigen aus unserem Netzwerk.',
+            'Eine pauschale Anerkennung können wir nicht zusagen. Vor der Beauftragung klären wir die Anforderungen an Gutachten und Qualifikation für den vorgesehenen Verwendungszweck.')
     tags=Page(source).tags
     return {
         'title': re.findall(r'<title>.*?</title>', source, re.S),

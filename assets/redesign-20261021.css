@@ -526,3 +526,13 @@ body.brand-editorial{--mono:var(--body)}
 /* Preise gut lesbar: grosse, echte Fettschrift statt kleiner Monospace-Zeile */
 .brand-home .leistung-preis{font-family:var(--body);font-size:20px;font-weight:700;letter-spacing:0;line-height:1.3;color:var(--gold-tief)}
 @media (max-width:520px){.brand-home .leistung-preis{font-size:19px}}
+
+/* ---- Zitate-Laufband im Bewertungsbereich (2026-11-03) -------------- */
+.stimmen-band{margin:0 0 clamp(32px,4vw,52px)}
+.stimmen-band .rb-kopf{max-width:none;padding-inline:0}
+.stimmen-band .rb-fenster{padding-inline:0}
+.rb-spur .rb-chip{display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 18px;background:#fff;border:1px solid var(--linie-warm);border-radius:999px;white-space:nowrap}
+.rb-zitat{font-size:15px;font-weight:600;color:#16365C}
+.rb-wer{font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--gold-tief)}
+@media (max-width:520px){.rb-zitat{font-size:14px}}
+@media (max-width:520px){.stimmen-band .rb-alle{display:inline}}
