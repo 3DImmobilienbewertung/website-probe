@@ -90,6 +90,14 @@ def protected(source, path=None):
                         ('Immobiliengutachten Hannover: Gutachtenarten & Kosten','Immobilie bewerten lassen in Hannover – Kosten & Ablauf'),
                         ('"name":"Immobiliengutachten Hannover","item"','"name":"Immobilie bewerten lassen Hannover","item"')]:
             source=source.replace(neu,alt)
+    # 03.11.2026: FAQ nennt das Netzwerk mit einem oeffentlich bestellten und vereidigten Sachverstaendigen (Wunsch des Inhabers)
+    NETZWERK = {
+        'index.html': ('Wir stimmen jedes Gutachten auf seinen Zweck ab. Verlangt die empfangende Stelle eine besondere Qualifikation – etwa ein Gutachten einer öffentlich bestellten und vereidigten Person für ein Gericht oder für den Nachweis nach § 198 BewG gegenüber dem Finanzamt –, erstellen wir es gemeinsam mit einem öffentlich bestellten und vereidigten Sachverständigen aus unserem Netzwerk. So erhalten Sie die passende Gutachtenform aus einer Hand. Welche Form Ihr Fall braucht und wer unterzeichnet, legen wir vor der Beauftragung fest; über die Anerkennung entscheidet die empfangende Stelle.',
+                       'Eine pauschale Anerkennung lässt sich nicht zusagen. Wir klären Verwendungszweck, Gutachtenumfang und erforderliche Qualifikation vorab; die Anforderungen der empfangenden Stelle sind maßgeblich.'),
+        'immobilienbewertung-erbschaft.html': ('Ein niedrigerer gemeiner Wert kann unter den Voraussetzungen des §198 BewG nachgewiesen werden. Das Gesetz verlangt dafür in der Regel ein Gutachten des Gutachterausschusses oder einer öffentlich bestellten bzw. zertifizierten Person. Solche Gutachten erstellen wir gemeinsam mit einem öffentlich bestellten und vereidigten Sachverständigen aus unserem Netzwerk – Sie haben dennoch einen Ansprechpartner. Nachweisform und Fristen stimmen Sie am besten mit Ihrer Steuerberatung ab; über die Anerkennung entscheidet das Finanzamt.',
+                       'Ein niedrigerer gemeiner Wert kann unter den Voraussetzungen des §198 BewG nachgewiesen werden. Nicht jedes Gutachten erfüllt die Anforderungen. Besprechen Sie Nachweisform, Qualifikation und etwaige Fristen mit Ihrer Steuerberatung; eine pauschale Anerkennung unseres Gutachtens versprechen wir nicht.')}
+    if path in NETZWERK:
+        source=source.replace(*NETZWERK[path])
     tags=Page(source).tags
     return {
         'title': re.findall(r'<title>.*?</title>', source, re.S),
