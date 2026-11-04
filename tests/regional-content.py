@@ -44,4 +44,7 @@ for filename in ['index.html','ueber-uns.html']:
             for value in node:yield from people(value)
     nandino=[p for p in people(data) if p.get('name')=='Nandino Donnarumma'][0]
     assert nandino['hasCredential'][0]['name']=='Zertifikatslehrgang Wertermittlung (IHK)'
+    assert nandino['memberOf']['name']=='Ingenieurkammer Niedersachsen'
+    vito=[p for p in people(data) if p.get('name')=='Vito Donnarumma'][0]
+    assert 'memberOf' not in vito
 print('PASS: both brothers in qualification area; no IHK promotion in hero; Nandino credential matches user correction')

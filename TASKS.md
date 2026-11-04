@@ -4,9 +4,16 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-04, CC · T-34 Restnutzungsdauer-Ausbau, Bing-Befund korrigiert
+Letzte Änderung: 2026-11-04, CC · T-35 Ingenieurkammer-Mitgliedschaft
 
 ---
+
+## T-35 · Ingenieurkammer-Mitgliedschaft Nandino — CC, 04.11.2026
+
+- Angabe des Inhabers: Nandino ist Mitglied der Ingenieurkammer Niedersachsen, mit klassischem und digitalem Stempel. Urkunde liegt mir nicht vor.
+- Eingebaut: Startseite (Hero, Team, `memberOf`), Über uns (Rolle, Qualifikation, Nachweis-Karte, `memberOf`), Restnutzungsdauer-Seite, Impressum (Kammer, Berufsbezeichnung, NIngG), Vertrauensleiste auf 28 Seiten mit engerem Zeilenabstand.
+- Formulierung folgt der Gebührensatzung der Kammer: Stempel „zum Nachweis über die Eintragung“. Nicht verwenden: „Beratender Ingenieur“, Kammerlogo, Andeutung einer Prüfung der Gutachten durch die Kammer.
+- **Offen, Inhaber:** Urkunde bereithalten; prüfen, ob Mitgliedsart und Berufsbezeichnung im Impressum stimmen.
 
 ## T-34 · Restnutzungsdauer-Ausbau, Bing-Befund korrigiert — CC, 04.11.2026
 

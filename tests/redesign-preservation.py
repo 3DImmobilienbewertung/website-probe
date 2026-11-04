@@ -64,6 +64,9 @@ def normalized_schema(source, path=None):
             if node.get('@type') == 'Person' and node.get('name') == 'Nandino Donnarumma' and 'hasCredential' in node:
                 assert node['hasCredential'] == [CREDENTIAL]
                 del node['hasCredential']
+            if node.get('@type') == 'Person' and node.get('name') == 'Nandino Donnarumma' and 'memberOf' in node:
+                assert node['memberOf']['name'] == 'Ingenieurkammer Niedersachsen'
+                del node['memberOf']
             for value in node.values(): visit(value)
         elif isinstance(node,list):
             for value in node: visit(value)
