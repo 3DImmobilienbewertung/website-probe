@@ -47,7 +47,7 @@ home=(ROOT/'index.html').read_text()
 hero=re.search(r'<section class="hero[ "].*?</section>',home,re.S)[0]
 assert 'office-portrait' not in hero
 # Team-first: das gemeinsame Arbeitsfoto ist das Startbild der Diashow
-hero_images=Page(hero).images
+hero_images=[i for i in Page(hero).images if 'ingenieurkammer' not in i.get('src','')]
 hero_image=hero_images[0]
 assert 'hero-team-' in hero_image['src'] and hero_image.get('fetchpriority')=='high' and hero_image['alt']
 assert 'loading' not in hero_image and 'data-src' not in hero_image

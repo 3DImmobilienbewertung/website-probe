@@ -32,6 +32,8 @@ def normalized_media(tags,path):
     for t,attrs in tags:
         if t not in ('img','video','source','iframe'):continue
         a=dict(attrs)
+        if path=='index.html' and t=='img' and a.get('src')=='/assets/ingenieurkammer-niedersachsen-logo.svg':
+            continue # Requested chamber logo, checked by regional-content.py.
         if t=='img' and a.get('src','').lstrip('/') in OFFICE_PHOTOS:
             assert a.get('data-office-photo') in OFFICE_KEYS
             continue # New user-supplied photos, checked by office-photography.py.

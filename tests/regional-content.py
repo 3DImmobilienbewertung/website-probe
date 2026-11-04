@@ -47,4 +47,12 @@ for filename in ['index.html','ueber-uns.html']:
     assert nandino['memberOf']['name']=='Ingenieurkammer Niedersachsen'
     vito=[p for p in people(data) if p.get('name')=='Vito Donnarumma'][0]
     assert 'memberOf' not in vito
+# Hauptsatzung § 3 Abs. 4: Kammerlogo nur mit Zusatz, und nur Nandino zugeordnet.
+home=(ROOT/'index.html').read_text(encoding='utf8')
+logo='/assets/ingenieurkammer-niedersachsen-logo.svg'
+assert home.count(logo)==2
+badge=re.search(r'<a class="hero-kammer".*?</a>',home,re.S).group(0)
+assert logo in badge and 'Nandino Donnarumma' in badge and 'Mitglied der Ingenieurkammer Niedersachsen' in badge
+team_block=home[home.index('<b>Nandino Donnarumma</b>'):home.index('<b>Vito Donnarumma</b>')]
+assert logo in team_block and 'Mitglied der Ingenieurkammer Niedersachsen' in team_block
 print('PASS: both brothers in qualification area; no IHK promotion in hero; Nandino credential matches user correction')
