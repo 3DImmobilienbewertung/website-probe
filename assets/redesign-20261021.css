@@ -566,3 +566,14 @@ body.brand-editorial{--mono:var(--body)}
   .brand-home .diashow-knopf svg,.rb-knopf svg{width:12px;height:12px}
   .diashow-text,.rb-knopf-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 }
+
+/* ---- Kammer-Plakette: Logo nur mit Zusatz laut Hauptsatzung (2026-11-04) ---- */
+.brand-home .hero-belege a.hero-kammer{gap:12px;min-height:58px;padding:10px 18px 10px 12px;background:#fff;border:1px solid var(--linie-warm);border-radius:14px;box-shadow:0 6px 18px rgba(16,36,61,.08);transition:border-color .2s,box-shadow .2s}
+.brand-home .hero-belege a.hero-kammer:hover{border-color:#C9A24B;box-shadow:0 10px 24px rgba(16,36,61,.14)}
+.brand-home .hero-belege a.hero-kammer span{text-decoration:none}
+.hero-kammer img{display:block;width:92px;height:auto;flex:none}
+.hero-kammer .kb-text{display:grid;gap:3px;line-height:1.2;text-align:left}
+.hero-kammer .kb-name{font-size:14px;font-weight:700;color:var(--ink,#10243D)}
+.hero-kammer .kb-zusatz{font-size:13px;color:var(--ink,#10243D)}
+.team-kammer{display:block;width:104px;height:auto;margin-top:10px}
+@media(max-width:520px){.brand-home .hero-belege a.hero-kammer{width:100%}}
