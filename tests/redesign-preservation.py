@@ -16,7 +16,7 @@ BASELINE = 'd838d34'
 # Ortsratgeber vom 25.10.2026
 NEW_PAGES = {'blog/eigentumswohnung-bewerten-langenhagen.html', 'blog/restnutzungsdauer-langenhagen-vermietete-immobilie.html', 'blog/immobilienbewertung-hannover-nord.html', 'blog/erbbaurecht-hannover-bewerten.html', 'blog/bodenrichtwert-hannover-abfragen.html', 'blog/mietspiegel-hannover-wohnung-bewerten.html', 'blog/denkmalgeschuetztes-haus-bewerten-hannover.html', 'blog/online-immobilienbewertung-hannover-gutachten.html', 'blog/wohnrecht-niessbrauch-immobilie-bewerten.html', 'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
 RELEASE_DATE = '2026-10-23'
-RELEASE_DATES = {'2026-10-23', '2026-10-25', '2026-11-03', '2026-11-04'}  # Releases seit der Baseline
+RELEASE_DATES = {'2026-10-23', '2026-10-25', '2026-11-03', '2026-11-04','2026-11-05'}  # Releases seit der Baseline
 ALLOWED_LOST_LINKS = {'restnutzungsdauer-rechner.html': {'/#vorteile'}}  # broken anchor, now /#warum
 # 03.11.2026: Orts-Chip 'Hannover' zeigt auf die Startseite statt auf die LP (Hannover-Signale buendeln);
 # die LP bleibt ueber den Footer-Link 'Gutachten & Kosten' erreichbar
@@ -32,8 +32,6 @@ def normalized_media(tags,path):
     for t,attrs in tags:
         if t not in ('img','video','source','iframe'):continue
         a=dict(attrs)
-        if path=='index.html' and t=='img' and a.get('src')=='/assets/ingenieurkammer-niedersachsen-logo.svg':
-            continue # Requested chamber logo, checked by regional-content.py.
         if t=='img' and a.get('src','').lstrip('/') in OFFICE_PHOTOS:
             assert a.get('data-office-photo') in OFFICE_KEYS
             continue # New user-supplied photos, checked by office-photography.py.
@@ -66,9 +64,6 @@ def normalized_schema(source, path=None):
             if node.get('@type') == 'Person' and node.get('name') == 'Nandino Donnarumma' and 'hasCredential' in node:
                 assert node['hasCredential'] == [CREDENTIAL]
                 del node['hasCredential']
-            if node.get('@type') == 'Person' and node.get('name') == 'Nandino Donnarumma' and 'memberOf' in node:
-                assert node['memberOf']['name'] == 'Ingenieurkammer Niedersachsen'
-                del node['memberOf']
             for value in node.values(): visit(value)
         elif isinstance(node,list):
             for value in node: visit(value)

@@ -4,12 +4,13 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-04, CC · T-35 Ingenieurkammer-Mitgliedschaft
+Letzte Änderung: 2026-11-05, CC · T-35 Ingenieurkammer-Mitgliedschaft wieder entfernt
 
 ---
 
-## T-35 · Ingenieurkammer-Mitgliedschaft Nandino — CC, 04.11.2026
+## T-35 · Ingenieurkammer-Mitgliedschaft Nandino — CC, 04.11.2026, **am 05.11.2026 auf Wunsch des Inhabers vollständig entfernt**
 
+- Stand: Die Website nennt die Kammer derzeit nirgends. Der Einbau liegt in der Git-Historie (Commits 51bf48c bis e5f6d87). Die Punkte unten gelten erst wieder, wenn der Inhaber die Angabe zurückhaben will.
 - Angabe des Inhabers: Nandino ist Mitglied der Ingenieurkammer Niedersachsen, mit klassischem und digitalem Stempel. Urkunde liegt mir nicht vor.
 - Eingebaut: Startseite (Hero, Team, `memberOf`), Über uns (Rolle, Qualifikation, Nachweis-Karte, `memberOf`), Restnutzungsdauer-Seite, Impressum (Kammer, Berufsbezeichnung, NIngG), Vertrauensleiste auf 28 Seiten mit engerem Zeilenabstand.
 - Formulierung folgt der Gebührensatzung der Kammer: Stempel „zum Nachweis über die Eintragung“. Nicht verwenden: „Beratender Ingenieur“, Andeutung einer Prüfung der Gutachten durch die Kammer.
