@@ -566,3 +566,7 @@ body.brand-editorial{--mono:var(--body)}
   .brand-home .diashow-knopf svg,.rb-knopf svg{width:12px;height:12px}
   .diashow-text,.rb-knopf-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 }
+
+/* ---- Team: Namen auf gleicher Hoehe, auch bei unterschiedlich langen Zitaten (2026-11-05) ---- */
+.brand-home .member-body{flex:1 1 auto;display:flex;flex-direction:column}
+.brand-home .member .who{margin-top:auto;padding-top:20px}
