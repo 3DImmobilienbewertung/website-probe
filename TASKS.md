@@ -4,9 +4,15 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-05, CC · T-35 Ingenieurkammer-Mitgliedschaft wieder entfernt
+Letzte Änderung: 2026-11-05, CC · T-36 Team-Namen, Wertermittler (IHK)
 
 ---
+
+## T-36 · Team-Namen auf einer Höhe, „Immobilien-Wertermittler (IHK)“ — CC, 05.11.2026
+
+- Namen im Team der Startseite stehen bündig, auch bei unterschiedlich langen Zitaten.
+- „(IHK)“ auf Wunsch des Inhabers ergänzt: Startseite, Über uns, zwei Landingpages. Dort entfiel „geprüften“, weil das Zertifikat nur einen lehrgangsinternen Test nennt.
+- **Offen, Inhaber:** Das Zertifikat lautet „Zertifikatslehrgang Wertermittlung (IHK)“ und verleiht keinen Titel „Wertermittler (IHK)“. Bei der IHK oder rechtlich klären, ob die Bezeichnung so geführt werden darf.
 
 ## T-35 · Ingenieurkammer-Mitgliedschaft Nandino — CC, 04.11.2026, **am 05.11.2026 auf Wunsch des Inhabers vollständig entfernt**
 
