@@ -27,7 +27,7 @@ for city, name in [('celle', 'Celle'), ('schwarmstedt', 'Schwarmstedt'), ('laatz
     assert source.count('/assets/local-contact.js?') == 1
     assert 'Kurzgutachten ab 490 €' in source and 'Erstgespräch kostenlos' in source
     assert 'keine zusätzliche Niederlassung' in source
-    assert '88 Google-Bewertungen' in source
+    assert '96 Google-Bewertungen' in source
     assert f'href="/{path}"' in home and f'/{path}</loc>' in sitemap
     assert source.count('<details>') == 4
     schemas = [json.loads(block) for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', source, re.S)]
@@ -47,7 +47,7 @@ for path in (ROOT / 'blog').glob('*.html'):
     assert 'noindex' not in source
     bridges.append(path.name)
 # 8 Ratgeber aus dem September-Release, 4 Ortsratgeber vom 22.10. und 6 vom 25.10.2026
-assert len(bridges) == 27, sorted(bridges)
+assert len(bridges) == 28, sorted(bridges)
 for neu in ('haus-bewerten-langenhagen-flughafen-lage.html', 'immobilienbewertung-lindwedel-hope.html', 'baugrundstueck-bewerten-wedemark.html', 'haus-60er-70er-bewerten-altwarmbuechen.html', 'eigentumswohnung-bewerten-grossburgwedel.html', 'mehrfamilienhaus-bewerten-hannover-ertragswert.html'):
     assert neu in bridges, neu
 for neu in ('altbauwohnung-bewerten-hannover.html','resthof-bewerten-schwarmstedt.html','fachwerkhaus-bewerten-isernhagen.html','doppelhaushaelfte-reihenhaus-bewerten-grossburgwedel.html'):

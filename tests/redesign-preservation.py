@@ -14,9 +14,9 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = 'd838d34'
 # Ortsratgeber vom 25.10.2026
-NEW_PAGES = {'blog/eigentumswohnung-bewerten-langenhagen.html', 'blog/restnutzungsdauer-langenhagen-vermietete-immobilie.html', 'blog/immobilienbewertung-hannover-nord.html', 'blog/erbbaurecht-hannover-bewerten.html', 'blog/bodenrichtwert-hannover-abfragen.html', 'blog/mietspiegel-hannover-wohnung-bewerten.html', 'blog/denkmalgeschuetztes-haus-bewerten-hannover.html', 'blog/online-immobilienbewertung-hannover-gutachten.html', 'blog/wohnrecht-niessbrauch-immobilie-bewerten.html', 'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
+NEW_PAGES = {'blog/immobilienbewertung-hannover-innenstadt-stadtteile.html', 'blog/eigentumswohnung-bewerten-langenhagen.html', 'blog/restnutzungsdauer-langenhagen-vermietete-immobilie.html', 'blog/immobilienbewertung-hannover-nord.html', 'blog/erbbaurecht-hannover-bewerten.html', 'blog/bodenrichtwert-hannover-abfragen.html', 'blog/mietspiegel-hannover-wohnung-bewerten.html', 'blog/denkmalgeschuetztes-haus-bewerten-hannover.html', 'blog/online-immobilienbewertung-hannover-gutachten.html', 'blog/wohnrecht-niessbrauch-immobilie-bewerten.html', 'blog/haus-bewerten-langenhagen-flughafen-lage.html', 'blog/immobilienbewertung-lindwedel-hope.html', 'blog/baugrundstueck-bewerten-wedemark.html', 'blog/haus-60er-70er-bewerten-altwarmbuechen.html', 'blog/eigentumswohnung-bewerten-grossburgwedel.html', 'blog/mehrfamilienhaus-bewerten-hannover-ertragswert.html'}
 RELEASE_DATE = '2026-10-23'
-RELEASE_DATES = {'2026-10-23', '2026-10-25', '2026-11-03', '2026-11-04','2026-11-05'}  # Releases seit der Baseline
+RELEASE_DATES = {'2026-10-23', '2026-10-25', '2026-11-03', '2026-11-04','2026-11-05','2026-11-08'}  # Releases seit der Baseline
 ALLOWED_LOST_LINKS = {'restnutzungsdauer-rechner.html': {'/#vorteile'}}  # broken anchor, now /#warum
 # 03.11.2026: Orts-Chip 'Hannover' zeigt auf die Startseite statt auf die LP (Hannover-Signale buendeln);
 # die LP bleibt ueber den Footer-Link 'Gutachten & Kosten' erreichbar
@@ -77,7 +77,7 @@ class Page(HTMLParser):
         super().__init__(); self.tags=[]; self.feed(source)
     def handle_starttag(self, tag, attrs): self.tags.append((tag, dict(attrs)))
 def protected(source, path=None):
-    source=source.replace('88 Google-Bewertungen','76 Google-Bewertungen')
+    source=source.replace('96 Google-Bewertungen','76 Google-Bewertungen')
     # Bewusste Korrektur dieses Releases: ausdruecklicher Hinweis "keine zusaetzliche Niederlassung"
     if path=='immobilienbewertung-laatzen.html':
         source=source.replace('Nein, in Laatzen unterhalten wir keine zusätzliche Niederlassung. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark); nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.','Nein. Unser Büro liegt in der Wedemark (Gailhoferstraße 17, 30900 Wedemark). Nach Laatzen, Rethen, Gleidingen oder Ingeln-Oesselse kommen wir zum vereinbarten Ortstermin.')

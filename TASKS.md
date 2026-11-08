@@ -4,9 +4,17 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-05, CC · T-36 Team-Namen, Wertermittler (IHK)
+Letzte Änderung: 2026-11-08, CC · T-37 Hannover Innenstadt, 96 Bewertungen
 
 ---
+
+## T-37 · Hannover Innenstadt & Stadtteile, 96 Google-Bewertungen — CC, 08.11.2026
+
+- Google Maps zeigt am 08.11.2026 öffentlich 5,0 bei 96 Bewertungen; Website an 54 Stellen auf 96 umgestellt.
+- Search Console (3 Monate, Suchen mit „hannover“): „immobilienbewertung hannover“ 187 Impressionen, Position 51,5; Startseite in den letzten 28 Tagen Position 27,4. Stadtteil-Suchen wie „kirchrode“ Position 84.
+- Neu: Ratgeber `blog/immobilienbewertung-hannover-innenstadt-stadtteile.html` (Mitte, Altbau-Stadtteile, Villenlagen, alle 13 Stadtbezirke). Verlinkt von Startseite (Laufband, Region), Wohnungsseite, Hannover-Nord, Altbau-Ratgeber, Blog-Übersicht.
+- Startseite nennt jetzt die 13 Stadtbezirke Hannovers im Abschnitt Region.
+- **Offen, Inhaber:** Im Google-Unternehmensprofil Hannover und die Stadtteile als Einzugsgebiet eintragen. Die Kartenplätze in der Innenstadt hängen stark von der Entfernung zum Büro ab, das kann die Website allein nicht ausgleichen.
 
 ## T-36 · Team-Namen auf einer Höhe, „Immobilien-Wertermittler (IHK)“ — CC, 05.11.2026
 
