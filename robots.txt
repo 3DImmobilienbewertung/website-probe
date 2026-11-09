@@ -1,6 +1,9 @@
 # robots.txt – 3D Immobilienbewertung – Donnarumma & Donnarumma GbR
 User-agent: *
 Allow: /
+# Formular-Endpunkt: nimmt nur POST-Anfragen an und ist keine Seite.
+# Ohne diese Zeile meldet die Search Console "anderes 4xx-Problem" (HTTP 405).
+Disallow: /api/
 
 # Hinweis: Impressum & Datenschutz werden NICHT per robots.txt gesperrt,
 # sondern per <meta name="robots" content="noindex"> aus dem Index gehalten.

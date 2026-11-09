@@ -146,7 +146,11 @@ for p in pages:
     lost={a['href'] for t,a in before if t=='a' and 'href' in a} - {a['href'] for t,a in after if t=='a' and 'href' in a}
     assert lost <= ALLOWED_LOST_LINKS.get(str(relative),set()) | HANNOVER_CHIP,(relative,'lost links',lost)
 for filename in ['robots.txt','api/contact.js','assets/consent.js','assets/editorial-ui.js','assets/local-contact.js','assets/home-funnel.js']:
-    assert (ROOT/filename).read_bytes()==previous(filename),(filename,'protected integration changed')
+    current=(ROOT/filename).read_bytes()
+    if filename=='robots.txt':
+        # Einzige erlaubte Aenderung: /api/ (POST-Formular-Endpunkt, HTTP 405 bei GET) fuer Crawler sperren.
+        current=current.replace('# Formular-Endpunkt: nimmt nur POST-Anfragen an und ist keine Seite.\n# Ohne diese Zeile meldet die Search Console "anderes 4xx-Problem" (HTTP 405).\nDisallow: /api/\n'.encode(),b'')
+    assert current==previous(filename),(filename,'protected integration changed')
 deployment=json.loads((ROOT/'vercel.json').read_text())
 redirect={'source':'/index.html','destination':'/','permanent':True}
 assert deployment['redirects'].count(redirect)==1
