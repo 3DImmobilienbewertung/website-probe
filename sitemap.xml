@@ -6,7 +6,7 @@
     <loc>https://www.3dimmobilienbewertung.de/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
 
   <!-- Themen-Landingpages (Kaufintention) -->
@@ -194,7 +194,7 @@
     <loc>https://www.3dimmobilienbewertung.de/blog/</loc>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/restnutzungsdauergutachten-hannover.html</loc>
@@ -380,5 +380,13 @@
   <url>
     <loc>https://www.3dimmobilienbewertung.de/blog/immobilienbewertung-hannover-innenstadt-stadtteile.html</loc>
     <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/verkehrswertgutachten-hannover.html</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.3dimmobilienbewertung.de/blog/gutachten-198-bewg-erbschaft-hannover.html</loc>
+    <lastmod>2026-11-09</lastmod>
   </url>
 </urlset>

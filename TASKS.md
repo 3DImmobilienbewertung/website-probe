@@ -4,9 +4,16 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-08, CC · T-37 Hannover Innenstadt, 96 Bewertungen
+Letzte Änderung: 2026-11-09, CC · T-38 KI-Sichtbarkeit, Verkehrswert, § 198 BewG
 
 ---
+
+## T-38 · Sichtbarkeit in ChatGPT & Co., Verkehrswertgutachten, § 198 BewG, 4xx-Meldung — CC, 09.11.2026
+
+- Search Console meldete „anderes 4xx-Problem“: `/api/contact` antwortet Crawlern mit 405. `robots.txt` sperrt jetzt `/api/`. Betroffene URL-Liste in der Search Console noch nicht gesehen (Chrome nicht verbunden).
+- KI-Crawler (OAI-SearchBot, ChatGPT-User, GPTBot, PerplexityBot, ClaudeBot, bingbot) erhalten 200.
+- Neu: `blog/verkehrswertgutachten-hannover.html`, `blog/gutachten-198-bewg-erbschaft-hannover.html` (Vorprüfung durch uns, Gutachten mit Partnern), `llms.txt`.
+- **Offen, Inhaber:** Einträge in Branchenverzeichnissen mit gleichen Daten (Name, Adresse, Telefon), Bing Places aktualisieren. KI-Antworten stützen sich stark auf Erwähnungen auf anderen Seiten.
 
 ## T-37 · Hannover Innenstadt & Stadtteile, 96 Google-Bewertungen — CC, 08.11.2026
 
