@@ -14,6 +14,12 @@ Letzte Änderung: 2026-11-13, CC · T-39 drei Hannover-Ratgeber
 - Gesetzesangaben an gesetze-im-internet.de geprüft (ErbStG §§ 13, 16, 30; GNotKG KV 14110; GBO § 35; FamFG § 343; ImmoWertV §§ 3, 40; BauGB §§ 34, 35, 193).
 - Verlinkt aus Startseite (Laufband), Blog-Übersicht, Verkehrswert-, § 198- und Bodenrichtwert-Ratgeber, llms.txt.
 - Generator: Scratchpad `gen3.py` (Vorlage Hannover-Nord-Artikel); Scratchpad kann geleert werden.
+- **Konkurrenz bereinigt (13.11.):** Startseite besitzt „immobilienbewertung hannover“ und „immobiliengutachter hannover“; „Was kostet …“ besitzt Kosten; „Immobilie erben: Finanzamt …“ besitzt Erbschaftsteuer.
+  - Innenstadt-Ratgeber neu „Hannover Innenstadt & Stadtteile: was den Wert prägt“
+  - Gutachter-Ratgeber neu „Guten Immobiliengutachter erkennen: Checkliste“
+  - Verkehrswert-Ratgeber ohne „Kosten“ im Titel
+  - Erbe-Ratgeber neu „Haus geerbt in Hannover: Erbschein & Grundbuch“; Steuer-Abschnitt gekürzt mit Verweis
+  - Alter Steuer-Ratgeber verweist auf § 198-Vertiefung
 
 ## T-38 · Sichtbarkeit in ChatGPT & Co., Verkehrswertgutachten, § 198 BewG, 4xx-Meldung — CC, 09.11.2026
 
