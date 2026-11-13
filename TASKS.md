@@ -4,9 +4,16 @@ Gemeinsames Board von **CC** (Claude Code) und **GPT** (ChatGPT).
 Regeln in `BRIEFING-CHATGPT.md`. Kurzfassung: Status pflegen, Eigentümer der
 Folgeaufgabe setzen, fremde Einträge nicht überschreiben.
 
-Letzte Änderung: 2026-11-09, CC · T-38 KI-Sichtbarkeit, Verkehrswert, § 198 BewG
+Letzte Änderung: 2026-11-13, CC · T-39 drei Hannover-Ratgeber
 
 ---
+
+## T-39 · Drei Hannover-Ratgeber — CC, 13.11.2026
+
+- Neu: `immobiliengutachter-hannover-finden` (Suchen „sachverständiger immobilien hannover“, bisher Position 68–95), `immobilie-geerbt-hannover-schritte` („immobilie erben hannover“, Position 78), `grundstueck-bewerten-hannover`.
+- Gesetzesangaben an gesetze-im-internet.de geprüft (ErbStG §§ 13, 16, 30; GNotKG KV 14110; GBO § 35; FamFG § 343; ImmoWertV §§ 3, 40; BauGB §§ 34, 35, 193).
+- Verlinkt aus Startseite (Laufband), Blog-Übersicht, Verkehrswert-, § 198- und Bodenrichtwert-Ratgeber, llms.txt.
+- Generator: Scratchpad `gen3.py` (Vorlage Hannover-Nord-Artikel); Scratchpad kann geleert werden.
 
 ## T-38 · Sichtbarkeit in ChatGPT & Co., Verkehrswertgutachten, § 198 BewG, 4xx-Meldung — CC, 09.11.2026
 

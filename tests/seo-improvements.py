@@ -25,7 +25,7 @@ for p in pages:
    if n.get('name')=='3D Immobilienbewertung' and set(types)&{'LocalBusiness','ProfessionalService','Organization'}:
     businesses+=1;assert n['@id']==ORIGIN+'#organisation' and n['url']==ORIGIN,p
     if set(types)&{'LocalBusiness','ProfessionalService'}:assert n['address']==ADDRESS,p
-assert review_pages==38,review_pages
+assert review_pages==41,review_pages
 home=(ROOT/'index.html').read_text();assert re.search(r'href="https://www\.google\.com/maps/place/3D\+Immobilienbewertung/[^"]*0x56250b6a5abceeb9[^"]*!9m1!1b1[^"]*"[^>]*>.{0,700}?101 Google-Bewertungen',home,re.S)
 for filename,anchor in [('lp-haus-bewerten-hannover.html','hauswert-pruefen'),('lp-immobilienbewertung-hannover.html','gutachten-auswaehlen')]:
  s=(ROOT/filename).read_text();assert s.count('id="'+anchor+'"')==1

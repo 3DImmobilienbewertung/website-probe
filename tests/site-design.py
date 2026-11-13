@@ -48,7 +48,7 @@ NEW_GUIDES = {'altbauwohnung-bewerten-hannover.html','resthof-bewerten-schwarmst
 assert NEW_GUIDES <= {p.name for p in pages}
 GUIDES_20261025 = {'immobilienbewertung-lindwedel-hope.html', 'eigentumswohnung-bewerten-grossburgwedel.html', 'haus-bewerten-langenhagen-flughafen-lage.html', 'baugrundstueck-bewerten-wedemark.html', 'mehrfamilienhaus-bewerten-hannover-ertragswert.html', 'haus-60er-70er-bewerten-altwarmbuechen.html'}
 assert GUIDES_20261025 <= {p.name for p in pages}
-assert len(pages) == 75, len(pages)
+assert len(pages) == 78, len(pages)
 home = (ROOT / 'index.html').read_text()
 assert 'class="practice-strip"' not in home
 assert 'class="team-quals"' not in home
